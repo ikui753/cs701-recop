@@ -14,7 +14,7 @@ entity registers is
 		clk : in bit_1;
 		reset : in bit_1;
 		dpcr: out bit_32;
-		rz : in bit_16;
+		r7 : in bit_16;
 		rx : in bit_16;
 		ir_operand : in bit_16;
 		dpcr_lsb_sel : in bit_1;
@@ -58,7 +58,7 @@ architecture beh of registers is
 				-- write to dpcr. lower byte depends on select signal
 				case dpcr_lsb_sel is
 				when '0' =>
-					dpcr <= rx&rz;
+					dpcr <= rx&r7;
 				when '1' =>
 					dpcr <= rx&ir_operand;
 				when others =>
