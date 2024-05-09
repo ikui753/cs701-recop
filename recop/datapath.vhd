@@ -14,7 +14,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
--- CREATED		"Fri May 10 10:07:41 2024"
+-- CREATED		"Fri May 10 10:46:56 2024"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -32,9 +32,11 @@ ENTITY datapath IS
 		Z :  IN  STD_LOGIC;
 		dpcr_lsb_sel :  IN  STD_LOGIC;
 		dpcr_wr :  IN  STD_LOGIC;
+		ld_r :  IN  STD_LOGIC;
 		increment :  IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
 		opcodeIn :  IN  STD_LOGIC_VECTOR(5 DOWNTO 0);
 		rf_sel :  IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+		zeroes :  IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
 		am :  OUT  STD_LOGIC_VECTOR(1 DOWNTO 0);
 		dpcr :  OUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		ir_opcode :  OUT  STD_LOGIC_VECTOR(5 DOWNTO 0)
@@ -101,35 +103,6 @@ COMPONENT memory
 	);
 END COMPONENT;
 
-COMPONENT registers
-	PORT(clk : IN STD_LOGIC;
-		 reset : IN STD_LOGIC;
-		 dpcr_lsb_sel : IN STD_LOGIC;
-		 dpcr_wr : IN STD_LOGIC;
-		 er_wr : IN STD_LOGIC;
-		 er_clr : IN STD_LOGIC;
-		 eot_wr : IN STD_LOGIC;
-		 eot_clr : IN STD_LOGIC;
-		 svop_wr : IN STD_LOGIC;
-		 sop_wr : IN STD_LOGIC;
-		 irq_wr : IN STD_LOGIC;
-		 irq_clr : IN STD_LOGIC;
-		 result_wen : IN STD_LOGIC;
-		 result : IN STD_LOGIC;
-		 ir_operand : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 r7 : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 rx : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 er : OUT STD_LOGIC;
-		 eot : OUT STD_LOGIC;
-		 dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-		 svop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
-	);
-END COMPONENT;
-
 COMPONENT program_counter
 	PORT(clock : IN STD_LOGIC;
 		 z : IN STD_LOGIC;
@@ -157,8 +130,8 @@ END COMPONENT;
 
 SIGNAL	clr_z :  STD_LOGIC;
 SIGNAL	data_out :  STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL	dmOut :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL	init :  STD_LOGIC;
-SIGNAL	ld_r :  STD_LOGIC;
 SIGNAL	operand :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL	r7 :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL	rx :  STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -166,9 +139,8 @@ SIGNAL	rz :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL	z_flag :  STD_LOGIC;
 SIGNAL	SYNTHESIZED_WIRE_0 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL	SYNTHESIZED_WIRE_1 :  STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL	SYNTHESIZED_WIRE_7 :  STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL	SYNTHESIZED_WIRE_6 :  STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 
 BEGIN 
@@ -179,12 +151,18 @@ b2v_inst : regfile
 PORT MAP(clk => clk,
 		 init => init,
 		 ld_r => ld_r,
+		 er_temp => zero,
+		 dprr_res => zero,
+		 dprr_res_reg => zero,
+		 dprr_wren => zero,
 		 aluout => data_out,
+		 dm_out => dmOut,
 		 ir_operand => operand,
 		 rf_input_sel => rf_sel,
+		 rz_max => zeroes,
 		 sel_x => SYNTHESIZED_WIRE_0,
 		 sel_z => SYNTHESIZED_WIRE_1,
-		 r7 => r7,
+		 sip_hold => zeroes,
 		 rx => rx,
 		 rz => rz);
 
@@ -199,6 +177,7 @@ PORT MAP(clock => clk,
 b2v_inst2 : alu
 PORT MAP(clk => clk,
 		 alu_op2_sel => opcodeIn(0),
+		 alu_carry => zero,
 		 clr_z_flag => clr_z,
 		 reset => reset,
 		 alu_op1_sel => opcodeIn(2 DOWNTO 1),
@@ -211,39 +190,30 @@ PORT MAP(clk => clk,
 
 b2v_inst3 : memory
 PORT MAP(clk => clk,
-		 dm_address => SYNTHESIZED_WIRE_7,
-		 pm_address => SYNTHESIZED_WIRE_7,
-		 dm_outdata => SYNTHESIZED_WIRE_6,
+		 dm_wr => zero,
+		 dm_address => SYNTHESIZED_WIRE_6,
+		 dm_indata => zeroes,
+		 pm_address => SYNTHESIZED_WIRE_6,
+		 dm_outdata => dmOut,
 		 pm_outdata => SYNTHESIZED_WIRE_5);
-
-
-b2v_inst4 : registers
-PORT MAP(clk => clk,
-		 reset => reset,
-		 dpcr_lsb_sel => dpcr_lsb_sel,
-		 dpcr_wr => dpcr_wr,
-		 ir_operand => operand,
-		 r7 => r7,
-		 rx => rx,
-		 dpcr => dpcr);
 
 
 b2v_inst5 : program_counter
 PORT MAP(clock => clk,
 		 z => Z,
 		 alu_count => data_out,
-		 in_count => SYNTHESIZED_WIRE_7,
+		 in_count => SYNTHESIZED_WIRE_6,
 		 increment => increment,
 		 operand_count => operand,
 		 rx_count => rx,
 		 rz_data => rz,
-		 out_count => SYNTHESIZED_WIRE_7);
+		 out_count => SYNTHESIZED_WIRE_6);
 
 
 b2v_inst7 : instruction_reg
 PORT MAP(clock => clk,
 		 instruction => SYNTHESIZED_WIRE_5,
-		 operandIn => SYNTHESIZED_WIRE_6,
+		 operandIn => dmOut,
 		 address_method => am,
 		 opcode => ir_opcode,
 		 operand => operand,

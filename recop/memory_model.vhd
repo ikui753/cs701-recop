@@ -104,7 +104,7 @@ begin
 	begin
 		if falling_edge(clk) then
 			pm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
-			dm_outdata <= memory(to_integer(unsigned(dm_address + 1))); -- memory is an array
+			dm_outdata <= memory(to_integer(unsigned(pm_address)) + 1); -- memory is an array
 		end if;
 	end process;
 
