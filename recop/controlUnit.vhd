@@ -52,24 +52,31 @@ begin
             -- wren_signal <= '0';
             -- ... and so on for other control signals
         elsif rising_edge(clk) then
-            -- Based on the opcode, generate control signals
-            -- Use a case statement or if-elsif-else structure
-            -- For example:
             case opcodeIn is
 					when ldr =>
+						-- check address method
 						case address_method is
 							when am_inherent =>
+								-- nothing
+							when am_immediate => -- LDR RZ #Operand
 								
-							when am_immediate =>
-								-- set control signals 
 								rf_sel <= "0000";
 								ld_r <= '1';
 								rf_init <= '0';
-							when am_direct =>
+							when am_direct => -- LDR RZ $Operand
 								
-							when am_register =>
+							when am_register => -- LDR RZ M[Rx]
 								
-					when "000010" =>
+						end case;
+						
+					--when str =>
+--						when am_inherent => -- None
+--							
+--						when am_immediate => -- M[Rz] <- Operand
+--							
+--						when am_direct => -- M[Operand] 
+--							
+--						when am_register => -- m[Rz] <- Rx
 					
                when others =>
 						-- noop
