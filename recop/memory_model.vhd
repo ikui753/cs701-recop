@@ -25,8 +25,9 @@ entity memory is
 end memory;
 
 architecture beh of memory is
-	type memory_array is array (31 downto 0) of bit_16;
-	signal memory: memory_array:=(X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
+	type memory_array is array (1 downto 0) of bit_16;
+	signal memory: memory_array:=(
+	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",
 	--am_immediate&present&X"d"&X"d",
 	--X"0000",

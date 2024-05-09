@@ -25,37 +25,36 @@ end program_counter;
 architecture pc of program_counter is
 begin
     process(clock)
-    begin
-        if rising_edge(clock) then
-					case increment is
-						when "000" =>
-							out_count <= "0000000000000000"; -- initialise at 0
-						when "001" =>
-							out_count <= in_count + 1; -- normal operation, go to next address
-						when "010" =>
-							out_count <= alu_count;
-						when "100" =>
-							out_count <= rx_count;
-						when "101" =>
-							out_count <= operand_count;
-						when "110" =>
-							-- PRESENT Rz #Operand -> jump to operand if Rz = 0
-							if rz_data = "0000000000000000" then
-								out_count <= operand_count;
-							else
-								out_count <= in_count + 4;
-							end if;
-						when "111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
-							if z = '1' then
-								out_count <= operand_count;
-							else
-								out_count <= in_count + 4; -- continue normal execution
-							end if;
-						when others =>
-							out_count <= "0000000000000000"; -- reset
-					end case;
-			else
-				 out_count <= in_count;
-        end if;
-    end process;
+begin
+    if rising_edge(clock) then
+        case increment is
+            when "000" =>
+                out_count <= "0000000000000000"; -- initialise at 0
+            when "001" =>
+                out_count <= in_count + 1; -- normal operation, go to next address
+            when "010" =>
+                out_count <= alu_count;
+            when "100" =>
+                out_count <= rx_count;
+            when "101" =>
+                out_count <= operand_count;
+            when "110" =>
+                -- PRESENT Rz #Operand -> jump to operand if Rz = 0
+                if rz_data = "0000000000000000" then
+                    out_count <= operand_count;
+                else
+                    out_count <= in_count + 4;
+                end if;
+            when "111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
+                if z = '1' then
+                    out_count <= operand_count;
+                else
+                    out_count <= in_count + 4; -- continue normal execution
+                end if;
+            when others =>
+                out_count <= "0000000000000000"; -- reset
+        end case;
+    end if;
+end process;
+
 end architecture;
