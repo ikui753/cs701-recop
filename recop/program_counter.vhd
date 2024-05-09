@@ -31,7 +31,7 @@ begin
 						when "000" =>
 							out_count <= "0000000000000000"; -- initialise at 0
 						when "001" =>
-							out_count <= in_count + 4; -- normal operation, go to next count
+							out_count <= in_count + 1; -- normal operation, go to next address
 						when "010" =>
 							out_count <= alu_count;
 						when "100" =>

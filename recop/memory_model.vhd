@@ -53,27 +53,31 @@ architecture beh of memory is
 	-- am_immediate&datacall&X"b"&X"b",	
 	-- X"001f",
 	-- am_direct&ldr&X"6"&X"7",
-	X"0015",
-	am_direct&ldr&X"0"&X"0",
-	X"0015",
-	am_direct&strpc&X"0"&X"0",
-	X"0001",
-	am_immediate&max&X"c"&X"c",
-	am_register&ssop&X"4"&X"4",
-	am_register&lsip&X"4"&X"4",
-	am_register&ssvop&X"3"&X"3",
-	am_inherent&cer&X"0"&X"0",
-	am_inherent&ceot&X"0"&X"0",
-	am_inherent&seot&X"0"&X"0",
-	am_register&ler&X"3"&X"3",
-	X"0008",
-	am_immediate&ldr&X"e"&X"e",
-	X"400a",
-	am_immediate&subr&X"1"&X"8",
-	X"000b",
-	am_immediate&andr&X"0"&X"0",
-	am_register&orr&X"2"&X"a",
-	am_register&addr&X"5"&X"2");
+--	X"0015",
+--	am_direct&ldr&X"0"&X"0",
+--	X"0015");
+--	am_direct&strpc&X"0"&X"0",
+--	X"0001",
+--	am_immediate&max&X"c"&X"c",
+--	am_register&ssop&X"4"&X"4",
+--	am_register&lsip&X"4"&X"4",
+--	am_register&ssvop&X"3"&X"3",
+--	am_inherent&cer&X"0"&X"0",
+--	am_inherent&ceot&X"0"&X"0",
+--	am_inherent&seot&X"0"&X"0",
+--	am_register&ler&X"3"&X"3",
+--	X"0008",
+--	am_immediate&ldr&X"e"&X"e",
+--	X"400a",
+--	am_immediate&subvr&X"1"&X"8",
+--	X"000b");
+--	am_immediate&andr&X"0"&X"0",
+--	am_register&orr&X"2"&X"a",
+--	am_register&addr&X"5"&X"2");
+	am_immediate&ldr&x"1"&x"0",
+	x"0001"); -- ld $1, $0, 0x1
+
+	
 
 begin
 	-- process (clk)
@@ -100,7 +104,7 @@ begin
 	begin
 		if falling_edge(clk) then
 			pm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
-			dm_outdata <= memory(to_integer(unsigned(dm_address))); -- memory is an array
+			dm_outdata <= memory(to_integer(unsigned(dm_address + 1))); -- memory is an array
 		end if;
 	end process;
 
