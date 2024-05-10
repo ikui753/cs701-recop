@@ -1,46 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/Waveform.vwf" --testbench_file="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/Waveform.vwf" --testbench_file="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/" recop -c recop</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/" recop -c recop</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vcom -work work recop.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst
-vcd file -direction recop.msim.vcd
-vcd add -internal progCounterTest_vhd_vec_tst/*
-vcd add -internal progCounterTest_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vcom -work work recop.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax progCounterTest_vhd_vec_tst/i1=recop_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst
-vcd file -direction recop.msim.vcd
-vcd add -internal progCounterTest_vhd_vec_tst/*
-vcd add -internal progCounterTest_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-</modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -255,6 +212,16 @@ SIGNAL("out_count[0]")
 	PARENT = "out_count";
 }
 
+SIGNAL("increment[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -262,7 +229,105 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 			LEVEL 0 FOR 10.0;
 			LEVEL 1 FOR 10.0;
 		}
@@ -274,7 +339,12 @@ TRANSITION_LIST("out_count[15]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -283,7 +353,12 @@ TRANSITION_LIST("out_count[14]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -292,7 +367,12 @@ TRANSITION_LIST("out_count[13]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -301,7 +381,12 @@ TRANSITION_LIST("out_count[12]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -310,7 +395,12 @@ TRANSITION_LIST("out_count[11]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -319,7 +409,12 @@ TRANSITION_LIST("out_count[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -328,7 +423,12 @@ TRANSITION_LIST("out_count[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -337,7 +437,12 @@ TRANSITION_LIST("out_count[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -346,7 +451,12 @@ TRANSITION_LIST("out_count[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -355,7 +465,12 @@ TRANSITION_LIST("out_count[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -364,7 +479,12 @@ TRANSITION_LIST("out_count[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -373,7 +493,12 @@ TRANSITION_LIST("out_count[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -382,7 +507,12 @@ TRANSITION_LIST("out_count[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -391,7 +521,12 @@ TRANSITION_LIST("out_count[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -400,7 +535,12 @@ TRANSITION_LIST("out_count[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
 	}
 }
 
@@ -409,7 +549,167 @@ TRANSITION_LIST("out_count[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL X FOR 990.0;
+		}
+	}
+}
+
+TRANSITION_LIST("increment[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 7.0;
+			LEVEL 0 FOR 6.0;
+		}
 	}
 }
 
@@ -426,7 +726,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 1;
 	TREE_LEVEL = 0;
 	CHILDREN = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17;
@@ -436,7 +736,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[15]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -446,7 +746,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[14]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -456,7 +756,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[13]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -466,7 +766,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[12]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -476,7 +776,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[11]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -486,7 +786,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[10]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -496,7 +796,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[9]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -506,7 +806,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[8]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -516,7 +816,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -526,7 +826,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -536,7 +836,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -546,7 +846,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -556,7 +856,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -566,7 +866,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -576,7 +876,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
 	PARENT = 1;
@@ -586,10 +886,19 @@ DISPLAY_LINE
 {
 	CHANNEL = "out_count[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
 	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "increment[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

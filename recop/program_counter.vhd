@@ -24,7 +24,7 @@ end program_counter;
 
 architecture pc of program_counter is
 begin
-    process(clock)
+    process(clock, increment)
 begin
     if rising_edge(clock) then
         case increment is
@@ -43,13 +43,13 @@ begin
                 if rz_data = "0000000000000000" then
                     out_count <= operand_count;
                 else
-                    out_count <= in_count + 4;
+                    out_count <= in_count + 1;
                 end if;
             when "111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
                 if z = '1' then
                     out_count <= operand_count;
                 else
-                    out_count <= in_count + 4; -- continue normal execution
+                    out_count <= in_count + 1; -- continue normal execution
                 end if;
             when others =>
                 out_count <= "0000000000000000"; -- reset

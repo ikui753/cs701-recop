@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/10/2024 11:40:18"
+-- Generated on "05/10/2024 12:09:38"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -35,7 +35,6 @@ ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL alu_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
-SIGNAL in_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL operand_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL out_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -46,7 +45,6 @@ COMPONENT progCounterTest
 	PORT (
 	alu_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	clk : IN STD_LOGIC;
-	in_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	increment : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 	operand_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	out_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -61,7 +59,6 @@ BEGIN
 -- list connections between master ports and signals
 	alu_count => alu_count,
 	clk => clk,
-	in_count => in_count,
 	increment => increment,
 	operand_count => operand_count,
 	out_count => out_count,
@@ -81,4 +78,24 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
+
+-- increment[0]
+t_prcs_increment_0: PROCESS
+BEGIN
+	increment(0) <= '1';
+	WAIT FOR 480000 ps;
+	increment(0) <= '0';
+	WAIT FOR 3000 ps;
+	increment(0) <= '1';
+	WAIT FOR 7000 ps;
+	FOR i IN 1 TO 36
+	LOOP
+		increment(0) <= '0';
+		WAIT FOR 7000 ps;
+		increment(0) <= '1';
+		WAIT FOR 7000 ps;
+	END LOOP;
+	increment(0) <= '0';
+WAIT;
+END PROCESS t_prcs_increment_0;
 END progCounterTest_arch;
