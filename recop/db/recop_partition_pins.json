@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "address_method[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address_method[0]",
+					"strict" : false
+				},
+				{
 					"name" : "dm_outdata[15]",
 					"strict" : false
 				},
@@ -65,6 +73,30 @@
 				},
 				{
 					"name" : "dm_outdata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[5]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[4]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[3]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[0]",
 					"strict" : false
 				},
 				{
@@ -196,11 +228,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "dm_wr",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "dm_wr",
 					"strict" : false
 				},
 				{

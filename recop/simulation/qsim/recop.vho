@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/10/2024 16:49:06"
+-- DATE "05/10/2024 16:58:35"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -37,7 +37,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	progCounterTest IS
     PORT (
-	dm_outdata : OUT std_logic_vector(15 DOWNTO 0);
+	address_method : OUT std_logic_vector(1 DOWNTO 0);
 	clk : IN std_logic;
 	dm_wr : IN std_logic;
 	z : IN std_logic;
@@ -48,8 +48,13 @@ ENTITY 	progCounterTest IS
 	rx_count : IN std_logic_vector(15 DOWNTO 0);
 	rz_data : IN std_logic_vector(15 DOWNTO 0);
 	dm_indata : IN std_logic_vector(15 DOWNTO 0);
+	dm_outdata : OUT std_logic_vector(15 DOWNTO 0);
+	opcode : OUT std_logic_vector(5 DOWNTO 0);
 	out_count : OUT std_logic_vector(15 DOWNTO 0);
-	pm_outdata : OUT std_logic_vector(15 DOWNTO 0)
+	pm_outdata : OUT std_logic_vector(15 DOWNTO 0);
+	rxData : OUT std_logic_vector(15 DOWNTO 0);
+	rf_input_sel : IN std_logic_vector(3 DOWNTO 0);
+	rzData : OUT std_logic_vector(15 DOWNTO 0)
 	);
 END progCounterTest;
 
@@ -63,7 +68,7 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_dm_outdata : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_address_method : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_clk : std_logic;
 SIGNAL ww_dm_wr : std_logic;
 SIGNAL ww_z : std_logic;
@@ -74,8 +79,13 @@ SIGNAL ww_operand_count : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_rx_count : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_rz_data : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_dm_indata : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_dm_outdata : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_opcode : std_logic_vector(5 DOWNTO 0);
 SIGNAL ww_out_count : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_pm_outdata : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_rxData : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_rf_input_sel : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_rzData : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTADATAIN_bus\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTAADDR_bus\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTBADDR_bus\ : std_logic_vector(1 DOWNTO 0);
@@ -204,6 +214,12 @@ SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTADATAIN_bus\ : std_lo
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTAADDR_bus\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBADDR_bus\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus\ : std_logic_vector(0 DOWNTO 0);
+SIGNAL \rf_input_sel[3]~input_o\ : std_logic;
+SIGNAL \rf_input_sel[2]~input_o\ : std_logic;
+SIGNAL \rf_input_sel[1]~input_o\ : std_logic;
+SIGNAL \rf_input_sel[0]~input_o\ : std_logic;
+SIGNAL \address_method[1]~output_o\ : std_logic;
+SIGNAL \address_method[0]~output_o\ : std_logic;
 SIGNAL \dm_outdata[15]~output_o\ : std_logic;
 SIGNAL \dm_outdata[14]~output_o\ : std_logic;
 SIGNAL \dm_outdata[13]~output_o\ : std_logic;
@@ -220,6 +236,12 @@ SIGNAL \dm_outdata[3]~output_o\ : std_logic;
 SIGNAL \dm_outdata[2]~output_o\ : std_logic;
 SIGNAL \dm_outdata[1]~output_o\ : std_logic;
 SIGNAL \dm_outdata[0]~output_o\ : std_logic;
+SIGNAL \opcode[5]~output_o\ : std_logic;
+SIGNAL \opcode[4]~output_o\ : std_logic;
+SIGNAL \opcode[3]~output_o\ : std_logic;
+SIGNAL \opcode[2]~output_o\ : std_logic;
+SIGNAL \opcode[1]~output_o\ : std_logic;
+SIGNAL \opcode[0]~output_o\ : std_logic;
 SIGNAL \out_count[15]~output_o\ : std_logic;
 SIGNAL \out_count[14]~output_o\ : std_logic;
 SIGNAL \out_count[13]~output_o\ : std_logic;
@@ -252,8 +274,40 @@ SIGNAL \pm_outdata[3]~output_o\ : std_logic;
 SIGNAL \pm_outdata[2]~output_o\ : std_logic;
 SIGNAL \pm_outdata[1]~output_o\ : std_logic;
 SIGNAL \pm_outdata[0]~output_o\ : std_logic;
-SIGNAL \dm_wr~input_o\ : std_logic;
+SIGNAL \rxData[15]~output_o\ : std_logic;
+SIGNAL \rxData[14]~output_o\ : std_logic;
+SIGNAL \rxData[13]~output_o\ : std_logic;
+SIGNAL \rxData[12]~output_o\ : std_logic;
+SIGNAL \rxData[11]~output_o\ : std_logic;
+SIGNAL \rxData[10]~output_o\ : std_logic;
+SIGNAL \rxData[9]~output_o\ : std_logic;
+SIGNAL \rxData[8]~output_o\ : std_logic;
+SIGNAL \rxData[7]~output_o\ : std_logic;
+SIGNAL \rxData[6]~output_o\ : std_logic;
+SIGNAL \rxData[5]~output_o\ : std_logic;
+SIGNAL \rxData[4]~output_o\ : std_logic;
+SIGNAL \rxData[3]~output_o\ : std_logic;
+SIGNAL \rxData[2]~output_o\ : std_logic;
+SIGNAL \rxData[1]~output_o\ : std_logic;
+SIGNAL \rxData[0]~output_o\ : std_logic;
+SIGNAL \rzData[15]~output_o\ : std_logic;
+SIGNAL \rzData[14]~output_o\ : std_logic;
+SIGNAL \rzData[13]~output_o\ : std_logic;
+SIGNAL \rzData[12]~output_o\ : std_logic;
+SIGNAL \rzData[11]~output_o\ : std_logic;
+SIGNAL \rzData[10]~output_o\ : std_logic;
+SIGNAL \rzData[9]~output_o\ : std_logic;
+SIGNAL \rzData[8]~output_o\ : std_logic;
+SIGNAL \rzData[7]~output_o\ : std_logic;
+SIGNAL \rzData[6]~output_o\ : std_logic;
+SIGNAL \rzData[5]~output_o\ : std_logic;
+SIGNAL \rzData[4]~output_o\ : std_logic;
+SIGNAL \rzData[3]~output_o\ : std_logic;
+SIGNAL \rzData[2]~output_o\ : std_logic;
+SIGNAL \rzData[1]~output_o\ : std_logic;
+SIGNAL \rzData[0]~output_o\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
+SIGNAL \dm_wr~input_o\ : std_logic;
 SIGNAL \dm_indata[15]~input_o\ : std_logic;
 SIGNAL \increment[2]~input_o\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
@@ -295,8 +349,12 @@ SIGNAL \inst|out_count[15]~20_combout\ : std_logic;
 SIGNAL \inst|out_count~16_combout\ : std_logic;
 SIGNAL \inst|out_count[15]~1_combout\ : std_logic;
 SIGNAL \inst|out_count[15]~2_combout\ : std_logic;
-SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15~portbdataout\ : std_logic;
+SIGNAL \inst|out_count[0]~_wirecell_combout\ : std_logic;
+SIGNAL \inst1|Add0~0_combout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \dm_indata[14]~input_o\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a14~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a14~portbdataout\ : std_logic;
 SIGNAL \dm_indata[13]~input_o\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a13~portbdataout\ : std_logic;
@@ -326,6 +384,12 @@ SIGNAL \dm_indata[1]~input_o\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a1~portbdataout\ : std_logic;
 SIGNAL \dm_indata[0]~input_o\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a0~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a13~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a12~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a11~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a10~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a9~portbdataout\ : std_logic;
+SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a8~portbdataout\ : std_logic;
 SIGNAL \inst|Add0~58\ : std_logic;
 SIGNAL \inst|Add0~53_sumout\ : std_logic;
 SIGNAL \alu_count[2]~input_o\ : std_logic;
@@ -410,16 +474,6 @@ SIGNAL \alu_count[15]~input_o\ : std_logic;
 SIGNAL \rx_count[15]~input_o\ : std_logic;
 SIGNAL \operand_count[15]~input_o\ : std_logic;
 SIGNAL \inst|out_count~0_combout\ : std_logic;
-SIGNAL \inst|out_count[0]~_wirecell_combout\ : std_logic;
-SIGNAL \inst1|Add0~0_combout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a15~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a14~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a13~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a12~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a11~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a10~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a9~portbdataout\ : std_logic;
-SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a8~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a7~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a6~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a5~portbdataout\ : std_logic;
@@ -429,29 +483,32 @@ SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a2~portbdataout\ : std_logic
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a1~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0~portbdataout\ : std_logic;
 SIGNAL \inst|out_count\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \ALT_INV_alu_count[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[6]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[6]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[6]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[7]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[7]~input_o\ : std_logic;
+SIGNAL \inst2|address_method\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \inst2|opcode\ : std_logic_vector(5 DOWNTO 0);
+SIGNAL \inst|ALT_INV_out_count\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst|ALT_INV_out_count~18_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count~17_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Equal0~2_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count[15]~24_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count[15]~20_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Mux15~0_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~57_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~53_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~49_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~45_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~41_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~37_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~33_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~29_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~25_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~21_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~17_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
 SIGNAL \ALT_INV_alu_count[7]~input_o\ : std_logic;
 SIGNAL \ALT_INV_operand_count[8]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rx_count[8]~input_o\ : std_logic;
@@ -499,34 +556,33 @@ SIGNAL \ALT_INV_operand_count[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rx_count[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_alu_count[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_clk~input_o\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count~18_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count~17_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Equal0~2_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst|ALT_INV_out_count[15]~24_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count[15]~20_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Mux15~0_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~57_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~53_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~49_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~45_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~41_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~37_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~33_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~29_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~25_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~21_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~17_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
+SIGNAL \ALT_INV_alu_count[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[6]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[6]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[6]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[7]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[7]~input_o\ : std_logic;
 
 BEGIN
 
-dm_outdata <= ww_dm_outdata;
+address_method <= ww_address_method;
 ww_clk <= clk;
 ww_dm_wr <= dm_wr;
 ww_z <= z;
@@ -537,8 +593,13 @@ ww_operand_count <= operand_count;
 ww_rx_count <= rx_count;
 ww_rz_data <= rz_data;
 ww_dm_indata <= dm_indata;
+dm_outdata <= ww_dm_outdata;
+opcode <= ww_opcode;
 out_count <= ww_out_count;
 pm_outdata <= ww_pm_outdata;
+rxData <= ww_rxData;
+ww_rf_input_sel <= rf_input_sel;
+rzData <= ww_rzData;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -798,29 +859,45 @@ ww_devpor <= devpor;
 \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a0~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus\(0);
-\ALT_INV_alu_count[0]~input_o\ <= NOT \alu_count[0]~input_o\;
-\ALT_INV_operand_count[0]~input_o\ <= NOT \operand_count[0]~input_o\;
-\ALT_INV_rx_count[0]~input_o\ <= NOT \rx_count[0]~input_o\;
-\ALT_INV_operand_count[1]~input_o\ <= NOT \operand_count[1]~input_o\;
-\ALT_INV_rx_count[1]~input_o\ <= NOT \rx_count[1]~input_o\;
-\ALT_INV_alu_count[1]~input_o\ <= NOT \alu_count[1]~input_o\;
-\ALT_INV_operand_count[2]~input_o\ <= NOT \operand_count[2]~input_o\;
-\ALT_INV_rx_count[2]~input_o\ <= NOT \rx_count[2]~input_o\;
-\ALT_INV_alu_count[2]~input_o\ <= NOT \alu_count[2]~input_o\;
-\ALT_INV_operand_count[3]~input_o\ <= NOT \operand_count[3]~input_o\;
-\ALT_INV_rx_count[3]~input_o\ <= NOT \rx_count[3]~input_o\;
-\ALT_INV_alu_count[3]~input_o\ <= NOT \alu_count[3]~input_o\;
-\ALT_INV_operand_count[4]~input_o\ <= NOT \operand_count[4]~input_o\;
-\ALT_INV_rx_count[4]~input_o\ <= NOT \rx_count[4]~input_o\;
-\ALT_INV_alu_count[4]~input_o\ <= NOT \alu_count[4]~input_o\;
-\ALT_INV_operand_count[5]~input_o\ <= NOT \operand_count[5]~input_o\;
-\ALT_INV_rx_count[5]~input_o\ <= NOT \rx_count[5]~input_o\;
-\ALT_INV_alu_count[5]~input_o\ <= NOT \alu_count[5]~input_o\;
-\ALT_INV_operand_count[6]~input_o\ <= NOT \operand_count[6]~input_o\;
-\ALT_INV_rx_count[6]~input_o\ <= NOT \rx_count[6]~input_o\;
-\ALT_INV_alu_count[6]~input_o\ <= NOT \alu_count[6]~input_o\;
-\ALT_INV_operand_count[7]~input_o\ <= NOT \operand_count[7]~input_o\;
-\ALT_INV_rx_count[7]~input_o\ <= NOT \rx_count[7]~input_o\;
+\inst|ALT_INV_out_count\(15) <= NOT \inst|out_count\(15);
+\inst|ALT_INV_out_count~18_combout\ <= NOT \inst|out_count~18_combout\;
+\inst|ALT_INV_out_count~17_combout\ <= NOT \inst|out_count~17_combout\;
+\inst|ALT_INV_Equal0~2_combout\ <= NOT \inst|Equal0~2_combout\;
+\inst|ALT_INV_Equal0~1_combout\ <= NOT \inst|Equal0~1_combout\;
+\inst|ALT_INV_Equal0~0_combout\ <= NOT \inst|Equal0~0_combout\;
+\inst|ALT_INV_out_count\(0) <= NOT \inst|out_count\(0);
+\inst|ALT_INV_out_count[15]~24_combout\ <= NOT \inst|out_count[15]~24_combout\;
+\inst|ALT_INV_out_count[15]~20_combout\ <= NOT \inst|out_count[15]~20_combout\;
+\inst|ALT_INV_Mux15~0_combout\ <= NOT \inst|Mux15~0_combout\;
+\inst|ALT_INV_Add0~57_sumout\ <= NOT \inst|Add0~57_sumout\;
+\inst|ALT_INV_Add0~53_sumout\ <= NOT \inst|Add0~53_sumout\;
+\inst|ALT_INV_Add0~49_sumout\ <= NOT \inst|Add0~49_sumout\;
+\inst|ALT_INV_Add0~45_sumout\ <= NOT \inst|Add0~45_sumout\;
+\inst|ALT_INV_Add0~41_sumout\ <= NOT \inst|Add0~41_sumout\;
+\inst|ALT_INV_Add0~37_sumout\ <= NOT \inst|Add0~37_sumout\;
+\inst|ALT_INV_Add0~33_sumout\ <= NOT \inst|Add0~33_sumout\;
+\inst|ALT_INV_Add0~29_sumout\ <= NOT \inst|Add0~29_sumout\;
+\inst|ALT_INV_Add0~25_sumout\ <= NOT \inst|Add0~25_sumout\;
+\inst|ALT_INV_Add0~21_sumout\ <= NOT \inst|Add0~21_sumout\;
+\inst|ALT_INV_Add0~17_sumout\ <= NOT \inst|Add0~17_sumout\;
+\inst|ALT_INV_Add0~13_sumout\ <= NOT \inst|Add0~13_sumout\;
+\inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
+\inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
+\inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
+\inst|ALT_INV_out_count\(1) <= NOT \inst|out_count\(1);
+\inst|ALT_INV_out_count\(2) <= NOT \inst|out_count\(2);
+\inst|ALT_INV_out_count\(3) <= NOT \inst|out_count\(3);
+\inst|ALT_INV_out_count\(4) <= NOT \inst|out_count\(4);
+\inst|ALT_INV_out_count\(5) <= NOT \inst|out_count\(5);
+\inst|ALT_INV_out_count\(6) <= NOT \inst|out_count\(6);
+\inst|ALT_INV_out_count\(7) <= NOT \inst|out_count\(7);
+\inst|ALT_INV_out_count\(8) <= NOT \inst|out_count\(8);
+\inst|ALT_INV_out_count\(9) <= NOT \inst|out_count\(9);
+\inst|ALT_INV_out_count\(10) <= NOT \inst|out_count\(10);
+\inst|ALT_INV_out_count\(11) <= NOT \inst|out_count\(11);
+\inst|ALT_INV_out_count\(12) <= NOT \inst|out_count\(12);
+\inst|ALT_INV_out_count\(13) <= NOT \inst|out_count\(13);
+\inst|ALT_INV_out_count\(14) <= NOT \inst|out_count\(14);
 \ALT_INV_alu_count[7]~input_o\ <= NOT \alu_count[7]~input_o\;
 \ALT_INV_operand_count[8]~input_o\ <= NOT \operand_count[8]~input_o\;
 \ALT_INV_rx_count[8]~input_o\ <= NOT \rx_count[8]~input_o\;
@@ -868,45 +945,53 @@ ww_devpor <= devpor;
 \ALT_INV_rx_count[15]~input_o\ <= NOT \rx_count[15]~input_o\;
 \ALT_INV_alu_count[15]~input_o\ <= NOT \alu_count[15]~input_o\;
 \ALT_INV_clk~input_o\ <= NOT \clk~input_o\;
-\inst|ALT_INV_out_count~18_combout\ <= NOT \inst|out_count~18_combout\;
-\inst|ALT_INV_out_count~17_combout\ <= NOT \inst|out_count~17_combout\;
-\inst|ALT_INV_Equal0~2_combout\ <= NOT \inst|Equal0~2_combout\;
-\inst|ALT_INV_Equal0~1_combout\ <= NOT \inst|Equal0~1_combout\;
-\inst|ALT_INV_Equal0~0_combout\ <= NOT \inst|Equal0~0_combout\;
-\inst|ALT_INV_out_count\(0) <= NOT \inst|out_count\(0);
-\inst|ALT_INV_out_count[15]~24_combout\ <= NOT \inst|out_count[15]~24_combout\;
-\inst|ALT_INV_out_count[15]~20_combout\ <= NOT \inst|out_count[15]~20_combout\;
-\inst|ALT_INV_Mux15~0_combout\ <= NOT \inst|Mux15~0_combout\;
-\inst|ALT_INV_Add0~57_sumout\ <= NOT \inst|Add0~57_sumout\;
-\inst|ALT_INV_Add0~53_sumout\ <= NOT \inst|Add0~53_sumout\;
-\inst|ALT_INV_Add0~49_sumout\ <= NOT \inst|Add0~49_sumout\;
-\inst|ALT_INV_Add0~45_sumout\ <= NOT \inst|Add0~45_sumout\;
-\inst|ALT_INV_Add0~41_sumout\ <= NOT \inst|Add0~41_sumout\;
-\inst|ALT_INV_Add0~37_sumout\ <= NOT \inst|Add0~37_sumout\;
-\inst|ALT_INV_Add0~33_sumout\ <= NOT \inst|Add0~33_sumout\;
-\inst|ALT_INV_Add0~29_sumout\ <= NOT \inst|Add0~29_sumout\;
-\inst|ALT_INV_Add0~25_sumout\ <= NOT \inst|Add0~25_sumout\;
-\inst|ALT_INV_Add0~21_sumout\ <= NOT \inst|Add0~21_sumout\;
-\inst|ALT_INV_Add0~17_sumout\ <= NOT \inst|Add0~17_sumout\;
-\inst|ALT_INV_Add0~13_sumout\ <= NOT \inst|Add0~13_sumout\;
-\inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
-\inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
-\inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
-\inst|ALT_INV_out_count\(1) <= NOT \inst|out_count\(1);
-\inst|ALT_INV_out_count\(2) <= NOT \inst|out_count\(2);
-\inst|ALT_INV_out_count\(3) <= NOT \inst|out_count\(3);
-\inst|ALT_INV_out_count\(4) <= NOT \inst|out_count\(4);
-\inst|ALT_INV_out_count\(5) <= NOT \inst|out_count\(5);
-\inst|ALT_INV_out_count\(6) <= NOT \inst|out_count\(6);
-\inst|ALT_INV_out_count\(7) <= NOT \inst|out_count\(7);
-\inst|ALT_INV_out_count\(8) <= NOT \inst|out_count\(8);
-\inst|ALT_INV_out_count\(9) <= NOT \inst|out_count\(9);
-\inst|ALT_INV_out_count\(10) <= NOT \inst|out_count\(10);
-\inst|ALT_INV_out_count\(11) <= NOT \inst|out_count\(11);
-\inst|ALT_INV_out_count\(12) <= NOT \inst|out_count\(12);
-\inst|ALT_INV_out_count\(13) <= NOT \inst|out_count\(13);
-\inst|ALT_INV_out_count\(14) <= NOT \inst|out_count\(14);
-\inst|ALT_INV_out_count\(15) <= NOT \inst|out_count\(15);
+\ALT_INV_alu_count[0]~input_o\ <= NOT \alu_count[0]~input_o\;
+\ALT_INV_operand_count[0]~input_o\ <= NOT \operand_count[0]~input_o\;
+\ALT_INV_rx_count[0]~input_o\ <= NOT \rx_count[0]~input_o\;
+\ALT_INV_operand_count[1]~input_o\ <= NOT \operand_count[1]~input_o\;
+\ALT_INV_rx_count[1]~input_o\ <= NOT \rx_count[1]~input_o\;
+\ALT_INV_alu_count[1]~input_o\ <= NOT \alu_count[1]~input_o\;
+\ALT_INV_operand_count[2]~input_o\ <= NOT \operand_count[2]~input_o\;
+\ALT_INV_rx_count[2]~input_o\ <= NOT \rx_count[2]~input_o\;
+\ALT_INV_alu_count[2]~input_o\ <= NOT \alu_count[2]~input_o\;
+\ALT_INV_operand_count[3]~input_o\ <= NOT \operand_count[3]~input_o\;
+\ALT_INV_rx_count[3]~input_o\ <= NOT \rx_count[3]~input_o\;
+\ALT_INV_alu_count[3]~input_o\ <= NOT \alu_count[3]~input_o\;
+\ALT_INV_operand_count[4]~input_o\ <= NOT \operand_count[4]~input_o\;
+\ALT_INV_rx_count[4]~input_o\ <= NOT \rx_count[4]~input_o\;
+\ALT_INV_alu_count[4]~input_o\ <= NOT \alu_count[4]~input_o\;
+\ALT_INV_operand_count[5]~input_o\ <= NOT \operand_count[5]~input_o\;
+\ALT_INV_rx_count[5]~input_o\ <= NOT \rx_count[5]~input_o\;
+\ALT_INV_alu_count[5]~input_o\ <= NOT \alu_count[5]~input_o\;
+\ALT_INV_operand_count[6]~input_o\ <= NOT \operand_count[6]~input_o\;
+\ALT_INV_rx_count[6]~input_o\ <= NOT \rx_count[6]~input_o\;
+\ALT_INV_alu_count[6]~input_o\ <= NOT \alu_count[6]~input_o\;
+\ALT_INV_operand_count[7]~input_o\ <= NOT \operand_count[7]~input_o\;
+\ALT_INV_rx_count[7]~input_o\ <= NOT \rx_count[7]~input_o\;
+
+\address_method[1]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|address_method\(1),
+	devoe => ww_devoe,
+	o => \address_method[1]~output_o\);
+
+\address_method[0]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|address_method\(0),
+	devoe => ww_devoe,
+	o => \address_method[0]~output_o\);
 
 \dm_outdata[15]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -1099,6 +1184,78 @@ PORT MAP (
 	i => \inst1|memory_rtl_1|auto_generated|ram_block1a0~portbdataout\,
 	devoe => ww_devoe,
 	o => \dm_outdata[0]~output_o\);
+
+\opcode[5]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|opcode\(5),
+	devoe => ww_devoe,
+	o => \opcode[5]~output_o\);
+
+\opcode[4]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|opcode\(4),
+	devoe => ww_devoe,
+	o => \opcode[4]~output_o\);
+
+\opcode[3]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|opcode\(3),
+	devoe => ww_devoe,
+	o => \opcode[3]~output_o\);
+
+\opcode[2]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|opcode\(2),
+	devoe => ww_devoe,
+	o => \opcode[2]~output_o\);
+
+\opcode[1]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|opcode\(1),
+	devoe => ww_devoe,
+	o => \opcode[1]~output_o\);
+
+\opcode[0]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \inst2|opcode\(0),
+	devoe => ww_devoe,
+	o => \opcode[0]~output_o\);
 
 \out_count[15]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -1484,15 +1641,389 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \pm_outdata[0]~output_o\);
 
-\dm_wr~input\ : cyclonev_io_ibuf
+\rxData[15]~output\ : cyclonev_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
-	simulate_z_as => "z")
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => ww_dm_wr,
-	o => \dm_wr~input_o\);
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[15]~output_o\);
+
+\rxData[14]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[14]~output_o\);
+
+\rxData[13]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[13]~output_o\);
+
+\rxData[12]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[12]~output_o\);
+
+\rxData[11]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[11]~output_o\);
+
+\rxData[10]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[10]~output_o\);
+
+\rxData[9]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[9]~output_o\);
+
+\rxData[8]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[8]~output_o\);
+
+\rxData[7]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[7]~output_o\);
+
+\rxData[6]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[6]~output_o\);
+
+\rxData[5]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[5]~output_o\);
+
+\rxData[4]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[4]~output_o\);
+
+\rxData[3]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[3]~output_o\);
+
+\rxData[2]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[2]~output_o\);
+
+\rxData[1]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[1]~output_o\);
+
+\rxData[0]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rxData[0]~output_o\);
+
+\rzData[15]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[15]~output_o\);
+
+\rzData[14]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[14]~output_o\);
+
+\rzData[13]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[13]~output_o\);
+
+\rzData[12]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[12]~output_o\);
+
+\rzData[11]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[11]~output_o\);
+
+\rzData[10]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[10]~output_o\);
+
+\rzData[9]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[9]~output_o\);
+
+\rzData[8]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[8]~output_o\);
+
+\rzData[7]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[7]~output_o\);
+
+\rzData[6]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[6]~output_o\);
+
+\rzData[5]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[5]~output_o\);
+
+\rzData[4]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[4]~output_o\);
+
+\rzData[3]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[3]~output_o\);
+
+\rzData[2]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[2]~output_o\);
+
+\rzData[1]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[1]~output_o\);
+
+\rzData[0]~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \rzData[0]~output_o\);
 
 \clk~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -1503,6 +2034,16 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_clk,
 	o => \clk~input_o\);
+
+\dm_wr~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_dm_wr,
+	o => \dm_wr~input_o\);
 
 \dm_indata[15]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -2054,6 +2595,169 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst|out_count\(1));
 
+\inst|out_count[0]~_wirecell\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst|out_count[0]~_wirecell_combout\ = !\inst|out_count\(0)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1010101010101010101010101010101010101010101010101010101010101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_out_count\(0),
+	combout => \inst|out_count[0]~_wirecell_combout\);
+
+\inst1|Add0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~0_combout\ = !\inst|out_count\(1) $ (!\inst|out_count\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_out_count\(1),
+	datab => \inst|ALT_INV_out_count\(0),
+	combout => \inst1|Add0~0_combout\);
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a15\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 15,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 15,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBDATAOUT_bus\);
+
+\inst2|address_method[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a15~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|address_method\(1));
+
+\dm_indata[14]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_dm_indata(14),
+	o => \dm_indata[14]~input_o\);
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a14\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "A",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 14,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 14,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBDATAOUT_bus\);
+
+\inst2|address_method[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a14~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|address_method\(0));
+
 \inst1|memory_rtl_1|auto_generated|ram_block1a15\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -2102,16 +2806,6 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	portbdataout => \inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTBDATAOUT_bus\);
-
-\dm_indata[14]~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_dm_indata(14),
-	o => \dm_indata[14]~input_o\);
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a14\ : cyclonev_ram_block
 -- pragma translate_off
@@ -2987,6 +3681,378 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	portbdataout => \inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTBDATAOUT_bus\);
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a13\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 13,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 13,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBDATAOUT_bus\);
+
+\inst2|opcode[5]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a13~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(5));
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a12\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "2",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 12,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 12,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBDATAOUT_bus\);
+
+\inst2|opcode[4]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a12~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(4));
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a11\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "2",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 11,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 11,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBDATAOUT_bus\);
+
+\inst2|opcode[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a11~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(3));
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a10\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 10,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 10,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBDATAOUT_bus\);
+
+\inst2|opcode[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a10~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(2));
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a9\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 9,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 9,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBDATAOUT_bus\);
+
+\inst2|opcode[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a9~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(1));
+
+\inst1|memory_rtl_0|auto_generated|ram_block1a8\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init0 => "0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
+	init_file_layout => "port_b",
+	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
+	mixed_port_feed_through_mode => "old",
+	operation_mode => "dual_port",
+	port_a_address_clear => "none",
+	port_a_address_width => 2,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 8,
+	port_a_last_address => 3,
+	port_a_logical_ram_depth => 4,
+	port_a_logical_ram_width => 16,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_address_clear => "none",
+	port_b_address_clock => "clock0",
+	port_b_address_width => 2,
+	port_b_data_out_clear => "none",
+	port_b_data_out_clock => "none",
+	port_b_data_width => 1,
+	port_b_first_address => 0,
+	port_b_first_bit_number => 8,
+	port_b_last_address => 3,
+	port_b_logical_ram_depth => 4,
+	port_b_logical_ram_width => 16,
+	port_b_read_during_write_mode => "new_data_no_nbe_read",
+	port_b_read_enable_clock => "clock0",
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portawe => \dm_wr~input_o\,
+	portbre => VCC,
+	clk0 => \ALT_INV_clk~input_o\,
+	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTADATAIN_bus\,
+	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTAADDR_bus\,
+	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBDATAOUT_bus\);
+
+\inst2|opcode[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clk~input_o\,
+	d => \inst1|memory_rtl_0|auto_generated|ram_block1a8~portbdataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(0));
 
 \inst|Add0~53\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -4134,427 +5200,6 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst|out_count\(15));
 
-\inst|out_count[0]~_wirecell\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|out_count[0]~_wirecell_combout\ = !\inst|out_count\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1010101010101010101010101010101010101010101010101010101010101010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(0),
-	combout => \inst|out_count[0]~_wirecell_combout\);
-
-\inst1|Add0~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst1|Add0~0_combout\ = !\inst|out_count\(1) $ (!\inst|out_count\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(1),
-	datab => \inst|ALT_INV_out_count\(0),
-	combout => \inst1|Add0~0_combout\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a15\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 15,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 15,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a14\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "A",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 14,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 14,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a13\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 13,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 13,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a12\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "2",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 12,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 12,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a11\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "2",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 11,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 11,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a10\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 10,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 10,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a9\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 9,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 9,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBDATAOUT_bus\);
-
-\inst1|memory_rtl_0|auto_generated|ram_block1a8\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init0 => "0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
-	init_file_layout => "port_b",
-	logical_ram_name => "memory:inst1|altsyncram:memory_rtl_0|altsyncram_jar1:auto_generated|ALTSYNCRAM",
-	mixed_port_feed_through_mode => "old",
-	operation_mode => "dual_port",
-	port_a_address_clear => "none",
-	port_a_address_width => 2,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 8,
-	port_a_last_address => 3,
-	port_a_logical_ram_depth => 4,
-	port_a_logical_ram_width => 16,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_address_clear => "none",
-	port_b_address_clock => "clock0",
-	port_b_address_width => 2,
-	port_b_data_out_clear => "none",
-	port_b_data_out_clock => "none",
-	port_b_data_width => 1,
-	port_b_first_address => 0,
-	port_b_first_bit_number => 8,
-	port_b_last_address => 3,
-	port_b_logical_ram_depth => 4,
-	port_b_logical_ram_width => 16,
-	port_b_read_during_write_mode => "new_data_no_nbe_read",
-	port_b_read_enable_clock => "clock0",
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portawe => \dm_wr~input_o\,
-	portbre => VCC,
-	clk0 => \ALT_INV_clk~input_o\,
-	portadatain => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTADATAIN_bus\,
-	portaaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTAADDR_bus\,
-	portbaddr => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBDATAOUT_bus\);
-
 \inst1|memory_rtl_0|auto_generated|ram_block1a7\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
@@ -4947,6 +5592,50 @@ PORT MAP (
 	devpor => ww_devpor,
 	portbdataout => \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus\);
 
+\rf_input_sel[3]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_rf_input_sel(3),
+	o => \rf_input_sel[3]~input_o\);
+
+\rf_input_sel[2]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_rf_input_sel(2),
+	o => \rf_input_sel[2]~input_o\);
+
+\rf_input_sel[1]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_rf_input_sel(1),
+	o => \rf_input_sel[1]~input_o\);
+
+\rf_input_sel[0]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_rf_input_sel(0),
+	o => \rf_input_sel[0]~input_o\);
+
+ww_address_method(1) <= \address_method[1]~output_o\;
+
+ww_address_method(0) <= \address_method[0]~output_o\;
+
 ww_dm_outdata(15) <= \dm_outdata[15]~output_o\;
 
 ww_dm_outdata(14) <= \dm_outdata[14]~output_o\;
@@ -4978,6 +5667,18 @@ ww_dm_outdata(2) <= \dm_outdata[2]~output_o\;
 ww_dm_outdata(1) <= \dm_outdata[1]~output_o\;
 
 ww_dm_outdata(0) <= \dm_outdata[0]~output_o\;
+
+ww_opcode(5) <= \opcode[5]~output_o\;
+
+ww_opcode(4) <= \opcode[4]~output_o\;
+
+ww_opcode(3) <= \opcode[3]~output_o\;
+
+ww_opcode(2) <= \opcode[2]~output_o\;
+
+ww_opcode(1) <= \opcode[1]~output_o\;
+
+ww_opcode(0) <= \opcode[0]~output_o\;
 
 ww_out_count(15) <= \out_count[15]~output_o\;
 
@@ -5042,6 +5743,70 @@ ww_pm_outdata(2) <= \pm_outdata[2]~output_o\;
 ww_pm_outdata(1) <= \pm_outdata[1]~output_o\;
 
 ww_pm_outdata(0) <= \pm_outdata[0]~output_o\;
+
+ww_rxData(15) <= \rxData[15]~output_o\;
+
+ww_rxData(14) <= \rxData[14]~output_o\;
+
+ww_rxData(13) <= \rxData[13]~output_o\;
+
+ww_rxData(12) <= \rxData[12]~output_o\;
+
+ww_rxData(11) <= \rxData[11]~output_o\;
+
+ww_rxData(10) <= \rxData[10]~output_o\;
+
+ww_rxData(9) <= \rxData[9]~output_o\;
+
+ww_rxData(8) <= \rxData[8]~output_o\;
+
+ww_rxData(7) <= \rxData[7]~output_o\;
+
+ww_rxData(6) <= \rxData[6]~output_o\;
+
+ww_rxData(5) <= \rxData[5]~output_o\;
+
+ww_rxData(4) <= \rxData[4]~output_o\;
+
+ww_rxData(3) <= \rxData[3]~output_o\;
+
+ww_rxData(2) <= \rxData[2]~output_o\;
+
+ww_rxData(1) <= \rxData[1]~output_o\;
+
+ww_rxData(0) <= \rxData[0]~output_o\;
+
+ww_rzData(15) <= \rzData[15]~output_o\;
+
+ww_rzData(14) <= \rzData[14]~output_o\;
+
+ww_rzData(13) <= \rzData[13]~output_o\;
+
+ww_rzData(12) <= \rzData[12]~output_o\;
+
+ww_rzData(11) <= \rzData[11]~output_o\;
+
+ww_rzData(10) <= \rzData[10]~output_o\;
+
+ww_rzData(9) <= \rzData[9]~output_o\;
+
+ww_rzData(8) <= \rzData[8]~output_o\;
+
+ww_rzData(7) <= \rzData[7]~output_o\;
+
+ww_rzData(6) <= \rzData[6]~output_o\;
+
+ww_rzData(5) <= \rzData[5]~output_o\;
+
+ww_rzData(4) <= \rzData[4]~output_o\;
+
+ww_rzData(3) <= \rzData[3]~output_o\;
+
+ww_rzData(2) <= \rzData[2]~output_o\;
+
+ww_rzData(1) <= \rzData[1]~output_o\;
+
+ww_rzData(0) <= \rzData[0]~output_o\;
 END structure;
 
 

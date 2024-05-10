@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/10/2024 16:49:04"
+-- Generated on "05/10/2024 16:58:33"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -33,33 +33,43 @@ END progCounterTest_vhd_vec_tst;
 ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL address_method : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL alu_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_wr : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL operand_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL out_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
+SIGNAL rf_input_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL rx_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rz_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL z : STD_LOGIC;
 COMPONENT progCounterTest
 	PORT (
+	address_method : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	alu_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	clk : IN STD_LOGIC;
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_wr : IN STD_LOGIC;
 	increment : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	operand_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	out_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	pm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	reset : IN STD_LOGIC;
+	rf_input_sel : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 	rx_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rz_data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	z : IN STD_LOGIC
 	);
 END COMPONENT;
@@ -67,18 +77,23 @@ BEGIN
 	i1 : progCounterTest
 	PORT MAP (
 -- list connections between master ports and signals
+	address_method => address_method,
 	alu_count => alu_count,
 	clk => clk,
 	dm_indata => dm_indata,
 	dm_outdata => dm_outdata,
 	dm_wr => dm_wr,
 	increment => increment,
+	opcode => opcode,
 	operand_count => operand_count,
 	out_count => out_count,
 	pm_outdata => pm_outdata,
 	reset => reset,
+	rf_input_sel => rf_input_sel,
 	rx_count => rx_count,
+	rxData => rxData,
 	rz_data => rz_data,
+	rzData => rzData,
 	z => z
 	);
 
@@ -109,14 +124,16 @@ END PROCESS t_prcs_increment_1;
 t_prcs_increment_0: PROCESS
 BEGIN
 	increment(0) <= '1';
-	WAIT FOR 20000 ps;
-	increment(0) <= '0';
 WAIT;
 END PROCESS t_prcs_increment_0;
 
 -- reset
 t_prcs_reset: PROCESS
 BEGIN
+	reset <= '0';
+	WAIT FOR 390000 ps;
+	reset <= '1';
+	WAIT FOR 50000 ps;
 	reset <= '0';
 WAIT;
 END PROCESS t_prcs_reset;
