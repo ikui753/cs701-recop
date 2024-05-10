@@ -49,7 +49,7 @@ begin
 	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg)
     begin
         case rf_input_sel is
-            when "000" =>
+            when "0000" =>
                 data_input_z <= ir_operand; -- operand
 				when "0001" =>
 					 data_input_z <= X"000"&"000"&dprr_res_reg;
