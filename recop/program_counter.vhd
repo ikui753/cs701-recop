@@ -29,9 +29,9 @@ begin
     if rising_edge(clock) then
         case increment is
             when "000" =>
-                out_count <= "0000000000000000"; -- initialise at 0
+                out_count <= "0000000000000001"; -- initialise at 1
             when "001" =>
-                out_count <= in_count + 1; -- normal operation, go to next address
+                out_count <= in_count + 2; -- normal operation, go to next address
             when "010" =>
                 out_count <= alu_count;
             when "100" =>
@@ -43,13 +43,13 @@ begin
                 if rz_data = "0000000000000000" then
                     out_count <= operand_count;
                 else
-                    out_count <= in_count + 1;
+                    out_count <= in_count + 2;
                 end if;
             when "111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
                 if z = '1' then
                     out_count <= operand_count;
                 else
-                    out_count <= in_count + 1; -- continue normal execution
+                    out_count <= in_count + 2; -- continue normal execution
                 end if;
             when others =>
                 out_count <= "0000000000000000"; -- reset

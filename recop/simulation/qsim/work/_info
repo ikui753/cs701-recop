@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
 Eprogcountertest
-Z1 w1715302203
+Z1 w1715312237
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -24,13 +24,13 @@ Z11 8recop.vho
 Z12 Frecop.vho
 l0
 L38
-VaT7=133T4Y1KmJJ8PUG<V0
-!s100 4IJo[1<DRNgYjc@_ICKlK3
+V;leFgNG8Y2V8iJkHzS1TN2
+!s100 Xf2^VkA3_^RfSX5_`AGiD1
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1715302204
+Z14 !s110 1715312237
 !i10b 1
-Z15 !s108 1715302204.000000
+Z15 !s108 1715312237.000000
 Z16 !s90 -work|work|recop.vho|
 Z17 !s107 recop.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 15 progcountertest 0 22 aT7=133T4Y1KmJJ8PUG<V0
-l303
-L51
-ViYooBbA0`kddjDVcc72lZ3
-!s100 ?FPgPJgNTgRUPc9L@E=kM0
+DEx4 work 15 progcountertest 0 22 ;leFgNG8Y2V8iJkHzS1TN2
+l524
+L55
+V=WiglA7@l_7V<X_`<Si]k1
+!s100 cjBF<<kDmd3M_]hYQ36O<2
 R13
 32
 R14
@@ -62,41 +62,41 @@ R17
 R18
 R19
 Eprogcountertest_vhd_vec_tst
-Z20 w1715302201
+Z20 w1715312234
 R8
 R9
 R0
-Z21 8PCwaveform.vwf.vht
-Z22 FPCwaveform.vwf.vht
+Z21 8InstructionFetchWaveform.vwf.vht
+Z22 FInstructionFetchWaveform.vwf.vht
 l0
 L31
 VgbLb09nmT9K_PlI:87AE82
 !s100 YLPEX9<Mkib2d0Nj>G@7d3
 R13
 32
-R14
+Z23 !s110 1715312238
 !i10b 1
-R15
-Z23 !s90 -work|work|PCwaveform.vwf.vht|
-Z24 !s107 PCwaveform.vwf.vht|
+Z24 !s108 1715312238.000000
+Z25 !s90 -work|work|InstructionFetchWaveform.vwf.vht|
+Z26 !s107 InstructionFetchWaveform.vwf.vht|
 !i113 1
 R18
 R19
 Aprogcountertest_arch
 R8
 R9
-Z25 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
-l56
+Z27 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
+l64
 L33
-V]zUSY8mzS?`GQ1i=IeZER0
-!s100 ]Xb>kG`dTef5I7]TRkDe?2
+Z28 V^[0SIYQL3GAU;mIdEFdjA1
+Z29 !s100 BVU<WGQ46Ph;Ri8=:Gl^P3
 R13
 32
-R14
-!i10b 1
-R15
 R23
+!i10b 1
 R24
+R25
+R26
 !i113 1
 R18
 R19
