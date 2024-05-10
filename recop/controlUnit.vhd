@@ -38,6 +38,31 @@ architecture behavioral of control_unit is
     -- signal wren_signal : std_logic;
     -- ... and so on for other control signals
 
+    -- Define constants for opcodes here
+    constant AND_CODE : string := "001000";
+    constant OR_CODE : string := "001100";
+    constant ADD_CODE : string := "111000";
+    constant SUBV_CODE : string := "000011";
+    constant SUB_CODE : string := "000100";
+    constant LDR_CODE : string := "000000";
+    constant STR_CODE : string := "000010";
+    constant JMP_CODE : string := "011000";
+    constant PRESENT_CODE : string := "011100";
+    constant DCALLBL_CODE : string := "101000";
+    constant DCALLNB_CODE : string := "101001";
+    constant SZ_CODE : string := "010100";
+    constant CLFZ_CODE : string := "010000";
+    constant CER_CODE : string := "111100";
+    constant CEOT_CODE : string := "111110";
+    constant SEOT_CODE : string := "111111";
+    constant LER_CODE : string := "110110";
+    constant SSV_CODE : string := "111011";
+    constant LSIP_CODE : string := "110111";
+    constant SSOP_CODE : string := "111010";
+    constant NOOP_CODE : string := "110100";
+    constant MAX_CODE : string := "011110";
+    constant STRPC_CODE : string := "011101";
+
 begin
 
     process (clk, reset)
