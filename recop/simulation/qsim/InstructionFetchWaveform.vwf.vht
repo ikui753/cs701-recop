@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/10/2024 16:58:33"
+-- Generated on "05/10/2024 18:20:28"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -40,8 +40,9 @@ SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_wr : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL init : STD_LOGIC;
+SIGNAL ld_r : STD_LOGIC;
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
-SIGNAL operand_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL out_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
@@ -60,8 +61,9 @@ COMPONENT progCounterTest
 	dm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_wr : IN STD_LOGIC;
 	increment : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+	init : IN STD_LOGIC;
+	ld_r : IN STD_LOGIC;
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
-	operand_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	out_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	pm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	reset : IN STD_LOGIC;
@@ -84,8 +86,9 @@ BEGIN
 	dm_outdata => dm_outdata,
 	dm_wr => dm_wr,
 	increment => increment,
+	init => init,
+	ld_r => ld_r,
 	opcode => opcode,
-	operand_count => operand_count,
 	out_count => out_count,
 	pm_outdata => pm_outdata,
 	reset => reset,
@@ -112,6 +115,10 @@ END PROCESS t_prcs_clk;
 t_prcs_increment_2: PROCESS
 BEGIN
 	increment(2) <= '0';
+	WAIT FOR 100000 ps;
+	increment(2) <= '1';
+	WAIT FOR 10000 ps;
+	increment(2) <= '0';
 WAIT;
 END PROCESS t_prcs_increment_2;
 -- increment[1]
@@ -123,7 +130,19 @@ END PROCESS t_prcs_increment_1;
 -- increment[0]
 t_prcs_increment_0: PROCESS
 BEGIN
+	increment(0) <= '0';
+	WAIT FOR 60000 ps;
 	increment(0) <= '1';
+	WAIT FOR 10000 ps;
+	increment(0) <= '0';
+	WAIT FOR 30000 ps;
+	increment(0) <= '1';
+	WAIT FOR 10000 ps;
+	increment(0) <= '0';
+	WAIT FOR 10000 ps;
+	increment(0) <= '1';
+	WAIT FOR 10000 ps;
+	increment(0) <= '0';
 WAIT;
 END PROCESS t_prcs_increment_0;
 
@@ -131,10 +150,54 @@ END PROCESS t_prcs_increment_0;
 t_prcs_reset: PROCESS
 BEGIN
 	reset <= '0';
-	WAIT FOR 390000 ps;
-	reset <= '1';
-	WAIT FOR 50000 ps;
-	reset <= '0';
 WAIT;
 END PROCESS t_prcs_reset;
+-- rf_input_sel[3]
+t_prcs_rf_input_sel_3: PROCESS
+BEGIN
+	rf_input_sel(3) <= '0';
+WAIT;
+END PROCESS t_prcs_rf_input_sel_3;
+-- rf_input_sel[2]
+t_prcs_rf_input_sel_2: PROCESS
+BEGIN
+	rf_input_sel(2) <= '0';
+WAIT;
+END PROCESS t_prcs_rf_input_sel_2;
+-- rf_input_sel[1]
+t_prcs_rf_input_sel_1: PROCESS
+BEGIN
+	rf_input_sel(1) <= '0';
+WAIT;
+END PROCESS t_prcs_rf_input_sel_1;
+-- rf_input_sel[0]
+t_prcs_rf_input_sel_0: PROCESS
+BEGIN
+	rf_input_sel(0) <= '0';
+WAIT;
+END PROCESS t_prcs_rf_input_sel_0;
+
+-- init
+t_prcs_init: PROCESS
+BEGIN
+	init <= '1';
+	WAIT FOR 10000 ps;
+	init <= '0';
+WAIT;
+END PROCESS t_prcs_init;
+
+-- ld_r
+t_prcs_ld_r: PROCESS
+BEGIN
+	ld_r <= '0';
+	WAIT FOR 40000 ps;
+	ld_r <= '1';
+	WAIT FOR 10000 ps;
+	ld_r <= '0';
+	WAIT FOR 90000 ps;
+	ld_r <= '1';
+	WAIT FOR 10000 ps;
+	ld_r <= '0';
+WAIT;
+END PROCESS t_prcs_ld_r;
 END progCounterTest_arch;

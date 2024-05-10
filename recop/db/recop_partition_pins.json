@@ -228,6 +228,134 @@
 					"strict" : false
 				},
 				{
+					"name" : "rxData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rxData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[0]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -305,10 +433,6 @@
 				},
 				{
 					"name" : "rx_count[15]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[15]",
 					"strict" : false
 				},
 				{
@@ -404,19 +528,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[14]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[13]",
 					"strict" : false
 				},
 				{
 					"name" : "rx_count[13]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[13]",
 					"strict" : false
 				},
 				{
@@ -428,19 +544,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[12]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[11]",
 					"strict" : false
 				},
 				{
 					"name" : "rx_count[11]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[11]",
 					"strict" : false
 				},
 				{
@@ -452,19 +560,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[10]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[9]",
 					"strict" : false
 				},
 				{
 					"name" : "rx_count[9]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[9]",
 					"strict" : false
 				},
 				{
@@ -476,19 +576,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[8]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[7]",
 					"strict" : false
 				},
 				{
 					"name" : "rx_count[7]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[7]",
 					"strict" : false
 				},
 				{
@@ -500,19 +592,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[6]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[5]",
 					"strict" : false
 				},
 				{
 					"name" : "rx_count[5]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[5]",
 					"strict" : false
 				},
 				{
@@ -524,19 +608,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[4]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[3]",
 					"strict" : false
 				},
 				{
 					"name" : "rx_count[3]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_count[3]",
 					"strict" : false
 				},
 				{
@@ -548,10 +624,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[2]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_count[1]",
 					"strict" : false
 				},
@@ -560,19 +632,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[1]",
-					"strict" : false
-				},
-				{
 					"name" : "rx_count[0]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_count[0]",
+					"name" : "alu_count[0]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_count[0]",
+					"name" : "rf_input_sel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_input_sel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_input_sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_input_sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "init",
+					"strict" : false
+				},
+				{
+					"name" : "ld_r",
 					"strict" : false
 				}
 			]
