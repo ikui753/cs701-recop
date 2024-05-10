@@ -280,19 +280,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "increment[2]",
-					"strict" : false
-				},
-				{
 					"name" : "increment[1]",
 					"strict" : false
 				},
 				{
 					"name" : "increment[0]",
-					"strict" : false
-				},
-				{
-					"name" : "z",
 					"strict" : false
 				},
 				{
@@ -357,6 +349,18 @@
 				},
 				{
 					"name" : "rz_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "z",
+					"strict" : false
+				},
+				{
+					"name" : "increment[2]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
 					"strict" : false
 				},
 				{

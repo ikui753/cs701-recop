@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/10/2024 15:37:17"
+-- DATE "05/10/2024 16:49:06"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -41,6 +41,7 @@ ENTITY 	progCounterTest IS
 	clk : IN std_logic;
 	dm_wr : IN std_logic;
 	z : IN std_logic;
+	reset : IN std_logic;
 	alu_count : IN std_logic_vector(15 DOWNTO 0);
 	increment : IN std_logic_vector(2 DOWNTO 0);
 	operand_count : IN std_logic_vector(15 DOWNTO 0);
@@ -66,6 +67,7 @@ SIGNAL ww_dm_outdata : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_clk : std_logic;
 SIGNAL ww_dm_wr : std_logic;
 SIGNAL ww_z : std_logic;
+SIGNAL ww_reset : std_logic;
 SIGNAL ww_alu_count : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_increment : std_logic_vector(2 DOWNTO 0);
 SIGNAL ww_operand_count : std_logic_vector(15 DOWNTO 0);
@@ -254,9 +256,9 @@ SIGNAL \dm_wr~input_o\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \dm_indata[15]~input_o\ : std_logic;
 SIGNAL \increment[2]~input_o\ : std_logic;
-SIGNAL \increment[1]~input_o\ : std_logic;
-SIGNAL \increment[0]~input_o\ : std_logic;
+SIGNAL \reset~input_o\ : std_logic;
 SIGNAL \z~input_o\ : std_logic;
+SIGNAL \increment[0]~input_o\ : std_logic;
 SIGNAL \rz_data[3]~input_o\ : std_logic;
 SIGNAL \rz_data[2]~input_o\ : std_logic;
 SIGNAL \rz_data[1]~input_o\ : std_logic;
@@ -277,23 +279,22 @@ SIGNAL \rz_data[5]~input_o\ : std_logic;
 SIGNAL \rz_data[4]~input_o\ : std_logic;
 SIGNAL \inst|Equal0~2_combout\ : std_logic;
 SIGNAL \operand_count[0]~input_o\ : std_logic;
-SIGNAL \inst|out_count~3_combout\ : std_logic;
+SIGNAL \inst|out_count~17_combout\ : std_logic;
+SIGNAL \increment[1]~input_o\ : std_logic;
 SIGNAL \rx_count[0]~input_o\ : std_logic;
-SIGNAL \inst|Mux15~1_combout\ : std_logic;
-SIGNAL \alu_count[0]~input_o\ : std_logic;
 SIGNAL \inst|Mux15~0_combout\ : std_logic;
+SIGNAL \alu_count[0]~input_o\ : std_logic;
+SIGNAL \inst|out_count~18_combout\ : std_logic;
+SIGNAL \inst|out_count~19_combout\ : std_logic;
 SIGNAL \inst|Add0~57_sumout\ : std_logic;
 SIGNAL \alu_count[1]~input_o\ : std_logic;
 SIGNAL \rx_count[1]~input_o\ : std_logic;
 SIGNAL \operand_count[1]~input_o\ : std_logic;
-SIGNAL \inst|out_count[15]~5_combout\ : std_logic;
-SIGNAL \inst|out_count[15]~0_combout\ : std_logic;
+SIGNAL \inst|out_count[15]~24_combout\ : std_logic;
+SIGNAL \inst|out_count[15]~20_combout\ : std_logic;
+SIGNAL \inst|out_count~16_combout\ : std_logic;
 SIGNAL \inst|out_count[15]~1_combout\ : std_logic;
 SIGNAL \inst|out_count[15]~2_combout\ : std_logic;
-SIGNAL \inst|Mux14~0_combout\ : std_logic;
-SIGNAL \inst|out_count[15]~4_combout\ : std_logic;
-SIGNAL \inst|out_count[0]~_wirecell_combout\ : std_logic;
-SIGNAL \inst1|Add0~0_combout\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \dm_indata[14]~input_o\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a14~portbdataout\ : std_logic;
@@ -330,85 +331,87 @@ SIGNAL \inst|Add0~53_sumout\ : std_logic;
 SIGNAL \alu_count[2]~input_o\ : std_logic;
 SIGNAL \rx_count[2]~input_o\ : std_logic;
 SIGNAL \operand_count[2]~input_o\ : std_logic;
-SIGNAL \inst|Mux13~0_combout\ : std_logic;
+SIGNAL \inst|out_count~15_combout\ : std_logic;
 SIGNAL \inst|Add0~54\ : std_logic;
 SIGNAL \inst|Add0~49_sumout\ : std_logic;
 SIGNAL \alu_count[3]~input_o\ : std_logic;
 SIGNAL \rx_count[3]~input_o\ : std_logic;
 SIGNAL \operand_count[3]~input_o\ : std_logic;
-SIGNAL \inst|Mux12~0_combout\ : std_logic;
+SIGNAL \inst|out_count~14_combout\ : std_logic;
 SIGNAL \inst|Add0~50\ : std_logic;
 SIGNAL \inst|Add0~45_sumout\ : std_logic;
 SIGNAL \alu_count[4]~input_o\ : std_logic;
 SIGNAL \rx_count[4]~input_o\ : std_logic;
 SIGNAL \operand_count[4]~input_o\ : std_logic;
-SIGNAL \inst|Mux11~0_combout\ : std_logic;
+SIGNAL \inst|out_count~13_combout\ : std_logic;
 SIGNAL \inst|Add0~46\ : std_logic;
 SIGNAL \inst|Add0~41_sumout\ : std_logic;
 SIGNAL \alu_count[5]~input_o\ : std_logic;
 SIGNAL \rx_count[5]~input_o\ : std_logic;
 SIGNAL \operand_count[5]~input_o\ : std_logic;
-SIGNAL \inst|Mux10~0_combout\ : std_logic;
+SIGNAL \inst|out_count~12_combout\ : std_logic;
 SIGNAL \inst|Add0~42\ : std_logic;
 SIGNAL \inst|Add0~37_sumout\ : std_logic;
 SIGNAL \alu_count[6]~input_o\ : std_logic;
 SIGNAL \rx_count[6]~input_o\ : std_logic;
 SIGNAL \operand_count[6]~input_o\ : std_logic;
-SIGNAL \inst|Mux9~0_combout\ : std_logic;
+SIGNAL \inst|out_count~11_combout\ : std_logic;
 SIGNAL \inst|Add0~38\ : std_logic;
 SIGNAL \inst|Add0~33_sumout\ : std_logic;
 SIGNAL \alu_count[7]~input_o\ : std_logic;
 SIGNAL \rx_count[7]~input_o\ : std_logic;
 SIGNAL \operand_count[7]~input_o\ : std_logic;
-SIGNAL \inst|Mux8~0_combout\ : std_logic;
+SIGNAL \inst|out_count~10_combout\ : std_logic;
 SIGNAL \inst|Add0~34\ : std_logic;
 SIGNAL \inst|Add0~29_sumout\ : std_logic;
 SIGNAL \alu_count[8]~input_o\ : std_logic;
 SIGNAL \rx_count[8]~input_o\ : std_logic;
 SIGNAL \operand_count[8]~input_o\ : std_logic;
-SIGNAL \inst|Mux7~0_combout\ : std_logic;
+SIGNAL \inst|out_count~9_combout\ : std_logic;
 SIGNAL \inst|Add0~30\ : std_logic;
 SIGNAL \inst|Add0~25_sumout\ : std_logic;
 SIGNAL \alu_count[9]~input_o\ : std_logic;
 SIGNAL \rx_count[9]~input_o\ : std_logic;
 SIGNAL \operand_count[9]~input_o\ : std_logic;
-SIGNAL \inst|Mux6~0_combout\ : std_logic;
+SIGNAL \inst|out_count~8_combout\ : std_logic;
 SIGNAL \inst|Add0~26\ : std_logic;
 SIGNAL \inst|Add0~21_sumout\ : std_logic;
 SIGNAL \alu_count[10]~input_o\ : std_logic;
 SIGNAL \rx_count[10]~input_o\ : std_logic;
 SIGNAL \operand_count[10]~input_o\ : std_logic;
-SIGNAL \inst|Mux5~0_combout\ : std_logic;
+SIGNAL \inst|out_count~7_combout\ : std_logic;
 SIGNAL \inst|Add0~22\ : std_logic;
 SIGNAL \inst|Add0~17_sumout\ : std_logic;
 SIGNAL \alu_count[11]~input_o\ : std_logic;
 SIGNAL \rx_count[11]~input_o\ : std_logic;
 SIGNAL \operand_count[11]~input_o\ : std_logic;
-SIGNAL \inst|Mux4~0_combout\ : std_logic;
+SIGNAL \inst|out_count~6_combout\ : std_logic;
 SIGNAL \inst|Add0~18\ : std_logic;
 SIGNAL \inst|Add0~13_sumout\ : std_logic;
 SIGNAL \alu_count[12]~input_o\ : std_logic;
 SIGNAL \rx_count[12]~input_o\ : std_logic;
 SIGNAL \operand_count[12]~input_o\ : std_logic;
-SIGNAL \inst|Mux3~0_combout\ : std_logic;
+SIGNAL \inst|out_count~5_combout\ : std_logic;
 SIGNAL \inst|Add0~14\ : std_logic;
 SIGNAL \inst|Add0~9_sumout\ : std_logic;
 SIGNAL \alu_count[13]~input_o\ : std_logic;
 SIGNAL \rx_count[13]~input_o\ : std_logic;
 SIGNAL \operand_count[13]~input_o\ : std_logic;
-SIGNAL \inst|Mux2~0_combout\ : std_logic;
+SIGNAL \inst|out_count~4_combout\ : std_logic;
 SIGNAL \inst|Add0~10\ : std_logic;
 SIGNAL \inst|Add0~5_sumout\ : std_logic;
 SIGNAL \alu_count[14]~input_o\ : std_logic;
 SIGNAL \rx_count[14]~input_o\ : std_logic;
 SIGNAL \operand_count[14]~input_o\ : std_logic;
-SIGNAL \inst|Mux1~0_combout\ : std_logic;
+SIGNAL \inst|out_count~3_combout\ : std_logic;
 SIGNAL \inst|Add0~6\ : std_logic;
 SIGNAL \inst|Add0~1_sumout\ : std_logic;
 SIGNAL \alu_count[15]~input_o\ : std_logic;
 SIGNAL \rx_count[15]~input_o\ : std_logic;
 SIGNAL \operand_count[15]~input_o\ : std_logic;
-SIGNAL \inst|Mux0~0_combout\ : std_logic;
+SIGNAL \inst|out_count~0_combout\ : std_logic;
+SIGNAL \inst|out_count[0]~_wirecell_combout\ : std_logic;
+SIGNAL \inst1|Add0~0_combout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a14~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a13~portbdataout\ : std_logic;
@@ -426,6 +429,24 @@ SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a2~portbdataout\ : std_logic
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a1~portbdataout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0~portbdataout\ : std_logic;
 SIGNAL \inst|out_count\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \ALT_INV_alu_count[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[1]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[3]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[4]~input_o\ : std_logic;
+SIGNAL \ALT_INV_operand_count[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_rx_count[5]~input_o\ : std_logic;
+SIGNAL \ALT_INV_alu_count[5]~input_o\ : std_logic;
 SIGNAL \ALT_INV_operand_count[6]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rx_count[6]~input_o\ : std_logic;
 SIGNAL \ALT_INV_alu_count[6]~input_o\ : std_logic;
@@ -453,6 +474,9 @@ SIGNAL \ALT_INV_alu_count[13]~input_o\ : std_logic;
 SIGNAL \ALT_INV_operand_count[14]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rx_count[14]~input_o\ : std_logic;
 SIGNAL \ALT_INV_alu_count[14]~input_o\ : std_logic;
+SIGNAL \ALT_INV_reset~input_o\ : std_logic;
+SIGNAL \ALT_INV_increment[2]~input_o\ : std_logic;
+SIGNAL \ALT_INV_z~input_o\ : std_logic;
 SIGNAL \ALT_INV_rz_data[4]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rz_data[5]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rz_data[6]~input_o\ : std_logic;
@@ -469,42 +493,21 @@ SIGNAL \ALT_INV_rz_data[0]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rz_data[1]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rz_data[2]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rz_data[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_z~input_o\ : std_logic;
 SIGNAL \ALT_INV_increment[0]~input_o\ : std_logic;
 SIGNAL \ALT_INV_increment[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_increment[2]~input_o\ : std_logic;
 SIGNAL \ALT_INV_operand_count[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_rx_count[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_alu_count[15]~input_o\ : std_logic;
 SIGNAL \ALT_INV_clk~input_o\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count~3_combout\ : std_logic;
-SIGNAL \ALT_INV_alu_count[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[0]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[1]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[2]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[4]~input_o\ : std_logic;
-SIGNAL \ALT_INV_operand_count[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_rx_count[5]~input_o\ : std_logic;
-SIGNAL \ALT_INV_alu_count[5]~input_o\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count[15]~2_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count[15]~1_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count~18_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count~17_combout\ : std_logic;
 SIGNAL \inst|ALT_INV_Equal0~2_combout\ : std_logic;
 SIGNAL \inst|ALT_INV_Equal0~1_combout\ : std_logic;
 SIGNAL \inst|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count[15]~0_combout\ : std_logic;
 SIGNAL \inst|ALT_INV_out_count\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst|ALT_INV_out_count[15]~5_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Mux15~1_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count[15]~24_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count[15]~20_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Mux15~0_combout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~57_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~53_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~49_sumout\ : std_logic;
@@ -527,6 +530,7 @@ dm_outdata <= ww_dm_outdata;
 ww_clk <= clk;
 ww_dm_wr <= dm_wr;
 ww_z <= z;
+ww_reset <= reset;
 ww_alu_count <= alu_count;
 ww_increment <= increment;
 ww_operand_count <= operand_count;
@@ -543,7 +547,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a15~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a15_PORTBDATAOUT_bus\(0);
 
@@ -551,7 +555,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a14_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a14_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a14_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a14~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a14_PORTBDATAOUT_bus\(0);
 
@@ -559,7 +563,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a13_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a13_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a13_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a13~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a13_PORTBDATAOUT_bus\(0);
 
@@ -567,7 +571,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a12_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a12_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a12_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a12~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a12_PORTBDATAOUT_bus\(0);
 
@@ -575,7 +579,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a11_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a11_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a11_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a11~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a11_PORTBDATAOUT_bus\(0);
 
@@ -583,7 +587,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a10_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a10_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a10_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a10~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a10_PORTBDATAOUT_bus\(0);
 
@@ -591,7 +595,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a9_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a9_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a9_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a9~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a9_PORTBDATAOUT_bus\(0);
 
@@ -599,7 +603,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a8_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a8_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a8_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a8~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a8_PORTBDATAOUT_bus\(0);
 
@@ -607,7 +611,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a7_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a7_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a7_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a7~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a7_PORTBDATAOUT_bus\(0);
 
@@ -615,7 +619,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a6_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a6_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a6_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a6~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a6_PORTBDATAOUT_bus\(0);
 
@@ -623,7 +627,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a5_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a5_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a5_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a5~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a5_PORTBDATAOUT_bus\(0);
 
@@ -631,7 +635,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a4_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a4_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a4_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a4~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a4_PORTBDATAOUT_bus\(0);
 
@@ -639,7 +643,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a3_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a3_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a3_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a3~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a3_PORTBDATAOUT_bus\(0);
 
@@ -647,7 +651,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a2_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a2_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a2_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a2~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a2_PORTBDATAOUT_bus\(0);
 
@@ -655,7 +659,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a1_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a1_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a1_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a1~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a1_PORTBDATAOUT_bus\(0);
 
@@ -663,7 +667,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
+\inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a0~portbdataout\ <= \inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTBDATAOUT_bus\(0);
 
@@ -671,7 +675,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a15~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a15_PORTBDATAOUT_bus\(0);
 
@@ -679,7 +683,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a14~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a14_PORTBDATAOUT_bus\(0);
 
@@ -687,7 +691,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a13~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a13_PORTBDATAOUT_bus\(0);
 
@@ -695,7 +699,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a12~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a12_PORTBDATAOUT_bus\(0);
 
@@ -703,7 +707,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a11~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a11_PORTBDATAOUT_bus\(0);
 
@@ -711,7 +715,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a10~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a10_PORTBDATAOUT_bus\(0);
 
@@ -719,7 +723,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a9~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a9_PORTBDATAOUT_bus\(0);
 
@@ -727,7 +731,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a8~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a8_PORTBDATAOUT_bus\(0);
 
@@ -735,7 +739,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a7_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a7_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a7_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a7~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a7_PORTBDATAOUT_bus\(0);
 
@@ -743,7 +747,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a6_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a6_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a6_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a6~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a6_PORTBDATAOUT_bus\(0);
 
@@ -751,7 +755,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a5_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a5_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a5_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a5~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a5_PORTBDATAOUT_bus\(0);
 
@@ -759,7 +763,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a4_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a4_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a4_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a4~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a4_PORTBDATAOUT_bus\(0);
 
@@ -767,7 +771,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a3_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a3_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a3_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a3~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a3_PORTBDATAOUT_bus\(0);
 
@@ -775,7 +779,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a2_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a2_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a2_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a2~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a2_PORTBDATAOUT_bus\(0);
 
@@ -783,7 +787,7 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a1_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a1_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a1_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a1~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a1_PORTBDATAOUT_bus\(0);
 
@@ -791,9 +795,27 @@ ww_devpor <= devpor;
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTAADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
 
-\inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBADDR_bus\ <= (\inst|out_count\(1) & \inst|out_count\(0));
+\inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBADDR_bus\ <= (\inst1|Add0~0_combout\ & \inst|out_count[0]~_wirecell_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a0~portbdataout\ <= \inst1|memory_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus\(0);
+\ALT_INV_alu_count[0]~input_o\ <= NOT \alu_count[0]~input_o\;
+\ALT_INV_operand_count[0]~input_o\ <= NOT \operand_count[0]~input_o\;
+\ALT_INV_rx_count[0]~input_o\ <= NOT \rx_count[0]~input_o\;
+\ALT_INV_operand_count[1]~input_o\ <= NOT \operand_count[1]~input_o\;
+\ALT_INV_rx_count[1]~input_o\ <= NOT \rx_count[1]~input_o\;
+\ALT_INV_alu_count[1]~input_o\ <= NOT \alu_count[1]~input_o\;
+\ALT_INV_operand_count[2]~input_o\ <= NOT \operand_count[2]~input_o\;
+\ALT_INV_rx_count[2]~input_o\ <= NOT \rx_count[2]~input_o\;
+\ALT_INV_alu_count[2]~input_o\ <= NOT \alu_count[2]~input_o\;
+\ALT_INV_operand_count[3]~input_o\ <= NOT \operand_count[3]~input_o\;
+\ALT_INV_rx_count[3]~input_o\ <= NOT \rx_count[3]~input_o\;
+\ALT_INV_alu_count[3]~input_o\ <= NOT \alu_count[3]~input_o\;
+\ALT_INV_operand_count[4]~input_o\ <= NOT \operand_count[4]~input_o\;
+\ALT_INV_rx_count[4]~input_o\ <= NOT \rx_count[4]~input_o\;
+\ALT_INV_alu_count[4]~input_o\ <= NOT \alu_count[4]~input_o\;
+\ALT_INV_operand_count[5]~input_o\ <= NOT \operand_count[5]~input_o\;
+\ALT_INV_rx_count[5]~input_o\ <= NOT \rx_count[5]~input_o\;
+\ALT_INV_alu_count[5]~input_o\ <= NOT \alu_count[5]~input_o\;
 \ALT_INV_operand_count[6]~input_o\ <= NOT \operand_count[6]~input_o\;
 \ALT_INV_rx_count[6]~input_o\ <= NOT \rx_count[6]~input_o\;
 \ALT_INV_alu_count[6]~input_o\ <= NOT \alu_count[6]~input_o\;
@@ -821,6 +843,9 @@ ww_devpor <= devpor;
 \ALT_INV_operand_count[14]~input_o\ <= NOT \operand_count[14]~input_o\;
 \ALT_INV_rx_count[14]~input_o\ <= NOT \rx_count[14]~input_o\;
 \ALT_INV_alu_count[14]~input_o\ <= NOT \alu_count[14]~input_o\;
+\ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
+\ALT_INV_increment[2]~input_o\ <= NOT \increment[2]~input_o\;
+\ALT_INV_z~input_o\ <= NOT \z~input_o\;
 \ALT_INV_rz_data[4]~input_o\ <= NOT \rz_data[4]~input_o\;
 \ALT_INV_rz_data[5]~input_o\ <= NOT \rz_data[5]~input_o\;
 \ALT_INV_rz_data[6]~input_o\ <= NOT \rz_data[6]~input_o\;
@@ -837,42 +862,21 @@ ww_devpor <= devpor;
 \ALT_INV_rz_data[1]~input_o\ <= NOT \rz_data[1]~input_o\;
 \ALT_INV_rz_data[2]~input_o\ <= NOT \rz_data[2]~input_o\;
 \ALT_INV_rz_data[3]~input_o\ <= NOT \rz_data[3]~input_o\;
-\ALT_INV_z~input_o\ <= NOT \z~input_o\;
 \ALT_INV_increment[0]~input_o\ <= NOT \increment[0]~input_o\;
 \ALT_INV_increment[1]~input_o\ <= NOT \increment[1]~input_o\;
-\ALT_INV_increment[2]~input_o\ <= NOT \increment[2]~input_o\;
 \ALT_INV_operand_count[15]~input_o\ <= NOT \operand_count[15]~input_o\;
 \ALT_INV_rx_count[15]~input_o\ <= NOT \rx_count[15]~input_o\;
 \ALT_INV_alu_count[15]~input_o\ <= NOT \alu_count[15]~input_o\;
 \ALT_INV_clk~input_o\ <= NOT \clk~input_o\;
-\inst|ALT_INV_out_count~3_combout\ <= NOT \inst|out_count~3_combout\;
-\ALT_INV_alu_count[0]~input_o\ <= NOT \alu_count[0]~input_o\;
-\ALT_INV_operand_count[0]~input_o\ <= NOT \operand_count[0]~input_o\;
-\ALT_INV_rx_count[0]~input_o\ <= NOT \rx_count[0]~input_o\;
-\ALT_INV_operand_count[1]~input_o\ <= NOT \operand_count[1]~input_o\;
-\ALT_INV_rx_count[1]~input_o\ <= NOT \rx_count[1]~input_o\;
-\ALT_INV_alu_count[1]~input_o\ <= NOT \alu_count[1]~input_o\;
-\ALT_INV_operand_count[2]~input_o\ <= NOT \operand_count[2]~input_o\;
-\ALT_INV_rx_count[2]~input_o\ <= NOT \rx_count[2]~input_o\;
-\ALT_INV_alu_count[2]~input_o\ <= NOT \alu_count[2]~input_o\;
-\ALT_INV_operand_count[3]~input_o\ <= NOT \operand_count[3]~input_o\;
-\ALT_INV_rx_count[3]~input_o\ <= NOT \rx_count[3]~input_o\;
-\ALT_INV_alu_count[3]~input_o\ <= NOT \alu_count[3]~input_o\;
-\ALT_INV_operand_count[4]~input_o\ <= NOT \operand_count[4]~input_o\;
-\ALT_INV_rx_count[4]~input_o\ <= NOT \rx_count[4]~input_o\;
-\ALT_INV_alu_count[4]~input_o\ <= NOT \alu_count[4]~input_o\;
-\ALT_INV_operand_count[5]~input_o\ <= NOT \operand_count[5]~input_o\;
-\ALT_INV_rx_count[5]~input_o\ <= NOT \rx_count[5]~input_o\;
-\ALT_INV_alu_count[5]~input_o\ <= NOT \alu_count[5]~input_o\;
-\inst|ALT_INV_out_count[15]~2_combout\ <= NOT \inst|out_count[15]~2_combout\;
-\inst|ALT_INV_out_count[15]~1_combout\ <= NOT \inst|out_count[15]~1_combout\;
+\inst|ALT_INV_out_count~18_combout\ <= NOT \inst|out_count~18_combout\;
+\inst|ALT_INV_out_count~17_combout\ <= NOT \inst|out_count~17_combout\;
 \inst|ALT_INV_Equal0~2_combout\ <= NOT \inst|Equal0~2_combout\;
 \inst|ALT_INV_Equal0~1_combout\ <= NOT \inst|Equal0~1_combout\;
 \inst|ALT_INV_Equal0~0_combout\ <= NOT \inst|Equal0~0_combout\;
-\inst|ALT_INV_out_count[15]~0_combout\ <= NOT \inst|out_count[15]~0_combout\;
 \inst|ALT_INV_out_count\(0) <= NOT \inst|out_count\(0);
-\inst|ALT_INV_out_count[15]~5_combout\ <= NOT \inst|out_count[15]~5_combout\;
-\inst|ALT_INV_Mux15~1_combout\ <= NOT \inst|Mux15~1_combout\;
+\inst|ALT_INV_out_count[15]~24_combout\ <= NOT \inst|out_count[15]~24_combout\;
+\inst|ALT_INV_out_count[15]~20_combout\ <= NOT \inst|out_count[15]~20_combout\;
+\inst|ALT_INV_Mux15~0_combout\ <= NOT \inst|Mux15~0_combout\;
 \inst|ALT_INV_Add0~57_sumout\ <= NOT \inst|Add0~57_sumout\;
 \inst|ALT_INV_Add0~53_sumout\ <= NOT \inst|Add0~53_sumout\;
 \inst|ALT_INV_Add0~49_sumout\ <= NOT \inst|Add0~49_sumout\;
@@ -1520,25 +1524,15 @@ PORT MAP (
 	i => ww_increment(2),
 	o => \increment[2]~input_o\);
 
-\increment[1]~input\ : cyclonev_io_ibuf
+\reset~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_increment(1),
-	o => \increment[1]~input_o\);
-
-\increment[0]~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_increment(0),
-	o => \increment[0]~input_o\);
+	i => ww_reset,
+	o => \reset~input_o\);
 
 \z~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -1549,6 +1543,16 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_z,
 	o => \z~input_o\);
+
+\increment[0]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_increment(0),
+	o => \increment[0]~input_o\);
 
 \rz_data[3]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -1775,9 +1779,9 @@ PORT MAP (
 	i => ww_operand_count(0),
 	o => \operand_count[0]~input_o\);
 
-\inst|out_count~3\ : cyclonev_lcell_comb
+\inst|out_count~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~3_combout\ = ( \operand_count[0]~input_o\ & ( ((\inst|Equal0~0_combout\ & (\inst|Equal0~1_combout\ & \inst|Equal0~2_combout\))) # (\inst|out_count\(0)) ) ) # ( !\operand_count[0]~input_o\ & ( (\inst|out_count\(0) & 
+-- \inst|out_count~17_combout\ = ( \operand_count[0]~input_o\ & ( ((\inst|Equal0~0_combout\ & (\inst|Equal0~1_combout\ & \inst|Equal0~2_combout\))) # (\inst|out_count\(0)) ) ) # ( !\operand_count[0]~input_o\ & ( (\inst|out_count\(0) & 
 -- ((!\inst|Equal0~0_combout\) # ((!\inst|Equal0~1_combout\) # (!\inst|Equal0~2_combout\)))) ) )
 
 -- pragma translate_off
@@ -1792,7 +1796,17 @@ PORT MAP (
 	datac => \inst|ALT_INV_Equal0~1_combout\,
 	datad => \inst|ALT_INV_Equal0~2_combout\,
 	datae => \ALT_INV_operand_count[0]~input_o\,
-	combout => \inst|out_count~3_combout\);
+	combout => \inst|out_count~17_combout\);
+
+\increment[1]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_increment(1),
+	o => \increment[1]~input_o\);
 
 \rx_count[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -1804,10 +1818,10 @@ PORT MAP (
 	i => ww_rx_count(0),
 	o => \rx_count[0]~input_o\);
 
-\inst|Mux15~1\ : cyclonev_lcell_comb
+\inst|Mux15~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux15~1_combout\ = ( !\increment[1]~input_o\ & ( ((!\increment[0]~input_o\ & (\rx_count[0]~input_o\)) # (\increment[0]~input_o\ & (((\operand_count[0]~input_o\))))) ) ) # ( \increment[1]~input_o\ & ( (!\increment[0]~input_o\ & 
--- ((((\inst|out_count~3_combout\))))) # (\increment[0]~input_o\ & ((!\z~input_o\ & (\inst|out_count\(0))) # (\z~input_o\ & (((\operand_count[0]~input_o\)))))) ) )
+-- \inst|Mux15~0_combout\ = ( !\increment[1]~input_o\ & ( ((!\increment[0]~input_o\ & (\rx_count[0]~input_o\)) # (\increment[0]~input_o\ & (((\operand_count[0]~input_o\))))) ) ) # ( \increment[1]~input_o\ & ( (!\increment[0]~input_o\ & 
+-- ((((\inst|out_count~17_combout\))))) # (\increment[0]~input_o\ & ((!\z~input_o\ & (\inst|out_count\(0))) # (\z~input_o\ & (((\operand_count[0]~input_o\)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1819,11 +1833,11 @@ PORT MAP (
 	dataa => \ALT_INV_z~input_o\,
 	datab => \ALT_INV_increment[0]~input_o\,
 	datac => \inst|ALT_INV_out_count\(0),
-	datad => \inst|ALT_INV_out_count~3_combout\,
+	datad => \inst|ALT_INV_out_count~17_combout\,
 	datae => \ALT_INV_increment[1]~input_o\,
 	dataf => \ALT_INV_operand_count[0]~input_o\,
 	datag => \ALT_INV_rx_count[0]~input_o\,
-	combout => \inst|Mux15~1_combout\);
+	combout => \inst|Mux15~0_combout\);
 
 \alu_count[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -1835,26 +1849,39 @@ PORT MAP (
 	i => ww_alu_count(0),
 	o => \alu_count[0]~input_o\);
 
-\inst|Mux15~0\ : cyclonev_lcell_comb
+\inst|out_count~18\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux15~0_combout\ = ( \inst|Mux15~1_combout\ & ( \alu_count[0]~input_o\ & ( ((!\increment[0]~input_o\) # ((\inst|out_count\(0) & !\increment[1]~input_o\))) # (\increment[2]~input_o\) ) ) ) # ( !\inst|Mux15~1_combout\ & ( \alu_count[0]~input_o\ & ( 
--- (!\increment[2]~input_o\ & ((!\increment[0]~input_o\) # ((\inst|out_count\(0) & !\increment[1]~input_o\)))) ) ) ) # ( \inst|Mux15~1_combout\ & ( !\alu_count[0]~input_o\ & ( ((!\increment[1]~input_o\ & ((!\increment[0]~input_o\) # (\inst|out_count\(0))))) 
--- # (\increment[2]~input_o\) ) ) ) # ( !\inst|Mux15~1_combout\ & ( !\alu_count[0]~input_o\ & ( (!\increment[2]~input_o\ & (!\increment[1]~input_o\ & ((!\increment[0]~input_o\) # (\inst|out_count\(0))))) ) ) )
+-- \inst|out_count~18_combout\ = (!\increment[1]~input_o\ & (\inst|out_count\(0))) # (\increment[1]~input_o\ & (((!\increment[0]~input_o\ & \alu_count[0]~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1100000001000000111100110111001111001100010000001111111101110011",
+	lut_mask => "0100010001110100010001000111010001000100011101000100010001110100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst|ALT_INV_out_count\(0),
-	datab => \ALT_INV_increment[2]~input_o\,
-	datac => \ALT_INV_increment[1]~input_o\,
-	datad => \ALT_INV_increment[0]~input_o\,
-	datae => \inst|ALT_INV_Mux15~1_combout\,
-	dataf => \ALT_INV_alu_count[0]~input_o\,
-	combout => \inst|Mux15~0_combout\);
+	datab => \ALT_INV_increment[1]~input_o\,
+	datac => \ALT_INV_increment[0]~input_o\,
+	datad => \ALT_INV_alu_count[0]~input_o\,
+	combout => \inst|out_count~18_combout\);
+
+\inst|out_count~19\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst|out_count~19_combout\ = (!\reset~input_o\ & ((!\increment[2]~input_o\ & ((\inst|out_count~18_combout\))) # (\increment[2]~input_o\ & (\inst|Mux15~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000010010001100000001001000110000000100100011000000010010001100",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_increment[2]~input_o\,
+	datab => \ALT_INV_reset~input_o\,
+	datac => \inst|ALT_INV_Mux15~0_combout\,
+	datad => \inst|ALT_INV_out_count~18_combout\,
+	combout => \inst|out_count~19_combout\);
 
 \inst|out_count[0]\ : dffeas
 -- pragma translate_off
@@ -1864,7 +1891,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux15~0_combout\,
+	d => \inst|out_count~19_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(0));
@@ -1916,15 +1943,36 @@ PORT MAP (
 	i => ww_operand_count(1),
 	o => \operand_count[1]~input_o\);
 
-\inst|out_count[15]~5\ : cyclonev_lcell_comb
+\inst|out_count[15]~24\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count[15]~5_combout\ = ( !\increment[0]~input_o\ & ( (!\increment[2]~input_o\) # ((\increment[1]~input_o\ & (\inst|Equal0~0_combout\ & (\inst|Equal0~2_combout\ & \inst|Equal0~1_combout\)))) ) ) # ( \increment[0]~input_o\ & ( 
--- (!\increment[1]~input_o\ & (\increment[2]~input_o\)) # (\increment[1]~input_o\ & ((!\increment[2]~input_o\) # ((\z~input_o\)))) ) )
+-- \inst|out_count[15]~24_combout\ = ( !\increment[0]~input_o\ & ( (\increment[1]~input_o\ & ((!\increment[2]~input_o\) # ((\inst|Equal0~2_combout\ & (\inst|Equal0~0_combout\ & \inst|Equal0~1_combout\))))) ) ) # ( \increment[0]~input_o\ & ( 
+-- (!\increment[2]~input_o\ & ((((\increment[1]~input_o\))))) # (\increment[2]~input_o\ & ((((!\increment[1]~input_o\)) # (\z~input_o\)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "on",
-	lut_mask => "1100110011001100011001110110011111001100110011010110011101100111",
+	lut_mask => "0000000000000000010101010101010110101010101010111010111110101111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_increment[2]~input_o\,
+	datab => \inst|ALT_INV_Equal0~2_combout\,
+	datac => \ALT_INV_z~input_o\,
+	datad => \inst|ALT_INV_Equal0~1_combout\,
+	datae => \ALT_INV_increment[0]~input_o\,
+	dataf => \ALT_INV_increment[1]~input_o\,
+	datag => \inst|ALT_INV_Equal0~0_combout\,
+	combout => \inst|out_count[15]~24_combout\);
+
+\inst|out_count[15]~20\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst|out_count[15]~20_combout\ = ( !\increment[0]~input_o\ & ( (\increment[2]~input_o\ & ((!\increment[1]~input_o\) # ((\inst|Equal0~0_combout\ & (\inst|Equal0~2_combout\ & \inst|Equal0~1_combout\))))) ) ) # ( \increment[0]~input_o\ & ( 
+-- (\increment[2]~input_o\ & ((!\increment[1]~input_o\) # ((\z~input_o\)))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "on",
+	lut_mask => "0010001000100010001000110010001100100010001000110010001100100011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -1935,65 +1983,12 @@ PORT MAP (
 	datae => \ALT_INV_increment[0]~input_o\,
 	dataf => \inst|ALT_INV_Equal0~1_combout\,
 	datag => \inst|ALT_INV_Equal0~0_combout\,
-	combout => \inst|out_count[15]~5_combout\);
+	combout => \inst|out_count[15]~20_combout\);
 
-\inst|out_count[15]~0\ : cyclonev_lcell_comb
+\inst|out_count~16\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count[15]~0_combout\ = (\increment[0]~input_o\ & ((!\increment[2]~input_o\ & (!\increment[1]~input_o\)) # (\increment[2]~input_o\ & (\increment[1]~input_o\ & !\z~input_o\))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000100100001000000010010000100000001001000010000000100100001000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_increment[2]~input_o\,
-	datab => \ALT_INV_increment[1]~input_o\,
-	datac => \ALT_INV_increment[0]~input_o\,
-	datad => \ALT_INV_z~input_o\,
-	combout => \inst|out_count[15]~0_combout\);
-
-\inst|out_count[15]~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|out_count[15]~1_combout\ = (\increment[2]~input_o\ & (\increment[1]~input_o\ & !\increment[0]~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001000000010000000100000001000000010000000100000001000000010000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_increment[2]~input_o\,
-	datab => \ALT_INV_increment[1]~input_o\,
-	datac => \ALT_INV_increment[0]~input_o\,
-	combout => \inst|out_count[15]~1_combout\);
-
-\inst|out_count[15]~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|out_count[15]~2_combout\ = ( \inst|Equal0~2_combout\ & ( \inst|out_count[15]~1_combout\ & ( (\increment[2]~input_o\ & (!\inst|out_count[15]~0_combout\ & (\inst|Equal0~0_combout\ & \inst|Equal0~1_combout\))) ) ) ) # ( \inst|Equal0~2_combout\ & ( 
--- !\inst|out_count[15]~1_combout\ & ( (\increment[2]~input_o\ & !\inst|out_count[15]~0_combout\) ) ) ) # ( !\inst|Equal0~2_combout\ & ( !\inst|out_count[15]~1_combout\ & ( (\increment[2]~input_o\ & !\inst|out_count[15]~0_combout\) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0100010001000100010001000100010000000000000000000000000000000100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_increment[2]~input_o\,
-	datab => \inst|ALT_INV_out_count[15]~0_combout\,
-	datac => \inst|ALT_INV_Equal0~0_combout\,
-	datad => \inst|ALT_INV_Equal0~1_combout\,
-	datae => \inst|ALT_INV_Equal0~2_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~1_combout\,
-	combout => \inst|out_count[15]~2_combout\);
-
-\inst|Mux14~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|Mux14~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[1]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[1]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[1]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~57_sumout\ ) ) )
+-- \inst|out_count~16_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[1]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[1]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[1]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~57_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2006,25 +2001,43 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[1]~input_o\,
 	datac => \ALT_INV_rx_count[1]~input_o\,
 	datad => \ALT_INV_operand_count[1]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux14~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~16_combout\);
 
-\inst|out_count[15]~4\ : cyclonev_lcell_comb
+\inst|out_count[15]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count[15]~4_combout\ = (!\increment[2]~input_o\ & (!\increment[0]~input_o\ $ (\increment[1]~input_o\)))
+-- \inst|out_count[15]~1_combout\ = ((\increment[1]~input_o\ & (\increment[0]~input_o\ & !\increment[2]~input_o\))) # (\reset~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1001000010010000100100001001000010010000100100001001000010010000",
+	lut_mask => "0001000011111111000100001111111100010000111111110001000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_increment[0]~input_o\,
-	datab => \ALT_INV_increment[1]~input_o\,
+	dataa => \ALT_INV_increment[1]~input_o\,
+	datab => \ALT_INV_increment[0]~input_o\,
 	datac => \ALT_INV_increment[2]~input_o\,
-	combout => \inst|out_count[15]~4_combout\);
+	datad => \ALT_INV_reset~input_o\,
+	combout => \inst|out_count[15]~1_combout\);
+
+\inst|out_count[15]~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst|out_count[15]~2_combout\ = (((\reset~input_o\) # (\increment[2]~input_o\)) # (\increment[0]~input_o\)) # (\increment[1]~input_o\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0111111111111111011111111111111101111111111111110111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_increment[1]~input_o\,
+	datab => \ALT_INV_increment[0]~input_o\,
+	datac => \ALT_INV_increment[2]~input_o\,
+	datad => \ALT_INV_reset~input_o\,
+	combout => \inst|out_count[15]~2_combout\);
 
 \inst|out_count[1]\ : dffeas
 -- pragma translate_off
@@ -2034,40 +2047,12 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux14~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~16_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(1));
-
-\inst|out_count[0]~_wirecell\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|out_count[0]~_wirecell_combout\ = !\inst|out_count\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1010101010101010101010101010101010101010101010101010101010101010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(0),
-	combout => \inst|out_count[0]~_wirecell_combout\);
-
-\inst1|Add0~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst1|Add0~0_combout\ = !\inst|out_count\(1) $ (!\inst|out_count\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(1),
-	datab => \inst|ALT_INV_out_count\(0),
-	combout => \inst1|Add0~0_combout\);
 
 \inst1|memory_rtl_1|auto_generated|ram_block1a15\ : cyclonev_ram_block
 -- pragma translate_off
@@ -3050,10 +3035,10 @@ PORT MAP (
 	i => ww_operand_count(2),
 	o => \operand_count[2]~input_o\);
 
-\inst|Mux13~0\ : cyclonev_lcell_comb
+\inst|out_count~15\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux13~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[2]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[2]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[2]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~53_sumout\ ) ) )
+-- \inst|out_count~15_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[2]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[2]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[2]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~53_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3066,9 +3051,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[2]~input_o\,
 	datac => \ALT_INV_rx_count[2]~input_o\,
 	datad => \ALT_INV_operand_count[2]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux13~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~15_combout\);
 
 \inst|out_count[2]\ : dffeas
 -- pragma translate_off
@@ -3078,8 +3063,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux13~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~15_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(2));
@@ -3131,10 +3117,10 @@ PORT MAP (
 	i => ww_operand_count(3),
 	o => \operand_count[3]~input_o\);
 
-\inst|Mux12~0\ : cyclonev_lcell_comb
+\inst|out_count~14\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux12~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[3]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[3]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[3]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~49_sumout\ ) ) )
+-- \inst|out_count~14_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[3]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[3]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[3]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~49_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3147,9 +3133,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[3]~input_o\,
 	datac => \ALT_INV_rx_count[3]~input_o\,
 	datad => \ALT_INV_operand_count[3]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux12~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~14_combout\);
 
 \inst|out_count[3]\ : dffeas
 -- pragma translate_off
@@ -3159,8 +3145,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux12~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~14_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(3));
@@ -3212,10 +3199,10 @@ PORT MAP (
 	i => ww_operand_count(4),
 	o => \operand_count[4]~input_o\);
 
-\inst|Mux11~0\ : cyclonev_lcell_comb
+\inst|out_count~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux11~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[4]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[4]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[4]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~45_sumout\ ) ) )
+-- \inst|out_count~13_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[4]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[4]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[4]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~45_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3228,9 +3215,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[4]~input_o\,
 	datac => \ALT_INV_rx_count[4]~input_o\,
 	datad => \ALT_INV_operand_count[4]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux11~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~13_combout\);
 
 \inst|out_count[4]\ : dffeas
 -- pragma translate_off
@@ -3240,8 +3227,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux11~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~13_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(4));
@@ -3293,10 +3281,10 @@ PORT MAP (
 	i => ww_operand_count(5),
 	o => \operand_count[5]~input_o\);
 
-\inst|Mux10~0\ : cyclonev_lcell_comb
+\inst|out_count~12\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux10~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[5]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[5]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[5]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~41_sumout\ ) ) )
+-- \inst|out_count~12_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[5]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[5]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[5]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~41_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3309,9 +3297,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[5]~input_o\,
 	datac => \ALT_INV_rx_count[5]~input_o\,
 	datad => \ALT_INV_operand_count[5]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux10~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~12_combout\);
 
 \inst|out_count[5]\ : dffeas
 -- pragma translate_off
@@ -3321,8 +3309,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux10~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~12_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(5));
@@ -3374,10 +3363,10 @@ PORT MAP (
 	i => ww_operand_count(6),
 	o => \operand_count[6]~input_o\);
 
-\inst|Mux9~0\ : cyclonev_lcell_comb
+\inst|out_count~11\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux9~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[6]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[6]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[6]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~37_sumout\ ) ) )
+-- \inst|out_count~11_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[6]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[6]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[6]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~37_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3390,9 +3379,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[6]~input_o\,
 	datac => \ALT_INV_rx_count[6]~input_o\,
 	datad => \ALT_INV_operand_count[6]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux9~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~11_combout\);
 
 \inst|out_count[6]\ : dffeas
 -- pragma translate_off
@@ -3402,8 +3391,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux9~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~11_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(6));
@@ -3455,10 +3445,10 @@ PORT MAP (
 	i => ww_operand_count(7),
 	o => \operand_count[7]~input_o\);
 
-\inst|Mux8~0\ : cyclonev_lcell_comb
+\inst|out_count~10\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux8~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[7]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[7]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[7]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~33_sumout\ ) ) )
+-- \inst|out_count~10_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[7]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[7]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[7]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~33_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3471,9 +3461,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[7]~input_o\,
 	datac => \ALT_INV_rx_count[7]~input_o\,
 	datad => \ALT_INV_operand_count[7]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux8~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~10_combout\);
 
 \inst|out_count[7]\ : dffeas
 -- pragma translate_off
@@ -3483,8 +3473,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux8~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~10_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(7));
@@ -3536,10 +3527,10 @@ PORT MAP (
 	i => ww_operand_count(8),
 	o => \operand_count[8]~input_o\);
 
-\inst|Mux7~0\ : cyclonev_lcell_comb
+\inst|out_count~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux7~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[8]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[8]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[8]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~29_sumout\ ) ) )
+-- \inst|out_count~9_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[8]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[8]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[8]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~29_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3552,9 +3543,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[8]~input_o\,
 	datac => \ALT_INV_rx_count[8]~input_o\,
 	datad => \ALT_INV_operand_count[8]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux7~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~9_combout\);
 
 \inst|out_count[8]\ : dffeas
 -- pragma translate_off
@@ -3564,8 +3555,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux7~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~9_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(8));
@@ -3617,10 +3609,10 @@ PORT MAP (
 	i => ww_operand_count(9),
 	o => \operand_count[9]~input_o\);
 
-\inst|Mux6~0\ : cyclonev_lcell_comb
+\inst|out_count~8\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux6~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[9]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[9]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[9]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~25_sumout\ ) ) )
+-- \inst|out_count~8_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[9]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[9]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[9]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~25_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3633,9 +3625,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[9]~input_o\,
 	datac => \ALT_INV_rx_count[9]~input_o\,
 	datad => \ALT_INV_operand_count[9]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux6~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~8_combout\);
 
 \inst|out_count[9]\ : dffeas
 -- pragma translate_off
@@ -3645,8 +3637,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux6~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~8_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(9));
@@ -3698,10 +3691,10 @@ PORT MAP (
 	i => ww_operand_count(10),
 	o => \operand_count[10]~input_o\);
 
-\inst|Mux5~0\ : cyclonev_lcell_comb
+\inst|out_count~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux5~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[10]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[10]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[10]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~21_sumout\ ) ) )
+-- \inst|out_count~7_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[10]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[10]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[10]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~21_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3714,9 +3707,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[10]~input_o\,
 	datac => \ALT_INV_rx_count[10]~input_o\,
 	datad => \ALT_INV_operand_count[10]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux5~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~7_combout\);
 
 \inst|out_count[10]\ : dffeas
 -- pragma translate_off
@@ -3726,8 +3719,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux5~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~7_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(10));
@@ -3779,10 +3773,10 @@ PORT MAP (
 	i => ww_operand_count(11),
 	o => \operand_count[11]~input_o\);
 
-\inst|Mux4~0\ : cyclonev_lcell_comb
+\inst|out_count~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux4~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[11]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[11]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[11]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~17_sumout\ ) ) )
+-- \inst|out_count~6_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[11]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[11]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[11]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~17_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3795,9 +3789,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[11]~input_o\,
 	datac => \ALT_INV_rx_count[11]~input_o\,
 	datad => \ALT_INV_operand_count[11]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux4~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~6_combout\);
 
 \inst|out_count[11]\ : dffeas
 -- pragma translate_off
@@ -3807,8 +3801,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux4~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~6_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(11));
@@ -3860,10 +3855,10 @@ PORT MAP (
 	i => ww_operand_count(12),
 	o => \operand_count[12]~input_o\);
 
-\inst|Mux3~0\ : cyclonev_lcell_comb
+\inst|out_count~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux3~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[12]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[12]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[12]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~13_sumout\ ) ) )
+-- \inst|out_count~5_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[12]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[12]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[12]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~13_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3876,9 +3871,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[12]~input_o\,
 	datac => \ALT_INV_rx_count[12]~input_o\,
 	datad => \ALT_INV_operand_count[12]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux3~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~5_combout\);
 
 \inst|out_count[12]\ : dffeas
 -- pragma translate_off
@@ -3888,8 +3883,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux3~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~5_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(12));
@@ -3941,10 +3937,10 @@ PORT MAP (
 	i => ww_operand_count(13),
 	o => \operand_count[13]~input_o\);
 
-\inst|Mux2~0\ : cyclonev_lcell_comb
+\inst|out_count~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux2~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[13]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[13]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[13]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~9_sumout\ ) ) )
+-- \inst|out_count~4_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[13]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[13]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[13]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~9_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3957,9 +3953,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[13]~input_o\,
 	datac => \ALT_INV_rx_count[13]~input_o\,
 	datad => \ALT_INV_operand_count[13]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux2~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~4_combout\);
 
 \inst|out_count[13]\ : dffeas
 -- pragma translate_off
@@ -3969,8 +3965,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux2~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~4_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(13));
@@ -4022,10 +4019,10 @@ PORT MAP (
 	i => ww_operand_count(14),
 	o => \operand_count[14]~input_o\);
 
-\inst|Mux1~0\ : cyclonev_lcell_comb
+\inst|out_count~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux1~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[14]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[14]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[14]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~5_sumout\ ) ) )
+-- \inst|out_count~3_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[14]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[14]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[14]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~5_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4038,9 +4035,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[14]~input_o\,
 	datac => \ALT_INV_rx_count[14]~input_o\,
 	datad => \ALT_INV_operand_count[14]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux1~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~3_combout\);
 
 \inst|out_count[14]\ : dffeas
 -- pragma translate_off
@@ -4050,8 +4047,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux1~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~3_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(14));
@@ -4101,10 +4099,10 @@ PORT MAP (
 	i => ww_operand_count(15),
 	o => \operand_count[15]~input_o\);
 
-\inst|Mux0~0\ : cyclonev_lcell_comb
+\inst|out_count~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|Mux0~0_combout\ = ( \inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \operand_count[15]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( \inst|out_count[15]~2_combout\ & ( \rx_count[15]~input_o\ ) ) ) # ( 
--- \inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \alu_count[15]~input_o\ ) ) ) # ( !\inst|out_count[15]~5_combout\ & ( !\inst|out_count[15]~2_combout\ & ( \inst|Add0~1_sumout\ ) ) )
+-- \inst|out_count~0_combout\ = ( \inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \operand_count[15]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( \inst|out_count[15]~20_combout\ & ( \rx_count[15]~input_o\ ) ) ) # ( 
+-- \inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \alu_count[15]~input_o\ ) ) ) # ( !\inst|out_count[15]~24_combout\ & ( !\inst|out_count[15]~20_combout\ & ( \inst|Add0~1_sumout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4117,9 +4115,9 @@ PORT MAP (
 	datab => \ALT_INV_alu_count[15]~input_o\,
 	datac => \ALT_INV_rx_count[15]~input_o\,
 	datad => \ALT_INV_operand_count[15]~input_o\,
-	datae => \inst|ALT_INV_out_count[15]~5_combout\,
-	dataf => \inst|ALT_INV_out_count[15]~2_combout\,
-	combout => \inst|Mux0~0_combout\);
+	datae => \inst|ALT_INV_out_count[15]~24_combout\,
+	dataf => \inst|ALT_INV_out_count[15]~20_combout\,
+	combout => \inst|out_count~0_combout\);
 
 \inst|out_count[15]\ : dffeas
 -- pragma translate_off
@@ -4129,11 +4127,41 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~input_o\,
-	d => \inst|Mux0~0_combout\,
-	sclr => \inst|out_count[15]~4_combout\,
+	d => \inst|out_count~0_combout\,
+	sclr => \inst|out_count[15]~1_combout\,
+	ena => \inst|out_count[15]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(15));
+
+\inst|out_count[0]~_wirecell\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst|out_count[0]~_wirecell_combout\ = !\inst|out_count\(0)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1010101010101010101010101010101010101010101010101010101010101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_out_count\(0),
+	combout => \inst|out_count[0]~_wirecell_combout\);
+
+\inst1|Add0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Add0~0_combout\ = !\inst|out_count\(1) $ (!\inst|out_count\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_out_count\(1),
+	datab => \inst|ALT_INV_out_count\(0),
+	combout => \inst1|Add0~0_combout\);
 
 \inst1|memory_rtl_0|auto_generated|ram_block1a15\ : cyclonev_ram_block
 -- pragma translate_off

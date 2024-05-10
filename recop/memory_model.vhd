@@ -11,8 +11,8 @@ entity memory is
 	port (
 		clk: in bit_1 := '0';
 		--pm_rd: in bit_1 := '0';
-		pm_address: in bit_16 := X"0000";
-		pm_outdata: out bit_16 := X"0000";
+		pm_address: in bit_16;
+		pm_outdata: out bit_16;
 		
 		--dm_rd: in bit_1 := '0';
 		dm_address: in bit_16 := X"0000";
@@ -106,8 +106,8 @@ begin
 	process (clk)
 	begin
 		if falling_edge(clk) then
-			pm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
-			dm_outdata <= memory(to_integer(unsigned(pm_address)) + 1); -- memory is an array
+			pm_outdata <= memory(to_integer(unsigned(pm_address)) + 1); -- memory is an array
+			dm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
 		end if;
 	end process;
 
