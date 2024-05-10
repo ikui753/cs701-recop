@@ -46,7 +46,7 @@ begin
 	r7 <=regs(7);
 
 	-- mux selecting input data to be written to Rz
-	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg)
+	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z)
     begin
         case rf_input_sel is
             when "0000" =>
