@@ -1,5 +1,5 @@
 Flow report for recop
-Fri May 10 18:20:31 2024
+Sat May 11 12:01:19 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri May 10 18:20:31 2024       ;
+; Flow Status                     ; Successful - Sat May 11 12:01:19 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/10/2024 18:10:53 ;
+; Start date & time ; 05/11/2024 12:00:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; recop               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 237901791186551.171532145319432        ; --            ; --              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 237901791186551.171538562014892        ; --            ; --              ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; progCounterTest ; Top        ;
@@ -96,25 +96,10 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4886 MB             ; 00:00:09                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4890 MB             ; 00:00:09                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4721 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4723 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4727 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4727 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4727 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4727 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; Total                ; 00:00:52     ; --                      ; --                  ; 00:00:32                           ;
+; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -126,21 +111,6 @@ refer to the applicable agreement for further details.
 ; Analysis & Synthesis ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -148,21 +118,6 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/modelsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/InstructionFetchWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/InstructionFetchWaveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
 

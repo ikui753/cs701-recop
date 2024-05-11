@@ -64,11 +64,11 @@ begin
             when "0111" =>
                 data_input_z <= dm_out; 
 				when "1000" =>
-					 data_input_z <= regs(sel_x); -- RZ <- M[Rx] 
+					 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
 				when "1001" =>
 					 data_input_z <= regs(to_integer(unsigned(ir_operand))); -- Rz <- M[Operand] might need to take a look at this later
 				when "1010" =>
-					 data_input_z <= regs(sel_z);
+					 data_input_z <= regs(sel_z); -- Rz <- Rz
             when others =>
                 data_input_z <= X"0000";
         end case;

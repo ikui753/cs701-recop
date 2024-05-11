@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/10/2024 18:20:30"
+-- DATE "05/11/2024 12:01:18"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -4284,7 +4284,7 @@ PORT MAP (
 \inst1|memory_rtl_1|auto_generated|ram_block1a2\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "8A2",
+	mem_init0 => "0A2",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -4381,7 +4381,7 @@ PORT MAP (
 \inst1|memory_rtl_1|auto_generated|ram_block1a1\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "A02",
+	mem_init0 => "202",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -4478,7 +4478,7 @@ PORT MAP (
 \inst1|memory_rtl_1|auto_generated|ram_block1a0\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "A20",
+	mem_init0 => "620",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -4647,7 +4647,7 @@ PORT MAP (
 \inst1|memory_rtl_0|auto_generated|ram_block1a15\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "000",
+	mem_init0 => "400",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -4781,7 +4781,7 @@ PORT MAP (
 \inst1|memory_rtl_1|auto_generated|ram_block1a15\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "000",
+	mem_init0 => "400",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -5361,7 +5361,7 @@ PORT MAP (
 \inst1|memory_rtl_1|auto_generated|ram_block1a5\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "000",
+	mem_init0 => "400",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -5420,7 +5420,7 @@ PORT MAP (
 \inst1|memory_rtl_1|auto_generated|ram_block1a4\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "551",
+	mem_init0 => "151",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -6957,7 +6957,7 @@ PORT MAP (
 \inst1|memory_rtl_0|auto_generated|ram_block1a5\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "000",
+	mem_init0 => "400",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -7006,7 +7006,7 @@ PORT MAP (
 \inst1|memory_rtl_0|auto_generated|ram_block1a4\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "551",
+	mem_init0 => "151",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -7104,7 +7104,7 @@ PORT MAP (
 \inst1|memory_rtl_0|auto_generated|ram_block1a2\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "8A2",
+	mem_init0 => "0A2",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -7153,7 +7153,7 @@ PORT MAP (
 \inst1|memory_rtl_0|auto_generated|ram_block1a1\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "A02",
+	mem_init0 => "202",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
@@ -7202,7 +7202,7 @@ PORT MAP (
 \inst1|memory_rtl_0|auto_generated|ram_block1a0\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	mem_init0 => "A20",
+	mem_init0 => "620",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
 	init_file => "db/recop.ram0_memory_e411fb78.hdl.mif",
