@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "z_flag",
+					"strict" : false
+				},
+				{
 					"name" : "address_method[1]",
 					"strict" : false
 				},
@@ -444,6 +448,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "clr_z_flag",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -556,11 +564,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "z",
+					"name" : "increment[1]",
 					"strict" : false
 				},
 				{
-					"name" : "increment[1]",
+					"name" : "rz_data[4]",
 					"strict" : false
 				},
 				{
@@ -621,10 +629,6 @@
 				},
 				{
 					"name" : "rz_data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[4]",
 					"strict" : false
 				},
 				{

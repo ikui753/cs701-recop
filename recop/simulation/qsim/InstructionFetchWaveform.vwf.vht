@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/11/2024 17:51:03"
+-- Generated on "05/11/2024 18:47:20"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -143,6 +143,14 @@ BEGIN
 	increment(0) <= '1';
 	WAIT FOR 10000 ps;
 	increment(0) <= '0';
+	WAIT FOR 50000 ps;
+	increment(0) <= '1';
+	WAIT FOR 10000 ps;
+	increment(0) <= '0';
+	WAIT FOR 50000 ps;
+	increment(0) <= '1';
+	WAIT FOR 10000 ps;
+	increment(0) <= '0';
 WAIT;
 END PROCESS t_prcs_increment_0;
 
@@ -168,7 +176,7 @@ END PROCESS t_prcs_rf_input_sel_2;
 t_prcs_rf_input_sel_1: PROCESS
 BEGIN
 	rf_input_sel(1) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 160000 ps;
 	rf_input_sel(1) <= '1';
 	WAIT FOR 10000 ps;
 	rf_input_sel(1) <= '0';
@@ -178,7 +186,7 @@ END PROCESS t_prcs_rf_input_sel_1;
 t_prcs_rf_input_sel_0: PROCESS
 BEGIN
 	rf_input_sel(0) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 160000 ps;
 	rf_input_sel(0) <= '1';
 	WAIT FOR 10000 ps;
 	rf_input_sel(0) <= '0';
@@ -199,6 +207,10 @@ t_prcs_ld_r: PROCESS
 BEGIN
 	ld_r <= '0';
 	WAIT FOR 40000 ps;
+	ld_r <= '1';
+	WAIT FOR 10000 ps;
+	ld_r <= '0';
+	WAIT FOR 50000 ps;
 	ld_r <= '1';
 	WAIT FOR 10000 ps;
 	ld_r <= '0';
@@ -236,7 +248,7 @@ END PROCESS t_prcs_alu_operation_2;
 -- alu_operation[1]
 t_prcs_alu_operation_1: PROCESS
 BEGIN
-	alu_operation(1) <= '0';
+	alu_operation(1) <= '1';
 WAIT;
 END PROCESS t_prcs_alu_operation_1;
 -- alu_operation[0]

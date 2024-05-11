@@ -23,6 +23,10 @@ quit -f
 
 
 
+
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -41,6 +45,10 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
+
 
 
 
@@ -1626,7 +1634,11 @@ TRANSITION_LIST("increment[0]")
 		REPEAT = 1;
 		LEVEL 0 FOR 60.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 810.0;
 	}
 }
 
@@ -2022,9 +2034,9 @@ TRANSITION_LIST("rf_input_sel[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
+		LEVEL 0 FOR 160.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 890.0;
+		LEVEL 0 FOR 830.0;
 	}
 }
 
@@ -2033,9 +2045,9 @@ TRANSITION_LIST("rf_input_sel[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
+		LEVEL 0 FOR 160.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 890.0;
+		LEVEL 0 FOR 830.0;
 	}
 }
 
@@ -2346,7 +2358,9 @@ TRANSITION_LIST("ld_r")
 		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 50.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 890.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 830.0;
 	}
 }
 
@@ -2526,7 +2540,7 @@ TRANSITION_LIST("alu_operation[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -3797,7 +3811,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "alu_op1_sel";
-	EXPAND_STATUS = COLLAPSED;
+	EXPAND_STATUS = EXPANDED;
 	RADIX = Binary;
 	TREE_INDEX = 125;
 	TREE_LEVEL = 0;
@@ -3836,7 +3850,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "alu_operation";
-	EXPAND_STATUS = COLLAPSED;
+	EXPAND_STATUS = EXPANDED;
 	RADIX = Binary;
 	TREE_INDEX = 129;
 	TREE_LEVEL = 0;
