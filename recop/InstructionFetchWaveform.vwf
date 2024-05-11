@@ -28,6 +28,8 @@ quit -f
 
 
 
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -46,6 +48,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 
 
@@ -1390,11 +1394,9 @@ TRANSITION_LIST("increment[0]")
 		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 30.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
+		LEVEL 0 FOR 130.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 830.0;
+		LEVEL 0 FOR 750.0;
 	}
 }
 
@@ -1772,9 +1774,9 @@ TRANSITION_LIST("rf_input_sel[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 780.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 690.0;
 	}
 }
 
@@ -1801,7 +1803,9 @@ TRANSITION_LIST("rf_input_sel[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 270.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 690.0;
 	}
 }
 
@@ -2110,9 +2114,11 @@ TRANSITION_LIST("ld_r")
 		REPEAT = 1;
 		LEVEL 0 FOR 40.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 90.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 780.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 110.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 700.0;
 	}
 }
 
