@@ -68,8 +68,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 248 64)
 		(output)
-		(text "opcodeOut[5..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "opcodeOut[5..0]" (rect 165 59 227 71)(font "Arial" ))
+		(text "alu_opsel[5..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "alu_opsel[5..0]" (rect 171 59 227 71)(font "Arial" ))
 		(line (pt 248 64)(pt 232 64)(line_width 3))
 	)
 	(port

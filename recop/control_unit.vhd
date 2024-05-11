@@ -7,19 +7,19 @@ use work.recop_types.all;
 entity control_unit is
     port (
 		clk : in bit_1;
-        reset : in bit_1;
-        opcodeIn : in bit_6;
-        address_method : in bit_2;
-		  
+	   reset : in bit_1;
+	   opcodeIn : in bit_6;
+	   address_method : in bit_2;
+		 
 		clkOut : out bit_1;
 		increment : out bit_3;
-        alu_opsel : out bit_6;
+      alu_opsel : out bit_6;
 		ld_r : out bit_1; 
-        clr_z_flag : out bit_1;
-        dm_wr : out bit_1;
-        wren : out bit_1;
+      clr_z_flag : out bit_1;
+      dm_wr : out bit_1;
+      wren : out bit_1;
     	rf_sel : out bit_4;
-	    rf_init : out bit_1;
+	   rf_init : out bit_1;
 		z : out bit_1;
 		dpcr_lsb_sel : out bit_1;
 		dpcr_wr : out bit_1
@@ -51,6 +51,10 @@ begin
             -- wren_signal <= '0';
             -- ... and so on for other control signals
         elsif rising_edge(clk) then
+				clkOut <= clk; -- output clock 
+				
+				
+				-- check opcode and output relevant control signals
             case opcodeIn is
 					when ldr =>
 						-- check address method
@@ -79,13 +83,13 @@ begin
 --						when am_direct => -- M[Operand] 
 --							
 --						when am_register => -- m[Rz] <- Rx
-					when orr =>
-						case address_method is
-							when am_inherent =>
-							when am_immediate =>
-							when am_direct =>
-							when am_register =>
-								
+--					when orr =>
+--						case address_method is
+--							when am_inherent =>
+--							when am_immediate =>
+--							when am_direct =>
+--							when am_register =>
+--								
 					
                when others =>
 						-- noop
