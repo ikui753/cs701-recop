@@ -448,6 +448,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "rf_input_sel[2]",
+					"strict" : false
+				},
+				{
 					"name" : "rf_input_sel[1]",
 					"strict" : false
 				},
@@ -457,10 +461,6 @@
 				},
 				{
 					"name" : "rf_input_sel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rf_input_sel[2]",
 					"strict" : false
 				},
 				{
