@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/11/2024 14:50:39"
+-- Generated on "05/11/2024 15:26:05"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -168,11 +168,19 @@ END PROCESS t_prcs_rf_input_sel_2;
 t_prcs_rf_input_sel_1: PROCESS
 BEGIN
 	rf_input_sel(1) <= '0';
+	WAIT FOR 100000 ps;
+	rf_input_sel(1) <= '1';
+	WAIT FOR 10000 ps;
+	rf_input_sel(1) <= '0';
 WAIT;
 END PROCESS t_prcs_rf_input_sel_1;
 -- rf_input_sel[0]
 t_prcs_rf_input_sel_0: PROCESS
 BEGIN
+	rf_input_sel(0) <= '0';
+	WAIT FOR 100000 ps;
+	rf_input_sel(0) <= '1';
+	WAIT FOR 10000 ps;
 	rf_input_sel(0) <= '0';
 WAIT;
 END PROCESS t_prcs_rf_input_sel_0;
@@ -191,6 +199,10 @@ t_prcs_ld_r: PROCESS
 BEGIN
 	ld_r <= '0';
 	WAIT FOR 40000 ps;
+	ld_r <= '1';
+	WAIT FOR 10000 ps;
+	ld_r <= '0';
+	WAIT FOR 50000 ps;
 	ld_r <= '1';
 	WAIT FOR 10000 ps;
 	ld_r <= '0';

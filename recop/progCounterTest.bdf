@@ -373,7 +373,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 2872 256 3050 272)
+	(rect 2904 256 3082 272)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "alu_output[15..0]" (rect 90 0 172 12)(font "Arial" ))
 	(pt 0 8)
@@ -1162,6 +1162,36 @@ refer to the applicable agreement for further details.
 	(pt 2616 296)
 	(pt 2640 296)
 )
+(connector
+	(pt 2888 264)
+	(pt 2888 552)
+	(bus)
+)
+(connector
+	(pt 2888 552)
+	(pt 2120 552)
+	(bus)
+)
+(connector
+	(pt 2872 264)
+	(pt 2888 264)
+	(bus)
+)
+(connector
+	(pt 2888 264)
+	(pt 2904 264)
+	(bus)
+)
+(connector
+	(pt 2120 552)
+	(pt 2120 392)
+	(bus)
+)
+(connector
+	(pt 2120 392)
+	(pt 2176 392)
+	(bus)
+)
 (junction (pt 1064 200))
 (junction (pt 1280 200))
 (junction (pt 752 216))
@@ -1171,3 +1201,4 @@ refer to the applicable agreement for further details.
 (junction (pt 2384 264))
 (junction (pt 2392 280))
 (junction (pt 2120 184))
+(junction (pt 2888 264))

@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/11/2024 14:34:40"
+-- Generated on "05/11/2024 15:00:55"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -168,11 +168,19 @@ END PROCESS t_prcs_rf_input_sel_2;
 t_prcs_rf_input_sel_1: PROCESS
 BEGIN
 	rf_input_sel(1) <= '0';
+	WAIT FOR 90000 ps;
+	rf_input_sel(1) <= '1';
+	WAIT FOR 130000 ps;
+	rf_input_sel(1) <= '0';
 WAIT;
 END PROCESS t_prcs_rf_input_sel_1;
 -- rf_input_sel[0]
 t_prcs_rf_input_sel_0: PROCESS
 BEGIN
+	rf_input_sel(0) <= '0';
+	WAIT FOR 90000 ps;
+	rf_input_sel(0) <= '1';
+	WAIT FOR 130000 ps;
 	rf_input_sel(0) <= '0';
 WAIT;
 END PROCESS t_prcs_rf_input_sel_0;
@@ -194,6 +202,47 @@ BEGIN
 	ld_r <= '1';
 	WAIT FOR 10000 ps;
 	ld_r <= '0';
+	WAIT FOR 40000 ps;
+	ld_r <= '1';
+	WAIT FOR 130000 ps;
+	ld_r <= '0';
 WAIT;
 END PROCESS t_prcs_ld_r;
+-- alu_op1_sel[1]
+t_prcs_alu_op1_sel_1: PROCESS
+BEGIN
+	alu_op1_sel(1) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_op1_sel_1;
+-- alu_op1_sel[0]
+t_prcs_alu_op1_sel_0: PROCESS
+BEGIN
+	alu_op1_sel(0) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_op1_sel_0;
+
+-- alu_op2_sel
+t_prcs_alu_op2_sel: PROCESS
+BEGIN
+	alu_op2_sel <= '1';
+WAIT;
+END PROCESS t_prcs_alu_op2_sel;
+-- alu_operation[2]
+t_prcs_alu_operation_2: PROCESS
+BEGIN
+	alu_operation(2) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_operation_2;
+-- alu_operation[1]
+t_prcs_alu_operation_1: PROCESS
+BEGIN
+	alu_operation(1) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_operation_1;
+-- alu_operation[0]
+t_prcs_alu_operation_0: PROCESS
+BEGIN
+	alu_operation(0) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_operation_0;
 END progCounterTest_arch;
