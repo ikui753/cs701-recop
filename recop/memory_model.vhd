@@ -77,7 +77,7 @@ architecture beh of memory is
 --	am_register&addr&X"5"&X"2");
 	am_immediate&ldr&x"1"&x"0",
 	x"0007", -- ldr Rz Operand
-	am_immediate&addr&x"2"&x"1",
+	am_immediate&addr&x"1"&x"1",
 	x"0001");
 --	am_immediate&jmp&x"0"&x"0",
 --	x"0008", -- jump 8

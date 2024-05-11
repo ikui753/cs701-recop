@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/11/2024 14:18:12"
+-- Generated on "05/11/2024 14:50:39"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -35,6 +35,10 @@ ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL address_method : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL alu_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL alu_op1_sel : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL alu_op2_sel : STD_LOGIC;
+SIGNAL alu_operation : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL alu_output : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -56,6 +60,10 @@ COMPONENT progCounterTest
 	PORT (
 	address_method : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	alu_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+	alu_op1_sel : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	alu_op2_sel : IN STD_LOGIC;
+	alu_operation : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+	alu_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	clk : IN STD_LOGIC;
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -81,6 +89,10 @@ BEGIN
 -- list connections between master ports and signals
 	address_method => address_method,
 	alu_count => alu_count,
+	alu_op1_sel => alu_op1_sel,
+	alu_op2_sel => alu_op2_sel,
+	alu_operation => alu_operation,
+	alu_output => alu_output,
 	clk => clk,
 	dm_indata => dm_indata,
 	dm_outdata => dm_outdata,
@@ -115,10 +127,6 @@ END PROCESS t_prcs_clk;
 t_prcs_increment_2: PROCESS
 BEGIN
 	increment(2) <= '0';
-	WAIT FOR 100000 ps;
-	increment(2) <= '1';
-	WAIT FOR 10000 ps;
-	increment(2) <= '0';
 WAIT;
 END PROCESS t_prcs_increment_2;
 -- increment[1]
@@ -135,14 +143,6 @@ BEGIN
 	increment(0) <= '1';
 	WAIT FOR 10000 ps;
 	increment(0) <= '0';
-	WAIT FOR 30000 ps;
-	increment(0) <= '1';
-	WAIT FOR 10000 ps;
-	increment(0) <= '0';
-	WAIT FOR 130000 ps;
-	increment(0) <= '1';
-	WAIT FOR 10000 ps;
-	increment(0) <= '0';
 WAIT;
 END PROCESS t_prcs_increment_0;
 
@@ -155,10 +155,6 @@ END PROCESS t_prcs_reset;
 -- rf_input_sel[3]
 t_prcs_rf_input_sel_3: PROCESS
 BEGIN
-	rf_input_sel(3) <= '0';
-	WAIT FOR 270000 ps;
-	rf_input_sel(3) <= '1';
-	WAIT FOR 40000 ps;
 	rf_input_sel(3) <= '0';
 WAIT;
 END PROCESS t_prcs_rf_input_sel_3;
@@ -177,10 +173,6 @@ END PROCESS t_prcs_rf_input_sel_1;
 -- rf_input_sel[0]
 t_prcs_rf_input_sel_0: PROCESS
 BEGIN
-	rf_input_sel(0) <= '0';
-	WAIT FOR 270000 ps;
-	rf_input_sel(0) <= '1';
-	WAIT FOR 40000 ps;
 	rf_input_sel(0) <= '0';
 WAIT;
 END PROCESS t_prcs_rf_input_sel_0;
@@ -202,14 +194,43 @@ BEGIN
 	ld_r <= '1';
 	WAIT FOR 10000 ps;
 	ld_r <= '0';
-	WAIT FOR 80000 ps;
-	ld_r <= '1';
-	WAIT FOR 30000 ps;
-	ld_r <= '0';
-	WAIT FOR 110000 ps;
-	ld_r <= '1';
-	WAIT FOR 30000 ps;
-	ld_r <= '0';
 WAIT;
 END PROCESS t_prcs_ld_r;
+-- alu_op1_sel[1]
+t_prcs_alu_op1_sel_1: PROCESS
+BEGIN
+	alu_op1_sel(1) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_op1_sel_1;
+-- alu_op1_sel[0]
+t_prcs_alu_op1_sel_0: PROCESS
+BEGIN
+	alu_op1_sel(0) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_op1_sel_0;
+
+-- alu_op2_sel
+t_prcs_alu_op2_sel: PROCESS
+BEGIN
+	alu_op2_sel <= '1';
+WAIT;
+END PROCESS t_prcs_alu_op2_sel;
+-- alu_operation[2]
+t_prcs_alu_operation_2: PROCESS
+BEGIN
+	alu_operation(2) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_operation_2;
+-- alu_operation[1]
+t_prcs_alu_operation_1: PROCESS
+BEGIN
+	alu_operation(1) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_operation_1;
+-- alu_operation[0]
+t_prcs_alu_operation_0: PROCESS
+BEGIN
+	alu_operation(0) <= '0';
+WAIT;
+END PROCESS t_prcs_alu_operation_0;
 END progCounterTest_arch;
