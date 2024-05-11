@@ -25,7 +25,7 @@ entity memory is
 end memory;
 
 architecture beh of memory is
-	type memory_array is array (0 to 13) of bit_16;
+	type memory_array is array (0 to 3) of bit_16;
 	signal memory: memory_array:=(
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",
@@ -77,18 +77,20 @@ architecture beh of memory is
 --	am_register&addr&X"5"&X"2");
 	am_immediate&ldr&x"1"&x"0",
 	x"0007", -- ldr Rz Operand
-	am_immediate&jmp&x"0"&x"0",
-	x"0008", -- jump 8
-	am_immediate&ldr&x"1"&x"0",
-	x"0005",
-	am_immediate&ldr&x"1"&x"0",
-	x"0004",
-	am_immediate&ldr&x"2"&x"0",
-	x"0003", -- ldr 1, 0, 3
-	am_direct&ldr&x"3"&x"0",
-	x"0001",
-	am_register&ldr&x"2"&x"1",
-	x"0000"); 
+	am_immediate&addr&x"2"&x"1",
+	x"0001");
+--	am_immediate&jmp&x"0"&x"0",
+--	x"0008", -- jump 8
+--	am_immediate&ldr&x"1"&x"0",
+--	x"0005",
+--	am_immediate&ldr&x"1"&x"0",
+--	x"0004",
+--	am_immediate&ldr&x"2"&x"0",
+--	x"0003", -- ldr 1, 0, 3
+--	am_direct&ldr&x"3"&x"0",
+--	x"0001",
+--	am_register&ldr&x"2"&x"1",
+--	x"0000"); 
 	
 
 begin
