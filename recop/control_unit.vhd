@@ -9,13 +9,21 @@ entity control_unit is
 		clk : in bit_1;
 	   reset : in bit_1;
 	   opcodeIn : in bit_6;
+		operand : in bit_16;
 	   address_method : in bit_2;
 		 
-		clkOut : out bit_1;
-		increment : out bit_3;
-      alu_opsel : out bit_6;
+		clkOut : out bit_1; -- clock
+		-- program counter signals
+		increment : out bit_3; -- increment program counter
+      operandOut : out bit_16; -- increment program counter
+		
+		-- alu signals
+		alu_opsel : out bit_6;
+		
+		-- load register 
 		ld_r : out bit_1; 
-      clr_z_flag : out bit_1;
+      
+		clr_z_flag : out bit_1;
       dm_wr : out bit_1;
       wren : out bit_1;
     	rf_sel : out bit_4;
@@ -52,10 +60,34 @@ begin
             -- ... and so on for other control signals
         elsif rising_edge(clk) then
 				clkOut <= clk; -- output clock 
+				operandOut <= operand; -- output operand
 				
-				
+--				copy paste below for adding additional operations
+--					when {opcode} =>
+--						case address_method is
+--							when am_inherent =>
+
+--							when am_immediate =>
+
+--							when am_direct =>
+
+--							when am_register =>
+
+--						end case;
+
 				-- check opcode and output relevant control signals
             case opcodeIn is
+					when jmp =>
+						case address_method is
+							when am_inherent =>
+								-- do nothing
+							when am_immediate =>
+								
+							when am_direct =>
+								-- do nothing
+							when am_register =>
+							
+						end case;
 					when ldr =>
 						-- check address method
 						case address_method is
