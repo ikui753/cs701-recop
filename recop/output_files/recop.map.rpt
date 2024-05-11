@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sat May 11 18:49:58 2024
+Sat May 11 19:11:24 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,17 +14,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. General Register Statistics
- 10. Registers Packed Into Inferred Megafunctions
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for memory:inst1|altsyncram:memory_rtl_0|altsyncram_tar1:auto_generated
- 13. Source assignments for memory:inst1|altsyncram:memory_rtl_1|altsyncram_tar1:auto_generated
- 14. Parameter Settings for Inferred Entity Instance: memory:inst1|altsyncram:memory_rtl_0
- 15. Parameter Settings for Inferred Entity Instance: memory:inst1|altsyncram:memory_rtl_1
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for memory:inst1|altsyncram:memory_rtl_0|altsyncram_tar1:auto_generated
+ 14. Source assignments for memory:inst1|altsyncram:memory_rtl_1|altsyncram_tar1:auto_generated
+ 15. Parameter Settings for Inferred Entity Instance: memory:inst1|altsyncram:memory_rtl_0
+ 16. Parameter Settings for Inferred Entity Instance: memory:inst1|altsyncram:memory_rtl_1
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -50,14 +51,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 11 18:49:58 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 11 19:11:24 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 305                                         ;
-; Total pins                      ; 188                                         ;
+; Total registers                 ; 385                                         ;
+; Total pins                      ; 290                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 256                                         ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -184,6 +185,7 @@ refer to the applicable agreement for further details.
 ; File Name with User-Entered Path      ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                     ; Library ;
 +---------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
 ; various_constants.vhd                 ; yes             ; User VHDL File                                        ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/various_constants.vhd                 ;         ;
+; registers.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd                         ;         ;
 ; regfile.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd                           ;         ;
 ; recop_types.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_types.vhd                       ;         ;
 ; opcodes.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/opcodes.vhd                           ;         ;
@@ -211,27 +213,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 370       ;
+; Estimate of Logic utilization (ALMs needed) ; 394       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 430       ;
-;     -- 7 input functions                    ; 16        ;
-;     -- 6 input functions                    ; 262       ;
-;     -- 5 input functions                    ; 55        ;
-;     -- 4 input functions                    ; 27        ;
-;     -- <=3 input functions                  ; 70        ;
+; Combinational ALUT usage for logic          ; 451       ;
+;     -- 7 input functions                    ; 17        ;
+;     -- 6 input functions                    ; 264       ;
+;     -- 5 input functions                    ; 68        ;
+;     -- 4 input functions                    ; 29        ;
+;     -- <=3 input functions                  ; 73        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 305       ;
+; Dedicated logic registers                   ; 385       ;
 ;                                             ;           ;
-; I/O pins                                    ; 188       ;
+; I/O pins                                    ; 290       ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 256       ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 337       ;
-; Total fan-out                               ; 3956      ;
-; Average fan-out                             ; 3.46      ;
+; Maximum fan-out                             ; 417       ;
+; Total fan-out                               ; 4494      ;
+; Average fan-out                             ; 3.10      ;
 +---------------------------------------------+-----------+
 
 
@@ -240,7 +242,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 430 (0)             ; 305 (0)                   ; 256               ; 0          ; 188  ; 0            ; |progCounterTest                                                                     ; progCounterTest ; work         ;
+; |progCounterTest                          ; 451 (0)             ; 385 (0)                   ; 256               ; 0          ; 290  ; 0            ; |progCounterTest                                                                     ; progCounterTest ; work         ;
 ;    |alu:inst4|                            ; 95 (95)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst4                                                           ; alu             ; work         ;
 ;    |instruction_reg:inst2|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                               ; instruction_reg ; work         ;
 ;    |memory:inst1|                         ; 2 (2)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1                                                        ; memory          ; work         ;
@@ -249,7 +251,8 @@ refer to the applicable agreement for further details.
 ;       |altsyncram:memory_rtl_1|           ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_1                                ; altsyncram      ; work         ;
 ;          |altsyncram_tar1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_1|altsyncram_tar1:auto_generated ; altsyncram_tar1 ; work         ;
 ;    |program_counter:inst|                 ; 43 (43)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst                                                ; program_counter ; work         ;
-;    |regfile:inst3|                        ; 290 (290)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                       ; regfile         ; work         ;
+;    |regfile:inst3|                        ; 311 (311)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                       ; regfile         ; work         ;
+;    |registers:inst5|                      ; 0 (0)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5                                                     ; registers       ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -264,17 +267,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------------+
 
 
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; registers:inst5|dprr[0]               ; Stuck at GND due to stuck port clock_enable ;
+; registers:inst5|dprr[1]               ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 2 ;                                             ;
++---------------------------------------+---------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 305   ;
+; Total registers                              ; 385   ;
 ; Number of registers using Synchronous Clear  ; 15    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 256   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 271   ;
+; Number of registers using Clock Enable       ; 335   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -289,18 +303,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------+---------------------------+------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |progCounterTest|program_counter:inst|out_count[10] ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst4|Mux10                    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux31                    ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux47                ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux58                ;
-; 31:1               ; 16 bits   ; 320 LEs       ; 256 LEs              ; 64 LEs                 ; No         ; |progCounterTest|regfile:inst3|Mux23                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |progCounterTest|program_counter:inst|out_count[2] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst4|Mux1                    ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux29                   ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux32               ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux58               ;
+; 31:1               ; 16 bits   ; 320 LEs       ; 288 LEs              ; 32 LEs                 ; No         ; |progCounterTest|regfile:inst3|Mux23               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------+
@@ -479,29 +493,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 305                         ;
+; arriav_ff             ; 385                         ;
+;     ENA               ; 48                          ;
 ;     ENA CLR           ; 256                         ;
 ;     ENA SCLR          ; 15                          ;
-;     plain             ; 34                          ;
-; arriav_lcell_comb     ; 430                         ;
+;     ENA SLD           ; 16                          ;
+;     plain             ; 50                          ;
+; arriav_lcell_comb     ; 452                         ;
 ;     arith             ; 32                          ;
 ;         1 data inputs ; 16                          ;
 ;         4 data inputs ; 15                          ;
 ;         5 data inputs ; 1                           ;
-;     extend            ; 16                          ;
-;         7 data inputs ; 16                          ;
-;     normal            ; 382                         ;
+;     extend            ; 17                          ;
+;         7 data inputs ; 17                          ;
+;     normal            ; 403                         ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 51                          ;
-;         4 data inputs ; 12                          ;
-;         5 data inputs ; 54                          ;
-;         6 data inputs ; 262                         ;
-; boundary_port         ; 188                         ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 67                          ;
+;         6 data inputs ; 264                         ;
+; boundary_port         ; 290                         ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.50                        ;
-; Average LUT depth     ; 5.33                        ;
+; Average LUT depth     ; 4.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -520,7 +537,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat May 11 18:49:46 2024
+    Info: Processing started: Sat May 11 19:11:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -586,6 +603,7 @@ Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Warning (10492): VHDL Process Statement warning at regfile.vhd(67): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 67
 Warning (10492): VHDL Process Statement warning at regfile.vhd(69): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 69
 Warning (10492): VHDL Process Statement warning at regfile.vhd(71): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 71
+Info (12128): Elaborating entity "registers" for hierarchy "registers:inst5"
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "memory:inst1|memory_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -641,17 +659,20 @@ Info (12133): Instantiated megafunction "memory:inst1|altsyncram:memory_rtl_0" w
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_tar1.tdf
     Info (12023): Found entity 1: altsyncram_tar1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_tar1.tdf Line: 27
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dprr[1]" is stuck at GND
+    Warning (13410): Pin "dprr[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 938 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 83 input pins
-    Info (21059): Implemented 105 output pins
-    Info (21061): Implemented 718 logic cells
+Info (21057): Implemented 1141 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 103 input pins
+    Info (21059): Implemented 187 output pins
+    Info (21061): Implemented 819 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4883 megabytes
-    Info: Processing ended: Sat May 11 18:49:58 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4888 megabytes
+    Info: Processing ended: Sat May 11 19:11:24 2024
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:11
 

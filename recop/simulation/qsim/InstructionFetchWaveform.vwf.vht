@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/11/2024 18:47:20"
+-- Generated on "05/11/2024 19:11:46"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -40,9 +40,14 @@ SIGNAL alu_op2_sel : STD_LOGIC;
 SIGNAL alu_operation : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL alu_output : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
+SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_wr : STD_LOGIC;
+SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL dpcr_lsb_sel : STD_LOGIC;
+SIGNAL dpcr_wr : STD_LOGIC;
+SIGNAL dprr : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL init : STD_LOGIC;
 SIGNAL ld_r : STD_LOGIC;
@@ -55,7 +60,13 @@ SIGNAL rx_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rz_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL z : STD_LOGIC;
+SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sop_wr : STD_LOGIC;
+SIGNAL svop : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL svop_wr : STD_LOGIC;
+SIGNAL z_flag : STD_LOGIC;
 COMPONENT progCounterTest
 	PORT (
 	address_method : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -65,9 +76,14 @@ COMPONENT progCounterTest
 	alu_operation : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 	alu_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	clk : IN STD_LOGIC;
+	clr_z_flag : IN STD_LOGIC;
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_wr : IN STD_LOGIC;
+	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	dpcr_lsb_sel : IN STD_LOGIC;
+	dpcr_wr : IN STD_LOGIC;
+	dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	increment : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 	init : IN STD_LOGIC;
 	ld_r : IN STD_LOGIC;
@@ -80,7 +96,13 @@ COMPONENT progCounterTest
 	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rz_data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	z : IN STD_LOGIC
+	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sop_wr : IN STD_LOGIC;
+	svop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	svop_wr : IN STD_LOGIC;
+	z_flag : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
@@ -94,9 +116,14 @@ BEGIN
 	alu_operation => alu_operation,
 	alu_output => alu_output,
 	clk => clk,
+	clr_z_flag => clr_z_flag,
 	dm_indata => dm_indata,
 	dm_outdata => dm_outdata,
 	dm_wr => dm_wr,
+	dpcr => dpcr,
+	dpcr_lsb_sel => dpcr_lsb_sel,
+	dpcr_wr => dpcr_wr,
+	dprr => dprr,
 	increment => increment,
 	init => init,
 	ld_r => ld_r,
@@ -109,7 +136,13 @@ BEGIN
 	rxData => rxData,
 	rz_data => rz_data,
 	rzData => rzData,
-	z => z
+	sip => sip,
+	sip_r => sip_r,
+	sop => sop,
+	sop_wr => sop_wr,
+	svop => svop,
+	svop_wr => svop_wr,
+	z_flag => z_flag
 	);
 
 -- clk
