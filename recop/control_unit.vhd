@@ -13,7 +13,7 @@ entity control_unit is
 		  
 		clkOut : out bit_1;
 		increment : out bit_3;
-        opcodeOut : out bit_6;
+        alu_opsel : out bit_6;
 		ld_r : out bit_1; 
         clr_z_flag : out bit_1;
         dm_wr : out bit_1;
@@ -58,14 +58,17 @@ begin
 							when am_inherent =>
 								-- nothing
 							when am_immediate => -- LDR RZ #Operand
-								
 								rf_sel <= "0000";
 								ld_r <= '1';
 								rf_init <= '0';
 							when am_direct => -- LDR RZ $Operand
-								
+								rf_sel <= "1001";
+								ld_r <= '1';
+								rf_init <= '0';
 							when am_register => -- LDR RZ M[Rx]
-								
+								rf_sel <= "1000";
+								ld_r <= '1';
+								rf_init <= '0';
 						end case;
 						
 					--when str =>
@@ -76,6 +79,13 @@ begin
 --						when am_direct => -- M[Operand] 
 --							
 --						when am_register => -- m[Rz] <- Rx
+					when orr =>
+						case address_method is
+							when am_inherent =>
+							when am_immediate =>
+							when am_direct =>
+							when am_register =>
+								
 					
                when others =>
 						-- noop
