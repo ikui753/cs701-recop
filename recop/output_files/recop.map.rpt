@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun May 12 16:14:35 2024
+Sun May 12 17:28:14 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,14 +52,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 12 16:14:35 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 12 17:28:14 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 387                                         ;
-; Total pins                      ; 244                                         ;
+; Total registers                 ; 388                                         ;
+; Total pins                      ; 246                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 256                                         ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -211,26 +211,26 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 328         ;
+; Estimate of Logic utilization (ALMs needed) ; 326         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 292         ;
+; Combinational ALUT usage for logic          ; 297         ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 240         ;
-;     -- 5 input functions                    ; 35          ;
-;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 17          ;
+;     -- 6 input functions                    ; 244         ;
+;     -- 5 input functions                    ; 16          ;
+;     -- 4 input functions                    ; 18          ;
+;     -- <=3 input functions                  ; 19          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 387         ;
+; Dedicated logic registers                   ; 388         ;
 ;                                             ;             ;
-; I/O pins                                    ; 244         ;
+; I/O pins                                    ; 246         ;
 ; Total MLAB memory bits                      ; 0           ;
 ; Total block memory bits                     ; 256         ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
-; Maximum fan-out                             ; 420         ;
-; Total fan-out                               ; 3397        ;
+; Maximum fan-out                             ; 421         ;
+; Total fan-out                               ; 3425        ;
 ; Average fan-out                             ; 2.83        ;
 +---------------------------------------------+-------------+
 
@@ -240,7 +240,8 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 292 (1)             ; 387 (0)                   ; 256               ; 0          ; 244  ; 0            ; |progCounterTest                                                                     ; progCounterTest ; work         ;
+; |progCounterTest                          ; 297 (1)             ; 388 (0)                   ; 256               ; 0          ; 246  ; 0            ; |progCounterTest                                                                     ; progCounterTest ; work         ;
+;    |alu:inst4|                            ; 5 (5)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst4                                                           ; alu             ; work         ;
 ;    |control_unit:inst7|                   ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                  ; control_unit    ; work         ;
 ;    |instruction_reg:inst2|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                               ; instruction_reg ; work         ;
 ;    |memory:inst1|                         ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1                                                        ; memory          ; work         ;
@@ -271,15 +272,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Register name                          ; Reason for Removal                          ;
 +----------------------------------------+---------------------------------------------+
 ; registers:inst5|dprr[0]                ; Stuck at GND due to stuck port clock_enable ;
-; control_unit:inst7|rf_sel[1,2]         ; Merged with control_unit:inst7|rf_init      ;
-; control_unit:inst7|increment[2]        ; Merged with control_unit:inst7|increment[1] ;
+; control_unit:inst7|alu_opsel[1,2]      ; Merged with control_unit:inst7|alu_opsel[0] ;
+; control_unit:inst7|ld_r                ; Merged with control_unit:inst7|alu_opsel[0] ;
+; control_unit:inst7|alu_opsel[4,5]      ; Merged with control_unit:inst7|alu_opsel[3] ;
+; control_unit:inst7|increment[1,2]      ; Merged with control_unit:inst7|alu_opsel[3] ;
+; control_unit:inst7|rf_sel[2]           ; Merged with control_unit:inst7|rf_sel[1]    ;
 ; registers:inst5|dprr[1]                ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_init             ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|increment[1]        ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|increment[0]        ; Stuck at VCC due to stuck port data_in      ;
+; control_unit:inst7|rf_sel[1]           ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|alu_opsel[3]        ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|alu_opsel[0]        ; Stuck at VCC due to stuck port data_in      ;
 ; program_counter:inst|out_count[0]      ; Stuck at GND due to stuck port data_in      ;
-; alu:inst4|z_flag                       ; Stuck at VCC due to stuck port data_in      ;
-; Total Number of Removed Registers = 10 ;                                             ;
+; Total Number of Removed Registers = 14 ;                                             ;
 +----------------------------------------+---------------------------------------------+
 
 
@@ -288,7 +291,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+---------------------------+----------------------------------------+
 ; Register name                   ; Reason for Removal        ; Registers Removed due to This Register ;
 +---------------------------------+---------------------------+----------------------------------------+
-; control_unit:inst7|increment[1] ; Stuck at GND              ; program_counter:inst|out_count[0]      ;
+; control_unit:inst7|alu_opsel[3] ; Stuck at GND              ; program_counter:inst|out_count[0]      ;
 ;                                 ; due to stuck port data_in ;                                        ;
 +---------------------------------+---------------------------+----------------------------------------+
 
@@ -298,7 +301,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 387   ;
+; Total registers                              ; 388   ;
 ; Number of registers using Synchronous Clear  ; 15    ;
 ; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -324,11 +327,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|rf_sel[3] ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux4               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux25              ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux39          ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux53          ;
-; 19:1               ; 16 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux21          ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux57          ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux32          ;
+; 19:1               ; 16 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux30          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
@@ -508,24 +509,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 387                         ;
+; arriav_ff             ; 388                         ;
 ;     ENA               ; 306                         ;
 ;     ENA SLD           ; 16                          ;
 ;     SCLR              ; 15                          ;
-;     plain             ; 50                          ;
-; arriav_lcell_comb     ; 293                         ;
+;     plain             ; 51                          ;
+; arriav_lcell_comb     ; 298                         ;
 ;     arith             ; 15                          ;
-;         1 data inputs ; 15                          ;
-;     normal            ; 278                         ;
-;         0 data inputs ; 2                           ;
+;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 1                           ;
-;         5 data inputs ; 35                          ;
-;         6 data inputs ; 240                         ;
-; boundary_port         ; 244                         ;
+;     normal            ; 283                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 16                          ;
+;         6 data inputs ; 244                         ;
+; boundary_port         ; 246                         ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.12                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -544,7 +549,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 12 16:14:23 2024
+    Info: Processing started: Sun May 12 17:28:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -585,7 +590,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file data_me
     Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 19
     Info (12023): Found entity 1: data_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 35
+    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 38
     Info (12023): Found entity 1: alu File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
     Info (12022): Found design unit 1: program_counter-pc File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 26
@@ -601,22 +606,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file progcou
     Info (12023): Found entity 1: progCounterTest
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst4"
-Warning (10492): VHDL Process Statement warning at ALU.vhd(89): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at ALU.vhd(86): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at ALU.vhd(101): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 101
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(24): used implicit default value for signal "alu_opsel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 24
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(29): used implicit default value for signal "clr_z_flag" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 29
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(31): used implicit default value for signal "wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "rf_init" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 33
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(35): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 35
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 36
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
-Warning (10492): VHDL Process Statement warning at regfile.vhd(70): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at regfile.vhd(72): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 72
-Warning (10492): VHDL Process Statement warning at regfile.vhd(74): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 74
+Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "memory" for hierarchy "memory:inst1"
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
-Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
+Warning (10492): VHDL Process Statement warning at regfile.vhd(71): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at regfile.vhd(73): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at regfile.vhd(75): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 75
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst5"
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "memory:inst1|memory_rtl_0" 
@@ -692,50 +698,33 @@ Info (12133): Instantiated megafunction "memory:inst1|altsyncram:memory_rtl_1" w
     Info (12134): Parameter "INIT_FILE" = "db/recop.ram0_memory_e411fb78.hdl.mif"
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "z_flag" is stuck at VCC
-    Warning (13410): Pin "rx_recv" is stuck at VCC
-    Warning (13410): Pin "rf_init" is stuck at GND
     Warning (13410): Pin "increment[2]" is stuck at GND
     Warning (13410): Pin "increment[1]" is stuck at GND
-    Warning (13410): Pin "increment[0]" is stuck at VCC
+    Warning (13410): Pin "rf_init" is stuck at GND
+    Warning (13410): Pin "ld_r" is stuck at VCC
     Warning (13410): Pin "rf_sel[2]" is stuck at GND
     Warning (13410): Pin "rf_sel[1]" is stuck at GND
     Warning (13410): Pin "alu_opsel[5]" is stuck at GND
     Warning (13410): Pin "alu_opsel[4]" is stuck at GND
     Warning (13410): Pin "alu_opsel[3]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[2]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[1]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[0]" is stuck at GND
-    Warning (13410): Pin "alu_output[15]" is stuck at GND
-    Warning (13410): Pin "alu_output[14]" is stuck at GND
-    Warning (13410): Pin "alu_output[13]" is stuck at GND
-    Warning (13410): Pin "alu_output[12]" is stuck at GND
-    Warning (13410): Pin "alu_output[11]" is stuck at GND
-    Warning (13410): Pin "alu_output[10]" is stuck at GND
-    Warning (13410): Pin "alu_output[9]" is stuck at GND
-    Warning (13410): Pin "alu_output[8]" is stuck at GND
-    Warning (13410): Pin "alu_output[7]" is stuck at GND
-    Warning (13410): Pin "alu_output[6]" is stuck at GND
-    Warning (13410): Pin "alu_output[5]" is stuck at GND
-    Warning (13410): Pin "alu_output[4]" is stuck at GND
-    Warning (13410): Pin "alu_output[3]" is stuck at GND
-    Warning (13410): Pin "alu_output[2]" is stuck at GND
-    Warning (13410): Pin "alu_output[1]" is stuck at GND
-    Warning (13410): Pin "alu_output[0]" is stuck at GND
+    Warning (13410): Pin "alu_opsel[2]" is stuck at VCC
+    Warning (13410): Pin "alu_opsel[1]" is stuck at VCC
+    Warning (13410): Pin "alu_opsel[0]" is stuck at VCC
+    Warning (13410): Pin "rx_recv" is stuck at VCC
     Warning (13410): Pin "dprr[1]" is stuck at GND
     Warning (13410): Pin "dprr[0]" is stuck at GND
     Warning (13410): Pin "out_count[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 938 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 945 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 39 input pins
-    Info (21059): Implemented 205 output pins
-    Info (21061): Implemented 662 logic cells
+    Info (21059): Implemented 207 output pins
+    Info (21061): Implemented 667 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 4891 megabytes
-    Info: Processing ended: Sun May 12 16:14:35 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 4890 megabytes
+    Info: Processing ended: Sun May 12 17:28:14 2024
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:10
 

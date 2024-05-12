@@ -45,6 +45,7 @@ architecture beh of regfile is
 	type reg_array is array (15 downto 0) of bit_16;
 	signal regs: reg_array;
 	signal data_input_z: bit_16;
+	signal rz_recv_q : bit_1 := '0'; -- Declare rz_recv_q as a signal
 begin
 	r7 <=regs(7);
 
@@ -86,12 +87,12 @@ begin
 			-- write data into Rz if ld signal is asserted
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z; -- load r enabled
-				rz_recv <= '1';
+				rz_recv_q <= '1';
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
-				rz_recv <= '1';
+				rz_recv_q <= '1';
 			else
-				rz_recv <= '0';
+				rz_recv_q <= '0';
 			end if;
 		end if;
 	end process;
@@ -100,6 +101,6 @@ begin
 	rx <= regs(sel_x); -- send x to rx
 	rz <= regs(sel_z); -- send z to rz
 	rx_recv <= '1'; -- rx data received
-
+	rz_recv <= rz_recv_q; -- rz data status
 	
 end beh;

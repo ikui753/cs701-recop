@@ -14,8 +14,8 @@ entity control_unit is
         clkOut : out bit_1; -- clock
         
         -- loaded/ stored signals
-        rx_recv : in bit_1; -- increment program counter with rxdata
-        rz_recv : in bit_1;
+		  alu_rz_recv : in bit_1; -- check registers to see if they've been loaded
+		  alu_rx_recv : in bit_1;
         
         -- program counter signals
         increment : out bit_3; -- increment program counter
@@ -94,30 +94,31 @@ begin
 --                              end if;
 --                      end case;
                     when ldr =>
-								
                         -- check address method
                         case address_method is
                             when am_inherent =>
                                 -- nothing
                             when am_immediate => -- LDR RZ #Operand
                                 rf_sel <= "0000";
-                                rf_init <= '0';
-                                
+
                             when am_direct => -- LDR RZ $Operand
                                 rf_sel <= "1001";
-                                rf_init <= '0';
                                 
                             when am_register => -- LDR RZ M[Rx]
-                                rf_sel <= "1000";
-                                rf_init <= '0';
+                                rf_sel <= "1000";	
                         end case;
-									if rz_recv = '0' then								
-										ld_r <= '1';
-									else 
-										ld_r <= '0';
+								
+								-- send result through ALU to delay a clock cycle
+									alu_opsel <= "000111"; -- add Rz with 0
+									ld_r <= '1';
+									if alu_rz_recv = '1' then
+--										ld_r <= '0';
 										increment <= "001";
-									end if; 
-                        
+									else
+--										ld_r <= '1';
+										increment <= "000";
+									end if;
+									
                     --when str =>
 --                      when am_inherent => -- None
 --                          
