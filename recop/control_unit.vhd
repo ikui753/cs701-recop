@@ -83,7 +83,19 @@ begin
 								alu_op1_sel <= "00";
 								alu_op2_sel <= '1';
 								alu_operation <= alu_and;
-					end case;
+							end case;
+					when orr =>
+						case address_method is
+							when am_immediate =>
+								alu_op1_sel <= "01";
+								alu_op2_sel <= '0';
+								alu_operation <= alu_or;
+							when am_register =>
+								alu_op1_sel <= "00";
+								alu_op2_sel <= '1';
+								alu_operation <= alu_or;
+							end case;
+					
 					when jmp =>
 						case address_method is
 							when am_inherent =>
@@ -134,10 +146,10 @@ begin
 --							when am_register =>
 --								
 					
-               when others =>
+               	when others =>
 						-- noop
 						-- clkOut <= '0';
-            end case;
+            	end case;
         end if;
     end process;
 		
