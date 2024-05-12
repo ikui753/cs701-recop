@@ -77,7 +77,6 @@ begin
 
 				-- check opcode and output relevant control signals
             case opcodeIn is
-
 					when andr =>
 						case address_method is
 							when am_immediate =>
@@ -127,20 +126,14 @@ begin
 					--	end case;
 					when jmp =>
 						case address_method is
-							when am_inherent =>
-								-- do nothing
 							when am_immediate =>
-								
-							when am_direct =>
-								-- do nothing
+
 							when am_register =>
 							
 						end case;
 					when ldr =>
 						-- check address method
 						case address_method is
-							when am_inherent =>
-								-- nothing
 							when am_immediate => -- LDR RZ #Operand
 								rf_sel <= "0000";
 								ld_r <= '1';
