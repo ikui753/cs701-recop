@@ -33,7 +33,9 @@ entity regfile is
 		r7 : out bit_16;
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
-		dprr_wren : in bit_1
+		dprr_wren : in bit_1;
+		
+		rx_recv : out bit_1 := '0' -- initialise to 0
 				
 		);
 end regfile;
@@ -92,6 +94,7 @@ begin
 
 	rx <= regs(sel_x); -- send x to rx
 	rz <= regs(sel_z); -- send z to rz
+	rx_recv <= '1'; -- ready to jump, rx data received
 
 	
 end beh;

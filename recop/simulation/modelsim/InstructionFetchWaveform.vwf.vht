@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/11/2024 19:11:37"
+-- Generated on "05/12/2024 13:24:51"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -33,13 +33,10 @@ END progCounterTest_vhd_vec_tst;
 ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL address_method : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL alu_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL alu_op1_sel : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL alu_op2_sel : STD_LOGIC;
-SIGNAL alu_operation : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL alu_opsel : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL alu_output : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL clk : STD_LOGIC;
+SIGNAL am : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL clkIn : STD_LOGIC;
 SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -49,16 +46,14 @@ SIGNAL dpcr_lsb_sel : STD_LOGIC;
 SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL dprr : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL init : STD_LOGIC;
 SIGNAL ld_r : STD_LOGIC;
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL out_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
-SIGNAL rf_input_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL rx_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL rf_init : STD_LOGIC;
+SIGNAL rf_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL rz_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -66,16 +61,14 @@ SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop_wr : STD_LOGIC;
 SIGNAL svop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL svop_wr : STD_LOGIC;
+SIGNAL z : STD_LOGIC;
 SIGNAL z_flag : STD_LOGIC;
 COMPONENT progCounterTest
 	PORT (
-	address_method : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-	alu_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	alu_op1_sel : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	alu_op2_sel : IN STD_LOGIC;
-	alu_operation : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+	alu_opsel : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	alu_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	clk : IN STD_LOGIC;
+	am : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+	clkIn : IN STD_LOGIC;
 	clr_z_flag : IN STD_LOGIC;
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -84,17 +77,15 @@ COMPONENT progCounterTest
 	dpcr_lsb_sel : IN STD_LOGIC;
 	dpcr_wr : IN STD_LOGIC;
 	dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-	increment : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-	init : IN STD_LOGIC;
-	ld_r : IN STD_LOGIC;
+	increment : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	ld_r : OUT STD_LOGIC;
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	out_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	pm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	reset : IN STD_LOGIC;
-	rf_input_sel : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	rx_count : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+	rf_init : OUT STD_LOGIC;
+	rf_sel : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	rz_data : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -102,6 +93,7 @@ COMPONENT progCounterTest
 	sop_wr : IN STD_LOGIC;
 	svop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	svop_wr : IN STD_LOGIC;
+	z : OUT STD_LOGIC;
 	z_flag : OUT STD_LOGIC
 	);
 END COMPONENT;
@@ -109,13 +101,10 @@ BEGIN
 	i1 : progCounterTest
 	PORT MAP (
 -- list connections between master ports and signals
-	address_method => address_method,
-	alu_count => alu_count,
-	alu_op1_sel => alu_op1_sel,
-	alu_op2_sel => alu_op2_sel,
-	alu_operation => alu_operation,
+	alu_opsel => alu_opsel,
 	alu_output => alu_output,
-	clk => clk,
+	am => am,
+	clkIn => clkIn,
 	clr_z_flag => clr_z_flag,
 	dm_indata => dm_indata,
 	dm_outdata => dm_outdata,
@@ -125,16 +114,14 @@ BEGIN
 	dpcr_wr => dpcr_wr,
 	dprr => dprr,
 	increment => increment,
-	init => init,
 	ld_r => ld_r,
 	opcode => opcode,
 	out_count => out_count,
 	pm_outdata => pm_outdata,
 	reset => reset,
-	rf_input_sel => rf_input_sel,
-	rx_count => rx_count,
+	rf_init => rf_init,
+	rf_sel => rf_sel,
 	rxData => rxData,
-	rz_data => rz_data,
 	rzData => rzData,
 	sip => sip,
 	sip_r => sip_r,
@@ -142,50 +129,9 @@ BEGIN
 	sop_wr => sop_wr,
 	svop => svop,
 	svop_wr => svop_wr,
+	z => z,
 	z_flag => z_flag
 	);
-
--- clk
-t_prcs_clk: PROCESS
-BEGIN
-LOOP
-	clk <= '0';
-	WAIT FOR 10000 ps;
-	clk <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_clk;
--- increment[2]
-t_prcs_increment_2: PROCESS
-BEGIN
-	increment(2) <= '0';
-WAIT;
-END PROCESS t_prcs_increment_2;
--- increment[1]
-t_prcs_increment_1: PROCESS
-BEGIN
-	increment(1) <= '0';
-WAIT;
-END PROCESS t_prcs_increment_1;
--- increment[0]
-t_prcs_increment_0: PROCESS
-BEGIN
-	increment(0) <= '0';
-	WAIT FOR 60000 ps;
-	increment(0) <= '1';
-	WAIT FOR 10000 ps;
-	increment(0) <= '0';
-	WAIT FOR 50000 ps;
-	increment(0) <= '1';
-	WAIT FOR 10000 ps;
-	increment(0) <= '0';
-	WAIT FOR 50000 ps;
-	increment(0) <= '1';
-	WAIT FOR 10000 ps;
-	increment(0) <= '0';
-WAIT;
-END PROCESS t_prcs_increment_0;
 
 -- reset
 t_prcs_reset: PROCESS
@@ -193,101 +139,4 @@ BEGIN
 	reset <= '0';
 WAIT;
 END PROCESS t_prcs_reset;
--- rf_input_sel[3]
-t_prcs_rf_input_sel_3: PROCESS
-BEGIN
-	rf_input_sel(3) <= '0';
-WAIT;
-END PROCESS t_prcs_rf_input_sel_3;
--- rf_input_sel[2]
-t_prcs_rf_input_sel_2: PROCESS
-BEGIN
-	rf_input_sel(2) <= '0';
-WAIT;
-END PROCESS t_prcs_rf_input_sel_2;
--- rf_input_sel[1]
-t_prcs_rf_input_sel_1: PROCESS
-BEGIN
-	rf_input_sel(1) <= '0';
-	WAIT FOR 160000 ps;
-	rf_input_sel(1) <= '1';
-	WAIT FOR 10000 ps;
-	rf_input_sel(1) <= '0';
-WAIT;
-END PROCESS t_prcs_rf_input_sel_1;
--- rf_input_sel[0]
-t_prcs_rf_input_sel_0: PROCESS
-BEGIN
-	rf_input_sel(0) <= '0';
-	WAIT FOR 160000 ps;
-	rf_input_sel(0) <= '1';
-	WAIT FOR 10000 ps;
-	rf_input_sel(0) <= '0';
-WAIT;
-END PROCESS t_prcs_rf_input_sel_0;
-
--- init
-t_prcs_init: PROCESS
-BEGIN
-	init <= '1';
-	WAIT FOR 10000 ps;
-	init <= '0';
-WAIT;
-END PROCESS t_prcs_init;
-
--- ld_r
-t_prcs_ld_r: PROCESS
-BEGIN
-	ld_r <= '0';
-	WAIT FOR 40000 ps;
-	ld_r <= '1';
-	WAIT FOR 10000 ps;
-	ld_r <= '0';
-	WAIT FOR 50000 ps;
-	ld_r <= '1';
-	WAIT FOR 10000 ps;
-	ld_r <= '0';
-	WAIT FOR 50000 ps;
-	ld_r <= '1';
-	WAIT FOR 10000 ps;
-	ld_r <= '0';
-WAIT;
-END PROCESS t_prcs_ld_r;
--- alu_op1_sel[1]
-t_prcs_alu_op1_sel_1: PROCESS
-BEGIN
-	alu_op1_sel(1) <= '0';
-WAIT;
-END PROCESS t_prcs_alu_op1_sel_1;
--- alu_op1_sel[0]
-t_prcs_alu_op1_sel_0: PROCESS
-BEGIN
-	alu_op1_sel(0) <= '0';
-WAIT;
-END PROCESS t_prcs_alu_op1_sel_0;
-
--- alu_op2_sel
-t_prcs_alu_op2_sel: PROCESS
-BEGIN
-	alu_op2_sel <= '1';
-WAIT;
-END PROCESS t_prcs_alu_op2_sel;
--- alu_operation[2]
-t_prcs_alu_operation_2: PROCESS
-BEGIN
-	alu_operation(2) <= '0';
-WAIT;
-END PROCESS t_prcs_alu_operation_2;
--- alu_operation[1]
-t_prcs_alu_operation_1: PROCESS
-BEGIN
-	alu_operation(1) <= '1';
-WAIT;
-END PROCESS t_prcs_alu_operation_1;
--- alu_operation[0]
-t_prcs_alu_operation_0: PROCESS
-BEGIN
-	alu_operation(0) <= '0';
-WAIT;
-END PROCESS t_prcs_alu_operation_0;
 END progCounterTest_arch;

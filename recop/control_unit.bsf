@@ -52,6 +52,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
+		(pt 0 96)
+		(input)
+		(text "rx_recv" (rect 0 0 33 12)(font "Arial" ))
+		(text "rx_recv" (rect 21 91 54 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
 		(pt 248 32)
 		(output)
 		(text "clkOut" (rect 0 0 24 12)(font "Arial" ))

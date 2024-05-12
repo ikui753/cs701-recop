@@ -9,13 +9,12 @@ entity control_unit is
 		clk : in bit_1;
 	   reset : in bit_1;
 	   opcodeIn : in bit_6;
-		operand : in bit_16;
 	   address_method : in bit_2;
 		 
 		clkOut : out bit_1; -- clock
 		-- program counter signals
+		rx_recv : in bit_1; -- increment program counter with rxdata
 		increment : out bit_3; -- increment program counter
-      operandOut : out bit_16; -- increment program counter
 		
 		-- alu signals
 		alu_opsel : out bit_6;
@@ -58,10 +57,7 @@ begin
             -- dm_wr_signal <= '0';
             -- wren_signal <= '0';
             -- ... and so on for other control signals
-        elsif rising_edge(clk) then
-				clkOut <= clk; -- output clock 
-				operandOut <= operand; -- output operand
-				
+        elsif rising_edge(clk) then 
 --				copy paste below for adding additional operations
 --					when {opcode} =>
 --						case address_method is
@@ -82,11 +78,15 @@ begin
 							when am_inherent =>
 								-- do nothing
 							when am_immediate =>
-								
+								-- PC <- Operand
+								increment <= "101";
 							when am_direct =>
 								-- do nothing
 							when am_register =>
-							
+								-- PC <- Rx
+								if rx_recv = '1' then -- wait for rxdata
+									increment <= "100";
+								end if;
 						end case;
 					when ldr =>
 						-- check address method
@@ -125,13 +125,15 @@ begin
 					
                when others =>
 						-- noop
-						clkOut <= '0';
+						-- clkOut <= '0';
             end case;
         end if;
     end process;
-
+		
     -- Assign control signals to outputs
     -- For example:
+	 
+	 clkOut <= clk; -- output clock
     -- clr_z_flag <= clr_z_flag_signal;
     -- dm_wr <= dm_wr_signal;
     -- wren <= wren_signal;

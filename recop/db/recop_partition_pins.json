@@ -4,7 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "z_flag",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -72,6 +72,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "increment[0]",
+					"strict" : false
+				},
+				{
 					"name" : "rxData[15]",
 					"strict" : false
 				},
@@ -133,6 +137,78 @@
 				},
 				{
 					"name" : "rxData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_sel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rf_sel[0]",
 					"strict" : false
 				},
 				{
@@ -200,75 +276,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "address_method[1]",
+					"name" : "opcode[5]",
 					"strict" : false
 				},
 				{
-					"name" : "address_method[0]",
+					"name" : "opcode[4]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_output[15]",
+					"name" : "opcode[3]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_output[14]",
+					"name" : "opcode[2]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_output[13]",
+					"name" : "opcode[1]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_output[12]",
+					"name" : "opcode[0]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_output[11]",
+					"name" : "am[1]",
 					"strict" : false
 				},
 				{
-					"name" : "alu_output[10]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[9]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[8]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[7]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[6]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[5]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[4]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[3]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[0]",
+					"name" : "am[0]",
 					"strict" : false
 				},
 				{
@@ -464,30 +500,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "opcode[5]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[4]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[3]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[2]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[1]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[0]",
-					"strict" : false
-				},
-				{
 					"name" : "out_count[15]",
 					"strict" : false
 				},
@@ -549,70 +561,6 @@
 				},
 				{
 					"name" : "out_count[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[15]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[14]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[13]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[12]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[0]",
 					"strict" : false
 				},
 				{
@@ -744,35 +692,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "alu_operation[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_operation[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_op2_sel",
-					"strict" : false
-				},
-				{
-					"name" : "alu_op1_sel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_op1_sel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_operation[0]",
-					"strict" : false
-				},
-				{
-					"name" : "clr_z_flag",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
+					"name" : "clkIn",
 					"strict" : false
 				},
 				{
@@ -844,27 +764,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "rf_input_sel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rf_input_sel[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rf_input_sel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rf_input_sel[2]",
-					"strict" : false
-				},
-				{
-					"name" : "init",
-					"strict" : false
-				},
-				{
-					"name" : "ld_r",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
@@ -937,214 +837,6 @@
 				},
 				{
 					"name" : "dpcr_lsb_sel",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[15]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[15]",
-					"strict" : false
-				},
-				{
-					"name" : "increment[2]",
-					"strict" : false
-				},
-				{
-					"name" : "increment[0]",
-					"strict" : false
-				},
-				{
-					"name" : "increment[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[15]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[14]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[13]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[12]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[14]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[14]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[13]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[13]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[12]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[12]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[11]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[10]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[9]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[8]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[7]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[6]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[5]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[4]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[3]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rx_count[0]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_count[0]",
 					"strict" : false
 				},
 				{
