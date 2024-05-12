@@ -113,6 +113,13 @@ begin
 								alu_op2_sel <= '1';
 								alu_operation <= alu_sub;
 						end case;
+					when subvr =>
+						case address_method is
+							when am_immediate =>
+								alu_op1_sel <= "01";
+								alu_op2_sel <= '0';
+								alu_operation <= alu_sub;
+						end case;
 					when jmp =>
 						case address_method is
 							when am_inherent =>
