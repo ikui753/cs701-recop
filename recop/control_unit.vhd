@@ -24,7 +24,6 @@ entity control_unit is
 		-- load register 
 		ld_r : out bit_1; 
       
-		clr_z_flag : out bit_1;
       	dm_wr : out bit_1;
       	wren : out bit_1;
     	rf_sel : out bit_4;
@@ -164,6 +163,12 @@ begin
 							when am_immediate => -- if Rz(15..0)=0x0000 then PC<-Operand else NEXT
 
 						end case;
+					when clfz =>
+						case address_method is
+							when am_inherent => -- Z <- 0
+								z <= '0';
+							end case;
+					
                	when others =>
 						-- noop
 						-- clkOut <= '0';
