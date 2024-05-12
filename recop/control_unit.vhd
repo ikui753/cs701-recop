@@ -50,11 +50,11 @@ architecture behavioral of control_unit is
     -- signal dm_wr_signal : std_logic;
     -- signal wren_signal : std_logic;
     -- ... and so on for other control signals
-	 signal increment_q : bit_3 := "000";
+	 signal increment_q : bit_3;
 	 signal ld_r_q : bit_1;
-begin
+ begin
 
-    process (clk, reset, rx_recv, rz_recv)
+    process (clk, reset, rz_recv)
     begin
         if reset = '1' then
             -- Initialize control signals to default values
@@ -112,11 +112,12 @@ begin
                         end case;
 								
 								-- Set increment signal based on cycle countand other conditions
-									increment_q <= "00"&rz_recv;
-									if rz_recv = '1' then
-										ld_r <= '0';
+									if rz_recv = '0' then
+										increment_q <= "000";
+										ld_r_q <= '1';
 									else
-										ld_r <= '1';
+										ld_r_q <= '0'; 
+										increment_q <= "001";
 									end if;
 									
                     --when str =>
@@ -141,13 +142,15 @@ begin
                         -- clkOut <= '0';
             end case;  
         end if;
+		  
     end process;
         
     -- Assign control signals to outputs
     -- For example:
      
      clkOut <= clk; -- output clock
-	  increment <= "00"&rz_recv;
+	  increment <= increment_q;
+	  ld_r <= ld_r_q;
     -- clr_z_flag <= clr_z_flag_signal;
     -- dm_wr <= dm_wr_signal;
     -- wren <= wren_signal;

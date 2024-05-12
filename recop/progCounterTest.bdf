@@ -1800,12 +1800,6 @@ refer to the applicable agreement for further details.
 	(pt 2504 224)
 )
 (connector
-	(text "increment[2..0]" (rect 680 184 750 201)(font "Intel Clear" ))
-	(pt 784 200)
-	(pt 672 200)
-	(bus)
-)
-(connector
 	(text "alu_result[15..0]" (rect 656 232 733 249)(font "Intel Clear" ))
 	(pt 784 248)
 	(pt 648 248)
@@ -2165,6 +2159,12 @@ refer to the applicable agreement for further details.
 	(text "rz_recv" (rect 2203 -96 2237 -79)(font "Intel Clear" ))
 	(pt 2248 -80)
 	(pt 2176 -80)
+)
+(connector
+	(text "increment[2..0]" (rect 706 184 776 201)(font "Intel Clear" ))
+	(pt 784 200)
+	(pt 672 200)
+	(bus)
 )
 (junction (pt 1064 200))
 (junction (pt 1280 200))
