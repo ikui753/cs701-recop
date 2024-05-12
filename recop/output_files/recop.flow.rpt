@@ -1,5 +1,5 @@
 Flow report for recop
-Sun May 12 13:41:58 2024
+Sun May 12 15:53:14 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun May 12 13:41:58 2024       ;
+; Flow Status                     ; Successful - Sun May 12 15:53:14 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -48,8 +48,8 @@ refer to the applicable agreement for further details.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 387                                         ;
-; Total pins                      ; 242                                         ;
+; Total registers                 ; 388                                         ;
+; Total pins                      ; 244                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 256                                         ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/12/2024 13:41:30 ;
+; Start date & time ; 05/12/2024 15:52:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; recop               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-----------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 237901791186551.171547808921524        ; --            ; --              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 237901791186551.171548596327400        ; --            ; --              ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; progCounterTest ; Top        ;
@@ -96,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4885 MB             ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4721 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4722 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4730 MB             ; 00:00:02                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4890 MB             ; 00:00:11                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4722 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4721 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4729 MB             ; 00:00:02                           ;
+; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:15                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

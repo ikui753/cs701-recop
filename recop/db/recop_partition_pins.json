@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ld_r",
+					"strict" : false
+				},
+				{
 					"name" : "pm_outdata[15]",
 					"strict" : false
 				},
@@ -273,6 +277,10 @@
 				},
 				{
 					"name" : "sip_r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rz_recv",
 					"strict" : false
 				},
 				{
@@ -560,10 +568,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "out_count[0]",
-					"strict" : false
-				},
-				{
 					"name" : "sop[15]",
 					"strict" : false
 				},
@@ -696,6 +700,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "dm_wr",
 					"strict" : false
 				},
@@ -761,10 +769,6 @@
 				},
 				{
 					"name" : "dm_indata[0]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				},
 				{

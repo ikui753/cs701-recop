@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/12/2024 13:41:56"
+-- Generated on "05/12/2024 15:53:12"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -53,7 +53,9 @@ SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
 SIGNAL rf_init : STD_LOGIC;
 SIGNAL rf_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL rx_recv : STD_LOGIC;
 SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL rz_recv : STD_LOGIC;
 SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -84,7 +86,9 @@ COMPONENT progCounterTest
 	reset : IN STD_LOGIC;
 	rf_init : OUT STD_LOGIC;
 	rf_sel : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	rx_recv : OUT STD_LOGIC;
 	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	rz_recv : OUT STD_LOGIC;
 	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -119,7 +123,9 @@ BEGIN
 	reset => reset,
 	rf_init => rf_init,
 	rf_sel => rf_sel,
+	rx_recv => rx_recv,
 	rxData => rxData,
+	rz_recv => rz_recv,
 	rzData => rzData,
 	sip => sip,
 	sip_r => sip_r,

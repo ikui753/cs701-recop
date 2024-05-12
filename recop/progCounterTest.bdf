@@ -151,7 +151,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 2080 -184 2248 -168)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "clkIn" (rect 5 0 29 12)(font "Arial" ))
+	(text "clkIn" (rect 5 0 28 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -389,7 +389,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 2832 -40 3008 -24)
+	(rect 2832 -56 3008 -40)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "rf_init" (rect 90 0 118 12)(font "Arial" ))
 	(pt 0 8)
@@ -472,6 +472,38 @@ refer to the applicable agreement for further details.
 	(rect 2512 -184 2688 -168)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "clk" (rect 90 0 104 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 2408 392 2584 408)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "rx_recv" (rect 90 0 127 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 2408 424 2584 440)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "rz_recv" (rect 90 0 126 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -1094,6 +1126,13 @@ refer to the applicable agreement for further details.
 		(text "rx_recv" (rect 148 75 179 87)(font "Arial" ))
 		(line (pt 200 80)(pt 184 80))
 	)
+	(port
+		(pt 200 96)
+		(output)
+		(text "rz_recv" (rect 0 0 36 12)(font "Arial" ))
+		(text "rz_recv" (rect 149 91 179 103)(font "Arial" ))
+		(line (pt 200 96)(pt 184 96))
+	)
 	(drawing
 		(rectangle (rect 16 16 184 288))
 	)
@@ -1136,6 +1175,13 @@ refer to the applicable agreement for further details.
 		(text "rx_recv" (rect 0 0 37 12)(font "Arial" ))
 		(text "rx_recv" (rect 21 91 58 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "rz_recv" (rect 0 0 36 12)(font "Arial" ))
+		(text "rz_recv" (rect 21 107 57 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
 	)
 	(port
 		(pt 248 32)
@@ -1423,12 +1469,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "operand[15..0]" (rect 2064 358 2081 426)(font "Intel Clear" )(vertical))
-	(pt 2088 232)
-	(pt 2088 360)
-	(bus)
-)
-(connector
 	(pt 2376 280)
 	(pt 2392 280)
 	(bus)
@@ -1530,11 +1570,6 @@ refer to the applicable agreement for further details.
 	(pt 2640 296)
 )
 (connector
-	(pt 2888 552)
-	(pt 2120 552)
-	(bus)
-)
-(connector
 	(pt 2872 264)
 	(pt 2888 264)
 	(bus)
@@ -1542,16 +1577,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 2888 264)
 	(pt 2904 264)
-	(bus)
-)
-(connector
-	(pt 2120 552)
-	(pt 2120 392)
-	(bus)
-)
-(connector
-	(pt 2120 392)
-	(pt 2176 392)
 	(bus)
 )
 (connector
@@ -1779,17 +1804,6 @@ refer to the applicable agreement for further details.
 	(pt 2128 296)
 )
 (connector
-	(pt 2088 360)
-	(pt 2176 360)
-	(bus)
-)
-(connector
-	(text "operand[15..0]" (rect 2000 344 2068 361)(font "Intel Clear" ))
-	(pt 2064 360)
-	(pt 2088 360)
-	(bus)
-)
-(connector
 	(pt 2384 296)
 	(pt 2384 304)
 	(bus)
@@ -1799,15 +1813,6 @@ refer to the applicable agreement for further details.
 	(pt 2384 304)
 	(pt 2448 304)
 	(bus)
-)
-(connector
-	(pt 2376 312)
-	(pt 2392 312)
-)
-(connector
-	(text "rx_recv" (rect 2376 315 2393 349)(font "Intel Clear" )(vertical))
-	(pt 2392 312)
-	(pt 2392 344)
 )
 (connector
 	(text "reset" (rect 677 312 700 329)(font "Intel Clear" ))
@@ -1936,23 +1941,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "rf_init" (rect 2842 -40 2869 -23)(font "Intel Clear" ))
-	(pt 2832 -24)
-	(pt 2872 -24)
-)
-(connector
-	(pt 2832 -48)
-	(pt 2832 -32)
-)
-(connector
-	(pt 2832 -32)
-	(pt 2832 -24)
-)
-(connector
-	(pt 2496 -48)
-	(pt 2832 -48)
-)
-(connector
 	(text "z" (rect 2676 -48 2680 -31)(font "Intel Clear" ))
 	(pt 2496 -32)
 	(pt 2680 -32)
@@ -1971,6 +1959,97 @@ refer to the applicable agreement for further details.
 	(pt 2640 376)
 	(pt 2552 376)
 )
+(connector
+	(text "rf_init" (rect 2842 -40 2869 -23)(font "Intel Clear" ))
+	(pt 2872 -24)
+	(pt 2832 -24)
+)
+(connector
+	(pt 2496 -48)
+	(pt 2832 -48)
+)
+(connector
+	(pt 2832 -48)
+	(pt 2832 -24)
+)
+(connector
+	(pt 2376 312)
+	(pt 2400 312)
+)
+(connector
+	(text "rx_recv" (rect 2414 344 2448 361)(font "Intel Clear" ))
+	(pt 2400 360)
+	(pt 2416 360)
+)
+(connector
+	(pt 2400 400)
+	(pt 2408 400)
+)
+(connector
+	(pt 2400 312)
+	(pt 2400 360)
+)
+(connector
+	(pt 2400 360)
+	(pt 2400 400)
+)
+(connector
+	(pt 2376 328)
+	(pt 2392 328)
+)
+(connector
+	(pt 2392 432)
+	(pt 2408 432)
+)
+(connector
+	(text "rz_recv" (rect 2400 440 2434 457)(font "Intel Clear" ))
+	(pt 2392 456)
+	(pt 2424 456)
+)
+(connector
+	(pt 2392 328)
+	(pt 2392 432)
+)
+(connector
+	(pt 2392 432)
+	(pt 2392 456)
+)
+(connector
+	(text "rz_recv" (rect 2208 -112 2242 -95)(font "Intel Clear" ))
+	(pt 2248 -96)
+	(pt 2200 -96)
+)
+(connector
+	(pt 2888 552)
+	(pt 2096 552)
+	(bus)
+)
+(connector
+	(pt 2096 552)
+	(pt 2096 392)
+	(bus)
+)
+(connector
+	(pt 2176 392)
+	(pt 2096 392)
+	(bus)
+)
+(connector
+	(pt 2088 232)
+	(pt 2088 360)
+	(bus)
+)
+(connector
+	(text "operand[15..0]" (rect 2000 344 2068 361)(font "Intel Clear" ))
+	(pt 2064 360)
+	(pt 2088 360)
+	(bus)
+)
+(connector
+	(pt 2088 360)
+	(pt 2176 360)
+	(bus)
+)
 (junction (pt 1064 200))
 (junction (pt 1280 200))
 (junction (pt 1576 176))
@@ -1986,9 +2065,10 @@ refer to the applicable agreement for further details.
 (junction (pt 2016 -160))
 (junction (pt 2888 288))
 (junction (pt 2696 -176))
-(junction (pt 2088 360))
 (junction (pt 2856 -144))
 (junction (pt 2680 -128))
 (junction (pt 2504 -176))
 (junction (pt 3016 -48))
-(junction (pt 2832 -32))
+(junction (pt 2400 360))
+(junction (pt 2392 432))
+(junction (pt 2088 360))
