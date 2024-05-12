@@ -24,6 +24,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -42,6 +43,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -1333,7 +1335,7 @@ SIGNAL("alu_output[0]")
 	PARENT = "alu_output";
 }
 
-SIGNAL("alu_rx_recv")
+SIGNAL("rx_recv")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -1343,7 +1345,7 @@ SIGNAL("alu_rx_recv")
 	PARENT = "";
 }
 
-SIGNAL("alu_rz_recv")
+SIGNAL("rz_recv")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -2393,7 +2395,7 @@ TRANSITION_LIST("alu_output[0]")
 	}
 }
 
-TRANSITION_LIST("alu_rx_recv")
+TRANSITION_LIST("rx_recv")
 {
 	NODE
 	{
@@ -2402,7 +2404,7 @@ TRANSITION_LIST("alu_rx_recv")
 	}
 }
 
-TRANSITION_LIST("alu_rz_recv")
+TRANSITION_LIST("rz_recv")
 {
 	NODE
 	{
@@ -3659,7 +3661,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "alu_rx_recv";
+	CHANNEL = "rx_recv";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 125;
@@ -3668,7 +3670,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "alu_rz_recv";
+	CHANNEL = "rz_recv";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 126;

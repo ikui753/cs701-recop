@@ -16,6 +16,8 @@ entity control_unit is
         -- loaded/ stored signals
 		  alu_rz_recv : in bit_1; -- check registers to see if they've been loaded
 		  alu_rx_recv : in bit_1;
+		  rz_recv : in bit_1;
+		  rx_recv: in bit_1;
         
         -- program counter signals
         increment : out bit_3; -- increment program counter
@@ -48,10 +50,11 @@ architecture behavioral of control_unit is
     -- signal dm_wr_signal : std_logic;
     -- signal wren_signal : std_logic;
     -- ... and so on for other control signals
+	 signal increment_q : bit_3 := "000";
+	 signal ld_r_q : bit_1;
 begin
 
-    process (clk, reset)
-        variable increment_q : bit_3;
+    process (clk, reset, rx_recv, rz_recv)
     begin
         if reset = '1' then
             -- Initialize control signals to default values
@@ -62,7 +65,7 @@ begin
             -- dm_wr_signal <= '0';
             -- wren_signal <= '0';
             -- ... and so on for other control signals
-        elsif rising_edge(clk) then 
+        elsif rising_edge(clk) then
 --              copy paste below for adding additional operations
 --                  when {opcode} =>
 --                      case address_method is
@@ -108,15 +111,12 @@ begin
                                 rf_sel <= "1000";	
                         end case;
 								
-								-- send result through ALU to delay a clock cycle
-									alu_opsel <= "000111"; -- add Rz with 0
-									ld_r <= '1';
-									if alu_rz_recv = '1' then
---										ld_r <= '0';
-										increment <= "001";
+								-- Set increment signal based on cycle countand other conditions
+									increment_q <= "00"&rz_recv;
+									if rz_recv = '1' then
+										ld_r <= '0';
 									else
---										ld_r <= '1';
-										increment <= "000";
+										ld_r <= '1';
 									end if;
 									
                     --when str =>
@@ -136,6 +136,7 @@ begin
 --                              
                     
 						when others =>
+							increment_q <= "000";
                         -- noop
                         -- clkOut <= '0';
             end case;  
@@ -146,6 +147,7 @@ begin
     -- For example:
      
      clkOut <= clk; -- output clock
+	  increment <= "00"&rz_recv;
     -- clr_z_flag <= clr_z_flag_signal;
     -- dm_wr <= dm_wr_signal;
     -- wren <= wren_signal;

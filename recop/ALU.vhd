@@ -89,11 +89,11 @@ begin
 		else
 			alu_rx_recv <= '0';
 			alu_rz_recv <= '0';
-	end if;
-	end process alu;
-	
-	alu_result <= result;
-	
+		end if;
+
+		
+		alu_result <= result;
+		end process alu;
 
 	-- zero flag
 	z1gen: process (clk)

@@ -4,19 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "z_flag",
-					"strict" : false
-				},
-				{
 					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "alu_rx_recv",
+					"name" : "rz_recv",
 					"strict" : false
 				},
 				{
-					"name" : "alu_rz_recv",
+					"name" : "ld_r",
 					"strict" : false
 				},
 				{
@@ -152,6 +148,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "rzData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[0]",
+					"strict" : false
+				},
+				{
 					"name" : "rf_sel[3]",
 					"strict" : false
 				},
@@ -224,70 +284,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "rzData[15]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[14]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[13]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[12]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[0]",
-					"strict" : false
-				},
-				{
 					"name" : "opcode[5]",
 					"strict" : false
 				},
@@ -309,74 +305,6 @@
 				},
 				{
 					"name" : "opcode[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rz_recv",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[15]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[14]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[13]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[12]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[11]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[10]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[9]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[8]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[7]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[6]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[5]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[4]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[3]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[0]",
 					"strict" : false
 				},
 				{
@@ -772,6 +700,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "dm_wr",
 					"strict" : false
 				},
@@ -837,10 +769,6 @@
 				},
 				{
 					"name" : "dm_indata[0]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				},
 				{

@@ -66,6 +66,20 @@ refer to the applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 1))
 	)
 	(port
+		(pt 0 128)
+		(input)
+		(text "rz_recv" (rect 0 0 31 12)(font "Arial" ))
+		(text "rz_recv" (rect 21 123 52 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "rx_recv" (rect 0 0 33 12)(font "Arial" ))
+		(text "rx_recv" (rect 21 139 54 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
 		(pt 248 32)
 		(output)
 		(text "clkOut" (rect 0 0 24 12)(font "Arial" ))
