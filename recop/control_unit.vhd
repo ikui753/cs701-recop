@@ -7,15 +7,15 @@ use work.recop_types.all;
 entity control_unit is
     port (
 		clk : in bit_1;
-	   reset : in bit_1;
-	   opcodeIn : in bit_6;
+	   	reset : in bit_1;
+	   	opcodeIn : in bit_6;
 		operand : in bit_16;
-	   address_method : in bit_2;
+	   	address_method : in bit_2;
 		 
 		clkOut : out bit_1; -- clock
 		-- program counter signals
 		increment : out bit_3; -- increment program counter
-      operandOut : out bit_16; -- increment program counter
+      	operandOut : out bit_16; -- increment program counter
 		
 		-- alu signals
 		alu_opsel : out bit_6;
@@ -24,10 +24,10 @@ entity control_unit is
 		ld_r : out bit_1; 
       
 		clr_z_flag : out bit_1;
-      dm_wr : out bit_1;
-      wren : out bit_1;
+      	dm_wr : out bit_1;
+      	wren : out bit_1;
     	rf_sel : out bit_4;
-	   rf_init : out bit_1;
+	   	rf_init : out bit_1;
 		z : out bit_1;
 		dpcr_lsb_sel : out bit_1;
 		dpcr_wr : out bit_1
@@ -77,6 +77,40 @@ begin
 
 				-- check opcode and output relevant control signals
             case opcodeIn is
+
+					when andr =>
+						case address_method is
+							when am_immediate =>
+								alu_op1_sel <= "01";
+								alu_op2_sel <= '0';
+								alu_operation <= alu_and;
+							when am_register =>
+								alu_op1_sel <= "00";
+								alu_op2_sel <= '1';
+								alu_operation <= alu_and;
+						end case;
+					when orr =>
+						case address_method is
+							when am_immediate =>
+								alu_op1_sel <= "01";
+								alu_op2_sel <= '0';
+								alu_operation <= alu_or;
+							when am_register =>
+								alu_op1_sel <= "00";
+								alu_op2_sel <= '1';
+								alu_operation <= alu_or;
+						end case;
+					when addr =>
+						case address_method is
+							when am_immediate =>
+								alu_op1_sel <= "01";
+								alu_op2_sel <= '0';
+								alu_operation <= alu_add;
+							when am_register =>
+								alu_op1_sel <= "00";
+								alu_op2_sel <= '1';
+								alu_operation <= alu_add;
+						end case;
 					when jmp =>
 						case address_method is
 							when am_inherent =>
