@@ -89,6 +89,9 @@ begin
 				rz_recv <= '1';
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
+				rz_recv <= '1';
+			else
+				rz_recv <= '0';
 			end if;
 		end if;
 	end process;

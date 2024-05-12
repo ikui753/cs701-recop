@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/12/2024 15:53:14"
+-- DATE "05/12/2024 16:14:53"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -241,15 +241,12 @@ SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTAADDR_bus\ : std_logi
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTBADDR_bus\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a0_PORTBDATAOUT_bus\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \clkIn~input_o\ : std_logic;
-SIGNAL \inst3|rz_recv~0_combout\ : std_logic;
 SIGNAL \inst3|rz_recv~q\ : std_logic;
-SIGNAL \inst7|ld_r~2_combout\ : std_logic;
 SIGNAL \dm_wr~input_o\ : std_logic;
 SIGNAL \dm_indata[13]~input_o\ : std_logic;
 SIGNAL \~GND~combout\ : std_logic;
 SIGNAL \inst|Add0~57_sumout\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
-SIGNAL \inst|out_count[11]~0_combout\ : std_logic;
 SIGNAL \inst|Add0~58\ : std_logic;
 SIGNAL \inst|Add0~53_sumout\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a13~portbdataout\ : std_logic;
@@ -287,7 +284,7 @@ SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a1~portbdataout\ : std_logic
 SIGNAL \dm_indata[0]~input_o\ : std_logic;
 SIGNAL \inst1|memory_rtl_0|auto_generated|ram_block1a0~portbdataout\ : std_logic;
 SIGNAL \inst7|rf_sel[3]~0_combout\ : std_logic;
-SIGNAL \inst7|Mux12~0_combout\ : std_logic;
+SIGNAL \inst7|Mux8~0_combout\ : std_logic;
 SIGNAL \inst1|memory_rtl_1|auto_generated|ram_block1a15~portbdataout\ : std_logic;
 SIGNAL \inst3|Decoder0~1_combout\ : std_logic;
 SIGNAL \inst3|regs[1][15]~q\ : std_logic;
@@ -882,9 +879,8 @@ SIGNAL \inst2|rz\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst5|dpcr\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \inst5|sip_r\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst|out_count\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst2|opcode\ : std_logic_vector(5 DOWNTO 0);
-SIGNAL \inst7|increment\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \inst2|rx\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst2|opcode\ : std_logic_vector(5 DOWNTO 0);
 SIGNAL \inst7|rf_sel\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst2|address_method\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst5|sop\ : std_logic_vector(15 DOWNTO 0);
@@ -1380,7 +1376,6 @@ SIGNAL \inst3|ALT_INV_regs[3][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][15]~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_increment\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \inst7|ALT_INV_ld_r~q\ : std_logic;
 SIGNAL \inst|ALT_INV_out_count\ : std_logic_vector(15 DOWNTO 1);
 
@@ -2194,7 +2189,6 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[2][15]~q\ <= NOT \inst3|regs[2][15]~q\;
 \inst3|ALT_INV_regs[1][15]~q\ <= NOT \inst3|regs[1][15]~q\;
 \inst3|ALT_INV_regs[0][15]~q\ <= NOT \inst3|regs[0][15]~q\;
-\inst7|ALT_INV_increment\(0) <= NOT \inst7|increment\(0);
 \inst7|ALT_INV_ld_r~q\ <= NOT \inst7|ld_r~q\;
 \inst|ALT_INV_out_count\(1) <= NOT \inst|out_count\(1);
 \inst|ALT_INV_out_count\(2) <= NOT \inst|out_count\(2);
@@ -2496,7 +2490,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst7|increment\(0),
+	i => VCC,
 	devoe => ww_devoe,
 	o => ww_increment(0));
 
@@ -4682,21 +4676,6 @@ PORT MAP (
 	i => ww_clkIn,
 	o => \clkIn~input_o\);
 
-\inst3|rz_recv~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|rz_recv~0_combout\ = (\inst3|rz_recv~q\) # (\inst7|ld_r~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0111011101110111011101110111011101110111011101110111011101110111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_ld_r~q\,
-	datab => \inst3|ALT_INV_rz_recv~q\,
-	combout => \inst3|rz_recv~0_combout\);
-
 \inst3|rz_recv\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4705,24 +4684,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst3|rz_recv~0_combout\,
+	d => \inst7|ld_r~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|rz_recv~q\);
-
-\inst7|ld_r~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|ld_r~2_combout\ = !\inst3|rz_recv~q\
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1010101010101010101010101010101010101010101010101010101010101010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_rz_recv~q\,
-	combout => \inst7|ld_r~2_combout\);
 
 \dm_wr~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -4784,35 +4749,6 @@ PORT MAP (
 	i => ww_reset,
 	o => \reset~input_o\);
 
-\inst7|increment[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst3|rz_recv~q\,
-	ena => \inst7|ld_r~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|increment\(0));
-
-\inst|out_count[11]~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|out_count[11]~0_combout\ = (\reset~input_o\) # (\inst7|increment\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0111011101110111011101110111011101110111011101110111011101110111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_increment\(0),
-	datab => \ALT_INV_reset~input_o\,
-	combout => \inst|out_count[11]~0_combout\);
-
 \inst|out_count[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -4823,7 +4759,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~57_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(1));
@@ -4855,7 +4790,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~53_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(2));
@@ -5302,18 +5236,21 @@ PORT MAP (
 
 \inst7|ld_r~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|ld_r~1_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & \inst7|ld_r~0_combout\))
+-- \inst7|ld_r~1_combout\ = ( \inst7|ld_r~0_combout\ & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(4) & ((!\inst3|rz_recv~q\))) # (\inst2|opcode\(4) & (\inst7|ld_r~q\)))) # (\inst2|opcode\(5) & (\inst7|ld_r~q\)) ) ) # ( !\inst7|ld_r~0_combout\ & ( 
+-- \inst7|ld_r~q\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000100000001000000010000000100000001000000010000000100000001000",
+	lut_mask => "0101010101010101110001010101010101010101010101011100010101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst7|ALT_INV_ld_r~0_combout\,
+	dataa => \inst7|ALT_INV_ld_r~q\,
+	datab => \inst3|ALT_INV_rz_recv~q\,
+	datac => \inst2|ALT_INV_opcode\(5),
+	datad => \inst2|ALT_INV_opcode\(4),
+	datae => \inst7|ALT_INV_ld_r~0_combout\,
 	combout => \inst7|ld_r~1_combout\);
 
 \inst7|ld_r\ : dffeas
@@ -5324,8 +5261,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|ld_r~2_combout\,
-	ena => \inst7|ld_r~1_combout\,
+	d => \inst7|ld_r~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|ld_r~q\);
@@ -5978,9 +5914,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|rf_sel\(3));
 
-\inst7|Mux12~0\ : cyclonev_lcell_comb
+\inst7|Mux8~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux12~0_combout\ = (\inst2|address_method\(1) & !\inst2|address_method\(0))
+-- \inst7|Mux8~0_combout\ = (\inst2|address_method\(1) & !\inst2|address_method\(0))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5991,7 +5927,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(1),
 	datab => \inst2|ALT_INV_address_method\(0),
-	combout => \inst7|Mux12~0_combout\);
+	combout => \inst7|Mux8~0_combout\);
 
 \inst7|rf_sel[0]\ : dffeas
 -- pragma translate_off
@@ -6001,7 +5937,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Mux12~0_combout\,
+	d => \inst7|Mux8~0_combout\,
 	ena => \inst7|rf_sel[3]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -16974,7 +16910,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~49_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(3));
@@ -17006,7 +16941,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~45_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(4));
@@ -17038,7 +16972,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~41_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(5));
@@ -17070,7 +17003,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~37_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(6));
@@ -17102,7 +17034,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~33_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(7));
@@ -17134,7 +17065,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~29_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(8));
@@ -17166,7 +17096,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~25_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(9));
@@ -17198,7 +17127,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~21_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(10));
@@ -17230,7 +17158,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~17_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(11));
@@ -17262,7 +17189,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~13_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(12));
@@ -17294,7 +17220,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~9_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(13));
@@ -17326,7 +17251,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~5_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(14));
@@ -17356,7 +17280,6 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|Add0~1_sumout\,
 	sclr => \reset~input_o\,
-	ena => \inst|out_count[11]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(15));

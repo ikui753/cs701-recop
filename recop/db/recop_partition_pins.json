@@ -76,10 +76,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "increment[0]",
-					"strict" : false
-				},
-				{
 					"name" : "rxData[15]",
 					"strict" : false
 				},

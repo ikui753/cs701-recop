@@ -94,12 +94,7 @@ begin
 --                              end if;
 --                      end case;
                     when ldr =>
-								if rz_recv = '0' then								
-									ld_r <= '1';
-								else 
-									ld_r <= '0';
-									increment <= "001";
-								end if; 
+								
                         -- check address method
                         case address_method is
                             when am_inherent =>
@@ -116,6 +111,12 @@ begin
                                 rf_sel <= "1000";
                                 rf_init <= '0';
                         end case;
+									if rz_recv = '0' then								
+										ld_r <= '1';
+									else 
+										ld_r <= '0';
+										increment <= "001";
+									end if; 
                         
                     --when str =>
 --                      when am_inherent => -- None
