@@ -17,7 +17,9 @@ entity control_unit is
 		increment : out bit_3; -- increment program counter
 		
 		-- alu signals
-		alu_opsel : out bit_6;
+		alu_op1_sel : out bit_2;
+		alu_op2_sel : out bit_1;
+		alu_operation : out bit_3;
 		
 		-- load register 
 		ld_r : out bit_1; 
