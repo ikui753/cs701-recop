@@ -140,8 +140,6 @@ begin
 					when ldr =>
 						-- check address method
 						case address_method is
-							when am_inherent =>
-								-- nothing
 							when am_immediate => -- LDR RZ #Operand
 								rf_sel <= "0000";
 								ld_r <= '1';
@@ -155,23 +153,17 @@ begin
 								ld_r <= '1';
 								rf_init <= '0';
 						end case;
-						
-					--when str =>
---						when am_inherent => -- None
---							
---						when am_immediate => -- M[Rz] <- Operand
---							
---						when am_direct => -- M[Operand] 
---							
---						when am_register => -- m[Rz] <- Rx
---					when orr =>
---						case address_method is
---							when am_inherent =>
---							when am_immediate =>
---							when am_direct =>
---							when am_register =>
---								
-					
+					when str =>
+						when am_immediate => -- M[Rz] <- Operand
+							
+						when am_direct => -- M[Operand] 
+							
+						when am_register => -- m[Rz] <- Rx
+					when present =>
+						case address_method is
+							when am_immediate => -- if Rz(15..0)=0x0000 then PC<-Operand else NEXT
+
+						end case;
                	when others =>
 						-- noop
 						-- clkOut <= '0';
