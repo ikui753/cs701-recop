@@ -50,8 +50,9 @@ architecture behavioral of control_unit is
     -- signal dm_wr_signal : std_logic;
     -- signal wren_signal : std_logic;
     -- ... and so on for other control signals
-	 signal increment_q : bit_3;
-	 signal ld_r_q : bit_1;
+	 signal increment_q : bit_3 := "000";
+	 signal ld_r_q : bit_1 := '0';
+	 signal rz_recv_q : bit_1 := rz_recv;
  begin
 
     process (clk, reset, rz_recv)
@@ -111,13 +112,12 @@ architecture behavioral of control_unit is
                                 rf_sel <= "1000";	
                         end case;
 								
-								-- Set increment signal based on cycle countand other conditions
-									if rz_recv = '0' then
-										increment_q <= "000";
-										ld_r_q <= '1';
-									else
-										ld_r_q <= '0'; 
+									if rz_recv = '1' then
+										ld_r_q <= '0';
 										increment_q <= "001";
+									else
+										ld_r_q <= '1';
+										increment_q <= "000";
 									end if;
 									
                     --when str =>

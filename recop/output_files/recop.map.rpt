@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun May 12 21:47:35 2024
+Sun May 12 22:12:27 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 12 21:47:35 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 12 22:12:27 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -548,7 +548,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 12 21:47:24 2024
+    Info: Processing started: Sun May 12 22:12:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -742,9 +742,9 @@ Info (21057): Implemented 944 device resources after synthesis - the final resou
     Info (21061): Implemented 666 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 4892 megabytes
-    Info: Processing ended: Sun May 12 21:47:35 2024
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 4890 megabytes
+    Info: Processing ended: Sun May 12 22:12:27 2024
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:10
 
 
