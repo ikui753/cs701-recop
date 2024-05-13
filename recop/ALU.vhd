@@ -28,7 +28,10 @@ entity alu is
 		-- flag control signal
 		clr_z_flag		: in bit_1;
 		am 	: in bit_2;
-		reset : in bit_1
+		reset : in bit_1;
+		
+		alu_rx_recv : out bit_1;
+		alu_rz_recv : out bit_1
 	);
 end alu;
 
@@ -80,8 +83,17 @@ begin
 			when others =>
 				result <= X"0000";
 		end case;
-	end process alu;
-	alu_result <= result;
+		if result > x"0000" then
+			alu_rx_recv <= '1';
+			alu_rz_recv <= '1';
+		else
+			alu_rx_recv <= '0';
+			alu_rz_recv <= '0';
+		end if;
+
+		
+		alu_result <= result;
+		end process alu;
 
 	-- zero flag
 	z1gen: process (clk)

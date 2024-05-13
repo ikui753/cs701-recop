@@ -6,186 +6,152 @@ use work.recop_types.all;
 
 entity control_unit is
     port (
-		clk : in bit_1;
-	   	reset : in bit_1;
-	   	opcodeIn : in bit_6;
-	   	address_method : in bit_2;
-		 
-		clkOut : out bit_1; -- clock
-		-- program counter signals
-		rx_recv : in bit_1; -- increment program counter with rxdata
-		increment : out bit_3; -- increment program counter
-		
-		-- alu signals
-		alu_op1_sel : out bit_2;
-		alu_op2_sel : out bit_1;
-		alu_operation : out bit_3;
-		
-		-- load register 
-		ld_r : out bit_1; 
+        clk : in bit_1;
+        reset : in bit_1;
+        opcodeIn : in bit_6;
+        address_method : in bit_2;
+         
+        clkOut : out bit_1; -- clock
+        
+        -- loaded/ stored signals
+		  alu_rz_recv : in bit_1 := '0'; -- check registers to see if they've been loaded
+		  alu_rx_recv : in bit_1 := '0';
+		  rz_recv : in bit_1 := '0';
+		  rx_recv: in bit_1 := '0';
+        
+		  stateOut : out bit_3 := "000";
+        -- program counter signals
+        increment : out bit_4 := "1000"; -- increment program counter
+        
+        -- alu signals
+        alu_opsel : out bit_6 := "000000";
+        
+        -- load register 
+        ld_r : out bit_1 := '0'; 
       
-		clr_z_flag : out bit_1;
-      	dm_wr : out bit_1;
-      	wren : out bit_1;
-    	rf_sel : out bit_4;
-	   	rf_init : out bit_1;
-		z : out bit_1;
-		dpcr_lsb_sel : out bit_1;
-		dpcr_wr : out bit_1
+        clr_z_flag : out bit_1;
+        dm_wr : out bit_1;
+        wren : out bit_1;
+        rf_sel : out bit_4 := "0000";
+        rf_init : out bit_1;
+        z : out bit_1;
+        dpcr_lsb_sel : out bit_1;
+        dpcr_wr : out bit_1
+		  
         -- ... and so on for other control signals
     );
 end entity control_unit;
 
 architecture behavioral of control_unit is
+	
+    type cuStates is (idle, fetch, decode, execute, memory, writeback);
+	 signal currentState : cuStates := fetch; -- initialise in idle state
+	 signal nextState : cuStates;
 
-    -- Define control signals here
-    -- For example:
-    -- signal alu_op1_sel_signal : std_logic_vector(1 downto 0);
-    -- signal alu_op2_sel_signal : std_logic;
-    -- signal clr_z_flag_signal : std_logic;
-    -- signal dm_wr_signal : std_logic;
-    -- signal wren_signal : std_logic;
-    -- ... and so on for other control signals
-begin
+ begin
 
-    process (clk, reset)
-    begin
-        if reset = '1' then
-            -- Initialize control signals to default values
-            -- For example:
-            -- alu_op1_sel_signal <= "00";
-            -- alu_op2_sel_signal <= '0';
-            -- clr_z_flag_signal <= '0';
-            -- dm_wr_signal <= '0';
-            -- wren_signal <= '0';
-            -- ... and so on for other control signals
-        elsif rising_edge(clk) then 
---				copy paste below for adding additional operations
---					when {opcode} =>
---						case address_method is
---							when am_inherent =>
-
---							when am_immediate =>
-
---							when am_direct =>
-
---							when am_register =>
-
---						end case;
-
-				-- check opcode and output relevant control signals
-            case opcodeIn is
-					when andr =>
-						case address_method is
-							when am_immediate =>
-								alu_op1_sel <= "01";
-								alu_op2_sel <= '0';
-								alu_operation <= alu_and;
-							when am_register =>
-								alu_op1_sel <= "00";
-								alu_op2_sel <= '1';
-								alu_operation <= alu_and;
-							end case;
-					when orr =>
-						case address_method is
-							when am_immediate =>
-								alu_op1_sel <= "01";
-								alu_op2_sel <= '0';
-								alu_operation <= alu_or;
-							when am_register =>
-								alu_op1_sel <= "00";
-								alu_op2_sel <= '1';
-								alu_operation <= alu_or;
-							end case;
-					when addr =>
-						case address_method is
-							when am_immediate =>
-								alu_op1_sel <= "01";
-								alu_op2_sel <= '0';
-								alu_operation <= alu_add;
-							when am_register =>
-								alu_op1_sel <= "00";
-								alu_op2_sel <= '1';
-								alu_operation <= alu_add;
-						end case;
-					when subr =>
-						case address_method is
-							when am_immediate =>
-								alu_op1_sel <= "00";
-								alu_op2_sel <= '1';
-								alu_operation <= alu_sub;
-						end case;
-					when subvr =>
-						case address_method is
-							when am_immediate =>
-								alu_op1_sel <= "01";
-								alu_op2_sel <= '0';
-								alu_operation <= alu_sub;
-						end case;
-					when jmp =>
-						case address_method is
-							when am_inherent =>
-								-- do nothing
-							when am_immediate =>
-								-- PC <- Operand
-								increment <= "101";
-							when am_direct =>
-								-- do nothing
-							when am_register =>
-								-- PC <- Rx
-								if rx_recv = '1' then -- wait for rxdata
-									increment <= "100";
-								end if;
-						end case;
-					when ldr =>
-						-- check address method
-						case address_method is
-							when am_inherent =>
-								-- nothing
-							when am_immediate => -- LDR RZ #Operand
-								rf_sel <= "0000";
-								ld_r <= '1';
-								rf_init <= '0';
-							when am_direct => -- LDR RZ $Operand
-								rf_sel <= "1001";
-								ld_r <= '1';
-								rf_init <= '0';
-							when am_register => -- LDR RZ M[Rx]
-								rf_sel <= "1000";
-								ld_r <= '1';
-								rf_init <= '0';
-						end case;
-						
-					--when str =>
---						when am_inherent => -- None
---							
---						when am_immediate => -- M[Rz] <- Operand
---							
---						when am_direct => -- M[Operand] 
---							
---						when am_register => -- m[Rz] <- Rx
---					when orr =>
---						case address_method is
---							when am_inherent =>
---							when am_immediate =>
---							when am_direct =>
---							when am_register =>
---								
-					
-               	when others =>
-						-- noop
-						-- clkOut <= '0';
-            	end case;
-        end if;
-    end process;
-		
-    -- Assign control signals to outputs
-    -- For example:
+    
 	 
-	 clkOut <= clk; -- output clock
-    -- clr_z_flag <= clr_z_flag_signal;
-    -- dm_wr <= dm_wr_signal;
-    -- wren <= wren_signal;
-    -- ... and so on for other control signals
+	 OUTPUTS : process(currentState, address_method, opcodeIn, clk) is
+	 begin
 
+		if rising_edge(clk) then
+			case currentState is
+				when idle =>
+					increment <= "1000"; -- set PC to 0
+					stateOut <= "000";
+					ld_r <= '0';
+					nextState <= fetch;
+					
+				when fetch =>
+					increment <= "0001"; -- increment program counter, move to next instruction
+					nextState <= decode;
+					ld_r <= '0';
+					stateOut <= "001";
+					
+				when decode =>
+					increment <= "0000";
+					case opcodeIn is
+						when ldr =>
+							alu_opsel <= "000000";
+							case address_method is
+								when am_inherent =>
+									-- do nothing
+								when am_immediate =>
+									-- Rz <- Operand
+									rf_sel <= "0000"; -- set to operand
+									--ld_r <= '1';
+								when am_direct =>
+									-- Rz <- M[Operand]
+									rf_sel <= "1001"; -- set to M[Operand]
+									--ld_r <= '1';
+								when am_register =>
+									-- Rz <- Rx
+									rf_sel <= "1000"; -- set to Rx
+									--ld_r <= '1';
+							end case;
+						
+						when andr =>
+							case address_method is 
+								when am_immediate =>
+									-- Rz <- Rx AND Operand
+									rf_sel <= "0000"; -- set to operand
+									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
+								
+								when am_register =>
+									-- Rz <- Rz and Rx
+									rf_sel <= "1010"; -- set to Rz
+									alu_opsel <= alu_and&"001"; -- op1- Rx, op2, Rz
+									
+								when others =>
+							end case;
+						
+						when others =>
+					end case;
+					
+					stateOut <= "010";
+					nextState <= execute;
+					
+				when execute =>
+					ld_r <= '0';
+					increment <= "0000";
+					stateOut <= "011";
+					nextState <= memory;
+					
+				when memory =>
+					ld_r <= '0';
+					increment <= "0000";
+					stateOut <= "011";
+					nextState <= writeback;
+				
+				when writeback =>
+					ld_r <= '1';
+					increment <= "0000";
+					stateOut <= "011";
+					nextState <= fetch;
+				
+				when others =>
+					ld_r <= '0';
+					increment <= "0000";
+					stateOut <= "000"; 
+					nextState <= idle;
+			end case;
+		end if;
+		currentState <= nextState;
+	end process;
+	
+--	SWITCH_STATES : process (clk) is 
+--    begin
+--		if rising_edge(clk) then
+--			if (reset = '1') then
+--				currentState <= fetch;
+--			else
+--				currentState <= nextState;
+--			end if;
+--		end if;
+--    end process;
+	
+	clkOut <= clk;
+	
+	
 end architecture behavioral;

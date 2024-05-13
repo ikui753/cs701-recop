@@ -34,8 +34,10 @@ entity regfile is
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
 		dprr_wren : in bit_1;
+		state : in bit_3;
 		
-		rx_recv : out bit_1 := '0' -- initialise to 0
+		rx_recv : out bit_1 := '0'; -- initialise to 0
+		rz_recv: out bit_1 := '0'
 				
 		);
 end regfile;
@@ -44,49 +46,53 @@ architecture beh of regfile is
 	type reg_array is array (15 downto 0) of bit_16;
 	signal regs: reg_array;
 	signal data_input_z: bit_16;
+	signal rz_recv_q : bit_1 := '0'; -- Declare rz_recv_q as a signal
 begin
 	r7 <=regs(7);
 
 	-- mux selecting input data to be written to Rz
-	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z)
+	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z, clk)
     begin
-        case rf_input_sel is
-            when "0000" =>
-                data_input_z <= ir_operand; -- operand
-				when "0001" =>
-					 data_input_z <= X"000"&"000"&dprr_res_reg;
-            when "0011" =>
-                data_input_z <= aluout; -- alu result
-            when "0100" =>
-                data_input_z <= rz_max; -- rz max
-            when "0101" =>
-                data_input_z <= sip_hold;
-            when "0110" =>
-                data_input_z <= X"000"&"000"&er_temp;
-            when "0111" =>
-                data_input_z <= dm_out; 
-				when "1000" =>
-					 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
-				when "1001" =>
-					 data_input_z <= regs(to_integer(unsigned(ir_operand))); -- Rz <- M[Operand] might need to take a look at this later
-				when "1010" =>
-					 data_input_z <= regs(sel_z); -- Rz <- Rz
-            when others =>
-                data_input_z <= X"0000";
-        end case;
+		if rising_edge(clk) and state = "011" then
+			  case rf_input_sel is
+					when "0000" =>
+						 data_input_z <= ir_operand; -- operand
+					when "0001" =>
+						 data_input_z <= X"000"&"000"&dprr_res_reg;
+					when "0011" =>
+						 data_input_z <= aluout; -- alu result
+					when "0100" =>
+						 data_input_z <= rz_max; -- rz max
+					when "0101" =>
+						 data_input_z <= sip_hold;
+					when "0110" =>
+						 data_input_z <= X"000"&"000"&er_temp;
+					when "0111" =>
+						 data_input_z <= dm_out; 
+					when "1000" =>
+						 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
+					when "1001" =>
+						 data_input_z <= regs(to_integer(unsigned(ir_operand))); -- Rz <- M[Operand] might need to take a look at this later
+					when "1010" =>
+						 data_input_z <= regs(sel_z); -- Rz <- Rz
+					when others =>
+						 data_input_z <= X"0000";
+			  end case;
+		end if;
     end process input_select;
 	
-	process (clk, init)
+	process (clk, init, state)
 	begin
 		if init = '1' then
 			-- reset regs
 			regs<=((others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'));
-		elsif rising_edge(clk) then
+		elsif rising_edge(clk) and state = "011" then
 			-- write data into Rz if ld signal is asserted
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z; -- load r enabled
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
+			else
 			end if;
 		end if;
 	end process;
@@ -94,7 +100,5 @@ begin
 
 	rx <= regs(sel_x); -- send x to rx
 	rz <= regs(sel_z); -- send z to rz
-	rx_recv <= '1'; -- ready to jump, rx data received
-
 	
 end beh;
