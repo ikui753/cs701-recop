@@ -21,7 +21,7 @@ entity control_unit is
         
 		  stateOut : out bit_3 := "000";
         -- program counter signals
-        increment : out bit_4; -- increment program counter
+        increment : out bit_4 := "1000"; -- increment program counter
         
         -- alu signals
         alu_opsel : out bit_6 := "000000";
@@ -60,17 +60,20 @@ architecture behavioral of control_unit is
 				when idle =>
 					increment <= "1000"; -- set PC to 0
 					stateOut <= "000";
+					ld_r <= '0';
 					nextState <= fetch;
 					
 				when fetch =>
 					increment <= "0001"; -- increment program counter, move to next instruction
 					nextState <= decode;
+					ld_r <= '0';
 					stateOut <= "001";
 					
 				when decode =>
 					increment <= "0000";
 					case opcodeIn is
 						when ldr =>
+							ld_r <= '1';
 							alu_opsel <= "000000";
 							case address_method is
 								when am_inherent =>
@@ -109,7 +112,7 @@ architecture behavioral of control_unit is
 						when others =>
 					end case;
 					
-					stateOut <= "010";
+					stateOut <= "001";
 					nextState <= execute;
 					
 				when execute =>
@@ -119,7 +122,7 @@ architecture behavioral of control_unit is
 					
 				when memory =>
 					increment <= "0000";
-					stateOut <= "100";
+					stateOut <= "011";
 					nextState <= fetch;
 				
 				when others =>

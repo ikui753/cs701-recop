@@ -34,6 +34,7 @@ entity regfile is
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
 		dprr_wren : in bit_1;
+		state : in bit_3;
 		
 		rx_recv : out bit_1 := '0'; -- initialise to 0
 		rz_recv: out bit_1 := '0'
@@ -78,12 +79,12 @@ begin
         end case;
     end process input_select;
 	
-	process (clk, init)
+	process (clk, init, state)
 	begin
 		if init = '1' then
 			-- reset regs
 			regs<=((others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'));
-		elsif rising_edge(clk) then
+		elsif rising_edge(clk) and state = "011" then
 			-- write data into Rz if ld signal is asserted
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z; -- load r enabled
