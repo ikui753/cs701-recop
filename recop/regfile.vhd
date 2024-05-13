@@ -88,11 +88,11 @@ begin
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z; -- load r enabled
 --				rz_recv <= '1';
-				if regs(sel_z) > x"0000" then
-					rz_recv <= '1';
-				else
-					rz_recv <= '0';
-				end if;
+--				if regs(sel_z) > x"0000" then
+--					rz_recv <= '1';
+--				else
+--					rz_recv <= '0';
+--				end if;
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
 				-- rz_recv <= '1';

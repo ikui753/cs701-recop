@@ -20,7 +20,7 @@ entity control_unit is
 		  rx_recv: in bit_1;
         
         -- program counter signals
-        increment : out bit_3; -- increment program counter
+        increment : out bit_4; -- increment program counter
         
         -- alu signals
         alu_opsel : out bit_6;
@@ -42,131 +42,80 @@ entity control_unit is
 end entity control_unit;
 
 architecture behavioral of control_unit is
-
-    -- Define control signals here
-    -- For example:
-    -- signal alu_op1_sel_signal : std_logic_vector(1 downto 0);
-    -- signal alu_op2_sel_signal : std_logic;
-    -- signal clr_z_flag_signal : std_logic;
-    -- signal dm_wr_signal : std_logic;
-    -- signal wren_signal : std_logic;
-    -- ... and so on for other control signals
-	 signal increment_q : bit_3 := "000";
-	 signal ld_r_q : bit_1 := '0';
-	 signal rz_recv_q : bit_1 := '0';
-	 
+	
+    type cuStates is (idle, fetch, decode, execute, memory, writeback);
+	 signal currentState : cuStates := fetch;
+	 signal nextState : cuStates;
 
  begin
 
-    process (clk, reset, rz_recv)
+    SWITCH_STATES : process (clk) is 
     begin
-			-- opcode operations not dependent on clock
-		  case opcodeIn is
-			when ldr =>
-				-- read value of rz_recv
-				if rz_recv = '1' then
-					increment <= "001";
-				else 
-					increment <= "000";
-				end if;
-			when others =>
-				-- other cases here
-			end case;
-			
-        if reset = '1' then
-            -- Initialize control signals to default values
-            -- For example:
-            -- alu_op1_sel_signal <= "00";
-            -- alu_op2_sel_signal <= '0';
-            -- clr_z_flag_signal <= '0';
-            -- dm_wr_signal <= '0';
-            -- wren_signal <= '0';
-            -- ... and so on for other control signals
-        elsif rising_edge(clk) then
---              copy paste below for adding additional operations
---                  when {opcode} =>
---                      case address_method is
---                          when am_inherent =>
---
---                          when am_immediate =>
---
---                          when am_direct =>
---
---                          when am_register =>
---
---                      end case;
-
-                -- check opcode and output relevant control signals
-            case opcodeIn is
---                  when jmp =>
---                      case address_method is
---                          when am_inherent =>
---                              -- do nothing
---                          when am_immediate =>
---                              -- PC <- Operand
---                              increment <= "101";
---                          when am_direct =>
---                              -- do nothing
---                          when am_register =>
---                              -- PC <- Rx
---                              if rx_recv = '1' then -- wait for rxdata
---                                  increment <= "100";
---                              end if;
---                      end case;
-                    when ldr =>
-                        -- check address method
-                        case address_method is
-                            when am_inherent =>
-                                -- nothing
-                            when am_immediate => -- LDR RZ #Operand
-                                rf_sel <= "0000";
-
-                            when am_direct => -- LDR RZ $Operand
-                                rf_sel <= "1001";
-                                
-                            when am_register => -- LDR RZ M[Rx]
-                                rf_sel <= "1000";	
-                        end case;
-								
-								
-									
-									
-                    --when str =>
---                      when am_inherent => -- None
---                          
---                      when am_immediate => -- M[Rz] <- Operand
---                          
---                      when am_direct => -- M[Operand] 
---                          
---                      when am_register => -- m[Rz] <- Rx
---                  when orr =>
---                      case address_method is
---                          when am_inherent =>
---                          when am_immediate =>
---                          when am_direct =>
---                          when am_register =>
---                              
-                    
-						when others =>
-							increment_q <= "000";
-                        -- noop
-                        -- clkOut <= '0';
-            end case;  
-        end if;
-		  
+		if rising_edge(clk) then
+			if (reset = '1') then
+				currentState <= idle;
+			else
+				currentState <= nextState;
+			end if;
+		end if;
     end process;
-        
-    -- Assign control signals to outputs
-    -- For example:
-     
-     clkOut <= clk; -- output clock
-	  ld_r <= clk; -- only ld_r on clock edge during load operations
-	  -- increment <= increment_q;
-
-	  -- ld_r <= ld_r_q;
-    -- clr_z_flag <= clr_z_flag_signal;
-    -- dm_wr <= dm_wr_signal;
-    -- wren <= wren_signal;
-    -- ... and so on for other control signals
-
+	 
+	 OUTPUTS : process(currentState, address_method, opcodeIn) is
+	 begin
+		case currentState is
+			when idle =>
+				increment <= "1000"; -- set PC to 0
+				nextState <= fetch;
+			when fetch =>
+				increment <= "0000"; -- increment program counter, move to next instruction
+				nextState <= decode;
+			when decode =>
+				case opcodeIn is
+					when ldr =>
+						case address_method is
+							when am_inherent =>
+								-- do nothing
+							when am_immediate =>
+								-- Rz <- Operand
+								rf_sel <= "000"; -- set to operand
+								ld_r <= '1';
+							when am_direct =>
+								-- Rz <- M[Operand]
+								rf_sel <= "1001"; -- set to M[Operand]
+								ld_r <= '1';
+							when am_register =>
+								-- Rz <- Rx
+								rf_sel <= "1000"; -- set to Rx
+								ld_r <= '1';
+						end case;
+					
+					when andr =>
+						case address_method is 
+							when am_inherent =>
+								-- do nothing
+							when am_immediate =>
+								-- Rz <- Rx AND Operand
+								rf_sel <= "000"; -- set to operand
+								ld_r <= '0'; -- don't load yet
+							when am_direct =>
+								-- do nothing
+							when am_register =>
+								-- Rz <- Rz and Rx
+								rf_sel <= "1010"; -- set to Rz
+								ld_r <= '0';
+						end case;
+								
+					when others =>
+				end case;
+				nextState <= execute;
+			when execute =>
+				
+			when memory =>
+			
+			
+			when others =>
+		end case;
+	end process;
+	
+	
 end architecture behavioral;
