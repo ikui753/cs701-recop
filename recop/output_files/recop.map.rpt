@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Mon May 13 22:11:22 2024
+Mon May 13 22:38:00 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -47,13 +47,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 13 22:11:22 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 13 22:38:00 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 472                                         ;
+; Total registers                 ; 474                                         ;
 ; Total pins                      ; 250                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -199,25 +199,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 349         ;
+; Estimate of Logic utilization (ALMs needed) ; 363         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 352         ;
-;     -- 7 input functions                    ; 5           ;
-;     -- 6 input functions                    ; 208         ;
-;     -- 5 input functions                    ; 41          ;
-;     -- 4 input functions                    ; 21          ;
-;     -- <=3 input functions                  ; 77          ;
+; Combinational ALUT usage for logic          ; 341         ;
+;     -- 7 input functions                    ; 46          ;
+;     -- 6 input functions                    ; 183         ;
+;     -- 5 input functions                    ; 16          ;
+;     -- 4 input functions                    ; 22          ;
+;     -- <=3 input functions                  ; 74          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 472         ;
+; Dedicated logic registers                   ; 474         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 250         ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
-; Maximum fan-out                             ; 473         ;
-; Total fan-out                               ; 3638        ;
-; Average fan-out                             ; 2.75        ;
+; Maximum fan-out                             ; 475         ;
+; Total fan-out                               ; 3667        ;
+; Average fan-out                             ; 2.79        ;
 +---------------------------------------------+-------------+
 
 
@@ -226,165 +226,168 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
-; |progCounterTest           ; 352 (0)             ; 472 (0)                   ; 0                 ; 0          ; 250  ; 0            ; |progCounterTest                       ; progCounterTest ; work         ;
+; |progCounterTest           ; 341 (1)             ; 474 (0)                   ; 0                 ; 0          ; 250  ; 0            ; |progCounterTest                       ; progCounterTest ; work         ;
 ;    |alu:inst9|             ; 46 (46)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9             ; alu             ; work         ;
-;    |control_unit:inst7|    ; 13 (13)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7    ; control_unit    ; work         ;
+;    |control_unit:inst7|    ; 19 (19)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7    ; control_unit    ; work         ;
 ;    |instruction_reg:inst2| ; 3 (3)               ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2 ; instruction_reg ; work         ;
 ;    |memory:inst1|          ; 22 (22)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1          ; memory          ; work         ;
 ;    |program_counter:inst|  ; 17 (17)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst  ; program_counter ; work         ;
-;    |regfile:inst3|         ; 248 (248)           ; 272 (272)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3         ; regfile         ; work         ;
-;    |registers:inst5|       ; 3 (3)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5       ; registers       ; work         ;
+;    |regfile:inst3|         ; 233 (233)           ; 272 (272)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3         ; regfile         ; work         ;
+;    |registers:inst5|       ; 0 (0)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5       ; registers       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |progCounterTest|control_unit:inst7|nextState                                                                          ;
-+---------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
-; Name                ; nextState.writeback ; nextState.memory ; nextState.execute ; nextState.decode ; nextState.fetch ; nextState.idle ;
-+---------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
-; nextState.idle      ; 0                   ; 0                ; 0                 ; 0                ; 0               ; 0              ;
-; nextState.fetch     ; 0                   ; 0                ; 0                 ; 0                ; 1               ; 1              ;
-; nextState.decode    ; 0                   ; 0                ; 0                 ; 1                ; 0               ; 1              ;
-; nextState.execute   ; 0                   ; 0                ; 1                 ; 0                ; 0               ; 1              ;
-; nextState.memory    ; 0                   ; 1                ; 0                 ; 0                ; 0               ; 1              ;
-; nextState.writeback ; 1                   ; 0                ; 0                 ; 0                ; 0               ; 1              ;
-+---------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |progCounterTest|control_unit:inst7|nextState                                                                                                      ;
++------------------------+------------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
+; Name                   ; nextState.aluOperation ; nextState.writeback ; nextState.memory ; nextState.execute ; nextState.decode ; nextState.fetch ; nextState.idle ;
++------------------------+------------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
+; nextState.idle         ; 0                      ; 0                   ; 0                ; 0                 ; 0                ; 0               ; 0              ;
+; nextState.fetch        ; 0                      ; 0                   ; 0                ; 0                 ; 0                ; 1               ; 1              ;
+; nextState.decode       ; 0                      ; 0                   ; 0                ; 0                 ; 1                ; 0               ; 1              ;
+; nextState.execute      ; 0                      ; 0                   ; 0                ; 1                 ; 0                ; 0               ; 1              ;
+; nextState.memory       ; 0                      ; 0                   ; 1                ; 0                 ; 0                ; 0               ; 1              ;
+; nextState.writeback    ; 0                      ; 1                   ; 0                ; 0                 ; 0                ; 0               ; 1              ;
+; nextState.aluOperation ; 1                      ; 0                   ; 0                ; 0                 ; 0                ; 0               ; 1              ;
++------------------------+------------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                         ;
-+----------------------------------------------+---------------------------------------------+
-; Register name                                ; Reason for Removal                          ;
-+----------------------------------------------+---------------------------------------------+
-; registers:inst5|dprr[0]                      ; Stuck at GND due to stuck port clock_enable ;
-; control_unit:inst7|stateOut[2]               ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|increment[1,2]            ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|memory[5][13]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][13]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][13]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][5]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][5]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][5]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][5]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][5]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][13]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][1]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][1]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][1]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][1]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][11]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][9]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][11]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][11]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][11]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][7]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][3]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][11]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][11]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][15]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][10]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][5]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][14]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][14]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][4]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][6]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][6]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][2]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][0]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][10]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][4]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][12]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][2]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][14]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][6]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][0]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][2]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][2]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][4]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][6]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][10]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][4]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][10]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][12]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][12]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][14]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][6]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][0]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][4]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][10]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][6]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][2]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][8]                    ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][10]                   ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][12]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[7][4]                    ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[1][14]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[4][6]                    ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[7][12]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[4][12]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[7][13]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[6][13]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[4][13]                   ; Merged with memory:inst1|memory[7][1]       ;
-; memory:inst1|memory[2][5]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[1][1]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[4][1]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[4][10]                   ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[4][11]                   ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[4][14]                   ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[3][0]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[3][2]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[5][0]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[2][14]                   ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[1][0]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[1][2]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[4][4]                    ; Merged with memory:inst1|memory[6][12]      ;
-; memory:inst1|memory[7][1]                    ; Merged with memory:inst1|memory[7][0]       ;
-; control_unit:inst7|alu_opsel[3,5]            ; Merged with control_unit:inst7|alu_opsel[2] ;
-; registers:inst5|dprr[1]                      ; Stuck at GND due to stuck port data_in      ;
-; program_counter:inst|out_count[0]            ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|memory[7][0]                    ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|memory[6][12]                   ; Stuck at VCC due to stuck port data_in      ;
-; memory:inst1|operand_outdata[3,6..9,13,15]   ; Stuck at GND due to stuck port data_in      ;
-; instruction_reg:inst2|operand[3,6..9,13,15]  ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|operand_outdata[4,5,10..12,14]  ; Stuck at GND due to stuck port data_in      ;
-; instruction_reg:inst2|operand[4,5,10..12,14] ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|alu_opsel[2]              ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_sel[2]                 ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|nextState.decode          ; Merged with control_unit:inst7|increment[0] ;
-; Total Number of Removed Registers = 149      ;                                             ;
-+----------------------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-------------------------------------------------+---------------------------------------------+
+; Register name                                   ; Reason for Removal                          ;
++-------------------------------------------------+---------------------------------------------+
+; registers:inst5|dprr[0]                         ; Stuck at GND due to stuck port clock_enable ;
+; memory:inst1|memory[5][13]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][13]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][13]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][5]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][5]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][5]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][5]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][5]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][13]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][1]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][1]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][1]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][1]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][11]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][10]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][9]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][7]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][11]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][7]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][7]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][7]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][11]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][11]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][7]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][7]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][3]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][11]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][11]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][15]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][12]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][1]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][14]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][14]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][4]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][6]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][6]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][2]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][0]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][10]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][4]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][12]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][2]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[3][14]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][6]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][0]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][2]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][2]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][4]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][6]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][10]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][4]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][10]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][12]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[2][12]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[5][14]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][6]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][0]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][4]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[7][10]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][6]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[4][2]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[6][8]                       ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][10]                      ; Merged with memory:inst1|memory[7][0]       ;
+; memory:inst1|memory[1][12]                      ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[1][14]                      ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[4][6]                       ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[4][7]                       ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[7][5]                       ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[4][12]                      ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[7][13]                      ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[6][13]                      ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[4][13]                      ; Merged with memory:inst1|memory[7][4]       ;
+; memory:inst1|memory[2][5]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[1][1]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[4][1]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[4][10]                      ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[4][11]                      ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[4][14]                      ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[3][0]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[3][2]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[5][0]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[2][14]                      ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[1][0]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[1][2]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[4][4]                       ; Merged with memory:inst1|memory[6][12]      ;
+; memory:inst1|memory[7][4]                       ; Merged with memory:inst1|memory[7][0]       ;
+; control_unit:inst7|increment[2]                 ; Merged with control_unit:inst7|increment[1] ;
+; control_unit:inst7|alu_opsel[3,5]               ; Merged with control_unit:inst7|alu_opsel[2] ;
+; registers:inst5|dprr[1]                         ; Stuck at GND due to stuck port data_in      ;
+; memory:inst1|memory[7][0]                       ; Stuck at GND due to stuck port data_in      ;
+; memory:inst1|memory[6][12]                      ; Stuck at VCC due to stuck port data_in      ;
+; control_unit:inst7|stateOut[2]                  ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|rf_sel[2]                    ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|alu_opsel[2]                 ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|increment[1]                 ; Stuck at GND due to stuck port data_in      ;
+; program_counter:inst|out_count[0]               ; Stuck at GND due to stuck port data_in      ;
+; memory:inst1|operand_outdata[3,4,6..11,13..15]  ; Stuck at GND due to stuck port data_in      ;
+; instruction_reg:inst2|operand[3,4,6..11,13..15] ; Stuck at GND due to stuck port data_in      ;
+; memory:inst1|operand_outdata[12]                ; Stuck at GND due to stuck port data_in      ;
+; instruction_reg:inst2|operand[12]               ; Stuck at GND due to stuck port data_in      ;
+; memory:inst1|operand_outdata[5]                 ; Stuck at GND due to stuck port data_in      ;
+; instruction_reg:inst2|operand[5]                ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 148         ;                                             ;
++-------------------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -392,21 +395,20 @@ Encoding Type:  One-Hot
 +--------------------------------+---------------------------+-----------------------------------------------------------------------+
 ; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                ;
 +--------------------------------+---------------------------+-----------------------------------------------------------------------+
-; control_unit:inst7|stateOut[2] ; Stuck at GND              ; program_counter:inst|out_count[0], memory:inst1|memory[7][0],         ;
-;                                ; due to stuck port data_in ; memory:inst1|memory[6][12], memory:inst1|operand_outdata[3],          ;
-;                                ;                           ; memory:inst1|operand_outdata[6], memory:inst1|operand_outdata[7],     ;
-;                                ;                           ; memory:inst1|operand_outdata[8], memory:inst1|operand_outdata[9],     ;
-;                                ;                           ; memory:inst1|operand_outdata[13], memory:inst1|operand_outdata[15],   ;
-;                                ;                           ; instruction_reg:inst2|operand[3], instruction_reg:inst2|operand[6],   ;
-;                                ;                           ; instruction_reg:inst2|operand[7], instruction_reg:inst2|operand[8],   ;
-;                                ;                           ; instruction_reg:inst2|operand[9], instruction_reg:inst2|operand[13],  ;
-;                                ;                           ; instruction_reg:inst2|operand[15], memory:inst1|operand_outdata[4],   ;
-;                                ;                           ; memory:inst1|operand_outdata[5], memory:inst1|operand_outdata[10],    ;
-;                                ;                           ; memory:inst1|operand_outdata[11], memory:inst1|operand_outdata[12],   ;
-;                                ;                           ; memory:inst1|operand_outdata[14], instruction_reg:inst2|operand[4],   ;
-;                                ;                           ; instruction_reg:inst2|operand[5], instruction_reg:inst2|operand[10],  ;
-;                                ;                           ; instruction_reg:inst2|operand[11], instruction_reg:inst2|operand[12], ;
-;                                ;                           ; instruction_reg:inst2|operand[14]                                     ;
+; control_unit:inst7|stateOut[2] ; Stuck at GND              ; program_counter:inst|out_count[0], instruction_reg:inst2|operand[15], ;
+;                                ; due to stuck port data_in ; instruction_reg:inst2|operand[14], instruction_reg:inst2|operand[13], ;
+;                                ;                           ; instruction_reg:inst2|operand[11], instruction_reg:inst2|operand[10], ;
+;                                ;                           ; instruction_reg:inst2|operand[9], instruction_reg:inst2|operand[8],   ;
+;                                ;                           ; instruction_reg:inst2|operand[7], instruction_reg:inst2|operand[6],   ;
+;                                ;                           ; instruction_reg:inst2|operand[4], instruction_reg:inst2|operand[3],   ;
+;                                ;                           ; instruction_reg:inst2|operand[12], instruction_reg:inst2|operand[5]   ;
+; memory:inst1|memory[7][0]      ; Stuck at GND              ; memory:inst1|operand_outdata[15], memory:inst1|operand_outdata[14],   ;
+;                                ; due to stuck port data_in ; memory:inst1|operand_outdata[13], memory:inst1|operand_outdata[11],   ;
+;                                ;                           ; memory:inst1|operand_outdata[10], memory:inst1|operand_outdata[9],    ;
+;                                ;                           ; memory:inst1|operand_outdata[8], memory:inst1|operand_outdata[7],     ;
+;                                ;                           ; memory:inst1|operand_outdata[6], memory:inst1|operand_outdata[4],     ;
+;                                ;                           ; memory:inst1|operand_outdata[3], memory:inst1|operand_outdata[12],    ;
+;                                ;                           ; memory:inst1|operand_outdata[5]                                       ;
 +--------------------------------+---------------------------+-----------------------------------------------------------------------+
 
 
@@ -415,12 +417,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 472   ;
-; Number of registers using Synchronous Clear  ; 41    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 474   ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 444   ;
+; Number of registers using Clock Enable       ; 442   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -430,29 +432,32 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; control_unit:inst7|increment[3]        ; 3       ;
+; control_unit:inst7|increment[3]        ; 4       ;
 ; memory:inst1|memory[0][14]             ; 1       ;
 ; memory:inst1|memory[0][4]              ; 1       ;
 ; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[4]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[11]       ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 0 LEs                ; 45 LEs                 ; Yes        ; |progCounterTest|program_counter:inst|out_count[8] ;
-; 65:1               ; 2 bits    ; 86 LEs        ; 2 LEs                ; 84 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[4]   ;
-; 23:1               ; 13 bits   ; 195 LEs       ; 104 LEs              ; 91 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[15]    ;
-; 23:1               ; 3 bits    ; 45 LEs        ; 36 LEs               ; 9 LEs                  ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[2]     ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[0]   ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux15                   ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux32               ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux48               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[15]               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[11]        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[1]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[5]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[0]    ;
+; 11:1               ; 15 bits   ; 105 LEs       ; 0 LEs                ; 105 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[10] ;
+; 65:1               ; 2 bits    ; 86 LEs        ; 2 LEs                ; 84 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[4]    ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[1]    ;
+; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[15]     ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 2 LEs                ; 86 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|rf_sel[1]       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux10                    ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux32                ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux48                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -460,29 +465,30 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 472                         ;
-;     ENA               ; 403                         ;
-;     ENA SCLR          ; 41                          ;
-;     plain             ; 28                          ;
-; arriav_lcell_comb     ; 354                         ;
+; arriav_ff             ; 474                         ;
+;     ENA               ; 390                         ;
+;     ENA SCLR          ; 36                          ;
+;     ENA SLD           ; 16                          ;
+;     plain             ; 32                          ;
+; arriav_lcell_comb     ; 342                         ;
 ;     arith             ; 31                          ;
 ;         1 data inputs ; 15                          ;
 ;         4 data inputs ; 15                          ;
 ;         5 data inputs ; 1                           ;
-;     extend            ; 5                           ;
-;         7 data inputs ; 5                           ;
-;     normal            ; 318                         ;
+;     extend            ; 46                          ;
+;         7 data inputs ; 46                          ;
+;     normal            ; 265                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 6                           ;
-;         5 data inputs ; 40                          ;
-;         6 data inputs ; 208                         ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 32                          ;
+;         4 data inputs ; 7                           ;
+;         5 data inputs ; 15                          ;
+;         6 data inputs ; 183                         ;
 ; boundary_port         ; 250                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.45                        ;
+; Average LUT depth     ; 3.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -501,7 +507,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 13 22:11:11 2024
+    Info: Processing started: Mon May 13 22:37:48 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -567,7 +573,7 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 37
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(38): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 38
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(39): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(142): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(152): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 152
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Warning (10540): VHDL Signal Declaration warning at regfile.vhd(39): used explicit default value for signal "rx_recv" because signal was never assigned a value File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 39
 Warning (10540): VHDL Signal Declaration warning at regfile.vhd(40): used explicit default value for signal "rz_recv" because signal was never assigned a value File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 40
@@ -609,14 +615,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 992 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 983 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 39 input pins
     Info (21059): Implemented 211 output pins
-    Info (21061): Implemented 742 logic cells
+    Info (21061): Implemented 733 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4893 megabytes
-    Info: Processing ended: Mon May 13 22:11:22 2024
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 4894 megabytes
+    Info: Processing ended: Mon May 13 22:38:00 2024
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:10
 
 

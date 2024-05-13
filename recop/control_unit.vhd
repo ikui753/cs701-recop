@@ -44,7 +44,7 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, decode, execute, memory, writeback);
+    type cuStates is (idle, fetch, decode, execute, memory, writeback, aluOperation);
 	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
@@ -95,12 +95,12 @@ architecture behavioral of control_unit is
 							case address_method is 
 								when am_immediate =>
 									-- Rz <- Rx AND Operand
-									rf_sel <= "0000"; -- set to operand
+									rf_sel <= "0011"; -- set to aluout
 									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
 								
 								when am_register =>
 									-- Rz <- Rz and Rx
-									rf_sel <= "1010"; -- set to Rz
+									rf_sel <= "0011"; -- set to aluout
 									alu_opsel <= alu_and&"001"; -- op1- Rx, op2, Rz
 									
 								when others =>
@@ -127,11 +127,21 @@ architecture behavioral of control_unit is
 				when writeback =>
 					if opcodeIn = ldr then
 						ld_r <= '1';
+						nextState <= fetch;
+					elsif opcodeIn = addr or opcodeIn = andr or opcodeIn = orr or opcodeIn = subr or opcodeIn = subvr then
+						nextState <= aluOperation;
+					else						
+						increment <= "0000";
+						stateOut <= "011";
+						nextState <= fetch;
 					end if;
-					increment <= "0000";
-					stateOut <= "011";
-					nextState <= fetch;
 				
+				when aluOperation =>
+					-- load alu output into Rz
+					ld_r <= '1';
+					nextState <= fetch;
+					stateOut <= "011";
+					
 				when others =>
 					ld_r <= '0';
 					increment <= "0000";
