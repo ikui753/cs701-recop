@@ -91,18 +91,19 @@ architecture behavioral of control_unit is
 					
 					when andr =>
 						case address_method is 
-							when am_inherent =>
-								-- do nothing
 							when am_immediate =>
 								-- Rz <- Rx AND Operand
 								rf_sel <= "000"; -- set to operand
 								ld_r <= '0'; -- don't load yet
-							when am_direct =>
-								-- do nothing
+								alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
+							
 							when am_register =>
 								-- Rz <- Rz and Rx
 								rf_sel <= "1010"; -- set to Rz
 								ld_r <= '0';
+								alu_opsel <= alu_and&"001"; -- op1- Rx, op2, Rz
+								
+							when others =>
 						end case;
 								
 					when others =>
