@@ -147,28 +147,32 @@ begin
 								rf_sel <= "1001";
 								ld_r <= '1';
 								rf_init <= '0';
-							when am_register => -- LDR RZ M[Rx]
+							when am_register => -- LDR RZ <- M[Rx]
 								rf_sel <= "1000";
 								ld_r <= '1';
 								rf_init <= '0';
 						end case;
-					when str =>
-						when am_immediate => -- M[Rz] <- Operand
+					--when str =>
+					--	when am_immediate => -- M[Rz] <- Operand
 							
-						when am_direct => -- M[Operand] 
+					--	when am_direct => -- M[Operand] <- Rx
 							
-						when am_register => -- m[Rz] <- Rx
-					when present =>
-						case address_method is
-							when am_immediate => -- if Rz(15..0)=0x0000 then PC<-Operand else NEXT
+					--	when am_register => -- m[Rz] <- Rx
+					--when present =>
+					--	case address_method is
+					--		when am_immediate => -- if Rz(15..0)=0x0000 then PC<-Operand else NEXT
 
-						end case;
+					--	end case;
 					when clfz =>
 						case address_method is
 							when am_inherent => -- Z <- 0
 								z <= '0';
 							end case;
-					
+					--when noop =>
+					--	case address_method is
+					--		when am_inherent => -- noop
+					--
+					--	end case;
                	when others =>
 						-- noop
 						-- clkOut <= '0';
