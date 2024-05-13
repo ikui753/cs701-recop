@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/13/2024 14:07:13"
+-- Generated on "05/13/2024 21:00:30"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -41,15 +41,15 @@ SIGNAL am : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL clkIn : STD_LOGIC;
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL dm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_wr : STD_LOGIC;
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL dpcr_lsb_sel : STD_LOGIC;
 SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL dprr : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL increment : STD_LOGIC_VECTOR(2 DOWNTO 0);
+SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
+SIGNAL operand_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL out_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
@@ -63,6 +63,7 @@ SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop_wr : STD_LOGIC;
+SIGNAL state : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL svop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL svop_wr : STD_LOGIC;
 SIGNAL z_flag : STD_LOGIC;
@@ -76,15 +77,15 @@ COMPONENT progCounterTest
 	clk : OUT STD_LOGIC;
 	clkIn : IN STD_LOGIC;
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	dm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_wr : IN STD_LOGIC;
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	dpcr_lsb_sel : IN STD_LOGIC;
 	dpcr_wr : IN STD_LOGIC;
 	dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-	increment : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+	operand_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	out_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	pm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	reset : IN STD_LOGIC;
@@ -98,6 +99,7 @@ COMPONENT progCounterTest
 	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sop_wr : IN STD_LOGIC;
+	state : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
 	svop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	svop_wr : IN STD_LOGIC;
 	z_flag : OUT STD_LOGIC
@@ -115,7 +117,6 @@ BEGIN
 	clk => clk,
 	clkIn => clkIn,
 	dm_indata => dm_indata,
-	dm_outdata => dm_outdata,
 	dm_wr => dm_wr,
 	dpcr => dpcr,
 	dpcr_lsb_sel => dpcr_lsb_sel,
@@ -124,6 +125,7 @@ BEGIN
 	increment => increment,
 	ld_r => ld_r,
 	opcode => opcode,
+	operand_out => operand_out,
 	out_count => out_count,
 	pm_outdata => pm_outdata,
 	reset => reset,
@@ -137,6 +139,7 @@ BEGIN
 	sip_r => sip_r,
 	sop => sop,
 	sop_wr => sop_wr,
+	state => state,
 	svop => svop,
 	svop_wr => svop_wr,
 	z_flag => z_flag

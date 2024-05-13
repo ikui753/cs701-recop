@@ -19,6 +19,7 @@ entity program_counter is
 		  rz_data : in bit_16; -- rz data
 		  z	: in bit_1; -- Z, for SZ Operand
 		  reset : in bit_1;
+		  state : in bit_3;
         out_count : out bit_16 -- output count
     );
 end program_counter;
@@ -49,7 +50,7 @@ begin
 						 else
 							  out_count <= in_count + 2;
 						 end if;
-					when "111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
+					when "0111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
 						 if z = '1' then
 							  out_count <= operand_count;
 						 else
