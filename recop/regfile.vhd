@@ -99,6 +99,7 @@ begin
 				rz_recv_q <= '0';
 			end if;
 		end if;
+		rz_recv <= '0';
 	end process;
 	
 
@@ -106,6 +107,6 @@ begin
 	rz <= regs(sel_z); -- send z to rz
 	
 	rx_recv <= '1'; -- rx data received
-	rz_recv <= rz_recv_q; -- rz data status
+	-- rz_recv <= '0'; -- rz data status
 	
 end beh;

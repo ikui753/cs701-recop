@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun May 12 22:12:27 2024
+Mon May 13 13:02:25 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,16 +52,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 12 22:12:27 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 13 13:02:25 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 388                                         ;
-; Total pins                      ; 246                                         ;
+; Total registers                 ; 371                                         ;
+; Total pins                      ; 247                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 256                                         ;
+; Total block memory bits         ; 64                                          ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -172,11 +172,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -215,27 +211,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 330         ;
+; Estimate of Logic utilization (ALMs needed) ; 320         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 297         ;
+; Combinational ALUT usage for logic          ; 277         ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 241         ;
+;     -- 6 input functions                    ; 240         ;
 ;     -- 5 input functions                    ; 35          ;
-;     -- 4 input functions                    ; 3           ;
-;     -- <=3 input functions                  ; 18          ;
+;     -- 4 input functions                    ; 0           ;
+;     -- <=3 input functions                  ; 2           ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 388         ;
+; Dedicated logic registers                   ; 371         ;
 ;                                             ;             ;
-; I/O pins                                    ; 246         ;
+; I/O pins                                    ; 247         ;
 ; Total MLAB memory bits                      ; 0           ;
-; Total block memory bits                     ; 256         ;
+; Total block memory bits                     ; 64          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
-; Maximum fan-out                             ; 421         ;
-; Total fan-out                               ; 3425        ;
-; Average fan-out                             ; 2.83        ;
+; Maximum fan-out                             ; 404         ;
+; Total fan-out                               ; 3244        ;
+; Average fan-out                             ; 2.76        ;
 +---------------------------------------------+-------------+
 
 
@@ -244,16 +240,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 297 (1)             ; 388 (0)                   ; 256               ; 0          ; 246  ; 0            ; |progCounterTest                                                                     ; progCounterTest ; work         ;
-;    |control_unit:inst7|                   ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                  ; control_unit    ; work         ;
+; |progCounterTest                          ; 277 (1)             ; 371 (0)                   ; 64                ; 0          ; 247  ; 0            ; |progCounterTest                                                                     ; progCounterTest ; work         ;
+;    |control_unit:inst7|                   ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                  ; control_unit    ; work         ;
 ;    |instruction_reg:inst2|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                               ; instruction_reg ; work         ;
-;    |memory:inst1|                         ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1                                                        ; memory          ; work         ;
-;       |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_0                                ; altsyncram      ; work         ;
-;          |altsyncram_tar1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_0|altsyncram_tar1:auto_generated ; altsyncram_tar1 ; work         ;
-;       |altsyncram:memory_rtl_1|           ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_1                                ; altsyncram      ; work         ;
-;          |altsyncram_tar1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_1|altsyncram_tar1:auto_generated ; altsyncram_tar1 ; work         ;
-;    |program_counter:inst|                 ; 15 (15)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst                                                ; program_counter ; work         ;
-;    |regfile:inst3|                        ; 276 (276)           ; 257 (257)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                       ; regfile         ; work         ;
+;    |memory:inst1|                         ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1                                                        ; memory          ; work         ;
+;       |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_tar1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_0|altsyncram_tar1:auto_generated ; altsyncram_tar1 ; work         ;
+;       |altsyncram:memory_rtl_1|           ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_1                                ; altsyncram      ; work         ;
+;          |altsyncram_tar1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1|altsyncram:memory_rtl_1|altsyncram_tar1:auto_generated ; altsyncram_tar1 ; work         ;
+;    |regfile:inst3|                        ; 272 (272)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                       ; regfile         ; work         ;
 ;    |registers:inst5|                      ; 0 (0)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5                                                     ; registers       ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -269,30 +264,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+---------------------------------------+---------------------------------------------+
-; Register name                         ; Reason for Removal                          ;
-+---------------------------------------+---------------------------------------------+
-; registers:inst5|dprr[0]               ; Stuck at GND due to stuck port clock_enable ;
-; control_unit:inst7|increment_q[1,2]   ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_sel[2]          ; Merged with control_unit:inst7|rf_sel[1]    ;
-; registers:inst5|dprr[1]               ; Stuck at GND due to stuck port data_in      ;
-; program_counter:inst|out_count[0]     ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_sel[1]          ; Stuck at GND due to stuck port data_in      ;
-; alu:inst4|z_flag                      ; Stuck at VCC due to stuck port data_in      ;
-; Total Number of Removed Registers = 8 ;                                             ;
-+---------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++----------------------------------------+-----------------------------------------------+
+; Register name                          ; Reason for Removal                            ;
++----------------------------------------+-----------------------------------------------+
+; registers:inst5|dprr[0]                ; Stuck at GND due to stuck port clock_enable   ;
+; control_unit:inst7|increment_q[1,2]    ; Merged with control_unit:inst7|increment_q[0] ;
+; control_unit:inst7|rf_sel[2]           ; Merged with control_unit:inst7|rf_sel[1]      ;
+; registers:inst5|dprr[1]                ; Stuck at GND due to stuck port data_in        ;
+; control_unit:inst7|increment_q[0]      ; Stuck at GND due to stuck port data_in        ;
+; control_unit:inst7|rf_sel[1]           ; Stuck at GND due to stuck port data_in        ;
+; program_counter:inst|out_count[0..15]  ; Stuck at GND due to stuck port data_in        ;
+; alu:inst4|z_flag                       ; Stuck at VCC due to stuck port data_in        ;
+; Total Number of Removed Registers = 24 ;                                               ;
++----------------------------------------+-----------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                            ;
-+-----------------------------------+---------------------------+----------------------------------------+
-; Register name                     ; Reason for Removal        ; Registers Removed due to This Register ;
-+-----------------------------------+---------------------------+----------------------------------------+
-; control_unit:inst7|increment_q[2] ; Stuck at GND              ; program_counter:inst|out_count[0]      ;
-;                                   ; due to stuck port data_in ;                                        ;
-+-----------------------------------+---------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                             ;
++-----------------------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name                     ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++-----------------------------------+---------------------------+-------------------------------------------------------------------------+
+; control_unit:inst7|increment_q[0] ; Stuck at GND              ; program_counter:inst|out_count[0], program_counter:inst|out_count[1],   ;
+;                                   ; due to stuck port data_in ; program_counter:inst|out_count[2], program_counter:inst|out_count[3],   ;
+;                                   ;                           ; program_counter:inst|out_count[4], program_counter:inst|out_count[5],   ;
+;                                   ;                           ; program_counter:inst|out_count[6], program_counter:inst|out_count[7],   ;
+;                                   ;                           ; program_counter:inst|out_count[8], program_counter:inst|out_count[9],   ;
+;                                   ;                           ; program_counter:inst|out_count[10], program_counter:inst|out_count[11], ;
+;                                   ;                           ; program_counter:inst|out_count[12], program_counter:inst|out_count[13], ;
+;                                   ;                           ; program_counter:inst|out_count[14], program_counter:inst|out_count[15]  ;
++-----------------------------------+---------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -300,12 +302,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 388   ;
-; Number of registers using Synchronous Clear  ; 16    ;
+; Total registers                              ; 371   ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 323   ;
+; Number of registers using Clock Enable       ; 322   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -326,11 +328,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|rf_sel[0] ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux7               ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux24              ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux15              ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; No         ; |progCounterTest|alu:inst4|Mux23              ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux40          ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux58          ;
-; 19:1               ; 16 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux27          ;
+; 19:1               ; 16 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux23          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
@@ -510,26 +512,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 388                         ;
-;     ENA               ; 307                         ;
+; arriav_ff             ; 371                         ;
+;     ENA               ; 306                         ;
 ;     ENA SLD           ; 16                          ;
-;     SCLR              ; 16                          ;
 ;     plain             ; 49                          ;
-; arriav_lcell_comb     ; 298                         ;
-;     arith             ; 15                          ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 1                           ;
-;     normal            ; 283                         ;
+; arriav_lcell_comb     ; 278                         ;
+;     normal            ; 278                         ;
 ;         0 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         4 data inputs ; 3                           ;
+;         2 data inputs ; 1                           ;
 ;         5 data inputs ; 35                          ;
-;         6 data inputs ; 241                         ;
-; boundary_port         ; 246                         ;
+;         6 data inputs ; 240                         ;
+; boundary_port         ; 247                         ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.63                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -548,7 +545,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 12 22:12:15 2024
+    Info: Processing started: Mon May 13 13:02:13 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -618,6 +615,7 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 37
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(38): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 38
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
+Warning (10036): Verilog HDL or VHDL warning at regfile.vhd(48): object "rz_recv_q" assigned a value but never read File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 48
 Warning (10492): VHDL Process Statement warning at regfile.vhd(71): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 71
 Warning (10492): VHDL Process Statement warning at regfile.vhd(73): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 73
 Warning (10492): VHDL Process Statement warning at regfile.vhd(75): signal "regs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 75
@@ -702,18 +700,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "z_flag" is stuck at VCC
     Warning (13410): Pin "alu_rx_recv" is stuck at GND
     Warning (13410): Pin "alu_rz_recv" is stuck at GND
+    Warning (13410): Pin "rx_recv" is stuck at VCC
     Warning (13410): Pin "rf_init" is stuck at GND
     Warning (13410): Pin "increment[2]" is stuck at GND
     Warning (13410): Pin "increment[1]" is stuck at GND
+    Warning (13410): Pin "increment[0]" is stuck at GND
     Warning (13410): Pin "rf_sel[2]" is stuck at GND
     Warning (13410): Pin "rf_sel[1]" is stuck at GND
-    Warning (13410): Pin "rx_recv" is stuck at VCC
     Warning (13410): Pin "alu_opsel[5]" is stuck at GND
     Warning (13410): Pin "alu_opsel[4]" is stuck at GND
     Warning (13410): Pin "alu_opsel[3]" is stuck at GND
     Warning (13410): Pin "alu_opsel[2]" is stuck at GND
     Warning (13410): Pin "alu_opsel[1]" is stuck at GND
     Warning (13410): Pin "alu_opsel[0]" is stuck at GND
+    Warning (13410): Pin "rz_recv" is stuck at GND
     Warning (13410): Pin "alu_output[15]" is stuck at GND
     Warning (13410): Pin "alu_output[14]" is stuck at GND
     Warning (13410): Pin "alu_output[13]" is stuck at GND
@@ -732,19 +732,36 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "alu_output[0]" is stuck at GND
     Warning (13410): Pin "dprr[1]" is stuck at GND
     Warning (13410): Pin "dprr[0]" is stuck at GND
+    Warning (13410): Pin "out_count[15]" is stuck at GND
+    Warning (13410): Pin "out_count[14]" is stuck at GND
+    Warning (13410): Pin "out_count[13]" is stuck at GND
+    Warning (13410): Pin "out_count[12]" is stuck at GND
+    Warning (13410): Pin "out_count[11]" is stuck at GND
+    Warning (13410): Pin "out_count[10]" is stuck at GND
+    Warning (13410): Pin "out_count[9]" is stuck at GND
+    Warning (13410): Pin "out_count[8]" is stuck at GND
+    Warning (13410): Pin "out_count[7]" is stuck at GND
+    Warning (13410): Pin "out_count[6]" is stuck at GND
+    Warning (13410): Pin "out_count[5]" is stuck at GND
+    Warning (13410): Pin "out_count[4]" is stuck at GND
+    Warning (13410): Pin "out_count[3]" is stuck at GND
+    Warning (13410): Pin "out_count[2]" is stuck at GND
+    Warning (13410): Pin "out_count[1]" is stuck at GND
     Warning (13410): Pin "out_count[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "memory:inst1|altsyncram:memory_rtl_0|altsyncram_tar1:auto_generated|ALTSYNCRAM" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_tar1.tdf Line: 487
+Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "memory:inst1|altsyncram:memory_rtl_1|altsyncram_tar1:auto_generated|ALTSYNCRAM" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_tar1.tdf Line: 487
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 944 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 39 input pins
+Info (21057): Implemented 925 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 40 input pins
     Info (21059): Implemented 207 output pins
-    Info (21061): Implemented 666 logic cells
+    Info (21061): Implemented 646 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Sun May 12 22:12:27 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 68 warnings
+    Info: Peak virtual memory: 4888 megabytes
+    Info: Processing ended: Mon May 13 13:02:25 2024
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Total CPU time (on all processors): 00:00:11
 
 
