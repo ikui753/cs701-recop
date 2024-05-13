@@ -26,9 +26,9 @@ end program_counter;
 
 architecture pc of program_counter is
 begin
-    process(clock, increment)
+    process(clock, increment, state)
 begin
-    if rising_edge(clock) then
+    if rising_edge(clock) and state = "001" then
 		 if reset = '1' then
 			out_count <= x"0000";
 		 else

@@ -21,7 +21,7 @@ entity control_unit is
         
 		  stateOut : out bit_3 := "000";
         -- program counter signals
-        increment : out bit_4 := "0000"; -- increment program counter
+        increment : out bit_4; -- increment program counter
         
         -- alu signals
         alu_opsel : out bit_6 := "000000";
@@ -45,7 +45,7 @@ end entity control_unit;
 architecture behavioral of control_unit is
 	
     type cuStates is (idle, fetch, decode, execute, memory, writeback);
-	 signal currentState : cuStates := fetch; -- initialise in idle state
+	 signal currentState : cuStates := idle; -- initialise in idle state
 	 signal nextState : cuStates;
 
  begin
@@ -128,18 +128,19 @@ architecture behavioral of control_unit is
 					nextState <= idle;
 			end case;
 		end if;
+		currentState <= nextState;
 	end process;
 	
-	SWITCH_STATES : process (clk) is 
-    begin
-		if rising_edge(clk) then
-			if (reset = '1') then
-				currentState <= idle;
-			else
-				currentState <= nextState;
-			end if;
-		end if;
-    end process;
+--	SWITCH_STATES : process (clk) is 
+--    begin
+--		if rising_edge(clk) then
+--			if (reset = '1') then
+--				currentState <= fetch;
+--			else
+--				currentState <= nextState;
+--			end if;
+--		end if;
+--    end process;
 	
 	clkOut <= clk;
 	

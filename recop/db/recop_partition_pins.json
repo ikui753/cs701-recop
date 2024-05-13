@@ -548,31 +548,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[14]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_out[12]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_out[11]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_out[10]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_out[5]",
-					"strict" : false
-				},
-				{
-					"name" : "operand_out[4]",
+					"name" : "operand_out[2]",
 					"strict" : false
 				},
 				{
 					"name" : "operand_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[0]",
 					"strict" : false
 				},
 				{
@@ -768,38 +752,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "dm_wr",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[15]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[13]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[9]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[8]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[3]",
-					"strict" : false
-				},
-				{
 					"name" : "sip[15]",
 					"strict" : false
 				},
@@ -884,7 +836,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "dm_indata[15]",
+					"strict" : false
+				},
+				{
+					"name" : "dm_wr",
+					"strict" : false
+				},
+				{
 					"name" : "dm_indata[14]",
+					"strict" : false
+				},
+				{
+					"name" : "dm_indata[13]",
 					"strict" : false
 				},
 				{
@@ -900,11 +864,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "dm_indata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "dm_indata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "dm_indata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dm_indata[6]",
+					"strict" : false
+				},
+				{
 					"name" : "dm_indata[5]",
 					"strict" : false
 				},
 				{
 					"name" : "dm_indata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dm_indata[3]",
 					"strict" : false
 				},
 				{

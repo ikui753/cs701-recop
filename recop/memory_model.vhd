@@ -26,7 +26,7 @@ entity memory is
 end memory;
 
 architecture beh of memory is
-	type memory_array is array (0 to 8) of bit_16;
+	type memory_array is array (0 to 9) of bit_16;
 	signal memory: memory_array:=(
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",
@@ -77,6 +77,7 @@ architecture beh of memory is
 --	am_register&orr&X"2"&X"a",
 --	am_register&addr&X"5"&X"2");
 	x"0000", -- no operation
+	x"0000", -- no operation
 	am_immediate&ldr&x"1"&x"0",
 	x"0007", -- ldr Rz Operand
 	am_immediate&ldr&x"2"&x"0",
@@ -113,7 +114,7 @@ begin
 	-- end process;
 	process (clk)
 	begin
-		if rising_edge(clk) then
+		if rising_edge(clk) and state = "001" then
 			if dm_wr = '1' then
 				memory(to_integer(unsigned(dm_address)))<= dm_indata; -- memory is an array
 			end if;
@@ -122,7 +123,7 @@ begin
 	
 	process (clk)
 	begin
-		if rising_edge(clk) then
+		if rising_edge(clk) and state = "001" then
 			pm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
 			operand_outdata <= memory(to_integer(unsigned(pm_address) + 1));
 			dm_outdata <= memory(to_integer(unsigned(pm_address) + 1)); -- currently unused
