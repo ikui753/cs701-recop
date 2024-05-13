@@ -82,10 +82,10 @@ architecture beh of memory is
 	x"0007", -- ldr Rz Operand
 	am_immediate&ldr&x"2"&x"0",
 	x"0005",
-	am_immediate&orr&x"1"&x"2",
+	am_register&andr&x"1"&x"2",
 	x"0001",
-	am_inherent&clfz& x"0"&x"0",
-	x"0000");
+	am_immediate&ldr& x"3"&x"0",
+	x"0004");
 --	am_immediate&jmp&x"0"&x"0",
 --	x"0008", -- jump 8
 --	am_immediate&ldr&x"1"&x"0",

@@ -64,6 +64,7 @@ architecture behavioral of control_unit is
 					nextState <= fetch;
 					
 				when fetch =>
+					alu_opsel <= "000000";
 					increment <= "0001"; -- increment program counter, move to next instruction
 					nextState <= decode;
 					ld_r <= '0';
@@ -101,7 +102,7 @@ architecture behavioral of control_unit is
 								when am_register =>
 									-- Rz <- Rz and Rx
 									rf_sel <= "0011"; -- set to aluout
-									alu_opsel <= alu_and&"001"; -- op1- Rx, op2, Rz
+									alu_opsel <= alu_and&"001"; -- op1- Rx, op2- Rz
 									
 								when others =>
 							end case;
