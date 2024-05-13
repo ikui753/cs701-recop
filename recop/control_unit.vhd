@@ -45,7 +45,7 @@ end entity control_unit;
 architecture behavioral of control_unit is
 	
     type cuStates is (idle, fetch, decode, execute, memory, writeback);
-	 signal currentState : cuStates := idle; -- initialise in idle state
+	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
  begin

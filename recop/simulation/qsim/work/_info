@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
 Eprogcountertest
-Z1 w1715594012
+Z1 w1715594248
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -28,9 +28,9 @@ VPigVg_d]aOFBTR?]VYoiP1
 !s100 0]YZKhZ`zD5]mSLhYC@;11
 Z13 OV;C;10.5b;63
 32
-!s110 1715594012
+!s110 1715594248
 !i10b 1
-Z14 !s108 1715594012.000000
+Z14 !s108 1715594248.000000
 Z15 !s90 -work|work|recop.vho|
 Z16 !s107 recop.vho|
 !i113 1
@@ -47,13 +47,13 @@ R8
 R9
 R10
 DEx4 work 15 progcountertest 0 22 PigVg_d]aOFBTR?]VYoiP1
-l1373
+l1628
 L77
-VFzf9aJ0V?cFe_iEcP=GNY0
-!s100 E349iBR[HBh^Y2TnDH8md1
+VSA]1khURRTie6aMYG`kJ[0
+!s100 I<2<izCjb8fc2X1]?[Lg_3
 R13
 32
-Z19 !s110 1715594013
+Z19 !s110 1715594249
 !i10b 1
 R14
 R15
@@ -62,7 +62,7 @@ R16
 R17
 R18
 Eprogcountertest_vhd_vec_tst
-Z20 w1715594009
+Z20 w1715594245
 R8
 R9
 R0
@@ -76,7 +76,7 @@ R13
 32
 R19
 !i10b 1
-Z23 !s108 1715594013.000000
+Z23 !s108 1715594249.000000
 Z24 !s90 -work|work|controlUnitWaveform.vwf.vht|
 Z25 !s107 controlUnitWaveform.vwf.vht|
 !i113 1
