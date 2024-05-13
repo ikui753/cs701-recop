@@ -27,8 +27,8 @@ entity alu is
 		ir_operand		: in bit_16;
 		-- flag control signal
 		clr_z_flag		: in bit_1;
-		am 	: in bit_2;
 		reset : in bit_1;
+		state : in bit_3;
 		
 		alu_rx_recv : out bit_1;
 		alu_rz_recv : out bit_1
@@ -69,30 +69,32 @@ begin
 	end process op2_select;
 	
 	-- perform ALU operation
-	alu: process (alu_operation, operand_1, operand_2)
+	alu: process (alu_operation, operand_1, operand_2, clk, state)
 	begin
-		case alu_operation is
-			when alu_add =>
-				result <= operand_2 + operand_1;
-			when alu_sub =>
-				result <= operand_2 - operand_1;
-			when alu_and =>
-				result <= operand_2 and operand_1;
-			when alu_or =>
-				result <= operand_2 or operand_1;
-			when others =>
-				result <= X"0000";
-		end case;
-		if result > x"0000" then
-			alu_rx_recv <= '1';
-			alu_rz_recv <= '1';
-		else
-			alu_rx_recv <= '0';
-			alu_rz_recv <= '0';
-		end if;
+		if rising_edge(clk) and state = "011" then
+			case alu_operation is
+				when alu_add =>
+					result <= operand_2 + operand_1;
+				when alu_sub =>
+					result <= operand_2 - operand_1;
+				when alu_and =>
+					result <= operand_2 and operand_1;
+				when alu_or =>
+					result <= operand_2 or operand_1;
+				when others =>
+					result <= X"0000";
+			end case;
+			if result > x"0000" then
+				alu_rx_recv <= '1';
+				alu_rz_recv <= '1';
+			else
+				alu_rx_recv <= '0';
+				alu_rz_recv <= '0';
+			end if;
 
 		
-		alu_result <= result;
+			alu_result <= result;
+		end if;
 		end process alu;
 
 	-- zero flag

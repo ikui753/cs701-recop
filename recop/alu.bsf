@@ -89,16 +89,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 176)
 		(input)
-		(text "am[1..0]" (rect 0 0 31 12)(font "Arial" ))
-		(text "am[1..0]" (rect 21 171 52 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176)(line_width 3))
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 21 171 41 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
 	)
 	(port
 		(pt 0 192)
 		(input)
-		(text "reset" (rect 0 0 20 12)(font "Arial" ))
-		(text "reset" (rect 21 187 41 199)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192)(line_width 1))
+		(text "state[2..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "state[2..0]" (rect 21 187 59 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
 	)
 	(port
 		(pt 232 32)

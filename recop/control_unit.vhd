@@ -118,14 +118,16 @@ architecture behavioral of control_unit is
 					stateOut <= "011";
 					nextState <= memory;
 					
-				when memory =>
+				when memory => -- note names tbd
 					ld_r <= '0';
 					increment <= "0000";
 					stateOut <= "011";
 					nextState <= writeback;
 				
 				when writeback =>
-					ld_r <= '1';
+					if opcodeIn = ldr then
+						ld_r <= '1';
+					end if;
 					increment <= "0000";
 					stateOut <= "011";
 					nextState <= fetch;
