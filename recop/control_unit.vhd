@@ -119,7 +119,7 @@ architecture behavioral of control_unit is
 					nextState <= memory;
 					
 				when memory =>
-					ld_r <= '1';
+					ld_r <= '0';
 					increment <= "0000";
 					stateOut <= "011";
 					nextState <= writeback;

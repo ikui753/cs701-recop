@@ -533,7 +533,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 1600 224 1788 240)
+	(rect 2216 120 2404 136)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "operand_out[15..0]" (rect 90 0 182 12)(font "Arial" ))
 	(pt 0 8)
@@ -2067,11 +2067,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1592 232)
-	(pt 1600 232)
-	(bus)
-)
-(connector
 	(text "clr_z_flag" (rect 2516 -112 2563 -95)(font "Intel Clear" ))
 	(pt 2496 -96)
 	(pt 2536 -96)
@@ -2197,21 +2192,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1592 216)
-	(pt 1592 232)
-	(bus)
-)
-(connector
-	(pt 1584 216)
-	(pt 1592 216)
-	(bus)
-)
-(connector
-	(pt 1592 216)
-	(pt 1792 216)
-	(bus)
-)
-(connector
 	(pt 1792 216)
 	(pt 1792 200)
 	(bus)
@@ -2269,6 +2249,17 @@ refer to the applicable agreement for further details.
 	(pt 2112 504)
 	(bus)
 )
+(connector
+	(pt 1584 216)
+	(pt 1792 216)
+	(bus)
+)
+(connector
+	(text "operand[15..0]" (rect 2143 112 2211 129)(font "Intel Clear" ))
+	(pt 2128 128)
+	(pt 2216 128)
+	(bus)
+)
 (junction (pt 1064 200))
 (junction (pt 2384 264))
 (junction (pt 2392 280))
@@ -2293,4 +2284,3 @@ refer to the applicable agreement for further details.
 (junction (pt 2504 -184))
 (junction (pt 2800 -32))
 (junction (pt 2520 -160))
-(junction (pt 1592 216))

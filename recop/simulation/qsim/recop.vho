@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/13/2024 21:57:28"
+-- DATE "05/13/2024 22:03:32"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -433,7 +433,7 @@ SIGNAL \inst4|Mux18~0_combout\ : std_logic;
 SIGNAL \inst7|Mux14~0_combout\ : std_logic;
 SIGNAL \inst7|rf_sel[3]~3_combout\ : std_logic;
 SIGNAL \inst7|rf_sel[1]~1_combout\ : std_logic;
-SIGNAL \inst1|operand_outdata[2]~0_combout\ : std_logic;
+SIGNAL \inst1|operand_outdata[2]~2_combout\ : std_logic;
 SIGNAL \inst7|rf_sel[0]~2_combout\ : std_logic;
 SIGNAL \inst1|Mux3~1_combout\ : std_logic;
 SIGNAL \inst1|Mux0~1_combout\ : std_logic;
@@ -1061,9 +1061,9 @@ SIGNAL \inst7|rf_sel\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst5|sip_r\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst2|opcode\ : std_logic_vector(5 DOWNTO 0);
 SIGNAL \inst2|address_method\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \inst1|operand_outdata\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst5|sop\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst5|svop\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst1|operand_outdata\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst4|ALT_INV_Add0~25_sumout\ : std_logic;
 SIGNAL \inst4|ALT_INV_Add0~21_sumout\ : std_logic;
 SIGNAL \inst4|ALT_INV_Add0~17_sumout\ : std_logic;
@@ -1551,7 +1551,6 @@ SIGNAL \inst1|ALT_INV_memory[0][13]~q\ : std_logic;
 SIGNAL \inst1|ALT_INV_memory[0][14]~q\ : std_logic;
 SIGNAL \inst1|ALT_INV_memory[0][15]~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.writeback~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.memory~q\ : std_logic;
 SIGNAL \inst4|ALT_INV_Mux11~0_combout\ : std_logic;
 SIGNAL \inst4|ALT_INV_Mux1~0_combout\ : std_logic;
 SIGNAL \inst4|ALT_INV_Mux3~0_combout\ : std_logic;
@@ -2185,7 +2184,6 @@ ww_devpor <= devpor;
 \inst1|ALT_INV_memory[0][14]~q\ <= NOT \inst1|memory[0][14]~q\;
 \inst1|ALT_INV_memory[0][15]~q\ <= NOT \inst1|memory[0][15]~q\;
 \inst7|ALT_INV_nextState.writeback~q\ <= NOT \inst7|nextState.writeback~q\;
-\inst7|ALT_INV_nextState.memory~q\ <= NOT \inst7|nextState.memory~q\;
 \inst4|ALT_INV_Mux11~0_combout\ <= NOT \inst4|Mux11~0_combout\;
 \inst4|ALT_INV_Mux1~0_combout\ <= NOT \inst4|Mux1~0_combout\;
 \inst4|ALT_INV_Mux3~0_combout\ <= NOT \inst4|Mux3~0_combout\;
@@ -4187,7 +4185,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst1|operand_outdata\(2),
+	i => \inst2|operand\(2),
 	devoe => ww_devoe,
 	o => \operand_out[2]~output_o\);
 
@@ -4199,7 +4197,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst1|operand_outdata\(1),
+	i => \inst2|operand\(1),
 	devoe => ww_devoe,
 	o => \operand_out[1]~output_o\);
 
@@ -4211,7 +4209,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst1|operand_outdata\(0),
+	i => \inst2|operand\(0),
 	devoe => ww_devoe,
 	o => \operand_out[0]~output_o\);
 
@@ -6050,19 +6048,18 @@ PORT MAP (
 
 \inst7|Selector0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector0~0_combout\ = (((\inst7|ld_r~q\ & \inst7|increment\(0))) # (\inst7|nextState.writeback~q\)) # (\inst7|nextState.memory~q\)
+-- \inst7|Selector0~0_combout\ = ((\inst7|ld_r~q\ & \inst7|increment\(0))) # (\inst7|nextState.writeback~q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001111111111111000111111111111100011111111111110001111111111111",
+	lut_mask => "0001111100011111000111110001111100011111000111110001111100011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_ld_r~q\,
 	datab => \inst7|ALT_INV_increment\(0),
-	datac => \inst7|ALT_INV_nextState.memory~q\,
-	datad => \inst7|ALT_INV_nextState.writeback~q\,
+	datac => \inst7|ALT_INV_nextState.writeback~q\,
 	combout => \inst7|Selector0~0_combout\);
 
 \inst7|ld_r\ : dffeas
@@ -6809,9 +6806,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|rf_sel\(1));
 
-\inst1|operand_outdata[2]~0\ : cyclonev_lcell_comb
+\inst1|operand_outdata[2]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|operand_outdata[2]~0_combout\ = !\inst|out_count\(2)
+-- \inst1|operand_outdata[2]~2_combout\ = !\inst|out_count\(2)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6821,7 +6818,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst|ALT_INV_out_count\(2),
-	combout => \inst1|operand_outdata[2]~0_combout\);
+	combout => \inst1|operand_outdata[2]~2_combout\);
 
 \inst1|operand_outdata[2]\ : dffeas
 -- pragma translate_off
@@ -6831,7 +6828,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|operand_outdata[2]~0_combout\,
+	d => \inst1|operand_outdata[2]~2_combout\,
 	ena => \inst2|Equal0~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,

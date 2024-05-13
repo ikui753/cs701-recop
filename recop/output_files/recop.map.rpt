@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Mon May 13 21:57:14 2024
+Mon May 13 22:03:24 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 13 21:57:13 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 13 22:03:24 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -205,8 +205,8 @@ refer to the applicable agreement for further details.
 ;     -- 7 input functions                    ; 15          ;
 ;     -- 6 input functions                    ; 203         ;
 ;     -- 5 input functions                    ; 34          ;
-;     -- 4 input functions                    ; 40          ;
-;     -- <=3 input functions                  ; 79          ;
+;     -- 4 input functions                    ; 39          ;
+;     -- <=3 input functions                  ; 80          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 438         ;
 ;                                             ;             ;
@@ -216,7 +216,7 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
 ; Maximum fan-out                             ; 439         ;
-; Total fan-out                               ; 3625        ;
+; Total fan-out                               ; 3624        ;
 ; Average fan-out                             ; 2.77        ;
 +---------------------------------------------+-------------+
 
@@ -475,8 +475,8 @@ Encoding Type:  One-Hot
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 17                          ;
-;         3 data inputs ; 43                          ;
-;         4 data inputs ; 25                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 24                          ;
 ;         5 data inputs ; 33                          ;
 ;         6 data inputs ; 203                         ;
 ; boundary_port         ; 250                         ;
@@ -501,7 +501,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 13 21:57:01 2024
+    Info: Processing started: Mon May 13 22:03:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -616,9 +616,9 @@ Info (21057): Implemented 994 device resources after synthesis - the final resou
     Info (21059): Implemented 211 output pins
     Info (21061): Implemented 744 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4895 megabytes
-    Info: Processing ended: Mon May 13 21:57:14 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Mon May 13 22:03:24 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:10
 
 
