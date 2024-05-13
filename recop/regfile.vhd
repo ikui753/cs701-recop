@@ -51,32 +51,34 @@ begin
 	r7 <=regs(7);
 
 	-- mux selecting input data to be written to Rz
-	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z)
+	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z, clk)
     begin
-        case rf_input_sel is
-            when "0000" =>
-                data_input_z <= ir_operand; -- operand
-				when "0001" =>
-					 data_input_z <= X"000"&"000"&dprr_res_reg;
-            when "0011" =>
-                data_input_z <= aluout; -- alu result
-            when "0100" =>
-                data_input_z <= rz_max; -- rz max
-            when "0101" =>
-                data_input_z <= sip_hold;
-            when "0110" =>
-                data_input_z <= X"000"&"000"&er_temp;
-            when "0111" =>
-                data_input_z <= dm_out; 
-				when "1000" =>
-					 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
-				when "1001" =>
-					 data_input_z <= regs(to_integer(unsigned(ir_operand))); -- Rz <- M[Operand] might need to take a look at this later
-				when "1010" =>
-					 data_input_z <= regs(sel_z); -- Rz <- Rz
-            when others =>
-                data_input_z <= X"0000";
-        end case;
+		if rising_edge(clk) and state = "011" then
+			  case rf_input_sel is
+					when "0000" =>
+						 data_input_z <= ir_operand; -- operand
+					when "0001" =>
+						 data_input_z <= X"000"&"000"&dprr_res_reg;
+					when "0011" =>
+						 data_input_z <= aluout; -- alu result
+					when "0100" =>
+						 data_input_z <= rz_max; -- rz max
+					when "0101" =>
+						 data_input_z <= sip_hold;
+					when "0110" =>
+						 data_input_z <= X"000"&"000"&er_temp;
+					when "0111" =>
+						 data_input_z <= dm_out; 
+					when "1000" =>
+						 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
+					when "1001" =>
+						 data_input_z <= regs(to_integer(unsigned(ir_operand))); -- Rz <- M[Operand] might need to take a look at this later
+					when "1010" =>
+						 data_input_z <= regs(sel_z); -- Rz <- Rz
+					when others =>
+						 data_input_z <= X"0000";
+			  end case;
+		end if;
     end process input_select;
 	
 	process (clk, init, state)
@@ -88,17 +90,9 @@ begin
 			-- write data into Rz if ld signal is asserted
 			if ld_r = '1' then
 				regs(sel_z) <= data_input_z; -- load r enabled
---				rz_recv <= '1';
---				if regs(sel_z) > x"0000" then
---					rz_recv <= '1';
---				else
---					rz_recv <= '0';
---				end if;
 			elsif dprr_wren = '1' then
 				regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
-				-- rz_recv <= '1';
 			else
-				-- rz_recv <= '0';
 			end if;
 		end if;
 	end process;
@@ -106,8 +100,5 @@ begin
 
 	rx <= regs(sel_x); -- send x to rx
 	rz <= regs(sel_z); -- send z to rz
-	
-	rx_recv <= '1'; -- rx data received
-	-- rz_recv <= '1'; -- rz data status
 	
 end beh;

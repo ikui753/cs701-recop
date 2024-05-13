@@ -73,7 +73,6 @@ architecture behavioral of control_unit is
 					increment <= "0000";
 					case opcodeIn is
 						when ldr =>
-							ld_r <= '1';
 							alu_opsel <= "000000";
 							case address_method is
 								when am_inherent =>
@@ -81,15 +80,15 @@ architecture behavioral of control_unit is
 								when am_immediate =>
 									-- Rz <- Operand
 									rf_sel <= "0000"; -- set to operand
-									ld_r <= '1';
+									--ld_r <= '1';
 								when am_direct =>
 									-- Rz <- M[Operand]
 									rf_sel <= "1001"; -- set to M[Operand]
-									ld_r <= '1';
+									--ld_r <= '1';
 								when am_register =>
 									-- Rz <- Rx
 									rf_sel <= "1000"; -- set to Rx
-									ld_r <= '1';
+									--ld_r <= '1';
 							end case;
 						
 						when andr =>
@@ -97,13 +96,11 @@ architecture behavioral of control_unit is
 								when am_immediate =>
 									-- Rz <- Rx AND Operand
 									rf_sel <= "0000"; -- set to operand
-									ld_r <= '0'; -- don't load yet
 									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
 								
 								when am_register =>
 									-- Rz <- Rz and Rx
 									rf_sel <= "1010"; -- set to Rz
-									ld_r <= '0';
 									alu_opsel <= alu_and&"001"; -- op1- Rx, op2, Rz
 									
 								when others =>
@@ -112,20 +109,29 @@ architecture behavioral of control_unit is
 						when others =>
 					end case;
 					
-					stateOut <= "001";
+					stateOut <= "010";
 					nextState <= execute;
 					
 				when execute =>
+					ld_r <= '0';
 					increment <= "0000";
 					stateOut <= "011";
 					nextState <= memory;
 					
 				when memory =>
+					ld_r <= '1';
+					increment <= "0000";
+					stateOut <= "011";
+					nextState <= writeback;
+				
+				when writeback =>
+					ld_r <= '1';
 					increment <= "0000";
 					stateOut <= "011";
 					nextState <= fetch;
 				
 				when others =>
+					ld_r <= '0';
 					increment <= "0000";
 					stateOut <= "000"; 
 					nextState <= idle;
