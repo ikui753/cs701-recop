@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "rz_recv",
+					"strict" : false
+				},
+				{
 					"name" : "ld_r",
 					"strict" : false
 				},
@@ -73,6 +77,10 @@
 				},
 				{
 					"name" : "pm_outdata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "increment[0]",
 					"strict" : false
 				},
 				{
@@ -500,6 +508,66 @@
 					"strict" : false
 				},
 				{
+					"name" : "out_count[15]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[14]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[13]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[12]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[11]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[10]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[9]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[8]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[1]",
+					"strict" : false
+				},
+				{
 					"name" : "sop[15]",
 					"strict" : false
 				},
@@ -632,14 +700,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "rz_recv_q",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
 					"name" : "dm_wr",
 					"strict" : false
 				},
@@ -705,6 +765,10 @@
 				},
 				{
 					"name" : "dm_indata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
 					"strict" : false
 				},
 				{

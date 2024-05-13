@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/13/2024 13:03:47"
+-- Generated on "05/13/2024 14:07:13"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -58,7 +58,6 @@ SIGNAL rf_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL rx_recv : STD_LOGIC;
 SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rz_recv : STD_LOGIC;
-SIGNAL rz_recv_q : STD_LOGIC;
 SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -94,7 +93,6 @@ COMPONENT progCounterTest
 	rx_recv : OUT STD_LOGIC;
 	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rz_recv : OUT STD_LOGIC;
-	rz_recv_q : IN STD_LOGIC;
 	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -134,7 +132,6 @@ BEGIN
 	rx_recv => rx_recv,
 	rxData => rxData,
 	rz_recv => rz_recv,
-	rz_recv_q => rz_recv_q,
 	rzData => rzData,
 	sip => sip,
 	sip_r => sip_r,
@@ -156,13 +153,4 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clkIn;
-
--- rz_recv_q
-t_prcs_rz_recv_q: PROCESS
-BEGIN
-	rz_recv_q <= '1';
-	WAIT FOR 320000 ps;
-	rz_recv_q <= '0';
-WAIT;
-END PROCESS t_prcs_rz_recv_q;
 END progCounterTest_arch;

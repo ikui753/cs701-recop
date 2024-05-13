@@ -36,6 +36,7 @@ entity control_unit is
         z : out bit_1;
         dpcr_lsb_sel : out bit_1;
         dpcr_wr : out bit_1
+		  
         -- ... and so on for other control signals
     );
 end entity control_unit;
@@ -53,10 +54,25 @@ architecture behavioral of control_unit is
 	 signal increment_q : bit_3 := "000";
 	 signal ld_r_q : bit_1 := '0';
 	 signal rz_recv_q : bit_1 := '0';
+	 
+
  begin
 
     process (clk, reset, rz_recv)
     begin
+			-- opcode operations not dependent on clock
+		  case opcodeIn is
+			when ldr =>
+				-- read value of rz_recv
+				if rz_recv = '1' then
+					increment <= "001";
+				else 
+					increment <= "000";
+				end if;
+			when others =>
+				-- other cases here
+			end case;
+			
         if reset = '1' then
             -- Initialize control signals to default values
             -- For example:
@@ -112,11 +128,7 @@ architecture behavioral of control_unit is
                                 rf_sel <= "1000";	
                         end case;
 								
-								if rz_recv = '1' then
-									ld_r <= '1';
-								else
-									ld_r <= '0';
-								end if;
+								
 									
 									
                     --when str =>
@@ -148,7 +160,9 @@ architecture behavioral of control_unit is
     -- For example:
      
      clkOut <= clk; -- output clock
-	  increment <= increment_q;
+	  ld_r <= clk; -- only ld_r on clock edge during load operations
+	  -- increment <= increment_q;
+
 	  -- ld_r <= ld_r_q;
     -- clr_z_flag <= clr_z_flag_signal;
     -- dm_wr <= dm_wr_signal;
