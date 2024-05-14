@@ -74,10 +74,10 @@ ARCHITECTURE SYN OF prog_mem IS
 		width_a		: NATURAL;
 		width_byteena_a		: NATURAL
 	);
-	PORT (
-			address_a	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
-			clock0	: IN STD_LOGIC ;
-			q_a	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+	PORT(
+		address_a	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
+		clock0	: IN STD_LOGIC ;
+		q_a	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);
 	END COMPONENT;
 
@@ -104,7 +104,7 @@ BEGIN
 	)
 	PORT MAP (
 		address_a => address,
-		clock0 => clock,
+		clock0 => not(clock),
 		q_a => sub_wire0
 	);
 
