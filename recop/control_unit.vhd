@@ -44,7 +44,7 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, decode, execute, memory, writeback, aluOperation);
+    type cuStates is (idle, fetch, fetch2, decode, execute, memory, writeback, aluOperation, loadAluResult);
 	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
@@ -66,15 +66,40 @@ architecture behavioral of control_unit is
 				when fetch =>
 					alu_opsel <= "000000";
 					increment <= "0001"; -- increment program counter, move to next instruction
-					nextState <= decode;
+					nextState <= fetch2;
 					ld_r <= '0';
 					stateOut <= "001";
 					
-				when decode =>
+				when fetch2 =>
+					-- instruction passed through instruction register
 					increment <= "0000";
+					stateOut <= "010";
+					nextState <= decode;
+					
+				when decode => -- actual decode, am, operand, opcode now available 
+					
+					increment <= "0000";
+					-- read opcode here
 					case opcodeIn is
+						when andr =>
+							case address_method is 
+								when am_immediate =>
+									-- Rz <- Rx AND Operand
+									rf_sel <= "0011"; -- set to aluout
+									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
+								
+								when am_register =>
+									-- Rz <- Rz and Rx
+									rf_sel <= "0011"; -- set to aluout
+									alu_opsel <= alu_and&"001"; -- op1- Rx, op2- Rz
+									
+								when others =>
+									rf_sel <= "0011";
+									alu_opsel <= alu_and&"111";
+							end case;
+							
 						when ldr =>
-							alu_opsel <= "000000";
+							alu_opsel <= "000001";
 							case address_method is
 								when am_inherent =>
 									-- do nothing
@@ -92,56 +117,47 @@ architecture behavioral of control_unit is
 									--ld_r <= '1';
 							end case;
 						
-						when andr =>
-							case address_method is 
-								when am_immediate =>
-									-- Rz <- Rx AND Operand
-									rf_sel <= "0011"; -- set to aluout
-									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
-								
-								when am_register =>
-									-- Rz <- Rz and Rx
-									rf_sel <= "0011"; -- set to aluout
-									alu_opsel <= alu_and&"001"; -- op1- Rx, op2- Rz
-									
-								when others =>
-							end case;
+						
 						
 						when others =>
+							alu_opsel <= "111000";
 					end case;
 					
-					stateOut <= "010";
-					nextState <= execute;
-					
-				when execute =>
-					ld_r <= '0';
 					increment <= "0000";
-					stateOut <= "011";
+					stateOut <= "011"; 
 					nextState <= memory;
 					
 				when memory => -- note names tbd
+					-- allow one cycle for control unit to receive inputs
 					ld_r <= '0';
 					increment <= "0000";
-					stateOut <= "011";
+					stateOut <= "100";
 					nextState <= writeback;
 				
 				when writeback =>
 					if opcodeIn = ldr then
 						ld_r <= '1';
+						stateOut <= "101";
 						nextState <= fetch;
 					elsif opcodeIn = addr or opcodeIn = andr or opcodeIn = orr or opcodeIn = subr or opcodeIn = subvr then
+						
 						nextState <= aluOperation;
+						stateOut <= "101";
 					else						
 						increment <= "0000";
-						stateOut <= "011";
+						stateOut <= "101";
 						nextState <= fetch;
 					end if;
 				
 				when aluOperation =>
-					-- load alu output into Rz
+					nextState <= loadAluResult;
+					stateOut <= "110";
+					
+				when loadAluResult =>
 					ld_r <= '1';
+					rf_sel <= "0011";
+					stateOut <= "111";
 					nextState <= fetch;
-					stateOut <= "011";
 					
 				when others =>
 					ld_r <= '0';

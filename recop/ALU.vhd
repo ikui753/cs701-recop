@@ -71,7 +71,7 @@ begin
 	-- perform ALU operation
 	alu: process (alu_operation, operand_1, operand_2, clk, state)
 	begin
-		if rising_edge(clk) and state = "011" then
+		if rising_edge(clk) then
 			case alu_operation is
 				when alu_add =>
 					result <= operand_2 + operand_1;
