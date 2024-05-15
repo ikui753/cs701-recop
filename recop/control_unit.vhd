@@ -172,6 +172,16 @@ architecture behavioral of control_unit is
 								when others =>
 							end case;
 							
+						when jmp =>
+							case address_method is 
+								when am_immediate => 
+									-- JMP OPERAND
+									increment <= "0101";
+									nextStage <= fetch2;
+								when am_register =>
+									-- JMP Rxdata
+									increment <= "0100";
+									nextStage <= decode2;
 						when ldr =>
 							nextState <= fetch;
 							case address_method is
@@ -182,7 +192,7 @@ architecture behavioral of control_unit is
 									rf_sel <= "0000"; -- set to operand
 									ld_r <= '1';
 
-								when am_direct =>
+								when am_direct => -- NEED TO FIX THIS ONE
 									-- Rz <- M[Operand]
 									rf_sel <= "1001"; -- set to M[Operand]
 									ld_r <= '1';
@@ -220,15 +230,11 @@ architecture behavioral of control_unit is
 					-- propogate through data mux
 					nextState <= storeData;
 					stateOut <= "1001";
-				
---				when delayStore =>
---					nextState <= storeData;
---					stateOut <= "1010";
 	
 				when storeData =>
 					wren <= '1'; -- store data
 					nextState <= fetch;
-					stateOut <= "1011";
+					stateOut <= "1010";
 					
 				when others =>
 					ld_r <= '0';
