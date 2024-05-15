@@ -47,7 +47,7 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, delayStore, storeData, aluOperation, loadAluResult, storeAluResult);
+    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, delayStore, storeData, execution, loadAluResult, storeAluResult);
 	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
@@ -96,7 +96,7 @@ architecture behavioral of control_unit is
 					-- read opcode here
 					case opcodeIn is
 						when andr =>
-							nextState <= aluOperation;
+							nextState <= execution;
 							rf_sel <= "0011";
 							case address_method is 
 								when am_immediate =>
@@ -113,7 +113,7 @@ architecture behavioral of control_unit is
 							
 						when orr =>
 							rf_sel <= "0011";
-							nextState <= aluOperation;
+							nextState <= execution;
 							case address_method is
 								when am_immediate =>
 									alu_opsel <= alu_or&"0100"; -- Rz <- Rz - Operand
@@ -124,7 +124,7 @@ architecture behavioral of control_unit is
 							
 						when addr =>
 							rf_sel <= "0011";
-							nextState <= aluOperation;
+							nextState <= execution;
 							case address_method is
 								when am_immediate =>
 									alu_opsel <= alu_add&"0100"; -- Rz <- Rz - Operand
@@ -136,7 +136,7 @@ architecture behavioral of control_unit is
 						when subvr =>
 							-- subv is stored
 							rf_sel <= "0011";
-							nextState <= aluOperation;
+							nextState <= execution;
 							case address_method is
 								when am_immediate =>
 									alu_opsel <= alu_sub&"0100"; -- Rz <- Rz - Operand
@@ -146,7 +146,7 @@ architecture behavioral of control_unit is
 						when subr =>
 							-- result is not stored
 							rf_sel <= "0011";
-							nextState <= aluOperation;
+							nextState <= execution;
 							case address_method is
 								when am_immediate => 
 									alu_opsel <= alu_sub&"0100";
@@ -189,24 +189,24 @@ architecture behavioral of control_unit is
 							-- only one case- PC <- Operand if RzData = 0
 							-- nextState <= selStore; -- ? selStore can check Rx and Rz
 						when ldr =>
-							nextState <= fetch;
+							nextState <= execution;
 							case address_method is
 								when am_inherent =>
 									-- do nothing
 								when am_immediate =>
 									-- Rz <- Operand
 									rf_sel <= "0000"; -- set to operand
-									ld_r <= '1';
+									--ld_r <= '1';
 
 								when am_direct => -- NEED TO FIX THIS ONE
 									-- Rz <- M[Operand]
 									rf_sel <= "1001"; -- set to M[Operand]
-									ld_r <= '1';
+									--ld_r <= '1';
 
 								when am_register =>
 									-- Rz <- Rx
 									rf_sel <= "1000"; -- set to Rx
-									ld_r <= '1';
+									--ld_r <= '1';
 
 							end case;
 						
@@ -217,8 +217,14 @@ architecture behavioral of control_unit is
 					increment <= "0000";
 					stateOut <= "0101";
 				
-				when aluOperation =>
-					nextState <= loadAluResult;
+				when execution =>
+					if opcodeIn = addr or opcodeIn = subvr or opcodeIn = orr or opcodeIn = andr then
+						nextState <= loadAluResult;
+					else
+						nextState <= fetch;
+						ld_r <= '1';
+					end if;
+					
 					stateOut <= "0110";
 					
 				when loadAluResult =>
