@@ -13,10 +13,7 @@ entity control_unit is
          
         clkOut : out bit_1; -- clock
 		  
-		  -- store data signals
-		  dataSel : out bit_1;
-		  addrSel : out bit_2;
-		  wren : out bit_1;
+		  
         
 		  -- fsm output
 		  stateOut : out bit_3 := "000";
@@ -37,7 +34,12 @@ entity control_unit is
         rf_init : out bit_1;
         z : out bit_1;
         dpcr_lsb_sel : out bit_1;
-        dpcr_wr : out bit_1
+        dpcr_wr : out bit_1;
+		  
+		  -- store data signals
+		  dataSel : out bit_1;
+		  addrSel : out bit_2;
+		  wren : out bit_1
 		  
         -- ... and so on for other control signals
     );
@@ -45,7 +47,7 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, fetch2, decode, decode2, execute, writeback, aluOperation, loadAluResult);
+    type cuStates is (idle, fetch, fetch2, decode, decode2, execute, selStore, storeData, aluOperation, loadAluResult);
 	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
@@ -59,12 +61,14 @@ architecture behavioral of control_unit is
 		if rising_edge(clk) then
 			case currentState is
 				when idle =>
+					
 					increment <= "1000"; -- set PC to 0
 					stateOut <= "000";
 					ld_r <= '0'; -- load alu result
 					nextState <= fetch;
 					
 				when fetch =>
+					wren <= '0';
 					if opcodeIn = subr then
 						ld_r <= '0'; -- don't store subr result
 					else 
@@ -157,13 +161,21 @@ architecture behavioral of control_unit is
 							end case;
 								
 						when str =>
+							nextState <= selStore;
+							
 							case address_method is 
 								when am_inherent =>
 									-- M[Rz] <- Operand
+									addrSel <= "00";
+									dataSel <= '1';
 								when am_direct =>
 									-- M[Operand] <- Rx
+									addrSel <= "10";
+									dataSel <= '0';
 								when am_register =>
 									-- M[Rz] <- Rx
+									addrSel <= "00";
+									dataSel <= '0';
 								when others =>
 							end case;
 							
@@ -203,6 +215,14 @@ architecture behavioral of control_unit is
 				when loadAluResult =>
 					rf_sel <= "0011";
 					stateOut <= "111";
+					nextState <= fetch;
+					
+				when selStore =>
+					-- propogate through data mux
+					nextState <= storeData;
+	
+				when storeData =>
+					wren <= '1'; -- store data
 					nextState <= fetch;
 					
 				when others =>

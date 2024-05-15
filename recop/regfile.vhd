@@ -34,10 +34,7 @@ entity regfile is
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
 		dprr_wren : in bit_1;
-		state : in bit_3;
-		
-		rx_recv : out bit_1 := '0'; -- initialise to 0
-		rz_recv: out bit_1 := '0'
+		state : in bit_3
 				
 		);
 end regfile;

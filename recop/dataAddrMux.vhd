@@ -26,25 +26,26 @@ architecture behaviour of dataAddrMux is
 begin
 	process (clk)
 	begin
-		-- mux to select address to be entered into data memory for store operations
-		case addrSel is
-			when "00" =>
-				addrOut <= rzData;
-			when "01" =>
-				addrOut <= rxData;
-			when "10" =>
-				addrOut <= operand;
-			when others =>
+		if rising_edge(clk) then
+			-- mux to select address to be entered into data memory for store operations
+			case addrSel is
+				when "00" =>
+					addrOut <= rzData;
+				when "01" =>
+					addrOut <= rxData;
+				when "10" =>
+					addrOut <= operand;
+				when others =>
+				
+			end case;
 			
-		end case;
-		
-		-- mux to select data to be stored in data memory for store operations 
-		case dataSel is
-			when '0' =>
-				dataOut <= rxData;
-			when others =>
-				dataOut <= operand;
-		end case;
-		
+			-- mux to select data to be stored in data memory for store operations 
+			case dataSel is
+				when '0' =>
+					dataOut <= rxData;
+				when others =>
+					dataOut <= operand;
+			end case;
+		end if;
 	end process;
 end architecture;
