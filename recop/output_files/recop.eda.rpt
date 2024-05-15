@@ -1,5 +1,5 @@
 EDA Netlist Writer report for recop
-Thu May 16 11:10:33 2024
+Thu May 16 11:37:52 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu May 16 11:10:33 2024 ;
+; EDA Netlist Writer Status ; Successful - Thu May 16 11:37:52 2024 ;
 ; Revision Name             ; recop                                 ;
 ; Top-level Entity Name     ; progCounterTest                       ;
 ; Family                    ; Cyclone V                             ;
@@ -93,15 +93,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu May 16 11:10:30 2024
+    Info: Processing started: Thu May 16 11:37:49 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file recop.vho in folder "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4729 megabytes
-    Info: Processing ended: Thu May 16 11:10:33 2024
+    Info: Peak virtual memory: 4730 megabytes
+    Info: Processing ended: Thu May 16 11:37:52 2024
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

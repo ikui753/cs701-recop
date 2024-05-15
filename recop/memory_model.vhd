@@ -34,8 +34,10 @@ architecture beh of memory is
 	x"0001", -- ldr Rz Operand
 	am_direct&noop&x"4"&x"3",
 	x"0009",
-	am_immediate&ldr&x"2"&x"1",
-	x"0005",
+--	am_immediate&ldr&x"2"&x"1",
+--	x"0005",
+	am_inherent&clfz&x"2"&x"1",
+	x"0004",
 	am_immediate&subr&x"1"&x"2", -- Rz - Operand
 	x"0004",
 	am_register&str&x"1"&x"2",

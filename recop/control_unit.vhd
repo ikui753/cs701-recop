@@ -61,11 +61,13 @@ architecture behavioral of control_unit is
 					increment <= "1000"; -- set PC to 0
 					stateOut <= "0000";
 					ld_r <= '0'; -- load alu result
+					clr_z_flag <= '0';
 					nextState <= fetch;
 					
 				when fetch =>
 					wren <= '0';
 					ld_r <= '0';
+					clr_z_flag <= '0';
 					alu_opsel <= "0000000";
 					if (opcodeIn = jmp) or (opcodeIn = present) or (opcodeIn = sz) then
 						-- count already sorted, proceed to next fetch step
@@ -227,6 +229,10 @@ architecture behavioral of control_unit is
 						when noop =>
 							nextState <= fetch;
 						
+						when clfz =>
+							clr_z_flag <= '1'; -- clear z flag
+							nextState <= fetch;
+							
 						when others =>
 							alu_opsel <= "1110000";
 					end case;
@@ -237,9 +243,13 @@ architecture behavioral of control_unit is
 					elsif opcodeIn = present then
 						-- move to next state, no need to set increment 
 						stateOut <= "0001";
+					elsif opcodeIn = clfz then
+						-- move to next state, don't disable clr_z_flag
+						stateOut <= "0101";
 					else
 						increment <= "0000";
 						stateOut <= "0101";
+						clr_z_flag <= '0';
 					end if;
 				
 				when execution =>

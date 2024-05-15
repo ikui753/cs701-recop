@@ -352,6 +352,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "clr_z_flag",
+					"strict" : false
+				},
+				{
 					"name" : "alu_opsel[6]",
 					"strict" : false
 				},
