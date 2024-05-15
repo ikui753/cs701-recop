@@ -89,8 +89,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 176)
 		(input)
-		(text "state[2..0]" (rect 0 0 38 12)(font "Arial" ))
-		(text "state[2..0]" (rect 21 171 59 183)(font "Arial" ))
+		(text "state[3..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "state[3..0]" (rect 21 171 59 183)(font "Arial" ))
 		(line (pt 0 176)(pt 16 176)(line_width 3))
 	)
 	(port

@@ -20,14 +20,27 @@ entity memory is
 		operand_outdata : out bit_16;
 		dm_wr: in bit_1 := '0';
 		dm_indata: in bit_16 := X"0000";
-		state : in bit_3
+		state : in bit_4
 		
 		);
 end memory;
 
 architecture beh of memory is
-	type memory_array is array (0 to 7) of bit_16;
+	type memory_array is array (0 to 11) of bit_16;
 	signal memory: memory_array:=(
+	x"0000", -- no operation
+	x"0000", -- no operation
+	am_immediate&ldr&x"1"&x"0",
+	x"0008", -- ldr Rz Operand
+	am_immediate&ldr&x"2"&x"1",
+	x"0005",
+	am_immediate&subr&x"1"&x"2", -- Rz - Operand
+	x"0004",
+	am_register&str&x"1"&x"2",
+	x"0002", -- store M[1] <- Rx
+	am_register&jmp& x"0"&x"1",
+	x"0004"); -- jump to Rx r[1]
+	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",
 	--am_immediate&present&X"d"&X"d",
@@ -76,16 +89,7 @@ architecture beh of memory is
 --	am_immediate&andr&X"0"&X"0",
 --	am_register&orr&X"2"&X"a",
 --	am_register&addr&X"5"&X"2");
---	x"0000", -- no operation
---	x"0000", -- no operation
-	am_immediate&ldr&x"1"&x"0",
-	x"0007", -- ldr Rz Operand
-	am_immediate&ldr&x"2"&x"0",
-	x"0005",
-	am_register&andr&x"1"&x"2",
-	x"0001",
-	am_immediate&ldr& x"3"&x"0",
-	x"0004");
+	
 --	am_immediate&jmp&x"0"&x"0",
 --	x"0008", -- jump 8
 --	am_immediate&ldr&x"1"&x"0",
@@ -114,7 +118,7 @@ begin
 	-- end process;
 	process (clk)
 	begin
-		if rising_edge(clk) and state = "001" then
+		if rising_edge(clk) and state = "0010" then
 			if dm_wr = '1' then
 				memory(to_integer(unsigned(dm_address)))<= dm_indata; -- memory is an array
 			end if;
@@ -123,7 +127,7 @@ begin
 	
 	process (clk)
 	begin
-		if rising_edge(clk) and state = "001" then
+		if rising_edge(clk) and state = "0010" then
 			pm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
 			operand_outdata <= memory(to_integer(unsigned(pm_address) + 1));
 			dm_outdata <= memory(to_integer(unsigned(pm_address) + 1)); -- currently unused
