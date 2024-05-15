@@ -12,14 +12,15 @@ entity control_unit is
         address_method : in bit_2;
          
         clkOut : out bit_1; -- clock
+		  
+		  -- store data signals
+		  dataSel : out bit_1;
+		  addrSel : out bit_2;
+		  wren : out bit_1;
         
-        -- loaded/ stored signals
-		  alu_rz_recv : in bit_1 := '0'; -- check registers to see if they've been loaded
-		  alu_rx_recv : in bit_1 := '0';
-		  rz_recv : in bit_1 := '0';
-		  rx_recv: in bit_1 := '0';
-        
+		  -- fsm output
 		  stateOut : out bit_3 := "000";
+		  
         -- program counter signals
         increment : out bit_4 := "1000"; -- increment program counter
         
@@ -31,7 +32,7 @@ entity control_unit is
       
         clr_z_flag : out bit_1;
         dm_wr : out bit_1;
-        wren : out bit_1;
+        
         rf_sel : out bit_4 := "0000";
         rf_init : out bit_1;
         z : out bit_1;
@@ -155,8 +156,18 @@ architecture behavioral of control_unit is
 								when others =>
 							end case;
 								
+						when str =>
+							case address_method is 
+								when am_inherent =>
+									-- M[Rz] <- Operand
+								when am_direct =>
+									-- M[Operand] <- Rx
+								when am_register =>
+									-- M[Rz] <- Rx
+								when others =>
+							end case;
+							
 						when ldr =>
-							alu_opsel <= "0000001";
 							case address_method is
 								when am_inherent =>
 									-- do nothing
