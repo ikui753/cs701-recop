@@ -5,6 +5,7 @@ use IEEE.numeric_std.all;
 
 use work.recop_types.all;
 use work.various_constants.all;
+use work.opcodes.all;
 
 entity dataAddrMux is
 	port (
@@ -16,9 +17,11 @@ entity dataAddrMux is
 		addrSel : in bit_2;
 		dataSel : in bit_1;
 		
+		opcode : in bit_6;
+		
 		addrOut : out bit_16;
 		dataOut : out bit_16;
-		presentJmp : out bit_1
+		present_sz_Jmp : out bit_2
 	);
 	
 end entity dataAddrMux;
@@ -49,10 +52,16 @@ begin
 			end case;
 			
 			-- check for presentJmp condition
-			if rzData = x"0000" then
-				presentJmp <= '1';
-			else 
-				presentJmp <= '0';
+			if rzData = x"0000" and opcode = present then
+				present_sz_jmp <= "01"; -- jump to operand
+			elsif rzData > x"0000" and opcode = present then 
+				present_sz_jmp <= "00"; -- next
+			elsif rzData = x"0001" and opcode = sz then
+				-- sz operand if rz = 1
+				present_sz_jmp <= "10";
+			elsif (opcode = sz and rzData > x"0001") or (opcode = sz and rzData = x"0000") then
+				-- otherwise, next
+				present_sz_jmp <= "00";
 			end if;
 			
 		end if;

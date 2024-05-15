@@ -12,18 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "presentJmp",
-					"strict" : false
-				},
-				{
-					"name" : "dataSel",
-					"strict" : false
-				},
-				{
-					"name" : "addrSel[1]",
-					"strict" : false
-				},
-				{
 					"name" : "pm_outdata[15]",
 					"strict" : false
 				},
@@ -345,6 +333,22 @@
 				},
 				{
 					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "present_sz_jmp[1]",
+					"strict" : false
+				},
+				{
+					"name" : "present_sz_jmp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel",
+					"strict" : false
+				},
+				{
+					"name" : "addrSel[1]",
 					"strict" : false
 				},
 				{

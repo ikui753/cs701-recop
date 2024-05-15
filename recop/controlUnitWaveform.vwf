@@ -33,6 +33,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -51,6 +52,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -1631,14 +1633,34 @@ SIGNAL("wren")
 	PARENT = "";
 }
 
-SIGNAL("presentJmp")
+SIGNAL("present_sz_jmp")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("present_sz_jmp[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "";
+	PARENT = "present_sz_jmp";
+}
+
+SIGNAL("present_sz_jmp[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "present_sz_jmp";
 }
 
 TRANSITION_LIST("clkIn")
@@ -2906,7 +2928,16 @@ TRANSITION_LIST("wren")
 	}
 }
 
-TRANSITION_LIST("presentJmp")
+TRANSITION_LIST("present_sz_jmp[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("present_sz_jmp[0]")
 {
 	NODE
 	{
@@ -4441,11 +4472,32 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "presentJmp";
+	CHANNEL = "present_sz_jmp";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 153;
 	TREE_LEVEL = 0;
+	CHILDREN = 154, 155;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "present_sz_jmp[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 154;
+	TREE_LEVEL = 1;
+	PARENT = 153;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "present_sz_jmp[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 155;
+	TREE_LEVEL = 1;
+	PARENT = 153;
 }
 
 TIME_BAR

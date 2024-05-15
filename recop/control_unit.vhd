@@ -10,9 +10,8 @@ entity control_unit is
         reset : in bit_1;
         opcodeIn : in bit_6;
         address_method : in bit_2;
-        presentJmp : in bit_1;
+        present_sz_jmp : in bit_2;
         clkOut : out bit_1; -- clock
-		  
 		  
         
 		  -- fsm output
@@ -68,12 +67,16 @@ architecture behavioral of control_unit is
 					wren <= '0';
 					ld_r <= '0';
 					alu_opsel <= "0000000";
-					if opcodeIn = jmp or opcodeIn = present then
+					if (opcodeIn = jmp) or (opcodeIn = present) or (opcodeIn = sz) then
 						-- count already sorted, proceed to next fetch step
-						if presentJmp = '1' and opcodeIn = present then
-							increment <= "0101";
-						elsif presentJmp = '0' and opcodeIn = present then
-							increment <= "0001";
+						if present_sz_jmp = "01" and opcodeIn = present then
+							increment <= "0101"; -- jump to operand
+						elsif present_sz_jmp = "00" and opcodeIn = present then
+							increment <= "0001"; -- next
+						elsif present_sz_jmp = "10" and opcodeIn = sz then
+							increment <= "0101"; -- jump to operand
+						elsif present_sz_jmp = "00" and opcodeIn = sz then
+							increment <= "0001"; -- next
 						end if;
 					else
 						increment <= "0001"; -- increment program counter, move to next instruction
@@ -197,7 +200,11 @@ architecture behavioral of control_unit is
 							
 						when present =>
 							-- only one case- PC <- Operand if RzData = 0
-							nextState <= execution; -- ? selStore can check Rx and Rz
+							nextState <= execution; 
+						
+						when sz =>
+							-- only one case- PC <- Operand if Z = 1, else next
+							nextState <= execution;
 							
 						when ldr =>
 							nextState <= execution;
@@ -244,6 +251,9 @@ architecture behavioral of control_unit is
 					-- jmp 
 					elsif opcodeIn = jmp then
 						nextState <= fetch; -- PC <- Rx
+						
+					elsif opcodeIn = sz then
+						nextState <= fetch;
 						
 					-- present 
 					elsif opcodeIn = present then
