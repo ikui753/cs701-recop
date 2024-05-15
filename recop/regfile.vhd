@@ -33,8 +33,7 @@ entity regfile is
 		r7 : out bit_16;
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
-		dprr_wren : in bit_1;
-		state : in bit_3
+		dprr_wren : in bit_1
 				
 		);
 end regfile;
@@ -79,7 +78,7 @@ begin
 		end if;
     end process input_select;
 	
-	process (clk, init, state)
+	process (clk, init)
 	begin
 		if init = '1' then
 			-- reset regs

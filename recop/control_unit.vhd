@@ -16,7 +16,7 @@ entity control_unit is
 		  
         
 		  -- fsm output
-		  stateOut : out bit_3 := "000";
+		  stateOut : out bit_4 := "0000";
 		  
         -- program counter signals
         increment : out bit_4 := "1000"; -- increment program counter
@@ -47,13 +47,11 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, fetch2, decode, decode2, execute, selStore, storeData, aluOperation, loadAluResult);
+    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, storeData, aluOperation, loadAluResult, storeAluResult);
 	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
  begin
-
-    
 	 
 	 OUTPUTS : process(currentState, address_method, opcodeIn, clk) is
 	 begin
@@ -63,43 +61,38 @@ architecture behavioral of control_unit is
 				when idle =>
 					
 					increment <= "1000"; -- set PC to 0
-					stateOut <= "000";
+					stateOut <= "0000";
 					ld_r <= '0'; -- load alu result
 					nextState <= fetch;
 					
 				when fetch =>
 					wren <= '0';
-					if opcodeIn = subr then
-						ld_r <= '0'; -- don't store subr result
-					else 
-						ld_r <= '1';
-					end if;
-					
+					ld_r <= '0';
 					alu_opsel <= "0000000";
 					increment <= "0001"; -- increment program counter, move to next instruction
 					nextState <= fetch2;
-					stateOut <= "001";
+					stateOut <= "0001";
 					
 				when fetch2 =>
 					ld_r <= '0'; -- disable
 					-- instruction passed through instruction register
 					increment <= "0000";
-					stateOut <= "010";
+					stateOut <= "0010";
 					nextState <= decode;
 					
 				when decode => -- actual decode, am, operand, opcode now available 				
 					increment <= "0000";
-					stateOut <= "011"; 
+					stateOut <= "0011"; 
 					nextState <= decode2;
 					
 				when decode2 => -- note names tbd
 					-- allow one cycle for control unit to receive inputs
 					ld_r <= '0';
 					increment <= "0000";
-					stateOut <= "100";
-					nextState <= execute;
+					stateOut <= "0100";
+					nextState <= decode3;
 				
-				when execute =>
+				when decode3 =>
 					-- read opcode here
 					case opcodeIn is
 						when andr =>
@@ -180,6 +173,7 @@ architecture behavioral of control_unit is
 							end case;
 							
 						when ldr =>
+							nextState <= fetch;
 							case address_method is
 								when am_inherent =>
 									-- do nothing
@@ -187,18 +181,17 @@ architecture behavioral of control_unit is
 									-- Rz <- Operand
 									rf_sel <= "0000"; -- set to operand
 									ld_r <= '1';
-									nextState <= fetch;
-									
+
 								when am_direct =>
 									-- Rz <- M[Operand]
 									rf_sel <= "1001"; -- set to M[Operand]
 									ld_r <= '1';
-									nextState <= fetch;
+
 								when am_register =>
 									-- Rz <- Rx
 									rf_sel <= "1000"; -- set to Rx
 									ld_r <= '1';
-									nextState <= fetch;
+
 							end case;
 						
 						when others =>
@@ -206,29 +199,37 @@ architecture behavioral of control_unit is
 					end case;
 					
 					increment <= "0000";
-					stateOut <= "101";
+					stateOut <= "0101";
 				
 				when aluOperation =>
 					nextState <= loadAluResult;
-					stateOut <= "110";
+					stateOut <= "0110";
 					
 				when loadAluResult =>
+					-- loads alu result
+					stateOut <= "0111";
+					nextState <= storeAluResult;
+					
+				when storeAluResult =>
 					rf_sel <= "0011";
-					stateOut <= "111";
+					ld_r <= '1'; 
+					stateOut <= "1000";
 					nextState <= fetch;
 					
 				when selStore =>
 					-- propogate through data mux
 					nextState <= storeData;
+					stateOut <= "1001";
 	
 				when storeData =>
 					wren <= '1'; -- store data
 					nextState <= fetch;
+					stateOut <= "1010";
 					
 				when others =>
 					ld_r <= '0';
 					increment <= "0000";
-					stateOut <= "000"; 
+					stateOut <= "0000"; 
 					nextState <= idle;
 			end case;
 		end if;

@@ -12,18 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "alu_rx_recv",
-					"strict" : false
-				},
-				{
-					"name" : "alu_rz_recv",
-					"strict" : false
-				},
-				{
-					"name" : "ld_r",
-					"strict" : false
-				},
-				{
 					"name" : "pm_outdata[15]",
 					"strict" : false
 				},
@@ -96,18 +84,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "state[2]",
-					"strict" : false
-				},
-				{
-					"name" : "state[1]",
-					"strict" : false
-				},
-				{
-					"name" : "state[0]",
-					"strict" : false
-				},
-				{
 					"name" : "rxData[15]",
 					"strict" : false
 				},
@@ -172,67 +148,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "rzData[15]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[14]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[13]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[12]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[0]",
+					"name" : "ld_r",
 					"strict" : false
 				},
 				{
@@ -312,6 +228,86 @@
 					"strict" : false
 				},
 				{
+					"name" : "rzData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[3]",
+					"strict" : false
+				},
+				{
+					"name" : "state[2]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
 					"name" : "opcode[5]",
 					"strict" : false
 				},
@@ -357,6 +353,18 @@
 				},
 				{
 					"name" : "alu_opsel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel",
+					"strict" : false
+				},
+				{
+					"name" : "wren",
+					"strict" : false
+				},
+				{
+					"name" : "addrSel[1]",
 					"strict" : false
 				},
 				{
@@ -560,6 +568,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "memData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[0]",
+					"strict" : false
+				},
+				{
 					"name" : "operand_out[3]",
 					"strict" : false
 				},
@@ -697,6 +769,70 @@
 				},
 				{
 					"name" : "sop[0]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "storedData[0]",
 					"strict" : false
 				},
 				{

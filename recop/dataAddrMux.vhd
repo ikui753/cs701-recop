@@ -36,16 +36,17 @@ begin
 				when "10" =>
 					addrOut <= operand;
 				when others =>
-				
 			end case;
 			
 			-- mux to select data to be stored in data memory for store operations 
 			case dataSel is
 				when '0' =>
 					dataOut <= rxData;
-				when others =>
+				when '1' =>
 					dataOut <= operand;
+				when others =>
 			end case;
+			
 		end if;
 	end process;
 end architecture;

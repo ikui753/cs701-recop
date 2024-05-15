@@ -19,7 +19,7 @@ entity program_counter is
 		  rz_data : in bit_16; -- rz data
 		  z	: in bit_1; -- Z, for SZ Operand
 		  reset : in bit_1;
-		  state : in bit_3;
+		  state : in bit_4;
         out_count : out bit_16 -- output count
     );
 end program_counter;
@@ -28,7 +28,7 @@ architecture pc of program_counter is
 begin
     process(clock, increment, state)
 begin
-    if rising_edge(clock) and state = "001" then
+    if rising_edge(clock) and state = "0001" then
 		 if reset = '1' then
 			out_count <= x"0000";
 		 else

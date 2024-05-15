@@ -27,11 +27,7 @@ entity alu is
 		ir_operand		: in bit_16;
 		-- flag control signal
 		clr_z_flag		: in bit_1;
-		reset : in bit_1;
-		state : in bit_3;
-		
-		alu_rx_recv : out bit_1;
-		alu_rz_recv : out bit_1
+		reset : in bit_1
 	);
 end alu;
 
@@ -71,7 +67,7 @@ begin
 	end process op2_select;
 	
 	-- perform ALU operation
-	alu: process (alu_operation, operand_1, operand_2, clk, state)
+	alu: process (alu_operation, operand_1, operand_2, clk)
 	begin
 		if rising_edge(clk) then
 			case alu_operation is
@@ -86,14 +82,6 @@ begin
 				when others =>
 					result <= X"0000";
 			end case;
-			if result > x"0000" then
-				alu_rx_recv <= '1';
-				alu_rz_recv <= '1';
-			else
-				alu_rx_recv <= '0';
-				alu_rz_recv <= '0';
-			end if;
-
 		
 			alu_result <= result;
 		end if;

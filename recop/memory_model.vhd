@@ -20,7 +20,7 @@ entity memory is
 		operand_outdata : out bit_16;
 		dm_wr: in bit_1 := '0';
 		dm_indata: in bit_16 := X"0000";
-		state : in bit_3
+		state : in bit_4
 		
 		);
 end memory;
@@ -34,8 +34,10 @@ architecture beh of memory is
 	x"0008", -- ldr Rz Operand
 	am_immediate&ldr&x"2"&x"0",
 	x"0005",
-	am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
-	x"0004",
+	--am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
+	--x"0004",
+	am_immediate&str&x"1"&x"0",
+	x"0004", -- store M[1] <- 0x0004
 	am_immediate&ldr& x"3"&x"0",
 	x"0007");
 	
@@ -116,7 +118,7 @@ begin
 	-- end process;
 	process (clk)
 	begin
-		if rising_edge(clk) and state = "010" then
+		if rising_edge(clk) and state = "0010" then
 			if dm_wr = '1' then
 				memory(to_integer(unsigned(dm_address)))<= dm_indata; -- memory is an array
 			end if;
@@ -125,7 +127,7 @@ begin
 	
 	process (clk)
 	begin
-		if rising_edge(clk) and state = "010" then
+		if rising_edge(clk) and state = "0010" then
 			pm_outdata <= memory(to_integer(unsigned(pm_address))); -- memory is an array
 			operand_outdata <= memory(to_integer(unsigned(pm_address) + 1));
 			dm_outdata <= memory(to_integer(unsigned(pm_address) + 1)); -- currently unused

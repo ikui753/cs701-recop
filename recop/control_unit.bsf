@@ -61,8 +61,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 248 48)
 		(output)
-		(text "stateOut[2..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "stateOut[2..0]" (rect 174 43 227 55)(font "Arial" ))
+		(text "stateOut[3..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "stateOut[3..0]" (rect 174 43 227 55)(font "Arial" ))
 		(line (pt 248 48)(pt 232 48)(line_width 3))
 	)
 	(port
