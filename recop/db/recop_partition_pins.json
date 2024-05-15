@@ -12,6 +12,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "presentJmp",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel",
+					"strict" : false
+				},
+				{
+					"name" : "addrSel[1]",
+					"strict" : false
+				},
+				{
 					"name" : "pm_outdata[15]",
 					"strict" : false
 				},
@@ -360,15 +372,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "dataSel",
-					"strict" : false
-				},
-				{
 					"name" : "wren",
-					"strict" : false
-				},
-				{
-					"name" : "addrSel[1]",
 					"strict" : false
 				},
 				{

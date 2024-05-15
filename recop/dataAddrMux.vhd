@@ -17,7 +17,8 @@ entity dataAddrMux is
 		dataSel : in bit_1;
 		
 		addrOut : out bit_16;
-		dataOut : out bit_16
+		dataOut : out bit_16;
+		presentJmp : out bit_1
 	);
 	
 end entity dataAddrMux;
@@ -46,6 +47,13 @@ begin
 					dataOut <= operand;
 				when others =>
 			end case;
+			
+			-- check for presentJmp condition
+			if rzData = x"0000" then
+				presentJmp <= '1';
+			else 
+				presentJmp <= '0';
+			end if;
 			
 		end if;
 	end process;
