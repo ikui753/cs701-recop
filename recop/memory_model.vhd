@@ -38,8 +38,8 @@ architecture beh of memory is
 	x"0004",
 	am_register&str&x"1"&x"2",
 	x"0002", -- store M[1] <- Rx
-	am_immediate&ldr& x"3"&x"0",
-	x"0007");
+	am_immediate&jmp& x"0"&x"0",
+	x"0004"); -- jump to 4
 	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",

@@ -80,6 +80,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "increment[2]",
+					"strict" : false
+				},
+				{
 					"name" : "increment[0]",
 					"strict" : false
 				},
@@ -632,6 +636,54 @@
 					"strict" : false
 				},
 				{
+					"name" : "operand_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[4]",
+					"strict" : false
+				},
+				{
 					"name" : "operand_out[3]",
 					"strict" : false
 				},
@@ -705,6 +757,10 @@
 				},
 				{
 					"name" : "out_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "out_count[0]",
 					"strict" : false
 				},
 				{
