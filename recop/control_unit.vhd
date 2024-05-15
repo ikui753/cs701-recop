@@ -68,7 +68,7 @@ architecture behavioral of control_unit is
 					wren <= '0';
 					ld_r <= '0';
 					alu_opsel <= "0000000";
-					if opcodeIn = jmp or present then
+					if opcodeIn = jmp or opcodeIn = present then
 						-- count already sorted, proceed to next fetch step
 					else
 						increment <= "0001"; -- increment program counter, move to next instruction
@@ -149,6 +149,7 @@ architecture behavioral of control_unit is
 						when subr =>
 							-- result is not stored
 							rf_sel <= "0011";
+							ld_r <= '0';
 							nextState <= execution;
 							case address_method is
 								when am_immediate => 
@@ -180,13 +181,10 @@ architecture behavioral of control_unit is
 								when am_immediate => 
 									-- JMP OPERAND
 									increment <= "0101";
-									--nextState <= fetch;
-									--stateOut <= "0001";
 								when am_register =>
 									-- JMP Rxdata
 									increment <= "0100";
-									--nextState <= fetch;
-									--stateOut <= "0001";
+									nextState <= execution; -- need to read Rx
 								when others =>
 							end case;
 							
@@ -201,18 +199,14 @@ architecture behavioral of control_unit is
 								when am_immediate =>
 									-- Rz <- Operand
 									rf_sel <= "0000"; -- set to operand
-									--ld_r <= '1';
 
 								when am_direct => -- NEED TO FIX THIS ONE
 									-- Rz <- M[Operand]
 									rf_sel <= "1001"; -- set to M[Operand]
-									--ld_r <= '1';
 
 								when am_register =>
 									-- Rz <- Rx
 									rf_sel <= "1000"; -- set to Rx
-									--ld_r <= '1';
-
 							end case;
 						
 						when others =>
@@ -221,7 +215,7 @@ architecture behavioral of control_unit is
 					
 					if opcodeIn = jmp or opCodeIn = present then
 						stateOut <= "0001";
-						nextState <= fetch;
+						nextState <= fetch; -- move to next instruction
 					else
 						increment <= "0000";
 						stateOut <= "0101";
@@ -231,27 +225,17 @@ architecture behavioral of control_unit is
 					-- alu operations
 					if opcodeIn = addr or opcodeIn = subvr or opcodeIn = orr or opcodeIn = andr then
 						nextState <= loadAluResult;
+					
+					elsif opcodeIn = subr then
+						ld_r <= '0';
+						nextState <= fetch;
+					
+					elsif opcodeIn = jmp then
+						nextState <= fetch; -- PC <- Rx
 					else
 						nextState <= fetch;
 						ld_r <= '1';
 					end if;
-					
---					-- jmp
---					if opcodeIn = jmp then
---						case address_method is
---							when am_immediate =>
---								increment <= "0101";
---							when am_register =>
---								increment <= "0100";
---							when others =>
---						end case;
---						nextState <= fetch2;
---					
---					elsif opcodeIn = present then
---						--increment <= "";
---						nextState <= fetch2;
---					
---					end if;
 					
 					stateOut <= "0110";
 					

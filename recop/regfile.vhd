@@ -90,6 +90,7 @@ begin
 				elsif dprr_wren = '1' then
 					regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
 				else
+					regs(sel_z) <= regs(sel_z);
 				end if;
 		end if;
 	end process;

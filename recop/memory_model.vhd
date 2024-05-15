@@ -32,14 +32,14 @@ architecture beh of memory is
 	x"0000", -- no operation
 	am_immediate&ldr&x"1"&x"0",
 	x"0008", -- ldr Rz Operand
-	am_immediate&ldr&x"2"&x"0",
+	am_immediate&ldr&x"2"&x"1",
 	x"0005",
-	am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
+	am_immediate&subr&x"1"&x"2", -- Rz - Operand
 	x"0004",
 	am_register&str&x"1"&x"2",
 	x"0002", -- store M[1] <- Rx
-	am_immediate&jmp& x"0"&x"0",
-	x"0004"); -- jump to 4
+	am_register&jmp& x"0"&x"1",
+	x"0004"); -- jump to Rx r[1]
 	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",
