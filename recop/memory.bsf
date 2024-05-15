@@ -20,7 +20,7 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 280 160)
+	(rect 16 16 232 160)
 	(text "memory" (rect 5 0 40 12)(font "Arial" ))
 	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
@@ -33,8 +33,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "pm_address[15..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "pm_address[15..0]" (rect 21 43 95 55)(font "Arial" ))
+		(text "pm_address[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "pm_address[31..0]" (rect 21 43 95 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
@@ -66,27 +66,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
-		(pt 264 32)
+		(pt 216 32)
 		(output)
-		(text "pm_outdata[15..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "pm_outdata[15..0]" (rect 173 27 243 39)(font "Arial" ))
-		(line (pt 264 32)(pt 248 32)(line_width 3))
-	)
-	(port
-		(pt 264 48)
-		(output)
-		(text "dm_outdata[15..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "dm_outdata[15..0]" (rect 173 43 243 55)(font "Arial" ))
-		(line (pt 264 48)(pt 248 48)(line_width 3))
-	)
-	(port
-		(pt 264 64)
-		(output)
-		(text "operand_outdata[15..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "operand_outdata[15..0]" (rect 154 59 243 71)(font "Arial" ))
-		(line (pt 264 64)(pt 248 64)(line_width 3))
+		(text "instr[31..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "instr[31..0]" (rect 155 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 128)(line_width 1))
+		(rectangle (rect 16 16 200 128)(line_width 1))
 	)
 )

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Mon May 13 23:14:40 2024
+Wed May 15 16:21:56 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,15 +13,19 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |progCounterTest|control_unit:inst7|nextState
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |progCounterTest|control_unit:inst7|nextState
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated
+ 16. Parameter Settings for User Entity Instance: prog_mem:inst4|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +51,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 13 23:14:40 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 15 16:21:56 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 474                                         ;
-; Total pins                      ; 250                                         ;
+; Total registers                 ; 190                                         ;
+; Total pins                      ; 217                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
+; Total block memory bits         ; 524,288                                     ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -159,39 +163,49 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
-; control_unit.vhd                 ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd      ;         ;
-; various_constants.vhd            ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/various_constants.vhd ;         ;
-; registers.vhd                    ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd         ;         ;
-; regfile.vhd                      ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd           ;         ;
-; recop_types.vhd                  ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_types.vhd       ;         ;
-; opcodes.vhd                      ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/opcodes.vhd           ;         ;
-; memory_model.vhd                 ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd      ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd               ;         ;
-; program_counter.vhd              ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd   ;         ;
-; instruction_reg.vhd              ; yes             ; User VHDL File                     ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd   ;         ;
-; progCounterTest.bdf              ; yes             ; User Block Diagram/Schematic File  ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/progCounterTest.bdf   ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; control_unit.vhd                 ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/control_unit.vhd                               ;         ;
+; various_constants.vhd            ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/various_constants.vhd                          ;         ;
+; registers.vhd                    ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/registers.vhd                                  ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/regfile.vhd                                    ;         ;
+; recop_types.vhd                  ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/recop_types.vhd                                ;         ;
+; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; Z:/projects/cs701-recop/recop/prog_mem.vhd                                   ;         ;
+; opcodes.vhd                      ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/opcodes.vhd                                    ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/ALU.vhd                                        ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/program_counter.vhd                            ;         ;
+; instruction_reg.vhd              ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/instruction_reg.vhd                            ;         ;
+; progCounterTest.bdf              ; yes             ; User Block Diagram/Schematic File      ; Z:/projects/cs701-recop/recop/progCounterTest.bdf                            ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_fti1.tdf           ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf                         ;         ;
+; assembler/output.mif             ; yes             ; Auto-Found Memory Initialization File  ; Z:/projects/cs701-recop/recop/assembler/output.mif                           ;         ;
+; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/decode_61a.tdf                              ;         ;
+; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/mux_chb.tdf                                 ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -199,43 +213,58 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 364         ;
+; Estimate of Logic utilization (ALMs needed) ; 115         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 335         ;
-;     -- 7 input functions                    ; 46          ;
-;     -- 6 input functions                    ; 183         ;
-;     -- 5 input functions                    ; 17          ;
-;     -- 4 input functions                    ; 21          ;
-;     -- <=3 input functions                  ; 68          ;
+; Combinational ALUT usage for logic          ; 89          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 32          ;
+;     -- 5 input functions                    ; 4           ;
+;     -- 4 input functions                    ; 2           ;
+;     -- <=3 input functions                  ; 51          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 474         ;
+; Dedicated logic registers                   ; 190         ;
 ;                                             ;             ;
-; I/O pins                                    ; 250         ;
+; I/O pins                                    ; 217         ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 524288      ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
-; Maximum fan-out                             ; 475         ;
-; Total fan-out                               ; 3658        ;
-; Average fan-out                             ; 2.79        ;
+; Maximum fan-out                             ; 319         ;
+; Total fan-out                               ; 3091        ;
+; Average fan-out                             ; 3.68        ;
 +---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
-; |progCounterTest           ; 335 (1)             ; 474 (0)                   ; 0                 ; 0          ; 250  ; 0            ; |progCounterTest                       ; progCounterTest ; work         ;
-;    |alu:inst9|             ; 46 (46)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9             ; alu             ; work         ;
-;    |control_unit:inst7|    ; 20 (20)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7    ; control_unit    ; work         ;
-;    |instruction_reg:inst2| ; 3 (3)               ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2 ; instruction_reg ; work         ;
-;    |memory:inst1|          ; 15 (15)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1          ; memory          ; work         ;
-;    |program_counter:inst|  ; 17 (17)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst  ; program_counter ; work         ;
-;    |regfile:inst3|         ; 233 (233)           ; 272 (272)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3         ; regfile         ; work         ;
-;    |registers:inst5|       ; 0 (0)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5       ; registers       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |progCounterTest                          ; 89 (1)              ; 190 (0)                   ; 524288            ; 0          ; 217  ; 0            ; |progCounterTest                                                                                                      ; progCounterTest ; work         ;
+;    |alu:inst9|                            ; 6 (6)               ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9                                                                                            ; alu             ; work         ;
+;    |control_unit:inst7|                   ; 6 (6)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                                                   ; control_unit    ; work         ;
+;    |instruction_reg:inst2|                ; 2 (2)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                                                                ; instruction_reg ; work         ;
+;    |prog_mem:inst4|                       ; 56 (0)              ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4                                                                                       ; prog_mem        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 56 (0)              ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_fti1:auto_generated| ; 56 (0)              ; 3 (3)                     ; 524288            ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated                        ; altsyncram_fti1 ; work         ;
+;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
+;             |mux_chb:mux2|                ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|mux_chb:mux2           ; mux_chb         ; work         ;
+;    |program_counter:inst|                 ; 17 (17)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst                                                                                 ; program_counter ; work         ;
+;    |regfile:inst3|                        ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                                                        ; regfile         ; work         ;
+;    |registers:inst5|                      ; 0 (0)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5                                                                                      ; registers       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------+
+; Name                                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                  ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------+
+; prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 32768        ; 16           ; --           ; --           ; 524288 ; assembler/output.mif ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------+
 
 
 Encoding Type:  One-Hot
@@ -254,163 +283,316 @@ Encoding Type:  One-Hot
 +------------------------+------------------------+---------------------+------------------+-------------------+------------------+-----------------+----------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+-----------------------------------------+---------------------------------------------+
-; Register name                           ; Reason for Removal                          ;
-+-----------------------------------------+---------------------------------------------+
-; registers:inst5|dprr[0]                 ; Stuck at GND due to stuck port clock_enable ;
-; memory:inst1|memory[5][13]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][13]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][13]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][5]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][5]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][5]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][5]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][13]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][1]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][1]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][1]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][1]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][11]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][9]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][15]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][15]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][7]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][11]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][7]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][15]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][7]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][7]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][11]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][11]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][15]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][15]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][7]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][7]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][3]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][11]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][11]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][15]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][12]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][1]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][12]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][14]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][4]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][6]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][6]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][2]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][0]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][4]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][12]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[3][14]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][6]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][0]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][2]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][2]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][4]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][6]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][12]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][12]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[5][14]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][6]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][0]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][4]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[7][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][6]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[4][2]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[6][8]               ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[1][10]              ; Merged with memory:inst1|memory[7][0]       ;
-; memory:inst1|memory[2][5]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[6][5]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[1][1]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[4][1]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[4][15]              ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[4][11]              ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[4][14]              ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[6][14]              ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[3][0]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[3][2]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[5][0]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[6][4]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[2][14]              ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[1][0]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[1][2]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[4][4]               ; Merged with memory:inst1|memory[7][2]       ;
-; memory:inst1|memory[1][12]              ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[1][14]              ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[4][6]               ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[4][7]               ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[7][5]               ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[4][12]              ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[7][13]              ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[6][13]              ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[4][13]              ; Merged with memory:inst1|memory[7][4]       ;
-; memory:inst1|memory[7][4]               ; Merged with memory:inst1|memory[7][0]       ;
-; control_unit:inst7|increment[2]         ; Merged with control_unit:inst7|increment[1] ;
-; control_unit:inst7|alu_opsel[3,5]       ; Merged with control_unit:inst7|alu_opsel[2] ;
-; registers:inst5|dprr[1]                 ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|memory[7][0]               ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|memory[7][2]               ; Stuck at VCC due to stuck port data_in      ;
-; control_unit:inst7|stateOut[2]          ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_sel[2]            ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|increment[1]         ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|alu_opsel[2]         ; Stuck at GND due to stuck port data_in      ;
-; program_counter:inst|out_count[0]       ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|operand_outdata[14,15]     ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|operand_outdata[12,13]     ; Stuck at GND due to stuck port sclear       ;
-; memory:inst1|operand_outdata[11]        ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|operand_outdata[6..10]     ; Stuck at GND due to stuck port sclear       ;
-; memory:inst1|operand_outdata[4,5]       ; Stuck at GND due to stuck port data_in      ;
-; memory:inst1|operand_outdata[3]         ; Stuck at GND due to stuck port sclear       ;
-; instruction_reg:inst2|operand[3..15]    ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 148 ;                                             ;
-+-----------------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++-------------------------------------------+---------------------------------------------+
+; Register name                             ; Reason for Removal                          ;
++-------------------------------------------+---------------------------------------------+
+; registers:inst5|dprr[0]                   ; Stuck at GND due to stuck port clock_enable ;
+; instruction_reg:inst2|rx[0..3]            ; Stuck at GND due to stuck port data_in      ;
+; instruction_reg:inst2|rz[0..3]            ; Stuck at GND due to stuck port data_in      ;
+; instruction_reg:inst2|opcode[0..5]        ; Stuck at GND due to stuck port data_in      ;
+; instruction_reg:inst2|address_method[0,1] ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|rf_sel[0,1,3]          ; Merged with control_unit:inst7|rf_sel[2]    ;
+; control_unit:inst7|increment[2]           ; Merged with control_unit:inst7|increment[1] ;
+; control_unit:inst7|alu_opsel[1..5]        ; Merged with control_unit:inst7|alu_opsel[0] ;
+; regfile:inst3|regs[1][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[1][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[1][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[1][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[1][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[1][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[1][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[2][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[2][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[2][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[2][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[2][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[2][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[2][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[3][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[3][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[3][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[3][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[3][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[3][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[3][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[4][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[4][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[4][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[4][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[4][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[4][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[4][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[5][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[5][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[5][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[5][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[5][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[5][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[5][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[6][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[6][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[6][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[6][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[6][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[6][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[6][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[8][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[8][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[8][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[8][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[8][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[8][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[8][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[9][0]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][1]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][2]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][3]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][4]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][5]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][6]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][7]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][8]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][9]                  ; Lost fanout                                 ;
+; regfile:inst3|regs[9][10]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[9][11]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[9][12]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[9][13]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[9][14]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[9][15]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][0]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][1]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][2]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][3]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][4]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][5]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][6]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][7]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][8]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][9]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[10][10]                ; Lost fanout                                 ;
+; regfile:inst3|regs[10][11]                ; Lost fanout                                 ;
+; regfile:inst3|regs[10][12]                ; Lost fanout                                 ;
+; regfile:inst3|regs[10][13]                ; Lost fanout                                 ;
+; regfile:inst3|regs[10][14]                ; Lost fanout                                 ;
+; regfile:inst3|regs[10][15]                ; Lost fanout                                 ;
+; regfile:inst3|regs[11][0]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][1]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][2]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][3]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][4]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][5]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][6]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][7]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][8]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][9]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[11][10]                ; Lost fanout                                 ;
+; regfile:inst3|regs[11][11]                ; Lost fanout                                 ;
+; regfile:inst3|regs[11][12]                ; Lost fanout                                 ;
+; regfile:inst3|regs[11][13]                ; Lost fanout                                 ;
+; regfile:inst3|regs[11][14]                ; Lost fanout                                 ;
+; regfile:inst3|regs[11][15]                ; Lost fanout                                 ;
+; regfile:inst3|regs[12][0]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][1]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][2]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][3]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][4]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][5]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][6]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][7]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][8]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][9]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[12][10]                ; Lost fanout                                 ;
+; regfile:inst3|regs[12][11]                ; Lost fanout                                 ;
+; regfile:inst3|regs[12][12]                ; Lost fanout                                 ;
+; regfile:inst3|regs[12][13]                ; Lost fanout                                 ;
+; regfile:inst3|regs[12][14]                ; Lost fanout                                 ;
+; regfile:inst3|regs[12][15]                ; Lost fanout                                 ;
+; regfile:inst3|regs[13][0]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][1]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][2]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][3]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][4]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][5]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][6]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][7]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][8]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][9]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[13][10]                ; Lost fanout                                 ;
+; regfile:inst3|regs[13][11]                ; Lost fanout                                 ;
+; regfile:inst3|regs[13][12]                ; Lost fanout                                 ;
+; regfile:inst3|regs[13][13]                ; Lost fanout                                 ;
+; regfile:inst3|regs[13][14]                ; Lost fanout                                 ;
+; regfile:inst3|regs[13][15]                ; Lost fanout                                 ;
+; regfile:inst3|regs[14][0]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][1]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][2]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][3]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][4]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][5]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][6]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][7]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][8]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][9]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[14][10]                ; Lost fanout                                 ;
+; regfile:inst3|regs[14][11]                ; Lost fanout                                 ;
+; regfile:inst3|regs[14][12]                ; Lost fanout                                 ;
+; regfile:inst3|regs[14][13]                ; Lost fanout                                 ;
+; regfile:inst3|regs[14][14]                ; Lost fanout                                 ;
+; regfile:inst3|regs[14][15]                ; Lost fanout                                 ;
+; regfile:inst3|regs[15][0]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][1]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][2]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][3]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][4]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][5]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][6]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][7]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][8]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][9]                 ; Lost fanout                                 ;
+; regfile:inst3|regs[15][10]                ; Lost fanout                                 ;
+; regfile:inst3|regs[15][11]                ; Lost fanout                                 ;
+; regfile:inst3|regs[15][12]                ; Lost fanout                                 ;
+; regfile:inst3|regs[15][13]                ; Lost fanout                                 ;
+; regfile:inst3|regs[15][14]                ; Lost fanout                                 ;
+; regfile:inst3|regs[15][15]                ; Lost fanout                                 ;
+; registers:inst5|dprr[1]                   ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][0]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][1]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][2]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][3]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][4]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][5]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][6]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][7]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][8]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][9]                  ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][10]                 ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][11]                 ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][12]                 ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][13]                 ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][14]                 ; Stuck at GND due to stuck port data_in      ;
+; regfile:inst3|regs[7][15]                 ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|rf_sel[2]              ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|alu_opsel[0]           ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|stateOut[2]            ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|increment[1]           ; Stuck at GND due to stuck port data_in      ;
+; alu:inst9|result[0]                       ; Stuck at GND due to stuck port data_in      ;
+; alu:inst9|alu_result[0]                   ; Stuck at GND due to stuck port data_in      ;
+; program_counter:inst|out_count[0]         ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|nextState.aluOperation ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 275   ;                                             ;
++-------------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                        ;
-+--------------------------------+---------------------------+-----------------------------------------------------------------------+
-; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                ;
-+--------------------------------+---------------------------+-----------------------------------------------------------------------+
-; control_unit:inst7|stateOut[2] ; Stuck at GND              ; program_counter:inst|out_count[0], instruction_reg:inst2|operand[15], ;
-;                                ; due to stuck port data_in ; instruction_reg:inst2|operand[14], instruction_reg:inst2|operand[13], ;
-;                                ;                           ; instruction_reg:inst2|operand[12], instruction_reg:inst2|operand[11], ;
-;                                ;                           ; instruction_reg:inst2|operand[10], instruction_reg:inst2|operand[9],  ;
-;                                ;                           ; instruction_reg:inst2|operand[8], instruction_reg:inst2|operand[7],   ;
-;                                ;                           ; instruction_reg:inst2|operand[6], instruction_reg:inst2|operand[5],   ;
-;                                ;                           ; instruction_reg:inst2|operand[4], instruction_reg:inst2|operand[3]    ;
-; memory:inst1|memory[7][0]      ; Stuck at GND              ; memory:inst1|operand_outdata[15], memory:inst1|operand_outdata[14],   ;
-;                                ; due to stuck port data_in ; memory:inst1|operand_outdata[13], memory:inst1|operand_outdata[12],   ;
-;                                ;                           ; memory:inst1|operand_outdata[11], memory:inst1|operand_outdata[10],   ;
-;                                ;                           ; memory:inst1|operand_outdata[9], memory:inst1|operand_outdata[8],     ;
-;                                ;                           ; memory:inst1|operand_outdata[7], memory:inst1|operand_outdata[6],     ;
-;                                ;                           ; memory:inst1|operand_outdata[5], memory:inst1|operand_outdata[4],     ;
-;                                ;                           ; memory:inst1|operand_outdata[3]                                       ;
-+--------------------------------+---------------------------+-----------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++---------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++---------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; instruction_reg:inst2|rx[0]     ; Stuck at GND              ; regfile:inst3|regs[11][0], regfile:inst3|regs[11][1], regfile:inst3|regs[11][2],    ;
+;                                 ; due to stuck port data_in ; regfile:inst3|regs[11][3], regfile:inst3|regs[11][4], regfile:inst3|regs[11][5],    ;
+;                                 ;                           ; regfile:inst3|regs[11][6], regfile:inst3|regs[11][7], regfile:inst3|regs[11][8],    ;
+;                                 ;                           ; regfile:inst3|regs[11][9], regfile:inst3|regs[11][10], regfile:inst3|regs[11][11],  ;
+;                                 ;                           ; regfile:inst3|regs[11][12], regfile:inst3|regs[11][13], regfile:inst3|regs[11][14], ;
+;                                 ;                           ; regfile:inst3|regs[11][15], regfile:inst3|regs[12][0], regfile:inst3|regs[12][1],   ;
+;                                 ;                           ; regfile:inst3|regs[12][2], regfile:inst3|regs[12][3], regfile:inst3|regs[12][4],    ;
+;                                 ;                           ; regfile:inst3|regs[12][5], regfile:inst3|regs[12][6], regfile:inst3|regs[12][7],    ;
+;                                 ;                           ; regfile:inst3|regs[12][8], regfile:inst3|regs[12][9], regfile:inst3|regs[12][10],   ;
+;                                 ;                           ; regfile:inst3|regs[12][11], regfile:inst3|regs[12][12], regfile:inst3|regs[12][13], ;
+;                                 ;                           ; regfile:inst3|regs[12][14], regfile:inst3|regs[12][15], regfile:inst3|regs[13][0],  ;
+;                                 ;                           ; regfile:inst3|regs[13][1], regfile:inst3|regs[13][2], regfile:inst3|regs[13][3],    ;
+;                                 ;                           ; regfile:inst3|regs[13][4], regfile:inst3|regs[13][5], regfile:inst3|regs[13][6],    ;
+;                                 ;                           ; regfile:inst3|regs[13][7], regfile:inst3|regs[13][8], regfile:inst3|regs[13][9],    ;
+;                                 ;                           ; regfile:inst3|regs[13][10], regfile:inst3|regs[13][11], regfile:inst3|regs[13][12], ;
+;                                 ;                           ; regfile:inst3|regs[13][13], regfile:inst3|regs[13][14], regfile:inst3|regs[13][15], ;
+;                                 ;                           ; regfile:inst3|regs[14][0], regfile:inst3|regs[14][1], regfile:inst3|regs[14][2],    ;
+;                                 ;                           ; regfile:inst3|regs[14][3], regfile:inst3|regs[14][4], regfile:inst3|regs[14][5],    ;
+;                                 ;                           ; regfile:inst3|regs[14][6], regfile:inst3|regs[14][7], regfile:inst3|regs[14][8],    ;
+;                                 ;                           ; regfile:inst3|regs[14][9], regfile:inst3|regs[14][10], regfile:inst3|regs[14][11],  ;
+;                                 ;                           ; regfile:inst3|regs[14][12], regfile:inst3|regs[14][13], regfile:inst3|regs[14][14], ;
+;                                 ;                           ; regfile:inst3|regs[14][15], regfile:inst3|regs[15][0], regfile:inst3|regs[15][1],   ;
+;                                 ;                           ; regfile:inst3|regs[15][2], regfile:inst3|regs[15][3], regfile:inst3|regs[15][4],    ;
+;                                 ;                           ; regfile:inst3|regs[15][5], regfile:inst3|regs[15][6], regfile:inst3|regs[15][7],    ;
+;                                 ;                           ; regfile:inst3|regs[15][8], regfile:inst3|regs[15][9], regfile:inst3|regs[15][10],   ;
+;                                 ;                           ; regfile:inst3|regs[15][11], regfile:inst3|regs[15][12], regfile:inst3|regs[15][13], ;
+;                                 ;                           ; regfile:inst3|regs[15][14], regfile:inst3|regs[15][15], alu:inst9|result[0],        ;
+;                                 ;                           ; program_counter:inst|out_count[0]                                                   ;
+; instruction_reg:inst2|rz[0]     ; Stuck at GND              ; regfile:inst3|regs[8][0], regfile:inst3|regs[8][1], regfile:inst3|regs[8][2],       ;
+;                                 ; due to stuck port data_in ; regfile:inst3|regs[8][3], regfile:inst3|regs[8][4], regfile:inst3|regs[8][5],       ;
+;                                 ;                           ; regfile:inst3|regs[8][6], regfile:inst3|regs[8][7], regfile:inst3|regs[8][8],       ;
+;                                 ;                           ; regfile:inst3|regs[8][9], regfile:inst3|regs[8][10], regfile:inst3|regs[8][11],     ;
+;                                 ;                           ; regfile:inst3|regs[8][12], regfile:inst3|regs[8][13], regfile:inst3|regs[8][14],    ;
+;                                 ;                           ; regfile:inst3|regs[8][15]                                                           ;
+; instruction_reg:inst2|opcode[0] ; Stuck at GND              ; control_unit:inst7|rf_sel[2], control_unit:inst7|alu_opsel[0],                      ;
+;                                 ; due to stuck port data_in ; control_unit:inst7|increment[1]                                                     ;
+; control_unit:inst7|stateOut[2]  ; Stuck at GND              ; alu:inst9|alu_result[0]                                                             ;
+;                                 ; due to stuck port data_in ;                                                                                     ;
++---------------------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -418,12 +600,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 474   ;
-; Number of registers using Synchronous Clear  ; 39    ;
-; Number of registers using Synchronous Load   ; 16    ;
+; Total registers                              ; 190   ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 442   ;
+; Number of registers using Clock Enable       ; 159   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -434,31 +616,108 @@ Encoding Type:  One-Hot
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; control_unit:inst7|increment[3]        ; 4       ;
-; memory:inst1|memory[0][14]             ; 1       ;
-; memory:inst1|memory[0][4]              ; 1       ;
-; Total number of inverted registers = 3 ;         ;
+; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[3]                ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[15]        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[2]         ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[1]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[5]    ;
-; 11:1               ; 15 bits   ; 105 LEs       ; 0 LEs                ; 105 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[15] ;
-; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[2]      ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 2 LEs                ; 86 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|rf_sel[1]       ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux4                     ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux44                ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux48                ;
-; 65:1               ; 2 bits    ; 86 LEs        ; 4 LEs                ; 82 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux7            ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux11           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 5:1                ; 15 bits   ; 45 LEs        ; 0 LEs                ; 45 LEs                 ; Yes        ; |progCounterTest|program_counter:inst|out_count[8] ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|instruction_reg:inst2|operand[15] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Source assignments for prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                     ;
++---------------------------------+--------------------+------+----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                      ;
++---------------------------------+--------------------+------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prog_mem:inst4|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------+
+; Parameter Name                     ; Value                ; Type                            ;
++------------------------------------+----------------------+---------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                         ;
+; WIDTH_A                            ; 16                   ; Signed Integer                  ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer                  ;
+; NUMWORDS_A                         ; 32768                ; Signed Integer                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WIDTH_B                            ; 1                    ; Untyped                         ;
+; WIDTHAD_B                          ; 1                    ; Untyped                         ;
+; NUMWORDS_B                         ; 1                    ; Untyped                         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                         ;
+; RAM_BLOCK_TYPE                     ; M4K                  ; Untyped                         ;
+; BYTE_SIZE                          ; 8                    ; Untyped                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; INIT_FILE                          ; assembler/output.mif ; Untyped                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
+; MAXIMUM_DEPTH                      ; 4096                 ; Signed Integer                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_fti1      ; Untyped                         ;
++------------------------------------+----------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                           ;
++-------------------------------------------+------------------------------------------------+
+; Name                                      ; Value                                          ;
++-------------------------------------------+------------------------------------------------+
+; Number of entity instances                ; 1                                              ;
+; Entity Instance                           ; prog_mem:inst4|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                            ;
+;     -- WIDTH_A                            ; 16                                             ;
+;     -- NUMWORDS_A                         ; 32768                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
+;     -- WIDTH_B                            ; 1                                              ;
+;     -- NUMWORDS_B                         ; 1                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
+;     -- RAM_BLOCK_TYPE                     ; M4K                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
++-------------------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -466,30 +725,26 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 474                         ;
-;     ENA               ; 387                         ;
-;     ENA SCLR          ; 39                          ;
-;     ENA SLD           ; 16                          ;
-;     plain             ; 32                          ;
-; arriav_lcell_comb     ; 336                         ;
-;     arith             ; 31                          ;
+; arriav_ff             ; 190                         ;
+;     ENA               ; 128                         ;
+;     ENA SCLR          ; 31                          ;
+;     plain             ; 31                          ;
+; arriav_lcell_comb     ; 90                          ;
+;     arith             ; 15                          ;
 ;         1 data inputs ; 15                          ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 1                           ;
-;     extend            ; 46                          ;
-;         7 data inputs ; 46                          ;
-;     normal            ; 259                         ;
+;     normal            ; 75                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 31                          ;
-;         4 data inputs ; 6                           ;
-;         5 data inputs ; 16                          ;
-;         6 data inputs ; 183                         ;
-; boundary_port         ; 250                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 32                          ;
+; boundary_port         ; 217                         ;
+; stratixv_ram_block    ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.44                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -498,7 +753,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -508,55 +763,55 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 13 23:14:28 2024
+    Info: Processing started: Wed May 15 16:21:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file control_unit.vhd
-    Info (12022): Found design unit 1: control_unit-behavioral File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 45
-    Info (12023): Found entity 1: control_unit File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 7
+    Info (12022): Found design unit 1: control_unit-behavioral File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 45
+    Info (12023): Found entity 1: control_unit File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 7
 Info (12021): Found 1 design units, including 0 entities, in source file various_constants.vhd
-    Info (12022): Found design unit 1: various_constants File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/various_constants.vhd Line: 7
+    Info (12022): Found design unit 1: various_constants File: Z:/projects/cs701-recop/recop/various_constants.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
-    Info (12022): Found design unit 1: registers-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd Line: 48
-    Info (12023): Found entity 1: registers File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd Line: 12
+    Info (12022): Found design unit 1: registers-beh File: Z:/projects/cs701-recop/recop/registers.vhd Line: 48
+    Info (12023): Found entity 1: registers File: Z:/projects/cs701-recop/recop/registers.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
-    Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registerfile.vhd Line: 60
-    Info (12023): Found entity 1: registerfile File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registerfile.vhd Line: 44
+    Info (12022): Found design unit 1: registerfile-SYN File: Z:/projects/cs701-recop/recop/registerfile.vhd Line: 60
+    Info (12023): Found entity 1: registerfile File: Z:/projects/cs701-recop/recop/registerfile.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
-    Info (12022): Found design unit 1: regfile-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 45
-    Info (12023): Found entity 1: regfile File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 11
+    Info (12022): Found design unit 1: regfile-beh File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 45
+    Info (12023): Found entity 1: regfile File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 11
 Info (12021): Found 1 design units, including 0 entities, in source file recop_types.vhd
-    Info (12022): Found design unit 1: recop_types File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_types.vhd Line: 5
+    Info (12022): Found design unit 1: recop_types File: Z:/projects/cs701-recop/recop/recop_types.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file recop_pll.vhd
-    Info (12022): Found design unit 1: recop_pll-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_pll.vhd Line: 52
-    Info (12023): Found entity 1: recop_pll File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_pll.vhd Line: 43
+    Info (12022): Found design unit 1: recop_pll-SYN File: Z:/projects/cs701-recop/recop/recop_pll.vhd Line: 52
+    Info (12023): Found entity 1: recop_pll File: Z:/projects/cs701-recop/recop/recop_pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file prog_mem.vhd
-    Info (12022): Found design unit 1: prog_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 53
-    Info (12023): Found entity 1: prog_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 43
+    Info (12022): Found design unit 1: prog_mem-SYN File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 53
+    Info (12023): Found entity 1: prog_mem File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/pll.vhd Line: 52
-    Info (12023): Found entity 1: pll File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/pll.vhd Line: 42
+    Info (12022): Found design unit 1: pll-SYN File: Z:/projects/cs701-recop/recop/pll.vhd Line: 52
+    Info (12023): Found entity 1: pll File: Z:/projects/cs701-recop/recop/pll.vhd Line: 42
 Info (12021): Found 1 design units, including 0 entities, in source file opcodes.vhd
-    Info (12022): Found design unit 1: opcodes File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/opcodes.vhd Line: 7
+    Info (12022): Found design unit 1: opcodes File: Z:/projects/cs701-recop/recop/opcodes.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file memory_model.vhd
-    Info (12022): Found design unit 1: memory-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 28
-    Info (12023): Found entity 1: memory File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 10
+    Info (12022): Found design unit 1: memory-beh File: Z:/projects/cs701-recop/recop/memory_model.vhd Line: 27
+    Info (12023): Found entity 1: memory File: Z:/projects/cs701-recop/recop/memory_model.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file memory_arbiter.vhd
-    Info (12022): Found design unit 1: memory_arbiter-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_arbiter.vhd Line: 35
-    Info (12023): Found entity 1: memory_arbiter File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_arbiter.vhd Line: 11
+    Info (12022): Found design unit 1: memory_arbiter-behaviour File: Z:/projects/cs701-recop/recop/memory_arbiter.vhd Line: 35
+    Info (12023): Found entity 1: memory_arbiter File: Z:/projects/cs701-recop/recop/memory_arbiter.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file data_mem.vhd
-    Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 19
-    Info (12023): Found entity 1: data_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 7
+    Info (12022): Found design unit 1: data_mem-SYN File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 19
+    Info (12023): Found entity 1: data_mem File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 38
-    Info (12023): Found entity 1: alu File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: alu-combined File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 38
+    Info (12023): Found entity 1: alu File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
-    Info (12022): Found design unit 1: program_counter-pc File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 27
-    Info (12023): Found entity 1: program_counter File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 10
+    Info (12022): Found design unit 1: program_counter-pc File: Z:/projects/cs701-recop/recop/program_counter.vhd Line: 27
+    Info (12023): Found entity 1: program_counter File: Z:/projects/cs701-recop/recop/program_counter.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_reg.vhd
-    Info (12022): Found design unit 1: instruction_reg-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd Line: 22
-    Info (12023): Found entity 1: instruction_reg File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd Line: 8
+    Info (12022): Found design unit 1: instruction_reg-behaviour File: Z:/projects/cs701-recop/recop/instruction_reg.vhd Line: 21
+    Info (12023): Found entity 1: instruction_reg File: Z:/projects/cs701-recop/recop/instruction_reg.vhd Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
     Info (12023): Found entity 1: datapath
 Info (12021): Found 1 design units, including 1 entities, in source file toplevel.bdf
@@ -565,65 +820,112 @@ Info (12021): Found 1 design units, including 1 entities, in source file progcou
     Info (12023): Found entity 1: progCounterTest
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
-Warning (10492): VHDL Process Statement warning at ALU.vhd(103): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at ALU.vhd(103): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 103
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(32): used implicit default value for signal "clr_z_flag" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 32
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 33
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used implicit default value for signal "rf_init" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 36
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 37
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(38): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 38
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(39): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(153): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 153
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(32): used implicit default value for signal "clr_z_flag" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 32
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 33
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "wren" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 34
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used implicit default value for signal "rf_init" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 36
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 37
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(38): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 38
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(39): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(153): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 153
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
-Warning (10540): VHDL Signal Declaration warning at regfile.vhd(39): used explicit default value for signal "rx_recv" because signal was never assigned a value File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 39
-Warning (10540): VHDL Signal Declaration warning at regfile.vhd(40): used explicit default value for signal "rz_recv" because signal was never assigned a value File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 40
-Warning (10492): VHDL Process Statement warning at regfile.vhd(56): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 56
-Info (12128): Elaborating entity "memory" for hierarchy "memory:inst1"
-Warning (10492): VHDL Process Statement warning at memory_model.vhd(117): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 117
-Warning (10492): VHDL Process Statement warning at memory_model.vhd(126): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 126
+Warning (10540): VHDL Signal Declaration warning at regfile.vhd(39): used explicit default value for signal "rx_recv" because signal was never assigned a value File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 39
+Warning (10540): VHDL Signal Declaration warning at regfile.vhd(40): used explicit default value for signal "rz_recv" because signal was never assigned a value File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at regfile.vhd(56): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 56
+Info (12128): Elaborating entity "prog_mem" for hierarchy "prog_mem:inst4"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12130): Elaborated megafunction instantiation "prog_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12133): Instantiated megafunction "prog_mem:inst4|altsyncram:altsyncram_component" with the following parameter: File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "assembler/output.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "maximum_depth" = "4096"
+    Info (12134): Parameter "numwords_a" = "32768"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "ram_block_type" = "M4K"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 2621
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_fti1.tdf
+    Info (12023): Found entity 1: altsyncram_fti1 File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_fti1" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
+    Info (12023): Found entity 1: decode_61a File: Z:/projects/cs701-recop/recop/db/decode_61a.tdf Line: 22
+Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|decode_61a:rden_decode" File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
+    Info (12023): Found entity 1: mux_chb File: Z:/projects/cs701-recop/recop/db/mux_chb.tdf Line: 22
+Info (12128): Elaborating entity "mux_chb" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|mux_chb:mux2" File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 40
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
-Warning (10492): VHDL Process Statement warning at instruction_reg.vhd(27): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at instruction_reg.vhd(26): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/instruction_reg.vhd Line: 26
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst5"
+Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[16]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[17]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[18]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[19]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[20]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[21]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[22]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[23]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[24]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[25]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[26]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[27]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[28]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[29]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[30]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Warning (12001): Port "q_a[31]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rz_recv" is stuck at GND
     Warning (13410): Pin "rf_init" is stuck at GND
     Warning (13410): Pin "increment[2]" is stuck at GND
     Warning (13410): Pin "increment[1]" is stuck at GND
     Warning (13410): Pin "state[2]" is stuck at GND
+    Warning (13410): Pin "rf_sel[3]" is stuck at GND
     Warning (13410): Pin "rf_sel[2]" is stuck at GND
+    Warning (13410): Pin "rf_sel[1]" is stuck at GND
+    Warning (13410): Pin "rf_sel[0]" is stuck at GND
     Warning (13410): Pin "rx_recv" is stuck at GND
+    Warning (13410): Pin "opcode[5]" is stuck at GND
+    Warning (13410): Pin "opcode[4]" is stuck at GND
+    Warning (13410): Pin "opcode[3]" is stuck at GND
+    Warning (13410): Pin "opcode[2]" is stuck at GND
+    Warning (13410): Pin "opcode[1]" is stuck at GND
+    Warning (13410): Pin "opcode[0]" is stuck at GND
     Warning (13410): Pin "alu_opsel[5]" is stuck at GND
+    Warning (13410): Pin "alu_opsel[4]" is stuck at GND
     Warning (13410): Pin "alu_opsel[3]" is stuck at GND
     Warning (13410): Pin "alu_opsel[2]" is stuck at GND
+    Warning (13410): Pin "alu_opsel[1]" is stuck at GND
+    Warning (13410): Pin "alu_opsel[0]" is stuck at GND
+    Warning (13410): Pin "alu_output[0]" is stuck at GND
+    Warning (13410): Pin "am[1]" is stuck at GND
+    Warning (13410): Pin "am[0]" is stuck at GND
     Warning (13410): Pin "dprr[1]" is stuck at GND
     Warning (13410): Pin "dprr[0]" is stuck at GND
-    Warning (13410): Pin "operand_out[15]" is stuck at GND
-    Warning (13410): Pin "operand_out[14]" is stuck at GND
-    Warning (13410): Pin "operand_out[13]" is stuck at GND
-    Warning (13410): Pin "operand_out[12]" is stuck at GND
-    Warning (13410): Pin "operand_out[11]" is stuck at GND
-    Warning (13410): Pin "operand_out[10]" is stuck at GND
-    Warning (13410): Pin "operand_out[9]" is stuck at GND
-    Warning (13410): Pin "operand_out[8]" is stuck at GND
-    Warning (13410): Pin "operand_out[7]" is stuck at GND
-    Warning (13410): Pin "operand_out[6]" is stuck at GND
-    Warning (13410): Pin "operand_out[5]" is stuck at GND
-    Warning (13410): Pin "operand_out[4]" is stuck at GND
-    Warning (13410): Pin "operand_out[3]" is stuck at GND
     Warning (13410): Pin "out_count[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 224 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 984 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 39 input pins
-    Info (21059): Implemented 211 output pins
-    Info (21061): Implemented 734 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 4891 megabytes
-    Info: Processing ended: Mon May 13 23:14:40 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:09
+Info (21057): Implemented 585 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 195 output pins
+    Info (21061): Implemented 240 logic cells
+    Info (21064): Implemented 128 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Wed May 15 16:21:56 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:28
 
 

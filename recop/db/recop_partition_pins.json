@@ -24,70 +24,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "pm_outdata[15]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[14]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[13]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[12]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[11]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[10]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[9]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[8]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[7]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pm_outdata[0]",
-					"strict" : false
-				},
-				{
 					"name" : "increment[3]",
 					"strict" : false
 				},
@@ -232,18 +168,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "rf_sel[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rf_sel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rf_sel[0]",
-					"strict" : false
-				},
-				{
 					"name" : "sip_r[15]",
 					"strict" : false
 				},
@@ -308,42 +232,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "opcode[5]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[4]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[3]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[2]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[1]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[0]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[4]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[0]",
-					"strict" : false
-				},
-				{
 					"name" : "alu_output[15]",
 					"strict" : false
 				},
@@ -401,18 +289,6 @@
 				},
 				{
 					"name" : "alu_output[1]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_output[0]",
-					"strict" : false
-				},
-				{
-					"name" : "am[1]",
-					"strict" : false
-				},
-				{
-					"name" : "am[0]",
 					"strict" : false
 				},
 				{
@@ -541,6 +417,58 @@
 				},
 				{
 					"name" : "dpcr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "operand_out[3]",
 					"strict" : false
 				},
 				{
@@ -829,74 +757,6 @@
 				},
 				{
 					"name" : "svop_wr",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[15]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_wr",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[14]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[13]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[12]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[11]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[10]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[9]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[8]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dm_indata[0]",
 					"strict" : false
 				}
 			]
