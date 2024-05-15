@@ -62,6 +62,8 @@ begin
 			elsif (opcode = sz and rzData > x"0001") or (opcode = sz and rzData = x"0000") then
 				-- otherwise, next
 				present_sz_jmp <= "00";
+			else
+				present_sz_jmp <= "00";
 			end if;
 			
 		end if;
