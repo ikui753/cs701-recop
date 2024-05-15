@@ -60,17 +60,18 @@ architecture behavioral of control_unit is
 				when idle =>
 					increment <= "1000"; -- set PC to 0
 					stateOut <= "000";
-					ld_r <= '0';
+					ld_r <= '0'; -- load alu result
 					nextState <= fetch;
 					
 				when fetch =>
+					ld_r <= '1';
 					alu_opsel <= "000000";
 					increment <= "0001"; -- increment program counter, move to next instruction
 					nextState <= fetch2;
-					ld_r <= '0';
 					stateOut <= "001";
 					
 				when fetch2 =>
+					ld_r <= '0'; -- disable
 					-- instruction passed through instruction register
 					increment <= "0000";
 					stateOut <= "010";
@@ -150,7 +151,7 @@ architecture behavioral of control_unit is
 					stateOut <= "110";
 					
 				when loadAluResult =>
-					ld_r <= '1';
+					--ld_r <= '1';
 					rf_sel <= "0011";
 					stateOut <= "111";
 					nextState <= fetch;

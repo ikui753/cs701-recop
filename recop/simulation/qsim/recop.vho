@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/15/2024 13:37:37"
+-- DATE "05/15/2024 13:43:05"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -121,6 +121,7 @@ SIGNAL ww_svop : std_logic_vector(15 DOWNTO 0);
 SIGNAL \clkIn~input_o\ : std_logic;
 SIGNAL \inst|Add0~57_sumout\ : std_logic;
 SIGNAL \dm_indata[15]~input_o\ : std_logic;
+SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
 SIGNAL \dm_indata[14]~input_o\ : std_logic;
 SIGNAL \inst1|memory[0][14]~q\ : std_logic;
 SIGNAL \inst1|pm_outdata[6]~0_combout\ : std_logic;
@@ -155,7 +156,6 @@ SIGNAL \inst7|Selector8~0_combout\ : std_logic;
 SIGNAL \inst7|nextState.writeback~q\ : std_logic;
 SIGNAL \inst7|nextState~11_combout\ : std_logic;
 SIGNAL \inst7|nextState.aluOperation~q\ : std_logic;
-SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
 SIGNAL \inst7|Selector0~0_combout\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
 SIGNAL \inst|out_count[13]~0_combout\ : std_logic;
@@ -1287,17 +1287,17 @@ SIGNAL \inst3|ALT_INV_Mux48~2_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux48~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux48~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux47~4_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.fetch2~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.memory~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.fetch~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.idle~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector2~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.loadAluResult~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.aluOperation~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.decode~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.fetch2~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux22~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.writeback~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector2~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.loadAluResult~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.fetch~q\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~3_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~2_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~1_combout\ : std_logic;
@@ -1892,17 +1892,17 @@ ww_devpor <= devpor;
 \inst2|ALT_INV_rz\(1) <= NOT \inst2|rz\(1);
 \inst2|ALT_INV_rz\(0) <= NOT \inst2|rz\(0);
 \inst3|ALT_INV_Mux47~4_combout\ <= NOT \inst3|Mux47~4_combout\;
+\inst7|ALT_INV_nextState.fetch2~q\ <= NOT \inst7|nextState.fetch2~q\;
 \inst7|ALT_INV_nextState.memory~q\ <= NOT \inst7|nextState.memory~q\;
-\inst7|ALT_INV_nextState.fetch~q\ <= NOT \inst7|nextState.fetch~q\;
 \inst7|ALT_INV_nextState.idle~q\ <= NOT \inst7|nextState.idle~q\;
 \inst7|ALT_INV_Selector2~1_combout\ <= NOT \inst7|Selector2~1_combout\;
+\inst7|ALT_INV_nextState.loadAluResult~q\ <= NOT \inst7|nextState.loadAluResult~q\;
 \inst7|ALT_INV_nextState.aluOperation~q\ <= NOT \inst7|nextState.aluOperation~q\;
 \inst7|ALT_INV_nextState.decode~q\ <= NOT \inst7|nextState.decode~q\;
-\inst7|ALT_INV_nextState.fetch2~q\ <= NOT \inst7|nextState.fetch2~q\;
 \inst7|ALT_INV_Mux22~0_combout\ <= NOT \inst7|Mux22~0_combout\;
 \inst7|ALT_INV_nextState.writeback~q\ <= NOT \inst7|nextState.writeback~q\;
 \inst7|ALT_INV_Selector2~0_combout\ <= NOT \inst7|Selector2~0_combout\;
-\inst7|ALT_INV_nextState.loadAluResult~q\ <= NOT \inst7|nextState.loadAluResult~q\;
+\inst7|ALT_INV_nextState.fetch~q\ <= NOT \inst7|nextState.fetch~q\;
 \inst9|ALT_INV_Equal0~3_combout\ <= NOT \inst9|Equal0~3_combout\;
 \inst9|ALT_INV_Equal0~2_combout\ <= NOT \inst9|Equal0~2_combout\;
 \inst9|ALT_INV_Equal0~1_combout\ <= NOT \inst9|Equal0~1_combout\;
@@ -4512,6 +4512,19 @@ PORT MAP (
 	i => ww_dm_indata(15),
 	o => \dm_indata[15]~input_o\);
 
+\inst7|nextState.loadAluResult\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.aluOperation~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.loadAluResult~q\);
+
 \dm_indata[14]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -4554,7 +4567,7 @@ PORT MAP (
 
 \inst7|WideOr3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|WideOr3~combout\ = (((\inst7|nextState.aluOperation~q\) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.fetch2~q\)) # (\inst7|nextState.loadAluResult~q\)
+-- \inst7|WideOr3~combout\ = (((\inst7|nextState.fetch2~q\) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.aluOperation~q\)) # (\inst7|nextState.decode~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4563,10 +4576,10 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datab => \inst7|ALT_INV_nextState.fetch2~q\,
-	datac => \inst7|ALT_INV_nextState.decode~q\,
-	datad => \inst7|ALT_INV_nextState.aluOperation~q\,
+	dataa => \inst7|ALT_INV_nextState.decode~q\,
+	datab => \inst7|ALT_INV_nextState.aluOperation~q\,
+	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datad => \inst7|ALT_INV_nextState.fetch2~q\,
 	combout => \inst7|WideOr3~combout\);
 
 \inst7|stateOut[1]\ : dffeas
@@ -4584,7 +4597,7 @@ PORT MAP (
 
 \inst7|WideOr4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|WideOr4~combout\ = (((\inst7|nextState.fetch~q\) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.writeback~q\)) # (\inst7|nextState.loadAluResult~q\)
+-- \inst7|WideOr4~combout\ = (((\inst7|nextState.loadAluResult~q\) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.writeback~q\)) # (\inst7|nextState.fetch~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4593,10 +4606,10 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	dataa => \inst7|ALT_INV_nextState.fetch~q\,
 	datab => \inst7|ALT_INV_nextState.writeback~q\,
 	datac => \inst7|ALT_INV_nextState.decode~q\,
-	datad => \inst7|ALT_INV_nextState.fetch~q\,
+	datad => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	combout => \inst7|WideOr4~combout\);
 
 \inst7|stateOut[0]\ : dffeas
@@ -5077,7 +5090,7 @@ PORT MAP (
 
 \inst7|WideOr2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|WideOr2~combout\ = (((\inst7|nextState.memory~q\) # (\inst7|nextState.aluOperation~q\)) # (\inst7|nextState.writeback~q\)) # (\inst7|nextState.loadAluResult~q\)
+-- \inst7|WideOr2~combout\ = (((\inst7|nextState.memory~q\) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.aluOperation~q\)) # (\inst7|nextState.writeback~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5086,9 +5099,9 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datab => \inst7|ALT_INV_nextState.writeback~q\,
-	datac => \inst7|ALT_INV_nextState.aluOperation~q\,
+	dataa => \inst7|ALT_INV_nextState.writeback~q\,
+	datab => \inst7|ALT_INV_nextState.aluOperation~q\,
+	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	datad => \inst7|ALT_INV_nextState.memory~q\,
 	combout => \inst7|WideOr2~combout\);
 
@@ -5238,22 +5251,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|nextState.aluOperation~q\);
 
-\inst7|nextState.loadAluResult\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.aluOperation~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.loadAluResult~q\);
-
 \inst7|Selector0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector0~0_combout\ = (\inst7|nextState.idle~q\ & (((!\inst7|nextState.loadAluResult~q\ & !\inst7|nextState.aluOperation~q\)) # (\inst7|increment\(3))))
+-- \inst7|Selector0~0_combout\ = (\inst7|nextState.idle~q\ & (((!\inst7|nextState.aluOperation~q\ & !\inst7|nextState.loadAluResult~q\)) # (\inst7|increment\(3))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5263,8 +5263,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_increment\(3),
-	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.aluOperation~q\,
+	datab => \inst7|ALT_INV_nextState.aluOperation~q\,
+	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	datad => \inst7|ALT_INV_nextState.idle~q\,
 	combout => \inst7|Selector0~0_combout\);
 
@@ -5308,19 +5308,19 @@ PORT MAP (
 
 \inst7|Selector1~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector1~0_combout\ = ((\inst7|increment\(0) & ((\inst7|nextState.aluOperation~q\) # (\inst7|nextState.loadAluResult~q\)))) # (\inst7|nextState.fetch~q\)
+-- \inst7|Selector1~0_combout\ = ((\inst7|increment\(0) & ((\inst7|nextState.loadAluResult~q\) # (\inst7|nextState.aluOperation~q\)))) # (\inst7|nextState.fetch~q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001010111111111000101011111111100010101111111110001010111111111",
+	lut_mask => "0011011101110111001101110111011100110111011101110011011101110111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_increment\(0),
-	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datab => \inst7|ALT_INV_nextState.fetch~q\,
 	datac => \inst7|ALT_INV_nextState.aluOperation~q\,
-	datad => \inst7|ALT_INV_nextState.fetch~q\,
+	datad => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	combout => \inst7|Selector1~0_combout\);
 
 \inst7|increment[0]\ : dffeas
@@ -5522,23 +5522,23 @@ PORT MAP (
 
 \inst7|Selector18~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector18~0_combout\ = ( \inst7|nextState.writeback~q\ & ( \inst7|Mux22~0_combout\ & ( ((\inst7|rf_sel\(1) & \inst7|Selector2~0_combout\)) # (\inst2|opcode\(3)) ) ) ) # ( !\inst7|nextState.writeback~q\ & ( \inst7|Mux22~0_combout\ & ( 
--- (\inst7|nextState.loadAluResult~q\) # (\inst7|rf_sel\(1)) ) ) ) # ( \inst7|nextState.writeback~q\ & ( !\inst7|Mux22~0_combout\ & ( \inst7|rf_sel\(1) ) ) ) # ( !\inst7|nextState.writeback~q\ & ( !\inst7|Mux22~0_combout\ & ( 
--- (\inst7|nextState.loadAluResult~q\) # (\inst7|rf_sel\(1)) ) ) )
+-- \inst7|Selector18~0_combout\ = ( \inst7|Mux22~0_combout\ & ( \inst7|nextState.loadAluResult~q\ & ( ((!\inst7|nextState.writeback~q\) # ((\inst7|rf_sel\(1) & \inst7|Selector2~0_combout\))) # (\inst2|opcode\(3)) ) ) ) # ( !\inst7|Mux22~0_combout\ & ( 
+-- \inst7|nextState.loadAluResult~q\ & ( (!\inst7|nextState.writeback~q\) # (\inst7|rf_sel\(1)) ) ) ) # ( \inst7|Mux22~0_combout\ & ( !\inst7|nextState.loadAluResult~q\ & ( (!\inst7|nextState.writeback~q\ & (\inst7|rf_sel\(1))) # 
+-- (\inst7|nextState.writeback~q\ & (((\inst7|rf_sel\(1) & \inst7|Selector2~0_combout\)) # (\inst2|opcode\(3)))) ) ) ) # ( !\inst7|Mux22~0_combout\ & ( !\inst7|nextState.loadAluResult~q\ & ( \inst7|rf_sel\(1) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0101111101011111010101010101010101011111010111110011001101110111",
+	lut_mask => "0101010101010101010101010011011111111111010101011111111100110111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_rf_sel\(1),
 	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datad => \inst7|ALT_INV_Selector2~0_combout\,
-	datae => \inst7|ALT_INV_nextState.writeback~q\,
-	dataf => \inst7|ALT_INV_Mux22~0_combout\,
+	datac => \inst7|ALT_INV_Selector2~0_combout\,
+	datad => \inst7|ALT_INV_nextState.writeback~q\,
+	datae => \inst7|ALT_INV_Mux22~0_combout\,
+	dataf => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	combout => \inst7|Selector18~0_combout\);
 
 \inst7|rf_sel[1]\ : dffeas
@@ -5556,7 +5556,8 @@ PORT MAP (
 
 \inst7|Selector2~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector2~1_combout\ = ( \inst7|nextState.aluOperation~q\ & ( \inst7|ld_r~q\ ) ) # ( !\inst7|nextState.aluOperation~q\ & ( (\inst7|ld_r~q\ & (((\inst7|nextState.decode~q\) # (\inst7|nextState.fetch2~q\)) # (\inst7|nextState.writeback~q\))) ) )
+-- \inst7|Selector2~1_combout\ = ( \inst7|nextState.loadAluResult~q\ & ( \inst7|ld_r~q\ ) ) # ( !\inst7|nextState.loadAluResult~q\ & ( (\inst7|ld_r~q\ & (((\inst7|nextState.aluOperation~q\) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.writeback~q\))) 
+-- ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5567,15 +5568,15 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst7|ALT_INV_ld_r~q\,
 	datab => \inst7|ALT_INV_nextState.writeback~q\,
-	datac => \inst7|ALT_INV_nextState.fetch2~q\,
-	datad => \inst7|ALT_INV_nextState.decode~q\,
-	datae => \inst7|ALT_INV_nextState.aluOperation~q\,
+	datac => \inst7|ALT_INV_nextState.decode~q\,
+	datad => \inst7|ALT_INV_nextState.aluOperation~q\,
+	datae => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	combout => \inst7|Selector2~1_combout\);
 
 \inst7|Selector2~2\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \inst7|Selector2~2_combout\ = ( \inst7|Mux22~0_combout\ & ( \inst7|Selector2~1_combout\ ) ) # ( !\inst7|Mux22~0_combout\ & ( \inst7|Selector2~1_combout\ ) ) # ( \inst7|Mux22~0_combout\ & ( !\inst7|Selector2~1_combout\ & ( ((!\inst2|opcode\(3) & 
--- (!\inst7|Selector2~0_combout\ & \inst7|nextState.writeback~q\))) # (\inst7|nextState.loadAluResult~q\) ) ) ) # ( !\inst7|Mux22~0_combout\ & ( !\inst7|Selector2~1_combout\ & ( \inst7|nextState.loadAluResult~q\ ) ) )
+-- (!\inst7|Selector2~0_combout\ & \inst7|nextState.writeback~q\))) # (\inst7|nextState.fetch~q\) ) ) ) # ( !\inst7|Mux22~0_combout\ & ( !\inst7|Selector2~1_combout\ & ( \inst7|nextState.fetch~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -5585,7 +5586,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(3),
-	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datab => \inst7|ALT_INV_nextState.fetch~q\,
 	datac => \inst7|ALT_INV_Selector2~0_combout\,
 	datad => \inst7|ALT_INV_nextState.writeback~q\,
 	datae => \inst7|ALT_INV_Mux22~0_combout\,
@@ -7089,7 +7090,7 @@ PORT MAP (
 
 \inst7|Selector15~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector15~0_combout\ = (\inst7|nextState.fetch~q\) # (\inst7|nextState.writeback~q\)
+-- \inst7|Selector15~0_combout\ = (\inst7|nextState.writeback~q\) # (\inst7|nextState.fetch~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7098,8 +7099,8 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.writeback~q\,
-	datab => \inst7|ALT_INV_nextState.fetch~q\,
+	dataa => \inst7|ALT_INV_nextState.fetch~q\,
+	datab => \inst7|ALT_INV_nextState.writeback~q\,
 	combout => \inst7|Selector15~0_combout\);
 
 \inst7|alu_opsel[4]\ : dffeas
