@@ -560,11 +560,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[2]",
+					"name" : "operand_out[3]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[1]",
+					"name" : "operand_out[2]",
 					"strict" : false
 				},
 				{

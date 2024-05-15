@@ -79,10 +79,10 @@ architecture beh of memory is
 	x"0000", -- no operation
 	x"0000", -- no operation
 	am_immediate&ldr&x"1"&x"0",
-	x"0007", -- ldr Rz Operand
+	x"0008", -- ldr Rz Operand
 	am_immediate&ldr&x"2"&x"0",
 	x"0005",
-	am_register&orr&x"1"&x"2",
+	am_immediate&orr&x"1"&x"2",
 	x"0000",
 	am_immediate&ldr& x"3"&x"0",
 	x"0004");
