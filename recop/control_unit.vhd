@@ -71,7 +71,7 @@ architecture behavioral of control_unit is
 					if opcodeIn = jmp or opcodeIn = present then
 						-- count already sorted, proceed to next fetch step
 						if presentJmp = '1' and opcodeIn = present then
-							increment <= "0100";
+							increment <= "0101";
 						elsif presentJmp = '0' and opcodeIn = present then
 							increment <= "0001";
 						end if;
@@ -226,7 +226,7 @@ architecture behavioral of control_unit is
 						nextState <= fetch; -- move to next instruction
 					elsif opcodeIn = present then
 						-- move to next state, no need to set increment 
-						stateOut <= "0101";
+						stateOut <= "0001";
 					else
 						increment <= "0000";
 						stateOut <= "0101";
@@ -267,22 +267,9 @@ architecture behavioral of control_unit is
 					nextState <= fetch;
 					
 				when selStore =>
-					if opcodeIn = present then
-						-- check z, then jump
-						if presentJmp = '1' then
-							stateOut <= "0001";
-							increment <= "0100"; -- PC <- Operand
-							nextState <= fetch;
-						else
-							stateOut <= "0001";
-							increment <= "0001"; -- move to next instruction
-							nextState <= fetch;
-						end if;
-					else
 						nextState <= storeData;
 						stateOut <= "1001";
 						increment <= "0000";
-					end if;
 				
 				when storeData =>
 					-- propogate through data mux, can read Rx and Rz

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Wed May 15 22:35:54 2024
+Wed May 15 22:40:24 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -50,7 +50,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 15 22:35:54 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 15 22:40:24 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -214,13 +214,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 450         ;
+; Estimate of Logic utilization (ALMs needed) ; 447         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 504         ;
+; Combinational ALUT usage for logic          ; 502         ;
 ;     -- 7 input functions                    ; 16          ;
-;     -- 6 input functions                    ; 278         ;
-;     -- 5 input functions                    ; 106         ;
-;     -- 4 input functions                    ; 38          ;
+;     -- 6 input functions                    ; 276         ;
+;     -- 5 input functions                    ; 100         ;
+;     -- 4 input functions                    ; 44          ;
 ;     -- <=3 input functions                  ; 66          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 541         ;
@@ -233,8 +233,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
 ; Maximum fan-out                             ; 558         ;
-; Total fan-out                               ; 5056        ;
-; Average fan-out                             ; 3.10        ;
+; Total fan-out                               ; 5039        ;
+; Average fan-out                             ; 3.09        ;
 +---------------------------------------------+-------------+
 
 
@@ -243,9 +243,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                            ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 504 (0)             ; 541 (0)                   ; 65536             ; 0          ; 285  ; 0            ; |progCounterTest                                                                               ; progCounterTest ; work         ;
+; |progCounterTest                          ; 502 (0)             ; 541 (0)                   ; 65536             ; 0          ; 285  ; 0            ; |progCounterTest                                                                               ; progCounterTest ; work         ;
 ;    |alu:inst9|                            ; 53 (53)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9                                                                     ; alu             ; work         ;
-;    |control_unit:inst7|                   ; 72 (72)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                            ; control_unit    ; work         ;
+;    |control_unit:inst7|                   ; 70 (70)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                            ; control_unit    ; work         ;
 ;    |dataAddrMux:inst6|                    ; 4 (4)               ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|dataAddrMux:inst6                                                             ; dataAddrMux     ; work         ;
 ;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4                                                                ; data_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
@@ -538,31 +538,32 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[11]              ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|dataSel        ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[13]       ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[8]   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[9]        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[12]       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[15]  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[12]  ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[3] ;
-; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[0]     ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux2                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux44                   ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux46               ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux63               ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux52          ;
-; 66:1               ; 8 bits    ; 352 LEs       ; 48 LEs               ; 304 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux51          ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux49          ;
-; 67:1               ; 3 bits    ; 132 LEs       ; 21 LEs               ; 111 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[6]                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|dataSel         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[6]         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[6]    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[9]         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[11]        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[15]   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[11]   ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[14] ;
+; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[0]      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|increment[2]    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux1                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux44                    ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux32                ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux62                ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux47           ;
+; 66:1               ; 8 bits    ; 352 LEs       ; 48 LEs               ; 304 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState       ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux51           ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux48           ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 21 LEs               ; 111 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -667,25 +668,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 32                          ;
 ;     SLD               ; 28                          ;
 ;     plain             ; 57                          ;
-; arriav_lcell_comb     ; 506                         ;
+; arriav_lcell_comb     ; 504                         ;
 ;     arith             ; 32                          ;
 ;         1 data inputs ; 16                          ;
 ;         5 data inputs ; 16                          ;
 ;     extend            ; 16                          ;
 ;         7 data inputs ; 16                          ;
-;     normal            ; 458                         ;
+;     normal            ; 456                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 38                          ;
-;         5 data inputs ; 90                          ;
-;         6 data inputs ; 278                         ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 44                          ;
+;         5 data inputs ; 84                          ;
+;         6 data inputs ; 276                         ;
 ; boundary_port         ; 285                         ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.55                        ;
+; Average LUT depth     ; 3.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -704,7 +705,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 15 22:35:42 2024
+    Info: Processing started: Wed May 15 22:40:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -791,7 +792,7 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(35): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 35
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 36
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(300): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 300
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(287): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 287
 Info (12128): Elaborating entity "dataAddrMux" for hierarchy "dataAddrMux:inst6"
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "memory" for hierarchy "memory:inst1"
@@ -854,15 +855,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1240 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1238 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 39 input pins
     Info (21059): Implemented 246 output pins
-    Info (21061): Implemented 939 logic cells
+    Info (21061): Implemented 937 logic cells
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
     Info: Peak virtual memory: 4908 megabytes
-    Info: Processing ended: Wed May 15 22:35:54 2024
-    Info: Elapsed time: 00:00:12
+    Info: Processing ended: Wed May 15 22:40:25 2024
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:09
 
 
