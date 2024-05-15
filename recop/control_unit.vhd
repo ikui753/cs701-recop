@@ -79,49 +79,7 @@ architecture behavioral of control_unit is
 				when decode => -- actual decode, am, operand, opcode now available 
 					
 					increment <= "0000";
-					-- read opcode here
-					case opcodeIn is
-						when andr =>
-							case address_method is 
-								when am_immediate =>
-									-- Rz <- Rx AND Operand
-									rf_sel <= "0011"; -- set to aluout
-									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
-								
-								when am_register =>
-									-- Rz <- Rz and Rx
-									rf_sel <= "0011"; -- set to aluout
-									alu_opsel <= alu_and&"001"; -- op1- Rx, op2- Rz
-									
-								when others =>
-									rf_sel <= "0011";
-									alu_opsel <= alu_and&"111";
-							end case;
-							
-						when ldr =>
-							alu_opsel <= "000001";
-							case address_method is
-								when am_inherent =>
-									-- do nothing
-								when am_immediate =>
-									-- Rz <- Operand
-									rf_sel <= "0000"; -- set to operand
-									--ld_r <= '1';
-								when am_direct =>
-									-- Rz <- M[Operand]
-									rf_sel <= "1001"; -- set to M[Operand]
-									--ld_r <= '1';
-								when am_register =>
-									-- Rz <- Rx
-									rf_sel <= "1000"; -- set to Rx
-									--ld_r <= '1';
-							end case;
-						
-						
-						
-						when others =>
-							alu_opsel <= "111000";
-					end case;
+					
 					
 					increment <= "0000";
 					stateOut <= "011"; 
@@ -135,19 +93,57 @@ architecture behavioral of control_unit is
 					nextState <= writeback;
 				
 				when writeback =>
-					if opcodeIn = ldr then
-						ld_r <= '1';
-						stateOut <= "101";
-						nextState <= fetch;
-					elsif opcodeIn = addr or opcodeIn = andr or opcodeIn = orr or opcodeIn = subr or opcodeIn = subvr then
+					-- read opcode here
+					case opcodeIn is
+						when andr =>
+							case address_method is 
+								when am_immediate =>
+									-- Rz <- Rx AND Operand
+									rf_sel <= "0011"; -- set to aluout
+									alu_opsel <= alu_and&"010"; -- op1- operand, op2- Rx
+									nextState <= aluOperation;
+								
+								when am_register =>
+									-- Rz <- Rz and Rx
+									rf_sel <= "0011"; -- set to aluout
+									alu_opsel <= alu_and&"001"; -- op1- Rx, op2- Rz
+									nextState <= aluOperation;
+									
+								when others =>
+									rf_sel <= "0011";
+									alu_opsel <= alu_and&"111";
+									nextState <= aluOperation;
+							end case;
+							
+						when ldr =>
+							alu_opsel <= "000001";
+							case address_method is
+								when am_inherent =>
+									-- do nothing
+								when am_immediate =>
+									-- Rz <- Operand
+									rf_sel <= "0000"; -- set to operand
+									ld_r <= '1';
+									nextState <= fetch;
+									
+								when am_direct =>
+									-- Rz <- M[Operand]
+									rf_sel <= "1001"; -- set to M[Operand]
+									ld_r <= '1';
+									nextState <= fetch;
+								when am_register =>
+									-- Rz <- Rx
+									rf_sel <= "1000"; -- set to Rx
+									ld_r <= '1';
+									nextState <= fetch;
+							end case;
 						
-						nextState <= aluOperation;
-						stateOut <= "101";
-					else						
-						increment <= "0000";
-						stateOut <= "101";
-						nextState <= fetch;
-					end if;
+						when others =>
+							alu_opsel <= "111000";
+					end case;
+					
+					increment <= "0000";
+					stateOut <= "101";
 				
 				when aluOperation =>
 					nextState <= loadAluResult;
@@ -168,17 +164,6 @@ architecture behavioral of control_unit is
 		end if;
 		currentState <= nextState;
 	end process;
-	
---	SWITCH_STATES : process (clk) is 
---    begin
---		if rising_edge(clk) then
---			if (reset = '1') then
---				currentState <= fetch;
---			else
---				currentState <= nextState;
---			end if;
---		end if;
---    end process;
 	
 	clkOut <= clk;
 	
