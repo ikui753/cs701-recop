@@ -47,7 +47,7 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, storeData, aluOperation, loadAluResult, storeAluResult);
+    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, delayStore, storeData, aluOperation, loadAluResult, storeAluResult);
 	 signal currentState : cuStates := fetch; -- initialise in idle state
 	 signal nextState : cuStates;
 
@@ -157,7 +157,7 @@ architecture behavioral of control_unit is
 							nextState <= selStore;
 							
 							case address_method is 
-								when am_inherent =>
+								when am_immediate =>
 									-- M[Rz] <- Operand
 									addrSel <= "00";
 									dataSel <= '1';
@@ -220,11 +220,15 @@ architecture behavioral of control_unit is
 					-- propogate through data mux
 					nextState <= storeData;
 					stateOut <= "1001";
+				
+--				when delayStore =>
+--					nextState <= storeData;
+--					stateOut <= "1010";
 	
 				when storeData =>
 					wren <= '1'; -- store data
 					nextState <= fetch;
-					stateOut <= "1010";
+					stateOut <= "1011";
 					
 				when others =>
 					ld_r <= '0';

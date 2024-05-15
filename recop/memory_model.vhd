@@ -26,7 +26,7 @@ entity memory is
 end memory;
 
 architecture beh of memory is
-	type memory_array is array (0 to 9) of bit_16;
+	type memory_array is array (0 to 11) of bit_16;
 	signal memory: memory_array:=(
 	x"0000", -- no operation
 	x"0000", -- no operation
@@ -34,10 +34,10 @@ architecture beh of memory is
 	x"0008", -- ldr Rz Operand
 	am_immediate&ldr&x"2"&x"0",
 	x"0005",
-	--am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
-	--x"0004",
+	am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
+	x"0004",
 	am_immediate&str&x"1"&x"0",
-	x"0004", -- store M[1] <- 0x0004
+	x"0002", -- store M[1] <- 0x0002
 	am_immediate&ldr& x"3"&x"0",
 	x"0007");
 	
