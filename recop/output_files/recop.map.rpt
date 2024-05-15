@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Wed May 15 14:46:08 2024
+Wed May 15 15:16:13 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -47,14 +47,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 15 14:46:08 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 15 15:16:13 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 479                                         ;
-; Total pins                      ; 250                                         ;
+; Total pins                      ; 251                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -199,25 +199,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 362         ;
+; Estimate of Logic utilization (ALMs needed) ; 376         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 389         ;
+; Combinational ALUT usage for logic          ; 431         ;
 ;     -- 7 input functions                    ; 15          ;
-;     -- 6 input functions                    ; 203         ;
-;     -- 5 input functions                    ; 37          ;
-;     -- 4 input functions                    ; 14          ;
-;     -- <=3 input functions                  ; 120         ;
+;     -- 6 input functions                    ; 206         ;
+;     -- 5 input functions                    ; 55          ;
+;     -- 4 input functions                    ; 23          ;
+;     -- <=3 input functions                  ; 132         ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 479         ;
 ;                                             ;             ;
-; I/O pins                                    ; 250         ;
+; I/O pins                                    ; 251         ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
 ; Maximum fan-out                             ; 480         ;
-; Total fan-out                               ; 3812        ;
-; Average fan-out                             ; 2.79        ;
+; Total fan-out                               ; 3993        ;
+; Average fan-out                             ; 2.83        ;
 +---------------------------------------------+-------------+
 
 
@@ -226,9 +226,9 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------+-----------------+--------------+
-; |progCounterTest           ; 389 (1)             ; 479 (0)                   ; 0                 ; 0          ; 250  ; 0            ; |progCounterTest                       ; progCounterTest ; work         ;
-;    |alu:inst9|             ; 59 (59)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9             ; alu             ; work         ;
-;    |control_unit:inst7|    ; 26 (26)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7    ; control_unit    ; work         ;
+; |progCounterTest           ; 431 (1)             ; 479 (0)                   ; 0                 ; 0          ; 251  ; 0            ; |progCounterTest                       ; progCounterTest ; work         ;
+;    |alu:inst9|             ; 70 (70)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9             ; alu             ; work         ;
+;    |control_unit:inst7|    ; 57 (57)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7    ; control_unit    ; work         ;
 ;    |instruction_reg:inst2| ; 1 (1)               ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2 ; instruction_reg ; work         ;
 ;    |memory:inst1|          ; 9 (9)               ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|memory:inst1          ; memory          ; work         ;
 ;    |program_counter:inst|  ; 17 (17)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst  ; program_counter ; work         ;
@@ -410,10 +410,11 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[9][0]               ; Stuck at GND due to stuck port data_in      ;
 ; memory:inst1|memory[9][2]               ; Stuck at VCC due to stuck port data_in      ;
 ; control_unit:inst7|rf_sel[2]            ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|alu_opsel[1]         ; Stuck at GND due to stuck port data_in      ;
 ; memory:inst1|operand_outdata[1,4..15]   ; Stuck at GND due to stuck port data_in      ;
 ; instruction_reg:inst2|operand[1,4..15]  ; Stuck at GND due to stuck port data_in      ;
 ; control_unit:inst7|nextState.writeback  ; Lost fanout                                 ;
-; Total Number of Removed Registers = 177 ;                                             ;
+; Total Number of Removed Registers = 178 ;                                             ;
 +-----------------------------------------+---------------------------------------------+
 
 
@@ -445,11 +446,11 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 479   ;
-; Number of registers using Synchronous Clear  ; 49    ;
+; Number of registers using Synchronous Clear  ; 51    ;
 ; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 395   ;
+; Number of registers using Clock Enable       ; 396   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -470,16 +471,18 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; 5:1                ; 15 bits   ; 45 LEs        ; 0 LEs                ; 45 LEs                 ; Yes        ; |progCounterTest|program_counter:inst|out_count[1] ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[5]               ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[4]               ;
 ; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[5]        ;
 ; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[10]    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux0                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux9                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux37                   ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux32               ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux49               ;
-; 65:1               ; 3 bits    ; 129 LEs       ; 18 LEs               ; 111 LEs                ; No         ; |progCounterTest|control_unit:inst7|Mux24          ;
-; 65:1               ; 8 bits    ; 344 LEs       ; 16 LEs               ; 328 LEs                ; No         ; |progCounterTest|control_unit:inst7|Mux36          ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 12 LEs               ; 76 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux27          ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 4 LEs                ; 84 LEs                 ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
+; 65:1               ; 8 bits    ; 344 LEs       ; 32 LEs               ; 312 LEs                ; No         ; |progCounterTest|control_unit:inst7|Mux35          ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 18 LEs               ; 66 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux38          ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 8 LEs                ; 80 LEs                 ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux44          ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux39          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
 
@@ -489,30 +492,31 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 479                         ;
-;     ENA               ; 346                         ;
-;     ENA SCLR          ; 17                          ;
+;     ENA               ; 345                         ;
+;     ENA SCLR          ; 19                          ;
 ;     ENA SLD           ; 32                          ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 52                          ;
-; arriav_lcell_comb     ; 390                         ;
+;     plain             ; 51                          ;
+; arriav_lcell_comb     ; 432                         ;
 ;     arith             ; 32                          ;
 ;         1 data inputs ; 16                          ;
-;         4 data inputs ; 2                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 14                          ;
 ;     extend            ; 15                          ;
 ;         7 data inputs ; 15                          ;
-;     normal            ; 343                         ;
+;     normal            ; 385                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 95                          ;
-;         4 data inputs ; 12                          ;
-;         5 data inputs ; 23                          ;
-;         6 data inputs ; 203                         ;
-; boundary_port         ; 250                         ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 103                         ;
+;         4 data inputs ; 22                          ;
+;         5 data inputs ; 41                          ;
+;         6 data inputs ; 206                         ;
+; boundary_port         ; 251                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.71                        ;
+; Average LUT depth     ; 3.73                        ;
 +-----------------------+-----------------------------+
 
 
@@ -531,7 +535,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 15 14:45:56 2024
+    Info: Processing started: Wed May 15 15:16:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -588,7 +592,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file progcou
     Info (12023): Found entity 1: progCounterTest
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
-Warning (10492): VHDL Process Statement warning at ALU.vhd(103): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at ALU.vhd(54): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at ALU.vhd(67): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at ALU.vhd(59): inferring latch(es) for signal or variable "operand_2", which holds its previous value in one or more paths through the process File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at ALU.vhd(105): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 105
+Info (10041): Inferred latch for "operand_2[0]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[1]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[2]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[3]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[4]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[5]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[6]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[7]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[8]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[9]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[10]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[11]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[12]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[13]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[14]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Info (10041): Inferred latch for "operand_2[15]" at ALU.vhd(59) File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(32): used implicit default value for signal "clr_z_flag" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 32
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 33
@@ -597,7 +620,7 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 37
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(38): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 38
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(39): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(178): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(204): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 204
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Warning (10540): VHDL Signal Declaration warning at regfile.vhd(39): used explicit default value for signal "rx_recv" because signal was never assigned a value File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 39
 Warning (10540): VHDL Signal Declaration warning at regfile.vhd(40): used explicit default value for signal "rz_recv" because signal was never assigned a value File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 40
@@ -607,6 +630,22 @@ Warning (10492): VHDL Process Statement warning at memory_model.vhd(126): signal
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst5"
+Warning (14026): LATCH primitive "alu:inst9|operand_2[0]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[1]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[2]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[3]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[4]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[5]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[6]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[7]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[8]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[9]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[10]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[11]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[12]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[13]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[14]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
+Warning (14026): LATCH primitive "alu:inst9|operand_2[15]" is permanently enabled File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 59
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rz_recv" is stuck at GND
     Warning (13410): Pin "rf_init" is stuck at GND
@@ -614,6 +653,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "increment[1]" is stuck at GND
     Warning (13410): Pin "rf_sel[2]" is stuck at GND
     Warning (13410): Pin "rx_recv" is stuck at GND
+    Warning (13410): Pin "alu_opsel[1]" is stuck at GND
     Warning (13410): Pin "dprr[1]" is stuck at GND
     Warning (13410): Pin "dprr[0]" is stuck at GND
     Warning (13410): Pin "operand_out[15]" is stuck at GND
@@ -634,14 +674,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1048 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1090 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 39 input pins
-    Info (21059): Implemented 211 output pins
-    Info (21061): Implemented 798 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 4894 megabytes
-    Info: Processing ended: Wed May 15 14:46:08 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:09
+    Info (21059): Implemented 212 output pins
+    Info (21061): Implemented 839 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Wed May 15 15:16:13 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:10
 
 

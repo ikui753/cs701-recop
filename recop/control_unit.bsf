@@ -103,8 +103,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 248 80)
 		(output)
-		(text "alu_opsel[5..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "alu_opsel[5..0]" (rect 171 75 227 87)(font "Arial" ))
+		(text "alu_opsel[6..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "alu_opsel[6..0]" (rect 171 75 227 87)(font "Arial" ))
 		(line (pt 248 80)(pt 232 80)(line_width 3))
 	)
 	(port

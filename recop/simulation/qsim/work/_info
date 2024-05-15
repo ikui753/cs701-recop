@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
 Eprogcountertest
-Z1 w1715741177
+Z1 w1715743186
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -24,18 +24,18 @@ Z11 8recop.vho
 Z12 Frecop.vho
 l0
 L38
-VPigVg_d]aOFBTR?]VYoiP1
-!s100 0]YZKhZ`zD5]mSLhYC@;11
+V;PmlkCkC;6OlJBh6W>0I^1
+!s100 =E;oK^i:Hb@cLMVzEc3hY1
 Z13 OV;C;10.5b;63
 32
-!s110 1715741177
+Z14 !s110 1715743186
 !i10b 1
-Z14 !s108 1715741177.000000
-Z15 !s90 -work|work|recop.vho|
-Z16 !s107 recop.vho|
+Z15 !s108 1715743186.000000
+Z16 !s90 -work|work|recop.vho|
+Z17 !s107 recop.vho|
 !i113 1
-Z17 o-work work
-Z18 tExplicit 1 CvgOpt 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
 Astructure
 R2
 R3
@@ -46,23 +46,23 @@ R7
 R8
 R9
 R10
-DEx4 work 15 progcountertest 0 22 PigVg_d]aOFBTR?]VYoiP1
-l1453
+DEx4 work 15 progcountertest 0 22 ;PmlkCkC;6OlJBh6W>0I^1
+l1534
 L77
-V^IMF0iabFnXkE5iTUDDCM1
-!s100 gZhE=jCIHI8Via>d;:AoB3
+VL:81Xj=g;ljY?D<zQ]XOi1
+!s100 b2:ekcS=f<hCVloToQhR62
 R13
 32
-Z19 !s110 1715741178
-!i10b 1
 R14
+!i10b 1
 R15
 R16
-!i113 1
 R17
+!i113 1
 R18
+R19
 Eprogcountertest_vhd_vec_tst
-Z20 w1715741174
+Z20 w1715743183
 R8
 R9
 R0
@@ -74,29 +74,29 @@ VgbLb09nmT9K_PlI:87AE82
 !s100 YLPEX9<Mkib2d0Nj>G@7d3
 R13
 32
-R19
+Z23 !s110 1715743187
 !i10b 1
-Z23 !s108 1715741178.000000
-Z24 !s90 -work|work|controlUnitWaveform.vwf.vht|
-Z25 !s107 controlUnitWaveform.vwf.vht|
+Z24 !s108 1715743187.000000
+Z25 !s90 -work|work|controlUnitWaveform.vwf.vht|
+Z26 !s107 controlUnitWaveform.vwf.vht|
 !i113 1
-R17
 R18
+R19
 Aprogcountertest_arch
 R8
 R9
-Z26 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
+Z27 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
 l108
 L33
-Z27 VhkVaYF0N_fTbKG`]<;LRA2
-Z28 !s100 ?EEPNI4iT4=SDKZBbhkkW3
+VkeB8i6H01=LiHP;Bgb8O=0
+!s100 L>698EN23EKSjFjhS<HaY0
 R13
 32
-R19
-!i10b 1
 R23
+!i10b 1
 R24
 R25
+R26
 !i113 1
-R17
 R18
+R19

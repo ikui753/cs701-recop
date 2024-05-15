@@ -18,7 +18,7 @@ entity alu is
 		alu_operation	: in bit_3;
 		-- operand selection
 		alu_op1_sel		: in bit_2;
-		alu_op2_sel		: in bit_1;
+		alu_op2_sel		: in bit_2;
 		alu_carry		: in bit_1;  --WARNING: carry in currently is not used
 		alu_result		: out bit_16 := X"0000";
 		-- operands
@@ -50,8 +50,8 @@ begin
 				operand_1 <= ir_operand;
 			when "10" => --not used currently
 				operand_1 <= X"0001";
-			when others =>
-				operand_1 <= X"0000";
+			when "11" =>
+				operand_1 <= rz;
 		end case;
 	end process op1_select;
 	
@@ -59,12 +59,14 @@ begin
 	op2_select: process (alu_op2_sel, rx, rz)
 	begin
 		case alu_op2_sel is
-			when '0' =>
+			when "00" =>
 				operand_2 <= rx;
-			when '1' =>
+			when "01" =>
 				operand_2 <= rz;
+			when "10" =>
+				operand_2 <= ir_operand;
 			when others =>
-				operand_2 <= X"0000";
+			
 		end case;
 	end process op2_select;
 	

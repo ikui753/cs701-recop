@@ -336,6 +336,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "alu_opsel[6]",
+					"strict" : false
+				},
+				{
 					"name" : "alu_opsel[5]",
 					"strict" : false
 				},
@@ -349,10 +353,6 @@
 				},
 				{
 					"name" : "alu_opsel[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[1]",
 					"strict" : false
 				},
 				{
