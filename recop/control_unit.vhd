@@ -68,7 +68,7 @@ architecture behavioral of control_unit is
 					wren <= '0';
 					ld_r <= '0';
 					alu_opsel <= "0000000";
-					if opcodeIn = jmp then
+					if opcodeIn = jmp or opcodeIn = present then
 						-- count already sorted, proceed to next fetch step
 					else
 						increment <= "0001"; -- increment program counter, move to next instruction
@@ -159,6 +159,7 @@ architecture behavioral of control_unit is
 								
 						when str =>
 							nextState <= selStore;
+							stateOut <= "0101";
 							
 							case address_method is 
 								when am_immediate =>
@@ -213,9 +214,12 @@ architecture behavioral of control_unit is
 							alu_opsel <= "1110000";
 					end case;
 					
-					if opcodeIn = jmp or opCodeIn = present then
+					if opcodeIn = jmp then
 						stateOut <= "0001";
 						nextState <= fetch; -- move to next instruction
+					elsif opcodeIn = present then
+						-- move to next state, no need to set increment 
+						stateOut <= "0101";
 					else
 						increment <= "0000";
 						stateOut <= "0101";
@@ -251,13 +255,11 @@ architecture behavioral of control_unit is
 					nextState <= fetch;
 					
 				when selStore =>
-					-- propogate through data mux, can read Rx and Rz
 					if opcodeIn = present then
 						-- check z, then jump
 						if presentJmp = '1' then
-							-- PC <- Operand
 							stateOut <= "0001";
-							increment <= "0100";
+							increment <= "0100"; -- PC <- Operand
 							nextState <= fetch;
 						else
 							stateOut <= "0001";
@@ -267,12 +269,14 @@ architecture behavioral of control_unit is
 					else
 						nextState <= storeData;
 						stateOut <= "1001";
+						increment <= "0000";
 					end if;
 				
 				when storeData =>
-					wren <= '1'; -- store data
-					nextState <= fetch;
-					stateOut <= "1010";
+					-- propogate through data mux, can read Rx and Rz
+						wren <= '1'; -- store data
+						nextState <= fetch;
+						stateOut <= "1010";
 					
 				when others =>
 					ld_r <= '0';
