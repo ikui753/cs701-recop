@@ -70,6 +70,9 @@ begin
 	alu: process (alu_operation, operand_1, operand_2, clk)
 	begin
 		if rising_edge(clk) then
+			-- do PRESENT instruction here?
+			
+			
 			case alu_operation is
 				when alu_add =>
 					result <= operand_2 + operand_1;

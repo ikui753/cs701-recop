@@ -36,8 +36,8 @@ architecture beh of memory is
 	x"0005",
 	am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
 	x"0004",
-	am_immediate&str&x"1"&x"0",
-	x"0002", -- store M[1] <- 0x0002
+	am_register&str&x"1"&x"2",
+	x"0002", -- store M[1] <- Rx
 	am_immediate&ldr& x"3"&x"0",
 	x"0007");
 	

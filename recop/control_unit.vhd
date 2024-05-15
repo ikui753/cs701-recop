@@ -177,11 +177,17 @@ architecture behavioral of control_unit is
 								when am_immediate => 
 									-- JMP OPERAND
 									increment <= "0101";
-									nextStage <= fetch2;
+									nextState <= fetch2;
 								when am_register =>
 									-- JMP Rxdata
 									increment <= "0100";
-									nextStage <= decode2;
+									nextState <= fetch2;
+								when others =>
+							end case;
+							
+						when present =>
+							-- only one case- PC <- Operand if RzData = 0
+							-- nextState <= selStore; -- ? selStore can check Rx and Rz
 						when ldr =>
 							nextState <= fetch;
 							case address_method is

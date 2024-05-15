@@ -1897,16 +1897,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "alu_rx_recv" (rect 2184 -128 2239 -111)(font "Intel Clear" ))
-	(pt 2248 -112)
-	(pt 2176 -112)
-)
-(connector
-	(text "alu_rz_recv" (rect 2184 -112 2239 -95)(font "Intel Clear" ))
-	(pt 2248 -96)
-	(pt 2176 -96)
-)
-(connector
 	(pt 2928 264)
 	(pt 2928 288)
 	(bus)
@@ -1941,16 +1931,6 @@ refer to the applicable agreement for further details.
 	(pt 3016 288)
 	(pt 3072 288)
 	(bus)
-)
-(connector
-	(text "rx_recv" (rect 2184 -80 2218 -63)(font "Intel Clear" ))
-	(pt 2248 -64)
-	(pt 2176 -64)
-)
-(connector
-	(text "rz_recv" (rect 2189 -96 2223 -79)(font "Intel Clear" ))
-	(pt 2176 -80)
-	(pt 2248 -80)
 )
 (connector
 	(text "increment[3..0]" (rect 706 184 776 201)(font "Intel Clear" ))
