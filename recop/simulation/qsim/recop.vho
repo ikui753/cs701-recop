@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/15/2024 22:17:27"
+-- DATE "05/15/2024 22:36:02"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -418,40 +418,51 @@ SIGNAL \svop[1]~output_o\ : std_logic;
 SIGNAL \svop[0]~output_o\ : std_logic;
 SIGNAL \clkIn~input_o\ : std_logic;
 SIGNAL \inst7|nextState.idle~q\ : std_logic;
-SIGNAL \dm_indata[11]~input_o\ : std_logic;
-SIGNAL \dm_indata[9]~input_o\ : std_logic;
-SIGNAL \inst1|memory[0][9]~q\ : std_logic;
-SIGNAL \inst1|Mux6~0_combout\ : std_logic;
-SIGNAL \inst7|Selector5~0_combout\ : std_logic;
-SIGNAL \inst7|WideOr7~combout\ : std_logic;
+SIGNAL \dm_indata[14]~input_o\ : std_logic;
+SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
+SIGNAL \inst7|nextState.storeAluResult~q\ : std_logic;
 SIGNAL \dm_indata[8]~input_o\ : std_logic;
 SIGNAL \inst1|memory[0][8]~q\ : std_logic;
 SIGNAL \inst1|Mux7~0_combout\ : std_logic;
-SIGNAL \inst2|Equal0~0_combout\ : std_logic;
+SIGNAL \dm_indata[11]~input_o\ : std_logic;
+SIGNAL \inst1|memory[0][11]~q\ : std_logic;
+SIGNAL \inst1|Mux4~0_combout\ : std_logic;
 SIGNAL \dm_indata[10]~input_o\ : std_logic;
 SIGNAL \inst1|memory[0][10]~q\ : std_logic;
 SIGNAL \inst1|Mux5~0_combout\ : std_logic;
-SIGNAL \inst7|nextState~17_combout\ : std_logic;
-SIGNAL \inst7|nextState~18_combout\ : std_logic;
-SIGNAL \inst7|nextState.selStore~q\ : std_logic;
+SIGNAL \inst7|Equal0~0_combout\ : std_logic;
+SIGNAL \inst7|OUTPUTS~0_combout\ : std_logic;
+SIGNAL \inst7|Selector8~0_combout\ : std_logic;
+SIGNAL \inst7|Selector8~1_combout\ : std_logic;
+SIGNAL \inst7|nextState.fetch~q\ : std_logic;
+SIGNAL \inst7|nextState.fetch2~q\ : std_logic;
+SIGNAL \inst7|nextState.decode~q\ : std_logic;
+SIGNAL \inst7|WideOr7~combout\ : std_logic;
 SIGNAL \inst7|WideOr8~0_combout\ : std_logic;
 SIGNAL \inst7|WideOr8~combout\ : std_logic;
+SIGNAL \inst2|Equal0~0_combout\ : std_logic;
+SIGNAL \inst7|dataSel~1_combout\ : std_logic;
+SIGNAL \inst7|nextState.decode2~q\ : std_logic;
+SIGNAL \inst7|nextState~14_combout\ : std_logic;
+SIGNAL \dm_indata[15]~input_o\ : std_logic;
+SIGNAL \inst1|memory[0][15]~q\ : std_logic;
+SIGNAL \inst1|Mux0~0_combout\ : std_logic;
+SIGNAL \inst7|nextState~15_combout\ : std_logic;
+SIGNAL \inst7|Selector12~0_combout\ : std_logic;
+SIGNAL \inst7|nextState.decode3~q\ : std_logic;
+SIGNAL \inst7|Selector5~0_combout\ : std_logic;
 SIGNAL \inst1|Equal0~0_combout\ : std_logic;
-SIGNAL \inst7|Equal0~1_combout\ : std_logic;
-SIGNAL \inst7|Equal6~0_combout\ : std_logic;
+SIGNAL \inst7|nextState~17_combout\ : std_logic;
+SIGNAL \inst7|nextState.selStore~q\ : std_logic;
 SIGNAL \inst7|Selector13~0_combout\ : std_logic;
 SIGNAL \inst7|nextState.storeData~q\ : std_logic;
 SIGNAL \inst7|Selector4~0_combout\ : std_logic;
 SIGNAL \dm_wr~input_o\ : std_logic;
 SIGNAL \inst1|memory[0][15]~0_combout\ : std_logic;
-SIGNAL \inst1|memory[0][11]~q\ : std_logic;
-SIGNAL \inst1|Mux4~0_combout\ : std_logic;
-SIGNAL \inst7|OUTPUTS~0_combout\ : std_logic;
-SIGNAL \dm_indata[14]~input_o\ : std_logic;
 SIGNAL \inst1|memory[0][14]~q\ : std_logic;
 SIGNAL \inst1|Mux1~0_combout\ : std_logic;
-SIGNAL \inst7|Selector0~0_combout\ : std_logic;
 SIGNAL \inst7|WideOr1~combout\ : std_logic;
+SIGNAL \inst7|Selector0~0_combout\ : std_logic;
 SIGNAL \inst7|Selector0~1_combout\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
 SIGNAL \inst|Equal0~0_combout\ : std_logic;
@@ -522,6 +533,7 @@ SIGNAL \inst1|memory[0][1]~q\ : std_logic;
 SIGNAL \inst1|Mux30~0_combout\ : std_logic;
 SIGNAL \inst3|Mux31~4_combout\ : std_logic;
 SIGNAL \inst3|Mux31~5_combout\ : std_logic;
+SIGNAL \inst7|Equal0~1_combout\ : std_logic;
 SIGNAL \inst7|Mux51~1_combout\ : std_logic;
 SIGNAL \inst7|Mux0~0_combout\ : std_logic;
 SIGNAL \inst7|Mux51~2_combout\ : std_logic;
@@ -529,19 +541,19 @@ SIGNAL \inst7|Mux51~3_combout\ : std_logic;
 SIGNAL \inst7|Mux51~4_combout\ : std_logic;
 SIGNAL \inst7|Selector23~1_combout\ : std_logic;
 SIGNAL \inst7|Selector23~0_combout\ : std_logic;
+SIGNAL \inst7|Mux54~0_combout\ : std_logic;
 SIGNAL \inst7|Mux50~0_combout\ : std_logic;
 SIGNAL \inst7|Mux50~1_combout\ : std_logic;
 SIGNAL \inst7|Mux50~2_combout\ : std_logic;
-SIGNAL \inst7|Mux50~3_combout\ : std_logic;
 SIGNAL \inst7|Mux51~0_combout\ : std_logic;
 SIGNAL \inst7|Selector21~0_combout\ : std_logic;
 SIGNAL \inst9|Mux15~0_combout\ : std_logic;
 SIGNAL \inst9|Add0~66_cout\ : std_logic;
-SIGNAL \inst9|Add0~9_sumout\ : std_logic;
+SIGNAL \inst9|Add0~33_sumout\ : std_logic;
 SIGNAL \inst7|Mux48~0_combout\ : std_logic;
+SIGNAL \inst7|Mux47~4_combout\ : std_logic;
 SIGNAL \inst7|Selector19~0_combout\ : std_logic;
 SIGNAL \inst7|Selector19~1_combout\ : std_logic;
-SIGNAL \inst7|Selector19~2_combout\ : std_logic;
 SIGNAL \inst9|Mux31~0_combout\ : std_logic;
 SIGNAL \inst7|Mux47~0_combout\ : std_logic;
 SIGNAL \inst7|Mux47~1_combout\ : std_logic;
@@ -555,7 +567,7 @@ SIGNAL \inst7|dataSel~0_combout\ : std_logic;
 SIGNAL \inst7|Selector26~2_combout\ : std_logic;
 SIGNAL \inst7|Selector26~3_combout\ : std_logic;
 SIGNAL \inst3|Mux31~6_combout\ : std_logic;
-SIGNAL \inst3|data_input_z[1]~0_combout\ : std_logic;
+SIGNAL \inst3|data_input_z[0]~0_combout\ : std_logic;
 SIGNAL \inst3|regs~15_combout\ : std_logic;
 SIGNAL \inst3|Decoder0~0_combout\ : std_logic;
 SIGNAL \inst3|regs[0][0]~q\ : std_logic;
@@ -601,8 +613,8 @@ SIGNAL \inst3|Mux30~3_combout\ : std_logic;
 SIGNAL \inst3|Mux30~4_combout\ : std_logic;
 SIGNAL \inst3|Mux30~5_combout\ : std_logic;
 SIGNAL \inst9|Mux14~0_combout\ : std_logic;
-SIGNAL \inst9|Add0~10\ : std_logic;
-SIGNAL \inst9|Add0~17_sumout\ : std_logic;
+SIGNAL \inst9|Add0~34\ : std_logic;
+SIGNAL \inst9|Add0~21_sumout\ : std_logic;
 SIGNAL \inst9|Mux30~0_combout\ : std_logic;
 SIGNAL \inst3|Mux30~6_combout\ : std_logic;
 SIGNAL \inst3|regs~14_combout\ : std_logic;
@@ -616,12 +628,14 @@ SIGNAL \inst|Add0~57_sumout\ : std_logic;
 SIGNAL \inst|out_count~16_combout\ : std_logic;
 SIGNAL \inst|out_count[0]~1_combout\ : std_logic;
 SIGNAL \inst|out_count[15]~2_combout\ : std_logic;
-SIGNAL \dm_indata[15]~input_o\ : std_logic;
-SIGNAL \inst1|memory[0][15]~q\ : std_logic;
-SIGNAL \inst1|Mux0~0_combout\ : std_logic;
+SIGNAL \dm_indata[12]~input_o\ : std_logic;
+SIGNAL \inst1|memory[0][12]~q\ : std_logic;
+SIGNAL \inst1|Mux3~0_combout\ : std_logic;
+SIGNAL \inst7|Equal6~0_combout\ : std_logic;
+SIGNAL \inst7|Selector1~0_combout\ : std_logic;
 SIGNAL \inst7|Selector3~0_combout\ : std_logic;
-SIGNAL \inst7|Selector8~0_combout\ : std_logic;
 SIGNAL \inst7|Selector3~1_combout\ : std_logic;
+SIGNAL \inst7|Selector3~2_combout\ : std_logic;
 SIGNAL \inst3|regs[4][2]~q\ : std_logic;
 SIGNAL \inst3|regs[8][2]~q\ : std_logic;
 SIGNAL \inst3|regs[12][2]~q\ : std_logic;
@@ -649,8 +663,8 @@ SIGNAL \inst3|Mux29~3_combout\ : std_logic;
 SIGNAL \inst3|Mux29~4_combout\ : std_logic;
 SIGNAL \inst3|Mux29~5_combout\ : std_logic;
 SIGNAL \inst9|Mux13~0_combout\ : std_logic;
-SIGNAL \inst9|Add0~18\ : std_logic;
-SIGNAL \inst9|Add0~57_sumout\ : std_logic;
+SIGNAL \inst9|Add0~22\ : std_logic;
+SIGNAL \inst9|Add0~37_sumout\ : std_logic;
 SIGNAL \inst9|Mux29~0_combout\ : std_logic;
 SIGNAL \inst3|Mux29~6_combout\ : std_logic;
 SIGNAL \inst3|regs~13_combout\ : std_logic;
@@ -663,33 +677,17 @@ SIGNAL \inst3|Mux45~4_combout\ : std_logic;
 SIGNAL \inst|Add0~58\ : std_logic;
 SIGNAL \inst|Add0~53_sumout\ : std_logic;
 SIGNAL \inst|out_count~15_combout\ : std_logic;
-SIGNAL \dm_indata[12]~input_o\ : std_logic;
-SIGNAL \inst1|memory[0][12]~q\ : std_logic;
-SIGNAL \inst1|Mux3~0_combout\ : std_logic;
-SIGNAL \inst7|Equal0~0_combout\ : std_logic;
-SIGNAL \inst7|OUTPUTS~1_combout\ : std_logic;
-SIGNAL \inst7|Selector8~1_combout\ : std_logic;
-SIGNAL \inst7|Selector8~2_combout\ : std_logic;
-SIGNAL \inst7|nextState.fetch~q\ : std_logic;
-SIGNAL \inst7|nextState.fetch2~q\ : std_logic;
-SIGNAL \inst7|nextState.decode~q\ : std_logic;
-SIGNAL \inst7|nextState.decode2~q\ : std_logic;
-SIGNAL \inst7|Selector12~0_combout\ : std_logic;
-SIGNAL \inst7|nextState.decode3~q\ : std_logic;
-SIGNAL \inst7|nextState~14_combout\ : std_logic;
-SIGNAL \inst7|Equal0~2_combout\ : std_logic;
-SIGNAL \inst7|Equal3~0_combout\ : std_logic;
-SIGNAL \inst7|nextState~15_combout\ : std_logic;
+SIGNAL \dm_indata[9]~input_o\ : std_logic;
+SIGNAL \inst1|memory[0][9]~q\ : std_logic;
+SIGNAL \inst1|Mux6~0_combout\ : std_logic;
 SIGNAL \inst7|nextState~16_combout\ : std_logic;
 SIGNAL \inst7|nextState.execution~q\ : std_logic;
 SIGNAL \inst7|Selector14~0_combout\ : std_logic;
-SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
-SIGNAL \inst7|nextState.storeAluResult~q\ : std_logic;
-SIGNAL \inst7|Mux54~0_combout\ : std_logic;
 SIGNAL \inst7|Selector6~0_combout\ : std_logic;
 SIGNAL \inst7|Selector6~1_combout\ : std_logic;
 SIGNAL \inst7|Selector6~2_combout\ : std_logic;
 SIGNAL \inst7|Selector6~3_combout\ : std_logic;
+SIGNAL \inst7|Selector6~4_combout\ : std_logic;
 SIGNAL \inst7|ld_r~q\ : std_logic;
 SIGNAL \inst1|Mux21~0_combout\ : std_logic;
 SIGNAL \inst3|regs[4][10]~q\ : std_logic;
@@ -914,8 +912,8 @@ SIGNAL \inst3|Mux28~3_combout\ : std_logic;
 SIGNAL \inst3|Mux28~4_combout\ : std_logic;
 SIGNAL \inst3|Mux28~5_combout\ : std_logic;
 SIGNAL \inst9|Mux12~0_combout\ : std_logic;
-SIGNAL \inst9|Add0~58\ : std_logic;
-SIGNAL \inst9|Add0~53_sumout\ : std_logic;
+SIGNAL \inst9|Add0~38\ : std_logic;
+SIGNAL \inst9|Add0~41_sumout\ : std_logic;
 SIGNAL \inst9|Mux28~0_combout\ : std_logic;
 SIGNAL \inst3|Mux28~6_combout\ : std_logic;
 SIGNAL \inst3|regs~12_combout\ : std_logic;
@@ -925,8 +923,8 @@ SIGNAL \inst3|Mux44~1_combout\ : std_logic;
 SIGNAL \inst3|Mux44~2_combout\ : std_logic;
 SIGNAL \inst3|Mux44~3_combout\ : std_logic;
 SIGNAL \inst3|Mux44~4_combout\ : std_logic;
-SIGNAL \inst9|Add0~54\ : std_logic;
-SIGNAL \inst9|Add0~29_sumout\ : std_logic;
+SIGNAL \inst9|Add0~42\ : std_logic;
+SIGNAL \inst9|Add0~17_sumout\ : std_logic;
 SIGNAL \inst9|Mux27~0_combout\ : std_logic;
 SIGNAL \inst3|Mux27~6_combout\ : std_logic;
 SIGNAL \inst3|regs~11_combout\ : std_logic;
@@ -936,7 +934,7 @@ SIGNAL \inst3|Mux43~1_combout\ : std_logic;
 SIGNAL \inst3|Mux43~2_combout\ : std_logic;
 SIGNAL \inst3|Mux43~3_combout\ : std_logic;
 SIGNAL \inst3|Mux43~4_combout\ : std_logic;
-SIGNAL \inst9|Add0~30\ : std_logic;
+SIGNAL \inst9|Add0~18\ : std_logic;
 SIGNAL \inst9|Add0~61_sumout\ : std_logic;
 SIGNAL \inst9|Mux26~0_combout\ : std_logic;
 SIGNAL \inst3|Mux26~6_combout\ : std_logic;
@@ -970,7 +968,7 @@ SIGNAL \inst3|Mux40~2_combout\ : std_logic;
 SIGNAL \inst3|Mux40~3_combout\ : std_logic;
 SIGNAL \inst3|Mux40~4_combout\ : std_logic;
 SIGNAL \inst9|Add0~46\ : std_logic;
-SIGNAL \inst9|Add0~33_sumout\ : std_logic;
+SIGNAL \inst9|Add0~49_sumout\ : std_logic;
 SIGNAL \inst9|Mux23~0_combout\ : std_logic;
 SIGNAL \inst3|Mux23~6_combout\ : std_logic;
 SIGNAL \inst3|regs~7_combout\ : std_logic;
@@ -980,8 +978,8 @@ SIGNAL \inst3|Mux39~1_combout\ : std_logic;
 SIGNAL \inst3|Mux39~2_combout\ : std_logic;
 SIGNAL \inst3|Mux39~3_combout\ : std_logic;
 SIGNAL \inst3|Mux39~4_combout\ : std_logic;
-SIGNAL \inst9|Add0~34\ : std_logic;
-SIGNAL \inst9|Add0~37_sumout\ : std_logic;
+SIGNAL \inst9|Add0~50\ : std_logic;
+SIGNAL \inst9|Add0~53_sumout\ : std_logic;
 SIGNAL \inst9|Mux22~0_combout\ : std_logic;
 SIGNAL \inst3|Mux22~6_combout\ : std_logic;
 SIGNAL \inst3|regs~6_combout\ : std_logic;
@@ -991,8 +989,8 @@ SIGNAL \inst3|Mux38~1_combout\ : std_logic;
 SIGNAL \inst3|Mux38~2_combout\ : std_logic;
 SIGNAL \inst3|Mux38~3_combout\ : std_logic;
 SIGNAL \inst3|Mux38~4_combout\ : std_logic;
-SIGNAL \inst9|Add0~38\ : std_logic;
-SIGNAL \inst9|Add0~41_sumout\ : std_logic;
+SIGNAL \inst9|Add0~54\ : std_logic;
+SIGNAL \inst9|Add0~57_sumout\ : std_logic;
 SIGNAL \inst9|Mux21~0_combout\ : std_logic;
 SIGNAL \inst3|Mux21~6_combout\ : std_logic;
 SIGNAL \inst3|regs~5_combout\ : std_logic;
@@ -1029,28 +1027,35 @@ SIGNAL \inst3|Mux16~2_combout\ : std_logic;
 SIGNAL \inst3|Mux16~3_combout\ : std_logic;
 SIGNAL \inst3|Mux16~4_combout\ : std_logic;
 SIGNAL \inst3|Mux16~5_combout\ : std_logic;
-SIGNAL \inst9|Mux0~0_combout\ : std_logic;
+SIGNAL \inst3|Mux16~6_combout\ : std_logic;
+SIGNAL \inst3|regs~0_combout\ : std_logic;
+SIGNAL \inst3|regs[0][15]~q\ : std_logic;
+SIGNAL \inst3|Mux48~0_combout\ : std_logic;
+SIGNAL \inst3|Mux48~1_combout\ : std_logic;
+SIGNAL \inst3|Mux48~2_combout\ : std_logic;
+SIGNAL \inst3|Mux48~3_combout\ : std_logic;
+SIGNAL \inst3|Mux48~4_combout\ : std_logic;
+SIGNAL \inst1|Mux17~0_combout\ : std_logic;
 SIGNAL \inst3|regs[4][14]~q\ : std_logic;
 SIGNAL \inst3|regs[8][14]~q\ : std_logic;
 SIGNAL \inst3|regs[12][14]~q\ : std_logic;
-SIGNAL \inst3|Mux49~0_combout\ : std_logic;
+SIGNAL \inst3|Mux33~0_combout\ : std_logic;
 SIGNAL \inst3|regs[1][14]~q\ : std_logic;
 SIGNAL \inst3|regs[5][14]~q\ : std_logic;
 SIGNAL \inst3|regs[9][14]~q\ : std_logic;
 SIGNAL \inst3|regs[13][14]~q\ : std_logic;
-SIGNAL \inst3|Mux49~1_combout\ : std_logic;
+SIGNAL \inst3|Mux33~1_combout\ : std_logic;
 SIGNAL \inst3|regs[2][14]~q\ : std_logic;
 SIGNAL \inst3|regs[6][14]~q\ : std_logic;
 SIGNAL \inst3|regs[10][14]~q\ : std_logic;
 SIGNAL \inst3|regs[14][14]~q\ : std_logic;
-SIGNAL \inst3|Mux49~2_combout\ : std_logic;
+SIGNAL \inst3|Mux33~2_combout\ : std_logic;
 SIGNAL \inst3|regs[3][14]~q\ : std_logic;
 SIGNAL \inst3|regs[7][14]~q\ : std_logic;
 SIGNAL \inst3|regs[11][14]~q\ : std_logic;
 SIGNAL \inst3|regs[15][14]~q\ : std_logic;
-SIGNAL \inst3|Mux49~3_combout\ : std_logic;
-SIGNAL \inst3|Mux49~4_combout\ : std_logic;
-SIGNAL \inst1|Mux17~0_combout\ : std_logic;
+SIGNAL \inst3|Mux33~3_combout\ : std_logic;
+SIGNAL \inst3|Mux33~4_combout\ : std_logic;
 SIGNAL \inst3|Mux17~0_combout\ : std_logic;
 SIGNAL \inst3|Mux17~1_combout\ : std_logic;
 SIGNAL \inst3|Mux17~2_combout\ : std_logic;
@@ -1115,14 +1120,6 @@ SIGNAL \inst3|Mux19~2_combout\ : std_logic;
 SIGNAL \inst3|Mux19~3_combout\ : std_logic;
 SIGNAL \inst3|Mux19~4_combout\ : std_logic;
 SIGNAL \inst3|Mux19~5_combout\ : std_logic;
-SIGNAL \inst3|Mux19~6_combout\ : std_logic;
-SIGNAL \inst3|regs~3_combout\ : std_logic;
-SIGNAL \inst3|regs[0][12]~q\ : std_logic;
-SIGNAL \inst3|Mux35~0_combout\ : std_logic;
-SIGNAL \inst3|Mux35~1_combout\ : std_logic;
-SIGNAL \inst3|Mux35~2_combout\ : std_logic;
-SIGNAL \inst3|Mux35~3_combout\ : std_logic;
-SIGNAL \inst3|Mux35~4_combout\ : std_logic;
 SIGNAL \inst9|Mux3~0_combout\ : std_logic;
 SIGNAL \inst3|regs[1][11]~q\ : std_logic;
 SIGNAL \inst3|regs[2][11]~q\ : std_logic;
@@ -1152,8 +1149,8 @@ SIGNAL \inst3|Mux20~3_combout\ : std_logic;
 SIGNAL \inst3|Mux20~4_combout\ : std_logic;
 SIGNAL \inst3|Mux20~5_combout\ : std_logic;
 SIGNAL \inst9|Mux4~0_combout\ : std_logic;
-SIGNAL \inst9|Add0~42\ : std_logic;
-SIGNAL \inst9|Add0~49_sumout\ : std_logic;
+SIGNAL \inst9|Add0~58\ : std_logic;
+SIGNAL \inst9|Add0~9_sumout\ : std_logic;
 SIGNAL \inst9|Mux20~0_combout\ : std_logic;
 SIGNAL \inst3|Mux20~6_combout\ : std_logic;
 SIGNAL \inst3|regs~4_combout\ : std_logic;
@@ -1163,8 +1160,18 @@ SIGNAL \inst3|Mux36~1_combout\ : std_logic;
 SIGNAL \inst3|Mux36~2_combout\ : std_logic;
 SIGNAL \inst3|Mux36~3_combout\ : std_logic;
 SIGNAL \inst3|Mux36~4_combout\ : std_logic;
-SIGNAL \inst9|Add0~50\ : std_logic;
-SIGNAL \inst9|Add0~2\ : std_logic;
+SIGNAL \inst9|Add0~10\ : std_logic;
+SIGNAL \inst9|Add0~13_sumout\ : std_logic;
+SIGNAL \inst9|Mux19~0_combout\ : std_logic;
+SIGNAL \inst3|Mux19~6_combout\ : std_logic;
+SIGNAL \inst3|regs~3_combout\ : std_logic;
+SIGNAL \inst3|regs[0][12]~q\ : std_logic;
+SIGNAL \inst3|Mux35~0_combout\ : std_logic;
+SIGNAL \inst3|Mux35~1_combout\ : std_logic;
+SIGNAL \inst3|Mux35~2_combout\ : std_logic;
+SIGNAL \inst3|Mux35~3_combout\ : std_logic;
+SIGNAL \inst3|Mux35~4_combout\ : std_logic;
+SIGNAL \inst9|Add0~14\ : std_logic;
 SIGNAL \inst9|Add0~25_sumout\ : std_logic;
 SIGNAL \inst9|Mux18~0_combout\ : std_logic;
 SIGNAL \inst3|Mux18~6_combout\ : std_logic;
@@ -1176,48 +1183,39 @@ SIGNAL \inst3|Mux34~2_combout\ : std_logic;
 SIGNAL \inst3|Mux34~3_combout\ : std_logic;
 SIGNAL \inst3|Mux34~4_combout\ : std_logic;
 SIGNAL \inst9|Add0~26\ : std_logic;
-SIGNAL \inst9|Add0~21_sumout\ : std_logic;
+SIGNAL \inst9|Add0~29_sumout\ : std_logic;
 SIGNAL \inst9|Mux17~0_combout\ : std_logic;
 SIGNAL \inst3|Mux17~6_combout\ : std_logic;
 SIGNAL \inst3|regs~1_combout\ : std_logic;
 SIGNAL \inst3|regs[0][14]~q\ : std_logic;
-SIGNAL \inst3|Mux33~0_combout\ : std_logic;
-SIGNAL \inst3|Mux33~1_combout\ : std_logic;
-SIGNAL \inst3|Mux33~2_combout\ : std_logic;
-SIGNAL \inst3|Mux33~3_combout\ : std_logic;
-SIGNAL \inst3|Mux33~4_combout\ : std_logic;
-SIGNAL \inst9|Add0~22\ : std_logic;
-SIGNAL \inst9|Add0~13_sumout\ : std_logic;
-SIGNAL \inst9|Mux16~0_combout\ : std_logic;
-SIGNAL \inst3|Mux16~6_combout\ : std_logic;
-SIGNAL \inst3|regs~0_combout\ : std_logic;
-SIGNAL \inst3|regs[0][15]~q\ : std_logic;
-SIGNAL \inst3|Mux48~0_combout\ : std_logic;
-SIGNAL \inst3|Mux48~1_combout\ : std_logic;
-SIGNAL \inst3|Mux48~2_combout\ : std_logic;
-SIGNAL \inst3|Mux48~3_combout\ : std_logic;
-SIGNAL \inst3|Mux48~4_combout\ : std_logic;
+SIGNAL \inst3|Mux49~0_combout\ : std_logic;
+SIGNAL \inst3|Mux49~1_combout\ : std_logic;
+SIGNAL \inst3|Mux49~2_combout\ : std_logic;
+SIGNAL \inst3|Mux49~3_combout\ : std_logic;
+SIGNAL \inst3|Mux49~4_combout\ : std_logic;
 SIGNAL \inst6|Equal0~0_combout\ : std_logic;
 SIGNAL \inst6|Equal0~1_combout\ : std_logic;
 SIGNAL \inst6|Equal0~2_combout\ : std_logic;
 SIGNAL \inst6|Equal0~3_combout\ : std_logic;
 SIGNAL \inst6|presentJmp~q\ : std_logic;
-SIGNAL \inst7|Selector1~0_combout\ : std_logic;
 SIGNAL \inst7|Selector1~1_combout\ : std_logic;
+SIGNAL \inst7|Selector1~2_combout\ : std_logic;
+SIGNAL \inst7|Selector1~3_combout\ : std_logic;
 SIGNAL \inst|Add0~54\ : std_logic;
 SIGNAL \inst|Add0~49_sumout\ : std_logic;
 SIGNAL \inst|out_count~14_combout\ : std_logic;
 SIGNAL \inst1|Mux2~0_combout\ : std_logic;
-SIGNAL \inst7|Selector19~3_combout\ : std_logic;
+SIGNAL \inst7|Selector19~2_combout\ : std_logic;
+SIGNAL \inst9|Mux0~0_combout\ : std_logic;
+SIGNAL \inst9|Add0~30\ : std_logic;
 SIGNAL \inst9|Add0~1_sumout\ : std_logic;
-SIGNAL \inst9|Mux19~0_combout\ : std_logic;
+SIGNAL \inst9|Mux16~0_combout\ : std_logic;
 SIGNAL \inst9|Equal0~0_combout\ : std_logic;
 SIGNAL \inst9|Equal0~1_combout\ : std_logic;
 SIGNAL \inst9|Equal0~2_combout\ : std_logic;
 SIGNAL \inst9|Equal0~3_combout\ : std_logic;
 SIGNAL \inst9|z_flag~q\ : std_logic;
 SIGNAL \inst7|dataSel~3_combout\ : std_logic;
-SIGNAL \inst7|dataSel~1_combout\ : std_logic;
 SIGNAL \inst7|dataSel~2_combout\ : std_logic;
 SIGNAL \inst7|dataSel~q\ : std_logic;
 SIGNAL \sip[15]~input_o\ : std_logic;
@@ -1283,6 +1281,7 @@ SIGNAL \inst4|altsyncram_component|auto_generated|q_a\ : std_logic_vector(15 DOW
 SIGNAL \inst7|alu_opsel\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \inst5|dpcr\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \inst|out_count\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst7|stateOut\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst9|result\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst3|data_input_z\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst7|addrSel\ : std_logic_vector(1 DOWNTO 0);
@@ -1290,19 +1289,16 @@ SIGNAL \inst6|addrOut\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst1|pm_outdata\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst7|increment\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst2|rx\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst9|alu_result\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst7|rf_sel\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst5|sip_r\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst2|rz\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst9|alu_result\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst7|stateOut\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst2|opcode\ : std_logic_vector(5 DOWNTO 0);
 SIGNAL \inst2|address_method\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst2|operand\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst5|sop\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst5|svop\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst1|operand_outdata\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \ALT_INV_dm_wr~input_o\ : std_logic;
-SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux31~5_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux31~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux31~3_combout\ : std_logic;
@@ -1384,6 +1380,8 @@ SIGNAL \inst3|ALT_INV_Mux19~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux18~5_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux18~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux18~3_combout\ : std_logic;
+SIGNAL \ALT_INV_dm_wr~input_o\ : std_logic;
+SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux18~2_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux18~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux18~0_combout\ : std_logic;
@@ -1394,171 +1392,281 @@ SIGNAL \inst3|ALT_INV_Mux17~2_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux17~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux17~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux16~5_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_data_input_z\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst9|ALT_INV_result\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst3|ALT_INV_Mux16~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector8~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState~15_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux10~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux5~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux6~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux7~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux8~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux12~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux13~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux15~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux1~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux2~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux14~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux11~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux3~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux4~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux9~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count[0]~17_combout\ : std_logic;
+SIGNAL \inst|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux51~4_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux51~3_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux51~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux51~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux50~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux50~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector19~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux51~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux47~4_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux47~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux47~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux47~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_WideOr8~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.fetch2~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector27~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector26~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector26~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector26~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector24~3_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector24~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector24~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector24~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector6~3_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector6~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector6~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector6~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState~14_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux54~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector14~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_OUTPUTS~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector3~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector3~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector1~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector1~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector1~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.selStore~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_WideOr1~combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.execution~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.decode2~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.loadAluResult~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.decode~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.storeData~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.storeAluResult~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.fetch~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_Equal6~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.idle~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][0]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][1]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][2]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][3]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][4]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][5]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][6]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][7]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][8]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][9]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][10]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][11]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][12]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][13]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][14]~q\ : std_logic;
+SIGNAL \inst1|ALT_INV_memory[0][15]~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux55~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_dataSel~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_dataSel~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.decode3~q\ : std_logic;
+SIGNAL \inst6|ALT_INV_Equal0~2_combout\ : std_logic;
+SIGNAL \inst6|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \inst6|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Equal0~2_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Equal0~1_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Equal0~0_combout\ : std_logic;
 SIGNAL \inst|ALT_INV_out_count\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst2|ALT_INV_operand\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst2|ALT_INV_address_method\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \inst9|ALT_INV_alu_result\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst7|ALT_INV_wren~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_alu_opsel\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \inst3|ALT_INV_regs[3][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][15]~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_increment\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst7|ALT_INV_addrSel\ : std_logic_vector(1 DOWNTO 1);
-SIGNAL \inst6|ALT_INV_presentJmp~q\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~61_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~57_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~53_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~49_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~45_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~41_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~37_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~33_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~29_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~25_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~21_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~17_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~13_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~9_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~5_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~57_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~53_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~49_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~45_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~41_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~37_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~33_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~29_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~25_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~21_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~17_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
-SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][10]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][11]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux35~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux35~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux35~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux35~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux35~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][12]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux34~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux34~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux34~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux34~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux34~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][13]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux33~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux33~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux33~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux33~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux33~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux32~4_combout\ : std_logic;
-SIGNAL \inst2|ALT_INV_rx\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst3|ALT_INV_Mux32~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux32~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux32~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux32~0_combout\ : std_logic;
+SIGNAL \inst2|ALT_INV_opcode\ : std_logic_vector(5 DOWNTO 0);
+SIGNAL \inst7|ALT_INV_stateOut\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst3|ALT_INV_Mux63~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux63~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux63~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux63~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux63~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux62~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux62~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux62~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux62~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux62~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux61~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux61~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux61~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux61~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux61~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux60~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux60~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux60~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux60~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux60~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux59~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux59~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux59~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux59~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux59~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux58~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux58~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux58~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux58~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux58~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux57~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux57~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux57~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux57~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux57~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux56~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux56~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux56~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux56~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux56~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux55~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux55~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux55~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux55~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux55~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux54~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux54~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux54~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux54~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux54~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux53~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux53~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux53~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux53~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux53~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux52~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux52~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux52~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux52~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux52~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux51~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux51~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux51~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux51~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux51~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux50~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux50~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux50~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux50~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux50~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux49~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux49~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux49~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux49~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux49~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux48~4_combout\ : std_logic;
+SIGNAL \inst2|ALT_INV_rz\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst3|ALT_INV_Mux48~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux48~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux48~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux48~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_rf_sel\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst7|ALT_INV_ld_r~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux47~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux47~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux47~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux47~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux47~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][0]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux46~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux46~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux46~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux46~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux46~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][1]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux45~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux45~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux45~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux45~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux45~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux44~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux44~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux44~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux44~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux44~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][3]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][3]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux43~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux43~3_combout\ : std_logic;
@@ -1686,280 +1794,169 @@ SIGNAL \inst3|ALT_INV_regs[3][9]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][9]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][9]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux51~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux51~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux50~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux50~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux50~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux50~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux50~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux49~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux49~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux49~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux49~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux49~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux48~4_combout\ : std_logic;
-SIGNAL \inst2|ALT_INV_rz\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst3|ALT_INV_Mux48~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux48~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux48~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux48~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_rf_sel\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst7|ALT_INV_ld_r~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux47~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux47~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux47~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux47~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux47~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][0]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux46~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux46~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux46~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux46~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux46~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][1]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux45~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux45~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux45~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux45~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux45~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux44~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux44~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux44~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux44~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux44~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][3]~q\ : std_logic;
-SIGNAL \inst2|ALT_INV_operand\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst2|ALT_INV_address_method\ : std_logic_vector(1 DOWNTO 0);
-SIGNAL \inst9|ALT_INV_alu_result\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst7|ALT_INV_wren~q\ : std_logic;
-SIGNAL \inst2|ALT_INV_opcode\ : std_logic_vector(5 DOWNTO 0);
-SIGNAL \inst7|ALT_INV_stateOut\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst3|ALT_INV_Mux63~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux63~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux63~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux63~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux63~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux62~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux62~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux62~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux62~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux62~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux61~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux61~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux61~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux61~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux61~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux60~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux60~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux60~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux60~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux60~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux59~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux59~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux59~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux59~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux59~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux58~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux58~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux58~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux58~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux58~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux57~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux57~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux57~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux57~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux57~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux56~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux56~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux56~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux56~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux56~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux55~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux55~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux55~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux55~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux55~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux54~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux54~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux54~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux54~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux54~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux53~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux53~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux53~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux53~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux53~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux52~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux52~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux52~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux52~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux52~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux51~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux51~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux51~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector3~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector1~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector8~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.selStore~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Equal6~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_WideOr1~combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.decode2~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.loadAluResult~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.decode~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.storeData~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.storeAluResult~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector0~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.fetch~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_OUTPUTS~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.idle~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][0]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][1]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][2]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][3]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][4]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][5]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][6]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][7]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][8]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][9]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][10]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][11]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][12]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][13]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][14]~q\ : std_logic;
-SIGNAL \inst1|ALT_INV_memory[0][15]~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux55~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.decode3~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_dataSel~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_dataSel~0_combout\ : std_logic;
-SIGNAL \inst6|ALT_INV_Equal0~2_combout\ : std_logic;
-SIGNAL \inst6|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \inst6|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Equal0~2_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Equal0~1_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState~17_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState~15_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Equal3~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Equal0~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState~14_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector8~1_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux10~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux13~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux12~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux4~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux8~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux5~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux6~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux7~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux11~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux2~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux1~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux14~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux15~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux9~0_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Mux3~0_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_out_count[0]~17_combout\ : std_logic;
-SIGNAL \inst|ALT_INV_Equal0~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux51~4_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux51~3_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux51~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux51~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux50~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux50~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux50~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector19~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux51~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector19~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux47~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux47~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux47~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_WideOr8~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.fetch2~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector27~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector26~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector26~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector26~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector24~3_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector24~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector24~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector24~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector6~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector6~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector6~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_OUTPUTS~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux54~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][10]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][11]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux35~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux35~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux35~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux35~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux35~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][12]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux34~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux34~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux34~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux34~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux34~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][13]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux33~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux33~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux33~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux33~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux33~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux32~4_combout\ : std_logic;
+SIGNAL \inst2|ALT_INV_rx\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst3|ALT_INV_Mux32~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux32~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux32~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux32~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][15]~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_increment\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst7|ALT_INV_addrSel\ : std_logic_vector(1 DOWNTO 1);
+SIGNAL \inst6|ALT_INV_presentJmp~q\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~61_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~57_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~53_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~49_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~45_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~41_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~37_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~33_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~29_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~25_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~21_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~17_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~13_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~9_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~5_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~1_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~57_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~53_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~49_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~45_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~41_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~37_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~33_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~29_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~25_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~21_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~17_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
+SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
+SIGNAL \inst3|ALT_INV_data_input_z\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst9|ALT_INV_result\ : std_logic_vector(15 DOWNTO 0);
 
 BEGIN
 
@@ -2114,8 +2111,6 @@ ww_devpor <= devpor;
 \inst6|addrOut\(4) & \inst6|addrOut\(3) & \inst6|addrOut\(2) & \inst6|addrOut\(1) & \inst6|addrOut\(0));
 
 \inst4|altsyncram_component|auto_generated|q_a\(0) <= \inst4|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus\(0);
-\ALT_INV_dm_wr~input_o\ <= NOT \dm_wr~input_o\;
-\ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
 \inst3|ALT_INV_Mux31~5_combout\ <= NOT \inst3|Mux31~5_combout\;
 \inst3|ALT_INV_Mux31~4_combout\ <= NOT \inst3|Mux31~4_combout\;
 \inst3|ALT_INV_Mux31~3_combout\ <= NOT \inst3|Mux31~3_combout\;
@@ -2197,6 +2192,8 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_Mux18~5_combout\ <= NOT \inst3|Mux18~5_combout\;
 \inst3|ALT_INV_Mux18~4_combout\ <= NOT \inst3|Mux18~4_combout\;
 \inst3|ALT_INV_Mux18~3_combout\ <= NOT \inst3|Mux18~3_combout\;
+\ALT_INV_dm_wr~input_o\ <= NOT \dm_wr~input_o\;
+\ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
 \inst3|ALT_INV_Mux18~2_combout\ <= NOT \inst3|Mux18~2_combout\;
 \inst3|ALT_INV_Mux18~1_combout\ <= NOT \inst3|Mux18~1_combout\;
 \inst3|ALT_INV_Mux18~0_combout\ <= NOT \inst3|Mux18~0_combout\;
@@ -2207,224 +2204,325 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_Mux17~1_combout\ <= NOT \inst3|Mux17~1_combout\;
 \inst3|ALT_INV_Mux17~0_combout\ <= NOT \inst3|Mux17~0_combout\;
 \inst3|ALT_INV_Mux16~5_combout\ <= NOT \inst3|Mux16~5_combout\;
-\inst3|ALT_INV_data_input_z\(6) <= NOT \inst3|data_input_z\(6);
-\inst3|ALT_INV_data_input_z\(7) <= NOT \inst3|data_input_z\(7);
-\inst3|ALT_INV_data_input_z\(8) <= NOT \inst3|data_input_z\(8);
-\inst3|ALT_INV_data_input_z\(9) <= NOT \inst3|data_input_z\(9);
-\inst3|ALT_INV_data_input_z\(10) <= NOT \inst3|data_input_z\(10);
-\inst3|ALT_INV_data_input_z\(11) <= NOT \inst3|data_input_z\(11);
-\inst3|ALT_INV_data_input_z\(12) <= NOT \inst3|data_input_z\(12);
-\inst3|ALT_INV_data_input_z\(13) <= NOT \inst3|data_input_z\(13);
-\inst3|ALT_INV_data_input_z\(14) <= NOT \inst3|data_input_z\(14);
-\inst3|ALT_INV_data_input_z\(15) <= NOT \inst3|data_input_z\(15);
-\inst9|ALT_INV_result\(5) <= NOT \inst9|result\(5);
-\inst9|ALT_INV_result\(2) <= NOT \inst9|result\(2);
-\inst9|ALT_INV_result\(3) <= NOT \inst9|result\(3);
-\inst9|ALT_INV_result\(11) <= NOT \inst9|result\(11);
-\inst9|ALT_INV_result\(7) <= NOT \inst9|result\(7);
-\inst9|ALT_INV_result\(10) <= NOT \inst9|result\(10);
-\inst9|ALT_INV_result\(9) <= NOT \inst9|result\(9);
-\inst9|ALT_INV_result\(8) <= NOT \inst9|result\(8);
-\inst9|ALT_INV_result\(4) <= NOT \inst9|result\(4);
-\inst9|ALT_INV_result\(13) <= NOT \inst9|result\(13);
-\inst9|ALT_INV_result\(14) <= NOT \inst9|result\(14);
-\inst9|ALT_INV_result\(1) <= NOT \inst9|result\(1);
-\inst9|ALT_INV_result\(15) <= NOT \inst9|result\(15);
-\inst9|ALT_INV_result\(0) <= NOT \inst9|result\(0);
-\inst9|ALT_INV_result\(6) <= NOT \inst9|result\(6);
-\inst9|ALT_INV_result\(12) <= NOT \inst9|result\(12);
-\inst|ALT_INV_out_count\(1) <= NOT \inst|out_count\(1);
-\inst|ALT_INV_out_count\(2) <= NOT \inst|out_count\(2);
-\inst|ALT_INV_out_count\(3) <= NOT \inst|out_count\(3);
-\inst|ALT_INV_out_count\(4) <= NOT \inst|out_count\(4);
-\inst|ALT_INV_out_count\(5) <= NOT \inst|out_count\(5);
-\inst|ALT_INV_out_count\(6) <= NOT \inst|out_count\(6);
-\inst|ALT_INV_out_count\(7) <= NOT \inst|out_count\(7);
-\inst|ALT_INV_out_count\(8) <= NOT \inst|out_count\(8);
-\inst|ALT_INV_out_count\(9) <= NOT \inst|out_count\(9);
-\inst|ALT_INV_out_count\(10) <= NOT \inst|out_count\(10);
-\inst|ALT_INV_out_count\(11) <= NOT \inst|out_count\(11);
-\inst|ALT_INV_out_count\(12) <= NOT \inst|out_count\(12);
-\inst|ALT_INV_out_count\(13) <= NOT \inst|out_count\(13);
-\inst|ALT_INV_out_count\(14) <= NOT \inst|out_count\(14);
-\inst|ALT_INV_out_count\(15) <= NOT \inst|out_count\(15);
-\inst7|ALT_INV_alu_opsel\(0) <= NOT \inst7|alu_opsel\(0);
-\inst7|ALT_INV_alu_opsel\(2) <= NOT \inst7|alu_opsel\(2);
-\inst7|ALT_INV_alu_opsel\(3) <= NOT \inst7|alu_opsel\(3);
-\inst7|ALT_INV_alu_opsel\(5) <= NOT \inst7|alu_opsel\(5);
-\inst7|ALT_INV_alu_opsel\(6) <= NOT \inst7|alu_opsel\(6);
-\inst3|ALT_INV_regs[3][15]~q\ <= NOT \inst3|regs[3][15]~q\;
-\inst3|ALT_INV_regs[2][15]~q\ <= NOT \inst3|regs[2][15]~q\;
-\inst3|ALT_INV_regs[1][15]~q\ <= NOT \inst3|regs[1][15]~q\;
-\inst3|ALT_INV_regs[0][15]~q\ <= NOT \inst3|regs[0][15]~q\;
-\inst7|ALT_INV_increment\(0) <= NOT \inst7|increment\(0);
-\inst7|ALT_INV_increment\(2) <= NOT \inst7|increment\(2);
-\inst7|ALT_INV_increment\(3) <= NOT \inst7|increment\(3);
-\inst7|ALT_INV_addrSel\(1) <= NOT \inst7|addrSel\(1);
-\inst6|ALT_INV_presentJmp~q\ <= NOT \inst6|presentJmp~q\;
-\inst9|ALT_INV_Add0~61_sumout\ <= NOT \inst9|Add0~61_sumout\;
-\inst9|ALT_INV_Add0~57_sumout\ <= NOT \inst9|Add0~57_sumout\;
-\inst9|ALT_INV_Add0~53_sumout\ <= NOT \inst9|Add0~53_sumout\;
-\inst9|ALT_INV_Add0~49_sumout\ <= NOT \inst9|Add0~49_sumout\;
-\inst9|ALT_INV_Add0~45_sumout\ <= NOT \inst9|Add0~45_sumout\;
-\inst9|ALT_INV_Add0~41_sumout\ <= NOT \inst9|Add0~41_sumout\;
-\inst9|ALT_INV_Add0~37_sumout\ <= NOT \inst9|Add0~37_sumout\;
-\inst9|ALT_INV_Add0~33_sumout\ <= NOT \inst9|Add0~33_sumout\;
-\inst9|ALT_INV_Add0~29_sumout\ <= NOT \inst9|Add0~29_sumout\;
-\inst9|ALT_INV_Add0~25_sumout\ <= NOT \inst9|Add0~25_sumout\;
-\inst9|ALT_INV_Add0~21_sumout\ <= NOT \inst9|Add0~21_sumout\;
-\inst9|ALT_INV_Add0~17_sumout\ <= NOT \inst9|Add0~17_sumout\;
-\inst9|ALT_INV_Add0~13_sumout\ <= NOT \inst9|Add0~13_sumout\;
-\inst9|ALT_INV_Add0~9_sumout\ <= NOT \inst9|Add0~9_sumout\;
-\inst9|ALT_INV_Add0~5_sumout\ <= NOT \inst9|Add0~5_sumout\;
-\inst9|ALT_INV_Add0~1_sumout\ <= NOT \inst9|Add0~1_sumout\;
-\inst|ALT_INV_Add0~57_sumout\ <= NOT \inst|Add0~57_sumout\;
-\inst|ALT_INV_Add0~53_sumout\ <= NOT \inst|Add0~53_sumout\;
-\inst|ALT_INV_Add0~49_sumout\ <= NOT \inst|Add0~49_sumout\;
-\inst|ALT_INV_Add0~45_sumout\ <= NOT \inst|Add0~45_sumout\;
-\inst|ALT_INV_Add0~41_sumout\ <= NOT \inst|Add0~41_sumout\;
-\inst|ALT_INV_Add0~37_sumout\ <= NOT \inst|Add0~37_sumout\;
-\inst|ALT_INV_Add0~33_sumout\ <= NOT \inst|Add0~33_sumout\;
-\inst|ALT_INV_Add0~29_sumout\ <= NOT \inst|Add0~29_sumout\;
-\inst|ALT_INV_Add0~25_sumout\ <= NOT \inst|Add0~25_sumout\;
-\inst|ALT_INV_Add0~21_sumout\ <= NOT \inst|Add0~21_sumout\;
-\inst|ALT_INV_Add0~17_sumout\ <= NOT \inst|Add0~17_sumout\;
-\inst|ALT_INV_Add0~13_sumout\ <= NOT \inst|Add0~13_sumout\;
-\inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
-\inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
-\inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
-\inst3|ALT_INV_data_input_z\(0) <= NOT \inst3|data_input_z\(0);
-\inst3|ALT_INV_data_input_z\(1) <= NOT \inst3|data_input_z\(1);
-\inst3|ALT_INV_data_input_z\(2) <= NOT \inst3|data_input_z\(2);
-\inst3|ALT_INV_data_input_z\(3) <= NOT \inst3|data_input_z\(3);
-\inst3|ALT_INV_data_input_z\(4) <= NOT \inst3|data_input_z\(4);
-\inst3|ALT_INV_data_input_z\(5) <= NOT \inst3|data_input_z\(5);
-\inst3|ALT_INV_Mux37~4_combout\ <= NOT \inst3|Mux37~4_combout\;
-\inst3|ALT_INV_Mux37~3_combout\ <= NOT \inst3|Mux37~3_combout\;
-\inst3|ALT_INV_regs[15][10]~q\ <= NOT \inst3|regs[15][10]~q\;
-\inst3|ALT_INV_regs[11][10]~q\ <= NOT \inst3|regs[11][10]~q\;
-\inst3|ALT_INV_regs[7][10]~q\ <= NOT \inst3|regs[7][10]~q\;
-\inst3|ALT_INV_regs[3][10]~q\ <= NOT \inst3|regs[3][10]~q\;
-\inst3|ALT_INV_Mux37~2_combout\ <= NOT \inst3|Mux37~2_combout\;
-\inst3|ALT_INV_regs[14][10]~q\ <= NOT \inst3|regs[14][10]~q\;
-\inst3|ALT_INV_regs[10][10]~q\ <= NOT \inst3|regs[10][10]~q\;
-\inst3|ALT_INV_regs[6][10]~q\ <= NOT \inst3|regs[6][10]~q\;
-\inst3|ALT_INV_regs[2][10]~q\ <= NOT \inst3|regs[2][10]~q\;
-\inst3|ALT_INV_Mux37~1_combout\ <= NOT \inst3|Mux37~1_combout\;
-\inst3|ALT_INV_regs[13][10]~q\ <= NOT \inst3|regs[13][10]~q\;
-\inst3|ALT_INV_regs[9][10]~q\ <= NOT \inst3|regs[9][10]~q\;
-\inst3|ALT_INV_regs[5][10]~q\ <= NOT \inst3|regs[5][10]~q\;
-\inst3|ALT_INV_regs[1][10]~q\ <= NOT \inst3|regs[1][10]~q\;
-\inst3|ALT_INV_Mux37~0_combout\ <= NOT \inst3|Mux37~0_combout\;
-\inst3|ALT_INV_regs[12][10]~q\ <= NOT \inst3|regs[12][10]~q\;
-\inst3|ALT_INV_regs[8][10]~q\ <= NOT \inst3|regs[8][10]~q\;
-\inst3|ALT_INV_regs[4][10]~q\ <= NOT \inst3|regs[4][10]~q\;
-\inst3|ALT_INV_regs[0][10]~q\ <= NOT \inst3|regs[0][10]~q\;
-\inst3|ALT_INV_Mux36~4_combout\ <= NOT \inst3|Mux36~4_combout\;
-\inst3|ALT_INV_Mux36~3_combout\ <= NOT \inst3|Mux36~3_combout\;
-\inst3|ALT_INV_regs[15][11]~q\ <= NOT \inst3|regs[15][11]~q\;
-\inst3|ALT_INV_regs[14][11]~q\ <= NOT \inst3|regs[14][11]~q\;
-\inst3|ALT_INV_regs[13][11]~q\ <= NOT \inst3|regs[13][11]~q\;
-\inst3|ALT_INV_regs[12][11]~q\ <= NOT \inst3|regs[12][11]~q\;
-\inst3|ALT_INV_Mux36~2_combout\ <= NOT \inst3|Mux36~2_combout\;
-\inst3|ALT_INV_regs[11][11]~q\ <= NOT \inst3|regs[11][11]~q\;
-\inst3|ALT_INV_regs[10][11]~q\ <= NOT \inst3|regs[10][11]~q\;
-\inst3|ALT_INV_regs[9][11]~q\ <= NOT \inst3|regs[9][11]~q\;
-\inst3|ALT_INV_regs[8][11]~q\ <= NOT \inst3|regs[8][11]~q\;
-\inst3|ALT_INV_Mux36~1_combout\ <= NOT \inst3|Mux36~1_combout\;
-\inst3|ALT_INV_regs[7][11]~q\ <= NOT \inst3|regs[7][11]~q\;
-\inst3|ALT_INV_regs[6][11]~q\ <= NOT \inst3|regs[6][11]~q\;
-\inst3|ALT_INV_regs[5][11]~q\ <= NOT \inst3|regs[5][11]~q\;
-\inst3|ALT_INV_regs[4][11]~q\ <= NOT \inst3|regs[4][11]~q\;
-\inst3|ALT_INV_Mux36~0_combout\ <= NOT \inst3|Mux36~0_combout\;
-\inst3|ALT_INV_regs[3][11]~q\ <= NOT \inst3|regs[3][11]~q\;
-\inst3|ALT_INV_regs[2][11]~q\ <= NOT \inst3|regs[2][11]~q\;
-\inst3|ALT_INV_regs[1][11]~q\ <= NOT \inst3|regs[1][11]~q\;
-\inst3|ALT_INV_regs[0][11]~q\ <= NOT \inst3|regs[0][11]~q\;
-\inst3|ALT_INV_Mux35~4_combout\ <= NOT \inst3|Mux35~4_combout\;
-\inst3|ALT_INV_Mux35~3_combout\ <= NOT \inst3|Mux35~3_combout\;
-\inst3|ALT_INV_regs[15][12]~q\ <= NOT \inst3|regs[15][12]~q\;
-\inst3|ALT_INV_regs[11][12]~q\ <= NOT \inst3|regs[11][12]~q\;
-\inst3|ALT_INV_regs[7][12]~q\ <= NOT \inst3|regs[7][12]~q\;
-\inst3|ALT_INV_regs[3][12]~q\ <= NOT \inst3|regs[3][12]~q\;
-\inst3|ALT_INV_Mux35~2_combout\ <= NOT \inst3|Mux35~2_combout\;
-\inst3|ALT_INV_regs[14][12]~q\ <= NOT \inst3|regs[14][12]~q\;
-\inst3|ALT_INV_regs[10][12]~q\ <= NOT \inst3|regs[10][12]~q\;
-\inst3|ALT_INV_regs[6][12]~q\ <= NOT \inst3|regs[6][12]~q\;
-\inst3|ALT_INV_regs[2][12]~q\ <= NOT \inst3|regs[2][12]~q\;
-\inst3|ALT_INV_Mux35~1_combout\ <= NOT \inst3|Mux35~1_combout\;
-\inst3|ALT_INV_regs[13][12]~q\ <= NOT \inst3|regs[13][12]~q\;
-\inst3|ALT_INV_regs[9][12]~q\ <= NOT \inst3|regs[9][12]~q\;
-\inst3|ALT_INV_regs[5][12]~q\ <= NOT \inst3|regs[5][12]~q\;
-\inst3|ALT_INV_regs[1][12]~q\ <= NOT \inst3|regs[1][12]~q\;
-\inst3|ALT_INV_Mux35~0_combout\ <= NOT \inst3|Mux35~0_combout\;
-\inst3|ALT_INV_regs[12][12]~q\ <= NOT \inst3|regs[12][12]~q\;
-\inst3|ALT_INV_regs[8][12]~q\ <= NOT \inst3|regs[8][12]~q\;
-\inst3|ALT_INV_regs[4][12]~q\ <= NOT \inst3|regs[4][12]~q\;
-\inst3|ALT_INV_regs[0][12]~q\ <= NOT \inst3|regs[0][12]~q\;
-\inst3|ALT_INV_Mux34~4_combout\ <= NOT \inst3|Mux34~4_combout\;
-\inst3|ALT_INV_Mux34~3_combout\ <= NOT \inst3|Mux34~3_combout\;
-\inst3|ALT_INV_regs[15][13]~q\ <= NOT \inst3|regs[15][13]~q\;
-\inst3|ALT_INV_regs[14][13]~q\ <= NOT \inst3|regs[14][13]~q\;
-\inst3|ALT_INV_regs[13][13]~q\ <= NOT \inst3|regs[13][13]~q\;
-\inst3|ALT_INV_regs[12][13]~q\ <= NOT \inst3|regs[12][13]~q\;
-\inst3|ALT_INV_Mux34~2_combout\ <= NOT \inst3|Mux34~2_combout\;
-\inst3|ALT_INV_regs[11][13]~q\ <= NOT \inst3|regs[11][13]~q\;
-\inst3|ALT_INV_regs[10][13]~q\ <= NOT \inst3|regs[10][13]~q\;
-\inst3|ALT_INV_regs[9][13]~q\ <= NOT \inst3|regs[9][13]~q\;
-\inst3|ALT_INV_regs[8][13]~q\ <= NOT \inst3|regs[8][13]~q\;
-\inst3|ALT_INV_Mux34~1_combout\ <= NOT \inst3|Mux34~1_combout\;
-\inst3|ALT_INV_regs[7][13]~q\ <= NOT \inst3|regs[7][13]~q\;
-\inst3|ALT_INV_regs[6][13]~q\ <= NOT \inst3|regs[6][13]~q\;
-\inst3|ALT_INV_regs[5][13]~q\ <= NOT \inst3|regs[5][13]~q\;
-\inst3|ALT_INV_regs[4][13]~q\ <= NOT \inst3|regs[4][13]~q\;
-\inst3|ALT_INV_Mux34~0_combout\ <= NOT \inst3|Mux34~0_combout\;
-\inst3|ALT_INV_regs[3][13]~q\ <= NOT \inst3|regs[3][13]~q\;
-\inst3|ALT_INV_regs[2][13]~q\ <= NOT \inst3|regs[2][13]~q\;
-\inst3|ALT_INV_regs[1][13]~q\ <= NOT \inst3|regs[1][13]~q\;
-\inst3|ALT_INV_regs[0][13]~q\ <= NOT \inst3|regs[0][13]~q\;
-\inst3|ALT_INV_Mux33~4_combout\ <= NOT \inst3|Mux33~4_combout\;
-\inst3|ALT_INV_Mux33~3_combout\ <= NOT \inst3|Mux33~3_combout\;
-\inst3|ALT_INV_regs[15][14]~q\ <= NOT \inst3|regs[15][14]~q\;
-\inst3|ALT_INV_regs[11][14]~q\ <= NOT \inst3|regs[11][14]~q\;
-\inst3|ALT_INV_regs[7][14]~q\ <= NOT \inst3|regs[7][14]~q\;
-\inst3|ALT_INV_regs[3][14]~q\ <= NOT \inst3|regs[3][14]~q\;
-\inst3|ALT_INV_Mux33~2_combout\ <= NOT \inst3|Mux33~2_combout\;
-\inst3|ALT_INV_regs[14][14]~q\ <= NOT \inst3|regs[14][14]~q\;
-\inst3|ALT_INV_regs[10][14]~q\ <= NOT \inst3|regs[10][14]~q\;
-\inst3|ALT_INV_regs[6][14]~q\ <= NOT \inst3|regs[6][14]~q\;
-\inst3|ALT_INV_regs[2][14]~q\ <= NOT \inst3|regs[2][14]~q\;
-\inst3|ALT_INV_Mux33~1_combout\ <= NOT \inst3|Mux33~1_combout\;
-\inst3|ALT_INV_regs[13][14]~q\ <= NOT \inst3|regs[13][14]~q\;
-\inst3|ALT_INV_regs[9][14]~q\ <= NOT \inst3|regs[9][14]~q\;
-\inst3|ALT_INV_regs[5][14]~q\ <= NOT \inst3|regs[5][14]~q\;
-\inst3|ALT_INV_regs[1][14]~q\ <= NOT \inst3|regs[1][14]~q\;
-\inst3|ALT_INV_Mux33~0_combout\ <= NOT \inst3|Mux33~0_combout\;
-\inst3|ALT_INV_regs[12][14]~q\ <= NOT \inst3|regs[12][14]~q\;
-\inst3|ALT_INV_regs[8][14]~q\ <= NOT \inst3|regs[8][14]~q\;
-\inst3|ALT_INV_regs[4][14]~q\ <= NOT \inst3|regs[4][14]~q\;
-\inst3|ALT_INV_regs[0][14]~q\ <= NOT \inst3|regs[0][14]~q\;
-\inst3|ALT_INV_Mux32~4_combout\ <= NOT \inst3|Mux32~4_combout\;
-\inst2|ALT_INV_rx\(3) <= NOT \inst2|rx\(3);
-\inst2|ALT_INV_rx\(2) <= NOT \inst2|rx\(2);
-\inst3|ALT_INV_Mux32~3_combout\ <= NOT \inst3|Mux32~3_combout\;
-\inst3|ALT_INV_regs[15][15]~q\ <= NOT \inst3|regs[15][15]~q\;
-\inst3|ALT_INV_regs[14][15]~q\ <= NOT \inst3|regs[14][15]~q\;
-\inst3|ALT_INV_regs[13][15]~q\ <= NOT \inst3|regs[13][15]~q\;
-\inst3|ALT_INV_regs[12][15]~q\ <= NOT \inst3|regs[12][15]~q\;
-\inst3|ALT_INV_Mux32~2_combout\ <= NOT \inst3|Mux32~2_combout\;
-\inst3|ALT_INV_regs[11][15]~q\ <= NOT \inst3|regs[11][15]~q\;
-\inst3|ALT_INV_regs[10][15]~q\ <= NOT \inst3|regs[10][15]~q\;
-\inst3|ALT_INV_regs[9][15]~q\ <= NOT \inst3|regs[9][15]~q\;
-\inst3|ALT_INV_regs[8][15]~q\ <= NOT \inst3|regs[8][15]~q\;
-\inst3|ALT_INV_Mux32~1_combout\ <= NOT \inst3|Mux32~1_combout\;
-\inst3|ALT_INV_regs[7][15]~q\ <= NOT \inst3|regs[7][15]~q\;
-\inst3|ALT_INV_regs[6][15]~q\ <= NOT \inst3|regs[6][15]~q\;
-\inst3|ALT_INV_regs[5][15]~q\ <= NOT \inst3|regs[5][15]~q\;
-\inst3|ALT_INV_regs[4][15]~q\ <= NOT \inst3|regs[4][15]~q\;
-\inst3|ALT_INV_Mux32~0_combout\ <= NOT \inst3|Mux32~0_combout\;
-\inst2|ALT_INV_rx\(1) <= NOT \inst2|rx\(1);
-\inst2|ALT_INV_rx\(0) <= NOT \inst2|rx\(0);
+\inst3|ALT_INV_Mux16~4_combout\ <= NOT \inst3|Mux16~4_combout\;
+\inst3|ALT_INV_Mux16~3_combout\ <= NOT \inst3|Mux16~3_combout\;
+\inst3|ALT_INV_Mux16~2_combout\ <= NOT \inst3|Mux16~2_combout\;
+\inst3|ALT_INV_Mux16~1_combout\ <= NOT \inst3|Mux16~1_combout\;
+\inst3|ALT_INV_Mux16~0_combout\ <= NOT \inst3|Mux16~0_combout\;
+\inst7|ALT_INV_Selector8~0_combout\ <= NOT \inst7|Selector8~0_combout\;
+\inst7|ALT_INV_nextState~15_combout\ <= NOT \inst7|nextState~15_combout\;
+\inst9|ALT_INV_Mux10~0_combout\ <= NOT \inst9|Mux10~0_combout\;
+\inst9|ALT_INV_Mux5~0_combout\ <= NOT \inst9|Mux5~0_combout\;
+\inst9|ALT_INV_Mux6~0_combout\ <= NOT \inst9|Mux6~0_combout\;
+\inst9|ALT_INV_Mux7~0_combout\ <= NOT \inst9|Mux7~0_combout\;
+\inst9|ALT_INV_Mux8~0_combout\ <= NOT \inst9|Mux8~0_combout\;
+\inst9|ALT_INV_Mux12~0_combout\ <= NOT \inst9|Mux12~0_combout\;
+\inst9|ALT_INV_Mux13~0_combout\ <= NOT \inst9|Mux13~0_combout\;
+\inst9|ALT_INV_Mux15~0_combout\ <= NOT \inst9|Mux15~0_combout\;
+\inst9|ALT_INV_Mux1~0_combout\ <= NOT \inst9|Mux1~0_combout\;
+\inst9|ALT_INV_Mux2~0_combout\ <= NOT \inst9|Mux2~0_combout\;
+\inst9|ALT_INV_Mux14~0_combout\ <= NOT \inst9|Mux14~0_combout\;
+\inst9|ALT_INV_Mux11~0_combout\ <= NOT \inst9|Mux11~0_combout\;
+\inst9|ALT_INV_Mux3~0_combout\ <= NOT \inst9|Mux3~0_combout\;
+\inst9|ALT_INV_Mux4~0_combout\ <= NOT \inst9|Mux4~0_combout\;
+\inst9|ALT_INV_Mux9~0_combout\ <= NOT \inst9|Mux9~0_combout\;
+\inst9|ALT_INV_Mux0~0_combout\ <= NOT \inst9|Mux0~0_combout\;
+\inst|ALT_INV_out_count[0]~17_combout\ <= NOT \inst|out_count[0]~17_combout\;
+\inst|ALT_INV_Equal0~0_combout\ <= NOT \inst|Equal0~0_combout\;
+\inst7|ALT_INV_Mux51~4_combout\ <= NOT \inst7|Mux51~4_combout\;
+\inst7|ALT_INV_Mux51~3_combout\ <= NOT \inst7|Mux51~3_combout\;
+\inst7|ALT_INV_Mux51~2_combout\ <= NOT \inst7|Mux51~2_combout\;
+\inst7|ALT_INV_Mux51~1_combout\ <= NOT \inst7|Mux51~1_combout\;
+\inst7|ALT_INV_Mux50~1_combout\ <= NOT \inst7|Mux50~1_combout\;
+\inst7|ALT_INV_Mux50~0_combout\ <= NOT \inst7|Mux50~0_combout\;
+\inst7|ALT_INV_Selector19~0_combout\ <= NOT \inst7|Selector19~0_combout\;
+\inst7|ALT_INV_Mux51~0_combout\ <= NOT \inst7|Mux51~0_combout\;
+\inst7|ALT_INV_Mux47~4_combout\ <= NOT \inst7|Mux47~4_combout\;
+\inst7|ALT_INV_Mux47~2_combout\ <= NOT \inst7|Mux47~2_combout\;
+\inst7|ALT_INV_Mux47~1_combout\ <= NOT \inst7|Mux47~1_combout\;
+\inst7|ALT_INV_Mux47~0_combout\ <= NOT \inst7|Mux47~0_combout\;
+\inst7|ALT_INV_Mux0~0_combout\ <= NOT \inst7|Mux0~0_combout\;
+\inst7|ALT_INV_WideOr8~0_combout\ <= NOT \inst7|WideOr8~0_combout\;
+\inst7|ALT_INV_nextState.fetch2~q\ <= NOT \inst7|nextState.fetch2~q\;
+\inst7|ALT_INV_Selector27~0_combout\ <= NOT \inst7|Selector27~0_combout\;
+\inst7|ALT_INV_Selector26~2_combout\ <= NOT \inst7|Selector26~2_combout\;
+\inst7|ALT_INV_Selector26~1_combout\ <= NOT \inst7|Selector26~1_combout\;
+\inst7|ALT_INV_Selector26~0_combout\ <= NOT \inst7|Selector26~0_combout\;
+\inst7|ALT_INV_Selector24~3_combout\ <= NOT \inst7|Selector24~3_combout\;
+\inst7|ALT_INV_Selector24~2_combout\ <= NOT \inst7|Selector24~2_combout\;
+\inst7|ALT_INV_Selector24~1_combout\ <= NOT \inst7|Selector24~1_combout\;
+\inst7|ALT_INV_Selector24~0_combout\ <= NOT \inst7|Selector24~0_combout\;
+\inst7|ALT_INV_Equal0~1_combout\ <= NOT \inst7|Equal0~1_combout\;
+\inst7|ALT_INV_Selector6~3_combout\ <= NOT \inst7|Selector6~3_combout\;
+\inst7|ALT_INV_Selector6~2_combout\ <= NOT \inst7|Selector6~2_combout\;
+\inst7|ALT_INV_Selector6~1_combout\ <= NOT \inst7|Selector6~1_combout\;
+\inst7|ALT_INV_Selector6~0_combout\ <= NOT \inst7|Selector6~0_combout\;
+\inst7|ALT_INV_nextState~14_combout\ <= NOT \inst7|nextState~14_combout\;
+\inst7|ALT_INV_Mux54~0_combout\ <= NOT \inst7|Mux54~0_combout\;
+\inst7|ALT_INV_Selector14~0_combout\ <= NOT \inst7|Selector14~0_combout\;
+\inst7|ALT_INV_OUTPUTS~0_combout\ <= NOT \inst7|OUTPUTS~0_combout\;
+\inst7|ALT_INV_Selector3~1_combout\ <= NOT \inst7|Selector3~1_combout\;
+\inst7|ALT_INV_Selector3~0_combout\ <= NOT \inst7|Selector3~0_combout\;
+\inst7|ALT_INV_Selector1~2_combout\ <= NOT \inst7|Selector1~2_combout\;
+\inst7|ALT_INV_Selector1~1_combout\ <= NOT \inst7|Selector1~1_combout\;
+\inst7|ALT_INV_Selector1~0_combout\ <= NOT \inst7|Selector1~0_combout\;
+\inst7|ALT_INV_nextState.selStore~q\ <= NOT \inst7|nextState.selStore~q\;
+\inst7|ALT_INV_Selector0~0_combout\ <= NOT \inst7|Selector0~0_combout\;
+\inst7|ALT_INV_WideOr1~combout\ <= NOT \inst7|WideOr1~combout\;
+\inst7|ALT_INV_nextState.execution~q\ <= NOT \inst7|nextState.execution~q\;
+\inst7|ALT_INV_nextState.decode2~q\ <= NOT \inst7|nextState.decode2~q\;
+\inst7|ALT_INV_nextState.loadAluResult~q\ <= NOT \inst7|nextState.loadAluResult~q\;
+\inst7|ALT_INV_nextState.decode~q\ <= NOT \inst7|nextState.decode~q\;
+\inst7|ALT_INV_nextState.storeData~q\ <= NOT \inst7|nextState.storeData~q\;
+\inst7|ALT_INV_nextState.storeAluResult~q\ <= NOT \inst7|nextState.storeAluResult~q\;
+\inst7|ALT_INV_nextState.fetch~q\ <= NOT \inst7|nextState.fetch~q\;
+\inst7|ALT_INV_Equal6~0_combout\ <= NOT \inst7|Equal6~0_combout\;
+\inst7|ALT_INV_Equal0~0_combout\ <= NOT \inst7|Equal0~0_combout\;
+\inst7|ALT_INV_nextState.idle~q\ <= NOT \inst7|nextState.idle~q\;
+\inst1|ALT_INV_memory[0][0]~q\ <= NOT \inst1|memory[0][0]~q\;
+\inst1|ALT_INV_memory[0][1]~q\ <= NOT \inst1|memory[0][1]~q\;
+\inst1|ALT_INV_memory[0][2]~q\ <= NOT \inst1|memory[0][2]~q\;
+\inst1|ALT_INV_memory[0][3]~q\ <= NOT \inst1|memory[0][3]~q\;
+\inst1|ALT_INV_memory[0][4]~q\ <= NOT \inst1|memory[0][4]~q\;
+\inst1|ALT_INV_memory[0][5]~q\ <= NOT \inst1|memory[0][5]~q\;
+\inst1|ALT_INV_memory[0][6]~q\ <= NOT \inst1|memory[0][6]~q\;
+\inst1|ALT_INV_memory[0][7]~q\ <= NOT \inst1|memory[0][7]~q\;
+\inst1|ALT_INV_memory[0][8]~q\ <= NOT \inst1|memory[0][8]~q\;
+\inst1|ALT_INV_memory[0][9]~q\ <= NOT \inst1|memory[0][9]~q\;
+\inst1|ALT_INV_memory[0][10]~q\ <= NOT \inst1|memory[0][10]~q\;
+\inst1|ALT_INV_memory[0][11]~q\ <= NOT \inst1|memory[0][11]~q\;
+\inst1|ALT_INV_memory[0][12]~q\ <= NOT \inst1|memory[0][12]~q\;
+\inst1|ALT_INV_memory[0][13]~q\ <= NOT \inst1|memory[0][13]~q\;
+\inst1|ALT_INV_memory[0][14]~q\ <= NOT \inst1|memory[0][14]~q\;
+\inst1|ALT_INV_memory[0][15]~q\ <= NOT \inst1|memory[0][15]~q\;
+\inst7|ALT_INV_Mux55~0_combout\ <= NOT \inst7|Mux55~0_combout\;
+\inst7|ALT_INV_dataSel~1_combout\ <= NOT \inst7|dataSel~1_combout\;
+\inst7|ALT_INV_dataSel~0_combout\ <= NOT \inst7|dataSel~0_combout\;
+\inst7|ALT_INV_nextState.decode3~q\ <= NOT \inst7|nextState.decode3~q\;
+\inst6|ALT_INV_Equal0~2_combout\ <= NOT \inst6|Equal0~2_combout\;
+\inst6|ALT_INV_Equal0~1_combout\ <= NOT \inst6|Equal0~1_combout\;
+\inst6|ALT_INV_Equal0~0_combout\ <= NOT \inst6|Equal0~0_combout\;
+\inst9|ALT_INV_Equal0~2_combout\ <= NOT \inst9|Equal0~2_combout\;
+\inst9|ALT_INV_Equal0~1_combout\ <= NOT \inst9|Equal0~1_combout\;
+\inst9|ALT_INV_Equal0~0_combout\ <= NOT \inst9|Equal0~0_combout\;
+\inst|ALT_INV_out_count\(0) <= NOT \inst|out_count\(0);
+\inst2|ALT_INV_operand\(0) <= NOT \inst2|operand\(0);
+\inst2|ALT_INV_operand\(1) <= NOT \inst2|operand\(1);
+\inst2|ALT_INV_operand\(2) <= NOT \inst2|operand\(2);
+\inst2|ALT_INV_operand\(3) <= NOT \inst2|operand\(3);
+\inst2|ALT_INV_operand\(4) <= NOT \inst2|operand\(4);
+\inst2|ALT_INV_operand\(5) <= NOT \inst2|operand\(5);
+\inst2|ALT_INV_operand\(6) <= NOT \inst2|operand\(6);
+\inst2|ALT_INV_operand\(7) <= NOT \inst2|operand\(7);
+\inst2|ALT_INV_operand\(8) <= NOT \inst2|operand\(8);
+\inst2|ALT_INV_operand\(9) <= NOT \inst2|operand\(9);
+\inst2|ALT_INV_operand\(10) <= NOT \inst2|operand\(10);
+\inst2|ALT_INV_operand\(11) <= NOT \inst2|operand\(11);
+\inst2|ALT_INV_operand\(12) <= NOT \inst2|operand\(12);
+\inst2|ALT_INV_operand\(13) <= NOT \inst2|operand\(13);
+\inst2|ALT_INV_operand\(14) <= NOT \inst2|operand\(14);
+\inst2|ALT_INV_operand\(15) <= NOT \inst2|operand\(15);
+\inst2|ALT_INV_address_method\(0) <= NOT \inst2|address_method\(0);
+\inst2|ALT_INV_address_method\(1) <= NOT \inst2|address_method\(1);
+\inst9|ALT_INV_alu_result\(0) <= NOT \inst9|alu_result\(0);
+\inst9|ALT_INV_alu_result\(1) <= NOT \inst9|alu_result\(1);
+\inst9|ALT_INV_alu_result\(2) <= NOT \inst9|alu_result\(2);
+\inst9|ALT_INV_alu_result\(3) <= NOT \inst9|alu_result\(3);
+\inst9|ALT_INV_alu_result\(4) <= NOT \inst9|alu_result\(4);
+\inst9|ALT_INV_alu_result\(5) <= NOT \inst9|alu_result\(5);
+\inst9|ALT_INV_alu_result\(6) <= NOT \inst9|alu_result\(6);
+\inst9|ALT_INV_alu_result\(7) <= NOT \inst9|alu_result\(7);
+\inst9|ALT_INV_alu_result\(8) <= NOT \inst9|alu_result\(8);
+\inst9|ALT_INV_alu_result\(9) <= NOT \inst9|alu_result\(9);
+\inst9|ALT_INV_alu_result\(10) <= NOT \inst9|alu_result\(10);
+\inst9|ALT_INV_alu_result\(11) <= NOT \inst9|alu_result\(11);
+\inst9|ALT_INV_alu_result\(12) <= NOT \inst9|alu_result\(12);
+\inst9|ALT_INV_alu_result\(13) <= NOT \inst9|alu_result\(13);
+\inst9|ALT_INV_alu_result\(14) <= NOT \inst9|alu_result\(14);
+\inst9|ALT_INV_alu_result\(15) <= NOT \inst9|alu_result\(15);
+\inst7|ALT_INV_wren~q\ <= NOT \inst7|wren~q\;
+\inst7|ALT_INV_alu_opsel\(4) <= NOT \inst7|alu_opsel\(4);
+\inst2|ALT_INV_opcode\(0) <= NOT \inst2|opcode\(0);
+\inst2|ALT_INV_opcode\(1) <= NOT \inst2|opcode\(1);
+\inst2|ALT_INV_opcode\(2) <= NOT \inst2|opcode\(2);
+\inst2|ALT_INV_opcode\(3) <= NOT \inst2|opcode\(3);
+\inst2|ALT_INV_opcode\(4) <= NOT \inst2|opcode\(4);
+\inst2|ALT_INV_opcode\(5) <= NOT \inst2|opcode\(5);
+\inst7|ALT_INV_stateOut\(0) <= NOT \inst7|stateOut\(0);
+\inst7|ALT_INV_stateOut\(1) <= NOT \inst7|stateOut\(1);
+\inst7|ALT_INV_stateOut\(2) <= NOT \inst7|stateOut\(2);
+\inst7|ALT_INV_stateOut\(3) <= NOT \inst7|stateOut\(3);
+\inst3|ALT_INV_Mux63~4_combout\ <= NOT \inst3|Mux63~4_combout\;
+\inst3|ALT_INV_Mux63~3_combout\ <= NOT \inst3|Mux63~3_combout\;
+\inst3|ALT_INV_Mux63~2_combout\ <= NOT \inst3|Mux63~2_combout\;
+\inst3|ALT_INV_Mux63~1_combout\ <= NOT \inst3|Mux63~1_combout\;
+\inst3|ALT_INV_Mux63~0_combout\ <= NOT \inst3|Mux63~0_combout\;
+\inst3|ALT_INV_Mux62~4_combout\ <= NOT \inst3|Mux62~4_combout\;
+\inst3|ALT_INV_Mux62~3_combout\ <= NOT \inst3|Mux62~3_combout\;
+\inst3|ALT_INV_Mux62~2_combout\ <= NOT \inst3|Mux62~2_combout\;
+\inst3|ALT_INV_Mux62~1_combout\ <= NOT \inst3|Mux62~1_combout\;
+\inst3|ALT_INV_Mux62~0_combout\ <= NOT \inst3|Mux62~0_combout\;
+\inst3|ALT_INV_Mux61~4_combout\ <= NOT \inst3|Mux61~4_combout\;
+\inst3|ALT_INV_Mux61~3_combout\ <= NOT \inst3|Mux61~3_combout\;
+\inst3|ALT_INV_Mux61~2_combout\ <= NOT \inst3|Mux61~2_combout\;
+\inst3|ALT_INV_Mux61~1_combout\ <= NOT \inst3|Mux61~1_combout\;
+\inst3|ALT_INV_Mux61~0_combout\ <= NOT \inst3|Mux61~0_combout\;
+\inst3|ALT_INV_Mux60~4_combout\ <= NOT \inst3|Mux60~4_combout\;
+\inst3|ALT_INV_Mux60~3_combout\ <= NOT \inst3|Mux60~3_combout\;
+\inst3|ALT_INV_Mux60~2_combout\ <= NOT \inst3|Mux60~2_combout\;
+\inst3|ALT_INV_Mux60~1_combout\ <= NOT \inst3|Mux60~1_combout\;
+\inst3|ALT_INV_Mux60~0_combout\ <= NOT \inst3|Mux60~0_combout\;
+\inst3|ALT_INV_Mux59~4_combout\ <= NOT \inst3|Mux59~4_combout\;
+\inst3|ALT_INV_Mux59~3_combout\ <= NOT \inst3|Mux59~3_combout\;
+\inst3|ALT_INV_Mux59~2_combout\ <= NOT \inst3|Mux59~2_combout\;
+\inst3|ALT_INV_Mux59~1_combout\ <= NOT \inst3|Mux59~1_combout\;
+\inst3|ALT_INV_Mux59~0_combout\ <= NOT \inst3|Mux59~0_combout\;
+\inst3|ALT_INV_Mux58~4_combout\ <= NOT \inst3|Mux58~4_combout\;
+\inst3|ALT_INV_Mux58~3_combout\ <= NOT \inst3|Mux58~3_combout\;
+\inst3|ALT_INV_Mux58~2_combout\ <= NOT \inst3|Mux58~2_combout\;
+\inst3|ALT_INV_Mux58~1_combout\ <= NOT \inst3|Mux58~1_combout\;
+\inst3|ALT_INV_Mux58~0_combout\ <= NOT \inst3|Mux58~0_combout\;
+\inst3|ALT_INV_Mux57~4_combout\ <= NOT \inst3|Mux57~4_combout\;
+\inst3|ALT_INV_Mux57~3_combout\ <= NOT \inst3|Mux57~3_combout\;
+\inst3|ALT_INV_Mux57~2_combout\ <= NOT \inst3|Mux57~2_combout\;
+\inst3|ALT_INV_Mux57~1_combout\ <= NOT \inst3|Mux57~1_combout\;
+\inst3|ALT_INV_Mux57~0_combout\ <= NOT \inst3|Mux57~0_combout\;
+\inst3|ALT_INV_Mux56~4_combout\ <= NOT \inst3|Mux56~4_combout\;
+\inst3|ALT_INV_Mux56~3_combout\ <= NOT \inst3|Mux56~3_combout\;
+\inst3|ALT_INV_Mux56~2_combout\ <= NOT \inst3|Mux56~2_combout\;
+\inst3|ALT_INV_Mux56~1_combout\ <= NOT \inst3|Mux56~1_combout\;
+\inst3|ALT_INV_Mux56~0_combout\ <= NOT \inst3|Mux56~0_combout\;
+\inst3|ALT_INV_Mux55~4_combout\ <= NOT \inst3|Mux55~4_combout\;
+\inst3|ALT_INV_Mux55~3_combout\ <= NOT \inst3|Mux55~3_combout\;
+\inst3|ALT_INV_Mux55~2_combout\ <= NOT \inst3|Mux55~2_combout\;
+\inst3|ALT_INV_Mux55~1_combout\ <= NOT \inst3|Mux55~1_combout\;
+\inst3|ALT_INV_Mux55~0_combout\ <= NOT \inst3|Mux55~0_combout\;
+\inst3|ALT_INV_Mux54~4_combout\ <= NOT \inst3|Mux54~4_combout\;
+\inst3|ALT_INV_Mux54~3_combout\ <= NOT \inst3|Mux54~3_combout\;
+\inst3|ALT_INV_Mux54~2_combout\ <= NOT \inst3|Mux54~2_combout\;
+\inst3|ALT_INV_Mux54~1_combout\ <= NOT \inst3|Mux54~1_combout\;
+\inst3|ALT_INV_Mux54~0_combout\ <= NOT \inst3|Mux54~0_combout\;
+\inst3|ALT_INV_Mux53~4_combout\ <= NOT \inst3|Mux53~4_combout\;
+\inst3|ALT_INV_Mux53~3_combout\ <= NOT \inst3|Mux53~3_combout\;
+\inst3|ALT_INV_Mux53~2_combout\ <= NOT \inst3|Mux53~2_combout\;
+\inst3|ALT_INV_Mux53~1_combout\ <= NOT \inst3|Mux53~1_combout\;
+\inst3|ALT_INV_Mux53~0_combout\ <= NOT \inst3|Mux53~0_combout\;
+\inst3|ALT_INV_Mux52~4_combout\ <= NOT \inst3|Mux52~4_combout\;
+\inst3|ALT_INV_Mux52~3_combout\ <= NOT \inst3|Mux52~3_combout\;
+\inst3|ALT_INV_Mux52~2_combout\ <= NOT \inst3|Mux52~2_combout\;
+\inst3|ALT_INV_Mux52~1_combout\ <= NOT \inst3|Mux52~1_combout\;
+\inst3|ALT_INV_Mux52~0_combout\ <= NOT \inst3|Mux52~0_combout\;
+\inst3|ALT_INV_Mux51~4_combout\ <= NOT \inst3|Mux51~4_combout\;
+\inst3|ALT_INV_Mux51~3_combout\ <= NOT \inst3|Mux51~3_combout\;
+\inst3|ALT_INV_Mux51~2_combout\ <= NOT \inst3|Mux51~2_combout\;
+\inst3|ALT_INV_Mux51~1_combout\ <= NOT \inst3|Mux51~1_combout\;
+\inst3|ALT_INV_Mux51~0_combout\ <= NOT \inst3|Mux51~0_combout\;
+\inst3|ALT_INV_Mux50~4_combout\ <= NOT \inst3|Mux50~4_combout\;
+\inst3|ALT_INV_Mux50~3_combout\ <= NOT \inst3|Mux50~3_combout\;
+\inst3|ALT_INV_Mux50~2_combout\ <= NOT \inst3|Mux50~2_combout\;
+\inst3|ALT_INV_Mux50~1_combout\ <= NOT \inst3|Mux50~1_combout\;
+\inst3|ALT_INV_Mux50~0_combout\ <= NOT \inst3|Mux50~0_combout\;
+\inst3|ALT_INV_Mux49~4_combout\ <= NOT \inst3|Mux49~4_combout\;
+\inst3|ALT_INV_Mux49~3_combout\ <= NOT \inst3|Mux49~3_combout\;
+\inst3|ALT_INV_Mux49~2_combout\ <= NOT \inst3|Mux49~2_combout\;
+\inst3|ALT_INV_Mux49~1_combout\ <= NOT \inst3|Mux49~1_combout\;
+\inst3|ALT_INV_Mux49~0_combout\ <= NOT \inst3|Mux49~0_combout\;
+\inst3|ALT_INV_Mux48~4_combout\ <= NOT \inst3|Mux48~4_combout\;
+\inst2|ALT_INV_rz\(3) <= NOT \inst2|rz\(3);
+\inst2|ALT_INV_rz\(2) <= NOT \inst2|rz\(2);
+\inst3|ALT_INV_Mux48~3_combout\ <= NOT \inst3|Mux48~3_combout\;
+\inst3|ALT_INV_Mux48~2_combout\ <= NOT \inst3|Mux48~2_combout\;
+\inst3|ALT_INV_Mux48~1_combout\ <= NOT \inst3|Mux48~1_combout\;
+\inst3|ALT_INV_Mux48~0_combout\ <= NOT \inst3|Mux48~0_combout\;
+\inst2|ALT_INV_rz\(1) <= NOT \inst2|rz\(1);
+\inst2|ALT_INV_rz\(0) <= NOT \inst2|rz\(0);
+\inst7|ALT_INV_rf_sel\(0) <= NOT \inst7|rf_sel\(0);
+\inst7|ALT_INV_rf_sel\(1) <= NOT \inst7|rf_sel\(1);
+\inst7|ALT_INV_rf_sel\(3) <= NOT \inst7|rf_sel\(3);
+\inst7|ALT_INV_ld_r~q\ <= NOT \inst7|ld_r~q\;
+\inst3|ALT_INV_Mux47~4_combout\ <= NOT \inst3|Mux47~4_combout\;
+\inst3|ALT_INV_Mux47~3_combout\ <= NOT \inst3|Mux47~3_combout\;
+\inst3|ALT_INV_regs[15][0]~q\ <= NOT \inst3|regs[15][0]~q\;
+\inst3|ALT_INV_regs[11][0]~q\ <= NOT \inst3|regs[11][0]~q\;
+\inst3|ALT_INV_regs[7][0]~q\ <= NOT \inst3|regs[7][0]~q\;
+\inst3|ALT_INV_regs[3][0]~q\ <= NOT \inst3|regs[3][0]~q\;
+\inst3|ALT_INV_Mux47~2_combout\ <= NOT \inst3|Mux47~2_combout\;
+\inst3|ALT_INV_regs[14][0]~q\ <= NOT \inst3|regs[14][0]~q\;
+\inst3|ALT_INV_regs[10][0]~q\ <= NOT \inst3|regs[10][0]~q\;
+\inst3|ALT_INV_regs[6][0]~q\ <= NOT \inst3|regs[6][0]~q\;
+\inst3|ALT_INV_regs[2][0]~q\ <= NOT \inst3|regs[2][0]~q\;
+\inst3|ALT_INV_Mux47~1_combout\ <= NOT \inst3|Mux47~1_combout\;
+\inst3|ALT_INV_regs[13][0]~q\ <= NOT \inst3|regs[13][0]~q\;
+\inst3|ALT_INV_regs[9][0]~q\ <= NOT \inst3|regs[9][0]~q\;
+\inst3|ALT_INV_regs[5][0]~q\ <= NOT \inst3|regs[5][0]~q\;
+\inst3|ALT_INV_regs[1][0]~q\ <= NOT \inst3|regs[1][0]~q\;
+\inst3|ALT_INV_Mux47~0_combout\ <= NOT \inst3|Mux47~0_combout\;
+\inst3|ALT_INV_regs[12][0]~q\ <= NOT \inst3|regs[12][0]~q\;
+\inst3|ALT_INV_regs[8][0]~q\ <= NOT \inst3|regs[8][0]~q\;
+\inst3|ALT_INV_regs[4][0]~q\ <= NOT \inst3|regs[4][0]~q\;
+\inst3|ALT_INV_regs[0][0]~q\ <= NOT \inst3|regs[0][0]~q\;
+\inst3|ALT_INV_Mux46~4_combout\ <= NOT \inst3|Mux46~4_combout\;
+\inst3|ALT_INV_Mux46~3_combout\ <= NOT \inst3|Mux46~3_combout\;
+\inst3|ALT_INV_regs[15][1]~q\ <= NOT \inst3|regs[15][1]~q\;
+\inst3|ALT_INV_regs[14][1]~q\ <= NOT \inst3|regs[14][1]~q\;
+\inst3|ALT_INV_regs[13][1]~q\ <= NOT \inst3|regs[13][1]~q\;
+\inst3|ALT_INV_regs[12][1]~q\ <= NOT \inst3|regs[12][1]~q\;
+\inst3|ALT_INV_Mux46~2_combout\ <= NOT \inst3|Mux46~2_combout\;
+\inst3|ALT_INV_regs[11][1]~q\ <= NOT \inst3|regs[11][1]~q\;
+\inst3|ALT_INV_regs[10][1]~q\ <= NOT \inst3|regs[10][1]~q\;
+\inst3|ALT_INV_regs[9][1]~q\ <= NOT \inst3|regs[9][1]~q\;
+\inst3|ALT_INV_regs[8][1]~q\ <= NOT \inst3|regs[8][1]~q\;
+\inst3|ALT_INV_Mux46~1_combout\ <= NOT \inst3|Mux46~1_combout\;
+\inst3|ALT_INV_regs[7][1]~q\ <= NOT \inst3|regs[7][1]~q\;
+\inst3|ALT_INV_regs[6][1]~q\ <= NOT \inst3|regs[6][1]~q\;
+\inst3|ALT_INV_regs[5][1]~q\ <= NOT \inst3|regs[5][1]~q\;
+\inst3|ALT_INV_regs[4][1]~q\ <= NOT \inst3|regs[4][1]~q\;
+\inst3|ALT_INV_Mux46~0_combout\ <= NOT \inst3|Mux46~0_combout\;
+\inst3|ALT_INV_regs[3][1]~q\ <= NOT \inst3|regs[3][1]~q\;
+\inst3|ALT_INV_regs[2][1]~q\ <= NOT \inst3|regs[2][1]~q\;
+\inst3|ALT_INV_regs[1][1]~q\ <= NOT \inst3|regs[1][1]~q\;
+\inst3|ALT_INV_regs[0][1]~q\ <= NOT \inst3|regs[0][1]~q\;
+\inst3|ALT_INV_Mux45~4_combout\ <= NOT \inst3|Mux45~4_combout\;
+\inst3|ALT_INV_Mux45~3_combout\ <= NOT \inst3|Mux45~3_combout\;
+\inst3|ALT_INV_regs[15][2]~q\ <= NOT \inst3|regs[15][2]~q\;
+\inst3|ALT_INV_regs[11][2]~q\ <= NOT \inst3|regs[11][2]~q\;
+\inst3|ALT_INV_regs[7][2]~q\ <= NOT \inst3|regs[7][2]~q\;
+\inst3|ALT_INV_regs[3][2]~q\ <= NOT \inst3|regs[3][2]~q\;
+\inst3|ALT_INV_Mux45~2_combout\ <= NOT \inst3|Mux45~2_combout\;
+\inst3|ALT_INV_regs[14][2]~q\ <= NOT \inst3|regs[14][2]~q\;
+\inst3|ALT_INV_regs[10][2]~q\ <= NOT \inst3|regs[10][2]~q\;
+\inst3|ALT_INV_regs[6][2]~q\ <= NOT \inst3|regs[6][2]~q\;
+\inst3|ALT_INV_regs[2][2]~q\ <= NOT \inst3|regs[2][2]~q\;
+\inst3|ALT_INV_Mux45~1_combout\ <= NOT \inst3|Mux45~1_combout\;
+\inst3|ALT_INV_regs[13][2]~q\ <= NOT \inst3|regs[13][2]~q\;
+\inst3|ALT_INV_regs[9][2]~q\ <= NOT \inst3|regs[9][2]~q\;
+\inst3|ALT_INV_regs[5][2]~q\ <= NOT \inst3|regs[5][2]~q\;
+\inst3|ALT_INV_regs[1][2]~q\ <= NOT \inst3|regs[1][2]~q\;
+\inst3|ALT_INV_Mux45~0_combout\ <= NOT \inst3|Mux45~0_combout\;
+\inst3|ALT_INV_regs[12][2]~q\ <= NOT \inst3|regs[12][2]~q\;
+\inst3|ALT_INV_regs[8][2]~q\ <= NOT \inst3|regs[8][2]~q\;
+\inst3|ALT_INV_regs[4][2]~q\ <= NOT \inst3|regs[4][2]~q\;
+\inst3|ALT_INV_regs[0][2]~q\ <= NOT \inst3|regs[0][2]~q\;
+\inst3|ALT_INV_Mux44~4_combout\ <= NOT \inst3|Mux44~4_combout\;
+\inst3|ALT_INV_Mux44~3_combout\ <= NOT \inst3|Mux44~3_combout\;
+\inst3|ALT_INV_regs[15][3]~q\ <= NOT \inst3|regs[15][3]~q\;
+\inst3|ALT_INV_regs[14][3]~q\ <= NOT \inst3|regs[14][3]~q\;
+\inst3|ALT_INV_regs[13][3]~q\ <= NOT \inst3|regs[13][3]~q\;
+\inst3|ALT_INV_regs[12][3]~q\ <= NOT \inst3|regs[12][3]~q\;
+\inst3|ALT_INV_Mux44~2_combout\ <= NOT \inst3|Mux44~2_combout\;
+\inst3|ALT_INV_regs[11][3]~q\ <= NOT \inst3|regs[11][3]~q\;
+\inst3|ALT_INV_regs[10][3]~q\ <= NOT \inst3|regs[10][3]~q\;
+\inst3|ALT_INV_regs[9][3]~q\ <= NOT \inst3|regs[9][3]~q\;
+\inst3|ALT_INV_regs[8][3]~q\ <= NOT \inst3|regs[8][3]~q\;
+\inst3|ALT_INV_Mux44~1_combout\ <= NOT \inst3|Mux44~1_combout\;
+\inst3|ALT_INV_regs[7][3]~q\ <= NOT \inst3|regs[7][3]~q\;
+\inst3|ALT_INV_regs[6][3]~q\ <= NOT \inst3|regs[6][3]~q\;
+\inst3|ALT_INV_regs[5][3]~q\ <= NOT \inst3|regs[5][3]~q\;
+\inst3|ALT_INV_regs[4][3]~q\ <= NOT \inst3|regs[4][3]~q\;
+\inst3|ALT_INV_Mux44~0_combout\ <= NOT \inst3|Mux44~0_combout\;
+\inst3|ALT_INV_regs[3][3]~q\ <= NOT \inst3|regs[3][3]~q\;
+\inst3|ALT_INV_regs[2][3]~q\ <= NOT \inst3|regs[2][3]~q\;
+\inst3|ALT_INV_regs[1][3]~q\ <= NOT \inst3|regs[1][3]~q\;
 \inst3|ALT_INV_regs[0][3]~q\ <= NOT \inst3|regs[0][3]~q\;
 \inst3|ALT_INV_Mux43~4_combout\ <= NOT \inst3|Mux43~4_combout\;
 \inst3|ALT_INV_Mux43~3_combout\ <= NOT \inst3|Mux43~3_combout\;
@@ -2552,326 +2650,224 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[2][9]~q\ <= NOT \inst3|regs[2][9]~q\;
 \inst3|ALT_INV_regs[1][9]~q\ <= NOT \inst3|regs[1][9]~q\;
 \inst3|ALT_INV_regs[0][9]~q\ <= NOT \inst3|regs[0][9]~q\;
-\inst3|ALT_INV_Mux51~1_combout\ <= NOT \inst3|Mux51~1_combout\;
-\inst3|ALT_INV_Mux51~0_combout\ <= NOT \inst3|Mux51~0_combout\;
-\inst3|ALT_INV_Mux50~4_combout\ <= NOT \inst3|Mux50~4_combout\;
-\inst3|ALT_INV_Mux50~3_combout\ <= NOT \inst3|Mux50~3_combout\;
-\inst3|ALT_INV_Mux50~2_combout\ <= NOT \inst3|Mux50~2_combout\;
-\inst3|ALT_INV_Mux50~1_combout\ <= NOT \inst3|Mux50~1_combout\;
-\inst3|ALT_INV_Mux50~0_combout\ <= NOT \inst3|Mux50~0_combout\;
-\inst3|ALT_INV_Mux49~4_combout\ <= NOT \inst3|Mux49~4_combout\;
-\inst3|ALT_INV_Mux49~3_combout\ <= NOT \inst3|Mux49~3_combout\;
-\inst3|ALT_INV_Mux49~2_combout\ <= NOT \inst3|Mux49~2_combout\;
-\inst3|ALT_INV_Mux49~1_combout\ <= NOT \inst3|Mux49~1_combout\;
-\inst3|ALT_INV_Mux49~0_combout\ <= NOT \inst3|Mux49~0_combout\;
-\inst3|ALT_INV_Mux48~4_combout\ <= NOT \inst3|Mux48~4_combout\;
-\inst2|ALT_INV_rz\(3) <= NOT \inst2|rz\(3);
-\inst2|ALT_INV_rz\(2) <= NOT \inst2|rz\(2);
-\inst3|ALT_INV_Mux48~3_combout\ <= NOT \inst3|Mux48~3_combout\;
-\inst3|ALT_INV_Mux48~2_combout\ <= NOT \inst3|Mux48~2_combout\;
-\inst3|ALT_INV_Mux48~1_combout\ <= NOT \inst3|Mux48~1_combout\;
-\inst3|ALT_INV_Mux48~0_combout\ <= NOT \inst3|Mux48~0_combout\;
-\inst2|ALT_INV_rz\(1) <= NOT \inst2|rz\(1);
-\inst2|ALT_INV_rz\(0) <= NOT \inst2|rz\(0);
-\inst7|ALT_INV_rf_sel\(0) <= NOT \inst7|rf_sel\(0);
-\inst7|ALT_INV_rf_sel\(1) <= NOT \inst7|rf_sel\(1);
-\inst7|ALT_INV_rf_sel\(3) <= NOT \inst7|rf_sel\(3);
-\inst7|ALT_INV_ld_r~q\ <= NOT \inst7|ld_r~q\;
-\inst3|ALT_INV_Mux47~4_combout\ <= NOT \inst3|Mux47~4_combout\;
-\inst3|ALT_INV_Mux47~3_combout\ <= NOT \inst3|Mux47~3_combout\;
-\inst3|ALT_INV_regs[15][0]~q\ <= NOT \inst3|regs[15][0]~q\;
-\inst3|ALT_INV_regs[11][0]~q\ <= NOT \inst3|regs[11][0]~q\;
-\inst3|ALT_INV_regs[7][0]~q\ <= NOT \inst3|regs[7][0]~q\;
-\inst3|ALT_INV_regs[3][0]~q\ <= NOT \inst3|regs[3][0]~q\;
-\inst3|ALT_INV_Mux47~2_combout\ <= NOT \inst3|Mux47~2_combout\;
-\inst3|ALT_INV_regs[14][0]~q\ <= NOT \inst3|regs[14][0]~q\;
-\inst3|ALT_INV_regs[10][0]~q\ <= NOT \inst3|regs[10][0]~q\;
-\inst3|ALT_INV_regs[6][0]~q\ <= NOT \inst3|regs[6][0]~q\;
-\inst3|ALT_INV_regs[2][0]~q\ <= NOT \inst3|regs[2][0]~q\;
-\inst3|ALT_INV_Mux47~1_combout\ <= NOT \inst3|Mux47~1_combout\;
-\inst3|ALT_INV_regs[13][0]~q\ <= NOT \inst3|regs[13][0]~q\;
-\inst3|ALT_INV_regs[9][0]~q\ <= NOT \inst3|regs[9][0]~q\;
-\inst3|ALT_INV_regs[5][0]~q\ <= NOT \inst3|regs[5][0]~q\;
-\inst3|ALT_INV_regs[1][0]~q\ <= NOT \inst3|regs[1][0]~q\;
-\inst3|ALT_INV_Mux47~0_combout\ <= NOT \inst3|Mux47~0_combout\;
-\inst3|ALT_INV_regs[12][0]~q\ <= NOT \inst3|regs[12][0]~q\;
-\inst3|ALT_INV_regs[8][0]~q\ <= NOT \inst3|regs[8][0]~q\;
-\inst3|ALT_INV_regs[4][0]~q\ <= NOT \inst3|regs[4][0]~q\;
-\inst3|ALT_INV_regs[0][0]~q\ <= NOT \inst3|regs[0][0]~q\;
-\inst3|ALT_INV_Mux46~4_combout\ <= NOT \inst3|Mux46~4_combout\;
-\inst3|ALT_INV_Mux46~3_combout\ <= NOT \inst3|Mux46~3_combout\;
-\inst3|ALT_INV_regs[15][1]~q\ <= NOT \inst3|regs[15][1]~q\;
-\inst3|ALT_INV_regs[14][1]~q\ <= NOT \inst3|regs[14][1]~q\;
-\inst3|ALT_INV_regs[13][1]~q\ <= NOT \inst3|regs[13][1]~q\;
-\inst3|ALT_INV_regs[12][1]~q\ <= NOT \inst3|regs[12][1]~q\;
-\inst3|ALT_INV_Mux46~2_combout\ <= NOT \inst3|Mux46~2_combout\;
-\inst3|ALT_INV_regs[11][1]~q\ <= NOT \inst3|regs[11][1]~q\;
-\inst3|ALT_INV_regs[10][1]~q\ <= NOT \inst3|regs[10][1]~q\;
-\inst3|ALT_INV_regs[9][1]~q\ <= NOT \inst3|regs[9][1]~q\;
-\inst3|ALT_INV_regs[8][1]~q\ <= NOT \inst3|regs[8][1]~q\;
-\inst3|ALT_INV_Mux46~1_combout\ <= NOT \inst3|Mux46~1_combout\;
-\inst3|ALT_INV_regs[7][1]~q\ <= NOT \inst3|regs[7][1]~q\;
-\inst3|ALT_INV_regs[6][1]~q\ <= NOT \inst3|regs[6][1]~q\;
-\inst3|ALT_INV_regs[5][1]~q\ <= NOT \inst3|regs[5][1]~q\;
-\inst3|ALT_INV_regs[4][1]~q\ <= NOT \inst3|regs[4][1]~q\;
-\inst3|ALT_INV_Mux46~0_combout\ <= NOT \inst3|Mux46~0_combout\;
-\inst3|ALT_INV_regs[3][1]~q\ <= NOT \inst3|regs[3][1]~q\;
-\inst3|ALT_INV_regs[2][1]~q\ <= NOT \inst3|regs[2][1]~q\;
-\inst3|ALT_INV_regs[1][1]~q\ <= NOT \inst3|regs[1][1]~q\;
-\inst3|ALT_INV_regs[0][1]~q\ <= NOT \inst3|regs[0][1]~q\;
-\inst3|ALT_INV_Mux45~4_combout\ <= NOT \inst3|Mux45~4_combout\;
-\inst3|ALT_INV_Mux45~3_combout\ <= NOT \inst3|Mux45~3_combout\;
-\inst3|ALT_INV_regs[15][2]~q\ <= NOT \inst3|regs[15][2]~q\;
-\inst3|ALT_INV_regs[11][2]~q\ <= NOT \inst3|regs[11][2]~q\;
-\inst3|ALT_INV_regs[7][2]~q\ <= NOT \inst3|regs[7][2]~q\;
-\inst3|ALT_INV_regs[3][2]~q\ <= NOT \inst3|regs[3][2]~q\;
-\inst3|ALT_INV_Mux45~2_combout\ <= NOT \inst3|Mux45~2_combout\;
-\inst3|ALT_INV_regs[14][2]~q\ <= NOT \inst3|regs[14][2]~q\;
-\inst3|ALT_INV_regs[10][2]~q\ <= NOT \inst3|regs[10][2]~q\;
-\inst3|ALT_INV_regs[6][2]~q\ <= NOT \inst3|regs[6][2]~q\;
-\inst3|ALT_INV_regs[2][2]~q\ <= NOT \inst3|regs[2][2]~q\;
-\inst3|ALT_INV_Mux45~1_combout\ <= NOT \inst3|Mux45~1_combout\;
-\inst3|ALT_INV_regs[13][2]~q\ <= NOT \inst3|regs[13][2]~q\;
-\inst3|ALT_INV_regs[9][2]~q\ <= NOT \inst3|regs[9][2]~q\;
-\inst3|ALT_INV_regs[5][2]~q\ <= NOT \inst3|regs[5][2]~q\;
-\inst3|ALT_INV_regs[1][2]~q\ <= NOT \inst3|regs[1][2]~q\;
-\inst3|ALT_INV_Mux45~0_combout\ <= NOT \inst3|Mux45~0_combout\;
-\inst3|ALT_INV_regs[12][2]~q\ <= NOT \inst3|regs[12][2]~q\;
-\inst3|ALT_INV_regs[8][2]~q\ <= NOT \inst3|regs[8][2]~q\;
-\inst3|ALT_INV_regs[4][2]~q\ <= NOT \inst3|regs[4][2]~q\;
-\inst3|ALT_INV_regs[0][2]~q\ <= NOT \inst3|regs[0][2]~q\;
-\inst3|ALT_INV_Mux44~4_combout\ <= NOT \inst3|Mux44~4_combout\;
-\inst3|ALT_INV_Mux44~3_combout\ <= NOT \inst3|Mux44~3_combout\;
-\inst3|ALT_INV_regs[15][3]~q\ <= NOT \inst3|regs[15][3]~q\;
-\inst3|ALT_INV_regs[14][3]~q\ <= NOT \inst3|regs[14][3]~q\;
-\inst3|ALT_INV_regs[13][3]~q\ <= NOT \inst3|regs[13][3]~q\;
-\inst3|ALT_INV_regs[12][3]~q\ <= NOT \inst3|regs[12][3]~q\;
-\inst3|ALT_INV_Mux44~2_combout\ <= NOT \inst3|Mux44~2_combout\;
-\inst3|ALT_INV_regs[11][3]~q\ <= NOT \inst3|regs[11][3]~q\;
-\inst3|ALT_INV_regs[10][3]~q\ <= NOT \inst3|regs[10][3]~q\;
-\inst3|ALT_INV_regs[9][3]~q\ <= NOT \inst3|regs[9][3]~q\;
-\inst3|ALT_INV_regs[8][3]~q\ <= NOT \inst3|regs[8][3]~q\;
-\inst3|ALT_INV_Mux44~1_combout\ <= NOT \inst3|Mux44~1_combout\;
-\inst3|ALT_INV_regs[7][3]~q\ <= NOT \inst3|regs[7][3]~q\;
-\inst3|ALT_INV_regs[6][3]~q\ <= NOT \inst3|regs[6][3]~q\;
-\inst3|ALT_INV_regs[5][3]~q\ <= NOT \inst3|regs[5][3]~q\;
-\inst3|ALT_INV_regs[4][3]~q\ <= NOT \inst3|regs[4][3]~q\;
-\inst3|ALT_INV_Mux44~0_combout\ <= NOT \inst3|Mux44~0_combout\;
-\inst3|ALT_INV_regs[3][3]~q\ <= NOT \inst3|regs[3][3]~q\;
-\inst3|ALT_INV_regs[2][3]~q\ <= NOT \inst3|regs[2][3]~q\;
-\inst3|ALT_INV_regs[1][3]~q\ <= NOT \inst3|regs[1][3]~q\;
-\inst2|ALT_INV_operand\(3) <= NOT \inst2|operand\(3);
-\inst2|ALT_INV_operand\(4) <= NOT \inst2|operand\(4);
-\inst2|ALT_INV_operand\(5) <= NOT \inst2|operand\(5);
-\inst2|ALT_INV_operand\(6) <= NOT \inst2|operand\(6);
-\inst2|ALT_INV_operand\(7) <= NOT \inst2|operand\(7);
-\inst2|ALT_INV_operand\(8) <= NOT \inst2|operand\(8);
-\inst2|ALT_INV_operand\(9) <= NOT \inst2|operand\(9);
-\inst2|ALT_INV_operand\(10) <= NOT \inst2|operand\(10);
-\inst2|ALT_INV_operand\(11) <= NOT \inst2|operand\(11);
-\inst2|ALT_INV_operand\(12) <= NOT \inst2|operand\(12);
-\inst2|ALT_INV_operand\(13) <= NOT \inst2|operand\(13);
-\inst2|ALT_INV_operand\(14) <= NOT \inst2|operand\(14);
-\inst2|ALT_INV_operand\(15) <= NOT \inst2|operand\(15);
-\inst2|ALT_INV_address_method\(0) <= NOT \inst2|address_method\(0);
-\inst2|ALT_INV_address_method\(1) <= NOT \inst2|address_method\(1);
-\inst9|ALT_INV_alu_result\(0) <= NOT \inst9|alu_result\(0);
-\inst9|ALT_INV_alu_result\(1) <= NOT \inst9|alu_result\(1);
-\inst9|ALT_INV_alu_result\(2) <= NOT \inst9|alu_result\(2);
-\inst9|ALT_INV_alu_result\(3) <= NOT \inst9|alu_result\(3);
-\inst9|ALT_INV_alu_result\(4) <= NOT \inst9|alu_result\(4);
-\inst9|ALT_INV_alu_result\(5) <= NOT \inst9|alu_result\(5);
-\inst9|ALT_INV_alu_result\(6) <= NOT \inst9|alu_result\(6);
-\inst9|ALT_INV_alu_result\(7) <= NOT \inst9|alu_result\(7);
-\inst9|ALT_INV_alu_result\(8) <= NOT \inst9|alu_result\(8);
-\inst9|ALT_INV_alu_result\(9) <= NOT \inst9|alu_result\(9);
-\inst9|ALT_INV_alu_result\(10) <= NOT \inst9|alu_result\(10);
-\inst9|ALT_INV_alu_result\(11) <= NOT \inst9|alu_result\(11);
-\inst9|ALT_INV_alu_result\(12) <= NOT \inst9|alu_result\(12);
-\inst9|ALT_INV_alu_result\(13) <= NOT \inst9|alu_result\(13);
-\inst9|ALT_INV_alu_result\(14) <= NOT \inst9|alu_result\(14);
-\inst9|ALT_INV_alu_result\(15) <= NOT \inst9|alu_result\(15);
-\inst7|ALT_INV_wren~q\ <= NOT \inst7|wren~q\;
-\inst7|ALT_INV_alu_opsel\(4) <= NOT \inst7|alu_opsel\(4);
-\inst2|ALT_INV_opcode\(0) <= NOT \inst2|opcode\(0);
-\inst2|ALT_INV_opcode\(1) <= NOT \inst2|opcode\(1);
-\inst2|ALT_INV_opcode\(2) <= NOT \inst2|opcode\(2);
-\inst2|ALT_INV_opcode\(3) <= NOT \inst2|opcode\(3);
-\inst2|ALT_INV_opcode\(4) <= NOT \inst2|opcode\(4);
-\inst2|ALT_INV_opcode\(5) <= NOT \inst2|opcode\(5);
-\inst7|ALT_INV_stateOut\(0) <= NOT \inst7|stateOut\(0);
-\inst7|ALT_INV_stateOut\(1) <= NOT \inst7|stateOut\(1);
-\inst7|ALT_INV_stateOut\(2) <= NOT \inst7|stateOut\(2);
-\inst7|ALT_INV_stateOut\(3) <= NOT \inst7|stateOut\(3);
-\inst3|ALT_INV_Mux63~4_combout\ <= NOT \inst3|Mux63~4_combout\;
-\inst3|ALT_INV_Mux63~3_combout\ <= NOT \inst3|Mux63~3_combout\;
-\inst3|ALT_INV_Mux63~2_combout\ <= NOT \inst3|Mux63~2_combout\;
-\inst3|ALT_INV_Mux63~1_combout\ <= NOT \inst3|Mux63~1_combout\;
-\inst3|ALT_INV_Mux63~0_combout\ <= NOT \inst3|Mux63~0_combout\;
-\inst3|ALT_INV_Mux62~4_combout\ <= NOT \inst3|Mux62~4_combout\;
-\inst3|ALT_INV_Mux62~3_combout\ <= NOT \inst3|Mux62~3_combout\;
-\inst3|ALT_INV_Mux62~2_combout\ <= NOT \inst3|Mux62~2_combout\;
-\inst3|ALT_INV_Mux62~1_combout\ <= NOT \inst3|Mux62~1_combout\;
-\inst3|ALT_INV_Mux62~0_combout\ <= NOT \inst3|Mux62~0_combout\;
-\inst3|ALT_INV_Mux61~4_combout\ <= NOT \inst3|Mux61~4_combout\;
-\inst3|ALT_INV_Mux61~3_combout\ <= NOT \inst3|Mux61~3_combout\;
-\inst3|ALT_INV_Mux61~2_combout\ <= NOT \inst3|Mux61~2_combout\;
-\inst3|ALT_INV_Mux61~1_combout\ <= NOT \inst3|Mux61~1_combout\;
-\inst3|ALT_INV_Mux61~0_combout\ <= NOT \inst3|Mux61~0_combout\;
-\inst3|ALT_INV_Mux60~4_combout\ <= NOT \inst3|Mux60~4_combout\;
-\inst3|ALT_INV_Mux60~3_combout\ <= NOT \inst3|Mux60~3_combout\;
-\inst3|ALT_INV_Mux60~2_combout\ <= NOT \inst3|Mux60~2_combout\;
-\inst3|ALT_INV_Mux60~1_combout\ <= NOT \inst3|Mux60~1_combout\;
-\inst3|ALT_INV_Mux60~0_combout\ <= NOT \inst3|Mux60~0_combout\;
-\inst3|ALT_INV_Mux59~4_combout\ <= NOT \inst3|Mux59~4_combout\;
-\inst3|ALT_INV_Mux59~3_combout\ <= NOT \inst3|Mux59~3_combout\;
-\inst3|ALT_INV_Mux59~2_combout\ <= NOT \inst3|Mux59~2_combout\;
-\inst3|ALT_INV_Mux59~1_combout\ <= NOT \inst3|Mux59~1_combout\;
-\inst3|ALT_INV_Mux59~0_combout\ <= NOT \inst3|Mux59~0_combout\;
-\inst3|ALT_INV_Mux58~4_combout\ <= NOT \inst3|Mux58~4_combout\;
-\inst3|ALT_INV_Mux58~3_combout\ <= NOT \inst3|Mux58~3_combout\;
-\inst3|ALT_INV_Mux58~2_combout\ <= NOT \inst3|Mux58~2_combout\;
-\inst3|ALT_INV_Mux58~1_combout\ <= NOT \inst3|Mux58~1_combout\;
-\inst3|ALT_INV_Mux58~0_combout\ <= NOT \inst3|Mux58~0_combout\;
-\inst3|ALT_INV_Mux57~4_combout\ <= NOT \inst3|Mux57~4_combout\;
-\inst3|ALT_INV_Mux57~3_combout\ <= NOT \inst3|Mux57~3_combout\;
-\inst3|ALT_INV_Mux57~2_combout\ <= NOT \inst3|Mux57~2_combout\;
-\inst3|ALT_INV_Mux57~1_combout\ <= NOT \inst3|Mux57~1_combout\;
-\inst3|ALT_INV_Mux57~0_combout\ <= NOT \inst3|Mux57~0_combout\;
-\inst3|ALT_INV_Mux56~4_combout\ <= NOT \inst3|Mux56~4_combout\;
-\inst3|ALT_INV_Mux56~3_combout\ <= NOT \inst3|Mux56~3_combout\;
-\inst3|ALT_INV_Mux56~2_combout\ <= NOT \inst3|Mux56~2_combout\;
-\inst3|ALT_INV_Mux56~1_combout\ <= NOT \inst3|Mux56~1_combout\;
-\inst3|ALT_INV_Mux56~0_combout\ <= NOT \inst3|Mux56~0_combout\;
-\inst3|ALT_INV_Mux55~4_combout\ <= NOT \inst3|Mux55~4_combout\;
-\inst3|ALT_INV_Mux55~3_combout\ <= NOT \inst3|Mux55~3_combout\;
-\inst3|ALT_INV_Mux55~2_combout\ <= NOT \inst3|Mux55~2_combout\;
-\inst3|ALT_INV_Mux55~1_combout\ <= NOT \inst3|Mux55~1_combout\;
-\inst3|ALT_INV_Mux55~0_combout\ <= NOT \inst3|Mux55~0_combout\;
-\inst3|ALT_INV_Mux54~4_combout\ <= NOT \inst3|Mux54~4_combout\;
-\inst3|ALT_INV_Mux54~3_combout\ <= NOT \inst3|Mux54~3_combout\;
-\inst3|ALT_INV_Mux54~2_combout\ <= NOT \inst3|Mux54~2_combout\;
-\inst3|ALT_INV_Mux54~1_combout\ <= NOT \inst3|Mux54~1_combout\;
-\inst3|ALT_INV_Mux54~0_combout\ <= NOT \inst3|Mux54~0_combout\;
-\inst3|ALT_INV_Mux53~4_combout\ <= NOT \inst3|Mux53~4_combout\;
-\inst3|ALT_INV_Mux53~3_combout\ <= NOT \inst3|Mux53~3_combout\;
-\inst3|ALT_INV_Mux53~2_combout\ <= NOT \inst3|Mux53~2_combout\;
-\inst3|ALT_INV_Mux53~1_combout\ <= NOT \inst3|Mux53~1_combout\;
-\inst3|ALT_INV_Mux53~0_combout\ <= NOT \inst3|Mux53~0_combout\;
-\inst3|ALT_INV_Mux52~4_combout\ <= NOT \inst3|Mux52~4_combout\;
-\inst3|ALT_INV_Mux52~3_combout\ <= NOT \inst3|Mux52~3_combout\;
-\inst3|ALT_INV_Mux52~2_combout\ <= NOT \inst3|Mux52~2_combout\;
-\inst3|ALT_INV_Mux52~1_combout\ <= NOT \inst3|Mux52~1_combout\;
-\inst3|ALT_INV_Mux52~0_combout\ <= NOT \inst3|Mux52~0_combout\;
-\inst3|ALT_INV_Mux51~4_combout\ <= NOT \inst3|Mux51~4_combout\;
-\inst3|ALT_INV_Mux51~3_combout\ <= NOT \inst3|Mux51~3_combout\;
-\inst3|ALT_INV_Mux51~2_combout\ <= NOT \inst3|Mux51~2_combout\;
-\inst7|ALT_INV_Selector3~0_combout\ <= NOT \inst7|Selector3~0_combout\;
-\inst7|ALT_INV_Selector1~0_combout\ <= NOT \inst7|Selector1~0_combout\;
-\inst7|ALT_INV_Selector8~0_combout\ <= NOT \inst7|Selector8~0_combout\;
-\inst7|ALT_INV_nextState.selStore~q\ <= NOT \inst7|nextState.selStore~q\;
-\inst7|ALT_INV_Equal6~0_combout\ <= NOT \inst7|Equal6~0_combout\;
-\inst7|ALT_INV_Equal0~1_combout\ <= NOT \inst7|Equal0~1_combout\;
-\inst7|ALT_INV_WideOr1~combout\ <= NOT \inst7|WideOr1~combout\;
-\inst7|ALT_INV_nextState.execution~q\ <= NOT \inst7|nextState.execution~q\;
-\inst7|ALT_INV_nextState.decode2~q\ <= NOT \inst7|nextState.decode2~q\;
-\inst7|ALT_INV_nextState.loadAluResult~q\ <= NOT \inst7|nextState.loadAluResult~q\;
-\inst7|ALT_INV_nextState.decode~q\ <= NOT \inst7|nextState.decode~q\;
-\inst7|ALT_INV_nextState.storeData~q\ <= NOT \inst7|nextState.storeData~q\;
-\inst7|ALT_INV_nextState.storeAluResult~q\ <= NOT \inst7|nextState.storeAluResult~q\;
-\inst7|ALT_INV_Selector0~0_combout\ <= NOT \inst7|Selector0~0_combout\;
-\inst7|ALT_INV_nextState.fetch~q\ <= NOT \inst7|nextState.fetch~q\;
-\inst7|ALT_INV_Equal0~0_combout\ <= NOT \inst7|Equal0~0_combout\;
-\inst7|ALT_INV_OUTPUTS~0_combout\ <= NOT \inst7|OUTPUTS~0_combout\;
-\inst7|ALT_INV_nextState.idle~q\ <= NOT \inst7|nextState.idle~q\;
-\inst1|ALT_INV_memory[0][0]~q\ <= NOT \inst1|memory[0][0]~q\;
-\inst1|ALT_INV_memory[0][1]~q\ <= NOT \inst1|memory[0][1]~q\;
-\inst1|ALT_INV_memory[0][2]~q\ <= NOT \inst1|memory[0][2]~q\;
-\inst1|ALT_INV_memory[0][3]~q\ <= NOT \inst1|memory[0][3]~q\;
-\inst1|ALT_INV_memory[0][4]~q\ <= NOT \inst1|memory[0][4]~q\;
-\inst1|ALT_INV_memory[0][5]~q\ <= NOT \inst1|memory[0][5]~q\;
-\inst1|ALT_INV_memory[0][6]~q\ <= NOT \inst1|memory[0][6]~q\;
-\inst1|ALT_INV_memory[0][7]~q\ <= NOT \inst1|memory[0][7]~q\;
-\inst1|ALT_INV_memory[0][8]~q\ <= NOT \inst1|memory[0][8]~q\;
-\inst1|ALT_INV_memory[0][9]~q\ <= NOT \inst1|memory[0][9]~q\;
-\inst1|ALT_INV_memory[0][10]~q\ <= NOT \inst1|memory[0][10]~q\;
-\inst1|ALT_INV_memory[0][11]~q\ <= NOT \inst1|memory[0][11]~q\;
-\inst1|ALT_INV_memory[0][12]~q\ <= NOT \inst1|memory[0][12]~q\;
-\inst1|ALT_INV_memory[0][13]~q\ <= NOT \inst1|memory[0][13]~q\;
-\inst1|ALT_INV_memory[0][14]~q\ <= NOT \inst1|memory[0][14]~q\;
-\inst1|ALT_INV_memory[0][15]~q\ <= NOT \inst1|memory[0][15]~q\;
-\inst7|ALT_INV_Mux55~0_combout\ <= NOT \inst7|Mux55~0_combout\;
-\inst7|ALT_INV_nextState.decode3~q\ <= NOT \inst7|nextState.decode3~q\;
-\inst7|ALT_INV_dataSel~1_combout\ <= NOT \inst7|dataSel~1_combout\;
-\inst7|ALT_INV_dataSel~0_combout\ <= NOT \inst7|dataSel~0_combout\;
-\inst6|ALT_INV_Equal0~2_combout\ <= NOT \inst6|Equal0~2_combout\;
-\inst6|ALT_INV_Equal0~1_combout\ <= NOT \inst6|Equal0~1_combout\;
-\inst6|ALT_INV_Equal0~0_combout\ <= NOT \inst6|Equal0~0_combout\;
-\inst9|ALT_INV_Equal0~2_combout\ <= NOT \inst9|Equal0~2_combout\;
-\inst9|ALT_INV_Equal0~1_combout\ <= NOT \inst9|Equal0~1_combout\;
-\inst9|ALT_INV_Equal0~0_combout\ <= NOT \inst9|Equal0~0_combout\;
-\inst|ALT_INV_out_count\(0) <= NOT \inst|out_count\(0);
-\inst2|ALT_INV_operand\(0) <= NOT \inst2|operand\(0);
-\inst2|ALT_INV_operand\(1) <= NOT \inst2|operand\(1);
-\inst2|ALT_INV_operand\(2) <= NOT \inst2|operand\(2);
-\inst3|ALT_INV_Mux16~4_combout\ <= NOT \inst3|Mux16~4_combout\;
-\inst3|ALT_INV_Mux16~3_combout\ <= NOT \inst3|Mux16~3_combout\;
-\inst3|ALT_INV_Mux16~2_combout\ <= NOT \inst3|Mux16~2_combout\;
-\inst3|ALT_INV_Mux16~1_combout\ <= NOT \inst3|Mux16~1_combout\;
-\inst3|ALT_INV_Mux16~0_combout\ <= NOT \inst3|Mux16~0_combout\;
-\inst7|ALT_INV_nextState~17_combout\ <= NOT \inst7|nextState~17_combout\;
-\inst7|ALT_INV_nextState~15_combout\ <= NOT \inst7|nextState~15_combout\;
-\inst7|ALT_INV_Equal3~0_combout\ <= NOT \inst7|Equal3~0_combout\;
-\inst7|ALT_INV_Equal0~2_combout\ <= NOT \inst7|Equal0~2_combout\;
-\inst7|ALT_INV_nextState~14_combout\ <= NOT \inst7|nextState~14_combout\;
-\inst7|ALT_INV_Selector8~1_combout\ <= NOT \inst7|Selector8~1_combout\;
-\inst9|ALT_INV_Mux10~0_combout\ <= NOT \inst9|Mux10~0_combout\;
-\inst9|ALT_INV_Mux13~0_combout\ <= NOT \inst9|Mux13~0_combout\;
-\inst9|ALT_INV_Mux12~0_combout\ <= NOT \inst9|Mux12~0_combout\;
-\inst9|ALT_INV_Mux4~0_combout\ <= NOT \inst9|Mux4~0_combout\;
-\inst9|ALT_INV_Mux8~0_combout\ <= NOT \inst9|Mux8~0_combout\;
-\inst9|ALT_INV_Mux5~0_combout\ <= NOT \inst9|Mux5~0_combout\;
-\inst9|ALT_INV_Mux6~0_combout\ <= NOT \inst9|Mux6~0_combout\;
-\inst9|ALT_INV_Mux7~0_combout\ <= NOT \inst9|Mux7~0_combout\;
-\inst9|ALT_INV_Mux11~0_combout\ <= NOT \inst9|Mux11~0_combout\;
-\inst9|ALT_INV_Mux2~0_combout\ <= NOT \inst9|Mux2~0_combout\;
-\inst9|ALT_INV_Mux1~0_combout\ <= NOT \inst9|Mux1~0_combout\;
-\inst9|ALT_INV_Mux14~0_combout\ <= NOT \inst9|Mux14~0_combout\;
-\inst9|ALT_INV_Mux0~0_combout\ <= NOT \inst9|Mux0~0_combout\;
-\inst9|ALT_INV_Mux15~0_combout\ <= NOT \inst9|Mux15~0_combout\;
-\inst9|ALT_INV_Mux9~0_combout\ <= NOT \inst9|Mux9~0_combout\;
-\inst9|ALT_INV_Mux3~0_combout\ <= NOT \inst9|Mux3~0_combout\;
-\inst|ALT_INV_out_count[0]~17_combout\ <= NOT \inst|out_count[0]~17_combout\;
-\inst|ALT_INV_Equal0~0_combout\ <= NOT \inst|Equal0~0_combout\;
-\inst7|ALT_INV_Mux51~4_combout\ <= NOT \inst7|Mux51~4_combout\;
-\inst7|ALT_INV_Mux51~3_combout\ <= NOT \inst7|Mux51~3_combout\;
-\inst7|ALT_INV_Mux51~2_combout\ <= NOT \inst7|Mux51~2_combout\;
-\inst7|ALT_INV_Mux51~1_combout\ <= NOT \inst7|Mux51~1_combout\;
-\inst7|ALT_INV_Mux50~2_combout\ <= NOT \inst7|Mux50~2_combout\;
-\inst7|ALT_INV_Mux50~1_combout\ <= NOT \inst7|Mux50~1_combout\;
-\inst7|ALT_INV_Mux50~0_combout\ <= NOT \inst7|Mux50~0_combout\;
-\inst7|ALT_INV_Selector19~1_combout\ <= NOT \inst7|Selector19~1_combout\;
-\inst7|ALT_INV_Mux51~0_combout\ <= NOT \inst7|Mux51~0_combout\;
-\inst7|ALT_INV_Selector19~0_combout\ <= NOT \inst7|Selector19~0_combout\;
-\inst7|ALT_INV_Mux47~2_combout\ <= NOT \inst7|Mux47~2_combout\;
-\inst7|ALT_INV_Mux47~1_combout\ <= NOT \inst7|Mux47~1_combout\;
-\inst7|ALT_INV_Mux47~0_combout\ <= NOT \inst7|Mux47~0_combout\;
-\inst7|ALT_INV_Mux0~0_combout\ <= NOT \inst7|Mux0~0_combout\;
-\inst7|ALT_INV_WideOr8~0_combout\ <= NOT \inst7|WideOr8~0_combout\;
-\inst7|ALT_INV_nextState.fetch2~q\ <= NOT \inst7|nextState.fetch2~q\;
-\inst7|ALT_INV_Selector27~0_combout\ <= NOT \inst7|Selector27~0_combout\;
-\inst7|ALT_INV_Selector26~2_combout\ <= NOT \inst7|Selector26~2_combout\;
-\inst7|ALT_INV_Selector26~1_combout\ <= NOT \inst7|Selector26~1_combout\;
-\inst7|ALT_INV_Selector26~0_combout\ <= NOT \inst7|Selector26~0_combout\;
-\inst7|ALT_INV_Selector24~3_combout\ <= NOT \inst7|Selector24~3_combout\;
-\inst7|ALT_INV_Selector24~2_combout\ <= NOT \inst7|Selector24~2_combout\;
-\inst7|ALT_INV_Selector24~1_combout\ <= NOT \inst7|Selector24~1_combout\;
-\inst7|ALT_INV_Selector24~0_combout\ <= NOT \inst7|Selector24~0_combout\;
-\inst7|ALT_INV_Selector6~2_combout\ <= NOT \inst7|Selector6~2_combout\;
-\inst7|ALT_INV_Selector6~1_combout\ <= NOT \inst7|Selector6~1_combout\;
-\inst7|ALT_INV_Selector6~0_combout\ <= NOT \inst7|Selector6~0_combout\;
-\inst7|ALT_INV_OUTPUTS~1_combout\ <= NOT \inst7|OUTPUTS~1_combout\;
-\inst7|ALT_INV_Mux54~0_combout\ <= NOT \inst7|Mux54~0_combout\;
+\inst3|ALT_INV_Mux37~4_combout\ <= NOT \inst3|Mux37~4_combout\;
+\inst3|ALT_INV_Mux37~3_combout\ <= NOT \inst3|Mux37~3_combout\;
+\inst3|ALT_INV_regs[15][10]~q\ <= NOT \inst3|regs[15][10]~q\;
+\inst3|ALT_INV_regs[11][10]~q\ <= NOT \inst3|regs[11][10]~q\;
+\inst3|ALT_INV_regs[7][10]~q\ <= NOT \inst3|regs[7][10]~q\;
+\inst3|ALT_INV_regs[3][10]~q\ <= NOT \inst3|regs[3][10]~q\;
+\inst3|ALT_INV_Mux37~2_combout\ <= NOT \inst3|Mux37~2_combout\;
+\inst3|ALT_INV_regs[14][10]~q\ <= NOT \inst3|regs[14][10]~q\;
+\inst3|ALT_INV_regs[10][10]~q\ <= NOT \inst3|regs[10][10]~q\;
+\inst3|ALT_INV_regs[6][10]~q\ <= NOT \inst3|regs[6][10]~q\;
+\inst3|ALT_INV_regs[2][10]~q\ <= NOT \inst3|regs[2][10]~q\;
+\inst3|ALT_INV_Mux37~1_combout\ <= NOT \inst3|Mux37~1_combout\;
+\inst3|ALT_INV_regs[13][10]~q\ <= NOT \inst3|regs[13][10]~q\;
+\inst3|ALT_INV_regs[9][10]~q\ <= NOT \inst3|regs[9][10]~q\;
+\inst3|ALT_INV_regs[5][10]~q\ <= NOT \inst3|regs[5][10]~q\;
+\inst3|ALT_INV_regs[1][10]~q\ <= NOT \inst3|regs[1][10]~q\;
+\inst3|ALT_INV_Mux37~0_combout\ <= NOT \inst3|Mux37~0_combout\;
+\inst3|ALT_INV_regs[12][10]~q\ <= NOT \inst3|regs[12][10]~q\;
+\inst3|ALT_INV_regs[8][10]~q\ <= NOT \inst3|regs[8][10]~q\;
+\inst3|ALT_INV_regs[4][10]~q\ <= NOT \inst3|regs[4][10]~q\;
+\inst3|ALT_INV_regs[0][10]~q\ <= NOT \inst3|regs[0][10]~q\;
+\inst3|ALT_INV_Mux36~4_combout\ <= NOT \inst3|Mux36~4_combout\;
+\inst3|ALT_INV_Mux36~3_combout\ <= NOT \inst3|Mux36~3_combout\;
+\inst3|ALT_INV_regs[15][11]~q\ <= NOT \inst3|regs[15][11]~q\;
+\inst3|ALT_INV_regs[14][11]~q\ <= NOT \inst3|regs[14][11]~q\;
+\inst3|ALT_INV_regs[13][11]~q\ <= NOT \inst3|regs[13][11]~q\;
+\inst3|ALT_INV_regs[12][11]~q\ <= NOT \inst3|regs[12][11]~q\;
+\inst3|ALT_INV_Mux36~2_combout\ <= NOT \inst3|Mux36~2_combout\;
+\inst3|ALT_INV_regs[11][11]~q\ <= NOT \inst3|regs[11][11]~q\;
+\inst3|ALT_INV_regs[10][11]~q\ <= NOT \inst3|regs[10][11]~q\;
+\inst3|ALT_INV_regs[9][11]~q\ <= NOT \inst3|regs[9][11]~q\;
+\inst3|ALT_INV_regs[8][11]~q\ <= NOT \inst3|regs[8][11]~q\;
+\inst3|ALT_INV_Mux36~1_combout\ <= NOT \inst3|Mux36~1_combout\;
+\inst3|ALT_INV_regs[7][11]~q\ <= NOT \inst3|regs[7][11]~q\;
+\inst3|ALT_INV_regs[6][11]~q\ <= NOT \inst3|regs[6][11]~q\;
+\inst3|ALT_INV_regs[5][11]~q\ <= NOT \inst3|regs[5][11]~q\;
+\inst3|ALT_INV_regs[4][11]~q\ <= NOT \inst3|regs[4][11]~q\;
+\inst3|ALT_INV_Mux36~0_combout\ <= NOT \inst3|Mux36~0_combout\;
+\inst3|ALT_INV_regs[3][11]~q\ <= NOT \inst3|regs[3][11]~q\;
+\inst3|ALT_INV_regs[2][11]~q\ <= NOT \inst3|regs[2][11]~q\;
+\inst3|ALT_INV_regs[1][11]~q\ <= NOT \inst3|regs[1][11]~q\;
+\inst3|ALT_INV_regs[0][11]~q\ <= NOT \inst3|regs[0][11]~q\;
+\inst3|ALT_INV_Mux35~4_combout\ <= NOT \inst3|Mux35~4_combout\;
+\inst3|ALT_INV_Mux35~3_combout\ <= NOT \inst3|Mux35~3_combout\;
+\inst3|ALT_INV_regs[15][12]~q\ <= NOT \inst3|regs[15][12]~q\;
+\inst3|ALT_INV_regs[11][12]~q\ <= NOT \inst3|regs[11][12]~q\;
+\inst3|ALT_INV_regs[7][12]~q\ <= NOT \inst3|regs[7][12]~q\;
+\inst3|ALT_INV_regs[3][12]~q\ <= NOT \inst3|regs[3][12]~q\;
+\inst3|ALT_INV_Mux35~2_combout\ <= NOT \inst3|Mux35~2_combout\;
+\inst3|ALT_INV_regs[14][12]~q\ <= NOT \inst3|regs[14][12]~q\;
+\inst3|ALT_INV_regs[10][12]~q\ <= NOT \inst3|regs[10][12]~q\;
+\inst3|ALT_INV_regs[6][12]~q\ <= NOT \inst3|regs[6][12]~q\;
+\inst3|ALT_INV_regs[2][12]~q\ <= NOT \inst3|regs[2][12]~q\;
+\inst3|ALT_INV_Mux35~1_combout\ <= NOT \inst3|Mux35~1_combout\;
+\inst3|ALT_INV_regs[13][12]~q\ <= NOT \inst3|regs[13][12]~q\;
+\inst3|ALT_INV_regs[9][12]~q\ <= NOT \inst3|regs[9][12]~q\;
+\inst3|ALT_INV_regs[5][12]~q\ <= NOT \inst3|regs[5][12]~q\;
+\inst3|ALT_INV_regs[1][12]~q\ <= NOT \inst3|regs[1][12]~q\;
+\inst3|ALT_INV_Mux35~0_combout\ <= NOT \inst3|Mux35~0_combout\;
+\inst3|ALT_INV_regs[12][12]~q\ <= NOT \inst3|regs[12][12]~q\;
+\inst3|ALT_INV_regs[8][12]~q\ <= NOT \inst3|regs[8][12]~q\;
+\inst3|ALT_INV_regs[4][12]~q\ <= NOT \inst3|regs[4][12]~q\;
+\inst3|ALT_INV_regs[0][12]~q\ <= NOT \inst3|regs[0][12]~q\;
+\inst3|ALT_INV_Mux34~4_combout\ <= NOT \inst3|Mux34~4_combout\;
+\inst3|ALT_INV_Mux34~3_combout\ <= NOT \inst3|Mux34~3_combout\;
+\inst3|ALT_INV_regs[15][13]~q\ <= NOT \inst3|regs[15][13]~q\;
+\inst3|ALT_INV_regs[14][13]~q\ <= NOT \inst3|regs[14][13]~q\;
+\inst3|ALT_INV_regs[13][13]~q\ <= NOT \inst3|regs[13][13]~q\;
+\inst3|ALT_INV_regs[12][13]~q\ <= NOT \inst3|regs[12][13]~q\;
+\inst3|ALT_INV_Mux34~2_combout\ <= NOT \inst3|Mux34~2_combout\;
+\inst3|ALT_INV_regs[11][13]~q\ <= NOT \inst3|regs[11][13]~q\;
+\inst3|ALT_INV_regs[10][13]~q\ <= NOT \inst3|regs[10][13]~q\;
+\inst3|ALT_INV_regs[9][13]~q\ <= NOT \inst3|regs[9][13]~q\;
+\inst3|ALT_INV_regs[8][13]~q\ <= NOT \inst3|regs[8][13]~q\;
+\inst3|ALT_INV_Mux34~1_combout\ <= NOT \inst3|Mux34~1_combout\;
+\inst3|ALT_INV_regs[7][13]~q\ <= NOT \inst3|regs[7][13]~q\;
+\inst3|ALT_INV_regs[6][13]~q\ <= NOT \inst3|regs[6][13]~q\;
+\inst3|ALT_INV_regs[5][13]~q\ <= NOT \inst3|regs[5][13]~q\;
+\inst3|ALT_INV_regs[4][13]~q\ <= NOT \inst3|regs[4][13]~q\;
+\inst3|ALT_INV_Mux34~0_combout\ <= NOT \inst3|Mux34~0_combout\;
+\inst3|ALT_INV_regs[3][13]~q\ <= NOT \inst3|regs[3][13]~q\;
+\inst3|ALT_INV_regs[2][13]~q\ <= NOT \inst3|regs[2][13]~q\;
+\inst3|ALT_INV_regs[1][13]~q\ <= NOT \inst3|regs[1][13]~q\;
+\inst3|ALT_INV_regs[0][13]~q\ <= NOT \inst3|regs[0][13]~q\;
+\inst3|ALT_INV_Mux33~4_combout\ <= NOT \inst3|Mux33~4_combout\;
+\inst3|ALT_INV_Mux33~3_combout\ <= NOT \inst3|Mux33~3_combout\;
+\inst3|ALT_INV_regs[15][14]~q\ <= NOT \inst3|regs[15][14]~q\;
+\inst3|ALT_INV_regs[11][14]~q\ <= NOT \inst3|regs[11][14]~q\;
+\inst3|ALT_INV_regs[7][14]~q\ <= NOT \inst3|regs[7][14]~q\;
+\inst3|ALT_INV_regs[3][14]~q\ <= NOT \inst3|regs[3][14]~q\;
+\inst3|ALT_INV_Mux33~2_combout\ <= NOT \inst3|Mux33~2_combout\;
+\inst3|ALT_INV_regs[14][14]~q\ <= NOT \inst3|regs[14][14]~q\;
+\inst3|ALT_INV_regs[10][14]~q\ <= NOT \inst3|regs[10][14]~q\;
+\inst3|ALT_INV_regs[6][14]~q\ <= NOT \inst3|regs[6][14]~q\;
+\inst3|ALT_INV_regs[2][14]~q\ <= NOT \inst3|regs[2][14]~q\;
+\inst3|ALT_INV_Mux33~1_combout\ <= NOT \inst3|Mux33~1_combout\;
+\inst3|ALT_INV_regs[13][14]~q\ <= NOT \inst3|regs[13][14]~q\;
+\inst3|ALT_INV_regs[9][14]~q\ <= NOT \inst3|regs[9][14]~q\;
+\inst3|ALT_INV_regs[5][14]~q\ <= NOT \inst3|regs[5][14]~q\;
+\inst3|ALT_INV_regs[1][14]~q\ <= NOT \inst3|regs[1][14]~q\;
+\inst3|ALT_INV_Mux33~0_combout\ <= NOT \inst3|Mux33~0_combout\;
+\inst3|ALT_INV_regs[12][14]~q\ <= NOT \inst3|regs[12][14]~q\;
+\inst3|ALT_INV_regs[8][14]~q\ <= NOT \inst3|regs[8][14]~q\;
+\inst3|ALT_INV_regs[4][14]~q\ <= NOT \inst3|regs[4][14]~q\;
+\inst3|ALT_INV_regs[0][14]~q\ <= NOT \inst3|regs[0][14]~q\;
+\inst3|ALT_INV_Mux32~4_combout\ <= NOT \inst3|Mux32~4_combout\;
+\inst2|ALT_INV_rx\(3) <= NOT \inst2|rx\(3);
+\inst2|ALT_INV_rx\(2) <= NOT \inst2|rx\(2);
+\inst3|ALT_INV_Mux32~3_combout\ <= NOT \inst3|Mux32~3_combout\;
+\inst3|ALT_INV_regs[15][15]~q\ <= NOT \inst3|regs[15][15]~q\;
+\inst3|ALT_INV_regs[14][15]~q\ <= NOT \inst3|regs[14][15]~q\;
+\inst3|ALT_INV_regs[13][15]~q\ <= NOT \inst3|regs[13][15]~q\;
+\inst3|ALT_INV_regs[12][15]~q\ <= NOT \inst3|regs[12][15]~q\;
+\inst3|ALT_INV_Mux32~2_combout\ <= NOT \inst3|Mux32~2_combout\;
+\inst3|ALT_INV_regs[11][15]~q\ <= NOT \inst3|regs[11][15]~q\;
+\inst3|ALT_INV_regs[10][15]~q\ <= NOT \inst3|regs[10][15]~q\;
+\inst3|ALT_INV_regs[9][15]~q\ <= NOT \inst3|regs[9][15]~q\;
+\inst3|ALT_INV_regs[8][15]~q\ <= NOT \inst3|regs[8][15]~q\;
+\inst3|ALT_INV_Mux32~1_combout\ <= NOT \inst3|Mux32~1_combout\;
+\inst3|ALT_INV_regs[7][15]~q\ <= NOT \inst3|regs[7][15]~q\;
+\inst3|ALT_INV_regs[6][15]~q\ <= NOT \inst3|regs[6][15]~q\;
+\inst3|ALT_INV_regs[5][15]~q\ <= NOT \inst3|regs[5][15]~q\;
+\inst3|ALT_INV_regs[4][15]~q\ <= NOT \inst3|regs[4][15]~q\;
+\inst3|ALT_INV_Mux32~0_combout\ <= NOT \inst3|Mux32~0_combout\;
+\inst2|ALT_INV_rx\(1) <= NOT \inst2|rx\(1);
+\inst2|ALT_INV_rx\(0) <= NOT \inst2|rx\(0);
+\inst3|ALT_INV_regs[3][15]~q\ <= NOT \inst3|regs[3][15]~q\;
+\inst3|ALT_INV_regs[2][15]~q\ <= NOT \inst3|regs[2][15]~q\;
+\inst3|ALT_INV_regs[1][15]~q\ <= NOT \inst3|regs[1][15]~q\;
+\inst3|ALT_INV_regs[0][15]~q\ <= NOT \inst3|regs[0][15]~q\;
+\inst7|ALT_INV_increment\(0) <= NOT \inst7|increment\(0);
+\inst7|ALT_INV_increment\(2) <= NOT \inst7|increment\(2);
+\inst7|ALT_INV_increment\(3) <= NOT \inst7|increment\(3);
+\inst7|ALT_INV_addrSel\(1) <= NOT \inst7|addrSel\(1);
+\inst6|ALT_INV_presentJmp~q\ <= NOT \inst6|presentJmp~q\;
+\inst9|ALT_INV_Add0~61_sumout\ <= NOT \inst9|Add0~61_sumout\;
+\inst9|ALT_INV_Add0~57_sumout\ <= NOT \inst9|Add0~57_sumout\;
+\inst9|ALT_INV_Add0~53_sumout\ <= NOT \inst9|Add0~53_sumout\;
+\inst9|ALT_INV_Add0~49_sumout\ <= NOT \inst9|Add0~49_sumout\;
+\inst9|ALT_INV_Add0~45_sumout\ <= NOT \inst9|Add0~45_sumout\;
+\inst9|ALT_INV_Add0~41_sumout\ <= NOT \inst9|Add0~41_sumout\;
+\inst9|ALT_INV_Add0~37_sumout\ <= NOT \inst9|Add0~37_sumout\;
+\inst9|ALT_INV_Add0~33_sumout\ <= NOT \inst9|Add0~33_sumout\;
+\inst9|ALT_INV_Add0~29_sumout\ <= NOT \inst9|Add0~29_sumout\;
+\inst9|ALT_INV_Add0~25_sumout\ <= NOT \inst9|Add0~25_sumout\;
+\inst9|ALT_INV_Add0~21_sumout\ <= NOT \inst9|Add0~21_sumout\;
+\inst9|ALT_INV_Add0~17_sumout\ <= NOT \inst9|Add0~17_sumout\;
+\inst9|ALT_INV_Add0~13_sumout\ <= NOT \inst9|Add0~13_sumout\;
+\inst9|ALT_INV_Add0~9_sumout\ <= NOT \inst9|Add0~9_sumout\;
+\inst9|ALT_INV_Add0~5_sumout\ <= NOT \inst9|Add0~5_sumout\;
+\inst9|ALT_INV_Add0~1_sumout\ <= NOT \inst9|Add0~1_sumout\;
+\inst|ALT_INV_Add0~57_sumout\ <= NOT \inst|Add0~57_sumout\;
+\inst|ALT_INV_Add0~53_sumout\ <= NOT \inst|Add0~53_sumout\;
+\inst|ALT_INV_Add0~49_sumout\ <= NOT \inst|Add0~49_sumout\;
+\inst|ALT_INV_Add0~45_sumout\ <= NOT \inst|Add0~45_sumout\;
+\inst|ALT_INV_Add0~41_sumout\ <= NOT \inst|Add0~41_sumout\;
+\inst|ALT_INV_Add0~37_sumout\ <= NOT \inst|Add0~37_sumout\;
+\inst|ALT_INV_Add0~33_sumout\ <= NOT \inst|Add0~33_sumout\;
+\inst|ALT_INV_Add0~29_sumout\ <= NOT \inst|Add0~29_sumout\;
+\inst|ALT_INV_Add0~25_sumout\ <= NOT \inst|Add0~25_sumout\;
+\inst|ALT_INV_Add0~21_sumout\ <= NOT \inst|Add0~21_sumout\;
+\inst|ALT_INV_Add0~17_sumout\ <= NOT \inst|Add0~17_sumout\;
+\inst|ALT_INV_Add0~13_sumout\ <= NOT \inst|Add0~13_sumout\;
+\inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
+\inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
+\inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
+\inst3|ALT_INV_data_input_z\(0) <= NOT \inst3|data_input_z\(0);
+\inst3|ALT_INV_data_input_z\(1) <= NOT \inst3|data_input_z\(1);
+\inst3|ALT_INV_data_input_z\(2) <= NOT \inst3|data_input_z\(2);
+\inst3|ALT_INV_data_input_z\(3) <= NOT \inst3|data_input_z\(3);
+\inst3|ALT_INV_data_input_z\(4) <= NOT \inst3|data_input_z\(4);
+\inst3|ALT_INV_data_input_z\(5) <= NOT \inst3|data_input_z\(5);
+\inst3|ALT_INV_data_input_z\(6) <= NOT \inst3|data_input_z\(6);
+\inst3|ALT_INV_data_input_z\(7) <= NOT \inst3|data_input_z\(7);
+\inst3|ALT_INV_data_input_z\(8) <= NOT \inst3|data_input_z\(8);
+\inst3|ALT_INV_data_input_z\(9) <= NOT \inst3|data_input_z\(9);
+\inst3|ALT_INV_data_input_z\(10) <= NOT \inst3|data_input_z\(10);
+\inst3|ALT_INV_data_input_z\(11) <= NOT \inst3|data_input_z\(11);
+\inst3|ALT_INV_data_input_z\(12) <= NOT \inst3|data_input_z\(12);
+\inst3|ALT_INV_data_input_z\(13) <= NOT \inst3|data_input_z\(13);
+\inst3|ALT_INV_data_input_z\(14) <= NOT \inst3|data_input_z\(14);
+\inst3|ALT_INV_data_input_z\(15) <= NOT \inst3|data_input_z\(15);
+\inst9|ALT_INV_result\(5) <= NOT \inst9|result\(5);
+\inst9|ALT_INV_result\(10) <= NOT \inst9|result\(10);
+\inst9|ALT_INV_result\(9) <= NOT \inst9|result\(9);
+\inst9|ALT_INV_result\(8) <= NOT \inst9|result\(8);
+\inst9|ALT_INV_result\(7) <= NOT \inst9|result\(7);
+\inst9|ALT_INV_result\(3) <= NOT \inst9|result\(3);
+\inst9|ALT_INV_result\(2) <= NOT \inst9|result\(2);
+\inst9|ALT_INV_result\(0) <= NOT \inst9|result\(0);
+\inst9|ALT_INV_result\(14) <= NOT \inst9|result\(14);
+\inst9|ALT_INV_result\(13) <= NOT \inst9|result\(13);
+\inst9|ALT_INV_result\(1) <= NOT \inst9|result\(1);
+\inst9|ALT_INV_result\(4) <= NOT \inst9|result\(4);
+\inst9|ALT_INV_result\(12) <= NOT \inst9|result\(12);
+\inst9|ALT_INV_result\(11) <= NOT \inst9|result\(11);
+\inst9|ALT_INV_result\(6) <= NOT \inst9|result\(6);
+\inst9|ALT_INV_result\(15) <= NOT \inst9|result\(15);
+\inst|ALT_INV_out_count\(1) <= NOT \inst|out_count\(1);
+\inst|ALT_INV_out_count\(2) <= NOT \inst|out_count\(2);
+\inst|ALT_INV_out_count\(3) <= NOT \inst|out_count\(3);
+\inst|ALT_INV_out_count\(4) <= NOT \inst|out_count\(4);
+\inst|ALT_INV_out_count\(5) <= NOT \inst|out_count\(5);
+\inst|ALT_INV_out_count\(6) <= NOT \inst|out_count\(6);
+\inst|ALT_INV_out_count\(7) <= NOT \inst|out_count\(7);
+\inst|ALT_INV_out_count\(8) <= NOT \inst|out_count\(8);
+\inst|ALT_INV_out_count\(9) <= NOT \inst|out_count\(9);
+\inst|ALT_INV_out_count\(10) <= NOT \inst|out_count\(10);
+\inst|ALT_INV_out_count\(11) <= NOT \inst|out_count\(11);
+\inst|ALT_INV_out_count\(12) <= NOT \inst|out_count\(12);
+\inst|ALT_INV_out_count\(13) <= NOT \inst|out_count\(13);
+\inst|ALT_INV_out_count\(14) <= NOT \inst|out_count\(14);
+\inst|ALT_INV_out_count\(15) <= NOT \inst|out_count\(15);
+\inst7|ALT_INV_alu_opsel\(0) <= NOT \inst7|alu_opsel\(0);
+\inst7|ALT_INV_alu_opsel\(2) <= NOT \inst7|alu_opsel\(2);
+\inst7|ALT_INV_alu_opsel\(3) <= NOT \inst7|alu_opsel\(3);
+\inst7|ALT_INV_alu_opsel\(5) <= NOT \inst7|alu_opsel\(5);
+\inst7|ALT_INV_alu_opsel\(6) <= NOT \inst7|alu_opsel\(6);
 
 \z_flag~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -5848,27 +5844,17 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|nextState.idle~q\);
 
-\dm_indata[11]~input\ : cyclonev_io_ibuf
+\dm_indata[14]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_dm_indata(11),
-	o => \dm_indata[11]~input_o\);
+	i => ww_dm_indata(14),
+	o => \dm_indata[14]~input_o\);
 
-\dm_indata[9]~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_dm_indata(9),
-	o => \dm_indata[9]~input_o\);
-
-\inst1|memory[0][9]\ : dffeas
+\inst7|nextState.loadAluResult\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -5876,51 +5862,12 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \dm_indata[9]~input_o\,
-	ena => \inst1|memory[0][15]~0_combout\,
+	d => \inst7|Selector14~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|memory[0][9]~q\);
+	q => \inst7|nextState.loadAluResult~q\);
 
-\inst1|Mux6~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst1|Mux6~0_combout\ = ( \inst1|memory[0][9]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0))) ) ) # ( !\inst1|memory[0][9]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0)))) 
--- ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0100000000000000110000000000000001000000000000001100000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(3),
-	datab => \inst|ALT_INV_out_count\(2),
-	datac => \inst|ALT_INV_out_count\(1),
-	datad => \inst|ALT_INV_out_count\(0),
-	datae => \inst1|ALT_INV_memory[0][9]~q\,
-	combout => \inst1|Mux6~0_combout\);
-
-\inst7|Selector5~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector5~0_combout\ = ( \inst7|Equal0~0_combout\ & ( ((\inst7|nextState.execution~q\) # (\inst7|nextState.decode2~q\)) # (\inst7|nextState.loadAluResult~q\) ) ) # ( !\inst7|Equal0~0_combout\ & ( (((\inst7|nextState.execution~q\) # 
--- (\inst7|nextState.decode2~q\)) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.decode3~q\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0111111111111111001111111111111101111111111111110011111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.decode3~q\,
-	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.decode2~q\,
-	datad => \inst7|ALT_INV_nextState.execution~q\,
-	datae => \inst7|ALT_INV_Equal0~0_combout\,
-	combout => \inst7|Selector5~0_combout\);
-
-\inst7|stateOut[2]\ : dffeas
+\inst7|nextState.storeAluResult\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -5928,41 +5875,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector5~0_combout\,
+	d => \inst7|nextState.loadAluResult~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst7|stateOut\(2));
-
-\inst7|WideOr7\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|WideOr7~combout\ = ( \inst7|nextState.fetch2~q\ ) # ( !\inst7|nextState.fetch2~q\ & ( (((\inst7|nextState.execution~q\) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.storeData~q\) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0111111111111111111111111111111101111111111111111111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.storeData~q\,
-	datab => \inst7|ALT_INV_nextState.decode~q\,
-	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datad => \inst7|ALT_INV_nextState.execution~q\,
-	datae => \inst7|ALT_INV_nextState.fetch2~q\,
-	combout => \inst7|WideOr7~combout\);
-
-\inst7|stateOut[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|WideOr7~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|stateOut\(1));
+	q => \inst7|nextState.storeAluResult~q\);
 
 \dm_indata[8]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -6006,7 +5922,17 @@ PORT MAP (
 	datae => \inst1|ALT_INV_memory[0][8]~q\,
 	combout => \inst1|Mux7~0_combout\);
 
-\inst1|pm_outdata[8]\ : dffeas
+\dm_indata[11]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_dm_indata(11),
+	o => \dm_indata[11]~input_o\);
+
+\inst1|memory[0][11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -6014,30 +5940,32 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|Mux7~0_combout\,
-	ena => \inst1|Equal0~0_combout\,
+	d => \dm_indata[11]~input_o\,
+	ena => \inst1|memory[0][15]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|pm_outdata\(8));
+	q => \inst1|memory[0][11]~q\);
 
-\inst2|Equal0~0\ : cyclonev_lcell_comb
+\inst1|Mux4~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst2|Equal0~0_combout\ = (!\inst7|stateOut\(3) & (!\inst7|stateOut\(2) & (\inst7|stateOut\(1) & \inst7|stateOut\(0))))
+-- \inst1|Mux4~0_combout\ = ( \inst1|memory[0][11]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(3) $ (((\inst|out_count\(1)) # (\inst|out_count\(2)))))) ) ) # ( !\inst1|memory[0][11]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(0) & 
+-- ((\inst|out_count\(1)) # (\inst|out_count\(2))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000001000000000000000100000000000000010000000000000001000",
+	lut_mask => "0001010100000000100101010000000000010101000000001001010100000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_stateOut\(3),
-	datab => \inst7|ALT_INV_stateOut\(2),
-	datac => \inst7|ALT_INV_stateOut\(1),
-	datad => \inst7|ALT_INV_stateOut\(0),
-	combout => \inst2|Equal0~0_combout\);
+	dataa => \inst|ALT_INV_out_count\(3),
+	datab => \inst|ALT_INV_out_count\(2),
+	datac => \inst|ALT_INV_out_count\(1),
+	datad => \inst|ALT_INV_out_count\(0),
+	datae => \inst1|ALT_INV_memory[0][11]~q\,
+	combout => \inst1|Mux4~0_combout\);
 
-\inst2|opcode[0]\ : dffeas
+\inst1|pm_outdata[11]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -6045,11 +5973,11 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|pm_outdata\(8),
-	ena => \inst2|Equal0~0_combout\,
+	d => \inst1|Mux4~0_combout\,
+	ena => \inst1|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|opcode\(0));
+	q => \inst1|pm_outdata\(11));
 
 \dm_indata[10]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -6122,41 +6050,84 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst2|opcode\(2));
 
-\inst7|nextState~17\ : cyclonev_lcell_comb
+\inst7|Equal0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~17_combout\ = (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & (!\inst2|opcode\(2) & \inst2|opcode\(1)))) # (\inst2|opcode\(4) & (\inst2|opcode\(3) & (\inst2|opcode\(2) & !\inst2|opcode\(1))))
+-- \inst7|Equal0~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000110000000000000011000000000000001100000000000000110000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	combout => \inst7|nextState~17_combout\);
-
-\inst7|nextState~18\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~18_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(0) & (\inst7|nextState.decode3~q\ & \inst7|nextState~17_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000001000000000000000100000000000000010000000000000001000",
+	lut_mask => "0000001000000000000000000000000000000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(0),
-	datac => \inst7|ALT_INV_nextState.decode3~q\,
-	datad => \inst7|ALT_INV_nextState~17_combout\,
-	combout => \inst7|nextState~18_combout\);
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Equal0~0_combout\);
 
-\inst7|nextState.selStore\ : dffeas
+\inst7|OUTPUTS~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|OUTPUTS~0_combout\ = ( \inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) ) # ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (\inst2|opcode\(3) & 
+-- ((!\inst2|opcode\(5) & (!\inst2|opcode\(4))) # (\inst2|opcode\(5) & (\inst2|opcode\(4) & !\inst2|opcode\(2))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000100100001000000000000000000000000000000000001000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|OUTPUTS~0_combout\);
+
+\inst7|Selector8~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector8~0_combout\ = ( \inst7|OUTPUTS~0_combout\ & ( (\inst7|nextState.idle~q\ & (!\inst7|nextState.storeAluResult~q\ & !\inst7|nextState.storeData~q\)) ) ) # ( !\inst7|OUTPUTS~0_combout\ & ( (\inst7|nextState.idle~q\ & 
+-- (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.storeData~q\ & !\inst7|nextState.execution~q\))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100000000000000010000000100000001000000000000000100000001000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.idle~q\,
+	datab => \inst7|ALT_INV_nextState.storeAluResult~q\,
+	datac => \inst7|ALT_INV_nextState.storeData~q\,
+	datad => \inst7|ALT_INV_nextState.execution~q\,
+	datae => \inst7|ALT_INV_OUTPUTS~0_combout\,
+	combout => \inst7|Selector8~0_combout\);
+
+\inst7|Selector8~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector8~1_combout\ = ( \inst7|Selector8~0_combout\ & ( (!\inst7|nextState.decode3~q\ & (((\inst7|Equal6~0_combout\ & \inst7|nextState.selStore~q\)))) # (\inst7|nextState.decode3~q\ & (((\inst7|Equal6~0_combout\ & \inst7|nextState.selStore~q\)) # 
+-- (\inst7|Equal0~0_combout\))) ) ) # ( !\inst7|Selector8~0_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111111111111111000100010001111111111111111111110001000100011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.decode3~q\,
+	datab => \inst7|ALT_INV_Equal0~0_combout\,
+	datac => \inst7|ALT_INV_Equal6~0_combout\,
+	datad => \inst7|ALT_INV_nextState.selStore~q\,
+	datae => \inst7|ALT_INV_Selector8~0_combout\,
+	combout => \inst7|Selector8~1_combout\);
+
+\inst7|nextState.fetch\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -6164,10 +6135,67 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState~18_combout\,
+	d => \inst7|Selector8~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst7|nextState.selStore~q\);
+	q => \inst7|nextState.fetch~q\);
+
+\inst7|nextState.fetch2\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.fetch~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.fetch2~q\);
+
+\inst7|nextState.decode\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.fetch2~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.decode~q\);
+
+\inst7|WideOr7\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|WideOr7~combout\ = ( \inst7|nextState.fetch2~q\ ) # ( !\inst7|nextState.fetch2~q\ & ( (((\inst7|nextState.execution~q\) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.storeData~q\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0111111111111111111111111111111101111111111111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.storeData~q\,
+	datab => \inst7|ALT_INV_nextState.decode~q\,
+	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datad => \inst7|ALT_INV_nextState.execution~q\,
+	datae => \inst7|ALT_INV_nextState.fetch2~q\,
+	combout => \inst7|WideOr7~combout\);
+
+\inst7|stateOut[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|WideOr7~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|stateOut\(1));
 
 \inst7|WideOr8~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -6214,6 +6242,242 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|stateOut\(0));
 
+\inst2|Equal0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst2|Equal0~0_combout\ = (!\inst7|stateOut\(3) & (!\inst7|stateOut\(2) & (\inst7|stateOut\(1) & \inst7|stateOut\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000001000000000000000100000000000000010000000000000001000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_stateOut\(3),
+	datab => \inst7|ALT_INV_stateOut\(2),
+	datac => \inst7|ALT_INV_stateOut\(1),
+	datad => \inst7|ALT_INV_stateOut\(0),
+	combout => \inst2|Equal0~0_combout\);
+
+\inst2|opcode[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst1|pm_outdata\(11),
+	ena => \inst2|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|opcode\(3));
+
+\inst7|dataSel~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|dataSel~1_combout\ = ( \inst2|opcode\(1) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000100000000000000000000000000000001000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	combout => \inst7|dataSel~1_combout\);
+
+\inst7|nextState.decode2\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.decode~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.decode2~q\);
+
+\inst7|nextState~14\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~14_combout\ = (!\inst2|opcode\(1) & !\inst2|opcode\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000100010001000100010001000100010001000100010001000100010001000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(1),
+	datab => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|nextState~14_combout\);
+
+\dm_indata[15]~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_dm_indata(15),
+	o => \dm_indata[15]~input_o\);
+
+\inst1|memory[0][15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \dm_indata[15]~input_o\,
+	ena => \inst1|memory[0][15]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|memory[0][15]~q\);
+
+\inst1|Mux0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Mux0~0_combout\ = ( \inst1|memory[0][15]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0))) ) ) # ( !\inst1|memory[0][15]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(2) & (!\inst|out_count\(1) & 
+-- !\inst|out_count\(0)))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100000000000000110000000000000001000000000000001100000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_out_count\(3),
+	datab => \inst|ALT_INV_out_count\(2),
+	datac => \inst|ALT_INV_out_count\(1),
+	datad => \inst|ALT_INV_out_count\(0),
+	datae => \inst1|ALT_INV_memory[0][15]~q\,
+	combout => \inst1|Mux0~0_combout\);
+
+\inst1|pm_outdata[15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst1|Mux0~0_combout\,
+	ena => \inst1|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|pm_outdata\(15));
+
+\inst2|address_method[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst1|pm_outdata\(15),
+	ena => \inst2|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|address_method\(1));
+
+\inst7|nextState~15\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~15_combout\ = ( \inst2|address_method\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(5))) # (\inst2|opcode\(4) & (\inst2|opcode\(3) & ((!\inst2|opcode\(5)) # (!\inst2|opcode\(2))))) ) ) ) # ( 
+-- !\inst2|address_method\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(5))) # (\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(5) $ (!\inst2|opcode\(2))))) ) ) ) # ( \inst2|address_method\(1) & ( 
+-- !\inst2|address_method\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(5))) # (\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(5) $ (!\inst2|opcode\(2))))) ) ) ) # ( !\inst2|address_method\(1) & ( !\inst2|address_method\(0) & ( 
+-- (!\inst2|opcode\(4) & (!\inst2|opcode\(5))) # (\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(5) $ (!\inst2|opcode\(2))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000100110001010100010011000101010001001100010101000101110001010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_address_method\(1),
+	dataf => \inst2|ALT_INV_address_method\(0),
+	combout => \inst7|nextState~15_combout\);
+
+\inst7|Selector12~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector12~0_combout\ = ( \inst7|Equal0~0_combout\ & ( \inst7|nextState~15_combout\ & ( \inst7|nextState.decode2~q\ ) ) ) # ( !\inst7|Equal0~0_combout\ & ( \inst7|nextState~15_combout\ & ( ((\inst7|nextState.decode3~q\ & (!\inst7|dataSel~1_combout\ 
+-- & !\inst7|nextState~14_combout\))) # (\inst7|nextState.decode2~q\) ) ) ) # ( \inst7|Equal0~0_combout\ & ( !\inst7|nextState~15_combout\ & ( \inst7|nextState.decode2~q\ ) ) ) # ( !\inst7|Equal0~0_combout\ & ( !\inst7|nextState~15_combout\ & ( 
+-- ((\inst7|nextState.decode3~q\ & !\inst7|dataSel~1_combout\)) # (\inst7|nextState.decode2~q\) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100111101001111000011110000111101001111000011110000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.decode3~q\,
+	datab => \inst7|ALT_INV_dataSel~1_combout\,
+	datac => \inst7|ALT_INV_nextState.decode2~q\,
+	datad => \inst7|ALT_INV_nextState~14_combout\,
+	datae => \inst7|ALT_INV_Equal0~0_combout\,
+	dataf => \inst7|ALT_INV_nextState~15_combout\,
+	combout => \inst7|Selector12~0_combout\);
+
+\inst7|nextState.decode3\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector12~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.decode3~q\);
+
+\inst7|Selector5~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector5~0_combout\ = ( \inst7|Equal0~0_combout\ & ( ((\inst7|nextState.execution~q\) # (\inst7|nextState.decode2~q\)) # (\inst7|nextState.loadAluResult~q\) ) ) # ( !\inst7|Equal0~0_combout\ & ( (((\inst7|nextState.execution~q\) # 
+-- (\inst7|nextState.decode2~q\)) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.decode3~q\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0111111111111111001111111111111101111111111111110011111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.decode3~q\,
+	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datac => \inst7|ALT_INV_nextState.decode2~q\,
+	datad => \inst7|ALT_INV_nextState.execution~q\,
+	datae => \inst7|ALT_INV_Equal0~0_combout\,
+	combout => \inst7|Selector5~0_combout\);
+
+\inst7|stateOut[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector5~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|stateOut\(2));
+
 \inst1|Equal0~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \inst1|Equal0~0_combout\ = (!\inst7|stateOut\(3) & (!\inst7|stateOut\(2) & (\inst7|stateOut\(1) & !\inst7|stateOut\(0))))
@@ -6231,7 +6495,7 @@ PORT MAP (
 	datad => \inst7|ALT_INV_stateOut\(0),
 	combout => \inst1|Equal0~0_combout\);
 
-\inst1|pm_outdata[9]\ : dffeas
+\inst1|pm_outdata[8]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -6239,13 +6503,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|Mux6~0_combout\,
+	d => \inst1|Mux7~0_combout\,
 	ena => \inst1|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|pm_outdata\(9));
+	q => \inst1|pm_outdata\(8));
 
-\inst2|opcode[1]\ : dffeas
+\inst2|opcode[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -6253,58 +6517,55 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|pm_outdata\(9),
+	d => \inst1|pm_outdata\(8),
 	ena => \inst2|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|opcode\(1));
+	q => \inst2|opcode\(0));
 
-\inst7|Equal0~1\ : cyclonev_lcell_comb
+\inst7|nextState~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Equal0~1_combout\ = (\inst2|opcode\(3) & (!\inst2|opcode\(1) & !\inst2|opcode\(0)))
+-- \inst7|nextState~17_combout\ = ( !\inst7|Equal0~0_combout\ & ( (!\inst2|opcode\(0) & (\inst7|nextState.decode3~q\ & \inst7|dataSel~1_combout\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100000001000000010000000100000001000000010000000100000001000000",
+	lut_mask => "0000000000001100000000000000000000000000000011000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(3),
-	datab => \inst2|ALT_INV_opcode\(1),
-	datac => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Equal0~1_combout\);
+	datab => \inst2|ALT_INV_opcode\(0),
+	datac => \inst7|ALT_INV_nextState.decode3~q\,
+	datad => \inst7|ALT_INV_dataSel~1_combout\,
+	datae => \inst7|ALT_INV_Equal0~0_combout\,
+	combout => \inst7|nextState~17_combout\);
 
-\inst7|Equal6~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Equal6~0_combout\ = (!\inst2|opcode\(5) & (\inst2|opcode\(4) & \inst2|opcode\(2)))
-
+\inst7|nextState.selStore\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000000010000000100000001000000010000000100000001000000010",
-	shared_arith => "off")
+	is_wysiwyg => "true",
+	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(2),
-	combout => \inst7|Equal6~0_combout\);
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState~17_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.selStore~q\);
 
 \inst7|Selector13~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector13~0_combout\ = (\inst7|nextState.selStore~q\ & ((!\inst7|Equal0~1_combout\) # (!\inst7|Equal6~0_combout\)))
+-- \inst7|Selector13~0_combout\ = (!\inst7|Equal6~0_combout\ & \inst7|nextState.selStore~q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000111000001110000011100000111000001110000011100000111000001110",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_Equal0~1_combout\,
-	datab => \inst7|ALT_INV_Equal6~0_combout\,
-	datac => \inst7|ALT_INV_nextState.selStore~q\,
+	dataa => \inst7|ALT_INV_Equal6~0_combout\,
+	datab => \inst7|ALT_INV_nextState.selStore~q\,
 	combout => \inst7|Selector13~0_combout\);
 
 \inst7|nextState.storeData\ : dffeas
@@ -6322,21 +6583,19 @@ PORT MAP (
 
 \inst7|Selector4~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector4~0_combout\ = ( \inst7|nextState.selStore~q\ & ( (((!\inst7|Equal0~1_combout\) # (!\inst7|Equal6~0_combout\)) # (\inst7|nextState.storeData~q\)) # (\inst7|nextState.storeAluResult~q\) ) ) # ( !\inst7|nextState.selStore~q\ & ( 
--- (\inst7|nextState.storeData~q\) # (\inst7|nextState.storeAluResult~q\) ) )
+-- \inst7|Selector4~0_combout\ = (((!\inst7|Equal6~0_combout\ & \inst7|nextState.selStore~q\)) # (\inst7|nextState.storeData~q\)) # (\inst7|nextState.storeAluResult~q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0111011101110111111111111111011101110111011101111111111111110111",
+	lut_mask => "0111011111110111011101111111011101110111111101110111011111110111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.storeAluResult~q\,
 	datab => \inst7|ALT_INV_nextState.storeData~q\,
-	datac => \inst7|ALT_INV_Equal0~1_combout\,
-	datad => \inst7|ALT_INV_Equal6~0_combout\,
-	datae => \inst7|ALT_INV_nextState.selStore~q\,
+	datac => \inst7|ALT_INV_Equal6~0_combout\,
+	datad => \inst7|ALT_INV_nextState.selStore~q\,
 	combout => \inst7|Selector4~0_combout\);
 
 \inst7|stateOut[3]\ : dffeas
@@ -6380,95 +6639,6 @@ PORT MAP (
 	datae => \ALT_INV_dm_wr~input_o\,
 	combout => \inst1|memory[0][15]~0_combout\);
 
-\inst1|memory[0][11]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \dm_indata[11]~input_o\,
-	ena => \inst1|memory[0][15]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst1|memory[0][11]~q\);
-
-\inst1|Mux4~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst1|Mux4~0_combout\ = ( \inst1|memory[0][11]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(3) $ (((\inst|out_count\(1)) # (\inst|out_count\(2)))))) ) ) # ( !\inst1|memory[0][11]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(0) & 
--- ((\inst|out_count\(1)) # (\inst|out_count\(2))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001010100000000100101010000000000010101000000001001010100000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(3),
-	datab => \inst|ALT_INV_out_count\(2),
-	datac => \inst|ALT_INV_out_count\(1),
-	datad => \inst|ALT_INV_out_count\(0),
-	datae => \inst1|ALT_INV_memory[0][11]~q\,
-	combout => \inst1|Mux4~0_combout\);
-
-\inst1|pm_outdata[11]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst1|Mux4~0_combout\,
-	ena => \inst1|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst1|pm_outdata\(11));
-
-\inst2|opcode[3]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst1|pm_outdata\(11),
-	ena => \inst2|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst2|opcode\(3));
-
-\inst7|OUTPUTS~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|OUTPUTS~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000000010000000000000000000000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datae => \inst2|ALT_INV_opcode\(1),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|OUTPUTS~0_combout\);
-
-\dm_indata[14]~input\ : cyclonev_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_dm_indata(14),
-	o => \dm_indata[14]~input_o\);
-
 \inst1|memory[0][14]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -6485,13 +6655,13 @@ PORT MAP (
 
 \inst1|Mux1~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux1~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(3)) # (!\inst|out_count\(2)))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(3) & ((\inst|out_count\(1)) # 
--- (\inst|out_count\(2)))) # (\inst|out_count\(3) & (!\inst|out_count\(2))))) ) )
+-- \inst1|Mux1~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(3)) # ((!\inst|out_count\(2) & !\inst|out_count\(1))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(3) $ 
+-- (((!\inst|out_count\(2) & !\inst|out_count\(1)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0110111000000000111011100000000001101110000000001110111000000000",
+	lut_mask => "0110101000000000111010100000000001101010000000001110101000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -6530,32 +6700,14 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst2|address_method\(0));
 
-\inst7|Selector0~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector0~0_combout\ = (!\inst7|nextState.fetch~q\ & ((!\inst7|nextState.decode3~q\) # ((\inst2|address_method\(0) & \inst7|Equal0~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100110100000000110011010000000011001101000000001100110100000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_address_method\(0),
-	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_Equal0~0_combout\,
-	datad => \inst7|ALT_INV_nextState.fetch~q\,
-	combout => \inst7|Selector0~0_combout\);
-
 \inst7|WideOr1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|WideOr1~combout\ = ( \inst7|nextState.decode2~q\ & ( \inst7|nextState.execution~q\ ) ) # ( !\inst7|nextState.decode2~q\ & ( \inst7|nextState.execution~q\ ) ) # ( \inst7|nextState.decode2~q\ & ( !\inst7|nextState.execution~q\ ) ) # ( 
--- !\inst7|nextState.decode2~q\ & ( !\inst7|nextState.execution~q\ & ( (((\inst7|nextState.loadAluResult~q\) # (\inst7|nextState.decode~q\)) # (\inst7|nextState.storeData~q\)) # (\inst7|nextState.storeAluResult~q\) ) ) )
+-- \inst7|WideOr1~combout\ = ( !\inst7|nextState.decode2~q\ & ( !\inst7|nextState.execution~q\ & ( (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.storeData~q\ & (!\inst7|nextState.decode~q\ & !\inst7|nextState.loadAluResult~q\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0111111111111111111111111111111111111111111111111111111111111111",
+	lut_mask => "1000000000000000000000000000000000000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -6567,23 +6719,40 @@ PORT MAP (
 	dataf => \inst7|ALT_INV_nextState.execution~q\,
 	combout => \inst7|WideOr1~combout\);
 
-\inst7|Selector0~1\ : cyclonev_lcell_comb
+\inst7|Selector0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector0~1_combout\ = ( \inst7|WideOr1~combout\ & ( (\inst7|increment\(3) & \inst7|nextState.idle~q\) ) ) # ( !\inst7|WideOr1~combout\ & ( (\inst7|nextState.idle~q\ & (((!\inst7|OUTPUTS~0_combout\) # (\inst7|Selector0~0_combout\)) # 
--- (\inst7|increment\(3)))) ) )
+-- \inst7|Selector0~0_combout\ = ( \inst7|nextState.fetch~q\ & ( \inst7|WideOr1~combout\ & ( (!\inst7|Equal0~0_combout\ & ((!\inst7|nextState.decode3~q\) # (!\inst7|Equal6~0_combout\))) ) ) ) # ( !\inst7|nextState.fetch~q\ & ( \inst7|WideOr1~combout\ & ( 
+-- (!\inst7|nextState.decode3~q\) # ((!\inst7|Equal0~0_combout\ & ((!\inst7|Equal6~0_combout\))) # (\inst7|Equal0~0_combout\ & (\inst2|address_method\(0)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011000100110011000100010001000100110001001100110001000100010001",
+	lut_mask => "0000000000000000000000000000000011111101110011011111000011000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_address_method\(0),
+	datab => \inst7|ALT_INV_nextState.decode3~q\,
+	datac => \inst7|ALT_INV_Equal0~0_combout\,
+	datad => \inst7|ALT_INV_Equal6~0_combout\,
+	datae => \inst7|ALT_INV_nextState.fetch~q\,
+	dataf => \inst7|ALT_INV_WideOr1~combout\,
+	combout => \inst7|Selector0~0_combout\);
+
+\inst7|Selector0~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector0~1_combout\ = (\inst7|nextState.idle~q\ & ((\inst7|Selector0~0_combout\) # (\inst7|increment\(3))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0001001100010011000100110001001100010011000100110001001100010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_increment\(3),
 	datab => \inst7|ALT_INV_nextState.idle~q\,
-	datac => \inst7|ALT_INV_OUTPUTS~0_combout\,
-	datad => \inst7|ALT_INV_Selector0~0_combout\,
-	datae => \inst7|ALT_INV_WideOr1~combout\,
+	datac => \inst7|ALT_INV_Selector0~0_combout\,
 	combout => \inst7|Selector0~1_combout\);
 
 \inst7|increment[3]\ : dffeas
@@ -7411,13 +7580,14 @@ PORT MAP (
 
 \inst1|Mux31~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux31~0_combout\ = ( \inst1|memory[0][0]~q\ & ( (!\inst|out_count\(1) & (!\inst|out_count\(3) & (\inst|out_count\(2) & !\inst|out_count\(0)))) # (\inst|out_count\(1) & (\inst|out_count\(0) & (!\inst|out_count\(3) $ (\inst|out_count\(2))))) ) ) # ( 
--- !\inst1|memory[0][0]~q\ & ( (!\inst|out_count\(3) & ((!\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0))) # (\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0))))) ) )
+-- \inst1|Mux31~0_combout\ = ( \inst1|memory[0][0]~q\ & ( (!\inst|out_count\(3) & ((!\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0))) # (\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0))))) # (\inst|out_count\(3) & 
+-- (\inst|out_count\(1) & (!\inst|out_count\(2) $ (\inst|out_count\(0))))) ) ) # ( !\inst1|memory[0][0]~q\ & ( (!\inst|out_count\(2) & (\inst|out_count\(1) & (!\inst|out_count\(3) $ (!\inst|out_count\(0))))) # (\inst|out_count\(2) & (!\inst|out_count\(3) & 
+-- (!\inst|out_count\(1) & !\inst|out_count\(0)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010000000001000001000000000100100100000000010000010000000001001",
+	lut_mask => "0010010000001000001001000000100100100100000010000010010000001001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -7601,13 +7771,13 @@ PORT MAP (
 
 \inst1|Mux29~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux29~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (\inst|out_count\(2) & (!\inst|out_count\(0) $ (((\inst|out_count\(3) & \inst|out_count\(1)))))) ) ) # ( !\inst1|memory[0][2]~q\ & ( (\inst|out_count\(2) & (!\inst|out_count\(0) & 
--- ((!\inst|out_count\(3)) # (!\inst|out_count\(1))))) ) )
+-- \inst1|Mux29~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (!\inst|out_count\(2) & (\inst|out_count\(3) & (\inst|out_count\(1) & !\inst|out_count\(0)))) # (\inst|out_count\(2) & (!\inst|out_count\(0) $ (((\inst|out_count\(3) & \inst|out_count\(1)))))) ) ) # ( 
+-- !\inst1|memory[0][2]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(2) $ (((!\inst|out_count\(3)) # (!\inst|out_count\(1)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001000000000001100100000000100110010000000000011001000000001",
+	lut_mask => "0011011000000000001101100000000100110110000000000011011000000001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -7823,19 +7993,19 @@ PORT MAP (
 
 \inst1|Mux30~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux30~0_combout\ = ( \inst1|memory[0][1]~q\ & ( (!\inst|out_count\(3) & (((\inst|out_count\(2) & \inst|out_count\(0))))) # (\inst|out_count\(3) & (!\inst|out_count\(0) $ (((\inst|out_count\(1) & \inst|out_count\(2)))))) ) ) # ( 
--- !\inst1|memory[0][1]~q\ & ( (!\inst|out_count\(3) & (((\inst|out_count\(2) & \inst|out_count\(0))))) # (\inst|out_count\(3) & (!\inst|out_count\(0) & ((!\inst|out_count\(1)) # (!\inst|out_count\(2))))) ) )
+-- \inst1|Mux30~0_combout\ = ( \inst1|memory[0][1]~q\ & ( (!\inst|out_count\(2) & (\inst|out_count\(3) & ((!\inst|out_count\(0))))) # (\inst|out_count\(2) & (!\inst|out_count\(0) $ (((!\inst|out_count\(3)) # (\inst|out_count\(1)))))) ) ) # ( 
+-- !\inst1|memory[0][1]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(2) & ((\inst|out_count\(0))))) # (\inst|out_count\(3) & (!\inst|out_count\(0) & ((!\inst|out_count\(2)) # (!\inst|out_count\(1))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001000001100001100100000110100110010000011000011001000001101",
+	lut_mask => "0011001001000100001100100100010100110010010001000011001001000101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(1),
+	dataa => \inst|ALT_INV_out_count\(2),
 	datab => \inst|ALT_INV_out_count\(3),
-	datac => \inst|ALT_INV_out_count\(2),
+	datac => \inst|ALT_INV_out_count\(1),
 	datad => \inst|ALT_INV_out_count\(0),
 	datae => \inst1|ALT_INV_memory[0][1]~q\,
 	combout => \inst1|Mux30~0_combout\);
@@ -7903,6 +8073,22 @@ PORT MAP (
 	datab => \inst7|ALT_INV_rf_sel\(0),
 	datac => \inst3|ALT_INV_Mux31~4_combout\,
 	combout => \inst3|Mux31~5_combout\);
+
+\inst7|Equal0~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Equal0~1_combout\ = (\inst2|opcode\(3) & (!\inst2|opcode\(1) & !\inst2|opcode\(0)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100000001000000010000000100000001000000010000000100000001000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(3),
+	datab => \inst2|ALT_INV_opcode\(1),
+	datac => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Equal0~1_combout\);
 
 \inst7|Mux51~1\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -8046,6 +8232,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|alu_opsel\(0));
 
+\inst7|Mux54~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Mux54~0_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & !\inst2|opcode\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000000010000000100000001000000010000000100000001000000010000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	combout => \inst7|Mux54~0_combout\);
+
 \inst7|Mux50~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \inst7|Mux50~0_combout\ = ( \inst2|address_method\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & \inst7|alu_opsel\(3))) ) ) # ( !\inst2|address_method\(0) & ( (!\inst2|opcode\(2) & ((!\inst2|opcode\(4) & (!\inst2|opcode\(5))) # (\inst2|opcode\(4) & 
@@ -8084,37 +8286,22 @@ PORT MAP (
 
 \inst7|Mux50~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux50~2_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & \inst7|alu_opsel\(3))))
+-- \inst7|Mux50~2_combout\ = ( \inst7|Mux50~1_combout\ & ( (!\inst7|alu_opsel\(3) & (((\inst7|Equal0~1_combout\ & \inst7|Mux50~0_combout\)))) # (\inst7|alu_opsel\(3) & (((\inst7|Equal0~1_combout\ & \inst7|Mux50~0_combout\)) # (\inst7|Mux54~0_combout\))) ) ) 
+-- # ( !\inst7|Mux50~1_combout\ & ( (\inst7|Equal0~1_combout\ & \inst7|Mux50~0_combout\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000010000000000000001000000000000000100000000000000010000000",
+	lut_mask => "0000000000001111000100010001111100000000000011110001000100011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst7|ALT_INV_alu_opsel\(3),
+	dataa => \inst7|ALT_INV_alu_opsel\(3),
+	datab => \inst7|ALT_INV_Mux54~0_combout\,
+	datac => \inst7|ALT_INV_Equal0~1_combout\,
+	datad => \inst7|ALT_INV_Mux50~0_combout\,
+	datae => \inst7|ALT_INV_Mux50~1_combout\,
 	combout => \inst7|Mux50~2_combout\);
-
-\inst7|Mux50~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Mux50~3_combout\ = (!\inst7|Equal0~1_combout\ & (((\inst7|Mux50~1_combout\ & \inst7|Mux50~2_combout\)))) # (\inst7|Equal0~1_combout\ & (((\inst7|Mux50~1_combout\ & \inst7|Mux50~2_combout\)) # (\inst7|Mux50~0_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001000100011111000100010001111100010001000111110001000100011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_Equal0~1_combout\,
-	datab => \inst7|ALT_INV_Mux50~0_combout\,
-	datac => \inst7|ALT_INV_Mux50~1_combout\,
-	datad => \inst7|ALT_INV_Mux50~2_combout\,
-	combout => \inst7|Mux50~3_combout\);
 
 \inst7|alu_opsel[3]\ : dffeas
 -- pragma translate_off
@@ -8124,7 +8311,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Mux50~3_combout\,
+	d => \inst7|Mux50~2_combout\,
 	sclr => \inst7|ALT_INV_nextState.decode3~q\,
 	ena => \inst7|WideOr8~0_combout\,
 	devclrn => ww_devclrn,
@@ -8222,10 +8409,10 @@ PORT MAP (
 	cin => GND,
 	cout => \inst9|Add0~66_cout\);
 
-\inst9|Add0~9\ : cyclonev_lcell_comb
+\inst9|Add0~33\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~9_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux15~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux47~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux63~4_combout\))) ) + ( \inst9|Add0~66_cout\ ))
--- \inst9|Add0~10\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux15~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux47~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux63~4_combout\))) ) + ( \inst9|Add0~66_cout\ ))
+-- \inst9|Add0~33_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux15~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux47~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux63~4_combout\))) ) + ( \inst9|Add0~66_cout\ ))
+-- \inst9|Add0~34\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux15~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux47~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux63~4_combout\))) ) + ( \inst9|Add0~66_cout\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8240,8 +8427,8 @@ PORT MAP (
 	datad => \inst9|ALT_INV_Mux15~0_combout\,
 	dataf => \inst3|ALT_INV_Mux63~4_combout\,
 	cin => \inst9|Add0~66_cout\,
-	sumout => \inst9|Add0~9_sumout\,
-	cout => \inst9|Add0~10\);
+	sumout => \inst9|Add0~33_sumout\,
+	cout => \inst9|Add0~34\);
 
 \inst7|Mux48~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -8264,9 +8451,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Mux48~0_combout\);
 
-\inst7|Selector19~0\ : cyclonev_lcell_comb
+\inst7|Mux47~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector19~0_combout\ = (!\inst2|opcode\(4) & (((!\inst2|opcode\(1) & \inst2|opcode\(0))))) # (\inst2|opcode\(4) & ((!\inst2|opcode\(3)) # ((!\inst2|opcode\(1) & \inst2|opcode\(0)))))
+-- \inst7|Mux47~4_combout\ = (!\inst2|opcode\(4) & (((!\inst2|opcode\(1) & \inst2|opcode\(0))))) # (\inst2|opcode\(4) & ((!\inst2|opcode\(3)) # ((!\inst2|opcode\(1) & \inst2|opcode\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8279,11 +8466,11 @@ PORT MAP (
 	datab => \inst2|ALT_INV_opcode\(3),
 	datac => \inst2|ALT_INV_opcode\(1),
 	datad => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Selector19~0_combout\);
+	combout => \inst7|Mux47~4_combout\);
 
-\inst7|Selector19~1\ : cyclonev_lcell_comb
+\inst7|Selector19~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector19~1_combout\ = ( \inst2|opcode\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) ) # ( !\inst2|opcode\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(5) 
+-- \inst7|Selector19~0_combout\ = ( \inst2|opcode\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) ) # ( !\inst2|opcode\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(5) 
 -- & ((!\inst2|opcode\(3)) # (\inst2|opcode\(4)))) ) ) ) # ( \inst2|opcode\(1) & ( !\inst2|address_method\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) ) # ( !\inst2|opcode\(1) & ( 
 -- !\inst2|address_method\(0) & ( (!\inst2|opcode\(3) & (!\inst2|opcode\(5))) # (\inst2|opcode\(3) & ((!\inst2|opcode\(2) & ((\inst2|opcode\(4)))) # (\inst2|opcode\(2) & (!\inst2|opcode\(5))))) ) ) )
 
@@ -8300,13 +8487,13 @@ PORT MAP (
 	datad => \inst2|ALT_INV_opcode\(2),
 	datae => \inst2|ALT_INV_opcode\(1),
 	dataf => \inst2|ALT_INV_address_method\(0),
-	combout => \inst7|Selector19~1_combout\);
+	combout => \inst7|Selector19~0_combout\);
 
-\inst7|Selector19~2\ : cyclonev_lcell_comb
+\inst7|Selector19~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector19~2_combout\ = ( \inst7|Mux51~0_combout\ & ( \inst7|Selector19~1_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|nextState.fetch~q\)) # (\inst7|nextState.decode3~q\ & (((\inst7|Selector19~0_combout\) # (\inst7|Mux0~0_combout\)))) ) ) 
--- ) # ( !\inst7|Mux51~0_combout\ & ( \inst7|Selector19~1_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|nextState.fetch~q\)) # (\inst7|nextState.decode3~q\ & ((\inst7|Selector19~0_combout\))) ) ) ) # ( \inst7|Mux51~0_combout\ & ( 
--- !\inst7|Selector19~1_combout\ & ( (\inst7|nextState.fetch~q\) # (\inst7|nextState.decode3~q\) ) ) ) # ( !\inst7|Mux51~0_combout\ & ( !\inst7|Selector19~1_combout\ & ( (\inst7|nextState.fetch~q\) # (\inst7|nextState.decode3~q\) ) ) )
+-- \inst7|Selector19~1_combout\ = ( \inst7|Mux51~0_combout\ & ( \inst7|Selector19~0_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|nextState.fetch~q\)) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux47~4_combout\) # (\inst7|Mux0~0_combout\)))) ) ) ) # ( 
+-- !\inst7|Mux51~0_combout\ & ( \inst7|Selector19~0_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|nextState.fetch~q\)) # (\inst7|nextState.decode3~q\ & ((\inst7|Mux47~4_combout\))) ) ) ) # ( \inst7|Mux51~0_combout\ & ( !\inst7|Selector19~0_combout\ & 
+-- ( (\inst7|nextState.fetch~q\) # (\inst7|nextState.decode3~q\) ) ) ) # ( !\inst7|Mux51~0_combout\ & ( !\inst7|Selector19~0_combout\ & ( (\inst7|nextState.fetch~q\) # (\inst7|nextState.decode3~q\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8318,10 +8505,10 @@ PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.decode3~q\,
 	datab => \inst7|ALT_INV_nextState.fetch~q\,
 	datac => \inst7|ALT_INV_Mux0~0_combout\,
-	datad => \inst7|ALT_INV_Selector19~0_combout\,
+	datad => \inst7|ALT_INV_Mux47~4_combout\,
 	datae => \inst7|ALT_INV_Mux51~0_combout\,
-	dataf => \inst7|ALT_INV_Selector19~1_combout\,
-	combout => \inst7|Selector19~2_combout\);
+	dataf => \inst7|ALT_INV_Selector19~0_combout\,
+	combout => \inst7|Selector19~1_combout\);
 
 \inst7|alu_opsel[5]\ : dffeas
 -- pragma translate_off
@@ -8333,15 +8520,15 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst7|Mux48~0_combout\,
 	sclr => \inst7|ALT_INV_nextState.decode3~q\,
-	ena => \inst7|Selector19~2_combout\,
+	ena => \inst7|Selector19~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|alu_opsel\(5));
 
 \inst9|Mux31~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux31~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~9_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux15~0_combout\ & (\inst3|Mux47~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux15~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux47~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~9_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux15~0_combout\ & (\inst3|Mux63~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux31~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~33_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux15~0_combout\ & (\inst3|Mux47~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux15~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux47~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~33_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux15~0_combout\ & (\inst3|Mux63~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux15~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux63~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -8351,7 +8538,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~9_sumout\,
+	dataa => \inst9|ALT_INV_Add0~33_sumout\,
 	datab => \inst9|ALT_INV_Mux15~0_combout\,
 	datac => \inst3|ALT_INV_Mux63~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -8649,9 +8836,9 @@ PORT MAP (
 	dataf => \inst7|ALT_INV_rf_sel\(1),
 	combout => \inst3|Mux31~6_combout\);
 
-\inst3|data_input_z[1]~0\ : cyclonev_lcell_comb
+\inst3|data_input_z[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|data_input_z[1]~0_combout\ = (!\inst7|rf_sel\(3) & (!\inst7|rf_sel\(1) $ (!\inst7|rf_sel\(0)))) # (\inst7|rf_sel\(3) & (\inst7|rf_sel\(1) & \inst7|rf_sel\(0)))
+-- \inst3|data_input_z[0]~0_combout\ = (!\inst7|rf_sel\(3) & (!\inst7|rf_sel\(1) $ (!\inst7|rf_sel\(0)))) # (\inst7|rf_sel\(3) & (\inst7|rf_sel\(1) & \inst7|rf_sel\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -8663,7 +8850,7 @@ PORT MAP (
 	dataa => \inst7|ALT_INV_rf_sel\(3),
 	datab => \inst7|ALT_INV_rf_sel\(1),
 	datac => \inst7|ALT_INV_rf_sel\(0),
-	combout => \inst3|data_input_z[1]~0_combout\);
+	combout => \inst3|data_input_z[0]~0_combout\);
 
 \inst3|data_input_z[0]\ : dffeas
 -- pragma translate_off
@@ -8674,7 +8861,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux31~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(0));
@@ -8728,13 +8915,13 @@ PORT MAP (
 
 \inst1|Mux13~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux13~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(3) & (!\inst|out_count\(1) & !\inst|out_count\(0)))) # (\inst|out_count\(2) & (\inst|out_count\(0) & ((!\inst|out_count\(3)) # (!\inst|out_count\(1))))) ) ) 
--- # ( !\inst1|memory[0][2]~q\ & ( (\inst|out_count\(2) & (\inst|out_count\(0) & ((!\inst|out_count\(3)) # (!\inst|out_count\(1))))) ) )
+-- \inst1|Mux13~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(3) & (!\inst|out_count\(2) & !\inst|out_count\(1)))) # (\inst|out_count\(0) & (!\inst|out_count\(2) $ (((!\inst|out_count\(3)) # (!\inst|out_count\(1)))))) ) 
+-- ) # ( !\inst1|memory[0][2]~q\ & ( (\inst|out_count\(0) & (!\inst|out_count\(2) $ (((!\inst|out_count\(3)) # (!\inst|out_count\(1)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000110010100000000011001000000000001100101000000000110010",
+	lut_mask => "0000000000110110100000000011011000000000001101101000000000110110",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -8902,13 +9089,13 @@ PORT MAP (
 
 \inst1|Mux15~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux15~0_combout\ = ( \inst1|memory[0][0]~q\ & ( (!\inst|out_count\(3) & (!\inst|out_count\(1) & ((!\inst|out_count\(0)) # (\inst|out_count\(2))))) ) ) # ( !\inst1|memory[0][0]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(2) & 
--- !\inst|out_count\(1))) ) )
+-- \inst1|Mux15~0_combout\ = ( \inst1|memory[0][0]~q\ & ( (!\inst|out_count\(3) & (!\inst|out_count\(1) & ((!\inst|out_count\(0)) # (\inst|out_count\(2))))) # (\inst|out_count\(3) & (!\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0)))) ) ) # 
+-- ( !\inst1|memory[0][0]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(2) & (!\inst|out_count\(1)))) # (\inst|out_count\(3) & (!\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010000000100000101000000010000000100000001000001010000000100000",
+	lut_mask => "0010000000100100101000000010010000100000001001001010000000100100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -9091,13 +9278,13 @@ PORT MAP (
 
 \inst1|Mux11~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux11~0_combout\ = ( \inst1|memory[0][4]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(2)) # ((!\inst|out_count\(3) & \inst|out_count\(1))))) ) ) # ( !\inst1|memory[0][4]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(3) & 
--- ((\inst|out_count\(1)))) # (\inst|out_count\(3) & (!\inst|out_count\(2))))) ) )
+-- \inst1|Mux11~0_combout\ = ( \inst1|memory[0][4]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(3) & ((!\inst|out_count\(2)) # (\inst|out_count\(1)))) # (\inst|out_count\(3) & ((!\inst|out_count\(1)))))) ) ) # ( !\inst1|memory[0][4]~q\ & ( 
+-- (!\inst|out_count\(0) & (!\inst|out_count\(3) $ (!\inst|out_count\(1)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100111000000000110011100000000001001110000000001100111000000000",
+	lut_mask => "0101101000000000110110100000000001011010000000001101101000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -9598,10 +9785,10 @@ PORT MAP (
 	datae => \inst2|ALT_INV_operand\(1),
 	combout => \inst9|Mux14~0_combout\);
 
-\inst9|Add0~17\ : cyclonev_lcell_comb
+\inst9|Add0~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~17_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux14~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux46~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux62~4_combout\))) ) + ( \inst9|Add0~10\ ))
--- \inst9|Add0~18\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux14~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux46~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux62~4_combout\))) ) + ( \inst9|Add0~10\ ))
+-- \inst9|Add0~21_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux14~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux46~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux62~4_combout\))) ) + ( \inst9|Add0~34\ ))
+-- \inst9|Add0~22\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux14~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux46~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux62~4_combout\))) ) + ( \inst9|Add0~34\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -9615,14 +9802,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux46~4_combout\,
 	datad => \inst9|ALT_INV_Mux14~0_combout\,
 	dataf => \inst3|ALT_INV_Mux62~4_combout\,
-	cin => \inst9|Add0~10\,
-	sumout => \inst9|Add0~17_sumout\,
-	cout => \inst9|Add0~18\);
+	cin => \inst9|Add0~34\,
+	sumout => \inst9|Add0~21_sumout\,
+	cout => \inst9|Add0~22\);
 
 \inst9|Mux30~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux30~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~17_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux14~0_combout\ & (\inst3|Mux46~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux14~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux46~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~17_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux14~0_combout\ & (\inst3|Mux62~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux30~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~21_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux14~0_combout\ & (\inst3|Mux46~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux14~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux46~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~21_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux14~0_combout\ & (\inst3|Mux62~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux14~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux62~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -9632,7 +9819,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~17_sumout\,
+	dataa => \inst9|ALT_INV_Add0~21_sumout\,
 	datab => \inst9|ALT_INV_Mux14~0_combout\,
 	datac => \inst3|ALT_INV_Mux62~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -9697,7 +9884,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux30~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(1));
@@ -9916,17 +10103,17 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst|out_count\(1));
 
-\dm_indata[15]~input\ : cyclonev_io_ibuf
+\dm_indata[12]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_dm_indata(15),
-	o => \dm_indata[15]~input_o\);
+	i => ww_dm_indata(12),
+	o => \dm_indata[12]~input_o\);
 
-\inst1|memory[0][15]\ : dffeas
+\inst1|memory[0][12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9934,21 +10121,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \dm_indata[15]~input_o\,
+	d => \dm_indata[12]~input_o\,
 	ena => \inst1|memory[0][15]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|memory[0][15]~q\);
+	q => \inst1|memory[0][12]~q\);
 
-\inst1|Mux0~0\ : cyclonev_lcell_comb
+\inst1|Mux3~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux0~0_combout\ = ( \inst1|memory[0][15]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(0) & ((!\inst|out_count\(1)) # (\inst|out_count\(3))))) ) ) # ( !\inst1|memory[0][15]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(2) & 
--- !\inst|out_count\(0))) ) )
+-- \inst1|Mux3~0_combout\ = ( \inst1|memory[0][12]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(3) $ (((\inst|out_count\(1)) # (\inst|out_count\(2)))))) ) ) # ( !\inst1|memory[0][12]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(0) & 
+-- ((\inst|out_count\(1)) # (\inst|out_count\(2))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100010000000000110001000000000001000100000000001100010000000000",
+	lut_mask => "0001010100000000100101010000000000010101000000001001010100000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -9956,10 +10143,10 @@ PORT MAP (
 	datab => \inst|ALT_INV_out_count\(2),
 	datac => \inst|ALT_INV_out_count\(1),
 	datad => \inst|ALT_INV_out_count\(0),
-	datae => \inst1|ALT_INV_memory[0][15]~q\,
-	combout => \inst1|Mux0~0_combout\);
+	datae => \inst1|ALT_INV_memory[0][12]~q\,
+	combout => \inst1|Mux3~0_combout\);
 
-\inst1|pm_outdata[15]\ : dffeas
+\inst1|pm_outdata[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9967,13 +10154,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|Mux0~0_combout\,
+	d => \inst1|Mux3~0_combout\,
 	ena => \inst1|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|pm_outdata\(15));
+	q => \inst1|pm_outdata\(12));
 
-\inst2|address_method[1]\ : dffeas
+\inst2|opcode[4]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -9981,21 +10168,57 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|pm_outdata\(15),
+	d => \inst1|pm_outdata\(12),
 	ena => \inst2|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|address_method\(1));
+	q => \inst2|opcode\(4));
 
-\inst7|Selector3~0\ : cyclonev_lcell_comb
+\inst7|Equal6~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector3~0_combout\ = ( \inst7|Equal0~0_combout\ & ( \inst7|OUTPUTS~0_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|address_method\(0) & (\inst7|increment\(0))) # (\inst2|address_method\(0) & ((!\inst2|address_method\(1)))))) ) ) ) # ( 
--- !\inst7|Equal0~0_combout\ & ( \inst7|OUTPUTS~0_combout\ & ( (\inst7|increment\(0) & \inst7|nextState.decode3~q\) ) ) )
+-- \inst7|Equal6~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & (\inst2|opcode\(3) & \inst2|opcode\(2)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000000000000010101010000000001011100",
+	lut_mask => "0000000000000010000000000000000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Equal6~0_combout\);
+
+\inst7|Selector1~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector1~0_combout\ = (\inst7|Equal6~0_combout\ & ((\inst7|nextState.selStore~q\) # (\inst7|nextState.fetch~q\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0001010100010101000101010001010100010101000101010001010100010101",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_Equal6~0_combout\,
+	datab => \inst7|ALT_INV_nextState.fetch~q\,
+	datac => \inst7|ALT_INV_nextState.selStore~q\,
+	combout => \inst7|Selector1~0_combout\);
+
+\inst7|Selector3~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector3~0_combout\ = ( \inst7|Equal0~0_combout\ & ( \inst7|Equal6~0_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|address_method\(0) & (\inst7|increment\(0))) # (\inst2|address_method\(0) & ((!\inst2|address_method\(1)))))) ) ) ) # ( 
+-- !\inst7|Equal0~0_combout\ & ( \inst7|Equal6~0_combout\ & ( (\inst7|increment\(0) & \inst7|nextState.decode3~q\) ) ) ) # ( \inst7|Equal0~0_combout\ & ( !\inst7|Equal6~0_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|address_method\(0) & 
+-- (\inst7|increment\(0))) # (\inst2|address_method\(0) & ((!\inst2|address_method\(1)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000101110000000000010101010000000001011100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -10004,45 +10227,44 @@ PORT MAP (
 	datac => \inst2|ALT_INV_address_method\(0),
 	datad => \inst7|ALT_INV_nextState.decode3~q\,
 	datae => \inst7|ALT_INV_Equal0~0_combout\,
-	dataf => \inst7|ALT_INV_OUTPUTS~0_combout\,
+	dataf => \inst7|ALT_INV_Equal6~0_combout\,
 	combout => \inst7|Selector3~0_combout\);
 
-\inst7|Selector8~0\ : cyclonev_lcell_comb
+\inst7|Selector3~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector8~0_combout\ = (\inst7|Equal0~1_combout\ & (\inst7|Equal6~0_combout\ & \inst7|nextState.selStore~q\))
+-- \inst7|Selector3~1_combout\ = ( \inst7|WideOr1~combout\ & ( (!\inst7|Equal6~0_combout\ & (\inst7|nextState.fetch~q\ & ((!\inst7|Equal0~0_combout\) # (\inst7|increment\(0))))) ) ) # ( !\inst7|WideOr1~combout\ & ( ((!\inst7|Equal0~0_combout\ & 
+-- (!\inst7|Equal6~0_combout\ & \inst7|nextState.fetch~q\))) # (\inst7|increment\(0)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000100000001000000010000000100000001000000010000000100000001",
+	lut_mask => "0101010111010101000000001101000001010101110101010000000011010000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_Equal0~1_combout\,
-	datab => \inst7|ALT_INV_Equal6~0_combout\,
-	datac => \inst7|ALT_INV_nextState.selStore~q\,
-	combout => \inst7|Selector8~0_combout\);
+	dataa => \inst7|ALT_INV_increment\(0),
+	datab => \inst7|ALT_INV_Equal0~0_combout\,
+	datac => \inst7|ALT_INV_Equal6~0_combout\,
+	datad => \inst7|ALT_INV_nextState.fetch~q\,
+	datae => \inst7|ALT_INV_WideOr1~combout\,
+	combout => \inst7|Selector3~1_combout\);
 
-\inst7|Selector3~1\ : cyclonev_lcell_comb
+\inst7|Selector3~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector3~1_combout\ = ( !\inst7|increment\(0) & ( ((!\inst7|Selector8~0_combout\ & (!\inst7|OUTPUTS~0_combout\ & (\inst7|nextState.fetch~q\))) # (\inst7|Selector8~0_combout\ & ((!\inst6|presentJmp~q\) # ((!\inst7|OUTPUTS~0_combout\ & 
--- \inst7|nextState.fetch~q\))))) # (\inst7|Selector3~0_combout\) ) ) # ( \inst7|increment\(0) & ( ((((\inst7|Selector8~0_combout\ & !\inst6|presentJmp~q\)) # (\inst7|nextState.fetch~q\)) # (\inst7|WideOr1~combout\)) # (\inst7|Selector3~0_combout\) ) )
+-- \inst7|Selector3~2_combout\ = (((!\inst6|presentJmp~q\ & \inst7|Selector1~0_combout\)) # (\inst7|Selector3~1_combout\)) # (\inst7|Selector3~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	extended_lut => "on",
-	lut_mask => "0111011111110111011111111111111101010101111101010101111111111111",
+	extended_lut => "off",
+	lut_mask => "0010111111111111001011111111111100101111111111110010111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_Selector3~0_combout\,
-	datab => \inst7|ALT_INV_Selector8~0_combout\,
-	datac => \inst7|ALT_INV_WideOr1~combout\,
-	datad => \inst7|ALT_INV_nextState.fetch~q\,
-	datae => \inst7|ALT_INV_increment\(0),
-	dataf => \inst6|ALT_INV_presentJmp~q\,
-	datag => \inst7|ALT_INV_OUTPUTS~0_combout\,
-	combout => \inst7|Selector3~1_combout\);
+	dataa => \inst6|ALT_INV_presentJmp~q\,
+	datab => \inst7|ALT_INV_Selector1~0_combout\,
+	datac => \inst7|ALT_INV_Selector3~0_combout\,
+	datad => \inst7|ALT_INV_Selector3~1_combout\,
+	combout => \inst7|Selector3~2_combout\);
 
 \inst7|increment[0]\ : dffeas
 -- pragma translate_off
@@ -10052,7 +10274,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector3~1_combout\,
+	d => \inst7|Selector3~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|increment\(0));
@@ -10502,10 +10724,10 @@ PORT MAP (
 	datae => \inst2|ALT_INV_operand\(2),
 	combout => \inst9|Mux13~0_combout\);
 
-\inst9|Add0~57\ : cyclonev_lcell_comb
+\inst9|Add0~37\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~57_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux13~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux45~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux61~4_combout\))) ) + ( \inst9|Add0~18\ ))
--- \inst9|Add0~58\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux13~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux45~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux61~4_combout\))) ) + ( \inst9|Add0~18\ ))
+-- \inst9|Add0~37_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux13~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux45~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux61~4_combout\))) ) + ( \inst9|Add0~22\ ))
+-- \inst9|Add0~38\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux13~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux45~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux61~4_combout\))) ) + ( \inst9|Add0~22\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -10519,14 +10741,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux45~4_combout\,
 	datad => \inst9|ALT_INV_Mux13~0_combout\,
 	dataf => \inst3|ALT_INV_Mux61~4_combout\,
-	cin => \inst9|Add0~18\,
-	sumout => \inst9|Add0~57_sumout\,
-	cout => \inst9|Add0~58\);
+	cin => \inst9|Add0~22\,
+	sumout => \inst9|Add0~37_sumout\,
+	cout => \inst9|Add0~38\);
 
 \inst9|Mux29~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux29~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~57_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux13~0_combout\ & (\inst3|Mux45~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux13~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux45~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~57_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux13~0_combout\ & (\inst3|Mux61~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux29~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~37_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux13~0_combout\ & (\inst3|Mux45~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux13~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux45~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~37_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux13~0_combout\ & (\inst3|Mux61~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux13~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux61~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -10536,7 +10758,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~57_sumout\,
+	dataa => \inst9|ALT_INV_Add0~37_sumout\,
 	datab => \inst9|ALT_INV_Mux13~0_combout\,
 	datac => \inst3|ALT_INV_Mux61~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -10601,7 +10823,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux29~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(2));
@@ -10787,17 +11009,17 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst|out_count\(2));
 
-\dm_indata[12]~input\ : cyclonev_io_ibuf
+\dm_indata[9]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_dm_indata(12),
-	o => \dm_indata[12]~input_o\);
+	i => ww_dm_indata(9),
+	o => \dm_indata[9]~input_o\);
 
-\inst1|memory[0][12]\ : dffeas
+\inst1|memory[0][9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -10805,21 +11027,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \dm_indata[12]~input_o\,
+	d => \dm_indata[9]~input_o\,
 	ena => \inst1|memory[0][15]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|memory[0][12]~q\);
+	q => \inst1|memory[0][9]~q\);
 
-\inst1|Mux3~0\ : cyclonev_lcell_comb
+\inst1|Mux6~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux3~0_combout\ = ( \inst1|memory[0][12]~q\ & ( (!\inst|out_count\(0) & (!\inst|out_count\(3) $ (((\inst|out_count\(1)) # (\inst|out_count\(2)))))) ) ) # ( !\inst1|memory[0][12]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(0) & 
--- ((\inst|out_count\(1)) # (\inst|out_count\(2))))) ) )
+-- \inst1|Mux6~0_combout\ = ( \inst1|memory[0][9]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0))) ) ) # ( !\inst1|memory[0][9]~q\ & ( (\inst|out_count\(3) & (!\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0)))) 
+-- ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001010100000000100101010000000000010101000000001001010100000000",
+	lut_mask => "0100000000000000110000000000000001000000000000001100000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -10827,10 +11049,10 @@ PORT MAP (
 	datab => \inst|ALT_INV_out_count\(2),
 	datac => \inst|ALT_INV_out_count\(1),
 	datad => \inst|ALT_INV_out_count\(0),
-	datae => \inst1|ALT_INV_memory[0][12]~q\,
-	combout => \inst1|Mux3~0_combout\);
+	datae => \inst1|ALT_INV_memory[0][9]~q\,
+	combout => \inst1|Mux6~0_combout\);
 
-\inst1|pm_outdata[12]\ : dffeas
+\inst1|pm_outdata[9]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -10838,13 +11060,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|Mux3~0_combout\,
+	d => \inst1|Mux6~0_combout\,
 	ena => \inst1|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst1|pm_outdata\(12));
+	q => \inst1|pm_outdata\(9));
 
-\inst2|opcode[4]\ : dffeas
+\inst2|opcode[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -10852,255 +11074,29 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst1|pm_outdata\(12),
+	d => \inst1|pm_outdata\(9),
 	ena => \inst2|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|opcode\(4));
+	q => \inst2|opcode\(1));
 
-\inst7|Equal0~0\ : cyclonev_lcell_comb
+\inst7|nextState~16\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Equal0~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) )
+-- \inst7|nextState~16_combout\ = ( !\inst7|Equal0~0_combout\ & ( \inst7|nextState~15_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(0) & (!\inst2|opcode\(1) & !\inst7|dataSel~1_combout\)) # (\inst2|opcode\(0) & 
+-- ((\inst7|dataSel~1_combout\))))) ) ) ) # ( !\inst7|Equal0~0_combout\ & ( !\inst7|nextState~15_combout\ & ( (\inst2|opcode\(0) & (\inst7|nextState.decode3~q\ & \inst7|dataSel~1_combout\)) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000001000000000000000000000000000000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(2),
-	datae => \inst2|ALT_INV_opcode\(1),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Equal0~0_combout\);
-
-\inst7|OUTPUTS~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|OUTPUTS~1_combout\ = ( \inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) ) # ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (\inst2|opcode\(3) & 
--- ((!\inst2|opcode\(5) & (!\inst2|opcode\(4))) # (\inst2|opcode\(5) & (\inst2|opcode\(4) & !\inst2|opcode\(2))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000100100001000000000000000000000000000000000001000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(2),
-	datae => \inst2|ALT_INV_opcode\(1),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|OUTPUTS~1_combout\);
-
-\inst7|Selector8~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector8~1_combout\ = ( \inst7|OUTPUTS~1_combout\ & ( (\inst7|nextState.idle~q\ & (!\inst7|nextState.storeAluResult~q\ & !\inst7|nextState.storeData~q\)) ) ) # ( !\inst7|OUTPUTS~1_combout\ & ( (\inst7|nextState.idle~q\ & 
--- (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.storeData~q\ & !\inst7|nextState.execution~q\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0100000000000000010000000100000001000000000000000100000001000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.idle~q\,
-	datab => \inst7|ALT_INV_nextState.storeAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.storeData~q\,
-	datad => \inst7|ALT_INV_nextState.execution~q\,
-	datae => \inst7|ALT_INV_OUTPUTS~1_combout\,
-	combout => \inst7|Selector8~1_combout\);
-
-\inst7|Selector8~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector8~2_combout\ = ((!\inst7|Selector8~1_combout\) # ((\inst7|nextState.decode3~q\ & \inst7|Equal0~0_combout\))) # (\inst7|Selector8~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1111111100011111111111110001111111111111000111111111111100011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.decode3~q\,
-	datab => \inst7|ALT_INV_Equal0~0_combout\,
-	datac => \inst7|ALT_INV_Selector8~0_combout\,
-	datad => \inst7|ALT_INV_Selector8~1_combout\,
-	combout => \inst7|Selector8~2_combout\);
-
-\inst7|nextState.fetch\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector8~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.fetch~q\);
-
-\inst7|nextState.fetch2\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.fetch~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.fetch2~q\);
-
-\inst7|nextState.decode\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.fetch2~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.decode~q\);
-
-\inst7|nextState.decode2\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.decode~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.decode2~q\);
-
-\inst7|Selector12~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector12~0_combout\ = ((\inst7|nextState.decode3~q\ & !\inst7|Mux47~2_combout\)) # (\inst7|nextState.decode2~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0111001101110011011100110111001101110011011100110111001101110011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.decode3~q\,
-	datab => \inst7|ALT_INV_nextState.decode2~q\,
-	datac => \inst7|ALT_INV_Mux47~2_combout\,
-	combout => \inst7|Selector12~0_combout\);
-
-\inst7|nextState.decode3\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector12~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.decode3~q\);
-
-\inst7|nextState~14\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~14_combout\ = (!\inst2|opcode\(1) & !\inst2|opcode\(0))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000100010001000100010001000100010001000100010001000100010001000",
+	lut_mask => "0000000000000011000000000000000000001000000000110000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(1),
 	datab => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~14_combout\);
-
-\inst7|Equal0~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Equal0~2_combout\ = ( !\inst2|opcode\(0) & ( (\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001000000000000000000000000000000010000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Equal0~2_combout\);
-
-\inst7|Equal3~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Equal3~0_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & (!\inst2|opcode\(2) & \inst2|opcode\(1)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000001000000000000000000000000000000010000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Equal3~0_combout\);
-
-\inst7|nextState~15\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~15_combout\ = ( \inst2|address_method\(0) & ( (\inst2|opcode\(4) & ((!\inst2|opcode\(3)) # ((!\inst2|address_method\(1)) # (\inst2|opcode\(2))))) ) ) # ( !\inst2|address_method\(0) & ( \inst2|opcode\(4) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101010101010100010101010101010101010101010101000101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_address_method\(1),
-	datae => \inst2|ALT_INV_address_method\(0),
-	combout => \inst7|nextState~15_combout\);
-
-\inst7|nextState~16\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~16_combout\ = ( \inst7|Equal3~0_combout\ & ( \inst7|nextState~15_combout\ & ( (\inst7|nextState.decode3~q\ & (!\inst2|opcode\(5) $ (\inst7|Equal0~2_combout\))) ) ) ) # ( !\inst7|Equal3~0_combout\ & ( \inst7|nextState~15_combout\ & ( 
--- (\inst2|opcode\(5) & (\inst7|nextState.decode3~q\ & \inst7|Equal0~2_combout\)) ) ) ) # ( \inst7|Equal3~0_combout\ & ( !\inst7|nextState~15_combout\ & ( (\inst7|nextState.decode3~q\ & (!\inst2|opcode\(5) $ (\inst7|Equal0~2_combout\))) ) ) ) # ( 
--- !\inst7|Equal3~0_combout\ & ( !\inst7|nextState~15_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(5) & (\inst7|nextState~14_combout\ & !\inst7|Equal0~2_combout\)) # (\inst2|opcode\(5) & ((\inst7|Equal0~2_combout\))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010001001000100001000100000000000100010010001000010001",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_nextState~14_combout\,
-	datad => \inst7|ALT_INV_Equal0~2_combout\,
-	datae => \inst7|ALT_INV_Equal3~0_combout\,
+	datac => \inst7|ALT_INV_nextState.decode3~q\,
+	datad => \inst7|ALT_INV_dataSel~1_combout\,
+	datae => \inst7|ALT_INV_Equal0~0_combout\,
 	dataf => \inst7|ALT_INV_nextState~15_combout\,
 	combout => \inst7|nextState~16_combout\);
 
@@ -11119,7 +11115,7 @@ PORT MAP (
 
 \inst7|Selector14~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector14~0_combout\ = (\inst7|nextState.execution~q\ & \inst7|OUTPUTS~1_combout\)
+-- \inst7|Selector14~0_combout\ = (\inst7|nextState.execution~q\ & \inst7|OUTPUTS~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -11129,57 +11125,31 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.execution~q\,
-	datab => \inst7|ALT_INV_OUTPUTS~1_combout\,
+	datab => \inst7|ALT_INV_OUTPUTS~0_combout\,
 	combout => \inst7|Selector14~0_combout\);
 
-\inst7|nextState.loadAluResult\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector14~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.loadAluResult~q\);
-
-\inst7|nextState.storeAluResult\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.loadAluResult~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.storeAluResult~q\);
-
-\inst7|Mux54~0\ : cyclonev_lcell_comb
+\inst7|Selector6~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux54~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & \inst2|opcode\(2)))) ) ) )
+-- \inst7|Selector6~0_combout\ = ( \inst7|nextState~14_combout\ & ( (!\inst2|opcode\(2) & (!\inst7|nextState.decode3~q\ & ((!\inst7|nextState.execution~q\)))) # (\inst2|opcode\(2) & (((!\inst7|nextState.decode3~q\ & !\inst7|nextState.execution~q\)) # 
+-- (\inst7|Mux54~0_combout\))) ) ) # ( !\inst7|nextState~14_combout\ & ( (!\inst7|nextState.decode3~q\ & !\inst7|nextState.execution~q\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000010000000000000000000000000000000000000000000000000000000",
+	lut_mask => "1100110000000000110011010000010111001100000000001100110100000101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(2),
-	datae => \inst2|ALT_INV_opcode\(1),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Mux54~0_combout\);
+	dataa => \inst2|ALT_INV_opcode\(2),
+	datab => \inst7|ALT_INV_nextState.decode3~q\,
+	datac => \inst7|ALT_INV_Mux54~0_combout\,
+	datad => \inst7|ALT_INV_nextState.execution~q\,
+	datae => \inst7|ALT_INV_nextState~14_combout\,
+	combout => \inst7|Selector6~0_combout\);
 
-\inst7|Selector6~0\ : cyclonev_lcell_comb
+\inst7|Selector6~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector6~0_combout\ = (!\inst7|nextState.storeData~q\ & (!\inst7|nextState.decode~q\ & (!\inst7|nextState.loadAluResult~q\ & !\inst7|nextState.selStore~q\)))
+-- \inst7|Selector6~1_combout\ = (!\inst7|nextState.storeData~q\ & (!\inst7|nextState.decode~q\ & (!\inst7|nextState.loadAluResult~q\ & !\inst7|nextState.selStore~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -11192,60 +11162,61 @@ PORT MAP (
 	datab => \inst7|ALT_INV_nextState.decode~q\,
 	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
 	datad => \inst7|ALT_INV_nextState.selStore~q\,
-	combout => \inst7|Selector6~0_combout\);
-
-\inst7|Selector6~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector6~1_combout\ = ( \inst7|Selector6~0_combout\ & ( (!\inst7|nextState.execution~q\ & ((!\inst7|nextState.decode3~q\) # ((\inst7|Mux54~0_combout\)))) # (\inst7|nextState.execution~q\ & (((\inst7|Mux54~0_combout\ & 
--- !\inst7|OUTPUTS~1_combout\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000100011111000110000000000000000001000111110001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.decode3~q\,
-	datab => \inst7|ALT_INV_nextState.execution~q\,
-	datac => \inst7|ALT_INV_Mux54~0_combout\,
-	datad => \inst7|ALT_INV_OUTPUTS~1_combout\,
-	datae => \inst7|ALT_INV_Selector6~0_combout\,
 	combout => \inst7|Selector6~1_combout\);
 
 \inst7|Selector6~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector6~2_combout\ = (\inst7|nextState.execution~q\ & (!\inst7|Equal0~0_combout\ & (!\inst7|Mux54~0_combout\ & !\inst7|OUTPUTS~1_combout\)))
+-- \inst7|Selector6~2_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(4) & (!\inst2|opcode\(3) & \inst2|opcode\(2))) # (\inst2|opcode\(4) & (\inst2|opcode\(3))))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100000000000000010000000000000001000000000000000100000000000000",
+	lut_mask => "0000001010000010000000000000000000000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.execution~q\,
-	datab => \inst7|ALT_INV_Equal0~0_combout\,
-	datac => \inst7|ALT_INV_Mux54~0_combout\,
-	datad => \inst7|ALT_INV_OUTPUTS~1_combout\,
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Selector6~2_combout\);
 
 \inst7|Selector6~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector6~3_combout\ = (((\inst7|ld_r~q\ & !\inst7|Selector6~1_combout\)) # (\inst7|Selector6~2_combout\)) # (\inst7|nextState.storeAluResult~q\)
+-- \inst7|Selector6~3_combout\ = (!\inst7|nextState.storeAluResult~q\ & ((!\inst7|nextState.execution~q\) # ((\inst7|Selector6~2_combout\) # (\inst7|OUTPUTS~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0111001111111111011100111111111101110011111111110111001111111111",
+	lut_mask => "1000101010101010100010101010101010001010101010101000101010101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.storeAluResult~q\,
+	datab => \inst7|ALT_INV_nextState.execution~q\,
+	datac => \inst7|ALT_INV_OUTPUTS~0_combout\,
+	datad => \inst7|ALT_INV_Selector6~2_combout\,
+	combout => \inst7|Selector6~3_combout\);
+
+\inst7|Selector6~4\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector6~4_combout\ = ( \inst7|Selector6~3_combout\ & ( (\inst7|ld_r~q\ & (((!\inst7|Selector6~0_combout\) # (!\inst7|Selector6~1_combout\)) # (\inst7|Selector14~0_combout\))) ) ) # ( !\inst7|Selector6~3_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111111111111111010101010101000111111111111111110101010101010001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_ld_r~q\,
-	datab => \inst7|ALT_INV_nextState.storeAluResult~q\,
-	datac => \inst7|ALT_INV_Selector6~1_combout\,
-	datad => \inst7|ALT_INV_Selector6~2_combout\,
-	combout => \inst7|Selector6~3_combout\);
+	datab => \inst7|ALT_INV_Selector14~0_combout\,
+	datac => \inst7|ALT_INV_Selector6~0_combout\,
+	datad => \inst7|ALT_INV_Selector6~1_combout\,
+	datae => \inst7|ALT_INV_Selector6~3_combout\,
+	combout => \inst7|Selector6~4_combout\);
 
 \inst7|ld_r\ : dffeas
 -- pragma translate_off
@@ -11255,7 +11226,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector6~3_combout\,
+	d => \inst7|Selector6~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|ld_r~q\);
@@ -14520,13 +14491,13 @@ PORT MAP (
 
 \inst1|Mux27~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux27~0_combout\ = ( \inst1|memory[0][4]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(2) & ((!\inst|out_count\(1)))) # (\inst|out_count\(2) & ((!\inst|out_count\(3)) # (\inst|out_count\(1)))))) ) ) # ( !\inst1|memory[0][4]~q\ & ( 
--- (\inst|out_count\(0) & ((!\inst|out_count\(2) & ((!\inst|out_count\(1)))) # (\inst|out_count\(2) & (!\inst|out_count\(3))))) ) )
+-- \inst1|Mux27~0_combout\ = ( \inst1|memory[0][4]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(3) & ((!\inst|out_count\(1)) # (\inst|out_count\(2)))) # (\inst|out_count\(3) & ((\inst|out_count\(1)))))) ) ) # ( !\inst1|memory[0][4]~q\ & ( 
+-- (\inst|out_count\(0) & (!\inst|out_count\(3) $ (((!\inst|out_count\(2) & \inst|out_count\(1)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000011100010000000001110001100000000111000100000000011100011",
+	lut_mask => "0000000010100110000000001010011100000000101001100000000010100111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -15145,10 +15116,10 @@ PORT MAP (
 	datae => \inst2|ALT_INV_operand\(3),
 	combout => \inst9|Mux12~0_combout\);
 
-\inst9|Add0~53\ : cyclonev_lcell_comb
+\inst9|Add0~41\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~53_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux12~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux44~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux60~4_combout\))) ) + ( \inst9|Add0~58\ ))
--- \inst9|Add0~54\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux12~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux44~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux60~4_combout\))) ) + ( \inst9|Add0~58\ ))
+-- \inst9|Add0~41_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux12~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux44~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux60~4_combout\))) ) + ( \inst9|Add0~38\ ))
+-- \inst9|Add0~42\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux12~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux44~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux60~4_combout\))) ) + ( \inst9|Add0~38\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -15162,14 +15133,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux44~4_combout\,
 	datad => \inst9|ALT_INV_Mux12~0_combout\,
 	dataf => \inst3|ALT_INV_Mux60~4_combout\,
-	cin => \inst9|Add0~58\,
-	sumout => \inst9|Add0~53_sumout\,
-	cout => \inst9|Add0~54\);
+	cin => \inst9|Add0~38\,
+	sumout => \inst9|Add0~41_sumout\,
+	cout => \inst9|Add0~42\);
 
 \inst9|Mux28~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux28~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~53_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux12~0_combout\ & (\inst3|Mux44~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux12~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux44~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~53_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux12~0_combout\ & (\inst3|Mux60~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux28~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~41_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux12~0_combout\ & (\inst3|Mux44~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux12~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux44~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~41_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux12~0_combout\ & (\inst3|Mux60~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux12~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux60~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -15179,7 +15150,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~53_sumout\,
+	dataa => \inst9|ALT_INV_Add0~41_sumout\,
 	datab => \inst9|ALT_INV_Mux12~0_combout\,
 	datac => \inst3|ALT_INV_Mux60~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -15244,7 +15215,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux28~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(3));
@@ -15379,10 +15350,10 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux44~4_combout\);
 
-\inst9|Add0~29\ : cyclonev_lcell_comb
+\inst9|Add0~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~29_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux11~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux43~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux59~4_combout\))) ) + ( \inst9|Add0~54\ ))
--- \inst9|Add0~30\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux11~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux43~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux59~4_combout\))) ) + ( \inst9|Add0~54\ ))
+-- \inst9|Add0~17_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux11~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux43~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux59~4_combout\))) ) + ( \inst9|Add0~42\ ))
+-- \inst9|Add0~18\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux11~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux43~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux59~4_combout\))) ) + ( \inst9|Add0~42\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -15396,14 +15367,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux43~4_combout\,
 	datad => \inst9|ALT_INV_Mux11~0_combout\,
 	dataf => \inst3|ALT_INV_Mux59~4_combout\,
-	cin => \inst9|Add0~54\,
-	sumout => \inst9|Add0~29_sumout\,
-	cout => \inst9|Add0~30\);
+	cin => \inst9|Add0~42\,
+	sumout => \inst9|Add0~17_sumout\,
+	cout => \inst9|Add0~18\);
 
 \inst9|Mux27~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux27~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~29_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux11~0_combout\ & (\inst3|Mux43~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux11~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux43~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~29_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux11~0_combout\ & (\inst3|Mux59~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux27~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~17_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux11~0_combout\ & (\inst3|Mux43~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux11~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux43~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~17_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux11~0_combout\ & (\inst3|Mux59~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux11~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux59~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -15413,7 +15384,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~29_sumout\,
+	dataa => \inst9|ALT_INV_Add0~17_sumout\,
 	datab => \inst9|ALT_INV_Mux11~0_combout\,
 	datac => \inst3|ALT_INV_Mux59~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -15478,7 +15449,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux27~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(4));
@@ -15615,8 +15586,8 @@ PORT MAP (
 
 \inst9|Add0~61\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~61_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux10~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux42~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux58~4_combout\))) ) + ( \inst9|Add0~30\ ))
--- \inst9|Add0~62\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux10~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux42~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux58~4_combout\))) ) + ( \inst9|Add0~30\ ))
+-- \inst9|Add0~61_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux10~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux42~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux58~4_combout\))) ) + ( \inst9|Add0~18\ ))
+-- \inst9|Add0~62\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux10~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux42~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux58~4_combout\))) ) + ( \inst9|Add0~18\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -15630,7 +15601,7 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux42~4_combout\,
 	datad => \inst9|ALT_INV_Mux10~0_combout\,
 	dataf => \inst3|ALT_INV_Mux58~4_combout\,
-	cin => \inst9|Add0~30\,
+	cin => \inst9|Add0~18\,
 	sumout => \inst9|Add0~61_sumout\,
 	cout => \inst9|Add0~62\);
 
@@ -15712,7 +15683,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux26~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(5));
@@ -15946,7 +15917,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux25~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(6));
@@ -16180,7 +16151,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux24~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(7));
@@ -16315,10 +16286,10 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux40~4_combout\);
 
-\inst9|Add0~33\ : cyclonev_lcell_comb
+\inst9|Add0~49\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~33_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux7~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux39~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux55~4_combout\))) ) + ( \inst9|Add0~46\ ))
--- \inst9|Add0~34\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux7~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux39~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux55~4_combout\))) ) + ( \inst9|Add0~46\ ))
+-- \inst9|Add0~49_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux7~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux39~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux55~4_combout\))) ) + ( \inst9|Add0~46\ ))
+-- \inst9|Add0~50\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux7~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux39~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux55~4_combout\))) ) + ( \inst9|Add0~46\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -16333,13 +16304,13 @@ PORT MAP (
 	datad => \inst9|ALT_INV_Mux7~0_combout\,
 	dataf => \inst3|ALT_INV_Mux55~4_combout\,
 	cin => \inst9|Add0~46\,
-	sumout => \inst9|Add0~33_sumout\,
-	cout => \inst9|Add0~34\);
+	sumout => \inst9|Add0~49_sumout\,
+	cout => \inst9|Add0~50\);
 
 \inst9|Mux23~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux23~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~33_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux7~0_combout\ & (\inst3|Mux39~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux7~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux39~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~33_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux7~0_combout\ & (\inst3|Mux55~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux23~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~49_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux7~0_combout\ & (\inst3|Mux39~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux7~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux39~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~49_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux7~0_combout\ & (\inst3|Mux55~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux7~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux55~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -16349,7 +16320,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~33_sumout\,
+	dataa => \inst9|ALT_INV_Add0~49_sumout\,
 	datab => \inst9|ALT_INV_Mux7~0_combout\,
 	datac => \inst3|ALT_INV_Mux55~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -16414,7 +16385,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux23~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(8));
@@ -16549,10 +16520,10 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux39~4_combout\);
 
-\inst9|Add0~37\ : cyclonev_lcell_comb
+\inst9|Add0~53\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~37_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux6~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux38~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux54~4_combout\))) ) + ( \inst9|Add0~34\ ))
--- \inst9|Add0~38\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux6~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux38~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux54~4_combout\))) ) + ( \inst9|Add0~34\ ))
+-- \inst9|Add0~53_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux6~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux38~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux54~4_combout\))) ) + ( \inst9|Add0~50\ ))
+-- \inst9|Add0~54\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux6~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux38~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux54~4_combout\))) ) + ( \inst9|Add0~50\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -16566,14 +16537,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux38~4_combout\,
 	datad => \inst9|ALT_INV_Mux6~0_combout\,
 	dataf => \inst3|ALT_INV_Mux54~4_combout\,
-	cin => \inst9|Add0~34\,
-	sumout => \inst9|Add0~37_sumout\,
-	cout => \inst9|Add0~38\);
+	cin => \inst9|Add0~50\,
+	sumout => \inst9|Add0~53_sumout\,
+	cout => \inst9|Add0~54\);
 
 \inst9|Mux22~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux22~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~37_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux6~0_combout\ & (\inst3|Mux38~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux6~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux38~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~37_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux6~0_combout\ & (\inst3|Mux54~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux22~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~53_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux6~0_combout\ & (\inst3|Mux38~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux6~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux38~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~53_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux6~0_combout\ & (\inst3|Mux54~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux6~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux54~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -16583,7 +16554,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~37_sumout\,
+	dataa => \inst9|ALT_INV_Add0~53_sumout\,
 	datab => \inst9|ALT_INV_Mux6~0_combout\,
 	datac => \inst3|ALT_INV_Mux54~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -16648,7 +16619,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux22~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(9));
@@ -16783,10 +16754,10 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux38~4_combout\);
 
-\inst9|Add0~41\ : cyclonev_lcell_comb
+\inst9|Add0~57\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~41_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux5~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux37~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux53~4_combout\))) ) + ( \inst9|Add0~38\ ))
--- \inst9|Add0~42\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux5~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux37~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux53~4_combout\))) ) + ( \inst9|Add0~38\ ))
+-- \inst9|Add0~57_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux5~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux37~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux53~4_combout\))) ) + ( \inst9|Add0~54\ ))
+-- \inst9|Add0~58\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux5~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux37~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux53~4_combout\))) ) + ( \inst9|Add0~54\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -16800,14 +16771,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux37~4_combout\,
 	datad => \inst9|ALT_INV_Mux5~0_combout\,
 	dataf => \inst3|ALT_INV_Mux53~4_combout\,
-	cin => \inst9|Add0~38\,
-	sumout => \inst9|Add0~41_sumout\,
-	cout => \inst9|Add0~42\);
+	cin => \inst9|Add0~54\,
+	sumout => \inst9|Add0~57_sumout\,
+	cout => \inst9|Add0~58\);
 
 \inst9|Mux21~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux21~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~41_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux5~0_combout\ & (\inst3|Mux37~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux5~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux37~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~41_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux5~0_combout\ & (\inst3|Mux53~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux21~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~57_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux5~0_combout\ & (\inst3|Mux37~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux5~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux37~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~57_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux5~0_combout\ & (\inst3|Mux53~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux5~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux53~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -16817,7 +16788,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~41_sumout\,
+	dataa => \inst9|ALT_INV_Add0~57_sumout\,
 	datab => \inst9|ALT_INV_Mux5~0_combout\,
 	datac => \inst3|ALT_INV_Mux53~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -16882,7 +16853,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux21~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(10));
@@ -17019,13 +16990,13 @@ PORT MAP (
 
 \inst1|Mux16~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux16~0_combout\ = ( \inst1|memory[0][15]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(2) & (\inst|out_count\(3) & !\inst|out_count\(1))) # (\inst|out_count\(2) & ((\inst|out_count\(1)))))) ) ) # ( !\inst1|memory[0][15]~q\ & ( 
--- (\inst|out_count\(0) & ((!\inst|out_count\(3) & (\inst|out_count\(2) & \inst|out_count\(1))) # (\inst|out_count\(3) & (!\inst|out_count\(2) & !\inst|out_count\(1))))) ) )
+-- \inst1|Mux16~0_combout\ = ( \inst1|memory[0][15]~q\ & ( (\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0))) ) ) # ( !\inst1|memory[0][15]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0)))) ) 
+-- )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000001000010000000000100001100000000010000100000000001000011",
+	lut_mask => "0000000000000010000000000000001100000000000000100000000000000011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -17490,24 +17461,228 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux16~4_combout\,
 	combout => \inst3|Mux16~5_combout\);
 
-\inst9|Mux0~0\ : cyclonev_lcell_comb
+\inst9|alu_result[15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst9|result\(15),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst9|alu_result\(15));
+
+\inst3|Mux16~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux0~0_combout\ = ( \inst2|operand\(15) & ( (!\inst7|alu_opsel\(3) & (((\inst7|alu_opsel\(2))) # (\inst3|Mux32~4_combout\))) # (\inst7|alu_opsel\(3) & (((\inst3|Mux48~4_combout\ & \inst7|alu_opsel\(2))))) ) ) # ( !\inst2|operand\(15) & ( 
--- (!\inst7|alu_opsel\(3) & (\inst3|Mux32~4_combout\ & ((!\inst7|alu_opsel\(2))))) # (\inst7|alu_opsel\(3) & (((\inst3|Mux48~4_combout\ & \inst7|alu_opsel\(2))))) ) )
+-- \inst3|Mux16~6_combout\ = ( \inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst3|Mux48~4_combout\ ) ) ) # ( !\inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst9|alu_result\(15) ) ) ) # ( \inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst3|Mux16~5_combout\ ) 
+-- ) ) # ( !\inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst2|operand\(15) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0101000000000011010100001111001101010000000000110101000011110011",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst3|ALT_INV_Mux32~4_combout\,
+	dataa => \inst2|ALT_INV_operand\(15),
+	datab => \inst3|ALT_INV_Mux16~5_combout\,
+	datac => \inst9|ALT_INV_alu_result\(15),
+	datad => \inst3|ALT_INV_Mux48~4_combout\,
+	datae => \inst7|ALT_INV_rf_sel\(3),
+	dataf => \inst7|ALT_INV_rf_sel\(1),
+	combout => \inst3|Mux16~6_combout\);
+
+\inst3|data_input_z[15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst3|Mux16~6_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|data_input_z\(15));
+
+\inst3|regs~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|regs~0_combout\ = (!\inst7|ld_r~q\ & (\inst3|Mux48~4_combout\)) # (\inst7|ld_r~q\ & ((\inst3|data_input_z\(15))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_ld_r~q\,
 	datab => \inst3|ALT_INV_Mux48~4_combout\,
-	datac => \inst7|ALT_INV_alu_opsel\(3),
-	datad => \inst7|ALT_INV_alu_opsel\(2),
-	datae => \inst2|ALT_INV_operand\(15),
-	combout => \inst9|Mux0~0_combout\);
+	datac => \inst3|ALT_INV_data_input_z\(15),
+	combout => \inst3|regs~0_combout\);
+
+\inst3|regs[0][15]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst3|regs~0_combout\,
+	ena => \inst3|Decoder0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|regs[0][15]~q\);
+
+\inst3|Mux48~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux48~0_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[3][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[2][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[1][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
+-- !\inst2|rz\(1) & ( \inst3|regs[0][15]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[0][15]~q\,
+	datab => \inst3|ALT_INV_regs[1][15]~q\,
+	datac => \inst3|ALT_INV_regs[2][15]~q\,
+	datad => \inst3|ALT_INV_regs[3][15]~q\,
+	datae => \inst2|ALT_INV_rz\(0),
+	dataf => \inst2|ALT_INV_rz\(1),
+	combout => \inst3|Mux48~0_combout\);
+
+\inst3|Mux48~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux48~1_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[7][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[6][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[5][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
+-- !\inst2|rz\(1) & ( \inst3|regs[4][15]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[4][15]~q\,
+	datab => \inst3|ALT_INV_regs[5][15]~q\,
+	datac => \inst3|ALT_INV_regs[6][15]~q\,
+	datad => \inst3|ALT_INV_regs[7][15]~q\,
+	datae => \inst2|ALT_INV_rz\(0),
+	dataf => \inst2|ALT_INV_rz\(1),
+	combout => \inst3|Mux48~1_combout\);
+
+\inst3|Mux48~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux48~2_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[11][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[10][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[9][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
+-- !\inst2|rz\(1) & ( \inst3|regs[8][15]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[8][15]~q\,
+	datab => \inst3|ALT_INV_regs[9][15]~q\,
+	datac => \inst3|ALT_INV_regs[10][15]~q\,
+	datad => \inst3|ALT_INV_regs[11][15]~q\,
+	datae => \inst2|ALT_INV_rz\(0),
+	dataf => \inst2|ALT_INV_rz\(1),
+	combout => \inst3|Mux48~2_combout\);
+
+\inst3|Mux48~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux48~3_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[15][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[14][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[13][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
+-- !\inst2|rz\(1) & ( \inst3|regs[12][15]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[12][15]~q\,
+	datab => \inst3|ALT_INV_regs[13][15]~q\,
+	datac => \inst3|ALT_INV_regs[14][15]~q\,
+	datad => \inst3|ALT_INV_regs[15][15]~q\,
+	datae => \inst2|ALT_INV_rz\(0),
+	dataf => \inst2|ALT_INV_rz\(1),
+	combout => \inst3|Mux48~3_combout\);
+
+\inst3|Mux48~4\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux48~4_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|Mux48~3_combout\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|Mux48~2_combout\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|Mux48~1_combout\ ) ) ) # ( !\inst2|rz\(2) 
+-- & ( !\inst2|rz\(3) & ( \inst3|Mux48~0_combout\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_Mux48~0_combout\,
+	datab => \inst3|ALT_INV_Mux48~1_combout\,
+	datac => \inst3|ALT_INV_Mux48~2_combout\,
+	datad => \inst3|ALT_INV_Mux48~3_combout\,
+	datae => \inst2|ALT_INV_rz\(2),
+	dataf => \inst2|ALT_INV_rz\(3),
+	combout => \inst3|Mux48~4_combout\);
+
+\inst1|Mux17~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst1|Mux17~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(3)) # ((\inst|out_count\(2) & \inst|out_count\(1))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (!\inst|out_count\(3) & \inst|out_count\(0)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000010101010000000001010101100000000101010100000000010101011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst|ALT_INV_out_count\(3),
+	datab => \inst|ALT_INV_out_count\(2),
+	datac => \inst|ALT_INV_out_count\(1),
+	datad => \inst|ALT_INV_out_count\(0),
+	datae => \inst1|ALT_INV_memory[0][14]~q\,
+	combout => \inst1|Mux17~0_combout\);
+
+\inst1|operand_outdata[14]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst1|Mux17~0_combout\,
+	ena => \inst1|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst1|operand_outdata\(14));
+
+\inst2|operand[14]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst1|operand_outdata\(14),
+	ena => \inst2|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|operand\(14));
 
 \inst3|regs[4][14]\ : dffeas
 -- pragma translate_off
@@ -17551,10 +17726,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst3|regs[12][14]~q\);
 
-\inst3|Mux49~0\ : cyclonev_lcell_comb
+\inst3|Mux33~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux49~0_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[12][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[8][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[4][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
--- !\inst2|rz\(3) & ( \inst3|regs[0][14]~q\ ) ) )
+-- \inst3|Mux33~0_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[12][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[8][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[4][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[0][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -17567,9 +17742,9 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[4][14]~q\,
 	datac => \inst3|ALT_INV_regs[8][14]~q\,
 	datad => \inst3|ALT_INV_regs[12][14]~q\,
-	datae => \inst2|ALT_INV_rz\(2),
-	dataf => \inst2|ALT_INV_rz\(3),
-	combout => \inst3|Mux49~0_combout\);
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux33~0_combout\);
 
 \inst3|regs[1][14]\ : dffeas
 -- pragma translate_off
@@ -17627,10 +17802,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst3|regs[13][14]~q\);
 
-\inst3|Mux49~1\ : cyclonev_lcell_comb
+\inst3|Mux33~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux49~1_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[13][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[9][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[5][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
--- !\inst2|rz\(3) & ( \inst3|regs[1][14]~q\ ) ) )
+-- \inst3|Mux33~1_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[13][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[9][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[5][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[1][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -17643,9 +17818,9 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[5][14]~q\,
 	datac => \inst3|ALT_INV_regs[9][14]~q\,
 	datad => \inst3|ALT_INV_regs[13][14]~q\,
-	datae => \inst2|ALT_INV_rz\(2),
-	dataf => \inst2|ALT_INV_rz\(3),
-	combout => \inst3|Mux49~1_combout\);
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux33~1_combout\);
 
 \inst3|regs[2][14]\ : dffeas
 -- pragma translate_off
@@ -17703,10 +17878,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst3|regs[14][14]~q\);
 
-\inst3|Mux49~2\ : cyclonev_lcell_comb
+\inst3|Mux33~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux49~2_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[14][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[10][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[6][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
--- !\inst2|rz\(3) & ( \inst3|regs[2][14]~q\ ) ) )
+-- \inst3|Mux33~2_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[14][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[10][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[6][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[2][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -17719,9 +17894,9 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[6][14]~q\,
 	datac => \inst3|ALT_INV_regs[10][14]~q\,
 	datad => \inst3|ALT_INV_regs[14][14]~q\,
-	datae => \inst2|ALT_INV_rz\(2),
-	dataf => \inst2|ALT_INV_rz\(3),
-	combout => \inst3|Mux49~2_combout\);
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux33~2_combout\);
 
 \inst3|regs[3][14]\ : dffeas
 -- pragma translate_off
@@ -17779,10 +17954,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst3|regs[15][14]~q\);
 
-\inst3|Mux49~3\ : cyclonev_lcell_comb
+\inst3|Mux33~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux49~3_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[15][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[11][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[7][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
--- !\inst2|rz\(3) & ( \inst3|regs[3][14]~q\ ) ) )
+-- \inst3|Mux33~3_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[15][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[11][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[7][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[3][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -17795,14 +17970,14 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[7][14]~q\,
 	datac => \inst3|ALT_INV_regs[11][14]~q\,
 	datad => \inst3|ALT_INV_regs[15][14]~q\,
-	datae => \inst2|ALT_INV_rz\(2),
-	dataf => \inst2|ALT_INV_rz\(3),
-	combout => \inst3|Mux49~3_combout\);
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux33~3_combout\);
 
-\inst3|Mux49~4\ : cyclonev_lcell_comb
+\inst3|Mux33~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux49~4_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|Mux49~3_combout\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|Mux49~2_combout\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|Mux49~1_combout\ ) ) ) # ( !\inst2|rz\(0) 
--- & ( !\inst2|rz\(1) & ( \inst3|Mux49~0_combout\ ) ) )
+-- \inst3|Mux33~4_combout\ = ( \inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux33~3_combout\ ) ) ) # ( !\inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux33~2_combout\ ) ) ) # ( \inst2|rx\(0) & ( !\inst2|rx\(1) & ( \inst3|Mux33~1_combout\ ) ) ) # ( !\inst2|rx\(0) 
+-- & ( !\inst2|rx\(1) & ( \inst3|Mux33~0_combout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -17811,60 +17986,13 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst3|ALT_INV_Mux49~0_combout\,
-	datab => \inst3|ALT_INV_Mux49~1_combout\,
-	datac => \inst3|ALT_INV_Mux49~2_combout\,
-	datad => \inst3|ALT_INV_Mux49~3_combout\,
-	datae => \inst2|ALT_INV_rz\(0),
-	dataf => \inst2|ALT_INV_rz\(1),
-	combout => \inst3|Mux49~4_combout\);
-
-\inst1|Mux17~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst1|Mux17~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(3)) # (!\inst|out_count\(2) $ (\inst|out_count\(1))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(3)) # 
--- ((!\inst|out_count\(2) & !\inst|out_count\(1))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000011101010000000001110101100000000111010100000000011101011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(3),
-	datab => \inst|ALT_INV_out_count\(2),
-	datac => \inst|ALT_INV_out_count\(1),
-	datad => \inst|ALT_INV_out_count\(0),
-	datae => \inst1|ALT_INV_memory[0][14]~q\,
-	combout => \inst1|Mux17~0_combout\);
-
-\inst1|operand_outdata[14]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst1|Mux17~0_combout\,
-	ena => \inst1|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst1|operand_outdata\(14));
-
-\inst2|operand[14]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst1|operand_outdata\(14),
-	ena => \inst2|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst2|operand\(14));
+	dataa => \inst3|ALT_INV_Mux33~0_combout\,
+	datab => \inst3|ALT_INV_Mux33~1_combout\,
+	datac => \inst3|ALT_INV_Mux33~2_combout\,
+	datad => \inst3|ALT_INV_Mux33~3_combout\,
+	datae => \inst2|ALT_INV_rx\(0),
+	dataf => \inst2|ALT_INV_rx\(1),
+	combout => \inst3|Mux33~4_combout\);
 
 \inst3|Mux17~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -18988,183 +19116,6 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux19~4_combout\,
 	combout => \inst3|Mux19~5_combout\);
 
-\inst9|alu_result[12]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst9|result\(12),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst9|alu_result\(12));
-
-\inst3|Mux19~6\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux19~6_combout\ = ( \inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst3|Mux51~4_combout\ ) ) ) # ( !\inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst9|alu_result\(12) ) ) ) # ( \inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst3|Mux19~5_combout\ ) 
--- ) ) # ( !\inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst2|operand\(12) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_operand\(12),
-	datab => \inst3|ALT_INV_Mux19~5_combout\,
-	datac => \inst9|ALT_INV_alu_result\(12),
-	datad => \inst3|ALT_INV_Mux51~4_combout\,
-	datae => \inst7|ALT_INV_rf_sel\(3),
-	dataf => \inst7|ALT_INV_rf_sel\(1),
-	combout => \inst3|Mux19~6_combout\);
-
-\inst3|data_input_z[12]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst3|Mux19~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst3|data_input_z\(12));
-
-\inst3|regs~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|regs~3_combout\ = (!\inst7|ld_r~q\ & (\inst3|Mux51~4_combout\)) # (\inst7|ld_r~q\ & ((\inst3|data_input_z\(12))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_ld_r~q\,
-	datab => \inst3|ALT_INV_Mux51~4_combout\,
-	datac => \inst3|ALT_INV_data_input_z\(12),
-	combout => \inst3|regs~3_combout\);
-
-\inst3|regs[0][12]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst3|regs~3_combout\,
-	ena => \inst3|Decoder0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst3|regs[0][12]~q\);
-
-\inst3|Mux35~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux35~0_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[12][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[8][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[4][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[0][12]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[0][12]~q\,
-	datab => \inst3|ALT_INV_regs[4][12]~q\,
-	datac => \inst3|ALT_INV_regs[8][12]~q\,
-	datad => \inst3|ALT_INV_regs[12][12]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux35~0_combout\);
-
-\inst3|Mux35~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux35~1_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[13][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[9][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[5][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[1][12]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[1][12]~q\,
-	datab => \inst3|ALT_INV_regs[5][12]~q\,
-	datac => \inst3|ALT_INV_regs[9][12]~q\,
-	datad => \inst3|ALT_INV_regs[13][12]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux35~1_combout\);
-
-\inst3|Mux35~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux35~2_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[14][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[10][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[6][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[2][12]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[2][12]~q\,
-	datab => \inst3|ALT_INV_regs[6][12]~q\,
-	datac => \inst3|ALT_INV_regs[10][12]~q\,
-	datad => \inst3|ALT_INV_regs[14][12]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux35~2_combout\);
-
-\inst3|Mux35~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux35~3_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[15][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[11][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[7][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[3][12]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[3][12]~q\,
-	datab => \inst3|ALT_INV_regs[7][12]~q\,
-	datac => \inst3|ALT_INV_regs[11][12]~q\,
-	datad => \inst3|ALT_INV_regs[15][12]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux35~3_combout\);
-
-\inst3|Mux35~4\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux35~4_combout\ = ( \inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux35~3_combout\ ) ) ) # ( !\inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux35~2_combout\ ) ) ) # ( \inst2|rx\(0) & ( !\inst2|rx\(1) & ( \inst3|Mux35~1_combout\ ) ) ) # ( !\inst2|rx\(0) 
--- & ( !\inst2|rx\(1) & ( \inst3|Mux35~0_combout\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_Mux35~0_combout\,
-	datab => \inst3|ALT_INV_Mux35~1_combout\,
-	datac => \inst3|ALT_INV_Mux35~2_combout\,
-	datad => \inst3|ALT_INV_Mux35~3_combout\,
-	datae => \inst2|ALT_INV_rx\(0),
-	dataf => \inst2|ALT_INV_rx\(1),
-	combout => \inst3|Mux35~4_combout\);
-
 \inst9|Mux3~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \inst9|Mux3~0_combout\ = ( \inst2|operand\(12) & ( (!\inst7|alu_opsel\(3) & (((\inst7|alu_opsel\(2))) # (\inst3|Mux35~4_combout\))) # (\inst7|alu_opsel\(3) & (((\inst3|Mux51~4_combout\ & \inst7|alu_opsel\(2))))) ) ) # ( !\inst2|operand\(12) & ( 
@@ -19675,10 +19626,10 @@ PORT MAP (
 	datae => \inst2|ALT_INV_operand\(11),
 	combout => \inst9|Mux4~0_combout\);
 
-\inst9|Add0~49\ : cyclonev_lcell_comb
+\inst9|Add0~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~49_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux4~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux36~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux52~4_combout\))) ) + ( \inst9|Add0~42\ ))
--- \inst9|Add0~50\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux4~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux36~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux52~4_combout\))) ) + ( \inst9|Add0~42\ ))
+-- \inst9|Add0~9_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux4~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux36~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux52~4_combout\))) ) + ( \inst9|Add0~58\ ))
+-- \inst9|Add0~10\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux4~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux36~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux52~4_combout\))) ) + ( \inst9|Add0~58\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -19692,14 +19643,14 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux36~4_combout\,
 	datad => \inst9|ALT_INV_Mux4~0_combout\,
 	dataf => \inst3|ALT_INV_Mux52~4_combout\,
-	cin => \inst9|Add0~42\,
-	sumout => \inst9|Add0~49_sumout\,
-	cout => \inst9|Add0~50\);
+	cin => \inst9|Add0~58\,
+	sumout => \inst9|Add0~9_sumout\,
+	cout => \inst9|Add0~10\);
 
 \inst9|Mux20~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux20~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~49_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux4~0_combout\ & (\inst3|Mux36~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux4~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux36~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~49_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux4~0_combout\ & (\inst3|Mux52~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux20~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~9_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux4~0_combout\ & (\inst3|Mux36~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux4~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux36~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~9_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux4~0_combout\ & (\inst3|Mux52~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux4~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux52~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -19709,7 +19660,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~49_sumout\,
+	dataa => \inst9|ALT_INV_Add0~9_sumout\,
 	datab => \inst9|ALT_INV_Mux4~0_combout\,
 	datac => \inst3|ALT_INV_Mux52~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -19774,7 +19725,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux20~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(11));
@@ -19909,10 +19860,10 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux36~4_combout\);
 
-\inst9|Add0~1\ : cyclonev_lcell_comb
+\inst9|Add0~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~1_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux3~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux35~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux51~4_combout\))) ) + ( \inst9|Add0~50\ ))
--- \inst9|Add0~2\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux3~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux35~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux51~4_combout\))) ) + ( \inst9|Add0~50\ ))
+-- \inst9|Add0~13_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux3~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux35~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux51~4_combout\))) ) + ( \inst9|Add0~10\ ))
+-- \inst9|Add0~14\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux3~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux35~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux51~4_combout\))) ) + ( \inst9|Add0~10\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -19926,14 +19877,227 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux35~4_combout\,
 	datad => \inst9|ALT_INV_Mux3~0_combout\,
 	dataf => \inst3|ALT_INV_Mux51~4_combout\,
-	cin => \inst9|Add0~50\,
-	sumout => \inst9|Add0~1_sumout\,
-	cout => \inst9|Add0~2\);
+	cin => \inst9|Add0~10\,
+	sumout => \inst9|Add0~13_sumout\,
+	cout => \inst9|Add0~14\);
+
+\inst9|Mux19~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst9|Mux19~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~13_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux3~0_combout\ & (\inst3|Mux35~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux3~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux35~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~13_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux3~0_combout\ & (\inst3|Mux51~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- (\inst9|Mux3~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux51~4_combout\)))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "on",
+	lut_mask => "0101010101010101010101010101010100000011001111110000001100111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst9|ALT_INV_Add0~13_sumout\,
+	datab => \inst9|ALT_INV_Mux3~0_combout\,
+	datac => \inst3|ALT_INV_Mux51~4_combout\,
+	datad => \inst7|ALT_INV_alu_opsel\(4),
+	datae => \inst7|ALT_INV_alu_opsel\(0),
+	dataf => \inst7|ALT_INV_alu_opsel\(5),
+	datag => \inst3|ALT_INV_Mux35~4_combout\,
+	combout => \inst9|Mux19~0_combout\);
+
+\inst9|result[12]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst9|Mux19~0_combout\,
+	sclr => \inst7|alu_opsel\(6),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst9|result\(12));
+
+\inst9|alu_result[12]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst9|result\(12),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst9|alu_result\(12));
+
+\inst3|Mux19~6\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux19~6_combout\ = ( \inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst3|Mux51~4_combout\ ) ) ) # ( !\inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst9|alu_result\(12) ) ) ) # ( \inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst3|Mux19~5_combout\ ) 
+-- ) ) # ( !\inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst2|operand\(12) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_operand\(12),
+	datab => \inst3|ALT_INV_Mux19~5_combout\,
+	datac => \inst9|ALT_INV_alu_result\(12),
+	datad => \inst3|ALT_INV_Mux51~4_combout\,
+	datae => \inst7|ALT_INV_rf_sel\(3),
+	dataf => \inst7|ALT_INV_rf_sel\(1),
+	combout => \inst3|Mux19~6_combout\);
+
+\inst3|data_input_z[12]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst3|Mux19~6_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|data_input_z\(12));
+
+\inst3|regs~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|regs~3_combout\ = (!\inst7|ld_r~q\ & (\inst3|Mux51~4_combout\)) # (\inst7|ld_r~q\ & ((\inst3|data_input_z\(12))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_ld_r~q\,
+	datab => \inst3|ALT_INV_Mux51~4_combout\,
+	datac => \inst3|ALT_INV_data_input_z\(12),
+	combout => \inst3|regs~3_combout\);
+
+\inst3|regs[0][12]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst3|regs~3_combout\,
+	ena => \inst3|Decoder0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst3|regs[0][12]~q\);
+
+\inst3|Mux35~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux35~0_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[12][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[8][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[4][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[0][12]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[0][12]~q\,
+	datab => \inst3|ALT_INV_regs[4][12]~q\,
+	datac => \inst3|ALT_INV_regs[8][12]~q\,
+	datad => \inst3|ALT_INV_regs[12][12]~q\,
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux35~0_combout\);
+
+\inst3|Mux35~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux35~1_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[13][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[9][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[5][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[1][12]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[1][12]~q\,
+	datab => \inst3|ALT_INV_regs[5][12]~q\,
+	datac => \inst3|ALT_INV_regs[9][12]~q\,
+	datad => \inst3|ALT_INV_regs[13][12]~q\,
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux35~1_combout\);
+
+\inst3|Mux35~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux35~2_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[14][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[10][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[6][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[2][12]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[2][12]~q\,
+	datab => \inst3|ALT_INV_regs[6][12]~q\,
+	datac => \inst3|ALT_INV_regs[10][12]~q\,
+	datad => \inst3|ALT_INV_regs[14][12]~q\,
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux35~2_combout\);
+
+\inst3|Mux35~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux35~3_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[15][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[11][12]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[7][12]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
+-- !\inst2|rx\(3) & ( \inst3|regs[3][12]~q\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_regs[3][12]~q\,
+	datab => \inst3|ALT_INV_regs[7][12]~q\,
+	datac => \inst3|ALT_INV_regs[11][12]~q\,
+	datad => \inst3|ALT_INV_regs[15][12]~q\,
+	datae => \inst2|ALT_INV_rx\(2),
+	dataf => \inst2|ALT_INV_rx\(3),
+	combout => \inst3|Mux35~3_combout\);
+
+\inst3|Mux35~4\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux35~4_combout\ = ( \inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux35~3_combout\ ) ) ) # ( !\inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux35~2_combout\ ) ) ) # ( \inst2|rx\(0) & ( !\inst2|rx\(1) & ( \inst3|Mux35~1_combout\ ) ) ) # ( !\inst2|rx\(0) 
+-- & ( !\inst2|rx\(1) & ( \inst3|Mux35~0_combout\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_Mux35~0_combout\,
+	datab => \inst3|ALT_INV_Mux35~1_combout\,
+	datac => \inst3|ALT_INV_Mux35~2_combout\,
+	datad => \inst3|ALT_INV_Mux35~3_combout\,
+	datae => \inst2|ALT_INV_rx\(0),
+	dataf => \inst2|ALT_INV_rx\(1),
+	combout => \inst3|Mux35~4_combout\);
 
 \inst9|Add0~25\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~25_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux2~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux34~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux50~4_combout\))) ) + ( \inst9|Add0~2\ ))
--- \inst9|Add0~26\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux2~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux34~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux50~4_combout\))) ) + ( \inst9|Add0~2\ ))
+-- \inst9|Add0~25_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux2~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux34~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux50~4_combout\))) ) + ( \inst9|Add0~14\ ))
+-- \inst9|Add0~26\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux2~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux34~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux50~4_combout\))) ) + ( \inst9|Add0~14\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -19947,7 +20111,7 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux34~4_combout\,
 	datad => \inst9|ALT_INV_Mux2~0_combout\,
 	dataf => \inst3|ALT_INV_Mux50~4_combout\,
-	cin => \inst9|Add0~2\,
+	cin => \inst9|Add0~14\,
 	sumout => \inst9|Add0~25_sumout\,
 	cout => \inst9|Add0~26\);
 
@@ -20029,7 +20193,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux18~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(13));
@@ -20164,10 +20328,10 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux34~4_combout\);
 
-\inst9|Add0~21\ : cyclonev_lcell_comb
+\inst9|Add0~29\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Add0~21_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux1~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux33~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux49~4_combout\))) ) + ( \inst9|Add0~26\ ))
--- \inst9|Add0~22\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux1~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux33~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux49~4_combout\))) ) + ( \inst9|Add0~26\ ))
+-- \inst9|Add0~29_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux1~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux33~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux49~4_combout\))) ) + ( \inst9|Add0~26\ ))
+-- \inst9|Add0~30\ = CARRY(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux1~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux33~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux49~4_combout\))) ) + ( \inst9|Add0~26\ ))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20182,13 +20346,13 @@ PORT MAP (
 	datad => \inst9|ALT_INV_Mux1~0_combout\,
 	dataf => \inst3|ALT_INV_Mux49~4_combout\,
 	cin => \inst9|Add0~26\,
-	sumout => \inst9|Add0~21_sumout\,
-	cout => \inst9|Add0~22\);
+	sumout => \inst9|Add0~29_sumout\,
+	cout => \inst9|Add0~30\);
 
 \inst9|Mux17~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux17~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~21_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux1~0_combout\ & (\inst3|Mux33~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux1~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux33~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~21_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux1~0_combout\ & (\inst3|Mux49~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- \inst9|Mux17~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~29_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux1~0_combout\ & (\inst3|Mux33~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux1~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux33~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~29_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux1~0_combout\ & (\inst3|Mux49~4_combout\ & \inst7|alu_opsel\(4))) # 
 -- (\inst9|Mux1~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux49~4_combout\)))))) ) )
 
 -- pragma translate_off
@@ -20198,7 +20362,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~21_sumout\,
+	dataa => \inst9|ALT_INV_Add0~29_sumout\,
 	datab => \inst9|ALT_INV_Mux1~0_combout\,
 	datac => \inst3|ALT_INV_Mux49~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
@@ -20263,7 +20427,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux17~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
+	sclr => \inst3|data_input_z[0]~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst3|data_input_z\(14));
@@ -20298,10 +20462,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst3|regs[0][14]~q\);
 
-\inst3|Mux33~0\ : cyclonev_lcell_comb
+\inst3|Mux49~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux33~0_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[12][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[8][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[4][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[0][14]~q\ ) ) )
+-- \inst3|Mux49~0_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[12][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[8][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[4][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
+-- !\inst2|rz\(3) & ( \inst3|regs[0][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20314,14 +20478,14 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[4][14]~q\,
 	datac => \inst3|ALT_INV_regs[8][14]~q\,
 	datad => \inst3|ALT_INV_regs[12][14]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux33~0_combout\);
+	datae => \inst2|ALT_INV_rz\(2),
+	dataf => \inst2|ALT_INV_rz\(3),
+	combout => \inst3|Mux49~0_combout\);
 
-\inst3|Mux33~1\ : cyclonev_lcell_comb
+\inst3|Mux49~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux33~1_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[13][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[9][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[5][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[1][14]~q\ ) ) )
+-- \inst3|Mux49~1_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[13][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[9][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[5][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
+-- !\inst2|rz\(3) & ( \inst3|regs[1][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20334,14 +20498,14 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[5][14]~q\,
 	datac => \inst3|ALT_INV_regs[9][14]~q\,
 	datad => \inst3|ALT_INV_regs[13][14]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux33~1_combout\);
+	datae => \inst2|ALT_INV_rz\(2),
+	dataf => \inst2|ALT_INV_rz\(3),
+	combout => \inst3|Mux49~1_combout\);
 
-\inst3|Mux33~2\ : cyclonev_lcell_comb
+\inst3|Mux49~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux33~2_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[14][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[10][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[6][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[2][14]~q\ ) ) )
+-- \inst3|Mux49~2_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[14][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[10][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[6][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
+-- !\inst2|rz\(3) & ( \inst3|regs[2][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20354,14 +20518,14 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[6][14]~q\,
 	datac => \inst3|ALT_INV_regs[10][14]~q\,
 	datad => \inst3|ALT_INV_regs[14][14]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux33~2_combout\);
+	datae => \inst2|ALT_INV_rz\(2),
+	dataf => \inst2|ALT_INV_rz\(3),
+	combout => \inst3|Mux49~2_combout\);
 
-\inst3|Mux33~3\ : cyclonev_lcell_comb
+\inst3|Mux49~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst3|Mux33~3_combout\ = ( \inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[15][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( \inst2|rx\(3) & ( \inst3|regs[11][14]~q\ ) ) ) # ( \inst2|rx\(2) & ( !\inst2|rx\(3) & ( \inst3|regs[7][14]~q\ ) ) ) # ( !\inst2|rx\(2) & ( 
--- !\inst2|rx\(3) & ( \inst3|regs[3][14]~q\ ) ) )
+-- \inst3|Mux49~3_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[15][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|regs[11][14]~q\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|regs[7][14]~q\ ) ) ) # ( !\inst2|rz\(2) & ( 
+-- !\inst2|rz\(3) & ( \inst3|regs[3][14]~q\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20374,261 +20538,29 @@ PORT MAP (
 	datab => \inst3|ALT_INV_regs[7][14]~q\,
 	datac => \inst3|ALT_INV_regs[11][14]~q\,
 	datad => \inst3|ALT_INV_regs[15][14]~q\,
-	datae => \inst2|ALT_INV_rx\(2),
-	dataf => \inst2|ALT_INV_rx\(3),
-	combout => \inst3|Mux33~3_combout\);
-
-\inst3|Mux33~4\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux33~4_combout\ = ( \inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux33~3_combout\ ) ) ) # ( !\inst2|rx\(0) & ( \inst2|rx\(1) & ( \inst3|Mux33~2_combout\ ) ) ) # ( \inst2|rx\(0) & ( !\inst2|rx\(1) & ( \inst3|Mux33~1_combout\ ) ) ) # ( !\inst2|rx\(0) 
--- & ( !\inst2|rx\(1) & ( \inst3|Mux33~0_combout\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_Mux33~0_combout\,
-	datab => \inst3|ALT_INV_Mux33~1_combout\,
-	datac => \inst3|ALT_INV_Mux33~2_combout\,
-	datad => \inst3|ALT_INV_Mux33~3_combout\,
-	datae => \inst2|ALT_INV_rx\(0),
-	dataf => \inst2|ALT_INV_rx\(1),
-	combout => \inst3|Mux33~4_combout\);
-
-\inst9|Add0~13\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst9|Add0~13_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux0~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux32~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux48~4_combout\))) ) + ( \inst9|Add0~22\ ))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000111100111100000000000000000000000101010110101010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_alu_opsel\(4),
-	datab => \inst7|ALT_INV_alu_opsel\(0),
-	datac => \inst3|ALT_INV_Mux32~4_combout\,
-	datad => \inst9|ALT_INV_Mux0~0_combout\,
-	dataf => \inst3|ALT_INV_Mux48~4_combout\,
-	cin => \inst9|Add0~22\,
-	sumout => \inst9|Add0~13_sumout\);
-
-\inst9|Mux16~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst9|Mux16~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~13_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux0~0_combout\ & (\inst3|Mux32~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux0~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux32~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~13_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux0~0_combout\ & (\inst3|Mux48~4_combout\ & \inst7|alu_opsel\(4))) # 
--- (\inst9|Mux0~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux48~4_combout\)))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "on",
-	lut_mask => "0101010101010101010101010101010100000011001111110000001100111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst9|ALT_INV_Add0~13_sumout\,
-	datab => \inst9|ALT_INV_Mux0~0_combout\,
-	datac => \inst3|ALT_INV_Mux48~4_combout\,
-	datad => \inst7|ALT_INV_alu_opsel\(4),
-	datae => \inst7|ALT_INV_alu_opsel\(0),
-	dataf => \inst7|ALT_INV_alu_opsel\(5),
-	datag => \inst3|ALT_INV_Mux32~4_combout\,
-	combout => \inst9|Mux16~0_combout\);
-
-\inst9|result[15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst9|Mux16~0_combout\,
-	sclr => \inst7|alu_opsel\(6),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst9|result\(15));
-
-\inst9|alu_result[15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst9|result\(15),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst9|alu_result\(15));
-
-\inst3|Mux16~6\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux16~6_combout\ = ( \inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst3|Mux48~4_combout\ ) ) ) # ( !\inst7|rf_sel\(3) & ( \inst7|rf_sel\(1) & ( \inst9|alu_result\(15) ) ) ) # ( \inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst3|Mux16~5_combout\ ) 
--- ) ) # ( !\inst7|rf_sel\(3) & ( !\inst7|rf_sel\(1) & ( \inst2|operand\(15) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_operand\(15),
-	datab => \inst3|ALT_INV_Mux16~5_combout\,
-	datac => \inst9|ALT_INV_alu_result\(15),
-	datad => \inst3|ALT_INV_Mux48~4_combout\,
-	datae => \inst7|ALT_INV_rf_sel\(3),
-	dataf => \inst7|ALT_INV_rf_sel\(1),
-	combout => \inst3|Mux16~6_combout\);
-
-\inst3|data_input_z[15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst3|Mux16~6_combout\,
-	sclr => \inst3|data_input_z[1]~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst3|data_input_z\(15));
-
-\inst3|regs~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|regs~0_combout\ = (!\inst7|ld_r~q\ & (\inst3|Mux48~4_combout\)) # (\inst7|ld_r~q\ & ((\inst3|data_input_z\(15))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010011100100111001001110010011100100111001001110010011100100111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_ld_r~q\,
-	datab => \inst3|ALT_INV_Mux48~4_combout\,
-	datac => \inst3|ALT_INV_data_input_z\(15),
-	combout => \inst3|regs~0_combout\);
-
-\inst3|regs[0][15]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst3|regs~0_combout\,
-	ena => \inst3|Decoder0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst3|regs[0][15]~q\);
-
-\inst3|Mux48~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux48~0_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[3][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[2][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[1][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
--- !\inst2|rz\(1) & ( \inst3|regs[0][15]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[0][15]~q\,
-	datab => \inst3|ALT_INV_regs[1][15]~q\,
-	datac => \inst3|ALT_INV_regs[2][15]~q\,
-	datad => \inst3|ALT_INV_regs[3][15]~q\,
-	datae => \inst2|ALT_INV_rz\(0),
-	dataf => \inst2|ALT_INV_rz\(1),
-	combout => \inst3|Mux48~0_combout\);
-
-\inst3|Mux48~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux48~1_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[7][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[6][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[5][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
--- !\inst2|rz\(1) & ( \inst3|regs[4][15]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[4][15]~q\,
-	datab => \inst3|ALT_INV_regs[5][15]~q\,
-	datac => \inst3|ALT_INV_regs[6][15]~q\,
-	datad => \inst3|ALT_INV_regs[7][15]~q\,
-	datae => \inst2|ALT_INV_rz\(0),
-	dataf => \inst2|ALT_INV_rz\(1),
-	combout => \inst3|Mux48~1_combout\);
-
-\inst3|Mux48~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux48~2_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[11][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[10][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[9][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
--- !\inst2|rz\(1) & ( \inst3|regs[8][15]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[8][15]~q\,
-	datab => \inst3|ALT_INV_regs[9][15]~q\,
-	datac => \inst3|ALT_INV_regs[10][15]~q\,
-	datad => \inst3|ALT_INV_regs[11][15]~q\,
-	datae => \inst2|ALT_INV_rz\(0),
-	dataf => \inst2|ALT_INV_rz\(1),
-	combout => \inst3|Mux48~2_combout\);
-
-\inst3|Mux48~3\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux48~3_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[15][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|regs[14][15]~q\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|regs[13][15]~q\ ) ) ) # ( !\inst2|rz\(0) & ( 
--- !\inst2|rz\(1) & ( \inst3|regs[12][15]~q\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_regs[12][15]~q\,
-	datab => \inst3|ALT_INV_regs[13][15]~q\,
-	datac => \inst3|ALT_INV_regs[14][15]~q\,
-	datad => \inst3|ALT_INV_regs[15][15]~q\,
-	datae => \inst2|ALT_INV_rz\(0),
-	dataf => \inst2|ALT_INV_rz\(1),
-	combout => \inst3|Mux48~3_combout\);
-
-\inst3|Mux48~4\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst3|Mux48~4_combout\ = ( \inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|Mux48~3_combout\ ) ) ) # ( !\inst2|rz\(2) & ( \inst2|rz\(3) & ( \inst3|Mux48~2_combout\ ) ) ) # ( \inst2|rz\(2) & ( !\inst2|rz\(3) & ( \inst3|Mux48~1_combout\ ) ) ) # ( !\inst2|rz\(2) 
--- & ( !\inst2|rz\(3) & ( \inst3|Mux48~0_combout\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_Mux48~0_combout\,
-	datab => \inst3|ALT_INV_Mux48~1_combout\,
-	datac => \inst3|ALT_INV_Mux48~2_combout\,
-	datad => \inst3|ALT_INV_Mux48~3_combout\,
 	datae => \inst2|ALT_INV_rz\(2),
 	dataf => \inst2|ALT_INV_rz\(3),
-	combout => \inst3|Mux48~4_combout\);
+	combout => \inst3|Mux49~3_combout\);
+
+\inst3|Mux49~4\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst3|Mux49~4_combout\ = ( \inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|Mux49~3_combout\ ) ) ) # ( !\inst2|rz\(0) & ( \inst2|rz\(1) & ( \inst3|Mux49~2_combout\ ) ) ) # ( \inst2|rz\(0) & ( !\inst2|rz\(1) & ( \inst3|Mux49~1_combout\ ) ) ) # ( !\inst2|rz\(0) 
+-- & ( !\inst2|rz\(1) & ( \inst3|Mux49~0_combout\ ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_Mux49~0_combout\,
+	datab => \inst3|ALT_INV_Mux49~1_combout\,
+	datac => \inst3|ALT_INV_Mux49~2_combout\,
+	datad => \inst3|ALT_INV_Mux49~3_combout\,
+	datae => \inst2|ALT_INV_rz\(0),
+	dataf => \inst2|ALT_INV_rz\(1),
+	combout => \inst3|Mux49~4_combout\);
 
 \inst6|Equal0~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -20714,15 +20646,15 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst6|presentJmp~q\);
 
-\inst7|Selector1~0\ : cyclonev_lcell_comb
+\inst7|Selector1~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector1~0_combout\ = ( \inst7|nextState.fetch~q\ & ( ((\inst2|address_method\(0) & (\inst7|nextState.decode3~q\ & \inst7|Equal0~0_combout\))) # (\inst7|increment\(2)) ) ) # ( !\inst7|nextState.fetch~q\ & ( (\inst7|nextState.decode3~q\ & 
--- (((\inst2|address_method\(0) & \inst7|Equal0~0_combout\)) # (\inst7|increment\(2)))) ) )
+-- \inst7|Selector1~1_combout\ = ( \inst7|Equal6~0_combout\ & ( (\inst7|nextState.decode3~q\ & (((\inst2|address_method\(0) & \inst7|Equal0~0_combout\)) # (\inst7|increment\(2)))) ) ) # ( !\inst7|Equal6~0_combout\ & ( (\inst7|nextState.decode3~q\ & 
+-- (\inst7|Equal0~0_combout\ & ((\inst2|address_method\(0)) # (\inst7|increment\(2))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010100000111010101010101011100000101000001110101010101010111",
+	lut_mask => "0000000000000111000001010000011100000000000001110000010100000111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -20730,29 +20662,44 @@ PORT MAP (
 	datab => \inst2|ALT_INV_address_method\(0),
 	datac => \inst7|ALT_INV_nextState.decode3~q\,
 	datad => \inst7|ALT_INV_Equal0~0_combout\,
-	datae => \inst7|ALT_INV_nextState.fetch~q\,
-	combout => \inst7|Selector1~0_combout\);
+	datae => \inst7|ALT_INV_Equal6~0_combout\,
+	combout => \inst7|Selector1~1_combout\);
 
-\inst7|Selector1~1\ : cyclonev_lcell_comb
+\inst7|Selector1~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector1~1_combout\ = ( \inst7|Selector8~0_combout\ & ( \inst7|Selector1~0_combout\ & ( (((\inst7|increment\(2) & \inst7|WideOr1~combout\)) # (\inst7|OUTPUTS~0_combout\)) # (\inst6|presentJmp~q\) ) ) ) # ( !\inst7|Selector8~0_combout\ & ( 
--- \inst7|Selector1~0_combout\ & ( ((\inst7|increment\(2) & \inst7|WideOr1~combout\)) # (\inst7|OUTPUTS~0_combout\) ) ) ) # ( \inst7|Selector8~0_combout\ & ( !\inst7|Selector1~0_combout\ & ( ((\inst7|increment\(2) & \inst7|WideOr1~combout\)) # 
--- (\inst6|presentJmp~q\) ) ) ) # ( !\inst7|Selector8~0_combout\ & ( !\inst7|Selector1~0_combout\ & ( (\inst7|increment\(2) & \inst7|WideOr1~combout\) ) ) )
+-- \inst7|Selector1~2_combout\ = (\inst7|WideOr1~combout\ & ((!\inst7|Equal0~0_combout\) # ((!\inst7|nextState.fetch~q\) # (\inst7|Equal6~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000110011010101010111011100001111001111110101111101111111",
+	lut_mask => "0000000011111011000000001111101100000000111110110000000011111011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_Equal0~0_combout\,
+	datab => \inst7|ALT_INV_Equal6~0_combout\,
+	datac => \inst7|ALT_INV_nextState.fetch~q\,
+	datad => \inst7|ALT_INV_WideOr1~combout\,
+	combout => \inst7|Selector1~2_combout\);
+
+\inst7|Selector1~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector1~3_combout\ = ( \inst7|Selector1~2_combout\ & ( ((\inst6|presentJmp~q\ & \inst7|Selector1~0_combout\)) # (\inst7|Selector1~1_combout\) ) ) # ( !\inst7|Selector1~2_combout\ & ( (((\inst6|presentJmp~q\ & \inst7|Selector1~0_combout\)) # 
+-- (\inst7|Selector1~1_combout\)) # (\inst7|increment\(2)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0011011111111111000001011111111100110111111111110000010111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst6|ALT_INV_presentJmp~q\,
 	datab => \inst7|ALT_INV_increment\(2),
-	datac => \inst7|ALT_INV_OUTPUTS~0_combout\,
-	datad => \inst7|ALT_INV_WideOr1~combout\,
-	datae => \inst7|ALT_INV_Selector8~0_combout\,
-	dataf => \inst7|ALT_INV_Selector1~0_combout\,
-	combout => \inst7|Selector1~1_combout\);
+	datac => \inst7|ALT_INV_Selector1~0_combout\,
+	datad => \inst7|ALT_INV_Selector1~1_combout\,
+	datae => \inst7|ALT_INV_Selector1~2_combout\,
+	combout => \inst7|Selector1~3_combout\);
 
 \inst7|increment[2]\ : dffeas
 -- pragma translate_off
@@ -20762,7 +20709,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector1~1_combout\,
+	d => \inst7|Selector1~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|increment\(2));
@@ -20864,9 +20811,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst2|opcode\(5));
 
-\inst7|Selector19~3\ : cyclonev_lcell_comb
+\inst7|Selector19~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector19~3_combout\ = ( \inst7|Equal0~1_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(5) $ (!\inst2|opcode\(4))) # (\inst2|opcode\(2)))) ) ) # ( !\inst7|Equal0~1_combout\ & ( \inst7|nextState.decode3~q\ ) )
+-- \inst7|Selector19~2_combout\ = ( \inst7|Equal0~1_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(5) $ (!\inst2|opcode\(4))) # (\inst2|opcode\(2)))) ) ) # ( !\inst7|Equal0~1_combout\ & ( \inst7|nextState.decode3~q\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20880,7 +20827,7 @@ PORT MAP (
 	datac => \inst2|ALT_INV_opcode\(2),
 	datad => \inst7|ALT_INV_nextState.decode3~q\,
 	datae => \inst7|ALT_INV_Equal0~1_combout\,
-	combout => \inst7|Selector19~3_combout\);
+	combout => \inst7|Selector19~2_combout\);
 
 \inst7|alu_opsel[4]\ : dffeas
 -- pragma translate_off
@@ -20890,17 +20837,55 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector19~3_combout\,
-	ena => \inst7|Selector19~2_combout\,
+	d => \inst7|Selector19~2_combout\,
+	ena => \inst7|Selector19~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|alu_opsel\(4));
 
-\inst9|Mux19~0\ : cyclonev_lcell_comb
+\inst9|Mux0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Mux19~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~1_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux3~0_combout\ & (\inst3|Mux35~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux3~0_combout\ & 
--- ((\inst7|alu_opsel\(4)) # (\inst3|Mux35~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~1_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux3~0_combout\ & (\inst3|Mux51~4_combout\ & \inst7|alu_opsel\(4))) # 
--- (\inst9|Mux3~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux51~4_combout\)))))) ) )
+-- \inst9|Mux0~0_combout\ = ( \inst2|operand\(15) & ( (!\inst7|alu_opsel\(3) & (((\inst7|alu_opsel\(2))) # (\inst3|Mux32~4_combout\))) # (\inst7|alu_opsel\(3) & (((\inst3|Mux48~4_combout\ & \inst7|alu_opsel\(2))))) ) ) # ( !\inst2|operand\(15) & ( 
+-- (!\inst7|alu_opsel\(3) & (\inst3|Mux32~4_combout\ & ((!\inst7|alu_opsel\(2))))) # (\inst7|alu_opsel\(3) & (((\inst3|Mux48~4_combout\ & \inst7|alu_opsel\(2))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101000000000011010100001111001101010000000000110101000011110011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst3|ALT_INV_Mux32~4_combout\,
+	datab => \inst3|ALT_INV_Mux48~4_combout\,
+	datac => \inst7|ALT_INV_alu_opsel\(3),
+	datad => \inst7|ALT_INV_alu_opsel\(2),
+	datae => \inst2|ALT_INV_operand\(15),
+	combout => \inst9|Mux0~0_combout\);
+
+\inst9|Add0~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst9|Add0~1_sumout\ = SUM(( !\inst7|alu_opsel\(4) $ (!\inst9|Mux0~0_combout\) ) + ( (!\inst7|alu_opsel\(0) & (\inst3|Mux32~4_combout\)) # (\inst7|alu_opsel\(0) & ((\inst3|Mux48~4_combout\))) ) + ( \inst9|Add0~30\ ))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000111100111100000000000000000000000101010110101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_alu_opsel\(4),
+	datab => \inst7|ALT_INV_alu_opsel\(0),
+	datac => \inst3|ALT_INV_Mux32~4_combout\,
+	datad => \inst9|ALT_INV_Mux0~0_combout\,
+	dataf => \inst3|ALT_INV_Mux48~4_combout\,
+	cin => \inst9|Add0~30\,
+	sumout => \inst9|Add0~1_sumout\);
+
+\inst9|Mux16~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst9|Mux16~0_combout\ = ( !\inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~1_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux0~0_combout\ & (\inst3|Mux32~4_combout\ & \inst7|alu_opsel\(4))) # (\inst9|Mux0~0_combout\ & 
+-- ((\inst7|alu_opsel\(4)) # (\inst3|Mux32~4_combout\)))))) ) ) # ( \inst7|alu_opsel\(0) & ( (!\inst7|alu_opsel\(5) & (\inst9|Add0~1_sumout\)) # (\inst7|alu_opsel\(5) & (((!\inst9|Mux0~0_combout\ & (\inst3|Mux48~4_combout\ & \inst7|alu_opsel\(4))) # 
+-- (\inst9|Mux0~0_combout\ & ((\inst7|alu_opsel\(4)) # (\inst3|Mux48~4_combout\)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20910,15 +20895,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst9|ALT_INV_Add0~1_sumout\,
-	datab => \inst9|ALT_INV_Mux3~0_combout\,
-	datac => \inst3|ALT_INV_Mux51~4_combout\,
+	datab => \inst9|ALT_INV_Mux0~0_combout\,
+	datac => \inst3|ALT_INV_Mux48~4_combout\,
 	datad => \inst7|ALT_INV_alu_opsel\(4),
 	datae => \inst7|ALT_INV_alu_opsel\(0),
 	dataf => \inst7|ALT_INV_alu_opsel\(5),
-	datag => \inst3|ALT_INV_Mux35~4_combout\,
-	combout => \inst9|Mux19~0_combout\);
+	datag => \inst3|ALT_INV_Mux32~4_combout\,
+	combout => \inst9|Mux16~0_combout\);
 
-\inst9|result[12]\ : dffeas
+\inst9|result[15]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -20926,15 +20911,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst9|Mux19~0_combout\,
+	d => \inst9|Mux16~0_combout\,
 	sclr => \inst7|alu_opsel\(6),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst9|result\(12));
+	q => \inst9|result\(15));
 
 \inst9|Equal0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Equal0~0_combout\ = ( !\inst9|result\(13) & ( (!\inst9|result\(0) & (!\inst9|result\(15) & (!\inst9|result\(1) & !\inst9|result\(14)))) ) )
+-- \inst9|Equal0~0_combout\ = ( !\inst9|result\(13) & ( (!\inst9|result\(11) & (!\inst9|result\(12) & (!\inst9|result\(4) & !\inst9|result\(1)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20943,16 +20928,16 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_result\(0),
-	datab => \inst9|ALT_INV_result\(15),
-	datac => \inst9|ALT_INV_result\(1),
-	datad => \inst9|ALT_INV_result\(14),
+	dataa => \inst9|ALT_INV_result\(11),
+	datab => \inst9|ALT_INV_result\(12),
+	datac => \inst9|ALT_INV_result\(4),
+	datad => \inst9|ALT_INV_result\(1),
 	datae => \inst9|ALT_INV_result\(13),
 	combout => \inst9|Equal0~0_combout\);
 
 \inst9|Equal0~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Equal0~1_combout\ = ( !\inst9|result\(7) & ( (!\inst9|result\(4) & (!\inst9|result\(8) & (!\inst9|result\(9) & !\inst9|result\(10)))) ) )
+-- \inst9|Equal0~1_combout\ = ( !\inst9|result\(7) & ( (!\inst9|result\(14) & (!\inst9|result\(0) & (!\inst9|result\(2) & !\inst9|result\(3)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20961,16 +20946,16 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_result\(4),
-	datab => \inst9|ALT_INV_result\(8),
-	datac => \inst9|ALT_INV_result\(9),
-	datad => \inst9|ALT_INV_result\(10),
+	dataa => \inst9|ALT_INV_result\(14),
+	datab => \inst9|ALT_INV_result\(0),
+	datac => \inst9|ALT_INV_result\(2),
+	datad => \inst9|ALT_INV_result\(3),
 	datae => \inst9|ALT_INV_result\(7),
 	combout => \inst9|Equal0~1_combout\);
 
 \inst9|Equal0~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Equal0~2_combout\ = (!\inst9|result\(11) & (!\inst9|result\(3) & (!\inst9|result\(2) & !\inst9|result\(5))))
+-- \inst9|Equal0~2_combout\ = (!\inst9|result\(8) & (!\inst9|result\(9) & (!\inst9|result\(10) & !\inst9|result\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20979,15 +20964,15 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_result\(11),
-	datab => \inst9|ALT_INV_result\(3),
-	datac => \inst9|ALT_INV_result\(2),
+	dataa => \inst9|ALT_INV_result\(8),
+	datab => \inst9|ALT_INV_result\(9),
+	datac => \inst9|ALT_INV_result\(10),
 	datad => \inst9|ALT_INV_result\(5),
 	combout => \inst9|Equal0~2_combout\);
 
 \inst9|Equal0~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst9|Equal0~3_combout\ = ( \inst9|Equal0~2_combout\ & ( (!\inst9|result\(12) & (!\inst9|result\(6) & (\inst9|Equal0~0_combout\ & \inst9|Equal0~1_combout\))) ) )
+-- \inst9|Equal0~3_combout\ = ( \inst9|Equal0~2_combout\ & ( (!\inst9|result\(15) & (!\inst9|result\(6) & (\inst9|Equal0~0_combout\ & \inst9|Equal0~1_combout\))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20996,7 +20981,7 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst9|ALT_INV_result\(12),
+	dataa => \inst9|ALT_INV_result\(15),
 	datab => \inst9|ALT_INV_result\(6),
 	datac => \inst9|ALT_INV_Equal0~0_combout\,
 	datad => \inst9|ALT_INV_Equal0~1_combout\,
@@ -21031,39 +21016,21 @@ PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(1),
 	combout => \inst7|dataSel~3_combout\);
 
-\inst7|dataSel~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|dataSel~1_combout\ = (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & (!\inst2|opcode\(2) & \inst2|opcode\(1))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000010000000000000001000000000000000100000000000000010000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	combout => \inst7|dataSel~1_combout\);
-
 \inst7|dataSel~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|dataSel~2_combout\ = ( \inst7|nextState.decode3~q\ & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(0) & (!\inst7|dataSel~0_combout\ & \inst7|dataSel~1_combout\))) ) )
+-- \inst7|dataSel~2_combout\ = (!\inst2|opcode\(0) & (\inst7|nextState.decode3~q\ & (!\inst7|dataSel~0_combout\ & \inst7|dataSel~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000000000001000000000000000000000000000000010000000",
+	lut_mask => "0000000000100000000000000010000000000000001000000000000000100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(0),
+	dataa => \inst2|ALT_INV_opcode\(0),
+	datab => \inst7|ALT_INV_nextState.decode3~q\,
 	datac => \inst7|ALT_INV_dataSel~0_combout\,
 	datad => \inst7|ALT_INV_dataSel~1_combout\,
-	datae => \inst7|ALT_INV_nextState.decode3~q\,
 	combout => \inst7|dataSel~2_combout\);
 
 \inst7|dataSel\ : dffeas

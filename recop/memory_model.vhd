@@ -40,9 +40,9 @@ architecture beh of memory is
 	x"0002", -- store M[1] <- Rx
 	--am_register&jmp& x"0"&x"1",
 	--x"0004",  -- jump to Rx r[1]
-	am_register&present&x"3"&x"0",
-	x"0002",
 	am_inherent&present&x"2"&x"0",
+	x"0007",
+	am_inherent&present&x"3"&x"0",
 	x"0006");
 	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",

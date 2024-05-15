@@ -70,9 +70,15 @@ architecture behavioral of control_unit is
 					alu_opsel <= "0000000";
 					if opcodeIn = jmp or opcodeIn = present then
 						-- count already sorted, proceed to next fetch step
+						if presentJmp = '1' and opcodeIn = present then
+							increment <= "0100";
+						elsif presentJmp = '0' and opcodeIn = present then
+							increment <= "0001";
+						end if;
 					else
 						increment <= "0001"; -- increment program counter, move to next instruction
 					end if;
+					
 					nextState <= fetch2;
 					stateOut <= "0001";
 					
@@ -191,7 +197,8 @@ architecture behavioral of control_unit is
 							
 						when present =>
 							-- only one case- PC <- Operand if RzData = 0
-							nextState <= selStore; -- ? selStore can check Rx and Rz
+							nextState <= execution; -- ? selStore can check Rx and Rz
+							
 						when ldr =>
 							nextState <= execution;
 							case address_method is
@@ -234,8 +241,13 @@ architecture behavioral of control_unit is
 						ld_r <= '0';
 						nextState <= fetch;
 					
+					-- jmp 
 					elsif opcodeIn = jmp then
 						nextState <= fetch; -- PC <- Rx
+						
+					-- present 
+					elsif opcodeIn = present then
+						nextState <= fetch; 
 					else
 						nextState <= fetch;
 						ld_r <= '1';
