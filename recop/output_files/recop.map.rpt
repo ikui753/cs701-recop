@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Thu May 16 11:04:25 2024
+Thu May 16 11:10:23 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -50,7 +50,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 16 11:04:25 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 16 11:10:23 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -214,14 +214,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 455         ;
+; Estimate of Logic utilization (ALMs needed) ; 457         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 507         ;
+; Combinational ALUT usage for logic          ; 512         ;
 ;     -- 7 input functions                    ; 16          ;
-;     -- 6 input functions                    ; 286         ;
-;     -- 5 input functions                    ; 103         ;
-;     -- 4 input functions                    ; 34          ;
-;     -- <=3 input functions                  ; 68          ;
+;     -- 6 input functions                    ; 285         ;
+;     -- 5 input functions                    ; 108         ;
+;     -- 4 input functions                    ; 37          ;
+;     -- <=3 input functions                  ; 66          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 542         ;
 ;                                             ;             ;
@@ -233,7 +233,7 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
 ; Maximum fan-out                             ; 559         ;
-; Total fan-out                               ; 5084        ;
+; Total fan-out                               ; 5111        ;
 ; Average fan-out                             ; 3.11        ;
 +---------------------------------------------+-------------+
 
@@ -243,10 +243,10 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                            ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 507 (0)             ; 542 (0)                   ; 65536             ; 0          ; 286  ; 0            ; |progCounterTest                                                                               ; progCounterTest ; work         ;
+; |progCounterTest                          ; 512 (0)             ; 542 (0)                   ; 65536             ; 0          ; 286  ; 0            ; |progCounterTest                                                                               ; progCounterTest ; work         ;
 ;    |alu:inst9|                            ; 53 (53)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9                                                                     ; alu             ; work         ;
-;    |control_unit:inst7|                   ; 74 (74)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                            ; control_unit    ; work         ;
-;    |dataAddrMux:inst6|                    ; 5 (5)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|dataAddrMux:inst6                                                             ; dataAddrMux     ; work         ;
+;    |control_unit:inst7|                   ; 77 (77)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                            ; control_unit    ; work         ;
+;    |dataAddrMux:inst6|                    ; 7 (7)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|dataAddrMux:inst6                                                             ; dataAddrMux     ; work         ;
 ;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4                                                                ; data_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_q6j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated ; altsyncram_q6j1 ; work         ;
@@ -296,6 +296,7 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------------------------------------------+
 ; registers:inst5|dprr[0]                 ; Stuck at GND due to stuck port clock_enable ;
 ; memory:inst1|memory[3][5]               ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[10][10]             ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[12][13]             ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[4][4]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[11][10]             ; Merged with memory:inst1|memory[13][0]      ;
@@ -308,26 +309,25 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[10][8]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[10][2]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][13]              ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[11][2]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][12]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[12][2]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[3][11]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[6][12]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[6][11]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][6]               ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[7][0]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[13][5]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[8][2]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[12][5]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[5][4]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[11][5]              ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[9][2]               ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[10][5]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][0]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][5]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][4]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[11][14]             ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[11][8]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][5]               ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[4][13]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[12][14]             ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[12][6]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][14]              ; Merged with memory:inst1|memory[13][0]      ;
@@ -336,6 +336,7 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[13][8]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][6]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][6]               ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[6][4]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][7]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[8][6]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][6]               ; Merged with memory:inst1|memory[13][0]      ;
@@ -353,17 +354,18 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[5][6]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[11][9]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][9]               ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[10][1]              ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[10][14]             ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[10][9]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[10][6]              ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[9][1]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][9]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[10][0]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][15]              ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[8][9]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][2]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][1]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][4]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][9]               ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[11][0]              ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[6][1]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][0]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[6][8]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][12]              ; Merged with memory:inst1|memory[13][0]      ;
@@ -373,42 +375,37 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[12][0]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[6][2]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[4][3]               ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[6][0]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][8]               ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[4][14]              ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[10][12]             ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][12]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[7][10]              ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[10][10]             ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[12][10]             ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[2][4]               ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[11][2]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[13][2]              ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[10][5]              ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[6][4]               ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[7][0]               ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[9][2]               ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[4][13]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[8][14]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[11][1]              ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[9][1]               ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[10][1]              ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[10][14]             ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[10][9]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[6][14]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[8][1]               ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[8][9]               ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[11][0]              ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[6][1]               ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[4][14]              ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[10][12]             ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[6][0]               ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[5][0]               ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[7][8]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[1][9]               ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[4][10]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[8][5]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[7][4]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[4][9]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[4][11]              ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[4][12]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[1][5]               ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[4][6]               ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[4][5]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[8][12]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][5]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][15]              ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[8][10]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][9]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][2]               ; Merged with memory:inst1|memory[13][3]      ;
@@ -427,7 +424,6 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[12][15]             ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][14]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[11][3]              ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[6][5]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[11][7]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[5][12]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[11][11]             ; Merged with memory:inst1|memory[13][3]      ;
@@ -438,21 +434,23 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[10][13]             ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[10][7]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[5][8]               ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[10][11]             ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][7]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][10]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[9][3]               ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[10][4]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[9][7]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][11]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[9][11]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[1][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[9][15]              ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[5][2]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[8][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[11][12]             ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[8][7]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[5][13]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[8][11]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[11][6]              ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[8][15]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][6]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[7][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[11][4]              ; Merged with memory:inst1|memory[13][3]      ;
@@ -461,14 +459,13 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[7][11]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[1][14]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[7][15]              ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[6][10]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[6][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[6][7]               ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[4][1]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[6][9]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[13][4]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[6][15]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][10]              ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[5][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[5][7]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[5][11]              ; Merged with memory:inst1|memory[13][3]      ;
@@ -480,27 +477,30 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[3][13]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][8]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[13][6]              ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[4][15]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[6][13]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][1]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[7][13]              ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[4][10]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[7][2]               ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[4][5]               ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[4][12]              ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[4][6]               ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[8][10]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[4][0]               ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[10][11]             ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[6][5]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[10][15]             ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[5][2]               ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[8][15]              ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[6][10]              ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[10][4]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[12][12]             ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[4][1]               ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[5][3]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[8][4]               ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[4][15]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[2][14]              ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[3][0]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[3][15]              ; Merged with memory:inst1|memory[8][8]       ;
 ; memory:inst1|memory[1][12]              ; Merged with memory:inst1|memory[8][8]       ;
-; memory:inst1|memory[8][8]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[13][3]              ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[8][8]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[12][4]              ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[3][0]               ; Merged with memory:inst1|memory[13][1]      ;
 ; registers:inst5|dprr[1]                 ; Stuck at GND due to stuck port data_in      ;
 ; memory:inst1|memory[13][0]              ; Stuck at GND due to stuck port data_in      ;
 ; memory:inst1|memory[13][1]              ; Stuck at VCC due to stuck port data_in      ;
@@ -519,7 +519,7 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 542   ;
-; Number of registers using Synchronous Clear  ; 52    ;
+; Number of registers using Synchronous Clear  ; 54    ;
 ; Number of registers using Synchronous Load   ; 44    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -543,25 +543,23 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[12]              ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|addrSel[1]     ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[13]       ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[7]   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[0]        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[1]        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[0]   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[1]   ;
-; 19:1               ; 15 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[8] ;
-; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[0]     ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[3]               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|dataSel        ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[11]       ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[8]   ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[3]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[3]   ;
+; 19:1               ; 15 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[9] ;
+; 31:1               ; 16 bits   ; 320 LEs       ; 224 LEs              ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[15]    ;
 ; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|increment[1]   ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux7                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux36                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux35                   ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux41               ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux53               ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux52          ;
-; 66:1               ; 8 bits    ; 352 LEs       ; 40 LEs               ; 312 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 22 LEs               ; 62 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux52          ;
+; 66:1               ; 8 bits    ; 352 LEs       ; 48 LEs               ; 304 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
 ; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux53          ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux49          ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux48          ;
 ; 67:1               ; 3 bits    ; 132 LEs       ; 18 LEs               ; 114 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
@@ -662,26 +660,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 542                         ;
-;     ENA               ; 388                         ;
-;     ENA SCLR          ; 20                          ;
+;     ENA               ; 386                         ;
+;     ENA SCLR          ; 22                          ;
 ;     ENA SLD           ; 16                          ;
 ;     SCLR              ; 32                          ;
 ;     SLD               ; 28                          ;
 ;     plain             ; 58                          ;
-; arriav_lcell_comb     ; 509                         ;
+; arriav_lcell_comb     ; 514                         ;
 ;     arith             ; 32                          ;
 ;         1 data inputs ; 16                          ;
 ;         5 data inputs ; 16                          ;
 ;     extend            ; 16                          ;
 ;         7 data inputs ; 16                          ;
-;     normal            ; 461                         ;
+;     normal            ; 466                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 8                           ;
-;         3 data inputs ; 43                          ;
-;         4 data inputs ; 34                          ;
-;         5 data inputs ; 87                          ;
-;         6 data inputs ; 286                         ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 37                          ;
+;         5 data inputs ; 92                          ;
+;         6 data inputs ; 285                         ;
 ; boundary_port         ; 286                         ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
@@ -705,7 +703,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 16 11:04:12 2024
+    Info: Processing started: Thu May 16 11:10:11 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -792,11 +790,11 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(35): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 35
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 36
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(297): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 297
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(300): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 300
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "memory" for hierarchy "memory:inst1"
-Warning (10492): VHDL Process Statement warning at memory_model.vhd(125): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at memory_model.vhd(134): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at memory_model.vhd(127): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at memory_model.vhd(136): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 136
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst5"
@@ -855,15 +853,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1245 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1250 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 39 input pins
     Info (21059): Implemented 247 output pins
-    Info (21061): Implemented 943 logic cells
+    Info (21061): Implemented 948 logic cells
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
     Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Thu May 16 11:04:25 2024
-    Info: Elapsed time: 00:00:13
+    Info: Processing ended: Thu May 16 11:10:23 2024
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:10
 
 

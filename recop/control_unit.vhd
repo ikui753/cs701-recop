@@ -223,6 +223,9 @@ architecture behavioral of control_unit is
 									-- Rz <- Rx
 									rf_sel <= "1000"; -- set to Rx
 							end case;
+							
+						when noop =>
+							nextState <= fetch;
 						
 						when others =>
 							alu_opsel <= "1110000";
