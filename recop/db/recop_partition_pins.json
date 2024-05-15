@@ -568,6 +568,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "operand_out[1]",
+					"strict" : false
+				},
+				{
 					"name" : "operand_out[0]",
 					"strict" : false
 				},

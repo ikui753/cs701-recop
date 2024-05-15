@@ -34,10 +34,10 @@ architecture beh of memory is
 	x"0008", -- ldr Rz Operand
 	am_immediate&ldr&x"2"&x"0",
 	x"0005",
-	am_immediate&orr&x"1"&x"2",
-	x"0000",
+	am_immediate&subr&x"1"&x"2", -- Rz <- Rx - Operand
+	x"0004",
 	am_immediate&ldr& x"3"&x"0",
-	x"0004");
+	x"0007");
 	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",
