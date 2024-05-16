@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/17/2024 08:42:57"
+-- Generated on "05/17/2024 08:57:27"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -42,16 +42,14 @@ SIGNAL clk : STD_LOGIC;
 SIGNAL clkIn : STD_LOGIC;
 SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL dm_wr : STD_LOGIC;
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
 SIGNAL memData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL operand_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL pc_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL present_sz_jmp : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
 SIGNAL rf_init : STD_LOGIC;
@@ -75,16 +73,14 @@ COMPONENT progCounterTest
 	clkIn : IN STD_LOGIC;
 	clr_z_flag : OUT STD_LOGIC;
 	dataSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	dm_wr : IN STD_LOGIC;
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
 	memData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	operand_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	pc_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	pm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	present_sz_jmp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	reset : IN STD_LOGIC;
 	rf_init : OUT STD_LOGIC;
@@ -112,16 +108,14 @@ BEGIN
 	clkIn => clkIn,
 	clr_z_flag => clr_z_flag,
 	dataSel => dataSel,
-	dm_indata => dm_indata,
-	dm_wr => dm_wr,
 	dpcr => dpcr,
 	increment => increment,
+	instruction => instruction,
 	ld_r => ld_r,
 	memData => memData,
 	opcode => opcode,
 	operand_out => operand_out,
 	pc_count => pc_count,
-	pm_outdata => pm_outdata,
 	present_sz_jmp => present_sz_jmp,
 	reset => reset,
 	rf_init => rf_init,

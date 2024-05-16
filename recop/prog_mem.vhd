@@ -42,17 +42,17 @@ USE altera_mf.all;
 
 ENTITY prog_mem IS
 	PORT
-	(
+	(	
 		address		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		clock		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 END prog_mem;
 
 
 ARCHITECTURE SYN OF prog_mem IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (15 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (31 DOWNTO 0);
 
 
 
@@ -77,18 +77,18 @@ ARCHITECTURE SYN OF prog_mem IS
 	PORT(
 		address_a	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		clock0	: IN STD_LOGIC ;
-		q_a	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+		q_a	: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	q    <= sub_wire0(15 DOWNTO 0);
+	q    <= sub_wire0(31 DOWNTO 0);
 
 	altsyncram_component : altsyncram
 	GENERIC MAP (
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
-		init_file => "../../../../../../../Dev/Code/CS701/Recop/rawOutput.mif",
+		init_file => "assembler/output.mif",
 		intended_device_family => "Cyclone II",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
@@ -99,7 +99,7 @@ BEGIN
 		outdata_reg_a => "UNREGISTERED",
 		ram_block_type => "M4K",
 		widthad_a => 15,
-		width_a => 16,
+		width_a => 32,
 		width_byteena_a => 1
 	)
 	PORT MAP (
