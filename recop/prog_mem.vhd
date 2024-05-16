@@ -45,14 +45,14 @@ ENTITY prog_mem IS
 	(
 		address		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		clock		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 END prog_mem;
 
 
 ARCHITECTURE SYN OF prog_mem IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (15 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (31 DOWNTO 0);
 
 
 
@@ -77,7 +77,7 @@ ARCHITECTURE SYN OF prog_mem IS
 	PORT(
 		address_a	: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		clock0	: IN STD_LOGIC ;
-		q_a	: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+		q_a	: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 	END COMPONENT;
 

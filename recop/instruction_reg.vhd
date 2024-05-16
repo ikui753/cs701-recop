@@ -9,7 +9,7 @@ entity instruction_reg is
     port(
             clock : in bit_1; -- clock
             instruction : in bit_32; -- full instruction
-		    state : in bit_4;
+			state : in bit_4;
             address_method : out bit_2; -- am
             opcode : out bit_6; -- opcode
             rz : out bit_4; -- rz
