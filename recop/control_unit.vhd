@@ -264,6 +264,10 @@ architecture behavioral of control_unit is
 							rf_sel <= "0101"; -- rZ <- SIP
 							nextState <= execution;
 							
+						when ssop =>
+							-- SOP <- RX
+							nextState <= execution;
+							
 						when others =>
 							alu_opsel <= "1110000";
 							
