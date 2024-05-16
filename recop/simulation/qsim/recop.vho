@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/17/2024 09:03:18"
+-- DATE "05/17/2024 09:11:39"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -1156,39 +1156,7 @@ SIGNAL \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a44~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w12_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w12_n0_mux_dataout~2_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a155~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a187~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a219~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a251~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a154~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a186~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a218~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a250~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a153~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a185~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a217~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a249~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\ : std_logic;
+SIGNAL \inst6|Mux19~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a152~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a184~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a216~portadataout\ : std_logic;
@@ -1200,35 +1168,39 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a24~portadataout\ :
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a56~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w24_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w24_n0_mux_dataout~2_combout\ : std_logic;
-SIGNAL \inst7|ld_r~0_combout\ : std_logic;
-SIGNAL \inst7|Mux0~0_combout\ : std_logic;
-SIGNAL \inst7|nextState~19_combout\ : std_logic;
-SIGNAL \inst7|nextState~20_combout\ : std_logic;
-SIGNAL \inst7|Equal5~0_combout\ : std_logic;
-SIGNAL \inst7|nextState~26_combout\ : std_logic;
-SIGNAL \inst7|nextState~27_combout\ : std_logic;
-SIGNAL \inst7|nextState.getMemData~q\ : std_logic;
-SIGNAL \inst7|nextState.getMemData2~q\ : std_logic;
-SIGNAL \inst7|nextState~24_combout\ : std_logic;
-SIGNAL \inst7|nextState~25_combout\ : std_logic;
-SIGNAL \inst7|nextState.selStore~q\ : std_logic;
-SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
-SIGNAL \inst7|nextState.storeAluResult~q\ : std_logic;
-SIGNAL \inst7|nextState.writeData~q\ : std_logic;
-SIGNAL \inst7|nextState.storeData~q\ : std_logic;
-SIGNAL \inst7|Selector4~0_combout\ : std_logic;
-SIGNAL \inst7|Selector4~1_combout\ : std_logic;
-SIGNAL \inst7|nextState.fetch2~q\ : std_logic;
-SIGNAL \inst7|nextState.decode~q\ : std_logic;
-SIGNAL \inst7|nextState.decode2~q\ : std_logic;
-SIGNAL \inst7|Selector5~0_combout\ : std_logic;
-SIGNAL \inst7|Selector5~1_combout\ : std_logic;
-SIGNAL \inst7|Selector6~0_combout\ : std_logic;
-SIGNAL \inst7|Selector6~1_combout\ : std_logic;
-SIGNAL \inst7|Selector7~0_combout\ : std_logic;
-SIGNAL \inst7|Selector7~1_combout\ : std_logic;
-SIGNAL \inst|Equal0~0_combout\ : std_logic;
-SIGNAL \inst6|Mux19~0_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a153~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a185~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a217~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a249~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a154~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a186~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a218~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a250~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a157~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a189~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a221~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a253~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\ : std_logic;
 SIGNAL \inst7|Mux59~0_combout\ : std_logic;
 SIGNAL \inst7|Mux52~4_combout\ : std_logic;
 SIGNAL \inst7|dataSel[0]~0_combout\ : std_logic;
@@ -1319,6 +1291,8 @@ SIGNAL \inst7|Mux45~4_combout\ : std_logic;
 SIGNAL \inst7|Mux45~2_combout\ : std_logic;
 SIGNAL \inst7|Mux45~3_combout\ : std_logic;
 SIGNAL \inst7|Mux45~6_combout\ : std_logic;
+SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
+SIGNAL \inst7|nextState.storeAluResult~q\ : std_logic;
 SIGNAL \inst7|Selector25~0_combout\ : std_logic;
 SIGNAL \inst7|Mux48~0_combout\ : std_logic;
 SIGNAL \inst7|Mux48~1_combout\ : std_logic;
@@ -1385,7 +1359,20 @@ SIGNAL \inst7|Mux56~0_combout\ : std_logic;
 SIGNAL \inst7|increment[1]~0_combout\ : std_logic;
 SIGNAL \inst7|increment[1]~2_combout\ : std_logic;
 SIGNAL \inst7|nextState.idle~q\ : std_logic;
-SIGNAL \inst7|WideOr1~0_combout\ : std_logic;
+SIGNAL \inst7|Mux0~0_combout\ : std_logic;
+SIGNAL \inst7|nextState~24_combout\ : std_logic;
+SIGNAL \inst7|nextState~25_combout\ : std_logic;
+SIGNAL \inst7|nextState.selStore~q\ : std_logic;
+SIGNAL \inst7|ld_r~0_combout\ : std_logic;
+SIGNAL \inst7|nextState~19_combout\ : std_logic;
+SIGNAL \inst7|nextState~20_combout\ : std_logic;
+SIGNAL \inst7|Equal5~0_combout\ : std_logic;
+SIGNAL \inst7|nextState~26_combout\ : std_logic;
+SIGNAL \inst7|nextState~27_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~q\ : std_logic;
+SIGNAL \inst7|Selector12~0_combout\ : std_logic;
+SIGNAL \inst7|nextState.fetch2~q\ : std_logic;
+SIGNAL \inst7|WideOr1~1_combout\ : std_logic;
 SIGNAL \inst7|increment[1]~1_combout\ : std_logic;
 SIGNAL \inst9|Mux25~0_combout\ : std_logic;
 SIGNAL \inst9|Mux9~0_combout\ : std_logic;
@@ -1579,7 +1566,20 @@ SIGNAL \inst|out_count~0_combout\ : std_logic;
 SIGNAL \inst7|Selector0~1_combout\ : std_logic;
 SIGNAL \reset~input_o\ : std_logic;
 SIGNAL \inst|out_count[2]~1_combout\ : std_logic;
+SIGNAL \inst7|nextState.storeData~q\ : std_logic;
+SIGNAL \inst7|nextState.getMemData2~q\ : std_logic;
+SIGNAL \inst7|WideOr1~0_combout\ : std_logic;
+SIGNAL \inst7|nextState.writeData~q\ : std_logic;
+SIGNAL \inst7|Selector4~0_combout\ : std_logic;
+SIGNAL \inst7|nextState.decode~q\ : std_logic;
+SIGNAL \inst7|nextState.decode2~q\ : std_logic;
+SIGNAL \inst7|Selector5~0_combout\ : std_logic;
+SIGNAL \inst7|Selector5~1_combout\ : std_logic;
+SIGNAL \inst7|Selector6~0_combout\ : std_logic;
+SIGNAL \inst7|Selector6~1_combout\ : std_logic;
+SIGNAL \inst7|Selector7~0_combout\ : std_logic;
 SIGNAL \inst|out_count[15]~2_combout\ : std_logic;
+SIGNAL \inst|out_count[15]~3_combout\ : std_logic;
 SIGNAL \inst3|Mux0~0_combout\ : std_logic;
 SIGNAL \inst7|Mux46~2_combout\ : std_logic;
 SIGNAL \inst7|Mux46~1_combout\ : std_logic;
@@ -1662,7 +1662,7 @@ SIGNAL \inst3|Mux19~2_combout\ : std_logic;
 SIGNAL \inst3|Mux19~3_combout\ : std_logic;
 SIGNAL \inst3|Mux19~4_combout\ : std_logic;
 SIGNAL \inst|Add0~13_sumout\ : std_logic;
-SIGNAL \inst|out_count~5_combout\ : std_logic;
+SIGNAL \inst|out_count~6_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a171~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a203~portadataout\ : std_logic;
@@ -1685,7 +1685,7 @@ SIGNAL \inst3|Mux20~2_combout\ : std_logic;
 SIGNAL \inst3|Mux20~3_combout\ : std_logic;
 SIGNAL \inst3|Mux20~4_combout\ : std_logic;
 SIGNAL \inst|Add0~17_sumout\ : std_logic;
-SIGNAL \inst|out_count~6_combout\ : std_logic;
+SIGNAL \inst|out_count~7_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a138~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a170~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a202~portadataout\ : std_logic;
@@ -1708,7 +1708,7 @@ SIGNAL \inst3|Mux21~2_combout\ : std_logic;
 SIGNAL \inst3|Mux21~3_combout\ : std_logic;
 SIGNAL \inst3|Mux21~4_combout\ : std_logic;
 SIGNAL \inst|Add0~21_sumout\ : std_logic;
-SIGNAL \inst|out_count~7_combout\ : std_logic;
+SIGNAL \inst|out_count~8_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a137~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a169~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a201~portadataout\ : std_logic;
@@ -1731,7 +1731,7 @@ SIGNAL \inst3|Mux22~2_combout\ : std_logic;
 SIGNAL \inst3|Mux22~3_combout\ : std_logic;
 SIGNAL \inst3|Mux22~4_combout\ : std_logic;
 SIGNAL \inst|Add0~25_sumout\ : std_logic;
-SIGNAL \inst|out_count~8_combout\ : std_logic;
+SIGNAL \inst|out_count~9_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a136~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a168~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a200~portadataout\ : std_logic;
@@ -1754,7 +1754,7 @@ SIGNAL \inst3|Mux23~2_combout\ : std_logic;
 SIGNAL \inst3|Mux23~3_combout\ : std_logic;
 SIGNAL \inst3|Mux23~4_combout\ : std_logic;
 SIGNAL \inst|Add0~29_sumout\ : std_logic;
-SIGNAL \inst|out_count~9_combout\ : std_logic;
+SIGNAL \inst|out_count~10_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a135~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a167~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a199~portadataout\ : std_logic;
@@ -1777,7 +1777,7 @@ SIGNAL \inst3|Mux24~2_combout\ : std_logic;
 SIGNAL \inst3|Mux24~3_combout\ : std_logic;
 SIGNAL \inst3|Mux24~4_combout\ : std_logic;
 SIGNAL \inst|Add0~33_sumout\ : std_logic;
-SIGNAL \inst|out_count~10_combout\ : std_logic;
+SIGNAL \inst|out_count~11_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a134~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a166~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a198~portadataout\ : std_logic;
@@ -1800,7 +1800,7 @@ SIGNAL \inst3|Mux25~2_combout\ : std_logic;
 SIGNAL \inst3|Mux25~3_combout\ : std_logic;
 SIGNAL \inst3|Mux25~4_combout\ : std_logic;
 SIGNAL \inst|Add0~37_sumout\ : std_logic;
-SIGNAL \inst|out_count~11_combout\ : std_logic;
+SIGNAL \inst|out_count~12_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a133~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a165~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a197~portadataout\ : std_logic;
@@ -1823,7 +1823,7 @@ SIGNAL \inst3|Mux26~2_combout\ : std_logic;
 SIGNAL \inst3|Mux26~3_combout\ : std_logic;
 SIGNAL \inst3|Mux26~4_combout\ : std_logic;
 SIGNAL \inst|Add0~41_sumout\ : std_logic;
-SIGNAL \inst|out_count~12_combout\ : std_logic;
+SIGNAL \inst|out_count~13_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a158~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a190~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a222~portadataout\ : std_logic;
@@ -1847,20 +1847,20 @@ SIGNAL \inst3|Mux27~2_combout\ : std_logic;
 SIGNAL \inst3|Mux27~3_combout\ : std_logic;
 SIGNAL \inst3|Mux27~4_combout\ : std_logic;
 SIGNAL \inst|Add0~45_sumout\ : std_logic;
-SIGNAL \inst|out_count~13_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a157~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a189~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a221~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a253~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\ : std_logic;
-SIGNAL \inst7|OUTPUTS~0_combout\ : std_logic;
+SIGNAL \inst|out_count~14_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a155~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a187~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a219~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a251~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\ : std_logic;
 SIGNAL \inst7|Selector11~2_combout\ : std_logic;
+SIGNAL \inst7|OUTPUTS~0_combout\ : std_logic;
 SIGNAL \inst7|Selector11~0_combout\ : std_logic;
 SIGNAL \inst7|Selector11~1_combout\ : std_logic;
 SIGNAL \inst7|nextState.fetch~q\ : std_logic;
@@ -1877,7 +1877,7 @@ SIGNAL \inst3|Mux28~2_combout\ : std_logic;
 SIGNAL \inst3|Mux28~3_combout\ : std_logic;
 SIGNAL \inst3|Mux28~4_combout\ : std_logic;
 SIGNAL \inst|Add0~49_sumout\ : std_logic;
-SIGNAL \inst|out_count~14_combout\ : std_logic;
+SIGNAL \inst|out_count~15_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a151~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a183~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a215~portadataout\ : std_logic;
@@ -1921,7 +1921,7 @@ SIGNAL \inst3|Mux29~2_combout\ : std_logic;
 SIGNAL \inst3|Mux29~3_combout\ : std_logic;
 SIGNAL \inst3|Mux29~4_combout\ : std_logic;
 SIGNAL \inst|Add0~53_sumout\ : std_logic;
-SIGNAL \inst|out_count~15_combout\ : std_logic;
+SIGNAL \inst|out_count~16_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a150~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a182~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a214~portadataout\ : std_logic;
@@ -1965,7 +1965,7 @@ SIGNAL \inst3|Mux30~2_combout\ : std_logic;
 SIGNAL \inst3|Mux30~3_combout\ : std_logic;
 SIGNAL \inst3|Mux30~4_combout\ : std_logic;
 SIGNAL \inst|Add0~57_sumout\ : std_logic;
-SIGNAL \inst|out_count~16_combout\ : std_logic;
+SIGNAL \inst|out_count~17_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a149~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a181~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a213~portadataout\ : std_logic;
@@ -2010,7 +2010,7 @@ SIGNAL \inst3|Mux31~2_combout\ : std_logic;
 SIGNAL \inst3|Mux31~3_combout\ : std_logic;
 SIGNAL \inst3|Mux31~4_combout\ : std_logic;
 SIGNAL \inst|Add0~61_sumout\ : std_logic;
-SIGNAL \inst|out_count~17_combout\ : std_logic;
+SIGNAL \inst|out_count~18_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a148~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a180~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a212~portadataout\ : std_logic;
@@ -2055,7 +2055,7 @@ SIGNAL \inst3|Mux18~2_combout\ : std_logic;
 SIGNAL \inst3|Mux18~3_combout\ : std_logic;
 SIGNAL \inst3|Mux18~4_combout\ : std_logic;
 SIGNAL \inst|Add0~9_sumout\ : std_logic;
-SIGNAL \inst|out_count~4_combout\ : std_logic;
+SIGNAL \inst|out_count~5_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a156~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a188~portadataout\ : std_logic;
@@ -2095,7 +2095,7 @@ SIGNAL \inst3|Mux17~2_combout\ : std_logic;
 SIGNAL \inst3|Mux17~3_combout\ : std_logic;
 SIGNAL \inst3|Mux17~4_combout\ : std_logic;
 SIGNAL \inst|Add0~5_sumout\ : std_logic;
-SIGNAL \inst|out_count~3_combout\ : std_logic;
+SIGNAL \inst|out_count~4_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a159~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a191~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ram_block1a223~portadataout\ : std_logic;
@@ -2119,11 +2119,11 @@ SIGNAL \inst7|Selector23~1_combout\ : std_logic;
 SIGNAL \inst7|Selector23~2_combout\ : std_logic;
 SIGNAL \inst7|sop_wr~q\ : std_logic;
 SIGNAL \inst6|dataOut\ : std_logic_vector(15 DOWNTO 0);
+SIGNAL \inst7|rf_sel\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst|out_count\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst7|alu_opsel\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \inst8|sip_r\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst4|altsyncram_component|auto_generated|q_a\ : std_logic_vector(15 DOWNTO 0);
-SIGNAL \inst7|rf_sel\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst7|alu_opsel\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \inst8|dpcr\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \inst6|addrOut\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst3|data_input_z\ : std_logic_vector(15 DOWNTO 0);
@@ -2241,19 +2241,17 @@ SIGNAL \inst3|ALT_INV_Mux1~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_data_input_z[2]~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_data_input_z[2]~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector11~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~18_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~17_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector11~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_sop_wr~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_dpcr_lsb_sel~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_dpcr_wr~q\ : std_logic;
 SIGNAL \inst6|ALT_INV_process_0~3_combout\ : std_logic;
 SIGNAL \inst6|ALT_INV_process_0~2_combout\ : std_logic;
 SIGNAL \inst6|ALT_INV_process_0~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector6~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector5~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.decode2~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector4~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector3~2_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Equal5~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector3~1_combout\ : std_logic;
@@ -2262,7 +2260,7 @@ SIGNAL \inst7|ALT_INV_increment[2]~4_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_increment[2]~3_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_increment[1]~2_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_increment[1]~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_WideOr1~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_WideOr1~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.fetch2~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector0~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux48~5_combout\ : std_logic;
@@ -2300,17 +2298,18 @@ SIGNAL \inst9|ALT_INV_Equal0~2_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~1_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector8~2_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector8~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.writeData~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.storeAluResult~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector7~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.getMemData~q\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.selStore~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector8~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector6~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.getMemData2~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.storeData~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.loadAluResult~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.decode~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_WideOr1~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~q\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.selStore~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector8~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.storeData~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector17~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_OUTPUTS~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.execution~q\ : std_logic;
@@ -2331,10 +2330,10 @@ SIGNAL \inst7|ALT_INV_increment[1]~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux56~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux45~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector9~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.decode3~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.fetch~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.idle~q\ : std_logic;
-SIGNAL \inst|ALT_INV_Equal0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.decode3~q\ : std_logic;
+SIGNAL \inst|ALT_INV_out_count[15]~2_combout\ : std_logic;
 SIGNAL \inst2|ALT_INV_operand\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst2|ALT_INV_address_method\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst9|ALT_INV_alu_result\ : std_logic_vector(15 DOWNTO 0);
@@ -2512,6 +2511,7 @@ SIGNAL \inst3|ALT_INV_regs[4][3]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux28~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[3][3]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][3]~q\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a250~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a218~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a186~portadataout\ : std_logic;
@@ -2799,7 +2799,6 @@ SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \inst2|ALT_INV_rx\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst3|ALT_INV_regs[3][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][15]~q\ : std_logic;
@@ -2876,7 +2875,6 @@ SIGNAL \inst9|ALT_INV_Add0~53_sumout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Add0~49_sumout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Add0~45_sumout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Add0~41_sumout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][9]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux21~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux21~3_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[15][10]~q\ : std_logic;
@@ -2983,6 +2981,7 @@ SIGNAL \inst3|ALT_INV_regs[8][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[4][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux16~4_combout\ : std_logic;
+SIGNAL \inst2|ALT_INV_rx\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst3|ALT_INV_Mux16~3_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[15][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[14][15]~q\ : std_logic;
@@ -2999,7 +2998,6 @@ SIGNAL \inst3|ALT_INV_regs[6][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[5][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[4][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux16~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][3]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][3]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux27~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux27~3_combout\ : std_logic;
@@ -3126,6 +3124,7 @@ SIGNAL \inst3|ALT_INV_Mux22~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[3][9]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][9]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][9]~q\ : std_logic;
 
 BEGIN
 
@@ -4652,19 +4651,17 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_data_input_z[2]~1_combout\ <= NOT \inst3|data_input_z[2]~1_combout\;
 \inst3|ALT_INV_data_input_z[2]~0_combout\ <= NOT \inst3|data_input_z[2]~0_combout\;
 \inst3|ALT_INV_Mux0~0_combout\ <= NOT \inst3|Mux0~0_combout\;
+\inst7|ALT_INV_Selector11~0_combout\ <= NOT \inst7|Selector11~0_combout\;
 \inst7|ALT_INV_nextState~18_combout\ <= NOT \inst7|nextState~18_combout\;
 \inst7|ALT_INV_nextState~17_combout\ <= NOT \inst7|nextState~17_combout\;
-\inst7|ALT_INV_Selector11~0_combout\ <= NOT \inst7|Selector11~0_combout\;
 \inst7|ALT_INV_sop_wr~q\ <= NOT \inst7|sop_wr~q\;
 \inst7|ALT_INV_dpcr_lsb_sel~q\ <= NOT \inst7|dpcr_lsb_sel~q\;
 \inst7|ALT_INV_dpcr_wr~q\ <= NOT \inst7|dpcr_wr~q\;
 \inst6|ALT_INV_process_0~3_combout\ <= NOT \inst6|process_0~3_combout\;
 \inst6|ALT_INV_process_0~2_combout\ <= NOT \inst6|process_0~2_combout\;
 \inst6|ALT_INV_process_0~1_combout\ <= NOT \inst6|process_0~1_combout\;
-\inst7|ALT_INV_Selector6~0_combout\ <= NOT \inst7|Selector6~0_combout\;
 \inst7|ALT_INV_Selector5~0_combout\ <= NOT \inst7|Selector5~0_combout\;
 \inst7|ALT_INV_nextState.decode2~q\ <= NOT \inst7|nextState.decode2~q\;
-\inst7|ALT_INV_Selector4~0_combout\ <= NOT \inst7|Selector4~0_combout\;
 \inst7|ALT_INV_Selector3~2_combout\ <= NOT \inst7|Selector3~2_combout\;
 \inst7|ALT_INV_Equal5~0_combout\ <= NOT \inst7|Equal5~0_combout\;
 \inst7|ALT_INV_Selector3~1_combout\ <= NOT \inst7|Selector3~1_combout\;
@@ -4673,7 +4670,7 @@ ww_devpor <= devpor;
 \inst7|ALT_INV_increment[2]~3_combout\ <= NOT \inst7|increment[2]~3_combout\;
 \inst7|ALT_INV_increment[1]~2_combout\ <= NOT \inst7|increment[1]~2_combout\;
 \inst7|ALT_INV_increment[1]~1_combout\ <= NOT \inst7|increment[1]~1_combout\;
-\inst7|ALT_INV_WideOr1~0_combout\ <= NOT \inst7|WideOr1~0_combout\;
+\inst7|ALT_INV_WideOr1~1_combout\ <= NOT \inst7|WideOr1~1_combout\;
 \inst7|ALT_INV_nextState.fetch2~q\ <= NOT \inst7|nextState.fetch2~q\;
 \inst7|ALT_INV_Selector0~0_combout\ <= NOT \inst7|Selector0~0_combout\;
 \inst7|ALT_INV_Mux48~5_combout\ <= NOT \inst7|Mux48~5_combout\;
@@ -4711,17 +4708,18 @@ ww_devpor <= devpor;
 \inst9|ALT_INV_Equal0~1_combout\ <= NOT \inst9|Equal0~1_combout\;
 \inst9|ALT_INV_Equal0~0_combout\ <= NOT \inst9|Equal0~0_combout\;
 \inst7|ALT_INV_Selector8~2_combout\ <= NOT \inst7|Selector8~2_combout\;
-\inst7|ALT_INV_Selector8~1_combout\ <= NOT \inst7|Selector8~1_combout\;
 \inst7|ALT_INV_nextState.writeData~q\ <= NOT \inst7|nextState.writeData~q\;
 \inst7|ALT_INV_nextState.storeAluResult~q\ <= NOT \inst7|nextState.storeAluResult~q\;
-\inst7|ALT_INV_Selector7~0_combout\ <= NOT \inst7|Selector7~0_combout\;
-\inst7|ALT_INV_nextState.getMemData~q\ <= NOT \inst7|nextState.getMemData~q\;
-\inst7|ALT_INV_nextState.selStore~q\ <= NOT \inst7|nextState.selStore~q\;
+\inst7|ALT_INV_Selector8~1_combout\ <= NOT \inst7|Selector8~1_combout\;
+\inst7|ALT_INV_Selector6~0_combout\ <= NOT \inst7|Selector6~0_combout\;
 \inst7|ALT_INV_nextState.getMemData2~q\ <= NOT \inst7|nextState.getMemData2~q\;
+\inst7|ALT_INV_nextState.storeData~q\ <= NOT \inst7|nextState.storeData~q\;
 \inst7|ALT_INV_nextState.loadAluResult~q\ <= NOT \inst7|nextState.loadAluResult~q\;
 \inst7|ALT_INV_nextState.decode~q\ <= NOT \inst7|nextState.decode~q\;
+\inst7|ALT_INV_WideOr1~0_combout\ <= NOT \inst7|WideOr1~0_combout\;
+\inst7|ALT_INV_nextState.getMemData~q\ <= NOT \inst7|nextState.getMemData~q\;
+\inst7|ALT_INV_nextState.selStore~q\ <= NOT \inst7|nextState.selStore~q\;
 \inst7|ALT_INV_Selector8~0_combout\ <= NOT \inst7|Selector8~0_combout\;
-\inst7|ALT_INV_nextState.storeData~q\ <= NOT \inst7|nextState.storeData~q\;
 \inst7|ALT_INV_Selector17~0_combout\ <= NOT \inst7|Selector17~0_combout\;
 \inst7|ALT_INV_OUTPUTS~0_combout\ <= NOT \inst7|OUTPUTS~0_combout\;
 \inst7|ALT_INV_nextState.execution~q\ <= NOT \inst7|nextState.execution~q\;
@@ -4742,10 +4740,10 @@ ww_devpor <= devpor;
 \inst7|ALT_INV_Mux56~0_combout\ <= NOT \inst7|Mux56~0_combout\;
 \inst7|ALT_INV_Mux45~0_combout\ <= NOT \inst7|Mux45~0_combout\;
 \inst7|ALT_INV_Selector9~0_combout\ <= NOT \inst7|Selector9~0_combout\;
-\inst7|ALT_INV_nextState.decode3~q\ <= NOT \inst7|nextState.decode3~q\;
 \inst7|ALT_INV_nextState.fetch~q\ <= NOT \inst7|nextState.fetch~q\;
 \inst7|ALT_INV_nextState.idle~q\ <= NOT \inst7|nextState.idle~q\;
-\inst|ALT_INV_Equal0~0_combout\ <= NOT \inst|Equal0~0_combout\;
+\inst7|ALT_INV_nextState.decode3~q\ <= NOT \inst7|nextState.decode3~q\;
+\inst|ALT_INV_out_count[15]~2_combout\ <= NOT \inst|out_count[15]~2_combout\;
 \inst2|ALT_INV_operand\(0) <= NOT \inst2|operand\(0);
 \inst2|ALT_INV_operand\(1) <= NOT \inst2|operand\(1);
 \inst2|ALT_INV_operand\(2) <= NOT \inst2|operand\(2);
@@ -4986,6 +4984,7 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_Mux28~0_combout\ <= NOT \inst3|Mux28~0_combout\;
 \inst3|ALT_INV_regs[3][3]~q\ <= NOT \inst3|regs[3][3]~q\;
 \inst3|ALT_INV_regs[2][3]~q\ <= NOT \inst3|regs[2][3]~q\;
+\inst3|ALT_INV_regs[1][3]~q\ <= NOT \inst3|regs[1][3]~q\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a250~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a250~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a218~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a218~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a186~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a186~portadataout\;
@@ -5335,7 +5334,6 @@ ww_devpor <= devpor;
 \inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
 \inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
 \inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
-\inst2|ALT_INV_rx\(0) <= NOT \inst2|rx\(0);
 \inst3|ALT_INV_regs[3][15]~q\ <= NOT \inst3|regs[3][15]~q\;
 \inst3|ALT_INV_regs[2][15]~q\ <= NOT \inst3|regs[2][15]~q\;
 \inst3|ALT_INV_regs[1][15]~q\ <= NOT \inst3|regs[1][15]~q\;
@@ -5419,7 +5417,6 @@ ww_devpor <= devpor;
 \inst9|ALT_INV_Add0~49_sumout\ <= NOT \inst9|Add0~49_sumout\;
 \inst9|ALT_INV_Add0~45_sumout\ <= NOT \inst9|Add0~45_sumout\;
 \inst9|ALT_INV_Add0~41_sumout\ <= NOT \inst9|Add0~41_sumout\;
-\inst3|ALT_INV_regs[0][9]~q\ <= NOT \inst3|regs[0][9]~q\;
 \inst3|ALT_INV_Mux21~4_combout\ <= NOT \inst3|Mux21~4_combout\;
 \inst3|ALT_INV_Mux21~3_combout\ <= NOT \inst3|Mux21~3_combout\;
 \inst3|ALT_INV_regs[15][10]~q\ <= NOT \inst3|regs[15][10]~q\;
@@ -5545,7 +5542,7 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[4][15]~q\ <= NOT \inst3|regs[4][15]~q\;
 \inst3|ALT_INV_Mux16~0_combout\ <= NOT \inst3|Mux16~0_combout\;
 \inst2|ALT_INV_rx\(1) <= NOT \inst2|rx\(1);
-\inst3|ALT_INV_regs[1][3]~q\ <= NOT \inst3|regs[1][3]~q\;
+\inst2|ALT_INV_rx\(0) <= NOT \inst2|rx\(0);
 \inst3|ALT_INV_regs[0][3]~q\ <= NOT \inst3|regs[0][3]~q\;
 \inst3|ALT_INV_Mux27~4_combout\ <= NOT \inst3|Mux27~4_combout\;
 \inst3|ALT_INV_Mux27~3_combout\ <= NOT \inst3|Mux27~3_combout\;
@@ -5672,6 +5669,7 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[3][9]~q\ <= NOT \inst3|regs[3][9]~q\;
 \inst3|ALT_INV_regs[2][9]~q\ <= NOT \inst3|regs[2][9]~q\;
 \inst3|ALT_INV_regs[1][9]~q\ <= NOT \inst3|regs[1][9]~q\;
+\inst3|ALT_INV_regs[0][9]~q\ <= NOT \inst3|regs[0][9]~q\;
 
 \rf_init~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -12725,380 +12723,7 @@ PORT MAP (
 	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w12_n0_mux_dataout~1_combout\,
 	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w12_n0_mux_dataout~2_combout\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a155\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 16384,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 20479,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a155_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a155_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a187\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 20480,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 24575,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a187_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a187_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a219\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 24576,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 28671,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a219_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a219_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a251\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 28672,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 32767,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a251_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a251_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a251~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a219~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a187~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a155~portadataout\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a155~portadataout\,
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a187~portadataout\,
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a219~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a251~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a91\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 8192,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 12287,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a91_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a91_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a123\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 12288,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 16383,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a123_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a123_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a27\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 4095,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a27_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a27_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a59\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 4096,
-	port_a_first_bit_number => 27,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a59_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a59_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\)) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- (\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\)))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\)))) ) ) ) # ( 
--- !\inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a91~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a123~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a27~portadataout\,
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a59~portadataout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001101100011011000110110001101100011011000110110001101100011011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
-	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_dataout~0_combout\,
-	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_dataout~1_combout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\);
-
-\inst2|opcode[3]\ : dffeas
+\inst2|operand[12]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -13106,785 +12731,26 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
+	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w12_n0_mux_dataout~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|opcode\(3));
+	q => \inst2|operand\(12));
 
-\inst10|altsyncram_component|auto_generated|ram_block1a154\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 16384,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 20479,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a154_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a154_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a186\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 20480,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 24575,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a186_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a186_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a218\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 24576,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 28671,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a218_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a218_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a250\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 28672,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 32767,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a250_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a250_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0\ : cyclonev_lcell_comb
+\inst6|Mux19~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a250~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a218~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a186~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a154~portadataout\ ) ) )
+-- \inst6|Mux19~0_combout\ = (!\inst7|dataSel\(0) & (\inst3|Mux19~4_combout\)) # (\inst7|dataSel\(0) & ((\inst2|operand\(12))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
+	lut_mask => "0100011101000111010001110100011101000111010001110100011101000111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a154~portadataout\,
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a186~portadataout\,
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a218~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a250~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a90\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 8192,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 12287,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a90_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a90_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a122\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 12288,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 16383,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a122_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a122_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a26\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 4095,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a26_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a26_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a58\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 4096,
-	port_a_first_bit_number => 26,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a58_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a58_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\)) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- (\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\)))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\)))) ) ) ) # ( 
--- !\inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a90~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a122~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a26~portadataout\,
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a58~portadataout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001101100011011000110110001101100011011000110110001101100011011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
-	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w26_n0_mux_dataout~0_combout\,
-	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w26_n0_mux_dataout~1_combout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\);
-
-\inst2|opcode[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst2|opcode\(2));
-
-\inst10|altsyncram_component|auto_generated|ram_block1a153\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 16384,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 20479,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a153_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a153_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a185\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 20480,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 24575,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a185_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a185_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a217\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 24576,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 28671,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a217_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a217_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a249\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 28672,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 32767,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a249_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a249_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a249~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a217~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a185~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a153~portadataout\ ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a153~portadataout\,
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a185~portadataout\,
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a217~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a249~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a89\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 8192,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 12287,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a89_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a89_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a121\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 12288,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 16383,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a121_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a121_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a25\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 0,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 4095,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a25_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a25_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|ram_block1a57\ : cyclonev_ram_block
--- pragma translate_off
-GENERIC MAP (
-	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	clk0_core_clock_enable => "ena0",
-	data_interleave_offset_in_bits => 1,
-	data_interleave_width_in_bits => 1,
-	init_file => "assembler/output.mif",
-	init_file_layout => "port_a",
-	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
-	operation_mode => "rom",
-	port_a_address_clear => "none",
-	port_a_address_width => 12,
-	port_a_byte_enable_clock => "none",
-	port_a_data_out_clear => "none",
-	port_a_data_out_clock => "none",
-	port_a_data_width => 1,
-	port_a_first_address => 4096,
-	port_a_first_bit_number => 25,
-	port_a_last_address => 8191,
-	port_a_logical_ram_depth => 32768,
-	port_a_logical_ram_width => 32,
-	port_a_read_during_write_mode => "new_data_no_nbe_read",
-	port_a_write_enable_clock => "none",
-	port_b_address_width => 12,
-	port_b_data_width => 1,
-	ram_block_type => "M20K")
--- pragma translate_on
-PORT MAP (
-	portare => VCC,
-	clk0 => \ALT_INV_clkIn~input_o\,
-	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a57_PORTAADDR_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a57_PORTADATAOUT_bus\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\)) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- (\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\)))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\)))) ) ) ) # ( 
--- !\inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\))))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a89~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a121~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a25~portadataout\,
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a57~portadataout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\);
-
-\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001101100011011000110110001101100011011000110110001101100011011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
-	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w25_n0_mux_dataout~0_combout\,
-	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w25_n0_mux_dataout~1_combout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\);
-
-\inst2|opcode[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst2|opcode\(1));
+	dataa => \inst3|ALT_INV_Mux19~4_combout\,
+	datab => \inst7|ALT_INV_dataSel\(0),
+	datac => \inst2|ALT_INV_operand\(12),
+	combout => \inst6|Mux19~0_combout\);
 
 \inst10|altsyncram_component|auto_generated|ram_block1a152\ : cyclonev_ram_block
 -- pragma translate_off
@@ -14268,31 +13134,384 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w24_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|opcode\(0));
 
-\inst7|ld_r~0\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|ram_block1a153\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 16384,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 20479,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a153_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a153_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a185\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 20480,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 24575,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a185_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a185_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a217\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 24576,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 28671,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a217_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a217_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a249\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 28672,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 32767,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a249_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a249_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|ld_r~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a249~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a217~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a185~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a153~portadataout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000000000000000000000000000000000000000000000000000000000000",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(2),
-	datae => \inst2|ALT_INV_opcode\(1),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|ld_r~0_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a153~portadataout\,
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a185~portadataout\,
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a217~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a249~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\);
 
-\inst2|address_method[1]\ : dffeas
+\inst10|altsyncram_component|auto_generated|ram_block1a89\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 8192,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 12287,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a89_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a89_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a121\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 12288,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 16383,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a121_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a121_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a25\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 4095,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a25_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a25_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a57\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 4096,
+	port_a_first_bit_number => 25,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a57_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a57_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\)) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- (\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\)))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\)))) ) ) ) # ( 
+-- !\inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a89~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a121~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a25~portadataout\,
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a57~portadataout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~1_combout\))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0001101100011011000110110001101100011011000110110001101100011011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
+	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w25_n0_mux_dataout~0_combout\,
+	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w25_n0_mux_dataout~1_combout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\);
+
+\inst2|opcode[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -14300,120 +13519,385 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w31_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
+	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w25_n0_mux_dataout~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|address_method\(1));
+	q => \inst2|opcode\(1));
 
-\inst7|Mux0~0\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|ram_block1a154\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 16384,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 20479,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a154_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a154_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a186\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 20480,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 24575,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a186_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a186_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a218\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 24576,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 28671,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a218_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a218_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a250\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 28672,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 32767,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a250_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a250_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux0~0_combout\ = (\inst2|address_method\(1) & \inst2|address_method\(0))
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a250~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a218~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a186~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a154~portadataout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000100010001000100010001000100010001000100010001000100010001",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_address_method\(1),
-	datab => \inst2|ALT_INV_address_method\(0),
-	combout => \inst7|Mux0~0_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a154~portadataout\,
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a186~portadataout\,
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a218~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a250~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\);
 
-\inst7|nextState~19\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|ram_block1a90\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 8192,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 12287,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a90_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a90_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a122\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 12288,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 16383,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a122_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a122_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a26\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 4095,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a26_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a26_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a58\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 4096,
+	port_a_first_bit_number => 26,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a58_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a58_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~19_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (!\inst2|opcode\(1) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(1) & 
--- !\inst2|opcode\(3))) ) ) ) # ( \inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1)) # ((\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((!\inst2|opcode\(1)) # 
--- (!\inst2|opcode\(3))))) # (\inst2|opcode\(4) & (!\inst2|opcode\(1) & ((!\inst2|opcode\(3)) # (\inst7|Mux0~0_combout\)))) ) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\)) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- (\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\)))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\)))) ) ) ) # ( 
+-- !\inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\))))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111110011010000111100001111001100001100000000000000000000110000",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_Mux0~0_combout\,
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(1),
-	datad => \inst2|ALT_INV_opcode\(3),
-	datae => \inst2|ALT_INV_opcode\(2),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~19_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a90~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a122~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a26~portadataout\,
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a58~portadataout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\);
 
-\inst7|nextState~20\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~20_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(4) & (!\inst2|opcode\(3) & (\inst2|opcode\(2) & \inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) 
--- & ( (!\inst2|opcode\(3) & (\inst2|opcode\(4) & (\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(3) & (!\inst2|opcode\(2) & ((!\inst2|opcode\(1)) # (\inst2|opcode\(4))))) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~1_combout\))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011010000010000001000000000010000110100000100000010000000000100",
+	lut_mask => "0001101100011011000110110001101100011011000110110001101100011011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~20_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
+	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w26_n0_mux_dataout~0_combout\,
+	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w26_n0_mux_dataout~1_combout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\);
 
-\inst7|Equal5~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Equal5~0_combout\ = (!\inst2|opcode\(5) & (\inst2|opcode\(3) & (!\inst2|opcode\(1) & !\inst2|opcode\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0010000000000000001000000000000000100000000000000010000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(1),
-	datad => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Equal5~0_combout\);
-
-\inst7|nextState~26\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~26_combout\ = (\inst2|address_method\(1) & (\inst7|nextState.decode3~q\ & ((!\inst7|Mux45~0_combout\) # (!\inst7|Equal5~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0001000100010000000100010001000000010001000100000001000100010000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_address_method\(1),
-	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_Mux45~0_combout\,
-	datad => \inst7|ALT_INV_Equal5~0_combout\,
-	combout => \inst7|nextState~26_combout\);
-
-\inst7|nextState~27\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~27_combout\ = ( \inst7|nextState~26_combout\ & ( (\inst7|ld_r~0_combout\ & ((!\inst2|opcode\(5) & (\inst7|nextState~19_combout\)) # (\inst2|opcode\(5) & ((\inst7|nextState~20_combout\))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000000000100001001100000000000000000000001000010011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst7|ALT_INV_ld_r~0_combout\,
-	datac => \inst7|ALT_INV_nextState~19_combout\,
-	datad => \inst7|ALT_INV_nextState~20_combout\,
-	datae => \inst7|ALT_INV_nextState~26_combout\,
-	combout => \inst7|nextState~27_combout\);
-
-\inst7|nextState.getMemData\ : dffeas
+\inst2|opcode[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -14421,164 +13905,385 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState~27_combout\,
+	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w26_n0_mux_dataout~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst7|nextState.getMemData~q\);
+	q => \inst2|opcode\(2));
 
-\inst7|nextState.getMemData2\ : dffeas
+\inst10|altsyncram_component|auto_generated|ram_block1a157\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 16384,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 20479,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
 -- pragma translate_on
 PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.getMemData~q\,
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a157_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst7|nextState.getMemData2~q\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a157_PORTADATAOUT_bus\);
 
-\inst7|nextState~24\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|ram_block1a189\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 20480,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 24575,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a189_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a189_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a221\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 24576,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 28671,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a221_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a221_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a253\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 28672,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 32767,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a253_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a253_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~24_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(1))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & 
--- \inst2|opcode\(1))) ) ) ) # ( \inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1)) # ((\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((!\inst2|opcode\(3)) # 
--- (!\inst2|opcode\(1))))) # (\inst2|opcode\(4) & (!\inst2|opcode\(1) & ((!\inst2|opcode\(3)) # (\inst7|Mux0~0_combout\)))) ) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a253~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a221~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a189~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a157~portadataout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111110111000000111111110000001100000000110000000000001100000000",
+	lut_mask => "0101010101010101001100110011001100001111000011110000000011111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_Mux0~0_combout\,
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(2),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~24_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a157~portadataout\,
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a189~portadataout\,
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a221~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a253~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\);
 
-\inst7|nextState~25\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|ram_block1a93\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 8192,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 12287,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a93_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a93_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a125\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 12288,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 16383,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a125_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a125_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a29\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 0,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 4095,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a29_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a29_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|ram_block1a61\ : cyclonev_ram_block
+-- pragma translate_off
+GENERIC MAP (
+	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	clk0_core_clock_enable => "ena0",
+	data_interleave_offset_in_bits => 1,
+	data_interleave_width_in_bits => 1,
+	init_file => "assembler/output.mif",
+	init_file_layout => "port_a",
+	logical_ram_name => "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM",
+	operation_mode => "rom",
+	port_a_address_clear => "none",
+	port_a_address_width => 12,
+	port_a_byte_enable_clock => "none",
+	port_a_data_out_clear => "none",
+	port_a_data_out_clock => "none",
+	port_a_data_width => 1,
+	port_a_first_address => 4096,
+	port_a_first_bit_number => 29,
+	port_a_last_address => 8191,
+	port_a_logical_ram_depth => 32768,
+	port_a_logical_ram_width => 32,
+	port_a_read_during_write_mode => "new_data_no_nbe_read",
+	port_a_write_enable_clock => "none",
+	port_b_address_width => 12,
+	port_b_data_width => 1,
+	ram_block_type => "M20K")
+-- pragma translate_on
+PORT MAP (
+	portare => VCC,
+	clk0 => \ALT_INV_clkIn~input_o\,
+	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a61_PORTAADDR_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a61_PORTADATAOUT_bus\);
+
+\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~25_combout\ = ( \inst7|nextState.decode3~q\ & ( \inst7|nextState~24_combout\ & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(2) & (\inst2|opcode\(1) & !\inst2|opcode\(0))) # (\inst2|opcode\(2) & ((\inst2|opcode\(0)))))) ) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\)) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- (\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\)))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\)))) ) ) ) # ( 
+-- !\inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\))))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000000000000000000000000000100000100010",
+	lut_mask => "0000001000010011100010101001101101000110010101111100111011011111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(2),
-	datac => \inst2|ALT_INV_opcode\(1),
-	datad => \inst2|ALT_INV_opcode\(0),
-	datae => \inst7|ALT_INV_nextState.decode3~q\,
-	dataf => \inst7|ALT_INV_nextState~24_combout\,
-	combout => \inst7|nextState~25_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a93~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a125~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a29~portadataout\,
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a61~portadataout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\);
 
-\inst7|nextState.selStore\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState~25_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.selStore~q\);
-
-\inst7|nextState.loadAluResult\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector17~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.loadAluResult~q\);
-
-\inst7|nextState.storeAluResult\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.loadAluResult~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.storeAluResult~q\);
-
-\inst7|nextState.writeData\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.getMemData2~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.writeData~q\);
-
-\inst7|nextState.storeData\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.selStore~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.storeData~q\);
-
-\inst7|Selector4~0\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector4~0_combout\ = (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.storeData~q\ & ((!\inst7|stateOut\(3)) # (!\inst7|nextState.writeData~q\))))
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1100100000000000110010000000000011001000000000001100100000000000",
+	lut_mask => "0001101100011011000110110001101100011011000110110001101100011011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_stateOut\(3),
-	datab => \inst7|ALT_INV_nextState.storeAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.writeData~q\,
-	datad => \inst7|ALT_INV_nextState.storeData~q\,
-	combout => \inst7|Selector4~0_combout\);
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
+	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~0_combout\,
+	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~1_combout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\);
 
-\inst7|Selector4~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector4~1_combout\ = (((!\inst7|Selector4~0_combout\) # (\inst7|nextState.getMemData~q\)) # (\inst7|nextState.selStore~q\)) # (\inst7|nextState.getMemData2~q\)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1111111101111111111111110111111111111111011111111111111101111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.getMemData2~q\,
-	datab => \inst7|ALT_INV_nextState.selStore~q\,
-	datac => \inst7|ALT_INV_nextState.getMemData~q\,
-	datad => \inst7|ALT_INV_Selector4~0_combout\,
-	combout => \inst7|Selector4~1_combout\);
-
-\inst7|stateOut[3]\ : dffeas
+\inst2|opcode[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -14586,241 +14291,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector4~1_combout\,
+	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst7|stateOut\(3));
-
-\inst7|nextState.fetch2\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.fetch~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.fetch2~q\);
-
-\inst7|nextState.decode\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.fetch2~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.decode~q\);
-
-\inst7|nextState.decode2\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|nextState.decode~q\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|nextState.decode2~q\);
-
-\inst7|Selector5~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector5~0_combout\ = ( !\inst7|nextState.decode2~q\ & ( (!\inst7|nextState.execution~q\ & (!\inst7|nextState.loadAluResult~q\ & ((!\inst7|stateOut\(2)) # (!\inst7|nextState.writeData~q\)))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1110000000000000000000000000000011100000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_stateOut\(2),
-	datab => \inst7|ALT_INV_nextState.writeData~q\,
-	datac => \inst7|ALT_INV_nextState.execution~q\,
-	datad => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datae => \inst7|ALT_INV_nextState.decode2~q\,
-	combout => \inst7|Selector5~0_combout\);
-
-\inst7|Selector5~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector5~1_combout\ = ( \inst7|Selector5~0_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(4)) # (!\inst7|Equal5~0_combout\))) ) ) # ( !\inst7|Selector5~0_combout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1111111111111111000011110000101011111111111111110000111100001010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(4),
-	datac => \inst7|ALT_INV_nextState.decode3~q\,
-	datad => \inst7|ALT_INV_Equal5~0_combout\,
-	datae => \inst7|ALT_INV_Selector5~0_combout\,
-	combout => \inst7|Selector5~1_combout\);
-
-\inst7|stateOut[2]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector5~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|stateOut\(2));
-
-\inst7|Selector6~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector6~0_combout\ = (!\inst7|nextState.decode~q\ & (!\inst7|nextState.fetch2~q\ & ((!\inst7|stateOut\(1)) # (!\inst7|nextState.writeData~q\))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1110000000000000111000000000000011100000000000001110000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_stateOut\(1),
-	datab => \inst7|ALT_INV_nextState.writeData~q\,
-	datac => \inst7|ALT_INV_nextState.decode~q\,
-	datad => \inst7|ALT_INV_nextState.fetch2~q\,
-	combout => \inst7|Selector6~0_combout\);
-
-\inst7|Selector6~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector6~1_combout\ = ( \inst7|Selector6~0_combout\ & ( (((\inst7|nextState.getMemData2~q\) # (\inst7|nextState.loadAluResult~q\)) # (\inst7|nextState.storeData~q\)) # (\inst7|nextState.execution~q\) ) ) # ( !\inst7|Selector6~0_combout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1111111111111111011111111111111111111111111111110111111111111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.execution~q\,
-	datab => \inst7|ALT_INV_nextState.storeData~q\,
-	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datad => \inst7|ALT_INV_nextState.getMemData2~q\,
-	datae => \inst7|ALT_INV_Selector6~0_combout\,
-	combout => \inst7|Selector6~1_combout\);
-
-\inst7|stateOut[1]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector6~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|stateOut\(1));
-
-\inst7|Selector7~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector7~0_combout\ = ( !\inst7|nextState.getMemData~q\ & ( (!\inst7|nextState.decode~q\ & (!\inst7|nextState.loadAluResult~q\ & (!\inst7|nextState.getMemData2~q\ & !\inst7|nextState.selStore~q\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000000000000000000000000000000010000000000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.decode~q\,
-	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.getMemData2~q\,
-	datad => \inst7|ALT_INV_nextState.selStore~q\,
-	datae => \inst7|ALT_INV_nextState.getMemData~q\,
-	combout => \inst7|Selector7~0_combout\);
-
-\inst7|Selector7~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector7~1_combout\ = ( \inst7|Selector7~0_combout\ & ( (((\inst7|stateOut\(0) & \inst7|nextState.writeData~q\)) # (\inst7|nextState.decode3~q\)) # (\inst7|nextState.fetch~q\) ) ) # ( !\inst7|Selector7~0_combout\ )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1111111111111111001111110111111111111111111111110011111101111111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_stateOut\(0),
-	datab => \inst7|ALT_INV_nextState.fetch~q\,
-	datac => \inst7|ALT_INV_nextState.decode3~q\,
-	datad => \inst7|ALT_INV_nextState.writeData~q\,
-	datae => \inst7|ALT_INV_Selector7~0_combout\,
-	combout => \inst7|Selector7~1_combout\);
-
-\inst7|stateOut[0]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst7|Selector7~1_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst7|stateOut\(0));
-
-\inst|Equal0~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst|Equal0~0_combout\ = (!\inst7|stateOut\(3) & (!\inst7|stateOut\(2) & (!\inst7|stateOut\(1) & \inst7|stateOut\(0))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000010000000000000001000000000000000100000000000000010000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst7|ALT_INV_stateOut\(3),
-	datab => \inst7|ALT_INV_stateOut\(2),
-	datac => \inst7|ALT_INV_stateOut\(1),
-	datad => \inst7|ALT_INV_stateOut\(0),
-	combout => \inst|Equal0~0_combout\);
-
-\inst2|operand[12]\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clkIn~input_o\,
-	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w12_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \inst2|operand\(12));
-
-\inst6|Mux19~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst6|Mux19~0_combout\ = (!\inst7|dataSel\(0) & (\inst3|Mux19~4_combout\)) # (\inst7|dataSel\(0) & ((\inst2|operand\(12))))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0100011101000111010001110100011101000111010001110100011101000111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst3|ALT_INV_Mux19~4_combout\,
-	datab => \inst7|ALT_INV_dataSel\(0),
-	datac => \inst2|ALT_INV_operand\(12),
-	combout => \inst6|Mux19~0_combout\);
+	q => \inst2|opcode\(5));
 
 \inst7|Mux59~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -14858,6 +14332,19 @@ PORT MAP (
 	datac => \inst2|ALT_INV_opcode\(2),
 	datad => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Mux52~4_combout\);
+
+\inst2|address_method[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w31_n0_mux_dataout~2_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst2|address_method\(1));
 
 \inst7|dataSel[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -15475,7 +14962,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w0_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(0));
@@ -15977,7 +15463,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w1_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(1));
@@ -16396,7 +15881,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w2_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(2));
@@ -16815,7 +16299,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w3_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(3));
@@ -17234,7 +16717,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w4_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(4));
@@ -17638,6 +17120,32 @@ PORT MAP (
 	dataf => \inst7|ALT_INV_Mux45~4_combout\,
 	datag => \inst7|ALT_INV_Mux45~3_combout\,
 	combout => \inst7|Mux45~6_combout\);
+
+\inst7|nextState.loadAluResult\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector17~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.loadAluResult~q\);
+
+\inst7|nextState.storeAluResult\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.loadAluResult~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.storeAluResult~q\);
 
 \inst7|Selector25~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -18979,7 +18487,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w15_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(15));
@@ -19061,29 +18568,249 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|nextState.idle~q\);
 
-\inst7|WideOr1~0\ : cyclonev_lcell_comb
+\inst7|Mux0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|WideOr1~0_combout\ = ( !\inst7|nextState.getMemData~q\ & ( !\inst7|nextState.fetch2~q\ & ( (\inst7|nextState.idle~q\ & (!\inst7|nextState.fetch~q\ & (!\inst7|nextState.decode3~q\ & !\inst7|nextState.selStore~q\))) ) ) )
+-- \inst7|Mux0~0_combout\ = (\inst2|address_method\(1) & \inst2|address_method\(0))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100000000000000000000000000000000000000000000000000000000000000",
+	lut_mask => "0001000100010001000100010001000100010001000100010001000100010001",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_address_method\(1),
+	datab => \inst2|ALT_INV_address_method\(0),
+	combout => \inst7|Mux0~0_combout\);
+
+\inst7|nextState~24\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~24_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(1))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & 
+-- \inst2|opcode\(1))) ) ) ) # ( \inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1)) # ((\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((!\inst2|opcode\(3)) # 
+-- (!\inst2|opcode\(1))))) # (\inst2|opcode\(4) & (!\inst2|opcode\(1) & ((!\inst2|opcode\(3)) # (\inst7|Mux0~0_combout\)))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111110111000000111111110000001100000000110000000000001100000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_Mux0~0_combout\,
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(1),
+	datae => \inst2|ALT_INV_opcode\(2),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|nextState~24_combout\);
+
+\inst7|nextState~25\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~25_combout\ = ( \inst7|nextState.decode3~q\ & ( \inst7|nextState~24_combout\ & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(2) & (\inst2|opcode\(1) & !\inst2|opcode\(0))) # (\inst2|opcode\(2) & ((\inst2|opcode\(0)))))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000000000000000000000000000000000100000100010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(2),
+	datac => \inst2|ALT_INV_opcode\(1),
+	datad => \inst2|ALT_INV_opcode\(0),
+	datae => \inst7|ALT_INV_nextState.decode3~q\,
+	dataf => \inst7|ALT_INV_nextState~24_combout\,
+	combout => \inst7|nextState~25_combout\);
+
+\inst7|nextState.selStore\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState~25_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.selStore~q\);
+
+\inst7|ld_r~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|ld_r~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000000000000000000000000000000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|ld_r~0_combout\);
+
+\inst7|nextState~19\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~19_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (!\inst2|opcode\(1) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(1) & 
+-- !\inst2|opcode\(3))) ) ) ) # ( \inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1)) # ((\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((!\inst2|opcode\(1)) # 
+-- (!\inst2|opcode\(3))))) # (\inst2|opcode\(4) & (!\inst2|opcode\(1) & ((!\inst2|opcode\(3)) # (\inst7|Mux0~0_combout\)))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111110011010000111100001111001100001100000000000000000000110000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_Mux0~0_combout\,
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(1),
+	datad => \inst2|ALT_INV_opcode\(3),
+	datae => \inst2|ALT_INV_opcode\(2),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|nextState~19_combout\);
+
+\inst7|nextState~20\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~20_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(4) & (!\inst2|opcode\(3) & (\inst2|opcode\(2) & \inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) 
+-- & ( (!\inst2|opcode\(3) & (\inst2|opcode\(4) & (\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(3) & (!\inst2|opcode\(2) & ((!\inst2|opcode\(1)) # (\inst2|opcode\(4))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0011010000010000001000000000010000110100000100000010000000000100",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(4),
+	datab => \inst2|ALT_INV_opcode\(3),
+	datac => \inst2|ALT_INV_opcode\(2),
+	datad => \inst2|ALT_INV_opcode\(1),
+	datae => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|nextState~20_combout\);
+
+\inst7|Equal5~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Equal5~0_combout\ = (!\inst2|opcode\(5) & (\inst2|opcode\(3) & (!\inst2|opcode\(1) & !\inst2|opcode\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010000000000000001000000000000000100000000000000010000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(3),
+	datac => \inst2|ALT_INV_opcode\(1),
+	datad => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Equal5~0_combout\);
+
+\inst7|nextState~26\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~26_combout\ = (\inst2|address_method\(1) & (\inst7|nextState.decode3~q\ & ((!\inst7|Mux45~0_combout\) # (!\inst7|Equal5~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0001000100010000000100010001000000010001000100000001000100010000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_address_method\(1),
+	datab => \inst7|ALT_INV_nextState.decode3~q\,
+	datac => \inst7|ALT_INV_Mux45~0_combout\,
+	datad => \inst7|ALT_INV_Equal5~0_combout\,
+	combout => \inst7|nextState~26_combout\);
+
+\inst7|nextState~27\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~27_combout\ = ( \inst7|nextState~26_combout\ & ( (\inst7|ld_r~0_combout\ & ((!\inst2|opcode\(5) & (\inst7|nextState~19_combout\)) # (\inst2|opcode\(5) & ((\inst7|nextState~20_combout\))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000000000000100001001100000000000000000000001000010011",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst7|ALT_INV_ld_r~0_combout\,
+	datac => \inst7|ALT_INV_nextState~19_combout\,
+	datad => \inst7|ALT_INV_nextState~20_combout\,
+	datae => \inst7|ALT_INV_nextState~26_combout\,
+	combout => \inst7|nextState~27_combout\);
+
+\inst7|nextState.getMemData\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState~27_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.getMemData~q\);
+
+\inst7|Selector12~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector12~0_combout\ = (!\inst7|nextState.idle~q\) # (\inst7|nextState.fetch~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1011101110111011101110111011101110111011101110111011101110111011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.idle~q\,
 	datab => \inst7|ALT_INV_nextState.fetch~q\,
-	datac => \inst7|ALT_INV_nextState.decode3~q\,
+	combout => \inst7|Selector12~0_combout\);
+
+\inst7|nextState.fetch2\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector12~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.fetch2~q\);
+
+\inst7|WideOr1~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|WideOr1~1_combout\ = ( !\inst7|nextState.getMemData~q\ & ( !\inst7|nextState.fetch2~q\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|nextState.idle~q\ & (!\inst7|nextState.fetch~q\ & !\inst7|nextState.selStore~q\))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010000000000000000000000000000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.decode3~q\,
+	datab => \inst7|ALT_INV_nextState.idle~q\,
+	datac => \inst7|ALT_INV_nextState.fetch~q\,
 	datad => \inst7|ALT_INV_nextState.selStore~q\,
 	datae => \inst7|ALT_INV_nextState.getMemData~q\,
 	dataf => \inst7|ALT_INV_nextState.fetch2~q\,
-	combout => \inst7|WideOr1~0_combout\);
+	combout => \inst7|WideOr1~1_combout\);
 
 \inst7|increment[1]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|increment[1]~1_combout\ = ( \inst7|increment[1]~0_combout\ & ( !\inst7|WideOr1~0_combout\ & ( (!\inst7|Mux56~0_combout\) # ((\inst2|opcode\(3) & (\inst2|address_method\(0) & \inst7|Mux45~0_combout\))) ) ) ) # ( !\inst7|increment[1]~0_combout\ & ( 
--- !\inst7|WideOr1~0_combout\ ) )
+-- \inst7|increment[1]~1_combout\ = ( \inst7|increment[1]~0_combout\ & ( !\inst7|WideOr1~1_combout\ & ( (!\inst7|Mux56~0_combout\) # ((\inst2|opcode\(3) & (\inst2|address_method\(0) & \inst7|Mux45~0_combout\))) ) ) ) # ( !\inst7|increment[1]~0_combout\ & ( 
+-- !\inst7|WideOr1~1_combout\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -19097,7 +18824,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_Mux45~0_combout\,
 	datad => \inst7|ALT_INV_Mux56~0_combout\,
 	datae => \inst7|ALT_INV_increment[1]~0_combout\,
-	dataf => \inst7|ALT_INV_WideOr1~0_combout\,
+	dataf => \inst7|ALT_INV_WideOr1~1_combout\,
 	combout => \inst7|increment[1]~1_combout\);
 
 \inst9|Mux25~0\ : cyclonev_lcell_comb
@@ -20219,7 +19946,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w14_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(14));
@@ -20628,7 +20354,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w13_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(13));
@@ -22567,17 +22292,17 @@ PORT MAP (
 
 \inst7|increment[2]~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|increment[2]~3_combout\ = (\inst7|nextState.fetch~q\ & !\inst7|nextState.decode3~q\)
+-- \inst7|increment[2]~3_combout\ = (!\inst7|nextState.decode3~q\ & \inst7|nextState.fetch~q\)
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100010001000100010001000100010001000100010001000100010001000100",
+	lut_mask => "0010001000100010001000100010001000100010001000100010001000100010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.fetch~q\,
-	datab => \inst7|ALT_INV_nextState.decode3~q\,
+	dataa => \inst7|ALT_INV_nextState.decode3~q\,
+	datab => \inst7|ALT_INV_nextState.fetch~q\,
 	combout => \inst7|increment[2]~3_combout\);
 
 \inst7|increment[2]~4\ : cyclonev_lcell_comb
@@ -22693,8 +22418,8 @@ PORT MAP (
 
 \inst7|Selector3~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector3~3_combout\ = ( \inst7|Selector3~2_combout\ & ( (((\inst7|increment\(0) & \inst7|WideOr1~0_combout\)) # (\inst7|Selector3~1_combout\)) # (\inst7|increment[1]~2_combout\) ) ) # ( !\inst7|Selector3~2_combout\ & ( ((\inst7|increment\(0) & 
--- \inst7|WideOr1~0_combout\)) # (\inst7|Selector3~1_combout\) ) )
+-- \inst7|Selector3~3_combout\ = ( \inst7|Selector3~2_combout\ & ( (((\inst7|increment\(0) & \inst7|WideOr1~1_combout\)) # (\inst7|Selector3~1_combout\)) # (\inst7|increment[1]~2_combout\) ) ) # ( !\inst7|Selector3~2_combout\ & ( ((\inst7|increment\(0) & 
+-- \inst7|WideOr1~1_combout\)) # (\inst7|Selector3~1_combout\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -22705,7 +22430,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst7|ALT_INV_increment\(0),
 	datab => \inst7|ALT_INV_increment[1]~2_combout\,
-	datac => \inst7|ALT_INV_WideOr1~0_combout\,
+	datac => \inst7|ALT_INV_WideOr1~1_combout\,
 	datad => \inst7|ALT_INV_Selector3~1_combout\,
 	datae => \inst7|ALT_INV_Selector3~2_combout\,
 	combout => \inst7|Selector3~3_combout\);
@@ -23069,9 +22794,270 @@ PORT MAP (
 	datab => \ALT_INV_reset~input_o\,
 	combout => \inst|out_count[2]~1_combout\);
 
+\inst7|nextState.storeData\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.selStore~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.storeData~q\);
+
+\inst7|nextState.getMemData2\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.getMemData~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.getMemData2~q\);
+
+\inst7|WideOr1~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|WideOr1~0_combout\ = (!\inst7|nextState.selStore~q\ & !\inst7|nextState.getMemData~q\)
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000100010001000100010001000100010001000100010001000100010001000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.selStore~q\,
+	datab => \inst7|ALT_INV_nextState.getMemData~q\,
+	combout => \inst7|WideOr1~0_combout\);
+
+\inst7|nextState.writeData\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.getMemData2~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.writeData~q\);
+
+\inst7|Selector4~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector4~0_combout\ = ( \inst7|nextState.storeAluResult~q\ & ( \inst7|nextState.writeData~q\ ) ) # ( !\inst7|nextState.storeAluResult~q\ & ( \inst7|nextState.writeData~q\ & ( (((!\inst7|WideOr1~0_combout\) # (\inst7|nextState.getMemData2~q\)) # 
+-- (\inst7|nextState.storeData~q\)) # (\inst7|stateOut\(3)) ) ) ) # ( \inst7|nextState.storeAluResult~q\ & ( !\inst7|nextState.writeData~q\ ) ) # ( !\inst7|nextState.storeAluResult~q\ & ( !\inst7|nextState.writeData~q\ & ( ((!\inst7|WideOr1~0_combout\) # 
+-- (\inst7|nextState.getMemData2~q\)) # (\inst7|nextState.storeData~q\) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111111100111111111111111111111111111111011111111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_stateOut\(3),
+	datab => \inst7|ALT_INV_nextState.storeData~q\,
+	datac => \inst7|ALT_INV_nextState.getMemData2~q\,
+	datad => \inst7|ALT_INV_WideOr1~0_combout\,
+	datae => \inst7|ALT_INV_nextState.storeAluResult~q\,
+	dataf => \inst7|ALT_INV_nextState.writeData~q\,
+	combout => \inst7|Selector4~0_combout\);
+
+\inst7|stateOut[3]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector4~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|stateOut\(3));
+
+\inst7|nextState.decode\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.fetch2~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.decode~q\);
+
+\inst7|nextState.decode2\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|nextState.decode~q\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|nextState.decode2~q\);
+
+\inst7|Selector5~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector5~0_combout\ = ( !\inst7|nextState.decode2~q\ & ( (!\inst7|nextState.execution~q\ & (!\inst7|nextState.loadAluResult~q\ & ((!\inst7|stateOut\(2)) # (!\inst7|nextState.writeData~q\)))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1100000010000000000000000000000011000000100000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_stateOut\(2),
+	datab => \inst7|ALT_INV_nextState.execution~q\,
+	datac => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datad => \inst7|ALT_INV_nextState.writeData~q\,
+	datae => \inst7|ALT_INV_nextState.decode2~q\,
+	combout => \inst7|Selector5~0_combout\);
+
+\inst7|Selector5~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector5~1_combout\ = ( \inst7|Selector5~0_combout\ & ( (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(4)) # (!\inst7|Equal5~0_combout\))) ) ) # ( !\inst7|Selector5~0_combout\ )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111111111111111000011110000101011111111111111110000111100001010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(4),
+	datac => \inst7|ALT_INV_nextState.decode3~q\,
+	datad => \inst7|ALT_INV_Equal5~0_combout\,
+	datae => \inst7|ALT_INV_Selector5~0_combout\,
+	combout => \inst7|Selector5~1_combout\);
+
+\inst7|stateOut[2]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector5~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|stateOut\(2));
+
+\inst7|Selector6~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector6~0_combout\ = (!\inst7|nextState.decode~q\ & (!\inst7|nextState.loadAluResult~q\ & (!\inst7|nextState.storeData~q\ & !\inst7|nextState.getMemData2~q\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000000000000000100000000000000010000000000000001000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.decode~q\,
+	datab => \inst7|ALT_INV_nextState.loadAluResult~q\,
+	datac => \inst7|ALT_INV_nextState.storeData~q\,
+	datad => \inst7|ALT_INV_nextState.getMemData2~q\,
+	combout => \inst7|Selector6~0_combout\);
+
+\inst7|Selector6~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector6~1_combout\ = ( \inst7|nextState.fetch2~q\ ) # ( !\inst7|nextState.fetch2~q\ & ( ((!\inst7|Selector6~0_combout\) # ((\inst7|stateOut\(1) & \inst7|nextState.writeData~q\))) # (\inst7|nextState.execution~q\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1111001111110111111111111111111111110011111101111111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_stateOut\(1),
+	datab => \inst7|ALT_INV_nextState.execution~q\,
+	datac => \inst7|ALT_INV_Selector6~0_combout\,
+	datad => \inst7|ALT_INV_nextState.writeData~q\,
+	datae => \inst7|ALT_INV_nextState.fetch2~q\,
+	combout => \inst7|Selector6~1_combout\);
+
+\inst7|stateOut[1]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector6~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|stateOut\(1));
+
+\inst7|Selector7~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector7~0_combout\ = ( !\inst7|nextState.writeData~q\ & ( (!\inst7|nextState.decode2~q\ & (!\inst7|nextState.fetch2~q\ & (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.execution~q\ & !\inst7|nextState.storeData~q\)))) ) ) # ( 
+-- \inst7|nextState.writeData~q\ & ( (((\inst7|stateOut\(0)))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "on",
+	lut_mask => "1000000000000000000011110000111100000000000000000000111100001111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_nextState.decode2~q\,
+	datab => \inst7|ALT_INV_nextState.fetch2~q\,
+	datac => \inst7|ALT_INV_stateOut\(0),
+	datad => \inst7|ALT_INV_nextState.execution~q\,
+	datae => \inst7|ALT_INV_nextState.writeData~q\,
+	dataf => \inst7|ALT_INV_nextState.storeData~q\,
+	datag => \inst7|ALT_INV_nextState.storeAluResult~q\,
+	combout => \inst7|Selector7~0_combout\);
+
+\inst7|stateOut[0]\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector7~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|stateOut\(0));
+
 \inst|out_count[15]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count[15]~2_combout\ = ( \inst|Equal0~0_combout\ & ( (!\inst7|increment\(3)) # (((\reset~input_o\) # (\inst7|increment\(0))) # (\inst7|increment\(2))) ) )
+-- \inst|out_count[15]~2_combout\ = (!\inst7|stateOut\(3) & (!\inst7|stateOut\(2) & (!\inst7|stateOut\(1) & \inst7|stateOut\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000010000000000000001000000000000000100000000000000010000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst7|ALT_INV_stateOut\(3),
+	datab => \inst7|ALT_INV_stateOut\(2),
+	datac => \inst7|ALT_INV_stateOut\(1),
+	datad => \inst7|ALT_INV_stateOut\(0),
+	combout => \inst|out_count[15]~2_combout\);
+
+\inst|out_count[15]~3\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst|out_count[15]~3_combout\ = ( \inst|out_count[15]~2_combout\ & ( (!\inst7|increment\(3)) # (((\reset~input_o\) # (\inst7|increment\(0))) # (\inst7|increment\(2))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -23084,8 +23070,8 @@ PORT MAP (
 	datab => \inst7|ALT_INV_increment\(2),
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \ALT_INV_reset~input_o\,
-	datae => \inst|ALT_INV_Equal0~0_combout\,
-	combout => \inst|out_count[15]~2_combout\);
+	datae => \inst|ALT_INV_out_count[15]~2_combout\,
+	combout => \inst|out_count[15]~3_combout\);
 
 \inst|out_count[15]\ : dffeas
 -- pragma translate_off
@@ -23097,7 +23083,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst|out_count~0_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(15));
@@ -23924,7 +23910,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w16_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rx\(0));
@@ -24311,7 +24296,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w17_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rx\(1));
@@ -24778,7 +24762,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w18_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rx\(2));
@@ -25165,7 +25148,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w19_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rx\(3));
@@ -25459,9 +25441,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux19~4_combout\);
 
-\inst|out_count~5\ : cyclonev_lcell_comb
+\inst|out_count~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~5_combout\ = ( \inst|Add0~13_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux19~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(12))))) ) ) # ( !\inst|Add0~13_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~6_combout\ = ( \inst|Add0~13_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux19~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(12))))) ) ) # ( !\inst|Add0~13_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux19~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(12)))))) ) )
 
 -- pragma translate_off
@@ -25476,7 +25458,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(12),
 	datae => \inst|ALT_INV_Add0~13_sumout\,
-	combout => \inst|out_count~5_combout\);
+	combout => \inst|out_count~6_combout\);
 
 \inst|out_count[12]\ : dffeas
 -- pragma translate_off
@@ -25486,9 +25468,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~5_combout\,
+	d => \inst|out_count~6_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(12));
@@ -25853,7 +25835,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w11_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(11));
@@ -26119,9 +26100,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux20~4_combout\);
 
-\inst|out_count~6\ : cyclonev_lcell_comb
+\inst|out_count~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~6_combout\ = ( \inst|Add0~17_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux20~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(11))))) ) ) # ( !\inst|Add0~17_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~7_combout\ = ( \inst|Add0~17_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux20~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(11))))) ) ) # ( !\inst|Add0~17_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux20~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(11)))))) ) )
 
 -- pragma translate_off
@@ -26136,7 +26117,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(11),
 	datae => \inst|ALT_INV_Add0~17_sumout\,
-	combout => \inst|out_count~6_combout\);
+	combout => \inst|out_count~7_combout\);
 
 \inst|out_count[11]\ : dffeas
 -- pragma translate_off
@@ -26146,9 +26127,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~6_combout\,
+	d => \inst|out_count~7_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(11));
@@ -26535,7 +26516,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w10_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(10));
@@ -26801,9 +26781,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux21~4_combout\);
 
-\inst|out_count~7\ : cyclonev_lcell_comb
+\inst|out_count~8\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~7_combout\ = ( \inst|Add0~21_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux21~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(10))))) ) ) # ( !\inst|Add0~21_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~8_combout\ = ( \inst|Add0~21_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux21~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(10))))) ) ) # ( !\inst|Add0~21_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux21~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(10)))))) ) )
 
 -- pragma translate_off
@@ -26818,7 +26798,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(10),
 	datae => \inst|ALT_INV_Add0~21_sumout\,
-	combout => \inst|out_count~7_combout\);
+	combout => \inst|out_count~8_combout\);
 
 \inst|out_count[10]\ : dffeas
 -- pragma translate_off
@@ -26828,9 +26808,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~7_combout\,
+	d => \inst|out_count~8_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(10));
@@ -27217,7 +27197,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w9_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(9));
@@ -27483,9 +27462,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux22~4_combout\);
 
-\inst|out_count~8\ : cyclonev_lcell_comb
+\inst|out_count~9\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~8_combout\ = ( \inst|Add0~25_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux22~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(9))))) ) ) # ( !\inst|Add0~25_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~9_combout\ = ( \inst|Add0~25_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux22~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(9))))) ) ) # ( !\inst|Add0~25_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux22~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(9)))))) ) )
 
 -- pragma translate_off
@@ -27500,7 +27479,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(9),
 	datae => \inst|ALT_INV_Add0~25_sumout\,
-	combout => \inst|out_count~8_combout\);
+	combout => \inst|out_count~9_combout\);
 
 \inst|out_count[9]\ : dffeas
 -- pragma translate_off
@@ -27510,9 +27489,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~8_combout\,
+	d => \inst|out_count~9_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(9));
@@ -27899,7 +27878,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w8_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(8));
@@ -28165,9 +28143,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux23~4_combout\);
 
-\inst|out_count~9\ : cyclonev_lcell_comb
+\inst|out_count~10\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~9_combout\ = ( \inst|Add0~29_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux23~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(8))))) ) ) # ( !\inst|Add0~29_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~10_combout\ = ( \inst|Add0~29_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux23~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(8))))) ) ) # ( !\inst|Add0~29_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux23~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(8)))))) ) )
 
 -- pragma translate_off
@@ -28182,7 +28160,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(8),
 	datae => \inst|ALT_INV_Add0~29_sumout\,
-	combout => \inst|out_count~9_combout\);
+	combout => \inst|out_count~10_combout\);
 
 \inst|out_count[8]\ : dffeas
 -- pragma translate_off
@@ -28192,9 +28170,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~9_combout\,
+	d => \inst|out_count~10_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(8));
@@ -28581,7 +28559,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w7_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(7));
@@ -28847,9 +28824,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux24~4_combout\);
 
-\inst|out_count~10\ : cyclonev_lcell_comb
+\inst|out_count~11\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~10_combout\ = ( \inst|Add0~33_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux24~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(7))))) ) ) # ( !\inst|Add0~33_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~11_combout\ = ( \inst|Add0~33_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux24~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(7))))) ) ) # ( !\inst|Add0~33_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux24~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(7)))))) ) )
 
 -- pragma translate_off
@@ -28864,7 +28841,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(7),
 	datae => \inst|ALT_INV_Add0~33_sumout\,
-	combout => \inst|out_count~10_combout\);
+	combout => \inst|out_count~11_combout\);
 
 \inst|out_count[7]\ : dffeas
 -- pragma translate_off
@@ -28874,9 +28851,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~10_combout\,
+	d => \inst|out_count~11_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(7));
@@ -29263,7 +29240,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w6_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(6));
@@ -29529,9 +29505,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux25~4_combout\);
 
-\inst|out_count~11\ : cyclonev_lcell_comb
+\inst|out_count~12\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~11_combout\ = ( \inst|Add0~37_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux25~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(6))))) ) ) # ( !\inst|Add0~37_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~12_combout\ = ( \inst|Add0~37_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux25~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(6))))) ) ) # ( !\inst|Add0~37_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux25~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(6)))))) ) )
 
 -- pragma translate_off
@@ -29546,7 +29522,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(6),
 	datae => \inst|ALT_INV_Add0~37_sumout\,
-	combout => \inst|out_count~11_combout\);
+	combout => \inst|out_count~12_combout\);
 
 \inst|out_count[6]\ : dffeas
 -- pragma translate_off
@@ -29556,9 +29532,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~11_combout\,
+	d => \inst|out_count~12_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(6));
@@ -29945,7 +29921,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w5_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|operand\(5));
@@ -30211,9 +30186,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux26~4_combout\);
 
-\inst|out_count~12\ : cyclonev_lcell_comb
+\inst|out_count~13\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~12_combout\ = ( \inst|Add0~41_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux26~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(5))))) ) ) # ( !\inst|Add0~41_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~13_combout\ = ( \inst|Add0~41_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux26~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(5))))) ) ) # ( !\inst|Add0~41_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux26~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(5)))))) ) )
 
 -- pragma translate_off
@@ -30228,7 +30203,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(5),
 	datae => \inst|ALT_INV_Add0~41_sumout\,
-	combout => \inst|out_count~12_combout\);
+	combout => \inst|out_count~13_combout\);
 
 \inst|out_count[5]\ : dffeas
 -- pragma translate_off
@@ -30238,9 +30213,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~12_combout\,
+	d => \inst|out_count~13_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(5));
@@ -30627,7 +30602,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w30_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|address_method\(0));
@@ -30927,9 +30901,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux27~4_combout\);
 
-\inst|out_count~13\ : cyclonev_lcell_comb
+\inst|out_count~14\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~13_combout\ = ( \inst|Add0~45_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux27~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(4))))) ) ) # ( !\inst|Add0~45_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~14_combout\ = ( \inst|Add0~45_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux27~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(4))))) ) ) # ( !\inst|Add0~45_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux27~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(4)))))) ) )
 
 -- pragma translate_off
@@ -30944,7 +30918,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(4),
 	datae => \inst|ALT_INV_Add0~45_sumout\,
-	combout => \inst|out_count~13_combout\);
+	combout => \inst|out_count~14_combout\);
 
 \inst|out_count[4]\ : dffeas
 -- pragma translate_off
@@ -30954,14 +30928,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~13_combout\,
+	d => \inst|out_count~14_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(4));
 
-\inst10|altsyncram_component|auto_generated|ram_block1a157\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a155\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -30980,7 +30954,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 16384,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 20479,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -30994,12 +30968,12 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1097w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a157_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a155_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a157_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a155_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a189\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a187\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -31018,7 +30992,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 20480,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 24575,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31032,12 +31006,12 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1108w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a189_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a187_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a189_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a187_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a221\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a219\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -31056,7 +31030,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 24576,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 28671,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31070,12 +31044,12 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1119w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a221_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a219_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a221_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a219_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a253\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a251\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -31094,7 +31068,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 28672,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 32767,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31108,18 +31082,18 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1130w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a253_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a251_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a253_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a251_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a253~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a221~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a189~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a157~portadataout\ ) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\ = ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a251~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( \inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a219~portadataout\ ) ) ) # ( \inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a187~portadataout\ ) ) ) # ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ( !\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a155~portadataout\ ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -31128,15 +31102,15 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a157~portadataout\,
-	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a189~portadataout\,
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a221~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a253~portadataout\,
+	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a155~portadataout\,
+	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a187~portadataout\,
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a219~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a251~portadataout\,
 	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
 	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\);
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a93\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a91\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -31155,7 +31129,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 8192,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 12287,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31169,12 +31143,12 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1075w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a93_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a91_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a93_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a91_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a125\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a123\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -31193,7 +31167,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 12288,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 16383,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31207,16 +31181,16 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1086w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a125_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a123_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a125_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a123_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a29\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a27\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -31231,7 +31205,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 0,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 4095,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31245,12 +31219,12 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\(3),
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a29_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a27_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a29_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a27_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|ram_block1a61\ : cyclonev_ram_block
+\inst10|altsyncram_component|auto_generated|ram_block1a59\ : cyclonev_ram_block
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -31269,7 +31243,7 @@ GENERIC MAP (
 	port_a_data_out_clock => "none",
 	port_a_data_width => 1,
 	port_a_first_address => 4096,
-	port_a_first_bit_number => 29,
+	port_a_first_bit_number => 27,
 	port_a_last_address => 8191,
 	port_a_logical_ram_depth => 32768,
 	port_a_logical_ram_width => 32,
@@ -31283,24 +31257,24 @@ PORT MAP (
 	portare => VCC,
 	clk0 => \ALT_INV_clkIn~input_o\,
 	ena0 => \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1064w[3]~0_combout\,
-	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a61_PORTAADDR_bus\,
+	portaaddr => \inst10|altsyncram_component|auto_generated|ram_block1a59_PORTAADDR_bus\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a61_PORTADATAOUT_bus\);
+	portadataout => \inst10|altsyncram_component|auto_generated|ram_block1a59_PORTADATAOUT_bus\);
 
-\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\)) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( 
--- \inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- (\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( 
--- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\)))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\)))) ) ) ) # ( 
--- !\inst10|altsyncram_component|auto_generated|ram_block1a29~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a61~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
--- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a93~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
--- ((\inst10|altsyncram_component|auto_generated|ram_block1a125~portadataout\))))) ) ) )
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\ = ( \inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( \inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\)) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\)))) ) ) ) # ( !\inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( 
+-- \inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- (\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\))) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\)))) ) ) ) # ( \inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( 
+-- (!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(1)) # ((\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\)))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\)))) ) ) ) # ( 
+-- !\inst10|altsyncram_component|auto_generated|ram_block1a27~portadataout\ & ( !\inst10|altsyncram_component|auto_generated|ram_block1a59~portadataout\ & ( (\inst10|altsyncram_component|auto_generated|address_reg_a\(1) & 
+-- ((!\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & (\inst10|altsyncram_component|auto_generated|ram_block1a91~portadataout\)) # (\inst10|altsyncram_component|auto_generated|address_reg_a\(0) & 
+-- ((\inst10|altsyncram_component|auto_generated|ram_block1a123~portadataout\))))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -31311,16 +31285,16 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0),
 	datab => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1),
-	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a93~portadataout\,
-	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a125~portadataout\,
-	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a29~portadataout\,
-	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a61~portadataout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\);
+	datac => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a91~portadataout\,
+	datad => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a123~portadataout\,
+	datae => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a27~portadataout\,
+	dataf => \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a59~portadataout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\);
 
-\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2\ : cyclonev_lcell_comb
+\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\))) # 
--- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\))
+-- \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\ = (!\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & ((\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~1_combout\))) # 
+-- (\inst10|altsyncram_component|auto_generated|address_reg_a\(2) & (\inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -31330,11 +31304,11 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2),
-	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~0_combout\,
-	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~1_combout\,
-	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\);
+	datab => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_dataout~0_combout\,
+	datac => \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_dataout~1_combout\,
+	combout => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\);
 
-\inst2|opcode[5]\ : dffeas
+\inst2|opcode[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -31342,11 +31316,28 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
+	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \inst2|opcode\(5));
+	q => \inst2|opcode\(3));
+
+\inst7|Selector11~2\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector11~2_combout\ = ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1) & ((!\inst2|opcode\(5) & ((!\inst2|opcode\(2)))) # (\inst2|opcode\(5) & (!\inst2|opcode\(3) & \inst2|opcode\(2))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1100001000000000000000000000000011000010000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(3),
+	datab => \inst2|ALT_INV_opcode\(5),
+	datac => \inst2|ALT_INV_opcode\(2),
+	datad => \inst2|ALT_INV_opcode\(1),
+	datae => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Selector11~2_combout\);
 
 \inst7|OUTPUTS~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -31369,60 +31360,39 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|OUTPUTS~0_combout\);
 
-\inst7|Selector11~2\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Selector11~2_combout\ = ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1) & ((!\inst2|opcode\(5) & ((!\inst2|opcode\(2)))) # (\inst2|opcode\(5) & (!\inst2|opcode\(3) & \inst2|opcode\(2))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100001000000000000000000000000011000010000000000000000000000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(3),
-	datab => \inst2|ALT_INV_opcode\(5),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Selector11~2_combout\);
-
 \inst7|Selector11~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector11~0_combout\ = (\inst7|nextState.idle~q\ & (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.writeData~q\ & !\inst7|nextState.storeData~q\)))
+-- \inst7|Selector11~0_combout\ = ( !\inst7|nextState.writeData~q\ & ( (!\inst7|nextState.storeData~q\ & (!\inst7|nextState.storeAluResult~q\ & ((!\inst7|nextState.execution~q\) # (\inst7|OUTPUTS~0_combout\)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100000000000000010000000000000001000000000000000100000000000000",
+	lut_mask => "1011000000000000000000000000000010110000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.idle~q\,
-	datab => \inst7|ALT_INV_nextState.storeAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.writeData~q\,
-	datad => \inst7|ALT_INV_nextState.storeData~q\,
+	dataa => \inst7|ALT_INV_nextState.execution~q\,
+	datab => \inst7|ALT_INV_OUTPUTS~0_combout\,
+	datac => \inst7|ALT_INV_nextState.storeData~q\,
+	datad => \inst7|ALT_INV_nextState.storeAluResult~q\,
+	datae => \inst7|ALT_INV_nextState.writeData~q\,
 	combout => \inst7|Selector11~0_combout\);
 
 \inst7|Selector11~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector11~1_combout\ = ( \inst7|Selector11~2_combout\ & ( \inst7|Selector11~0_combout\ & ( (!\inst2|opcode\(4) & (((\inst7|nextState.execution~q\ & !\inst7|OUTPUTS~0_combout\)))) # (\inst2|opcode\(4) & (((\inst7|nextState.execution~q\ & 
--- !\inst7|OUTPUTS~0_combout\)) # (\inst7|nextState.decode3~q\))) ) ) ) # ( !\inst7|Selector11~2_combout\ & ( \inst7|Selector11~0_combout\ & ( (\inst7|nextState.execution~q\ & !\inst7|OUTPUTS~0_combout\) ) ) ) # ( \inst7|Selector11~2_combout\ & ( 
--- !\inst7|Selector11~0_combout\ ) ) # ( !\inst7|Selector11~2_combout\ & ( !\inst7|Selector11~0_combout\ ) )
+-- \inst7|Selector11~1_combout\ = (!\inst7|Selector11~0_combout\) # ((\inst2|opcode\(4) & (\inst7|nextState.decode3~q\ & \inst7|Selector11~2_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111111111111111111111111111111100001111000000000001111100010001",
+	lut_mask => "1111111100000001111111110000000111111111000000011111111100000001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(4),
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_nextState.execution~q\,
-	datad => \inst7|ALT_INV_OUTPUTS~0_combout\,
-	datae => \inst7|ALT_INV_Selector11~2_combout\,
-	dataf => \inst7|ALT_INV_Selector11~0_combout\,
+	datac => \inst7|ALT_INV_Selector11~2_combout\,
+	datad => \inst7|ALT_INV_Selector11~0_combout\,
 	combout => \inst7|Selector11~1_combout\);
 
 \inst7|nextState.fetch\ : dffeas
@@ -31728,9 +31698,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux28~4_combout\);
 
-\inst|out_count~14\ : cyclonev_lcell_comb
+\inst|out_count~15\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~14_combout\ = ( \inst|Add0~49_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux28~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(3))))) ) ) # ( !\inst|Add0~49_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~15_combout\ = ( \inst|Add0~49_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux28~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(3))))) ) ) # ( !\inst|Add0~49_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux28~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(3)))))) ) )
 
 -- pragma translate_off
@@ -31745,7 +31715,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(3),
 	datae => \inst|ALT_INV_Add0~49_sumout\,
-	combout => \inst|out_count~14_combout\);
+	combout => \inst|out_count~15_combout\);
 
 \inst|out_count[3]\ : dffeas
 -- pragma translate_off
@@ -31755,9 +31725,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~14_combout\,
+	d => \inst|out_count~15_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(3));
@@ -32144,7 +32114,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w23_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rz\(3));
@@ -32746,9 +32715,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux29~4_combout\);
 
-\inst|out_count~15\ : cyclonev_lcell_comb
+\inst|out_count~16\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~15_combout\ = ( \inst|Add0~53_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux29~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(2))))) ) ) # ( !\inst|Add0~53_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~16_combout\ = ( \inst|Add0~53_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux29~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(2))))) ) ) # ( !\inst|Add0~53_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux29~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(2)))))) ) )
 
 -- pragma translate_off
@@ -32763,7 +32732,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(2),
 	datae => \inst|ALT_INV_Add0~53_sumout\,
-	combout => \inst|out_count~15_combout\);
+	combout => \inst|out_count~16_combout\);
 
 \inst|out_count[2]\ : dffeas
 -- pragma translate_off
@@ -32773,9 +32742,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~15_combout\,
+	d => \inst|out_count~16_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(2));
@@ -33162,7 +33131,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w22_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rz\(2));
@@ -33764,9 +33732,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux30~4_combout\);
 
-\inst|out_count~16\ : cyclonev_lcell_comb
+\inst|out_count~17\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~16_combout\ = ( \inst|Add0~57_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux30~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(1))))) ) ) # ( !\inst|Add0~57_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~17_combout\ = ( \inst|Add0~57_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux30~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(1))))) ) ) # ( !\inst|Add0~57_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux30~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(1)))))) ) )
 
 -- pragma translate_off
@@ -33781,7 +33749,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(1),
 	datae => \inst|ALT_INV_Add0~57_sumout\,
-	combout => \inst|out_count~16_combout\);
+	combout => \inst|out_count~17_combout\);
 
 \inst|out_count[1]\ : dffeas
 -- pragma translate_off
@@ -33791,9 +33759,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~16_combout\,
+	d => \inst|out_count~17_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(1));
@@ -34180,7 +34148,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w21_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rz\(1));
@@ -34796,9 +34763,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux31~4_combout\);
 
-\inst|out_count~17\ : cyclonev_lcell_comb
+\inst|out_count~18\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~17_combout\ = ( \inst|Add0~61_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux31~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(0))))) ) ) # ( !\inst|Add0~61_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~18_combout\ = ( \inst|Add0~61_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux31~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(0))))) ) ) # ( !\inst|Add0~61_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux31~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(0)))))) ) )
 
 -- pragma translate_off
@@ -34813,7 +34780,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(0),
 	datae => \inst|ALT_INV_Add0~61_sumout\,
-	combout => \inst|out_count~17_combout\);
+	combout => \inst|out_count~18_combout\);
 
 \inst|out_count[0]\ : dffeas
 -- pragma translate_off
@@ -34823,9 +34790,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~17_combout\,
+	d => \inst|out_count~18_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(0));
@@ -35212,7 +35179,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w20_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|rz\(0));
@@ -35828,9 +35794,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(3),
 	combout => \inst3|Mux18~4_combout\);
 
-\inst|out_count~4\ : cyclonev_lcell_comb
+\inst|out_count~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~4_combout\ = ( \inst|Add0~9_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux18~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(13))))) ) ) # ( !\inst|Add0~9_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~5_combout\ = ( \inst|Add0~9_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux18~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(13))))) ) ) # ( !\inst|Add0~9_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux18~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(13)))))) ) )
 
 -- pragma translate_off
@@ -35845,7 +35811,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(13),
 	datae => \inst|ALT_INV_Add0~9_sumout\,
-	combout => \inst|out_count~4_combout\);
+	combout => \inst|out_count~5_combout\);
 
 \inst|out_count[13]\ : dffeas
 -- pragma translate_off
@@ -35855,9 +35821,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~4_combout\,
+	d => \inst|out_count~5_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(13));
@@ -36260,7 +36226,6 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst10|altsyncram_component|auto_generated|mux2|l3_w28_n0_mux_dataout~2_combout\,
-	ena => \inst|Equal0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst2|opcode\(4));
@@ -36485,40 +36450,39 @@ PORT MAP (
 
 \inst7|Selector8~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector8~2_combout\ = ( \inst7|Selector8~1_combout\ & ( (!\inst7|nextState.storeAluResult~q\ & (!\inst7|nextState.writeData~q\ & ((!\inst7|nextState.execution~q\) # (\inst2|opcode\(3))))) ) ) # ( !\inst7|Selector8~1_combout\ & ( 
--- (!\inst7|nextState.storeAluResult~q\ & !\inst7|nextState.writeData~q\) ) )
+-- \inst7|Selector8~2_combout\ = ( !\inst7|nextState.writeData~q\ & ( (!\inst7|nextState.storeAluResult~q\ & (((!\inst7|nextState.execution~q\) # (!\inst7|Selector8~1_combout\)) # (\inst2|opcode\(3)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1100000011000000110000000100000011000000110000001100000001000000",
+	lut_mask => "1111110100000000000000000000000011111101000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(3),
-	datab => \inst7|ALT_INV_nextState.storeAluResult~q\,
-	datac => \inst7|ALT_INV_nextState.writeData~q\,
-	datad => \inst7|ALT_INV_nextState.execution~q\,
-	datae => \inst7|ALT_INV_Selector8~1_combout\,
+	datab => \inst7|ALT_INV_nextState.execution~q\,
+	datac => \inst7|ALT_INV_Selector8~1_combout\,
+	datad => \inst7|ALT_INV_nextState.storeAluResult~q\,
+	datae => \inst7|ALT_INV_nextState.writeData~q\,
 	combout => \inst7|Selector8~2_combout\);
 
 \inst7|Selector8~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector8~3_combout\ = ( \inst7|Selector7~0_combout\ & ( \inst7|Selector8~2_combout\ & ( (\inst7|ld_r~q\ & (((!\inst7|Selector8~0_combout\) # (\inst7|nextState.storeData~q\)) # (\inst7|Selector17~0_combout\))) ) ) ) # ( !\inst7|Selector7~0_combout\ 
--- & ( \inst7|Selector8~2_combout\ & ( \inst7|ld_r~q\ ) ) ) # ( \inst7|Selector7~0_combout\ & ( !\inst7|Selector8~2_combout\ ) ) # ( !\inst7|Selector7~0_combout\ & ( !\inst7|Selector8~2_combout\ ) )
+-- \inst7|Selector8~3_combout\ = ( \inst7|Selector6~0_combout\ & ( \inst7|Selector8~2_combout\ & ( (\inst7|ld_r~q\ & (((!\inst7|Selector8~0_combout\) # (!\inst7|WideOr1~0_combout\)) # (\inst7|Selector17~0_combout\))) ) ) ) # ( !\inst7|Selector6~0_combout\ & 
+-- ( \inst7|Selector8~2_combout\ & ( \inst7|ld_r~q\ ) ) ) # ( \inst7|Selector6~0_combout\ & ( !\inst7|Selector8~2_combout\ ) ) # ( !\inst7|Selector6~0_combout\ & ( !\inst7|Selector8~2_combout\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111111111111111111111111111111101010101010101010101010100010101",
+	lut_mask => "1111111111111111111111111111111101010101010101010101010101010001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_ld_r~q\,
 	datab => \inst7|ALT_INV_Selector17~0_combout\,
-	datac => \inst7|ALT_INV_nextState.storeData~q\,
-	datad => \inst7|ALT_INV_Selector8~0_combout\,
-	datae => \inst7|ALT_INV_Selector7~0_combout\,
+	datac => \inst7|ALT_INV_Selector8~0_combout\,
+	datad => \inst7|ALT_INV_WideOr1~0_combout\,
+	datae => \inst7|ALT_INV_Selector6~0_combout\,
 	dataf => \inst7|ALT_INV_Selector8~2_combout\,
 	combout => \inst7|Selector8~3_combout\);
 
@@ -36819,9 +36783,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_rx\(1),
 	combout => \inst3|Mux17~4_combout\);
 
-\inst|out_count~3\ : cyclonev_lcell_comb
+\inst|out_count~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst|out_count~3_combout\ = ( \inst|Add0~5_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux17~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(14))))) ) ) # ( !\inst|Add0~5_sumout\ & ( (\inst7|increment\(2) & 
+-- \inst|out_count~4_combout\ = ( \inst|Add0~5_sumout\ & ( (!\inst7|increment\(2)) # ((!\inst7|increment\(0) & (\inst3|Mux17~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(14))))) ) ) # ( !\inst|Add0~5_sumout\ & ( (\inst7|increment\(2) & 
 -- ((!\inst7|increment\(0) & (\inst3|Mux17~4_combout\)) # (\inst7|increment\(0) & ((\inst2|operand\(14)))))) ) )
 
 -- pragma translate_off
@@ -36836,7 +36800,7 @@ PORT MAP (
 	datac => \inst7|ALT_INV_increment\(0),
 	datad => \inst2|ALT_INV_operand\(14),
 	datae => \inst|ALT_INV_Add0~5_sumout\,
-	combout => \inst|out_count~3_combout\);
+	combout => \inst|out_count~4_combout\);
 
 \inst|out_count[14]\ : dffeas
 -- pragma translate_off
@@ -36846,9 +36810,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst|out_count~3_combout\,
+	d => \inst|out_count~4_combout\,
 	sclr => \inst|out_count[2]~1_combout\,
-	ena => \inst|out_count[15]~2_combout\,
+	ena => \inst|out_count[15]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst|out_count\(14));
@@ -37241,18 +37205,18 @@ PORT MAP (
 
 \inst7|Selector9~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector9~0_combout\ = (\inst7|nextState.idle~q\ & (!\inst7|nextState.fetch~q\ & !\inst7|nextState.decode3~q\))
+-- \inst7|Selector9~0_combout\ = (!\inst7|nextState.decode3~q\ & (\inst7|nextState.idle~q\ & !\inst7|nextState.fetch~q\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100000001000000010000000100000001000000010000000100000001000000",
+	lut_mask => "0010000000100000001000000010000000100000001000000010000000100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.idle~q\,
-	datab => \inst7|ALT_INV_nextState.fetch~q\,
-	datac => \inst7|ALT_INV_nextState.decode3~q\,
+	dataa => \inst7|ALT_INV_nextState.decode3~q\,
+	datab => \inst7|ALT_INV_nextState.idle~q\,
+	datac => \inst7|ALT_INV_nextState.fetch~q\,
 	combout => \inst7|Selector9~0_combout\);
 
 \inst7|Selector9~1\ : cyclonev_lcell_comb

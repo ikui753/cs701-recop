@@ -61,10 +61,10 @@ architecture behavioral of control_unit is
 			case currentState is
 				when idle =>
 					increment <= "1000"; -- set PC to 0
-					stateOut <= "0000";
+					stateOut <= "0001";
 					ld_r <= '0'; -- load alu result
 					clr_z_flag <= '0';
-					nextState <= fetch;
+					nextState <= fetch2;
 					
 				when fetch =>
 					wren <= '0';

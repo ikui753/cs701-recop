@@ -24,13 +24,13 @@ begin
     process(clock)
     begin
         if rising_edge(clock) then
-				if state = "0001" then 
+				--if state = "0001" then 
 				  address_method <= instruction(31 downto 30);
 				  opcode <= instruction(29 downto 24);
 				  rz <= instruction(23 downto 20);
 				  rx <= instruction(19 downto 16);
 				  operand <= instruction(15 downto 0); -- need to do a check to see if instruction has an operand
-				end if;
+				--end if;
 		  end if;
     end process;
 end architecture;
