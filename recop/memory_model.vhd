@@ -31,15 +31,15 @@ architecture beh of memory is
 	x"0000", -- no operation
 	x"0000", -- no operation
 	am_immediate&ldr&x"1"&x"0",
-	x"0007", 
-	am_inherent&ssop&x"2"&x"1",
-	x"0001", -- sop <- R1
---	am_immediate&ldr&x"2"&x"3",
---	x"0008",
-	am_inherent&datacall&x"8"&x"1",
-	x"0004", -- dpcr Rx (1) & R7 
-	am_direct&datacall2&x"8"&x"1",
-	x"0019", -- dpcr Rx (1) & Operand
+	x"0007", -- ld $1, #7
+	am_immediate&str&x"1"&x"0",
+	x"0008", -- str m[Rz=7], $8
+	am_immediate&ldr&x"2"&x"0",
+	x"0009",
+	am_direct&ldr&x"8"&x"0",
+	x"0007", -- load m[8]
+--	am_direct&datacall2&x"8"&x"1",
+--	x"0019", -- dpcr Rx (1) & Operand
 --	am_immediate&strpc&x"1"&x"2", -- Rz - Operand
 --	x"0004",
 --	am_register&str&x"1"&x"2",
