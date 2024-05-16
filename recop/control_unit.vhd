@@ -151,22 +151,20 @@ architecture behavioral of control_unit is
 							-- subv is stored
 							rf_sel <= "0011";
 							nextState <= execution;
-							case address_method is
-								when am_immediate =>
-									alu_opsel <= alu_sub&"0100"; -- Rz <- Rz - Operand
-								when others =>
-							end case;
+							alu_opsel <= alu_sub&"0100"; -- Rz <- Rx - Operand
 						
 						when subr =>
 							-- result is not stored
 							rf_sel <= "0011";
 							ld_r <= '0';
 							nextState <= execution;
-							case address_method is
-								when am_immediate => 
-									alu_opsel <= alu_sub&"0100";
-								when others =>
-							end case;
+							alu_opsel <= alu_sub&"0101"; -- Rz - Operand
+							
+						when max =>
+							-- only one case
+							rf_sel <= "0011";
+							alu_opsel <= alu_max&"0101"; -- operand and rz
+							nextState <= execution;
 								
 						when str =>
 							nextState <= selStore;
@@ -254,7 +252,7 @@ architecture behavioral of control_unit is
 				
 				when execution =>
 					-- alu operations
-					if opcodeIn = addr or opcodeIn = subvr or opcodeIn = orr or opcodeIn = andr then
+					if opcodeIn = addr or opcodeIn = subvr or opcodeIn = orr or opcodeIn = andr or opcodeIn = max then
 						nextState <= loadAluResult;
 					
 					elsif opcodeIn = subr then

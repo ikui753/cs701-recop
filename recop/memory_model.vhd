@@ -31,17 +31,17 @@ architecture beh of memory is
 	x"0000", -- no operation
 	x"0000", -- no operation
 	am_immediate&ldr&x"1"&x"0",
-	x"0001", -- ldr Rz Operand
+	x"0009", -- ldr Rz Operand
 	am_direct&noop&x"4"&x"3",
 	x"0009",
---	am_immediate&ldr&x"2"&x"1",
---	x"0005",
-	am_inherent&clfz&x"2"&x"1",
-	x"0004",
+	am_immediate&ldr&x"2"&x"1",
+	x"0005",
+	am_inherent&max&x"2"&x"2",
+	x"0003",
 	am_immediate&subr&x"1"&x"2", -- Rz - Operand
 	x"0004",
-	am_register&str&x"1"&x"2",
-	x"0002", -- store M[1] <- Rx
+--	am_register&str&x"1"&x"2",
+--	x"0002", -- store M[1] <- RxS
 	--am_register&jmp& x"0"&x"1",
 	--x"0004",  -- jump to Rx r[1]
 	--am_direct&present&x"2"&x"0",
