@@ -64,7 +64,7 @@ architecture behavioral of control_unit is
 					stateOut <= "0001";
 					ld_r <= '0'; -- load alu result
 					clr_z_flag <= '0';
-					nextState <= fetch2;
+					nextState <= decode;
 					
 				when fetch =>
 					wren <= '0';
@@ -87,17 +87,17 @@ architecture behavioral of control_unit is
 						increment <= "0001"; -- increment program counter, move to next instruction
 					end if;
 					
-					nextState <= fetch2;
-					stateOut <= "0001";
-					
-				when fetch2 =>
-					ld_r <= '0'; -- disable
-					dpcr_wr <= '0';
-					sop_wr <= '0';
-					-- instruction passed through instruction register
-					increment <= "0000"; -- stop incrementing
-					stateOut <= "0010";
 					nextState <= decode;
+					stateOut <= "0001";
+--					
+--				when fetch2 =>
+--					ld_r <= '0'; -- disable
+--					dpcr_wr <= '0';
+--					sop_wr <= '0';
+--					-- instruction passed through instruction register
+--					increment <= "0000"; -- stop incrementing
+--					stateOut <= "0010";
+--					nextState <= decode;
 					
 				when decode => -- actual decode, am, operand, opcode now available 
 					-- increment <= "0000";

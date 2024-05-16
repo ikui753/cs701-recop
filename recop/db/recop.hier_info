@@ -268,6 +268,8 @@ storedData[15] <= dataAddrMux:inst6.dataOut[15]
 
 
 |progCounterTest|control_unit:inst7
+clk => sop_wr~reg0.CLK
+clk => dpcr_wr~reg0.CLK
 clk => dpcr_lsb_sel~reg0.CLK
 clk => dataSel[0]~reg0.CLK
 clk => dataSel[1]~reg0.CLK
@@ -284,8 +286,6 @@ clk => rf_sel[0]~reg0.CLK
 clk => rf_sel[1]~reg0.CLK
 clk => rf_sel[2]~reg0.CLK
 clk => rf_sel[3]~reg0.CLK
-clk => sop_wr~reg0.CLK
-clk => dpcr_wr~reg0.CLK
 clk => wren~reg0.CLK
 clk => clr_z_flag~reg0.CLK
 clk => ld_r~reg0.CLK
