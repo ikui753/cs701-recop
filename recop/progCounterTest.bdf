@@ -69,22 +69,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 1256 624 1424 640)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "sop_wr" (rect 5 0 39 17)(font "Intel Clear" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
 	(rect 1256 592 1424 608)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "svop_wr" (rect 5 0 45 17)(font "Intel Clear" ))
@@ -1501,6 +1485,13 @@ refer to the applicable agreement for further details.
 		(text "wren" (rect 209 251 227 263)(font "Arial" ))
 		(line (pt 248 256)(pt 232 256))
 	)
+	(port
+		(pt 248 272)
+		(output)
+		(text "sop_wr" (rect 0 0 34 12)(font "Arial" ))
+		(text "sop_wr" (rect 199 267 227 279)(font "Arial" ))
+		(line (pt 248 272)(pt 232 272))
+	)
 	(drawing
 		(rectangle (rect 16 16 232 288))
 	)
@@ -2505,6 +2496,24 @@ refer to the applicable agreement for further details.
 	(pt 2384 280)
 	(pt 2384 296)
 	(bus)
+)
+(connector
+	(pt 1416 632)
+	(pt 1416 648)
+)
+(connector
+	(pt 1424 632)
+	(pt 1416 632)
+)
+(connector
+	(text "sop_wr" (rect 1320 632 1354 649)(font "Intel Clear" ))
+	(pt 1416 648)
+	(pt 1312 648)
+)
+(connector
+	(text "sop_wr" (rect 2504 48 2538 65)(font "Intel Clear" ))
+	(pt 2496 64)
+	(pt 2568 64)
 )
 (junction (pt 1064 200))
 (junction (pt 2120 184))

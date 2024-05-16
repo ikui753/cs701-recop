@@ -1052,10 +1052,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sop_wr",
-					"strict" : false
-				},
-				{
 					"name" : "svop_wr",
 					"strict" : false
 				},

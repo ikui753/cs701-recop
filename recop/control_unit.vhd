@@ -38,7 +38,8 @@ entity control_unit is
 		  -- store data signals
 		  dataSel : out bit_2;
 		  addrSel : out bit_2;
-		  wren : out bit_1
+		  wren : out bit_1;
+		  sop_wr : out bit_1
 		 
 		  
         -- ... and so on for other control signals
@@ -92,6 +93,7 @@ architecture behavioral of control_unit is
 				when fetch2 =>
 					ld_r <= '0'; -- disable
 					dpcr_wr <= '0';
+					sop_wr <= '0';
 					-- instruction passed through instruction register
 					increment <= "0000"; -- stop incrementing
 					stateOut <= "0010";
@@ -326,6 +328,12 @@ architecture behavioral of control_unit is
 					elsif opcodeIn = lsip then
 						-- Rz <- SIP
 						ld_r <= '1'; -- load
+						nextState <= fetch;
+					
+					-- ssop
+					elsif opcodeIn = ssop then
+						-- propogate through regfile Sop <- Rx
+						sop_wr <= '1'; 
 						nextState <= fetch;
 						
 					else

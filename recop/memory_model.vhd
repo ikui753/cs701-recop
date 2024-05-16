@@ -31,7 +31,9 @@ architecture beh of memory is
 	x"0000", -- no operation
 	x"0000", -- no operation
 	am_immediate&ldr&x"1"&x"0",
-	x"0007", -- ldr Rz Operand load 7 into memory loc $1
+	x"0007", 
+	am_inherent&ssop&x"2"&x"1",
+	x"0001", -- sop <- R1
 --	am_immediate&ldr&x"2"&x"3",
 --	x"0008",
 	am_inherent&datacall&x"8"&x"1",
@@ -49,9 +51,9 @@ architecture beh of memory is
 	--am_inherent&sz&x"1"&x"0",
 	--x"0006",
 	am_inherent&lsip&x"3"&x"0",
-	x"0005",
-	am_immediate&ldr&x"5"&x"1",
-	x"0009");
+	x"0005");
+--	am_immediate&ldr&x"5"&x"1",
+--	x"0009");
 	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",

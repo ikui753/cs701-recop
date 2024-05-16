@@ -163,6 +163,13 @@ refer to the applicable agreement for further details.
 		(text "wren" (rect 209 251 227 263)(font "Arial" ))
 		(line (pt 248 256)(pt 232 256)(line_width 1))
 	)
+	(port
+		(pt 248 272)
+		(output)
+		(text "sop_wr" (rect 0 0 29 12)(font "Arial" ))
+		(text "sop_wr" (rect 198 267 227 279)(font "Arial" ))
+		(line (pt 248 272)(pt 232 272)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 232 288)(line_width 1))
 	)
