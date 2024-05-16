@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/16/2024 15:51:01"
+-- DATE "05/16/2024 16:00:48"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -6311,13 +6311,13 @@ PORT MAP (
 
 \inst1|Mux1~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux1~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(1) & ((!\inst|out_count\(2)))) # (\inst|out_count\(1) & (!\inst|out_count\(3))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (!\inst|out_count\(0) & 
--- ((!\inst|out_count\(3) & ((\inst|out_count\(1)))) # (\inst|out_count\(3) & (!\inst|out_count\(2) & !\inst|out_count\(1))))) ) )
+-- \inst1|Mux1~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(0) & ((!\inst|out_count\(3)) # (!\inst|out_count\(1))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(0) & 
+-- (!\inst|out_count\(3) $ (!\inst|out_count\(1))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100101000000000110010100000000001001010000000001100101000000000",
+	lut_mask => "0100100000000000110010000000000001001000000000001100100000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -8252,18 +8252,18 @@ PORT MAP (
 \inst1|Mux14~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \inst1|Mux14~0_combout\ = ( \inst|out_count\(3) & ( !\inst|out_count\(2) $ (((!\inst|out_count\(1) & \inst|out_count\(0)))) ) ) # ( !\inst|out_count\(3) & ( (!\inst|out_count\(1) & (!\inst|out_count\(0) & ((\inst|out_count\(2)) # 
--- (\inst1|memory[0][1]~q\)))) ) )
+-- (\inst1|memory[0][1]~q\)))) # (\inst|out_count\(1) & (((\inst|out_count\(0) & !\inst|out_count\(2))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000100010001000110111010010001000001000100010001101110100100010",
+	lut_mask => "0100001111000000111100110000110001000011110000001111001100001100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst|ALT_INV_out_count\(1),
-	datab => \inst|ALT_INV_out_count\(0),
-	datac => \inst1|ALT_INV_memory[0][1]~q\,
+	dataa => \inst1|ALT_INV_memory[0][1]~q\,
+	datab => \inst|ALT_INV_out_count\(1),
+	datac => \inst|ALT_INV_out_count\(0),
 	datad => \inst|ALT_INV_out_count\(2),
 	datae => \inst|ALT_INV_out_count\(3),
 	combout => \inst1|Mux14~0_combout\);
@@ -8570,13 +8570,13 @@ PORT MAP (
 
 \inst1|Mux13~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux13~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (!\inst|out_count\(1) & ((!\inst|out_count\(3) & (!\inst|out_count\(2) & !\inst|out_count\(0))) # (\inst|out_count\(3) & ((\inst|out_count\(0)))))) ) ) # ( !\inst1|memory[0][2]~q\ & ( 
--- (\inst|out_count\(3) & (!\inst|out_count\(1) & \inst|out_count\(0))) ) )
+-- \inst1|Mux13~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (!\inst|out_count\(3) & (!\inst|out_count\(2) & (!\inst|out_count\(1) $ (\inst|out_count\(0))))) # (\inst|out_count\(3) & (((!\inst|out_count\(1) & \inst|out_count\(0))))) ) ) # ( 
+-- !\inst1|memory[0][2]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(3) & (!\inst|out_count\(2) & \inst|out_count\(1))) # (\inst|out_count\(3) & ((!\inst|out_count\(1)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000001010000100000000101000000000000010100001000000001010000",
+	lut_mask => "0000000001011000100000000101100000000000010110001000000001011000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -8641,13 +8641,13 @@ PORT MAP (
 
 \inst1|Mux12~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux12~0_combout\ = ( \inst1|memory[0][3]~q\ & ( (!\inst|out_count\(3) & ((!\inst|out_count\(2) & (!\inst|out_count\(1) $ (\inst|out_count\(0)))) # (\inst|out_count\(2) & (!\inst|out_count\(1) & \inst|out_count\(0))))) ) ) # ( 
--- !\inst1|memory[0][3]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(0) & (!\inst|out_count\(2) $ (!\inst|out_count\(1))))) ) )
+-- \inst1|Mux12~0_combout\ = ( \inst1|memory[0][3]~q\ & ( (!\inst|out_count\(3) & (!\inst|out_count\(1) & (!\inst|out_count\(2) $ (\inst|out_count\(0))))) ) ) # ( !\inst1|memory[0][3]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(2) & 
+-- (!\inst|out_count\(1) & \inst|out_count\(0)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000101000100000000010100000000000001010001000000000101000",
+	lut_mask => "0000000000100000100000000010000000000000001000001000000000100000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -9791,14 +9791,14 @@ PORT MAP (
 
 \inst1|Mux30~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux30~0_combout\ = ( \inst1|memory[0][1]~q\ & ( (!\inst|out_count\(3) & (((\inst|out_count\(1) & \inst|out_count\(0))))) # (\inst|out_count\(3) & (!\inst|out_count\(2) $ (!\inst|out_count\(1) $ (\inst|out_count\(0))))) ) ) # ( 
--- !\inst1|memory[0][1]~q\ & ( (!\inst|out_count\(3) & (((\inst|out_count\(1) & \inst|out_count\(0))))) # (\inst|out_count\(3) & ((!\inst|out_count\(2) & (!\inst|out_count\(1) $ (!\inst|out_count\(0)))) # (\inst|out_count\(2) & (!\inst|out_count\(1) & 
--- !\inst|out_count\(0))))) ) )
+-- \inst1|Mux30~0_combout\ = ( \inst1|memory[0][1]~q\ & ( (!\inst|out_count\(3) & (\inst|out_count\(1) & ((!\inst|out_count\(2)) # (\inst|out_count\(0))))) # (\inst|out_count\(3) & (!\inst|out_count\(2) $ (!\inst|out_count\(1) $ (\inst|out_count\(0))))) ) ) 
+-- # ( !\inst1|memory[0][1]~q\ & ( (!\inst|out_count\(1) & (\inst|out_count\(3) & (!\inst|out_count\(2) $ (!\inst|out_count\(0))))) # (\inst|out_count\(1) & ((!\inst|out_count\(0) & ((!\inst|out_count\(2)))) # (\inst|out_count\(0) & (!\inst|out_count\(3))))) 
+-- ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001010001001010000101000100101100010100010010100001010001001011",
+	lut_mask => "0001110001001010000111000100101100011100010010100001110001001011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -9937,13 +9937,13 @@ PORT MAP (
 
 \inst1|Mux29~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux29~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (\inst|out_count\(3) & ((!\inst|out_count\(1) & ((!\inst|out_count\(0)))) # (\inst|out_count\(1) & (\inst|out_count\(2) & \inst|out_count\(0))))) ) ) # ( !\inst1|memory[0][2]~q\ & ( 
--- (\inst|out_count\(3) & (!\inst|out_count\(1) & !\inst|out_count\(0))) ) )
+-- \inst1|Mux29~0_combout\ = ( \inst1|memory[0][2]~q\ & ( (!\inst|out_count\(2) & (!\inst|out_count\(0) & (!\inst|out_count\(3) $ (!\inst|out_count\(1))))) # (\inst|out_count\(2) & (\inst|out_count\(3) & (!\inst|out_count\(1) $ (\inst|out_count\(0))))) ) ) # 
+-- ( !\inst1|memory[0][2]~q\ & ( (!\inst|out_count\(0) & ((!\inst|out_count\(3) & (!\inst|out_count\(2) & \inst|out_count\(1))) # (\inst|out_count\(3) & ((!\inst|out_count\(1)))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0101000000000000010100000000000101010000000000000101000000000001",
+	lut_mask => "0101100000000000010110000000000101011000000000000101100000000001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -10326,13 +10326,13 @@ PORT MAP (
 
 \inst1|Mux28~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux28~0_combout\ = ( \inst1|memory[0][3]~q\ & ( (!\inst|out_count\(3) & (!\inst|out_count\(0) & (!\inst|out_count\(2) $ (!\inst|out_count\(1))))) # (\inst|out_count\(3) & (\inst|out_count\(2) & (\inst|out_count\(1) & \inst|out_count\(0)))) ) ) # ( 
--- !\inst1|memory[0][3]~q\ & ( (!\inst|out_count\(3) & (!\inst|out_count\(0) & (!\inst|out_count\(2) $ (!\inst|out_count\(1))))) ) )
+-- \inst1|Mux28~0_combout\ = ( \inst1|memory[0][3]~q\ & ( (\inst|out_count\(2) & ((!\inst|out_count\(3) & (!\inst|out_count\(1) & !\inst|out_count\(0))) # (\inst|out_count\(3) & (\inst|out_count\(1) & \inst|out_count\(0))))) ) ) # ( !\inst1|memory[0][3]~q\ & 
+-- ( (!\inst|out_count\(3) & (\inst|out_count\(2) & (!\inst|out_count\(1) & !\inst|out_count\(0)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010100000000000001010000000000100101000000000000010100000000001",
+	lut_mask => "0010000000000000001000000000000100100000000000000010000000000001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
@@ -14694,13 +14694,13 @@ PORT MAP (
 
 \inst1|Mux17~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst1|Mux17~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(1) & (!\inst|out_count\(3))) # (\inst|out_count\(1) & ((\inst|out_count\(2)))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( (!\inst|out_count\(3) & 
--- (\inst|out_count\(0) & ((!\inst|out_count\(1)) # (\inst|out_count\(2))))) ) )
+-- \inst1|Mux17~0_combout\ = ( \inst1|memory[0][14]~q\ & ( (\inst|out_count\(0) & ((!\inst|out_count\(2) & (!\inst|out_count\(3) & !\inst|out_count\(1))) # (\inst|out_count\(2) & ((\inst|out_count\(1)))))) ) ) # ( !\inst1|memory[0][14]~q\ & ( 
+-- (!\inst|out_count\(3) & (\inst|out_count\(0) & (!\inst|out_count\(2) $ (\inst|out_count\(1))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000010100010000000001010001100000000101000100000000010100011",
+	lut_mask => "0000000010000010000000001000001100000000100000100000000010000011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (

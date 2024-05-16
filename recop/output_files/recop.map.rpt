@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Thu May 16 15:50:31 2024
+Thu May 16 16:00:39 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -50,7 +50,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 16 15:50:30 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 16 16:00:39 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -342,7 +342,6 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[1][6]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][10]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[8][13]              ; Merged with memory:inst1|memory[13][0]      ;
-; memory:inst1|memory[3][2]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[2][8]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[5][14]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[13][9]              ; Merged with memory:inst1|memory[13][0]      ;
@@ -356,6 +355,7 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[10][14]             ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[10][6]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][1]               ; Merged with memory:inst1|memory[13][0]      ;
+; memory:inst1|memory[6][14]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[9][9]               ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[10][0]              ; Merged with memory:inst1|memory[13][0]      ;
 ; memory:inst1|memory[1][15]              ; Merged with memory:inst1|memory[13][0]      ;
@@ -389,11 +389,11 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[4][13]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[6][4]               ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[8][14]              ; Merged with memory:inst1|memory[13][1]      ;
+; memory:inst1|memory[3][2]               ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[11][1]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[2][9]               ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[10][1]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[10][9]              ; Merged with memory:inst1|memory[13][1]      ;
-; memory:inst1|memory[6][14]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[8][1]               ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[11][0]              ; Merged with memory:inst1|memory[13][1]      ;
 ; memory:inst1|memory[10][12]             ; Merged with memory:inst1|memory[13][1]      ;
@@ -411,6 +411,7 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[2][15]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[8][10]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[3][9]               ; Merged with memory:inst1|memory[13][3]      ;
+; memory:inst1|memory[3][3]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[2][2]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[5][5]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[13][7]              ; Merged with memory:inst1|memory[13][3]      ;
@@ -479,13 +480,11 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[3][8]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[13][6]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[6][13]              ; Merged with memory:inst1|memory[13][3]      ;
-; memory:inst1|memory[3][1]               ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[7][13]              ; Merged with memory:inst1|memory[13][3]      ;
 ; memory:inst1|memory[4][10]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[8][5]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[4][12]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[4][6]               ; Merged with memory:inst1|memory[12][4]      ;
-; memory:inst1|memory[3][3]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[8][0]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[4][0]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[6][5]               ; Merged with memory:inst1|memory[12][4]      ;
@@ -497,6 +496,7 @@ Encoding Type:  One-Hot
 ; memory:inst1|memory[6][15]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[5][3]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[4][15]              ; Merged with memory:inst1|memory[12][4]      ;
+; memory:inst1|memory[3][1]               ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[2][14]              ; Merged with memory:inst1|memory[12][4]      ;
 ; memory:inst1|memory[3][15]              ; Merged with memory:inst1|memory[8][8]       ;
 ; memory:inst1|memory[1][12]              ; Merged with memory:inst1|memory[8][8]       ;
@@ -551,12 +551,14 @@ Encoding Type:  One-Hot
 ; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[8]               ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[7]        ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[8]   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[6]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[6]        ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[5]        ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[10]       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[13]  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|pm_outdata[14]       ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[13]  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[5]   ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[10]  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |progCounterTest|memory:inst1|operand_outdata[14]  ;
 ; 64:1               ; 2 bits    ; 84 LEs        ; 24 LEs               ; 60 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[1]   ;
 ; 19:1               ; 15 bits   ; 180 LEs       ; 30 LEs               ; 150 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[2] ;
 ; 66:1               ; 2 bits    ; 88 LEs        ; 28 LEs               ; 60 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[2]   ;
@@ -710,7 +712,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 16 15:50:18 2024
+    Info: Processing started: Thu May 16 16:00:27 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -832,8 +834,8 @@ Info (21057): Implemented 1242 device resources after synthesis - the final reso
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
     Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Thu May 16 15:50:31 2024
-    Info: Elapsed time: 00:00:13
+    Info: Processing ended: Thu May 16 16:00:39 2024
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:11
 
 

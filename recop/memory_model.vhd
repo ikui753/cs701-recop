@@ -31,10 +31,10 @@ architecture beh of memory is
 	x"0000", -- no operation
 	x"0000", -- no operation
 	am_immediate&str&x"1"&x"0",
-	x"0009", -- ldr Rz Operand load 9 into $1
+	x"0007", -- ldr Rz Operand load 7 into memory loc $1
 	am_direct&noop&x"4"&x"3",
 	x"0009",
-	am_register&ldr&x"3"&x"0",
+	am_direct&ldr&x"3"&x"0",
 	x"0001", -- load m[1] into 3
 	am_register&ldr&x"2"&x"3",
 	x"0005", -- ld $2, m[reg[3]=1]
