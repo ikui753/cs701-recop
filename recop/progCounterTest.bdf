@@ -165,7 +165,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 2392 256 2568 272)
+	(rect 2400 256 2576 272)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "rxData[15..0]" (rect 90 0 154 12)(font "Arial" ))
 	(pt 0 8)
@@ -1217,7 +1217,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 2176 232 2376 536)
+	(rect 2176 216 2376 520)
 	(text "regfile" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst3" (rect 8 288 31 300)(font "Arial" ))
 	(port
@@ -1563,27 +1563,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 2176 264)
-	(pt 2168 264)
-)
-(connector
-	(text "clk" (rect 2151 235 2168 249)(font "Intel Clear" )(vertical))
-	(pt 2168 264)
-	(pt 2168 224)
-)
-(connector
 	(pt 2080 216)
 	(pt 2096 216)
-	(bus)
-)
-(connector
-	(pt 2096 216)
-	(pt 2096 328)
-	(bus)
-)
-(connector
-	(pt 2176 328)
-	(pt 2096 328)
 	(bus)
 )
 (connector
@@ -1592,39 +1573,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 2104 200)
-	(pt 2104 312)
-	(bus)
-)
-(connector
-	(pt 2176 312)
-	(pt 2104 312)
-	(bus)
-)
-(connector
 	(text "operand[15..0]" (rect 632 272 700 289)(font "Intel Clear" ))
 	(pt 784 280)
 	(pt 696 280)
-	(bus)
-)
-(connector
-	(pt 2376 280)
-	(pt 2392 280)
-	(bus)
-)
-(connector
-	(pt 2384 264)
-	(pt 2384 248)
-	(bus)
-)
-(connector
-	(pt 2376 264)
-	(pt 2384 264)
-	(bus)
-)
-(connector
-	(pt 2384 264)
-	(pt 2392 264)
 	(bus)
 )
 (connector
@@ -1635,16 +1586,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 2576 328)
 	(pt 2640 328)
-	(bus)
-)
-(connector
-	(pt 2392 280)
-	(pt 2392 296)
-	(bus)
-)
-(connector
-	(pt 2392 296)
-	(pt 2560 296)
 	(bus)
 )
 (connector
@@ -1715,21 +1656,6 @@ refer to the applicable agreement for further details.
 	(pt 1392 424)
 )
 (connector
-	(pt 2392 248)
-	(pt 2392 216)
-	(bus)
-)
-(connector
-	(pt 2384 248)
-	(pt 2392 248)
-	(bus)
-)
-(connector
-	(pt 2392 248)
-	(pt 2576 248)
-	(bus)
-)
-(connector
 	(text "rxdata[15..0]" (rect 2352 200 2411 217)(font "Intel Clear" ))
 	(pt 2392 216)
 	(pt 2352 216)
@@ -1769,17 +1695,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "sip_r[15..0]" (rect 2136 408 2187 425)(font "Intel Clear" ))
-	(pt 2176 424)
-	(pt 2128 424)
-	(bus)
-)
-(connector
-	(pt 2376 296)
-	(pt 2384 296)
-	(bus)
-)
-(connector
 	(text "r7[15..0]" (rect 1336 440 1374 457)(font "Intel Clear" ))
 	(pt 1424 456)
 	(pt 1328 456)
@@ -1814,12 +1729,6 @@ refer to the applicable agreement for further details.
 	(pt 784 216)
 )
 (connector
-	(text "rf_sel[3..0]" (rect 2130 328 2180 345)(font "Intel Clear" ))
-	(pt 2176 344)
-	(pt 2120 344)
-	(bus)
-)
-(connector
 	(pt 2624 280)
 	(pt 2624 208)
 	(bus)
@@ -1848,19 +1757,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "ld_r" (rect 2136 280 2154 297)(font "Intel Clear" ))
-	(pt 2176 296)
-	(pt 2128 296)
-)
-(connector
 	(text "reset" (rect 677 312 700 329)(font "Intel Clear" ))
 	(pt 656 328)
 	(pt 784 328)
-)
-(connector
-	(text "rf_init" (rect 2136 264 2163 281)(font "Intel Clear" ))
-	(pt 2176 280)
-	(pt 2128 280)
 )
 (connector
 	(pt 2104 168)
@@ -1903,29 +1802,9 @@ refer to the applicable agreement for further details.
 	(pt 2552 376)
 )
 (connector
-	(pt 2096 552)
-	(pt 2096 392)
-	(bus)
-)
-(connector
-	(pt 2176 392)
-	(pt 2096 392)
-	(bus)
-)
-(connector
-	(pt 2088 232)
-	(pt 2088 360)
-	(bus)
-)
-(connector
 	(text "operand[15..0]" (rect 2000 344 2068 361)(font "Intel Clear" ))
 	(pt 2064 360)
 	(pt 2088 360)
-	(bus)
-)
-(connector
-	(pt 2088 360)
-	(pt 2176 360)
 	(bus)
 )
 (connector
@@ -2225,17 +2104,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 2384 296)
-	(pt 2384 312)
-	(bus)
-)
-(connector
-	(text "r7[15..0]" (rect 2440 296 2478 313)(font "Intel Clear" ))
-	(pt 2384 312)
-	(pt 2448 312)
-	(bus)
-)
-(connector
 	(pt 3016 -64)
 	(pt 3016 -48)
 	(bus)
@@ -2476,12 +2344,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "memData[15..0]" (rect 2112 488 2188 505)(font "Intel Clear" ))
-	(pt 2176 504)
-	(pt 2104 504)
-	(bus)
-)
-(connector
 	(text "dpcr_lsb_sel" (rect 1296 488 1356 505)(font "Intel Clear" ))
 	(pt 1424 504)
 	(pt 1288 504)
@@ -2501,17 +2363,156 @@ refer to the applicable agreement for further details.
 	(pt 1424 520)
 	(pt 1288 520)
 )
+(connector
+	(pt 2168 248)
+	(pt 2176 248)
+)
+(connector
+	(text "clk" (rect 2151 235 2168 249)(font "Intel Clear" )(vertical))
+	(pt 2168 224)
+	(pt 2168 248)
+)
+(connector
+	(pt 2096 216)
+	(pt 2096 312)
+	(bus)
+)
+(connector
+	(pt 2096 312)
+	(pt 2176 312)
+	(bus)
+)
+(connector
+	(pt 2104 200)
+	(pt 2104 296)
+	(bus)
+)
+(connector
+	(pt 2104 296)
+	(pt 2176 296)
+	(bus)
+)
+(connector
+	(text "sip_r[15..0]" (rect 2136 392 2187 409)(font "Intel Clear" ))
+	(pt 2176 408)
+	(pt 2128 408)
+	(bus)
+)
+(connector
+	(text "rf_sel[3..0]" (rect 2130 312 2180 329)(font "Intel Clear" ))
+	(pt 2176 328)
+	(pt 2120 328)
+	(bus)
+)
+(connector
+	(text "ld_r" (rect 2136 264 2154 281)(font "Intel Clear" ))
+	(pt 2176 280)
+	(pt 2128 280)
+)
+(connector
+	(text "rf_init" (rect 2136 248 2163 265)(font "Intel Clear" ))
+	(pt 2176 264)
+	(pt 2128 264)
+)
+(connector
+	(pt 2096 552)
+	(pt 2096 376)
+	(bus)
+)
+(connector
+	(pt 2096 376)
+	(pt 2176 376)
+	(bus)
+)
+(connector
+	(pt 2088 344)
+	(pt 2176 344)
+	(bus)
+)
+(connector
+	(text "memData[15..0]" (rect 2112 472 2188 489)(font "Intel Clear" ))
+	(pt 2176 488)
+	(pt 2104 488)
+	(bus)
+)
+(connector
+	(pt 2088 232)
+	(pt 2088 344)
+	(bus)
+)
+(connector
+	(pt 2088 344)
+	(pt 2088 360)
+	(bus)
+)
+(connector
+	(text "r7[15..0]" (rect 2440 296 2478 313)(font "Intel Clear" ))
+	(pt 2448 312)
+	(pt 2376 312)
+	(bus)
+)
+(connector
+	(pt 2376 280)
+	(pt 2376 312)
+	(bus)
+)
+(connector
+	(pt 2560 296)
+	(pt 2384 296)
+	(bus)
+)
+(connector
+	(pt 2384 280)
+	(pt 2392 280)
+	(bus)
+)
+(connector
+	(pt 2376 248)
+	(pt 2392 248)
+	(bus)
+)
+(connector
+	(pt 2392 248)
+	(pt 2576 248)
+	(bus)
+)
+(connector
+	(pt 2400 264)
+	(pt 2392 264)
+	(bus)
+)
+(connector
+	(pt 2392 216)
+	(pt 2392 248)
+	(bus)
+)
+(connector
+	(pt 2392 248)
+	(pt 2392 264)
+	(bus)
+)
+(connector
+	(pt 2376 264)
+	(pt 2384 264)
+	(bus)
+)
+(connector
+	(pt 2384 264)
+	(pt 2384 280)
+	(bus)
+)
+(connector
+	(pt 2384 280)
+	(pt 2384 296)
+	(bus)
+)
 (junction (pt 1064 200))
-(junction (pt 2384 264))
-(junction (pt 2392 280))
 (junction (pt 2120 184))
-(junction (pt 2392 248))
 (junction (pt 1816 488))
 (junction (pt 2104 168))
 (junction (pt 2016 -160))
 (junction (pt 2696 -176))
 (junction (pt 3016 -48))
-(junction (pt 2088 360))
 (junction (pt 2928 264))
 (junction (pt 3016 288))
 (junction (pt 1592 152))
@@ -2526,3 +2527,6 @@ refer to the applicable agreement for further details.
 (junction (pt 2280 776))
 (junction (pt 2904 248))
 (junction (pt 1064 144))
+(junction (pt 2088 344))
+(junction (pt 2392 248))
+(junction (pt 2384 280))

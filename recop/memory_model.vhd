@@ -46,8 +46,10 @@ architecture beh of memory is
 	--x"0004",  -- jump to Rx r[1]
 	--am_direct&present&x"2"&x"0",
 	--x"0007", -- should go to next
-	am_inherent&sz&x"1"&x"0",
-	x"0006");
+	--am_inherent&sz&x"1"&x"0",
+	--x"0006",
+	am_inherent&lsip&x"3"&x"0",
+	x"0005");
 	
 	--	X"abcd",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",X"0000",
 	--X"0002",

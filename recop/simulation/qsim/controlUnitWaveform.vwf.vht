@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/16/2024 17:53:03"
+-- Generated on "05/16/2024 18:49:55"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -159,4 +159,100 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clkIn;
+-- sip[15]
+t_prcs_sip_15: PROCESS
+BEGIN
+	sip(15) <= '1';
+WAIT;
+END PROCESS t_prcs_sip_15;
+-- sip[14]
+t_prcs_sip_14: PROCESS
+BEGIN
+	sip(14) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_14;
+-- sip[13]
+t_prcs_sip_13: PROCESS
+BEGIN
+	sip(13) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_13;
+-- sip[12]
+t_prcs_sip_12: PROCESS
+BEGIN
+	sip(12) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_12;
+-- sip[11]
+t_prcs_sip_11: PROCESS
+BEGIN
+	sip(11) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_11;
+-- sip[10]
+t_prcs_sip_10: PROCESS
+BEGIN
+	sip(10) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_10;
+-- sip[9]
+t_prcs_sip_9: PROCESS
+BEGIN
+	sip(9) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_9;
+-- sip[8]
+t_prcs_sip_8: PROCESS
+BEGIN
+	sip(8) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_8;
+-- sip[7]
+t_prcs_sip_7: PROCESS
+BEGIN
+	sip(7) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_7;
+-- sip[6]
+t_prcs_sip_6: PROCESS
+BEGIN
+	sip(6) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_6;
+-- sip[5]
+t_prcs_sip_5: PROCESS
+BEGIN
+	sip(5) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_5;
+-- sip[4]
+t_prcs_sip_4: PROCESS
+BEGIN
+	sip(4) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_4;
+-- sip[3]
+t_prcs_sip_3: PROCESS
+BEGIN
+	sip(3) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_3;
+-- sip[2]
+t_prcs_sip_2: PROCESS
+BEGIN
+	sip(2) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_2;
+-- sip[1]
+t_prcs_sip_1: PROCESS
+BEGIN
+	sip(1) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_1;
+-- sip[0]
+t_prcs_sip_0: PROCESS
+BEGIN
+	sip(0) <= '0';
+WAIT;
+END PROCESS t_prcs_sip_0;
 END progCounterTest_arch;

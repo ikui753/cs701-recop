@@ -112,6 +112,7 @@ architecture behavioral of control_unit is
 				when decode3 =>
 					-- read opcode here
 					case opcodeIn is
+						-- alu operations
 						when andr =>
 							nextState <= execution;
 							rf_sel <= "0011";
@@ -169,6 +170,7 @@ architecture behavioral of control_unit is
 							alu_opsel <= alu_max&"0101"; -- operand and rz
 							nextState <= execution;
 								
+						-- store
 						when str =>
 							nextState <= selStore;
 							stateOut <= "0101";
@@ -188,7 +190,8 @@ architecture behavioral of control_unit is
 									dataSel <= "00";
 								when others =>
 							end case;
-							
+						
+						-- jumps
 						when jmp =>
 							case address_method is 
 								when am_immediate => 
@@ -214,7 +217,8 @@ architecture behavioral of control_unit is
 							stateOut <= "0101";
 							dataSel <= "10"; -- pc count
 							addrSel <= "01"; -- operand
-							
+						
+						-- load
 						when ldr =>
 							nextState <= execution;
 							case address_method is
@@ -236,14 +240,17 @@ architecture behavioral of control_unit is
 									rf_sel <= "1001";
 									addrSel <= "01"; -- address is rxdata
 							end case;
-							
+						
+						-- noop
 						when noop =>
 							nextState <= fetch;
 						
+						-- clf
 						when clfz =>
 							clr_z_flag <= '1'; -- clear z flag
 							nextState <= fetch;
-							
+						
+						-- datacall
 						when datacall =>
 							-- DPCR <- Rx & R7 (concatenate)
 							nextState <= execution;
@@ -251,9 +258,15 @@ architecture behavioral of control_unit is
 						when datacall2 =>
 							-- DPCR <- Rx & operand (concatenate)
 							nextState <= execution;
+						
+						-- lsip
+						when lsip =>
+							rf_sel <= "0101"; -- rZ <- SIP
+							nextState <= execution;
 							
 						when others =>
 							alu_opsel <= "1110000";
+							
 					end case;
 					
 					if opcodeIn = jmp then
@@ -303,6 +316,12 @@ architecture behavioral of control_unit is
 						-- propogate through regfile
 						dpcr_lsb_sel <= '1'; -- dpcr <- Rx & Operand
 						dpcr_wr <= '1';
+						nextState <= fetch;
+					
+					-- lsip
+					elsif opcodeIn = lsip then
+						-- Rz <- SIP
+						ld_r <= '1'; -- load
 						nextState <= fetch;
 						
 					else
