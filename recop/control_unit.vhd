@@ -49,6 +49,8 @@ architecture behavioral of control_unit is
 	 signal nextState : cuStates;
 
  begin
+ 
+	clkOut <= clk;
 
     
 	 
@@ -164,7 +166,7 @@ architecture behavioral of control_unit is
 --		end if;
 --    end process;
 	
-	clkOut <= clk;
+	
 	
 	
 end architecture behavioral;

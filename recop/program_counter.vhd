@@ -12,14 +12,14 @@ entity program_counter is
         -- takes in current count, outputs count
         increment : in bit_4; -- control signal to move onto the next instruction
         clock : in bit_1; -- clock signal
-		  in_count : in bit_16; -- default count value
+		in_count : in bit_16; -- default count value
         alu_count : in bit_16; -- current count
-		  rx_count : in bit_16;
-		  operand_count : in bit_16;
-		  rz_data : in bit_16; -- rz data
-		  z	: in bit_1; -- Z, for SZ Operand
-		  reset : in bit_1;
-		  state : in bit_3;
+		rx_count : in bit_16;
+		operand_count : in bit_16;
+		rz_data : in bit_16; -- rz data
+		z	: in bit_1; -- Z, for SZ Operand
+		reset : in bit_1;
+		state : in bit_3;
         out_count : out bit_16 -- output count
     );
 end program_counter;
@@ -45,7 +45,7 @@ begin
 						 out_count <= operand_count;
 					when "0110" =>
 						 -- PRESENT Rz #Operand -> jump to operand if Rz = 0
-						 if rz_data = "0000000000000000" then
+						 if rz_data = "000000000000000" then
 							  out_count <= operand_count;
 						 else
 							  out_count <= in_count + 2;

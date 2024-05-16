@@ -1,7 +1,7 @@
 # do recop.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:14:56 on May 13,2024
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:01:32 on May 16,2024
 # vcom -work work recop.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,20 +15,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity progCounterTest
 # -- Compiling architecture structure of progCounterTest
-# End time: 23:14:56 on May 13,2024, Elapsed time: 0:00:00
+# End time: 16:01:33 on May 16,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:14:56 on May 13,2024
-# vcom -work work controlUnitWaveform.vwf.vht 
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:01:33 on May 16,2024
+# vcom -work work testprogmem.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity progCounterTest_vhd_vec_tst
 # -- Compiling architecture progCounterTest_arch of progCounterTest_vhd_vec_tst
-# End time: 23:14:56 on May 13,2024, Elapsed time: 0:00:00
+# End time: 16:01:34 on May 16,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst 
-# Start time: 23:14:56 on May 13,2024
+# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst 
+# Start time: 16:01:34 on May 16,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -46,8 +46,21 @@
 # Loading cyclonev.cyclonev_io_ibuf(arch)
 # Loading altera.dffeas(vital_dffeas)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
-# ** Warning: Design size of 164841 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Loading cyclonev.cyclonev_ram_block(block_arch)
+# Loading sv_std.std
+# Loading altera_lnsim.generic_m10k
+# Loading altera_lnsim.altera_lnsim_functions
+# Loading altera_lnsim.common_28nm_ram_block
+# Loading altera_lnsim.common_28nm_ram_register
+# Loading altera_lnsim.common_28nm_ram_pulse_generator
+# ** Warning: Design size of 117833 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
-# End time: 23:14:57 on May 13,2024, Elapsed time: 0:00:01
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# Simulation time: 0 ps
+# End time: 16:01:54 on May 16,2024, Elapsed time: 0:00:20
 # Errors: 0, Warnings: 1

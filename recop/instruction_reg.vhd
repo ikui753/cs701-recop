@@ -23,7 +23,7 @@ architecture behaviour of instruction_reg is
 begin
     process(clock)
     begin
-        if rising_edge(clock) and state = "010" then
+        if rising_edge(clock) then --and state = "010"
 				  address_method <= instruction(31 downto 30);
 				  opcode <= instruction(29 downto 24);
 				  rz <= instruction(23 downto 20);

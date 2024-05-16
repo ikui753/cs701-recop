@@ -42,9 +42,9 @@ USE altera_mf.altera_mf_components.all;
 ENTITY prog_mem IS
 	PORT
 	(
-		address		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+		address		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 		clock		: IN STD_LOGIC  := '1';
-		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 END prog_mem;
 

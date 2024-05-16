@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Wed May 15 16:21:56 2024
+Thu May 16 15:59:54 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,14 +18,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. Registers Removed During Synthesis
  11. Removed Registers Triggering Further Register Optimizations
  12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated
- 16. Parameter Settings for User Entity Instance: prog_mem:inst4|altsyncram:altsyncram_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated
+ 15. Parameter Settings for User Entity Instance: prog_mem:inst4|altsyncram:altsyncram_component
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -51,16 +50,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 15 16:21:56 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 16 15:59:54 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 190                                         ;
-; Total pins                      ; 217                                         ;
+; Total registers                 ; 27                                          ;
+; Total pins                      ; 264                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 524,288                                     ;
+; Total block memory bits         ; 1,048,576                                   ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -171,41 +170,40 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; control_unit.vhd                 ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/control_unit.vhd                               ;         ;
-; various_constants.vhd            ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/various_constants.vhd                          ;         ;
-; registers.vhd                    ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/registers.vhd                                  ;         ;
-; regfile.vhd                      ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/regfile.vhd                                    ;         ;
-; recop_types.vhd                  ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/recop_types.vhd                                ;         ;
-; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; Z:/projects/cs701-recop/recop/prog_mem.vhd                                   ;         ;
-; opcodes.vhd                      ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/opcodes.vhd                                    ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/ALU.vhd                                        ;         ;
-; program_counter.vhd              ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/program_counter.vhd                            ;         ;
-; instruction_reg.vhd              ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/instruction_reg.vhd                            ;         ;
-; progCounterTest.bdf              ; yes             ; User Block Diagram/Schematic File      ; Z:/projects/cs701-recop/recop/progCounterTest.bdf                            ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_fti1.tdf           ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf                         ;         ;
-; assembler/output.mif             ; yes             ; Auto-Found Memory Initialization File  ; Z:/projects/cs701-recop/recop/assembler/output.mif                           ;         ;
-; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/decode_61a.tdf                              ;         ;
-; db/mux_chb.tdf                   ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/mux_chb.tdf                                 ;         ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; assembler/output.mif             ; yes             ; User Memory Initialization File    ; Z:/projects/cs701-recop/recop/assembler/output.mif                           ;         ;
+; control_unit.vhd                 ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/control_unit.vhd                               ;         ;
+; various_constants.vhd            ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/various_constants.vhd                          ;         ;
+; registers.vhd                    ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/registers.vhd                                  ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/regfile.vhd                                    ;         ;
+; recop_types.vhd                  ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/recop_types.vhd                                ;         ;
+; prog_mem.vhd                     ; yes             ; User Wizard-Generated File         ; Z:/projects/cs701-recop/recop/prog_mem.vhd                                   ;         ;
+; opcodes.vhd                      ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/opcodes.vhd                                    ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/ALU.vhd                                        ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/program_counter.vhd                            ;         ;
+; instruction_reg.vhd              ; yes             ; User VHDL File                     ; Z:/projects/cs701-recop/recop/instruction_reg.vhd                            ;         ;
+; progCounterTest.bdf              ; yes             ; User Block Diagram/Schematic File  ; Z:/projects/cs701-recop/recop/progCounterTest.bdf                            ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_sa14.tdf           ; yes             ; Auto-Generated Megafunction        ; Z:/projects/cs701-recop/recop/db/altsyncram_sa14.tdf                         ;         ;
+; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction        ; Z:/projects/cs701-recop/recop/db/decode_61a.tdf                              ;         ;
+; db/mux_ahb.tdf                   ; yes             ; Auto-Generated Megafunction        ; Z:/projects/cs701-recop/recop/db/mux_ahb.tdf                                 ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -213,27 +211,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 115         ;
+; Estimate of Logic utilization (ALMs needed) ; 85          ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 89          ;
+; Combinational ALUT usage for logic          ; 104         ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 32          ;
-;     -- 5 input functions                    ; 4           ;
-;     -- 4 input functions                    ; 2           ;
-;     -- <=3 input functions                  ; 51          ;
+;     -- 6 input functions                    ; 64          ;
+;     -- 5 input functions                    ; 0           ;
+;     -- 4 input functions                    ; 0           ;
+;     -- <=3 input functions                  ; 40          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 190         ;
+; Dedicated logic registers                   ; 27          ;
 ;                                             ;             ;
-; I/O pins                                    ; 217         ;
+; I/O pins                                    ; 264         ;
 ; Total MLAB memory bits                      ; 0           ;
-; Total block memory bits                     ; 524288      ;
+; Total block memory bits                     ; 1048576     ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
-; Maximum fan-out                             ; 319         ;
-; Total fan-out                               ; 3091        ;
-; Average fan-out                             ; 3.68        ;
+; Maximum fan-out                             ; 283         ;
+; Total fan-out                               ; 4462        ;
+; Average fan-out                             ; 4.88        ;
 +---------------------------------------------+-------------+
 
 
@@ -242,29 +240,24 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 89 (1)              ; 190 (0)                   ; 524288            ; 0          ; 217  ; 0            ; |progCounterTest                                                                                                      ; progCounterTest ; work         ;
-;    |alu:inst9|                            ; 6 (6)               ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9                                                                                            ; alu             ; work         ;
-;    |control_unit:inst7|                   ; 6 (6)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                                                   ; control_unit    ; work         ;
-;    |instruction_reg:inst2|                ; 2 (2)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                                                                ; instruction_reg ; work         ;
-;    |prog_mem:inst4|                       ; 56 (0)              ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4                                                                                       ; prog_mem        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 56 (0)              ; 3 (0)                     ; 524288            ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
-;          |altsyncram_fti1:auto_generated| ; 56 (0)              ; 3 (3)                     ; 524288            ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated                        ; altsyncram_fti1 ; work         ;
-;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
-;             |mux_chb:mux2|                ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|mux_chb:mux2           ; mux_chb         ; work         ;
-;    |program_counter:inst|                 ; 17 (17)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst                                                                                 ; program_counter ; work         ;
-;    |regfile:inst3|                        ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                                                        ; regfile         ; work         ;
-;    |registers:inst5|                      ; 0 (0)               ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst5                                                                                      ; registers       ; work         ;
+; |progCounterTest                          ; 104 (0)             ; 27 (0)                    ; 1048576           ; 0          ; 264  ; 0            ; |progCounterTest                                                                                                      ; progCounterTest ; work         ;
+;    |instruction_reg:inst2|                ; 0 (0)               ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                                                                ; instruction_reg ; work         ;
+;    |prog_mem:inst4|                       ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4                                                                                       ; prog_mem        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_sa14:auto_generated| ; 104 (0)             ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated                        ; altsyncram_sa14 ; work         ;
+;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
+;             |mux_ahb:mux2|                ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated|mux_ahb:mux2           ; mux_ahb         ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
-+------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------+
-; Name                                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                  ;
-+------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------+
-; prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 32768        ; 16           ; --           ; --           ; 524288 ; assembler/output.mif ;
-+------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+----------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                    ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+----------------------+
+; Name                                                                                     ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                  ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+----------------------+
+; prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 32768        ; 32           ; --           ; --           ; 1048576 ; assembler/output.mif ;
++------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+----------------------+
 
 
 Encoding Type:  One-Hot
@@ -288,311 +281,395 @@ Encoding Type:  One-Hot
 +-------------------------------------------+---------------------------------------------+
 ; Register name                             ; Reason for Removal                          ;
 +-------------------------------------------+---------------------------------------------+
+; registers:inst5|dpcr[0..31]               ; Stuck at GND due to stuck port clock_enable ;
+; registers:inst5|svop[0..15]               ; Stuck at GND due to stuck port clock_enable ;
+; registers:inst5|sip_r[0..15]              ; Stuck at GND due to stuck port data_in      ;
+; registers:inst5|sop[0..15]                ; Stuck at GND due to stuck port clock_enable ;
 ; registers:inst5|dprr[0]                   ; Stuck at GND due to stuck port clock_enable ;
-; instruction_reg:inst2|rx[0..3]            ; Stuck at GND due to stuck port data_in      ;
-; instruction_reg:inst2|rz[0..3]            ; Stuck at GND due to stuck port data_in      ;
-; instruction_reg:inst2|opcode[0..5]        ; Stuck at GND due to stuck port data_in      ;
-; instruction_reg:inst2|address_method[0,1] ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_sel[0,1,3]          ; Merged with control_unit:inst7|rf_sel[2]    ;
-; control_unit:inst7|increment[2]           ; Merged with control_unit:inst7|increment[1] ;
-; control_unit:inst7|alu_opsel[1..5]        ; Merged with control_unit:inst7|alu_opsel[0] ;
-; regfile:inst3|regs[1][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[1][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[1][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[1][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[1][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[1][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[1][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[2][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[2][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[2][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[2][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[2][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[2][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[2][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[3][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[3][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[3][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[3][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[3][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[3][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[3][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[4][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[4][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[4][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[4][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[4][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[4][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[4][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[5][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[5][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[5][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[5][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[5][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[5][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[5][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[6][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[6][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[6][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[6][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[6][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[6][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[6][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[8][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[8][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[8][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[8][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[8][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[8][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[8][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[9][0]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][1]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][2]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][3]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][4]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][5]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][6]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][7]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][8]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][9]                  ; Lost fanout                                 ;
-; regfile:inst3|regs[9][10]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[9][11]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[9][12]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[9][13]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[9][14]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[9][15]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][0]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][1]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][2]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][3]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][4]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][5]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][6]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][7]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][8]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][9]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[10][10]                ; Lost fanout                                 ;
-; regfile:inst3|regs[10][11]                ; Lost fanout                                 ;
-; regfile:inst3|regs[10][12]                ; Lost fanout                                 ;
-; regfile:inst3|regs[10][13]                ; Lost fanout                                 ;
-; regfile:inst3|regs[10][14]                ; Lost fanout                                 ;
-; regfile:inst3|regs[10][15]                ; Lost fanout                                 ;
-; regfile:inst3|regs[11][0]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][1]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][2]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][3]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][4]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][5]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][6]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][7]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][8]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][9]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[11][10]                ; Lost fanout                                 ;
-; regfile:inst3|regs[11][11]                ; Lost fanout                                 ;
-; regfile:inst3|regs[11][12]                ; Lost fanout                                 ;
-; regfile:inst3|regs[11][13]                ; Lost fanout                                 ;
-; regfile:inst3|regs[11][14]                ; Lost fanout                                 ;
-; regfile:inst3|regs[11][15]                ; Lost fanout                                 ;
-; regfile:inst3|regs[12][0]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][1]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][2]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][3]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][4]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][5]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][6]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][7]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][8]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][9]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[12][10]                ; Lost fanout                                 ;
-; regfile:inst3|regs[12][11]                ; Lost fanout                                 ;
-; regfile:inst3|regs[12][12]                ; Lost fanout                                 ;
-; regfile:inst3|regs[12][13]                ; Lost fanout                                 ;
-; regfile:inst3|regs[12][14]                ; Lost fanout                                 ;
-; regfile:inst3|regs[12][15]                ; Lost fanout                                 ;
-; regfile:inst3|regs[13][0]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][1]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][2]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][3]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][4]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][5]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][6]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][7]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][8]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][9]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[13][10]                ; Lost fanout                                 ;
-; regfile:inst3|regs[13][11]                ; Lost fanout                                 ;
-; regfile:inst3|regs[13][12]                ; Lost fanout                                 ;
-; regfile:inst3|regs[13][13]                ; Lost fanout                                 ;
-; regfile:inst3|regs[13][14]                ; Lost fanout                                 ;
-; regfile:inst3|regs[13][15]                ; Lost fanout                                 ;
-; regfile:inst3|regs[14][0]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][1]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][2]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][3]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][4]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][5]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][6]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][7]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][8]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][9]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[14][10]                ; Lost fanout                                 ;
-; regfile:inst3|regs[14][11]                ; Lost fanout                                 ;
-; regfile:inst3|regs[14][12]                ; Lost fanout                                 ;
-; regfile:inst3|regs[14][13]                ; Lost fanout                                 ;
-; regfile:inst3|regs[14][14]                ; Lost fanout                                 ;
-; regfile:inst3|regs[14][15]                ; Lost fanout                                 ;
-; regfile:inst3|regs[15][0]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][1]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][2]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][3]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][4]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][5]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][6]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][7]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][8]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][9]                 ; Lost fanout                                 ;
-; regfile:inst3|regs[15][10]                ; Lost fanout                                 ;
-; regfile:inst3|regs[15][11]                ; Lost fanout                                 ;
-; regfile:inst3|regs[15][12]                ; Lost fanout                                 ;
-; regfile:inst3|regs[15][13]                ; Lost fanout                                 ;
-; regfile:inst3|regs[15][14]                ; Lost fanout                                 ;
-; regfile:inst3|regs[15][15]                ; Lost fanout                                 ;
+; regfile:inst3|regs[0][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[0]             ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[0][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[1][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[2][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[3][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[4][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[5][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[6][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[7][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[8][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][0]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][1]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][2]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][3]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][4]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][5]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][6]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][7]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][8]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][9]                  ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][10]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][11]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][12]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][13]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][14]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[9][15]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][0]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][1]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][2]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][3]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][4]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][5]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][6]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][7]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][8]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][9]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][10]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][11]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][12]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][13]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][14]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[10][15]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][0]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][1]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][2]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][3]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][4]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][5]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][6]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][7]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][8]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][9]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][10]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][11]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][12]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][13]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][14]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[11][15]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][0]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][1]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][2]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][3]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][4]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][5]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][6]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][7]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][8]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][9]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][10]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][11]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][12]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][13]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][14]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[12][15]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][0]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][1]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][2]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][3]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][4]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][5]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][6]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][7]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][8]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][9]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][10]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][11]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][12]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][13]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][14]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[13][15]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][0]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][1]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][2]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][3]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][4]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][5]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][6]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][7]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][8]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][9]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][10]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][11]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][12]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][13]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][14]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[14][15]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[15][0]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|regs[15][1]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[1]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][2]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[2]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][3]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[3]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][4]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[4]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][5]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[5]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][6]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[6]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][7]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[7]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][8]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[8]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][9]                 ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[9]             ; Lost fanout                                 ;
+; regfile:inst3|regs[15][10]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[10]            ; Lost fanout                                 ;
+; regfile:inst3|regs[15][11]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[11]            ; Lost fanout                                 ;
+; regfile:inst3|regs[15][12]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[12]            ; Lost fanout                                 ;
+; regfile:inst3|regs[15][13]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[13]            ; Lost fanout                                 ;
+; regfile:inst3|regs[15][14]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[14]            ; Lost fanout                                 ;
+; regfile:inst3|regs[15][15]                ; Stuck at GND due to stuck port clock        ;
+; regfile:inst3|data_input_z[15]            ; Lost fanout                                 ;
+; control_unit:inst7|rf_sel[0..3]           ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|alu_opsel[0..5]        ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|ld_r                   ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|stateOut[0..2]         ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|increment[0..2]        ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|increment[3]           ; Stuck at VCC due to stuck port clock        ;
+; alu:inst9|z_flag                          ; Stuck at GND due to stuck port clock        ;
+; alu:inst9|alu_result[0..15]               ; Stuck at GND due to stuck port clock        ;
+; alu:inst9|alu_rz_recv                     ; Stuck at GND due to stuck port clock        ;
+; alu:inst9|alu_rx_recv                     ; Stuck at GND due to stuck port clock        ;
+; alu:inst9|result[0..15]                   ; Lost fanout                                 ;
+; program_counter:inst|out_count[0..15]     ; Stuck at GND due to stuck port clock_enable ;
+; instruction_reg:inst2|rx[0..3]            ; Lost fanout                                 ;
+; instruction_reg:inst2|rz[0..3]            ; Lost fanout                                 ;
 ; registers:inst5|dprr[1]                   ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][0]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][1]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][2]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][3]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][4]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][5]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][6]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][7]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][8]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][9]                  ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][10]                 ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][11]                 ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][12]                 ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][13]                 ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][14]                 ; Stuck at GND due to stuck port data_in      ;
-; regfile:inst3|regs[7][15]                 ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|rf_sel[2]              ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|alu_opsel[0]           ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|stateOut[2]            ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|increment[1]           ; Stuck at GND due to stuck port data_in      ;
-; alu:inst9|result[0]                       ; Stuck at GND due to stuck port data_in      ;
-; alu:inst9|alu_result[0]                   ; Stuck at GND due to stuck port data_in      ;
-; program_counter:inst|out_count[0]         ; Stuck at GND due to stuck port data_in      ;
-; control_unit:inst7|nextState.aluOperation ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 275   ;                                             ;
+; control_unit:inst7|nextState.idle         ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|nextState.fetch        ; Stuck at GND due to stuck port clock        ;
+; control_unit:inst7|nextState.aluOperation ; Lost fanout                                 ;
+; control_unit:inst7|nextState.writeback    ; Lost fanout                                 ;
+; control_unit:inst7|nextState.memory       ; Lost fanout                                 ;
+; control_unit:inst7|nextState.execute      ; Lost fanout                                 ;
+; control_unit:inst7|nextState.decode       ; Lost fanout                                 ;
+; Total Number of Removed Registers = 438   ;                                             ;
 +-------------------------------------------+---------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                       ;
-+---------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                                              ;
-+---------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; instruction_reg:inst2|rx[0]     ; Stuck at GND              ; regfile:inst3|regs[11][0], regfile:inst3|regs[11][1], regfile:inst3|regs[11][2],    ;
-;                                 ; due to stuck port data_in ; regfile:inst3|regs[11][3], regfile:inst3|regs[11][4], regfile:inst3|regs[11][5],    ;
-;                                 ;                           ; regfile:inst3|regs[11][6], regfile:inst3|regs[11][7], regfile:inst3|regs[11][8],    ;
-;                                 ;                           ; regfile:inst3|regs[11][9], regfile:inst3|regs[11][10], regfile:inst3|regs[11][11],  ;
-;                                 ;                           ; regfile:inst3|regs[11][12], regfile:inst3|regs[11][13], regfile:inst3|regs[11][14], ;
-;                                 ;                           ; regfile:inst3|regs[11][15], regfile:inst3|regs[12][0], regfile:inst3|regs[12][1],   ;
-;                                 ;                           ; regfile:inst3|regs[12][2], regfile:inst3|regs[12][3], regfile:inst3|regs[12][4],    ;
-;                                 ;                           ; regfile:inst3|regs[12][5], regfile:inst3|regs[12][6], regfile:inst3|regs[12][7],    ;
-;                                 ;                           ; regfile:inst3|regs[12][8], regfile:inst3|regs[12][9], regfile:inst3|regs[12][10],   ;
-;                                 ;                           ; regfile:inst3|regs[12][11], regfile:inst3|regs[12][12], regfile:inst3|regs[12][13], ;
-;                                 ;                           ; regfile:inst3|regs[12][14], regfile:inst3|regs[12][15], regfile:inst3|regs[13][0],  ;
-;                                 ;                           ; regfile:inst3|regs[13][1], regfile:inst3|regs[13][2], regfile:inst3|regs[13][3],    ;
-;                                 ;                           ; regfile:inst3|regs[13][4], regfile:inst3|regs[13][5], regfile:inst3|regs[13][6],    ;
-;                                 ;                           ; regfile:inst3|regs[13][7], regfile:inst3|regs[13][8], regfile:inst3|regs[13][9],    ;
-;                                 ;                           ; regfile:inst3|regs[13][10], regfile:inst3|regs[13][11], regfile:inst3|regs[13][12], ;
-;                                 ;                           ; regfile:inst3|regs[13][13], regfile:inst3|regs[13][14], regfile:inst3|regs[13][15], ;
-;                                 ;                           ; regfile:inst3|regs[14][0], regfile:inst3|regs[14][1], regfile:inst3|regs[14][2],    ;
-;                                 ;                           ; regfile:inst3|regs[14][3], regfile:inst3|regs[14][4], regfile:inst3|regs[14][5],    ;
-;                                 ;                           ; regfile:inst3|regs[14][6], regfile:inst3|regs[14][7], regfile:inst3|regs[14][8],    ;
-;                                 ;                           ; regfile:inst3|regs[14][9], regfile:inst3|regs[14][10], regfile:inst3|regs[14][11],  ;
-;                                 ;                           ; regfile:inst3|regs[14][12], regfile:inst3|regs[14][13], regfile:inst3|regs[14][14], ;
-;                                 ;                           ; regfile:inst3|regs[14][15], regfile:inst3|regs[15][0], regfile:inst3|regs[15][1],   ;
-;                                 ;                           ; regfile:inst3|regs[15][2], regfile:inst3|regs[15][3], regfile:inst3|regs[15][4],    ;
-;                                 ;                           ; regfile:inst3|regs[15][5], regfile:inst3|regs[15][6], regfile:inst3|regs[15][7],    ;
-;                                 ;                           ; regfile:inst3|regs[15][8], regfile:inst3|regs[15][9], regfile:inst3|regs[15][10],   ;
-;                                 ;                           ; regfile:inst3|regs[15][11], regfile:inst3|regs[15][12], regfile:inst3|regs[15][13], ;
-;                                 ;                           ; regfile:inst3|regs[15][14], regfile:inst3|regs[15][15], alu:inst9|result[0],        ;
-;                                 ;                           ; program_counter:inst|out_count[0]                                                   ;
-; instruction_reg:inst2|rz[0]     ; Stuck at GND              ; regfile:inst3|regs[8][0], regfile:inst3|regs[8][1], regfile:inst3|regs[8][2],       ;
-;                                 ; due to stuck port data_in ; regfile:inst3|regs[8][3], regfile:inst3|regs[8][4], regfile:inst3|regs[8][5],       ;
-;                                 ;                           ; regfile:inst3|regs[8][6], regfile:inst3|regs[8][7], regfile:inst3|regs[8][8],       ;
-;                                 ;                           ; regfile:inst3|regs[8][9], regfile:inst3|regs[8][10], regfile:inst3|regs[8][11],     ;
-;                                 ;                           ; regfile:inst3|regs[8][12], regfile:inst3|regs[8][13], regfile:inst3|regs[8][14],    ;
-;                                 ;                           ; regfile:inst3|regs[8][15]                                                           ;
-; instruction_reg:inst2|opcode[0] ; Stuck at GND              ; control_unit:inst7|rf_sel[2], control_unit:inst7|alu_opsel[0],                      ;
-;                                 ; due to stuck port data_in ; control_unit:inst7|increment[1]                                                     ;
-; control_unit:inst7|stateOut[2]  ; Stuck at GND              ; alu:inst9|alu_result[0]                                                             ;
-;                                 ; due to stuck port data_in ;                                                                                     ;
-+---------------------------------+---------------------------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                  ;
++-----------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+; Register name                     ; Reason for Removal             ; Registers Removed due to This Register                                                  ;
++-----------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
+; control_unit:inst7|stateOut[0]    ; Stuck at GND                   ; alu:inst9|alu_result[0], alu:inst9|alu_result[1], alu:inst9|alu_result[2],              ;
+;                                   ; due to stuck port clock        ; alu:inst9|alu_result[3], alu:inst9|alu_result[4], alu:inst9|alu_result[5],              ;
+;                                   ;                                ; alu:inst9|alu_result[6], alu:inst9|alu_result[7], alu:inst9|alu_result[8],              ;
+;                                   ;                                ; alu:inst9|alu_result[9], alu:inst9|alu_result[10], alu:inst9|alu_result[11],            ;
+;                                   ;                                ; alu:inst9|alu_result[12], alu:inst9|alu_result[13], alu:inst9|alu_result[14],           ;
+;                                   ;                                ; alu:inst9|alu_result[15], alu:inst9|alu_rz_recv, alu:inst9|alu_rx_recv,                 ;
+;                                   ;                                ; alu:inst9|result[15], alu:inst9|result[14], alu:inst9|result[13], alu:inst9|result[12], ;
+;                                   ;                                ; alu:inst9|result[11], alu:inst9|result[10], alu:inst9|result[9], alu:inst9|result[8],   ;
+;                                   ;                                ; alu:inst9|result[7], alu:inst9|result[6], alu:inst9|result[5], alu:inst9|result[4],     ;
+;                                   ;                                ; alu:inst9|result[3], alu:inst9|result[2], alu:inst9|result[1], alu:inst9|result[0]      ;
+; registers:inst5|sip_r[0]          ; Stuck at GND                   ; regfile:inst3|data_input_z[0], regfile:inst3|regs[1][0], regfile:inst3|regs[2][0],      ;
+;                                   ; due to stuck port data_in      ; regfile:inst3|regs[3][0], regfile:inst3|regs[4][0], regfile:inst3|regs[5][0],           ;
+;                                   ;                                ; regfile:inst3|regs[6][0], regfile:inst3|regs[7][0], regfile:inst3|regs[8][0],           ;
+;                                   ;                                ; regfile:inst3|regs[9][0], regfile:inst3|regs[10][0], regfile:inst3|regs[11][0],         ;
+;                                   ;                                ; regfile:inst3|regs[12][0], regfile:inst3|regs[13][0], regfile:inst3|regs[14][0],        ;
+;                                   ;                                ; regfile:inst3|regs[15][0]                                                               ;
+; regfile:inst3|regs[0][0]          ; Stuck at GND                   ; program_counter:inst|out_count[11], program_counter:inst|out_count[12],                 ;
+;                                   ; due to stuck port clock        ; program_counter:inst|out_count[13], program_counter:inst|out_count[14],                 ;
+;                                   ;                                ; program_counter:inst|out_count[15], instruction_reg:inst2|rz[0],                        ;
+;                                   ;                                ; instruction_reg:inst2|rz[1], instruction_reg:inst2|rz[2],                               ;
+;                                   ;                                ; instruction_reg:inst2|rz[3]                                                             ;
+; control_unit:inst7|nextState.idle ; Stuck at GND                   ; control_unit:inst7|nextState.fetch, control_unit:inst7|nextState.aluOperation,          ;
+;                                   ; due to stuck port clock        ; control_unit:inst7|nextState.writeback, control_unit:inst7|nextState.memory,            ;
+;                                   ;                                ; control_unit:inst7|nextState.execute, control_unit:inst7|nextState.decode               ;
+; registers:inst5|dpcr[31]          ; Stuck at GND                   ; instruction_reg:inst2|rx[0], instruction_reg:inst2|rx[1],                               ;
+;                                   ; due to stuck port clock_enable ; instruction_reg:inst2|rx[2], instruction_reg:inst2|rx[3]                                ;
+; registers:inst5|svop[15]          ; Stuck at GND                   ; program_counter:inst|out_count[3]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[13]          ; Stuck at GND                   ; program_counter:inst|out_count[4]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[11]          ; Stuck at GND                   ; program_counter:inst|out_count[5]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[9]           ; Stuck at GND                   ; program_counter:inst|out_count[6]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[7]           ; Stuck at GND                   ; program_counter:inst|out_count[7]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[5]           ; Stuck at GND                   ; program_counter:inst|out_count[8]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[3]           ; Stuck at GND                   ; program_counter:inst|out_count[9]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|svop[1]           ; Stuck at GND                   ; program_counter:inst|out_count[10]                                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|sop[5]            ; Stuck at GND                   ; program_counter:inst|out_count[0]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|sop[3]            ; Stuck at GND                   ; program_counter:inst|out_count[1]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; registers:inst5|sop[1]            ; Stuck at GND                   ; program_counter:inst|out_count[2]                                                       ;
+;                                   ; due to stuck port clock_enable ;                                                                                         ;
+; regfile:inst3|regs[0][1]          ; Stuck at GND                   ; regfile:inst3|data_input_z[1]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][2]          ; Stuck at GND                   ; regfile:inst3|data_input_z[2]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][3]          ; Stuck at GND                   ; regfile:inst3|data_input_z[3]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][4]          ; Stuck at GND                   ; regfile:inst3|data_input_z[4]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][5]          ; Stuck at GND                   ; regfile:inst3|data_input_z[5]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][6]          ; Stuck at GND                   ; regfile:inst3|data_input_z[6]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][7]          ; Stuck at GND                   ; regfile:inst3|data_input_z[7]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][8]          ; Stuck at GND                   ; regfile:inst3|data_input_z[8]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][9]          ; Stuck at GND                   ; regfile:inst3|data_input_z[9]                                                           ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][10]         ; Stuck at GND                   ; regfile:inst3|data_input_z[10]                                                          ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][11]         ; Stuck at GND                   ; regfile:inst3|data_input_z[11]                                                          ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][12]         ; Stuck at GND                   ; regfile:inst3|data_input_z[12]                                                          ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][13]         ; Stuck at GND                   ; regfile:inst3|data_input_z[13]                                                          ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][14]         ; Stuck at GND                   ; regfile:inst3|data_input_z[14]                                                          ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; regfile:inst3|regs[0][15]         ; Stuck at GND                   ; regfile:inst3|data_input_z[15]                                                          ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
+; control_unit:inst7|alu_opsel[5]   ; Stuck at GND                   ; alu:inst9|z_flag                                                                        ;
+;                                   ; due to stuck port clock        ;                                                                                         ;
++-----------------------------------+--------------------------------+-----------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -600,38 +677,27 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 190   ;
-; Number of registers using Synchronous Clear  ; 31    ;
+; Total registers                              ; 27    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 159   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; control_unit:inst7|increment[3]        ; 4       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 5:1                ; 15 bits   ; 45 LEs        ; 0 LEs                ; 45 LEs                 ; Yes        ; |progCounterTest|program_counter:inst|out_count[8] ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|instruction_reg:inst2|operand[15] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated|mux_ahb:mux2|l3_w29_n0_mux_dataout ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------+
-; Source assignments for prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated ;
+; Source assignments for prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                     ;
 +---------------------------------+--------------------+------+----------------------------------------+
@@ -651,7 +717,7 @@ Encoding Type:  One-Hot
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
 ; OPERATION_MODE                     ; ROM                  ; Untyped                         ;
-; WIDTH_A                            ; 16                   ; Signed Integer                  ;
+; WIDTH_A                            ; 32                   ; Signed Integer                  ;
 ; WIDTHAD_A                          ; 15                   ; Signed Integer                  ;
 ; NUMWORDS_A                         ; 32768                ; Signed Integer                  ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
@@ -660,9 +726,9 @@ Encoding Type:  One-Hot
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
 ; INDATA_ACLR_A                      ; NONE                 ; Untyped                         ;
 ; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                         ;
-; WIDTH_B                            ; 1                    ; Untyped                         ;
-; WIDTHAD_B                          ; 1                    ; Untyped                         ;
-; NUMWORDS_B                         ; 1                    ; Untyped                         ;
+; WIDTH_B                            ; 1                    ; Signed Integer                  ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                  ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                  ;
 ; INDATA_REG_B                       ; CLOCK1               ; Untyped                         ;
 ; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
 ; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
@@ -676,9 +742,9 @@ Encoding Type:  One-Hot
 ; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
 ; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                         ;
 ; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                  ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                  ;
 ; RAM_BLOCK_TYPE                     ; M4K                  ; Untyped                         ;
-; BYTE_SIZE                          ; 8                    ; Untyped                         ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                  ;
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
@@ -693,9 +759,9 @@ Encoding Type:  One-Hot
 ; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                         ;
 ; ENABLE_ECC                         ; FALSE                ; Untyped                         ;
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                  ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                         ;
-; CBXI_PARAMETER                     ; altsyncram_fti1      ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_sa14      ; Untyped                         ;
 +------------------------------------+----------------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -708,11 +774,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances                ; 1                                              ;
 ; Entity Instance                           ; prog_mem:inst4|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; ROM                                            ;
-;     -- WIDTH_A                            ; 16                                             ;
+;     -- WIDTH_A                            ; 32                                             ;
 ;     -- NUMWORDS_A                         ; 32768                                          ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
 ;     -- WIDTH_B                            ; 1                                              ;
-;     -- NUMWORDS_B                         ; 1                                              ;
+;     -- NUMWORDS_B                         ; 0                                              ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
 ;     -- RAM_BLOCK_TYPE                     ; M4K                                            ;
@@ -725,26 +791,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 190                         ;
-;     ENA               ; 128                         ;
-;     ENA SCLR          ; 31                          ;
-;     plain             ; 31                          ;
-; arriav_lcell_comb     ; 90                          ;
-;     arith             ; 15                          ;
-;         1 data inputs ; 15                          ;
-;     normal            ; 75                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 29                          ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 4                           ;
-;         6 data inputs ; 32                          ;
-; boundary_port         ; 217                         ;
-; stratixv_ram_block    ; 128                         ;
+; arriav_ff             ; 27                          ;
+;     plain             ; 27                          ;
+; arriav_lcell_comb     ; 106                         ;
+;     normal            ; 106                         ;
+;         0 data inputs ; 2                           ;
+;         3 data inputs ; 40                          ;
+;         6 data inputs ; 64                          ;
+; boundary_port         ; 264                         ;
+; stratixv_ram_block    ; 256                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.20                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -763,7 +821,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed May 15 16:21:34 2024
+    Info: Processing started: Thu May 16 15:59:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -787,8 +845,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file recop_p
     Info (12022): Found design unit 1: recop_pll-SYN File: Z:/projects/cs701-recop/recop/recop_pll.vhd Line: 52
     Info (12023): Found entity 1: recop_pll File: Z:/projects/cs701-recop/recop/recop_pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file prog_mem.vhd
-    Info (12022): Found design unit 1: prog_mem-SYN File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 53
-    Info (12023): Found entity 1: prog_mem File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 43
+    Info (12022): Found design unit 1: prog_mem-SYN File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 52
+    Info (12023): Found entity 1: prog_mem File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 42
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
     Info (12022): Found design unit 1: pll-SYN File: Z:/projects/cs701-recop/recop/pll.vhd Line: 52
     Info (12023): Found entity 1: pll File: Z:/projects/cs701-recop/recop/pll.vhd Line: 42
@@ -819,6 +877,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file topleve
 Info (12021): Found 1 design units, including 1 entities, in source file progcountertest.bdf
     Info (12023): Found entity 1: progCounterTest
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
+Warning (275011): Block or symbol "registers" of instance "inst5" overlaps another block or symbol
+Warning (275011): Block or symbol "control_unit" of instance "inst7" overlaps another block or symbol
+Warning (275011): Block or symbol "alu" of instance "inst9" overlaps another block or symbol
+Warning (275013): Port "clk" of type control_unit and instance "inst7" is missing source signal
+Warning (275009): Pin "dpcr_lsb_sel" not connected
+Warning (275009): Pin "dpcr_wr" not connected
+Warning (275009): Pin "sop_wr" not connected
+Warning (275009): Pin "svop_wr" not connected
+Warning (275009): Pin "sip" not connected
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
 Warning (10492): VHDL Process Statement warning at ALU.vhd(103): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 103
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
@@ -829,103 +896,285 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 37
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(38): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 38
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(39): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(153): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(155): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 155
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Warning (10540): VHDL Signal Declaration warning at regfile.vhd(39): used explicit default value for signal "rx_recv" because signal was never assigned a value File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 39
 Warning (10540): VHDL Signal Declaration warning at regfile.vhd(40): used explicit default value for signal "rz_recv" because signal was never assigned a value File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 40
 Warning (10492): VHDL Process Statement warning at regfile.vhd(56): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 56
 Info (12128): Elaborating entity "prog_mem" for hierarchy "prog_mem:inst4"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Info (12130): Elaborated megafunction instantiation "prog_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Info (12133): Instantiated megafunction "prog_mem:inst4|altsyncram:altsyncram_component" with the following parameter: File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 59
+Info (12130): Elaborated megafunction instantiation "prog_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 59
+Info (12133): Instantiated megafunction "prog_mem:inst4|altsyncram:altsyncram_component" with the following parameter: File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 59
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "assembler/output.mif"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "assembler/output.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "4096"
     Info (12134): Parameter "numwords_a" = "32768"
+    Info (12134): Parameter "numwords_b" = "0"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
     Info (12134): Parameter "ram_block_type" = "M4K"
-    Info (12134): Parameter "widthad_a" = "15"
-    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_b" = "1"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 2621
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_fti1.tdf
-    Info (12023): Found entity 1: altsyncram_fti1 File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 31
-Info (12128): Elaborating entity "altsyncram_fti1" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: Z:/projects/cs701-recop/recop/db/altsyncram_sa14.tdf Line: 5437
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sa14.tdf
+    Info (12023): Found entity 1: altsyncram_sa14 File: Z:/projects/cs701-recop/recop/db/altsyncram_sa14.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_sa14" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
     Info (12023): Found entity 1: decode_61a File: Z:/projects/cs701-recop/recop/db/decode_61a.tdf Line: 22
-Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|decode_61a:rden_decode" File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
-    Info (12023): Found entity 1: mux_chb File: Z:/projects/cs701-recop/recop/db/mux_chb.tdf Line: 22
-Info (12128): Elaborating entity "mux_chb" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated|mux_chb:mux2" File: Z:/projects/cs701-recop/recop/db/altsyncram_fti1.tdf Line: 40
-Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
+Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated|decode_61a:rden_decode" File: Z:/projects/cs701-recop/recop/db/altsyncram_sa14.tdf Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
+    Info (12023): Found entity 1: mux_ahb File: Z:/projects/cs701-recop/recop/db/mux_ahb.tdf Line: 22
+Info (12128): Elaborating entity "mux_ahb" for hierarchy "prog_mem:inst4|altsyncram:altsyncram_component|altsyncram_sa14:auto_generated|mux_ahb:mux2" File: Z:/projects/cs701-recop/recop/db/altsyncram_sa14.tdf Line: 40
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
-Warning (10492): VHDL Process Statement warning at instruction_reg.vhd(26): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/instruction_reg.vhd Line: 26
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst5"
-Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[16]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[17]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[18]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[19]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[20]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[21]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[22]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[23]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[24]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[25]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[26]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[27]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[28]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[29]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[30]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
-Warning (12001): Port "q_a[31]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "prog_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "z_flag" is stuck at GND
+    Warning (13410): Pin "clkOut" is stuck at GND
+    Warning (13410): Pin "alu_rx_recv" is stuck at GND
+    Warning (13410): Pin "alu_rz_recv" is stuck at GND
     Warning (13410): Pin "rz_recv" is stuck at GND
     Warning (13410): Pin "rf_init" is stuck at GND
-    Warning (13410): Pin "increment[2]" is stuck at GND
-    Warning (13410): Pin "increment[1]" is stuck at GND
+    Warning (13410): Pin "ld_r" is stuck at GND
     Warning (13410): Pin "state[2]" is stuck at GND
+    Warning (13410): Pin "state[1]" is stuck at GND
+    Warning (13410): Pin "state[0]" is stuck at GND
     Warning (13410): Pin "rf_sel[3]" is stuck at GND
     Warning (13410): Pin "rf_sel[2]" is stuck at GND
     Warning (13410): Pin "rf_sel[1]" is stuck at GND
     Warning (13410): Pin "rf_sel[0]" is stuck at GND
+    Warning (13410): Pin "sip_r[15]" is stuck at GND
+    Warning (13410): Pin "sip_r[14]" is stuck at GND
+    Warning (13410): Pin "sip_r[13]" is stuck at GND
+    Warning (13410): Pin "sip_r[12]" is stuck at GND
+    Warning (13410): Pin "sip_r[11]" is stuck at GND
+    Warning (13410): Pin "sip_r[10]" is stuck at GND
+    Warning (13410): Pin "sip_r[9]" is stuck at GND
+    Warning (13410): Pin "sip_r[8]" is stuck at GND
+    Warning (13410): Pin "sip_r[7]" is stuck at GND
+    Warning (13410): Pin "sip_r[6]" is stuck at GND
+    Warning (13410): Pin "sip_r[5]" is stuck at GND
+    Warning (13410): Pin "sip_r[4]" is stuck at GND
+    Warning (13410): Pin "sip_r[3]" is stuck at GND
+    Warning (13410): Pin "sip_r[2]" is stuck at GND
+    Warning (13410): Pin "sip_r[1]" is stuck at GND
+    Warning (13410): Pin "sip_r[0]" is stuck at GND
+    Warning (13410): Pin "rxData[15]" is stuck at GND
+    Warning (13410): Pin "rxData[14]" is stuck at GND
+    Warning (13410): Pin "rxData[13]" is stuck at GND
+    Warning (13410): Pin "rxData[12]" is stuck at GND
+    Warning (13410): Pin "rxData[11]" is stuck at GND
+    Warning (13410): Pin "rxData[10]" is stuck at GND
+    Warning (13410): Pin "rxData[9]" is stuck at GND
+    Warning (13410): Pin "rxData[8]" is stuck at GND
+    Warning (13410): Pin "rxData[7]" is stuck at GND
+    Warning (13410): Pin "rxData[6]" is stuck at GND
+    Warning (13410): Pin "rxData[5]" is stuck at GND
+    Warning (13410): Pin "rxData[4]" is stuck at GND
+    Warning (13410): Pin "rxData[3]" is stuck at GND
+    Warning (13410): Pin "rxData[2]" is stuck at GND
+    Warning (13410): Pin "rxData[1]" is stuck at GND
+    Warning (13410): Pin "rxData[0]" is stuck at GND
     Warning (13410): Pin "rx_recv" is stuck at GND
-    Warning (13410): Pin "opcode[5]" is stuck at GND
-    Warning (13410): Pin "opcode[4]" is stuck at GND
-    Warning (13410): Pin "opcode[3]" is stuck at GND
-    Warning (13410): Pin "opcode[2]" is stuck at GND
-    Warning (13410): Pin "opcode[1]" is stuck at GND
-    Warning (13410): Pin "opcode[0]" is stuck at GND
     Warning (13410): Pin "alu_opsel[5]" is stuck at GND
     Warning (13410): Pin "alu_opsel[4]" is stuck at GND
     Warning (13410): Pin "alu_opsel[3]" is stuck at GND
     Warning (13410): Pin "alu_opsel[2]" is stuck at GND
     Warning (13410): Pin "alu_opsel[1]" is stuck at GND
     Warning (13410): Pin "alu_opsel[0]" is stuck at GND
+    Warning (13410): Pin "alu_output[15]" is stuck at GND
+    Warning (13410): Pin "alu_output[14]" is stuck at GND
+    Warning (13410): Pin "alu_output[13]" is stuck at GND
+    Warning (13410): Pin "alu_output[12]" is stuck at GND
+    Warning (13410): Pin "alu_output[11]" is stuck at GND
+    Warning (13410): Pin "alu_output[10]" is stuck at GND
+    Warning (13410): Pin "alu_output[9]" is stuck at GND
+    Warning (13410): Pin "alu_output[8]" is stuck at GND
+    Warning (13410): Pin "alu_output[7]" is stuck at GND
+    Warning (13410): Pin "alu_output[6]" is stuck at GND
+    Warning (13410): Pin "alu_output[5]" is stuck at GND
+    Warning (13410): Pin "alu_output[4]" is stuck at GND
+    Warning (13410): Pin "alu_output[3]" is stuck at GND
+    Warning (13410): Pin "alu_output[2]" is stuck at GND
+    Warning (13410): Pin "alu_output[1]" is stuck at GND
     Warning (13410): Pin "alu_output[0]" is stuck at GND
-    Warning (13410): Pin "am[1]" is stuck at GND
-    Warning (13410): Pin "am[0]" is stuck at GND
+    Warning (13410): Pin "dpcr[31]" is stuck at GND
+    Warning (13410): Pin "dpcr[30]" is stuck at GND
+    Warning (13410): Pin "dpcr[29]" is stuck at GND
+    Warning (13410): Pin "dpcr[28]" is stuck at GND
+    Warning (13410): Pin "dpcr[27]" is stuck at GND
+    Warning (13410): Pin "dpcr[26]" is stuck at GND
+    Warning (13410): Pin "dpcr[25]" is stuck at GND
+    Warning (13410): Pin "dpcr[24]" is stuck at GND
+    Warning (13410): Pin "dpcr[23]" is stuck at GND
+    Warning (13410): Pin "dpcr[22]" is stuck at GND
+    Warning (13410): Pin "dpcr[21]" is stuck at GND
+    Warning (13410): Pin "dpcr[20]" is stuck at GND
+    Warning (13410): Pin "dpcr[19]" is stuck at GND
+    Warning (13410): Pin "dpcr[18]" is stuck at GND
+    Warning (13410): Pin "dpcr[17]" is stuck at GND
+    Warning (13410): Pin "dpcr[16]" is stuck at GND
+    Warning (13410): Pin "dpcr[15]" is stuck at GND
+    Warning (13410): Pin "dpcr[14]" is stuck at GND
+    Warning (13410): Pin "dpcr[13]" is stuck at GND
+    Warning (13410): Pin "dpcr[12]" is stuck at GND
+    Warning (13410): Pin "dpcr[11]" is stuck at GND
+    Warning (13410): Pin "dpcr[10]" is stuck at GND
+    Warning (13410): Pin "dpcr[9]" is stuck at GND
+    Warning (13410): Pin "dpcr[8]" is stuck at GND
+    Warning (13410): Pin "dpcr[7]" is stuck at GND
+    Warning (13410): Pin "dpcr[6]" is stuck at GND
+    Warning (13410): Pin "dpcr[5]" is stuck at GND
+    Warning (13410): Pin "dpcr[4]" is stuck at GND
+    Warning (13410): Pin "dpcr[3]" is stuck at GND
+    Warning (13410): Pin "dpcr[2]" is stuck at GND
+    Warning (13410): Pin "dpcr[1]" is stuck at GND
+    Warning (13410): Pin "dpcr[0]" is stuck at GND
     Warning (13410): Pin "dprr[1]" is stuck at GND
     Warning (13410): Pin "dprr[0]" is stuck at GND
-    Warning (13410): Pin "out_count[0]" is stuck at GND
+    Warning (13410): Pin "increment[3]" is stuck at VCC
+    Warning (13410): Pin "increment[2]" is stuck at GND
+    Warning (13410): Pin "increment[1]" is stuck at GND
+    Warning (13410): Pin "increment[0]" is stuck at GND
+    Warning (13410): Pin "output_count[15]" is stuck at GND
+    Warning (13410): Pin "output_count[14]" is stuck at GND
+    Warning (13410): Pin "output_count[13]" is stuck at GND
+    Warning (13410): Pin "output_count[12]" is stuck at GND
+    Warning (13410): Pin "output_count[11]" is stuck at GND
+    Warning (13410): Pin "output_count[10]" is stuck at GND
+    Warning (13410): Pin "output_count[9]" is stuck at GND
+    Warning (13410): Pin "output_count[8]" is stuck at GND
+    Warning (13410): Pin "output_count[7]" is stuck at GND
+    Warning (13410): Pin "output_count[6]" is stuck at GND
+    Warning (13410): Pin "output_count[5]" is stuck at GND
+    Warning (13410): Pin "output_count[4]" is stuck at GND
+    Warning (13410): Pin "output_count[3]" is stuck at GND
+    Warning (13410): Pin "output_count[2]" is stuck at GND
+    Warning (13410): Pin "output_count[1]" is stuck at GND
+    Warning (13410): Pin "output_count[0]" is stuck at GND
+    Warning (13410): Pin "rzData[15]" is stuck at GND
+    Warning (13410): Pin "rzData[14]" is stuck at GND
+    Warning (13410): Pin "rzData[13]" is stuck at GND
+    Warning (13410): Pin "rzData[12]" is stuck at GND
+    Warning (13410): Pin "rzData[11]" is stuck at GND
+    Warning (13410): Pin "rzData[10]" is stuck at GND
+    Warning (13410): Pin "rzData[9]" is stuck at GND
+    Warning (13410): Pin "rzData[8]" is stuck at GND
+    Warning (13410): Pin "rzData[7]" is stuck at GND
+    Warning (13410): Pin "rzData[6]" is stuck at GND
+    Warning (13410): Pin "rzData[5]" is stuck at GND
+    Warning (13410): Pin "rzData[4]" is stuck at GND
+    Warning (13410): Pin "rzData[3]" is stuck at GND
+    Warning (13410): Pin "rzData[2]" is stuck at GND
+    Warning (13410): Pin "rzData[1]" is stuck at GND
+    Warning (13410): Pin "rzData[0]" is stuck at GND
+    Warning (13410): Pin "sop[15]" is stuck at GND
+    Warning (13410): Pin "sop[14]" is stuck at GND
+    Warning (13410): Pin "sop[13]" is stuck at GND
+    Warning (13410): Pin "sop[12]" is stuck at GND
+    Warning (13410): Pin "sop[11]" is stuck at GND
+    Warning (13410): Pin "sop[10]" is stuck at GND
+    Warning (13410): Pin "sop[9]" is stuck at GND
+    Warning (13410): Pin "sop[8]" is stuck at GND
+    Warning (13410): Pin "sop[7]" is stuck at GND
+    Warning (13410): Pin "sop[6]" is stuck at GND
+    Warning (13410): Pin "sop[5]" is stuck at GND
+    Warning (13410): Pin "sop[4]" is stuck at GND
+    Warning (13410): Pin "sop[3]" is stuck at GND
+    Warning (13410): Pin "sop[2]" is stuck at GND
+    Warning (13410): Pin "sop[1]" is stuck at GND
+    Warning (13410): Pin "sop[0]" is stuck at GND
+    Warning (13410): Pin "svop[15]" is stuck at GND
+    Warning (13410): Pin "svop[14]" is stuck at GND
+    Warning (13410): Pin "svop[13]" is stuck at GND
+    Warning (13410): Pin "svop[12]" is stuck at GND
+    Warning (13410): Pin "svop[11]" is stuck at GND
+    Warning (13410): Pin "svop[10]" is stuck at GND
+    Warning (13410): Pin "svop[9]" is stuck at GND
+    Warning (13410): Pin "svop[8]" is stuck at GND
+    Warning (13410): Pin "svop[7]" is stuck at GND
+    Warning (13410): Pin "svop[6]" is stuck at GND
+    Warning (13410): Pin "svop[5]" is stuck at GND
+    Warning (13410): Pin "svop[4]" is stuck at GND
+    Warning (13410): Pin "svop[3]" is stuck at GND
+    Warning (13410): Pin "svop[2]" is stuck at GND
+    Warning (13410): Pin "svop[1]" is stuck at GND
+    Warning (13410): Pin "svop[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 224 registers lost all their fanouts during netlist optimizations.
+Info (17049): 44 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 585 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 22 input pins
-    Info (21059): Implemented 195 output pins
-    Info (21061): Implemented 240 logic cells
-    Info (21064): Implemented 128 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
-    Info: Peak virtual memory: 4874 megabytes
-    Info: Processing ended: Wed May 15 16:21:56 2024
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:28
+Warning (21074): Design contains 21 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset"
+    Warning (15610): No output dependent on input pin "dpcr_lsb_sel"
+    Warning (15610): No output dependent on input pin "dpcr_wr"
+    Warning (15610): No output dependent on input pin "sop_wr"
+    Warning (15610): No output dependent on input pin "svop_wr"
+    Warning (15610): No output dependent on input pin "sip[15]"
+    Warning (15610): No output dependent on input pin "sip[14]"
+    Warning (15610): No output dependent on input pin "sip[13]"
+    Warning (15610): No output dependent on input pin "sip[12]"
+    Warning (15610): No output dependent on input pin "sip[11]"
+    Warning (15610): No output dependent on input pin "sip[10]"
+    Warning (15610): No output dependent on input pin "sip[9]"
+    Warning (15610): No output dependent on input pin "sip[8]"
+    Warning (15610): No output dependent on input pin "sip[7]"
+    Warning (15610): No output dependent on input pin "sip[6]"
+    Warning (15610): No output dependent on input pin "sip[5]"
+    Warning (15610): No output dependent on input pin "sip[4]"
+    Warning (15610): No output dependent on input pin "sip[3]"
+    Warning (15610): No output dependent on input pin "sip[2]"
+    Warning (15610): No output dependent on input pin "sip[1]"
+    Warning (15610): No output dependent on input pin "sip[0]"
+Info (21057): Implemented 651 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 37 input pins
+    Info (21059): Implemented 227 output pins
+    Info (21061): Implemented 131 logic cells
+    Info (21064): Implemented 256 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 217 warnings
+    Info: Peak virtual memory: 4883 megabytes
+    Info: Processing ended: Thu May 16 15:59:54 2024
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:30
 
 

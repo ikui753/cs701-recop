@@ -1,42 +1,45 @@
 m255
 K4
 z2
+!s11e MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
+dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
 Eprogcountertest
-Z1 w1715598895
-Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
-Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
-Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
-Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z6 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
-Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z10 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
-R0
+Z0 w1715832090
+Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 3HQPc5MVbmOPN?>a5EBYj2
+Z2 DPx8 cyclonev 19 cyclonev_components 0 22 jZ]H46BQLgIP5mfRTO`3B1
+Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ^Ch;U@;bMk1;>A2B<UV`k2
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 26
+Z10 dZ:/projects/cs701-recop/recop/simulation/qsim
 Z11 8recop.vho
 Z12 Frecop.vho
 l0
-L38
-VPigVg_d]aOFBTR?]VYoiP1
-!s100 0]YZKhZ`zD5]mSLhYC@;11
-Z13 OV;C;10.5b;63
+L38 1
+VZd7o19c;fKmZSCY;?]2Zj0
+!s100 RD^mOkR8e3>MGLQ886En[2
+Z13 OV;C;2020.1;71
 32
-Z14 !s110 1715598896
+Z14 !s110 1715832092
 !i10b 1
-Z15 !s108 1715598896.000000
+Z15 !s108 1715832092.000000
 Z16 !s90 -work|work|recop.vho|
 Z17 !s107 recop.vho|
 !i113 1
 Z18 o-work work
 Z19 tExplicit 1 CvgOpt 0
 Astructure
+R1
 R2
 R3
 R4
@@ -45,12 +48,12 @@ R6
 R7
 R8
 R9
-R10
-DEx4 work 15 progcountertest 0 22 PigVg_d]aOFBTR?]VYoiP1
-l1348
-L77
-VYcj>3db;1G75;l9>m[`BE2
-!s100 6O_5NlMOXU6]`>BNb:>N^0
+DEx4 work 15 progcountertest 0 22 Zd7o19c;fKmZSCY;?]2Zj0
+!i122 26
+l1584
+L76 19116
+V83MP@DEBB8:4B>@H^W;cV0
+!s100 OLDN[VR]X:e[MlN>[aBF93
 R13
 32
 R14
@@ -62,41 +65,43 @@ R17
 R18
 R19
 Eprogcountertest_vhd_vec_tst
-Z20 w1715598893
+Z20 w1715832088
+R7
 R8
-R9
-R0
-Z21 8controlUnitWaveform.vwf.vht
-Z22 FcontrolUnitWaveform.vwf.vht
+!i122 27
+R10
+Z21 8testprogmem.vwf.vht
+Z22 Ftestprogmem.vwf.vht
 l0
-L31
+L31 1
 VgbLb09nmT9K_PlI:87AE82
 !s100 YLPEX9<Mkib2d0Nj>G@7d3
 R13
 32
-R14
+Z23 !s110 1715832094
 !i10b 1
-R15
-Z23 !s90 -work|work|controlUnitWaveform.vwf.vht|
-Z24 !s107 controlUnitWaveform.vwf.vht|
+Z24 !s108 1715832093.000000
+Z25 !s90 -work|work|testprogmem.vwf.vht|
+Z26 !s107 testprogmem.vwf.vht|
 !i113 1
 R18
 R19
 Aprogcountertest_arch
+R7
 R8
-R9
-Z25 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
-l108
-L33
-Z26 VhkVaYF0N_fTbKG`]<;LRA2
-Z27 !s100 ?EEPNI4iT4=SDKZBbhkkW3
+Z27 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
+!i122 27
+l106
+L33 232
+VD]Fcm3dKJaz@XJOVGKI8Z0
+!s100 [JCJW:[`:<LcP]Yz1G04a0
 R13
 32
-R14
-!i10b 1
-R15
 R23
+!i10b 1
 R24
+R25
+R26
 !i113 1
 R18
 R19

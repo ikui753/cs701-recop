@@ -12,6 +12,7 @@ package recop_types is
 	subtype bit_18 is std_logic_vector(17 downto 0);
 	subtype bit_17 is std_logic_vector(16 downto 0);
 	subtype bit_16 is std_logic_vector(15 downto 0);
+	subtype bit_15 is std_logic_vector(14 downto 0);
 	subtype bit_13 is std_logic_vector(12 downto 0);
 	subtype bit_12 is std_logic_vector(11 downto 0);
 	subtype bit_11 is std_logic_vector(10 downto 0);
