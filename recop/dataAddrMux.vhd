@@ -15,10 +15,11 @@ entity dataAddrMux is
 		operand : in bit_16;
 		
 		addrSel : in bit_2;
-		dataSel : in bit_1;
+		dataSel : in bit_2;
 		
 		opcode : in bit_6;
 		alu_z : in bit_1;
+		pc_count : in bit_16;
 		
 		addrOut : out bit_16;
 		dataOut : out bit_16;
@@ -45,10 +46,12 @@ begin
 			
 			-- mux to select data to be stored in data memory for store operations 
 			case dataSel is
-				when '0' =>
+				when "00" =>
 					dataOut <= rxData;
-				when '1' =>
+				when "01" =>
 					dataOut <= operand;
+				when "10" =>
+					dataOut <= pc_count; -- store pc count
 				when others =>
 			end case;
 			

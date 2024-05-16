@@ -72,6 +72,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "pc_count[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[0]",
+					"strict" : false
+				},
+				{
 					"name" : "clr_z_flag",
 					"strict" : false
 				},
@@ -368,15 +432,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "dataSel",
-					"strict" : false
-				},
-				{
 					"name" : "alu_z",
 					"strict" : false
 				},
 				{
 					"name" : "addrSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "addrSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel[0]",
 					"strict" : false
 				},
 				{
@@ -712,70 +784,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "out_count[15]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[14]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[13]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[12]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[11]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[10]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[9]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[8]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[7]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[6]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[5]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[4]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[3]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[2]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[1]",
-					"strict" : false
-				},
-				{
-					"name" : "out_count[0]",
-					"strict" : false
-				},
-				{
 					"name" : "sop[15]",
 					"strict" : false
 				},
@@ -972,6 +980,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "sip[15]",
 					"strict" : false
 				},
@@ -1041,10 +1053,6 @@
 				},
 				{
 					"name" : "dpcr_lsb_sel",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				},
 				{

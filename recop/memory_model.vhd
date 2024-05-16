@@ -38,7 +38,7 @@ architecture beh of memory is
 	x"0005",
 	am_inherent&max&x"2"&x"2",
 	x"0003",
-	am_immediate&subr&x"1"&x"2", -- Rz - Operand
+	am_immediate&strpc&x"1"&x"2", -- Rz - Operand
 	x"0004",
 --	am_register&str&x"1"&x"2",
 --	x"0002", -- store M[1] <- RxS

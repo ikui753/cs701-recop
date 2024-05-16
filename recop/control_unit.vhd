@@ -36,7 +36,7 @@ entity control_unit is
         dpcr_wr : out bit_1;
 		  
 		  -- store data signals
-		  dataSel : out bit_1;
+		  dataSel : out bit_2;
 		  addrSel : out bit_2;
 		  wren : out bit_1
 		  
@@ -175,15 +175,15 @@ architecture behavioral of control_unit is
 								when am_immediate =>
 									-- M[Rz] <- Operand
 									addrSel <= "00";
-									dataSel <= '1';
+									dataSel <= "01";
 								when am_direct =>
 									-- M[Operand] <- Rx
 									addrSel <= "10";
-									dataSel <= '0';
+									dataSel <= "00";
 								when am_register =>
 									-- M[Rz] <- Rx
 									addrSel <= "00";
-									dataSel <= '0';
+									dataSel <= "00";
 								when others =>
 							end case;
 							
@@ -206,6 +206,12 @@ architecture behavioral of control_unit is
 						when sz =>
 							-- only one case- PC <- Operand if Z = 1, else next
 							nextState <= execution;
+						
+						when strpc =>
+							nextState <= selstore; -- move to data mux
+							stateOut <= "0101";
+							dataSel <= "10"; -- pc count
+							addrSel <= "01"; -- operand
 							
 						when ldr =>
 							nextState <= execution;
