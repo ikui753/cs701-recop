@@ -916,70 +916,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "svop[15]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[14]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[13]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[12]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[11]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[10]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[9]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[8]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[7]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[6]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[5]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[4]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[3]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[2]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[1]",
-					"strict" : false
-				},
-				{
-					"name" : "svop[0]",
-					"strict" : false
-				},
-				{
 					"name" : "clkIn",
 					"strict" : false
 				},
@@ -1049,10 +985,6 @@
 				},
 				{
 					"name" : "sip[0]",
-					"strict" : false
-				},
-				{
-					"name" : "svop_wr",
 					"strict" : false
 				},
 				{

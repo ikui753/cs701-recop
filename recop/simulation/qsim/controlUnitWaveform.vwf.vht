@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/16/2024 20:30:13"
+-- Generated on "05/17/2024 08:26:09"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -45,7 +45,6 @@ SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_wr : STD_LOGIC;
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL dprr : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
 SIGNAL memData : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -64,8 +63,6 @@ SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL state : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL storedData : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL svop : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL svop_wr : STD_LOGIC;
 SIGNAL wren : STD_LOGIC;
 COMPONENT progCounterTest
 	PORT (
@@ -81,7 +78,6 @@ COMPONENT progCounterTest
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_wr : IN STD_LOGIC;
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
 	memData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -100,8 +96,6 @@ COMPONENT progCounterTest
 	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	state : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	storedData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	svop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	svop_wr : IN STD_LOGIC;
 	wren : OUT STD_LOGIC
 	);
 END COMPONENT;
@@ -121,7 +115,6 @@ BEGIN
 	dm_indata => dm_indata,
 	dm_wr => dm_wr,
 	dpcr => dpcr,
-	dprr => dprr,
 	increment => increment,
 	ld_r => ld_r,
 	memData => memData,
@@ -140,8 +133,6 @@ BEGIN
 	sop => sop,
 	state => state,
 	storedData => storedData,
-	svop => svop,
-	svop_wr => svop_wr,
 	wren => wren
 	);
 
