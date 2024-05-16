@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/16/2024 16:00:46"
+-- Generated on "05/16/2024 17:53:03"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -45,8 +45,6 @@ SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL dm_wr : STD_LOGIC;
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL dpcr_lsb_sel : STD_LOGIC;
-SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL dprr : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
@@ -84,8 +82,6 @@ COMPONENT progCounterTest
 	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	dm_wr : IN STD_LOGIC;
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	dpcr_lsb_sel : IN STD_LOGIC;
-	dpcr_wr : IN STD_LOGIC;
 	dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
@@ -127,8 +123,6 @@ BEGIN
 	dm_indata => dm_indata,
 	dm_wr => dm_wr,
 	dpcr => dpcr,
-	dpcr_lsb_sel => dpcr_lsb_sel,
-	dpcr_wr => dpcr_wr,
 	dprr => dprr,
 	increment => increment,
 	ld_r => ld_r,

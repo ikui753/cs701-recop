@@ -39,6 +39,7 @@ entity control_unit is
 		  dataSel : out bit_2;
 		  addrSel : out bit_2;
 		  wren : out bit_1
+		 
 		  
         -- ... and so on for other control signals
     );
@@ -67,6 +68,7 @@ architecture behavioral of control_unit is
 				when fetch =>
 					wren <= '0';
 					ld_r <= '0';
+					
 					clr_z_flag <= '0';
 --					alu_opsel <= "1110000";
 					if (opcodeIn = jmp) or (opcodeIn = present) or (opcodeIn = sz) then
@@ -89,6 +91,7 @@ architecture behavioral of control_unit is
 					
 				when fetch2 =>
 					ld_r <= '0'; -- disable
+					dpcr_wr <= '0';
 					-- instruction passed through instruction register
 					increment <= "0000"; -- stop incrementing
 					stateOut <= "0010";
@@ -108,7 +111,6 @@ architecture behavioral of control_unit is
 				
 				when decode3 =>
 					-- read opcode here
-					-- alu_opsel <= "1110000"; -- default value
 					case opcodeIn is
 						when andr =>
 							nextState <= execution;
@@ -242,6 +244,14 @@ architecture behavioral of control_unit is
 							clr_z_flag <= '1'; -- clear z flag
 							nextState <= fetch;
 							
+						when datacall =>
+							-- DPCR <- Rx & R7 (concatenate)
+							nextState <= execution;
+							
+						when datacall2 =>
+							-- DPCR <- Rx & operand (concatenate)
+							nextState <= execution;
+							
 						when others =>
 							alu_opsel <= "1110000";
 					end case;
@@ -280,6 +290,21 @@ architecture behavioral of control_unit is
 					-- present 
 					elsif opcodeIn = present then
 						nextState <= fetch; 
+					
+					-- datacall
+					elsif opcodeIn = datacall then
+						-- propogate through regfile
+						dpcr_lsb_sel <= '0'; -- dpcr <- Rx & R7
+						dpcr_wr <= '1';
+						nextState <= fetch;
+						
+					-- datacall2
+					elsif opcodeIn = datacall2 then
+						-- propogate through regfile
+						dpcr_lsb_sel <= '1'; -- dpcr <- Rx & Operand
+						dpcr_wr <= '1';
+						nextState <= fetch;
+						
 					else
 						nextState <= fetch;
 						if opcodeIn = ldr then

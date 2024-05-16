@@ -26,20 +26,18 @@ entity memory is
 end memory;
 
 architecture beh of memory is
-	type memory_array is array (0 to 13) of bit_16;
+	type memory_array is array (0 to 9) of bit_16;
 	signal memory: memory_array:=(
 	x"0000", -- no operation
 	x"0000", -- no operation
-	am_immediate&str&x"1"&x"0",
+	am_immediate&ldr&x"1"&x"0",
 	x"0007", -- ldr Rz Operand load 7 into memory loc $1
-	am_direct&noop&x"4"&x"3",
-	x"0009",
-	am_direct&ldr&x"3"&x"0",
-	x"0001", -- load m[1] into 3
-	am_register&ldr&x"2"&x"3",
-	x"0005", -- ld $2, m[reg[3]=1]
-	am_inherent&max&x"2"&x"2",
-	x"0003",
+--	am_immediate&ldr&x"2"&x"3",
+--	x"0008",
+	am_inherent&datacall&x"8"&x"1",
+	x"0004", -- dpcr Rx (1) & R7 
+	am_direct&datacall2&x"8"&x"1",
+	x"0019", -- dpcr Rx (1) & Operand
 --	am_immediate&strpc&x"1"&x"2", -- Rz - Operand
 --	x"0004",
 --	am_register&str&x"1"&x"2",

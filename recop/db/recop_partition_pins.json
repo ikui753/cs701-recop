@@ -1048,14 +1048,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "dpcr_wr",
-					"strict" : false
-				},
-				{
-					"name" : "dpcr_lsb_sel",
-					"strict" : false
-				},
-				{
 					"name" : "sop_wr",
 					"strict" : false
 				},
