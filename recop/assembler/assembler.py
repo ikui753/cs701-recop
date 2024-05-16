@@ -74,13 +74,16 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
         # Determine addressing mode and operands and rx
         parts_len = len(parts)
         try:
+            # check last input for addressing method
             match parts[parts_len - 1][0]:
                 case "#":
                     am = AddressingMode.IMMEDIATE
                     operand = int(parts[parts_len - 1][1:], 0)
+                    rx = get_register(parts[parts_len - 2])
                 case "$":
                     am = AddressingMode.DIRECT
                     operand = int(parts[parts_len - 1][1:], 0)
+                    rx = get_register(parts[parts_len - 2])
                 case "R":
                     am = AddressingMode.REGISTER
                     rx = get_register(parts[parts_len - 1])
