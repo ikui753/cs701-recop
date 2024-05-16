@@ -104,7 +104,7 @@ BEGIN
 	)
 	PORT MAP (
 		address_a => address,
-		clock0 => clock,
+		clock0 => not(clock),
 		q_a => sub_wire0
 	);
 
