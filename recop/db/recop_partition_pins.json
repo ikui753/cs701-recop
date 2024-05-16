@@ -232,6 +232,182 @@
 					"strict" : false
 				},
 				{
+					"name" : "memData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "memData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "wren",
+					"strict" : false
+				},
+				{
+					"name" : "alu_z",
+					"strict" : false
+				},
+				{
+					"name" : "addrSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "addrSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dataSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[5]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[4]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[3]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rzData[0]",
+					"strict" : false
+				},
+				{
 					"name" : "rf_sel[3]",
 					"strict" : false
 				},
@@ -320,70 +496,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "rzData[15]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[14]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[13]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[12]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[11]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[10]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[9]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[8]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[7]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rzData[0]",
-					"strict" : false
-				},
-				{
 					"name" : "state[3]",
 					"strict" : false
 				},
@@ -400,59 +512,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "opcode[5]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[4]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[3]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[2]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[1]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[0]",
-					"strict" : false
-				},
-				{
 					"name" : "present_sz_jmp[1]",
 					"strict" : false
 				},
 				{
 					"name" : "present_sz_jmp[0]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_z",
-					"strict" : false
-				},
-				{
-					"name" : "addrSel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "addrSel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dataSel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dataSel[0]",
-					"strict" : false
-				},
-				{
-					"name" : "wren",
 					"strict" : false
 				},
 				{
@@ -653,70 +717,6 @@
 				},
 				{
 					"name" : "dpcr[0]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[15]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[14]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[13]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[12]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[11]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[10]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[9]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[8]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[7]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "memData[0]",
 					"strict" : false
 				},
 				{

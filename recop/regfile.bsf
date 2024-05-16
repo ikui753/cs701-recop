@@ -129,6 +129,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 256)(pt 16 256)(line_width 1))
 	)
 	(port
+		(pt 0 272)
+		(input)
+		(text "mem_data[15..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "mem_data[15..0]" (rect 21 267 88 279)(font "Arial" ))
+		(line (pt 0 272)(pt 16 272)(line_width 3))
+	)
+	(port
 		(pt 200 32)
 		(output)
 		(text "rx[15..0]" (rect 0 0 31 12)(font "Arial" ))
