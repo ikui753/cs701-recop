@@ -48,6 +48,8 @@ begin
 				operand_1 <= X"0001";
 			when "11" =>
 				operand_1 <= rz;
+			when others =>
+				operand_1 <= x"0000";
 		end case;
 	end process op1_select;
 	
@@ -62,7 +64,7 @@ begin
 			when "10" =>
 				operand_2 <= ir_operand;
 			when others =>
-			
+				operand_2 <= x"0000";
 		end case;
 	end process op2_select;
 	
@@ -106,13 +108,15 @@ begin
 			if clr_z_flag = '1' then
 				z_flag <= '0';
 			-- if alu is working (operation is valid)
-			elsif alu_operation(2) = '0' then
-				if result = X"0000" then
-					z_flag <= '1';
-				else
-					z_flag <= '0';
-				end if;
+			--elsif alu_operation(2) = '0' then
 			end if;
+			
+			if result = X"0000" then
+				z_flag <= '1';
+			else
+				z_flag <= '0';
+			end if;	
+
 		end if;
 	end process z1gen;
 
