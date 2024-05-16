@@ -37,6 +37,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -55,6 +56,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -1689,7 +1691,7 @@ SIGNAL("alu_opsel[0]")
 	PARENT = "alu_opsel";
 }
 
-SIGNAL("z_flag")
+SIGNAL("alu_z")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -3000,7 +3002,7 @@ TRANSITION_LIST("alu_opsel[0]")
 	}
 }
 
-TRANSITION_LIST("z_flag")
+TRANSITION_LIST("alu_z")
 {
 	NODE
 	{
@@ -4584,7 +4586,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "z_flag";
+	CHANNEL = "alu_z";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 158;

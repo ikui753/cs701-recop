@@ -68,7 +68,7 @@ architecture behavioral of control_unit is
 					wren <= '0';
 					ld_r <= '0';
 					clr_z_flag <= '0';
-					alu_opsel <= "1110000";
+--					alu_opsel <= "1110000";
 					if (opcodeIn = jmp) or (opcodeIn = present) or (opcodeIn = sz) then
 						-- count already sorted, proceed to next fetch step
 						if present_sz_jmp = "01" and opcodeIn = present then
@@ -94,7 +94,7 @@ architecture behavioral of control_unit is
 					stateOut <= "0010";
 					nextState <= decode;
 					
-				when decode => -- actual decode, am, operand, opcode now available 				
+				when decode => -- actual decode, am, operand, opcode now available 
 					-- increment <= "0000";
 					stateOut <= "0011"; 
 					nextState <= decode2;
@@ -108,7 +108,7 @@ architecture behavioral of control_unit is
 				
 				when decode3 =>
 					-- read opcode here
-					alu_opsel <= "1110000"; -- default value
+					-- alu_opsel <= "1110000"; -- default value
 					case opcodeIn is
 						when andr =>
 							nextState <= execution;
@@ -272,7 +272,9 @@ architecture behavioral of control_unit is
 						nextState <= fetch; 
 					else
 						nextState <= fetch;
-						ld_r <= '1';
+						if opcodeIn = ldr then
+							ld_r <= '1';
+						end if;
 					end if;
 					
 					stateOut <= "0110";

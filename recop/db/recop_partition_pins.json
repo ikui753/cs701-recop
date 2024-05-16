@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "z_flag",
-					"strict" : false
-				},
-				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -76,15 +72,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "increment[3]",
+					"name" : "clr_z_flag",
 					"strict" : false
 				},
 				{
-					"name" : "increment[2]",
+					"name" : "alu_opsel[6]",
 					"strict" : false
 				},
 				{
-					"name" : "increment[0]",
+					"name" : "alu_opsel[5]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_opsel[4]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_opsel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_opsel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_opsel[0]",
 					"strict" : false
 				},
 				{
@@ -232,6 +244,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "increment[3]",
+					"strict" : false
+				},
+				{
+					"name" : "increment[2]",
+					"strict" : false
+				},
+				{
+					"name" : "increment[0]",
+					"strict" : false
+				},
+				{
 					"name" : "rzData[15]",
 					"strict" : false
 				},
@@ -348,35 +372,11 @@
 					"strict" : false
 				},
 				{
+					"name" : "alu_z",
+					"strict" : false
+				},
+				{
 					"name" : "addrSel[1]",
-					"strict" : false
-				},
-				{
-					"name" : "clr_z_flag",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[6]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[5]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[4]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[3]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[2]",
-					"strict" : false
-				},
-				{
-					"name" : "alu_opsel[0]",
 					"strict" : false
 				},
 				{

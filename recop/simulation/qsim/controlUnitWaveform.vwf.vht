@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/16/2024 13:50:42"
+-- Generated on "05/16/2024 14:23:12"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -36,6 +36,7 @@ ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
 SIGNAL addrSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL alu_opsel : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL alu_output : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL alu_z : STD_LOGIC;
 SIGNAL am : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL clkIn : STD_LOGIC;
@@ -69,12 +70,12 @@ SIGNAL storedData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL svop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL svop_wr : STD_LOGIC;
 SIGNAL wren : STD_LOGIC;
-SIGNAL z_flag : STD_LOGIC;
 COMPONENT progCounterTest
 	PORT (
 	addrSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	alu_opsel : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	alu_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	alu_z : OUT STD_LOGIC;
 	am : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	clk : OUT STD_LOGIC;
 	clkIn : IN STD_LOGIC;
@@ -107,8 +108,7 @@ COMPONENT progCounterTest
 	storedData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	svop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	svop_wr : IN STD_LOGIC;
-	wren : OUT STD_LOGIC;
-	z_flag : OUT STD_LOGIC
+	wren : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
@@ -118,6 +118,7 @@ BEGIN
 	addrSel => addrSel,
 	alu_opsel => alu_opsel,
 	alu_output => alu_output,
+	alu_z => alu_z,
 	am => am,
 	clk => clk,
 	clkIn => clkIn,
@@ -150,8 +151,7 @@ BEGIN
 	storedData => storedData,
 	svop => svop,
 	svop_wr => svop_wr,
-	wren => wren,
-	z_flag => z_flag
+	wren => wren
 	);
 
 -- clkIn

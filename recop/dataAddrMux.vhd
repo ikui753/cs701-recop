@@ -18,6 +18,7 @@ entity dataAddrMux is
 		dataSel : in bit_1;
 		
 		opcode : in bit_6;
+		alu_z : in bit_1;
 		
 		addrOut : out bit_16;
 		dataOut : out bit_16;
@@ -56,10 +57,10 @@ begin
 				present_sz_jmp <= "01"; -- jump to operand
 			elsif rzData > x"0000" and opcode = present then 
 				present_sz_jmp <= "00"; -- next
-			elsif rzData = x"0001" and opcode = sz then
+			elsif alu_z = '1' and opcode = sz then
 				-- sz operand if rz = 1
 				present_sz_jmp <= "10";
-			elsif (opcode = sz and rzData > x"0001") or (opcode = sz and rzData = x"0000") then
+			elsif alu_z = '0' then
 				-- otherwise, next
 				present_sz_jmp <= "00";
 			else
