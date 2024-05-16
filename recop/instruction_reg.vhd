@@ -8,8 +8,7 @@ use work.opcodes.all;
 entity instruction_reg is
     port(
             clock : in bit_1; -- clock
-            instruction : in bit_16; -- full instruction
-		    operandIn : in bit_16; -- operand
+            instruction : in bit_32; -- full instruction
 		    state : in bit_4;
             address_method : out bit_2; -- am
             opcode : out bit_6; -- opcode
@@ -33,6 +32,3 @@ begin
         end if;
     end process;
 end architecture;
-
-
-
