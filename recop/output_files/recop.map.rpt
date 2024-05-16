@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Thu May 16 20:56:11 2024
+Thu May 16 22:57:29 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,13 +52,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 16 20:56:11 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 16 22:57:29 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 496                                         ;
+; Total registers                 ; 494                                         ;
 ; Total pins                      ; 284                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,114,112                                   ;
@@ -220,16 +220,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 501         ;
+; Estimate of Logic utilization (ALMs needed) ; 508         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 571         ;
-;     -- 7 input functions                    ; 16          ;
-;     -- 6 input functions                    ; 323         ;
-;     -- 5 input functions                    ; 100         ;
-;     -- 4 input functions                    ; 42          ;
-;     -- <=3 input functions                  ; 90          ;
+; Combinational ALUT usage for logic          ; 577         ;
+;     -- 7 input functions                    ; 17          ;
+;     -- 6 input functions                    ; 327         ;
+;     -- 5 input functions                    ; 111         ;
+;     -- 4 input functions                    ; 36          ;
+;     -- <=3 input functions                  ; 86          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 496         ;
+; Dedicated logic registers                   ; 494         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 284         ;
 ; Total MLAB memory bits                      ; 0           ;
@@ -238,9 +238,9 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
-; Maximum fan-out                             ; 769         ;
-; Total fan-out                               ; 8847        ;
-; Average fan-out                             ; 4.64        ;
+; Maximum fan-out                             ; 767         ;
+; Total fan-out                               ; 8884        ;
+; Average fan-out                             ; 4.65        ;
 +---------------------------------------------+-------------+
 
 
@@ -249,9 +249,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 571 (0)             ; 496 (0)                   ; 1114112           ; 0          ; 284  ; 0            ; |progCounterTest                                                                                                      ; progCounterTest ; work         ;
+; |progCounterTest                          ; 577 (0)             ; 494 (0)                   ; 1114112           ; 0          ; 284  ; 0            ; |progCounterTest                                                                                                      ; progCounterTest ; work         ;
 ;    |alu:inst9|                            ; 53 (53)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9                                                                                            ; alu             ; work         ;
-;    |control_unit:inst7|                   ; 70 (70)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                                                   ; control_unit    ; work         ;
+;    |control_unit:inst7|                   ; 76 (76)             ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                                                   ; control_unit    ; work         ;
 ;    |dataAddrMux:inst6|                    ; 4 (4)               ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|dataAddrMux:inst6                                                                                    ; dataAddrMux     ; work         ;
 ;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4                                                                                       ; data_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
@@ -311,8 +311,10 @@ Encoding Type:  One-Hot
 ; control_unit:inst7|increment[1]         ; Stuck at GND due to stuck port data_in      ;
 ; control_unit:inst7|rf_sel[2]            ; Stuck at GND due to stuck port data_in      ;
 ; control_unit:inst7|alu_opsel[1]         ; Stuck at GND due to stuck port data_in      ;
+; control_unit:inst7|nextState.fetch2     ; Lost fanout                                 ;
 ; control_unit:inst7|nextState.delayStore ; Lost fanout                                 ;
-; Total Number of Removed Registers = 7   ;                                             ;
+; control_unit:inst7|nextState.decode2    ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 9   ;                                             ;
 +-----------------------------------------+---------------------------------------------+
 
 
@@ -321,12 +323,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 496   ;
-; Number of registers using Synchronous Clear  ; 53    ;
+; Total registers                              ; 494   ;
+; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 44    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 377   ;
+; Number of registers using Clock Enable       ; 371   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -356,11 +358,11 @@ Encoding Type:  One-Hot
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux47                                                                                             ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux53                                                                                             ;
 ; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|prog_mem:inst1|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2|l3_w3_n0_mux_dataout ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux47                                                                                        ;
-; 66:1               ; 8 bits    ; 352 LEs       ; 48 LEs               ; 304 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                    ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux51                                                                                        ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux48                                                                                        ;
-; 67:1               ; 3 bits    ; 132 LEs       ; 21 LEs               ; 111 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                    ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux60                                                                                        ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux64                                                                                        ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|Mux61                                                                                        ;
+; 67:1               ; 6 bits    ; 264 LEs       ; 30 LEs               ; 234 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                    ;
+; 68:1               ; 5 bits    ; 225 LEs       ; 35 LEs               ; 190 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -540,32 +542,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 496                         ;
-;     ENA               ; 340                         ;
-;     ENA SCLR          ; 21                          ;
+; arriav_ff             ; 494                         ;
+;     ENA               ; 339                         ;
+;     ENA SCLR          ; 16                          ;
 ;     ENA SLD           ; 16                          ;
 ;     SCLR              ; 32                          ;
 ;     SLD               ; 28                          ;
-;     plain             ; 59                          ;
-; arriav_lcell_comb     ; 573                         ;
+;     plain             ; 63                          ;
+; arriav_lcell_comb     ; 579                         ;
 ;     arith             ; 33                          ;
 ;         1 data inputs ; 17                          ;
 ;         5 data inputs ; 16                          ;
-;     extend            ; 16                          ;
-;         7 data inputs ; 16                          ;
-;     normal            ; 524                         ;
+;     extend            ; 17                          ;
+;         7 data inputs ; 17                          ;
+;     normal            ; 529                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 64                          ;
-;         4 data inputs ; 42                          ;
-;         5 data inputs ; 84                          ;
-;         6 data inputs ; 323                         ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 62                          ;
+;         4 data inputs ; 36                          ;
+;         5 data inputs ; 95                          ;
+;         6 data inputs ; 327                         ;
 ; boundary_port         ; 284                         ;
 ; stratixv_ram_block    ; 272                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.35                        ;
+; Average LUT depth     ; 3.36                        ;
 +-----------------------+-----------------------------+
 
 
@@ -584,7 +586,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 16 20:55:57 2024
+    Info: Processing started: Thu May 16 22:57:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -671,7 +673,7 @@ Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used i
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(35): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 35
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(36): used implicit default value for signal "dpcr_lsb_sel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 36
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(37): used implicit default value for signal "dpcr_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(287): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 287
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(291): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 291
 Info (12128): Elaborating entity "dataAddrMux" for hierarchy "dataAddrMux:inst6"
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "prog_mem" for hierarchy "prog_mem:inst1"
@@ -697,8 +699,8 @@ Warning (287001): Assertion warning: Device family Cyclone V does not have M4K b
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dti1.tdf
     Info (12023): Found entity 1: altsyncram_dti1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_dti1" for hierarchy "prog_mem:inst1|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (113028): 1022 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
-    Warning (113027): Addresses ranging from 2 to 1023 are not initialized File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+Warning (113028): 1021 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+    Warning (113027): Addresses ranging from 3 to 1023 are not initialized File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
 Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
     Info (12023): Found entity 1: decode_61a File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/decode_61a.tdf Line: 22
@@ -760,17 +762,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "dprr[1]" is stuck at GND
     Warning (13410): Pin "dprr[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1549 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1554 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 262 output pins
-    Info (21061): Implemented 993 logic cells
+    Info (21061): Implemented 998 logic cells
     Info (21064): Implemented 272 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4924 megabytes
-    Info: Processing ended: Thu May 16 20:56:11 2024
+    Info: Peak virtual memory: 4922 megabytes
+    Info: Processing ended: Thu May 16 22:57:29 2024
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:12
 

@@ -59,7 +59,7 @@ architecture behavioral of control_unit is
 		if rising_edge(clk) then
 			case currentState is
 				when idle =>
-					increment <= "1000"; -- set PC to 0
+					increment <= "0000"; -- set PC to 0
 					stateOut <= "0000";
 					ld_r <= '0'; -- load alu result
 					nextState <= fetch;
@@ -68,6 +68,7 @@ architecture behavioral of control_unit is
 					wren <= '0';
 					ld_r <= '0';
 					alu_opsel <= "0000000";
+					
 					if opcodeIn = jmp or opcodeIn = present then
 						-- count already sorted, proceed to next fetch step
 						if presentJmp = '1' and opcodeIn = present then
@@ -79,20 +80,20 @@ architecture behavioral of control_unit is
 						increment <= "0001"; -- increment program counter, move to next instruction
 					end if;
 					
-					nextState <= fetch2;
+					nextState <= decode;
 					stateOut <= "0001";
 					
-				when fetch2 =>
-					ld_r <= '0'; -- disable
-					-- instruction passed through instruction register
-					increment <= "0000"; -- stop incrementing
-					stateOut <= "0010";
-					nextState <= decode;
+--				when fetch2 =>
+--					ld_r <= '0'; -- disable
+--					-- instruction passed through instruction register
+--					increment <= "0000"; -- stop incrementing
+--					stateOut <= "0010";
+--					nextState <= decode;
 					
 				when decode => -- actual decode, am, operand, opcode now available 				
 					-- increment <= "0000";
 					stateOut <= "0011"; 
-					nextState <= decode2;
+					nextState <= decode3;
 					
 				when decode2 => -- note names tbd
 					-- allow one cycle for control unit to receive inputs
@@ -102,6 +103,7 @@ architecture behavioral of control_unit is
 					nextState <= decode3;
 				
 				when decode3 =>
+					ld_r <= '0';
 					-- read opcode here
 					case opcodeIn is
 						when andr =>
@@ -200,13 +202,15 @@ architecture behavioral of control_unit is
 							nextState <= execution; -- ? selStore can check Rx and Rz
 							
 						when ldr =>
-							nextState <= execution;
+							--nextState <= execution;
 							case address_method is
 								when am_inherent =>
 									-- do nothing
 								when am_immediate =>
 									-- Rz <- Operand
 									rf_sel <= "0000"; -- set to operand
+									ld_r <= '1';
+									nextState <= fetch;
 
 								when am_direct => -- NEED TO FIX THIS ONE
 									-- Rz <- M[Operand]
