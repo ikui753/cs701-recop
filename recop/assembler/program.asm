@@ -1,4 +1,4 @@
-LDR R1 #7
-OR R1 R2 
+LDR R1 R0 #7
+OR R1 R2  
 LDR R3 #9
 STR R3 $5
