@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/15/2024 22:40:33"
+-- Generated on "05/16/2024 18:07:27"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -40,19 +40,17 @@ SIGNAL am : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL clkIn : STD_LOGIC;
 SIGNAL dataSel : STD_LOGIC;
-SIGNAL dm_indata : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL dm_wr : STD_LOGIC;
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL dpcr_lsb_sel : STD_LOGIC;
 SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL dprr : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL instruct : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
 SIGNAL memData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL operand_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL out_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL pm_outdata : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL presentJmp : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
 SIGNAL rf_init : STD_LOGIC;
@@ -78,19 +76,17 @@ COMPONENT progCounterTest
 	clk : OUT STD_LOGIC;
 	clkIn : IN STD_LOGIC;
 	dataSel : OUT STD_LOGIC;
-	dm_indata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	dm_wr : IN STD_LOGIC;
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	dpcr_lsb_sel : IN STD_LOGIC;
 	dpcr_wr : IN STD_LOGIC;
 	dprr : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	instruct : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
 	memData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	operand_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	out_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	pm_outdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	presentJmp : OUT STD_LOGIC;
 	reset : IN STD_LOGIC;
 	rf_init : OUT STD_LOGIC;
@@ -120,19 +116,17 @@ BEGIN
 	clk => clk,
 	clkIn => clkIn,
 	dataSel => dataSel,
-	dm_indata => dm_indata,
-	dm_wr => dm_wr,
 	dpcr => dpcr,
 	dpcr_lsb_sel => dpcr_lsb_sel,
 	dpcr_wr => dpcr_wr,
 	dprr => dprr,
 	increment => increment,
+	instruct => instruct,
 	ld_r => ld_r,
 	memData => memData,
 	opcode => opcode,
 	operand_out => operand_out,
 	out_count => out_count,
-	pm_outdata => pm_outdata,
 	presentJmp => presentJmp,
 	reset => reset,
 	rf_init => rf_init,

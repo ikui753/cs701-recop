@@ -36,7 +36,7 @@ begin
 					when "0000" =>
 						 out_count <= in_count; -- don't increment instruction/ count
 					when "0001" =>
-						 out_count <= in_count + 2; -- normal operation, go to next instruction
+						 out_count <= in_count + 1; -- normal operation, go to next instruction
 					when "0010" =>
 						 out_count <= alu_count;
 					when "0100" =>
@@ -48,13 +48,13 @@ begin
 						 if rz_data = "0000000000000000" then
 							  out_count <= operand_count;
 						 else
-							  out_count <= in_count + 2;
+							  out_count <= in_count + 1;
 						 end if;
 					when "0111" => -- SZ Operand- jump to operand location if Z = 1, else normal execution
 						 if z = '1' then
 							  out_count <= operand_count;
 						 else
-							  out_count <= in_count + 2; -- continue normal execution
+							  out_count <= in_count + 1; -- continue normal execution
 						 end if;
 					when "1000" =>
 						out_count <= x"0000"; -- reset to 0

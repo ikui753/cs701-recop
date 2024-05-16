@@ -1,13 +1,13 @@
 Determining the location of the ModelSim executable...
 
-Using: c:/intelfpga_lite/18.1/modelsim_ase/win32aloem/
+Using: C:\intelFPGA\20.1\modelsim_ase\win32aloem
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/controlUnitWaveform.vwf" --testbench_file="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/controlUnitWaveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source="Z:/projects/cs701-recop/recop/controlUnitWaveform.vwf" --testbench_file="Z:/projects/cs701-recop/recop/simulation/qsim/controlUnitWaveform.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,16 +25,18 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed May 15 22:40:31 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/controlUnitWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/controlUnitWaveform.vwf.vht
+    Info: Processing started: Thu May 16 18:07:25 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=Z:/projects/cs701-recop/recop/controlUnitWaveform.vwf --testbench_file=Z:/projects/cs701-recop/recop/simulation/qsim/controlUnitWaveform.vwf.vht
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+en writing test bench files
 
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/" recop -c recop
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="Z:/projects/cs701-recop/recop/simulation/qsim/" recop -c recop
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -52,14 +54,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Wed May 15 22:40:33 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
+    Info: Processing started: Thu May 16 18:07:27 2024
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=Z:/projects/cs701-recop/recop/simulation/qsim/ recop -c recop
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file recop.vho in folder "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file recop.vho in folder "Z:/projects/cs701-recop/recop/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4730 megabytes
-    Info: Processing ended: Wed May 15 22:40:36 2024
+    Info: Peak virtual memory: 4726 megabytes
+    Info: Processing ended: Thu May 16 18:07:30 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -67,25 +69,28 @@ Completed successfully.
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop.do generated.
+Z:/projects/cs701-recop/recop/simulation/qsim/recop.do generated.
 
 Completed successfully. 
 
 **** Running the ModelSim simulation ****
 
-c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do recop.do
+C:/intelFPGA/20.1/modelsim_ase/win32aloem/vsim -c -do recop.do
 
-Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+Reading pref.tcl
 
-# 10.5b
+# 2020.1
+
 
 # do recop.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:40:36 on May 15,2024
+
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:07:31 on May 16,2024
 # vcom -work work recop.vho 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
@@ -98,23 +103,24 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling entity progCounterTest
 # -- Compiling architecture structure of progCounterTest
 
-# End time: 22:40:37 on May 15,2024, Elapsed time: 0:00:01
+# End time: 18:07:34 on May 16,2024, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:40:37 on May 15,2024
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:07:34 on May 16,2024
 # vcom -work work controlUnitWaveform.vwf.vht 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity progCounterTest_vhd_vec_tst
-# -- Compiling architecture progCounterTest_arch of progCounterTest_vhd_vec_tst
-# End time: 22:40:37 on May 15,2024, Elapsed time: 0:00:00
 
+# -- Compiling architecture progCounterTest_arch of progCounterTest_vhd_vec_tst
+# End time: 18:07:35 on May 16,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst 
-# Start time: 22:40:37 on May 15,2024
+# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst 
+# Start time: 18:07:35 on May 16,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -139,24 +145,40 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 220206 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 294027 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 22:40:38 on May 15,2024, Elapsed time: 0:00:01
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# Simulation time: 0 ps
+
+# End time: 18:08:02 on May 16,2024, Elapsed time: 0:00:27
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/controlUnitWaveform.vwf...
+Reading Z:/projects/cs701-recop/recop/controlUnitWaveform.vwf...
 
-Reading C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop.msim.vcd...
+Reading Z:/projects/cs701-recop/recop/simulation/qsim/recop.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop_20240515224038.sim.vwf
+Writing the resulting VWF to Z:/projects/cs701-recop/recop/simulation/qsim/recop_20240516180803.sim.vwf
 
 Finished VCD to VWF conversion.
 

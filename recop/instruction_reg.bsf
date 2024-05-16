@@ -33,23 +33,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "instruction[15..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "instruction[15..0]" (rect 21 43 83 55)(font "Arial" ))
+		(text "instruction[31..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "instruction[31..0]" (rect 21 43 83 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 0 64)
 		(input)
-		(text "operandIn[15..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "operandIn[15..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
 		(text "state[3..0]" (rect 0 0 38 12)(font "Arial" ))
-		(text "state[3..0]" (rect 21 75 59 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
+		(text "state[3..0]" (rect 21 59 59 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
 		(pt 248 32)
