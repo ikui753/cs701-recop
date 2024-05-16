@@ -1,1 +1,2 @@
-LDR R1 R7 #7
+LDR R1 R2 #7
+OR R1 R1 R2

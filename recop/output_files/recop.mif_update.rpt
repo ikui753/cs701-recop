@@ -1,5 +1,5 @@
 MIF/HEX Update report for recop
-Thu May 16 18:02:31 2024
+Thu May 16 20:54:03 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Thu May 16 18:02:31 2024 ;
+; MIF/HEX Update Status ; Successful - Thu May 16 20:54:03 2024 ;
 ; Revision Name         ; recop                                 ;
 ; Top-level Entity Name ; progCounterTest                       ;
 ; Family                ; Cyclone V                             ;
@@ -43,13 +43,13 @@ refer to the applicable agreement for further details.
 +-----------------------+---------------------------------------+
 
 
-+----------------------------------------------------+
-; MIF/HEX Update Processed Files                     ;
-+----------------------------------------------------+
-; File Name                                          ;
-+----------------------------------------------------+
-; Z:/projects/cs701-recop/recop/assembler/output.mif ;
-+----------------------------------------------------+
++---------------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                                  ;
++---------------------------------------------------------------------------------+
+; File Name                                                                       ;
++---------------------------------------------------------------------------------+
+; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif ;
++---------------------------------------------------------------------------------+
 
 
 +-------------------------+
@@ -58,17 +58,17 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 16 18:02:29 2024
+    Info: Processing started: Thu May 16 20:54:01 2024
 Info: Command: quartus_cdb recop -c recop --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (113028): 1023 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: Z:/projects/cs701-recop/recop/assembler/output.mif Line: 1
-    Warning (113027): Addresses ranging from 1 to 1023 are not initialized File: Z:/projects/cs701-recop/recop/assembler/output.mif Line: 1
-Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "Z:/projects/cs701-recop/recop/assembler/output.mif" -- setting initial value for remaining addresses to 0
+Warning (113028): 1022 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+    Warning (113027): Addresses ranging from 2 to 1023 are not initialized File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif" -- setting initial value for remaining addresses to 0
 Info (39024): Processed the following Memory Initialization File(s)
-    Info (39025): Processed Memory Initialization File Z:/projects/cs701-recop/recop/assembler/output.mif File: Z:/projects/cs701-recop/recop/assembler/output.mif Line: 0
+    Info (39025): Processed Memory Initialization File C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 0
 Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4862 megabytes
-    Info: Processing ended: Thu May 16 18:02:31 2024
+    Info: Peak virtual memory: 4869 megabytes
+    Info: Processing ended: Thu May 16 20:54:03 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
