@@ -79,14 +79,14 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
                 case "#":
                     am = AddressingMode.IMMEDIATE
                     operand = int(parts[parts_len - 1][1:], 0)
-                    rx = get_register(parts[parts_len - 2])
+                    rx = get_register(parts[parts_len - 2]) # Immediates always have 3 inputs, or just Rz and operand, sometimes Rx is unused
                 case "$":
                     am = AddressingMode.DIRECT
                     operand = int(parts[parts_len - 1][1:], 0)
-                    rx = get_register(parts[parts_len - 2])
+                    rx = get_register(parts[parts_len - 2]) # need to enter in three values, Rz, Rx and Operand, sometimes Rx is unused
                 case "R":
                     am = AddressingMode.REGISTER
-                    rx = get_register(parts[parts_len - 1])
+                    rx = get_register(parts[parts_len - 1]) # register operations only input Rz and Rx
         except ValueError:
             raise ValueError(f"Error: Invalid operand '{parts[parts_len - 1]}' on line {line}")
 
