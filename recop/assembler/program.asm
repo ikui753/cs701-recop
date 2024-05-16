@@ -1,3 +1,2 @@
-NOOP R1 R1 #4
 LDR R1 R2 #7
 OR R1 R1 R2
