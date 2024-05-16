@@ -30,16 +30,18 @@ architecture beh of memory is
 	signal memory: memory_array:=(
 	x"0000", -- no operation
 	x"0000", -- no operation
-	am_immediate&ldr&x"1"&x"0",
-	x"0009", -- ldr Rz Operand
+	am_immediate&str&x"1"&x"0",
+	x"0009", -- ldr Rz Operand load 9 into $1
 	am_direct&noop&x"4"&x"3",
 	x"0009",
-	am_immediate&ldr&x"2"&x"1",
-	x"0005",
+	am_register&ldr&x"3"&x"0",
+	x"0001", -- load m[1] into 3
+	am_register&ldr&x"2"&x"3",
+	x"0005", -- ld $2, m[reg[3]=1]
 	am_inherent&max&x"2"&x"2",
 	x"0003",
-	am_immediate&strpc&x"1"&x"2", -- Rz - Operand
-	x"0004",
+--	am_immediate&strpc&x"1"&x"2", -- Rz - Operand
+--	x"0004",
 --	am_register&str&x"1"&x"2",
 --	x"0002", -- store M[1] <- RxS
 	--am_register&jmp& x"0"&x"1",

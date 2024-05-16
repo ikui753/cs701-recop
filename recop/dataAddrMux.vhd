@@ -53,6 +53,7 @@ begin
 				when "10" =>
 					dataOut <= pc_count; -- store pc count
 				when others =>
+					-- no data is to be passed
 			end case;
 			
 			-- check for presentJmp condition

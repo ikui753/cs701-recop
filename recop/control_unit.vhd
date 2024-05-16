@@ -46,8 +46,8 @@ end entity control_unit;
 
 architecture behavioral of control_unit is
 	
-    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, delayStore, storeData, execution, loadAluResult, storeAluResult);
-	 signal currentState : cuStates := fetch; -- initialise in idle state
+    type cuStates is (idle, fetch, fetch2, decode, decode2, decode3, selStore, delayStore, storeData, execution, loadAluResult, storeAluResult, getMemData, getMemData2, writeData);
+	 signal currentState : cuStates := fetch; -- initialise in fetch state
 	 signal nextState : cuStates;
 
  begin
@@ -224,11 +224,15 @@ architecture behavioral of control_unit is
 
 								when am_direct => -- NEED TO FIX THIS ONE
 									-- Rz <- M[Operand]
-									rf_sel <= "1001"; -- set to M[Operand]
+									nextState <= getMemData;
+									rf_sel <= "1001";
+									addrSel <= "10"; -- address is operand
 
 								when am_register =>
 									-- Rz <- Rx
-									rf_sel <= "1000"; -- set to Rx
+									nextState <= getMemData;
+									rf_sel <= "1001";
+									addrSel <= "01"; -- address is rxdata
 							end case;
 							
 						when noop =>
@@ -306,6 +310,22 @@ architecture behavioral of control_unit is
 						wren <= '1'; -- store data
 						nextState <= fetch;
 						stateOut <= "1010";
+						
+				when getMemData =>
+					-- propogate through data mux
+					nextState <= getMemData2;
+					stateOut <= "1001";
+					increment <= "0000";
+				
+				when getMemData2 =>
+					stateOut <= "1011";
+					nextState <= writeData;
+					
+				when writeData =>
+					-- load data into register
+					ld_r <= '1';
+					-- rf_sel already enabled
+					nextState <= fetch; -- move to next instruction
 					
 				when others =>
 					ld_r <= '0';

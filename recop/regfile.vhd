@@ -33,7 +33,9 @@ entity regfile is
 		r7 : out bit_16;
 		dprr_res : in bit_1;
 		dprr_res_reg : in bit_1;
-		dprr_wren : in bit_1
+		dprr_wren : in bit_1;
+		
+		mem_data : in bit_16
 				
 		);
 end regfile;
@@ -68,7 +70,7 @@ begin
 					when "1000" =>
 						 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
 					when "1001" =>
-						 data_input_z <= regs(to_integer(unsigned(ir_operand))); -- Rz <- M[Operand] might need to take a look at this later
+						 data_input_z <= mem_data; -- load from memory
 					when "1010" =>
 						 data_input_z <= regs(sel_z); -- Rz <- Rz
 					when others =>
