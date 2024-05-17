@@ -556,6 +556,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "sop_wr",
+					"strict" : false
+				},
+				{
 					"name" : "increment[3]",
 					"strict" : false
 				},

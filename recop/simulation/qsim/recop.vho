@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/18/2024 11:38:18"
+-- DATE "05/18/2024 11:43:28"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -1233,11 +1233,11 @@ SIGNAL \inst7|nextState.storeData~q\ : std_logic;
 SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
 SIGNAL \inst7|nextState.storeAluResult~q\ : std_logic;
 SIGNAL \inst7|ld_r~0_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~1_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~2_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~3_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~4_combout\ : std_logic;
-SIGNAL \inst7|nextState.getMemData~0_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~1_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~2_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~3_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~4_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~7_combout\ : std_logic;
 SIGNAL \inst7|nextState.getMemData~q\ : std_logic;
 SIGNAL \inst7|nextState.getMemData2~q\ : std_logic;
 SIGNAL \inst7|nextState.writeData~q\ : std_logic;
@@ -1368,7 +1368,7 @@ SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w15_n0_mux_dataout~2_
 SIGNAL \inst6|Mux16~0_combout\ : std_logic;
 SIGNAL \inst7|Selector9~1_combout\ : std_logic;
 SIGNAL \inst7|Selector9~3_combout\ : std_logic;
-SIGNAL \inst7|Mux61~0_combout\ : std_logic;
+SIGNAL \inst7|Selector22~0_combout\ : std_logic;
 SIGNAL \inst7|nextState.idle~q\ : std_logic;
 SIGNAL \inst7|WideOr1~1_combout\ : std_logic;
 SIGNAL \inst7|increment[2]~1_combout\ : std_logic;
@@ -1538,6 +1538,7 @@ SIGNAL \inst6|process_0~1_combout\ : std_logic;
 SIGNAL \inst6|process_0~2_combout\ : std_logic;
 SIGNAL \inst6|process_0~3_combout\ : std_logic;
 SIGNAL \inst6|process_0~4_combout\ : std_logic;
+SIGNAL \inst7|Mux61~0_combout\ : std_logic;
 SIGNAL \inst7|increment[2]~3_combout\ : std_logic;
 SIGNAL \inst7|increment[2]~4_combout\ : std_logic;
 SIGNAL \inst7|increment[2]~5_combout\ : std_logic;
@@ -1582,14 +1583,14 @@ SIGNAL \inst7|Mux45~4_combout\ : std_logic;
 SIGNAL \inst7|Mux45~5_combout\ : std_logic;
 SIGNAL \inst7|Mux45~6_combout\ : std_logic;
 SIGNAL \inst7|Mux45~7_combout\ : std_logic;
-SIGNAL \inst7|Selector22~0_combout\ : std_logic;
+SIGNAL \inst7|Selector23~0_combout\ : std_logic;
 SIGNAL \inst7|Mux47~0_combout\ : std_logic;
 SIGNAL \inst7|Mux47~1_combout\ : std_logic;
 SIGNAL \inst7|Mux47~2_combout\ : std_logic;
 SIGNAL \inst7|Mux47~3_combout\ : std_logic;
 SIGNAL \inst7|Mux47~4_combout\ : std_logic;
 SIGNAL \inst7|Mux47~5_combout\ : std_logic;
-SIGNAL \inst7|Selector24~0_combout\ : std_logic;
+SIGNAL \inst7|Selector25~0_combout\ : std_logic;
 SIGNAL \inst3|Mux0~0_combout\ : std_logic;
 SIGNAL \sip[15]~input_o\ : std_logic;
 SIGNAL \inst7|Mux46~0_combout\ : std_logic;
@@ -1597,14 +1598,14 @@ SIGNAL \inst7|Mux46~2_combout\ : std_logic;
 SIGNAL \inst7|Mux46~3_combout\ : std_logic;
 SIGNAL \inst7|Mux46~1_combout\ : std_logic;
 SIGNAL \inst7|Mux46~4_combout\ : std_logic;
-SIGNAL \inst7|Selector23~0_combout\ : std_logic;
+SIGNAL \inst7|Selector24~0_combout\ : std_logic;
 SIGNAL \inst7|Mux48~0_combout\ : std_logic;
 SIGNAL \inst7|Mux48~1_combout\ : std_logic;
 SIGNAL \inst7|Mux48~2_combout\ : std_logic;
 SIGNAL \inst7|Mux48~3_combout\ : std_logic;
 SIGNAL \inst7|Mux48~4_combout\ : std_logic;
 SIGNAL \inst7|Mux48~5_combout\ : std_logic;
-SIGNAL \inst7|Selector25~0_combout\ : std_logic;
+SIGNAL \inst7|Selector26~0_combout\ : std_logic;
 SIGNAL \inst3|data_input_z[7]~0_combout\ : std_logic;
 SIGNAL \inst3|data_input_z[7]~1_combout\ : std_logic;
 SIGNAL \inst3|regs~0_combout\ : std_logic;
@@ -2071,12 +2072,12 @@ SIGNAL \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~2_
 SIGNAL \inst7|nextState~18_combout\ : std_logic;
 SIGNAL \inst7|Selector14~0_combout\ : std_logic;
 SIGNAL \inst7|nextState.decode3~q\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~0_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~5_combout\ : std_logic;
+SIGNAL \inst7|nextState.getMemData~6_combout\ : std_logic;
 SIGNAL \inst7|nextState.execution~0_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~5_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~6_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~7_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~8_combout\ : std_logic;
-SIGNAL \inst7|nextState.execution~9_combout\ : std_logic;
+SIGNAL \inst7|nextState.execution~1_combout\ : std_logic;
+SIGNAL \inst7|nextState.execution~2_combout\ : std_logic;
 SIGNAL \inst7|nextState.execution~q\ : std_logic;
 SIGNAL \inst7|Selector16~0_combout\ : std_logic;
 SIGNAL \inst7|Selector8~0_combout\ : std_logic;
@@ -2114,6 +2115,8 @@ SIGNAL \inst7|clr_z_flag~q\ : std_logic;
 SIGNAL \inst7|Selector21~0_combout\ : std_logic;
 SIGNAL \inst7|Selector21~1_combout\ : std_logic;
 SIGNAL \inst7|dpcr_wr~q\ : std_logic;
+SIGNAL \inst7|Selector22~1_combout\ : std_logic;
+SIGNAL \inst7|sop_wr~q\ : std_logic;
 SIGNAL \inst7|dpcr_lsb_sel~0_combout\ : std_logic;
 SIGNAL \inst7|dpcr_lsb_sel~q\ : std_logic;
 SIGNAL \inst6|dataOut\ : std_logic_vector(15 DOWNTO 0);
@@ -2213,14 +2216,14 @@ SIGNAL \inst9|ALT_INV_Mux25~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.selStore~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.delayStore~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.delayStore~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~8_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~7_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~6_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~5_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~4_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~3_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~2_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.execution~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.execution~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~6_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~5_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~4_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~3_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_ld_r~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector11~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux31~0_combout\ : std_logic;
@@ -2232,7 +2235,7 @@ SIGNAL \inst6|ALT_INV_process_0~3_combout\ : std_logic;
 SIGNAL \inst6|ALT_INV_process_0~2_combout\ : std_logic;
 SIGNAL \inst6|ALT_INV_process_0~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector5~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState.execution~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState.getMemData~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector3~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector3~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_increment[2]~4_combout\ : std_logic;
@@ -2244,6 +2247,7 @@ SIGNAL \inst7|ALT_INV_increment[3]~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux61~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Equal5~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Equal3~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Selector22~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector21~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState.decode2~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux48~5_combout\ : std_logic;
@@ -2328,6 +2332,7 @@ SIGNAL \inst2|ALT_INV_address_method\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst9|ALT_INV_alu_result\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst6|ALT_INV_present_sz_Jmp\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \inst7|ALT_INV_increment\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \inst7|ALT_INV_sop_wr~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_dpcr_wr~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_rf_sel\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst3|ALT_INV_Mux47~4_combout\ : std_logic;
@@ -2368,27 +2373,27 @@ SIGNAL \inst3|ALT_INV_Mux41~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux40~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux40~3_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux40~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux22~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux22~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux22~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][9]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux21~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux21~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux40~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux40~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux39~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux39~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux39~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux39~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux39~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux38~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux38~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux38~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux38~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux38~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux37~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux36~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[15][10]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[11][10]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[7][10]~q\ : std_logic;
@@ -2494,26 +2499,24 @@ SIGNAL \inst3|ALT_INV_regs[4][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux16~4_combout\ : std_logic;
 SIGNAL \inst2|ALT_INV_rx\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a151~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a56~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a24~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a120~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a88~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a248~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a216~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a184~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a152~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a57~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a25~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a121~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a89~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a249~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a217~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a185~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a153~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a58~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a26~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a122~portadataout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux16~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][15]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][15]~q\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a90~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a250~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a218~portadataout\ : std_logic;
@@ -2559,26 +2562,6 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a255~portad
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a223~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a191~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a159~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a40~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a8~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a104~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a72~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a232~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a200~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a168~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a136~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a41~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a9~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a105~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a73~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a233~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a201~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a169~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a137~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a42~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a10~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a106~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a74~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a234~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a202~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a170~portadataout\ : std_logic;
@@ -2686,6 +2669,26 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a87~portada
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a247~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a215~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a183~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a151~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a56~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a24~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a120~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a88~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a248~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a216~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a184~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a152~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a57~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a25~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a121~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a89~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a249~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a217~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a185~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a153~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a58~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a26~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a122~portadataout\ : std_logic;
 SIGNAL \inst7|ALT_INV_stateOut\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \inst4|altsyncram_component|auto_generated|ALT_INV_q_a\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst7|ALT_INV_alu_opsel\ : std_logic_vector(6 DOWNTO 0);
@@ -2754,16 +2757,26 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a231~portad
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a199~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a167~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a135~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\ : std_logic_vector(2 DOWNTO 0);
-SIGNAL \inst7|ALT_INV_Mux46~4_combout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~61_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~57_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~53_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~49_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~45_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~41_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~37_sumout\ : std_logic;
-SIGNAL \inst9|ALT_INV_Add0~33_sumout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a40~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a8~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a104~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a72~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a232~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a200~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a168~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a136~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a41~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a9~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a105~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a73~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a233~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a201~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a169~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a137~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a42~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a10~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a106~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a74~portadataout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Add0~29_sumout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Add0~25_sumout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Add0~21_sumout\ : std_logic;
@@ -2790,24 +2803,6 @@ SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux16~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][15]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][15]~q\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w0_n0_mux_dataout~1_combout\ : std_logic;
@@ -2875,27 +2870,16 @@ SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w30_n0_mux_da
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w30_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w31_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w31_n0_mux_dataout~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux28~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[15][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[14][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[12][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux28~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[11][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[10][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[8][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux28~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[7][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[6][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[4][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux28~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[3][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[2][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[0][3]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux27~4_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \inst7|ALT_INV_Mux46~4_combout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~61_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~57_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~53_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~49_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~45_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~41_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~37_sumout\ : std_logic;
+SIGNAL \inst9|ALT_INV_Add0~33_sumout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux27~3_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[15][4]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[11][4]~q\ : std_logic;
@@ -3002,27 +2986,27 @@ SIGNAL \inst3|ALT_INV_regs[4][8]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][8]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux22~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux22~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux40~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux40~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux39~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux39~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux39~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux39~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux39~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux38~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux38~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux38~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux38~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux38~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~1_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux37~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~4_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~3_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~2_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_Mux36~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux22~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux22~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux22~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][9]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux21~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux21~3_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux36~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux35~4_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux35~3_combout\ : std_logic;
@@ -3115,6 +3099,27 @@ SIGNAL \inst3|ALT_INV_regs[8][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[4][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux28~4_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux28~3_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[15][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[14][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[12][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux28~2_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[11][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[10][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[8][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux28~1_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[7][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[6][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[4][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux28~0_combout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[3][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[2][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[0][3]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_Mux27~4_combout\ : std_logic;
 
 BEGIN
 
@@ -4617,14 +4622,14 @@ ww_devpor <= devpor;
 \inst7|ALT_INV_nextState.selStore~0_combout\ <= NOT \inst7|nextState.selStore~0_combout\;
 \inst7|ALT_INV_nextState.delayStore~1_combout\ <= NOT \inst7|nextState.delayStore~1_combout\;
 \inst7|ALT_INV_nextState.delayStore~0_combout\ <= NOT \inst7|nextState.delayStore~0_combout\;
-\inst7|ALT_INV_nextState.execution~8_combout\ <= NOT \inst7|nextState.execution~8_combout\;
-\inst7|ALT_INV_nextState.execution~7_combout\ <= NOT \inst7|nextState.execution~7_combout\;
-\inst7|ALT_INV_nextState.execution~6_combout\ <= NOT \inst7|nextState.execution~6_combout\;
-\inst7|ALT_INV_nextState.execution~5_combout\ <= NOT \inst7|nextState.execution~5_combout\;
-\inst7|ALT_INV_nextState.execution~4_combout\ <= NOT \inst7|nextState.execution~4_combout\;
-\inst7|ALT_INV_nextState.execution~3_combout\ <= NOT \inst7|nextState.execution~3_combout\;
-\inst7|ALT_INV_nextState.execution~2_combout\ <= NOT \inst7|nextState.execution~2_combout\;
 \inst7|ALT_INV_nextState.execution~1_combout\ <= NOT \inst7|nextState.execution~1_combout\;
+\inst7|ALT_INV_nextState.execution~0_combout\ <= NOT \inst7|nextState.execution~0_combout\;
+\inst7|ALT_INV_nextState.getMemData~6_combout\ <= NOT \inst7|nextState.getMemData~6_combout\;
+\inst7|ALT_INV_nextState.getMemData~5_combout\ <= NOT \inst7|nextState.getMemData~5_combout\;
+\inst7|ALT_INV_nextState.getMemData~4_combout\ <= NOT \inst7|nextState.getMemData~4_combout\;
+\inst7|ALT_INV_nextState.getMemData~3_combout\ <= NOT \inst7|nextState.getMemData~3_combout\;
+\inst7|ALT_INV_nextState.getMemData~2_combout\ <= NOT \inst7|nextState.getMemData~2_combout\;
+\inst7|ALT_INV_nextState.getMemData~1_combout\ <= NOT \inst7|nextState.getMemData~1_combout\;
 \inst7|ALT_INV_ld_r~0_combout\ <= NOT \inst7|ld_r~0_combout\;
 \inst7|ALT_INV_Selector11~0_combout\ <= NOT \inst7|Selector11~0_combout\;
 \inst7|ALT_INV_Mux31~0_combout\ <= NOT \inst7|Mux31~0_combout\;
@@ -4636,7 +4641,7 @@ ww_devpor <= devpor;
 \inst6|ALT_INV_process_0~2_combout\ <= NOT \inst6|process_0~2_combout\;
 \inst6|ALT_INV_process_0~1_combout\ <= NOT \inst6|process_0~1_combout\;
 \inst7|ALT_INV_Selector5~0_combout\ <= NOT \inst7|Selector5~0_combout\;
-\inst7|ALT_INV_nextState.execution~0_combout\ <= NOT \inst7|nextState.execution~0_combout\;
+\inst7|ALT_INV_nextState.getMemData~0_combout\ <= NOT \inst7|nextState.getMemData~0_combout\;
 \inst7|ALT_INV_Selector3~1_combout\ <= NOT \inst7|Selector3~1_combout\;
 \inst7|ALT_INV_Selector3~0_combout\ <= NOT \inst7|Selector3~0_combout\;
 \inst7|ALT_INV_increment[2]~4_combout\ <= NOT \inst7|increment[2]~4_combout\;
@@ -4648,6 +4653,7 @@ ww_devpor <= devpor;
 \inst7|ALT_INV_Mux61~0_combout\ <= NOT \inst7|Mux61~0_combout\;
 \inst7|ALT_INV_Equal5~0_combout\ <= NOT \inst7|Equal5~0_combout\;
 \inst7|ALT_INV_Equal3~0_combout\ <= NOT \inst7|Equal3~0_combout\;
+\inst7|ALT_INV_Selector22~0_combout\ <= NOT \inst7|Selector22~0_combout\;
 \inst7|ALT_INV_Selector21~0_combout\ <= NOT \inst7|Selector21~0_combout\;
 \inst7|ALT_INV_nextState.decode2~q\ <= NOT \inst7|nextState.decode2~q\;
 \inst7|ALT_INV_Mux48~5_combout\ <= NOT \inst7|Mux48~5_combout\;
@@ -4765,6 +4771,7 @@ ww_devpor <= devpor;
 \inst6|ALT_INV_present_sz_Jmp\(1) <= NOT \inst6|present_sz_Jmp\(1);
 \inst7|ALT_INV_increment\(2) <= NOT \inst7|increment\(2);
 \inst7|ALT_INV_increment\(3) <= NOT \inst7|increment\(3);
+\inst7|ALT_INV_sop_wr~q\ <= NOT \inst7|sop_wr~q\;
 \inst7|ALT_INV_dpcr_wr~q\ <= NOT \inst7|dpcr_wr~q\;
 \inst7|ALT_INV_rf_sel\(0) <= NOT \inst7|rf_sel\(0);
 \inst7|ALT_INV_rf_sel\(1) <= NOT \inst7|rf_sel\(1);
@@ -4808,27 +4815,27 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_Mux40~4_combout\ <= NOT \inst3|Mux40~4_combout\;
 \inst3|ALT_INV_Mux40~3_combout\ <= NOT \inst3|Mux40~3_combout\;
 \inst3|ALT_INV_Mux40~2_combout\ <= NOT \inst3|Mux40~2_combout\;
-\inst3|ALT_INV_regs[15][9]~q\ <= NOT \inst3|regs[15][9]~q\;
-\inst3|ALT_INV_regs[14][9]~q\ <= NOT \inst3|regs[14][9]~q\;
-\inst3|ALT_INV_regs[13][9]~q\ <= NOT \inst3|regs[13][9]~q\;
-\inst3|ALT_INV_regs[12][9]~q\ <= NOT \inst3|regs[12][9]~q\;
-\inst3|ALT_INV_Mux22~2_combout\ <= NOT \inst3|Mux22~2_combout\;
-\inst3|ALT_INV_regs[11][9]~q\ <= NOT \inst3|regs[11][9]~q\;
-\inst3|ALT_INV_regs[10][9]~q\ <= NOT \inst3|regs[10][9]~q\;
-\inst3|ALT_INV_regs[9][9]~q\ <= NOT \inst3|regs[9][9]~q\;
-\inst3|ALT_INV_regs[8][9]~q\ <= NOT \inst3|regs[8][9]~q\;
-\inst3|ALT_INV_Mux22~1_combout\ <= NOT \inst3|Mux22~1_combout\;
-\inst3|ALT_INV_regs[7][9]~q\ <= NOT \inst3|regs[7][9]~q\;
-\inst3|ALT_INV_regs[6][9]~q\ <= NOT \inst3|regs[6][9]~q\;
-\inst3|ALT_INV_regs[5][9]~q\ <= NOT \inst3|regs[5][9]~q\;
-\inst3|ALT_INV_regs[4][9]~q\ <= NOT \inst3|regs[4][9]~q\;
-\inst3|ALT_INV_Mux22~0_combout\ <= NOT \inst3|Mux22~0_combout\;
-\inst3|ALT_INV_regs[3][9]~q\ <= NOT \inst3|regs[3][9]~q\;
-\inst3|ALT_INV_regs[2][9]~q\ <= NOT \inst3|regs[2][9]~q\;
-\inst3|ALT_INV_regs[1][9]~q\ <= NOT \inst3|regs[1][9]~q\;
-\inst3|ALT_INV_regs[0][9]~q\ <= NOT \inst3|regs[0][9]~q\;
-\inst3|ALT_INV_Mux21~4_combout\ <= NOT \inst3|Mux21~4_combout\;
-\inst3|ALT_INV_Mux21~3_combout\ <= NOT \inst3|Mux21~3_combout\;
+\inst3|ALT_INV_Mux40~1_combout\ <= NOT \inst3|Mux40~1_combout\;
+\inst3|ALT_INV_Mux40~0_combout\ <= NOT \inst3|Mux40~0_combout\;
+\inst3|ALT_INV_Mux39~4_combout\ <= NOT \inst3|Mux39~4_combout\;
+\inst3|ALT_INV_Mux39~3_combout\ <= NOT \inst3|Mux39~3_combout\;
+\inst3|ALT_INV_Mux39~2_combout\ <= NOT \inst3|Mux39~2_combout\;
+\inst3|ALT_INV_Mux39~1_combout\ <= NOT \inst3|Mux39~1_combout\;
+\inst3|ALT_INV_Mux39~0_combout\ <= NOT \inst3|Mux39~0_combout\;
+\inst3|ALT_INV_Mux38~4_combout\ <= NOT \inst3|Mux38~4_combout\;
+\inst3|ALT_INV_Mux38~3_combout\ <= NOT \inst3|Mux38~3_combout\;
+\inst3|ALT_INV_Mux38~2_combout\ <= NOT \inst3|Mux38~2_combout\;
+\inst3|ALT_INV_Mux38~1_combout\ <= NOT \inst3|Mux38~1_combout\;
+\inst3|ALT_INV_Mux38~0_combout\ <= NOT \inst3|Mux38~0_combout\;
+\inst3|ALT_INV_Mux37~4_combout\ <= NOT \inst3|Mux37~4_combout\;
+\inst3|ALT_INV_Mux37~3_combout\ <= NOT \inst3|Mux37~3_combout\;
+\inst3|ALT_INV_Mux37~2_combout\ <= NOT \inst3|Mux37~2_combout\;
+\inst3|ALT_INV_Mux37~1_combout\ <= NOT \inst3|Mux37~1_combout\;
+\inst3|ALT_INV_Mux37~0_combout\ <= NOT \inst3|Mux37~0_combout\;
+\inst3|ALT_INV_Mux36~4_combout\ <= NOT \inst3|Mux36~4_combout\;
+\inst3|ALT_INV_Mux36~3_combout\ <= NOT \inst3|Mux36~3_combout\;
+\inst3|ALT_INV_Mux36~2_combout\ <= NOT \inst3|Mux36~2_combout\;
+\inst3|ALT_INV_Mux36~1_combout\ <= NOT \inst3|Mux36~1_combout\;
 \inst3|ALT_INV_regs[15][10]~q\ <= NOT \inst3|regs[15][10]~q\;
 \inst3|ALT_INV_regs[11][10]~q\ <= NOT \inst3|regs[11][10]~q\;
 \inst3|ALT_INV_regs[7][10]~q\ <= NOT \inst3|regs[7][10]~q\;
@@ -4935,26 +4942,26 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_Mux16~4_combout\ <= NOT \inst3|Mux16~4_combout\;
 \inst2|ALT_INV_rx\(3) <= NOT \inst2|rx\(3);
 \inst2|ALT_INV_rx\(2) <= NOT \inst2|rx\(2);
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a151~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a151~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a56~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a56~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a24~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a24~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a120~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a120~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a88~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a88~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a248~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a248~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a216~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a216~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a184~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a184~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a152~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a152~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a57~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a25~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a121~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a89~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a249~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a249~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a217~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a217~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a185~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a185~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a153~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a153~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a58~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a26~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a122~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\;
+\inst3|ALT_INV_Mux16~3_combout\ <= NOT \inst3|Mux16~3_combout\;
+\inst3|ALT_INV_regs[15][15]~q\ <= NOT \inst3|regs[15][15]~q\;
+\inst3|ALT_INV_regs[14][15]~q\ <= NOT \inst3|regs[14][15]~q\;
+\inst3|ALT_INV_regs[13][15]~q\ <= NOT \inst3|regs[13][15]~q\;
+\inst3|ALT_INV_regs[12][15]~q\ <= NOT \inst3|regs[12][15]~q\;
+\inst3|ALT_INV_Mux16~2_combout\ <= NOT \inst3|Mux16~2_combout\;
+\inst3|ALT_INV_regs[11][15]~q\ <= NOT \inst3|regs[11][15]~q\;
+\inst3|ALT_INV_regs[10][15]~q\ <= NOT \inst3|regs[10][15]~q\;
+\inst3|ALT_INV_regs[9][15]~q\ <= NOT \inst3|regs[9][15]~q\;
+\inst3|ALT_INV_regs[8][15]~q\ <= NOT \inst3|regs[8][15]~q\;
+\inst3|ALT_INV_Mux16~1_combout\ <= NOT \inst3|Mux16~1_combout\;
+\inst3|ALT_INV_regs[7][15]~q\ <= NOT \inst3|regs[7][15]~q\;
+\inst3|ALT_INV_regs[6][15]~q\ <= NOT \inst3|regs[6][15]~q\;
+\inst3|ALT_INV_regs[5][15]~q\ <= NOT \inst3|regs[5][15]~q\;
+\inst3|ALT_INV_regs[4][15]~q\ <= NOT \inst3|regs[4][15]~q\;
+\inst3|ALT_INV_Mux16~0_combout\ <= NOT \inst3|Mux16~0_combout\;
+\inst2|ALT_INV_rx\(1) <= NOT \inst2|rx\(1);
+\inst2|ALT_INV_rx\(0) <= NOT \inst2|rx\(0);
+\inst3|ALT_INV_regs[3][15]~q\ <= NOT \inst3|regs[3][15]~q\;
+\inst3|ALT_INV_regs[2][15]~q\ <= NOT \inst3|regs[2][15]~q\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a90~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a90~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a250~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a250~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a218~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a218~portadataout\;
@@ -5000,26 +5007,6 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a223~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a223~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a191~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a191~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a159~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a159~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a40~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a40~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a8~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a8~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a104~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a104~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a72~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a72~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a232~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a232~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a200~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a200~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a168~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a168~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a136~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a136~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a41~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a41~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a9~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a9~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a105~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a105~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a73~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a73~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a233~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a233~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a201~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a201~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a169~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a169~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a137~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a137~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a42~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a42~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a10~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a10~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a106~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a106~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a74~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a74~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a234~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a234~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a202~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a202~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a170~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a170~portadataout\;
@@ -5127,6 +5114,26 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a247~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a247~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a215~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a215~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a183~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a183~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a151~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a151~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a56~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a56~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a24~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a24~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a120~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a120~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a88~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a88~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a248~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a248~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a216~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a216~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a184~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a184~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a152~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a152~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a57~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a57~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a25~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a25~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a121~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a121~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a89~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a89~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a249~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a249~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a217~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a217~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a185~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a185~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a153~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a153~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a58~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a58~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a26~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a26~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a122~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a122~portadataout\;
 \inst7|ALT_INV_stateOut\(0) <= NOT \inst7|stateOut\(0);
 \inst7|ALT_INV_stateOut\(1) <= NOT \inst7|stateOut\(1);
 \inst7|ALT_INV_stateOut\(2) <= NOT \inst7|stateOut\(2);
@@ -5229,16 +5236,26 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a199~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a199~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a167~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a167~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a135~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a135~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2) <= NOT \inst10|altsyncram_component|auto_generated|address_reg_a\(2);
-\inst7|ALT_INV_Mux46~4_combout\ <= NOT \inst7|Mux46~4_combout\;
-\inst9|ALT_INV_Add0~61_sumout\ <= NOT \inst9|Add0~61_sumout\;
-\inst9|ALT_INV_Add0~57_sumout\ <= NOT \inst9|Add0~57_sumout\;
-\inst9|ALT_INV_Add0~53_sumout\ <= NOT \inst9|Add0~53_sumout\;
-\inst9|ALT_INV_Add0~49_sumout\ <= NOT \inst9|Add0~49_sumout\;
-\inst9|ALT_INV_Add0~45_sumout\ <= NOT \inst9|Add0~45_sumout\;
-\inst9|ALT_INV_Add0~41_sumout\ <= NOT \inst9|Add0~41_sumout\;
-\inst9|ALT_INV_Add0~37_sumout\ <= NOT \inst9|Add0~37_sumout\;
-\inst9|ALT_INV_Add0~33_sumout\ <= NOT \inst9|Add0~33_sumout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a40~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a40~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a8~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a8~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a104~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a104~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a72~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a72~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a232~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a232~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a200~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a200~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a168~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a168~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a136~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a136~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a41~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a41~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a9~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a9~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a105~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a105~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a73~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a73~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a233~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a233~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a201~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a201~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a169~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a169~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a137~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a137~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a42~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a42~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a10~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a10~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a106~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a106~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a74~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a74~portadataout\;
 \inst9|ALT_INV_Add0~29_sumout\ <= NOT \inst9|Add0~29_sumout\;
 \inst9|ALT_INV_Add0~25_sumout\ <= NOT \inst9|Add0~25_sumout\;
 \inst9|ALT_INV_Add0~21_sumout\ <= NOT \inst9|Add0~21_sumout\;
@@ -5295,26 +5312,6 @@ ww_devpor <= devpor;
 \inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
 \inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
 \inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
-\inst3|ALT_INV_Mux16~3_combout\ <= NOT \inst3|Mux16~3_combout\;
-\inst3|ALT_INV_regs[15][15]~q\ <= NOT \inst3|regs[15][15]~q\;
-\inst3|ALT_INV_regs[14][15]~q\ <= NOT \inst3|regs[14][15]~q\;
-\inst3|ALT_INV_regs[13][15]~q\ <= NOT \inst3|regs[13][15]~q\;
-\inst3|ALT_INV_regs[12][15]~q\ <= NOT \inst3|regs[12][15]~q\;
-\inst3|ALT_INV_Mux16~2_combout\ <= NOT \inst3|Mux16~2_combout\;
-\inst3|ALT_INV_regs[11][15]~q\ <= NOT \inst3|regs[11][15]~q\;
-\inst3|ALT_INV_regs[10][15]~q\ <= NOT \inst3|regs[10][15]~q\;
-\inst3|ALT_INV_regs[9][15]~q\ <= NOT \inst3|regs[9][15]~q\;
-\inst3|ALT_INV_regs[8][15]~q\ <= NOT \inst3|regs[8][15]~q\;
-\inst3|ALT_INV_Mux16~1_combout\ <= NOT \inst3|Mux16~1_combout\;
-\inst3|ALT_INV_regs[7][15]~q\ <= NOT \inst3|regs[7][15]~q\;
-\inst3|ALT_INV_regs[6][15]~q\ <= NOT \inst3|regs[6][15]~q\;
-\inst3|ALT_INV_regs[5][15]~q\ <= NOT \inst3|regs[5][15]~q\;
-\inst3|ALT_INV_regs[4][15]~q\ <= NOT \inst3|regs[4][15]~q\;
-\inst3|ALT_INV_Mux16~0_combout\ <= NOT \inst3|Mux16~0_combout\;
-\inst2|ALT_INV_rx\(1) <= NOT \inst2|rx\(1);
-\inst2|ALT_INV_rx\(0) <= NOT \inst2|rx\(0);
-\inst3|ALT_INV_regs[3][15]~q\ <= NOT \inst3|regs[3][15]~q\;
-\inst3|ALT_INV_regs[2][15]~q\ <= NOT \inst3|regs[2][15]~q\;
 \inst3|ALT_INV_regs[1][15]~q\ <= NOT \inst3|regs[1][15]~q\;
 \inst3|ALT_INV_regs[0][15]~q\ <= NOT \inst3|regs[0][15]~q\;
 \inst7|ALT_INV_alu_opsel\(2) <= NOT \inst7|alu_opsel\(2);
@@ -5389,27 +5386,16 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w31_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w31_n0_mux_dataout~0_combout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(1) <= NOT \inst10|altsyncram_component|auto_generated|address_reg_a\(1);
 \inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(0) <= NOT \inst10|altsyncram_component|auto_generated|address_reg_a\(0);
-\inst3|ALT_INV_Mux28~3_combout\ <= NOT \inst3|Mux28~3_combout\;
-\inst3|ALT_INV_regs[15][3]~q\ <= NOT \inst3|regs[15][3]~q\;
-\inst3|ALT_INV_regs[14][3]~q\ <= NOT \inst3|regs[14][3]~q\;
-\inst3|ALT_INV_regs[13][3]~q\ <= NOT \inst3|regs[13][3]~q\;
-\inst3|ALT_INV_regs[12][3]~q\ <= NOT \inst3|regs[12][3]~q\;
-\inst3|ALT_INV_Mux28~2_combout\ <= NOT \inst3|Mux28~2_combout\;
-\inst3|ALT_INV_regs[11][3]~q\ <= NOT \inst3|regs[11][3]~q\;
-\inst3|ALT_INV_regs[10][3]~q\ <= NOT \inst3|regs[10][3]~q\;
-\inst3|ALT_INV_regs[9][3]~q\ <= NOT \inst3|regs[9][3]~q\;
-\inst3|ALT_INV_regs[8][3]~q\ <= NOT \inst3|regs[8][3]~q\;
-\inst3|ALT_INV_Mux28~1_combout\ <= NOT \inst3|Mux28~1_combout\;
-\inst3|ALT_INV_regs[7][3]~q\ <= NOT \inst3|regs[7][3]~q\;
-\inst3|ALT_INV_regs[6][3]~q\ <= NOT \inst3|regs[6][3]~q\;
-\inst3|ALT_INV_regs[5][3]~q\ <= NOT \inst3|regs[5][3]~q\;
-\inst3|ALT_INV_regs[4][3]~q\ <= NOT \inst3|regs[4][3]~q\;
-\inst3|ALT_INV_Mux28~0_combout\ <= NOT \inst3|Mux28~0_combout\;
-\inst3|ALT_INV_regs[3][3]~q\ <= NOT \inst3|regs[3][3]~q\;
-\inst3|ALT_INV_regs[2][3]~q\ <= NOT \inst3|regs[2][3]~q\;
-\inst3|ALT_INV_regs[1][3]~q\ <= NOT \inst3|regs[1][3]~q\;
-\inst3|ALT_INV_regs[0][3]~q\ <= NOT \inst3|regs[0][3]~q\;
-\inst3|ALT_INV_Mux27~4_combout\ <= NOT \inst3|Mux27~4_combout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_address_reg_a\(2) <= NOT \inst10|altsyncram_component|auto_generated|address_reg_a\(2);
+\inst7|ALT_INV_Mux46~4_combout\ <= NOT \inst7|Mux46~4_combout\;
+\inst9|ALT_INV_Add0~61_sumout\ <= NOT \inst9|Add0~61_sumout\;
+\inst9|ALT_INV_Add0~57_sumout\ <= NOT \inst9|Add0~57_sumout\;
+\inst9|ALT_INV_Add0~53_sumout\ <= NOT \inst9|Add0~53_sumout\;
+\inst9|ALT_INV_Add0~49_sumout\ <= NOT \inst9|Add0~49_sumout\;
+\inst9|ALT_INV_Add0~45_sumout\ <= NOT \inst9|Add0~45_sumout\;
+\inst9|ALT_INV_Add0~41_sumout\ <= NOT \inst9|Add0~41_sumout\;
+\inst9|ALT_INV_Add0~37_sumout\ <= NOT \inst9|Add0~37_sumout\;
+\inst9|ALT_INV_Add0~33_sumout\ <= NOT \inst9|Add0~33_sumout\;
 \inst3|ALT_INV_Mux27~3_combout\ <= NOT \inst3|Mux27~3_combout\;
 \inst3|ALT_INV_regs[15][4]~q\ <= NOT \inst3|regs[15][4]~q\;
 \inst3|ALT_INV_regs[11][4]~q\ <= NOT \inst3|regs[11][4]~q\;
@@ -5516,27 +5502,27 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[0][8]~q\ <= NOT \inst3|regs[0][8]~q\;
 \inst3|ALT_INV_Mux22~4_combout\ <= NOT \inst3|Mux22~4_combout\;
 \inst3|ALT_INV_Mux22~3_combout\ <= NOT \inst3|Mux22~3_combout\;
-\inst3|ALT_INV_Mux40~1_combout\ <= NOT \inst3|Mux40~1_combout\;
-\inst3|ALT_INV_Mux40~0_combout\ <= NOT \inst3|Mux40~0_combout\;
-\inst3|ALT_INV_Mux39~4_combout\ <= NOT \inst3|Mux39~4_combout\;
-\inst3|ALT_INV_Mux39~3_combout\ <= NOT \inst3|Mux39~3_combout\;
-\inst3|ALT_INV_Mux39~2_combout\ <= NOT \inst3|Mux39~2_combout\;
-\inst3|ALT_INV_Mux39~1_combout\ <= NOT \inst3|Mux39~1_combout\;
-\inst3|ALT_INV_Mux39~0_combout\ <= NOT \inst3|Mux39~0_combout\;
-\inst3|ALT_INV_Mux38~4_combout\ <= NOT \inst3|Mux38~4_combout\;
-\inst3|ALT_INV_Mux38~3_combout\ <= NOT \inst3|Mux38~3_combout\;
-\inst3|ALT_INV_Mux38~2_combout\ <= NOT \inst3|Mux38~2_combout\;
-\inst3|ALT_INV_Mux38~1_combout\ <= NOT \inst3|Mux38~1_combout\;
-\inst3|ALT_INV_Mux38~0_combout\ <= NOT \inst3|Mux38~0_combout\;
-\inst3|ALT_INV_Mux37~4_combout\ <= NOT \inst3|Mux37~4_combout\;
-\inst3|ALT_INV_Mux37~3_combout\ <= NOT \inst3|Mux37~3_combout\;
-\inst3|ALT_INV_Mux37~2_combout\ <= NOT \inst3|Mux37~2_combout\;
-\inst3|ALT_INV_Mux37~1_combout\ <= NOT \inst3|Mux37~1_combout\;
-\inst3|ALT_INV_Mux37~0_combout\ <= NOT \inst3|Mux37~0_combout\;
-\inst3|ALT_INV_Mux36~4_combout\ <= NOT \inst3|Mux36~4_combout\;
-\inst3|ALT_INV_Mux36~3_combout\ <= NOT \inst3|Mux36~3_combout\;
-\inst3|ALT_INV_Mux36~2_combout\ <= NOT \inst3|Mux36~2_combout\;
-\inst3|ALT_INV_Mux36~1_combout\ <= NOT \inst3|Mux36~1_combout\;
+\inst3|ALT_INV_regs[15][9]~q\ <= NOT \inst3|regs[15][9]~q\;
+\inst3|ALT_INV_regs[14][9]~q\ <= NOT \inst3|regs[14][9]~q\;
+\inst3|ALT_INV_regs[13][9]~q\ <= NOT \inst3|regs[13][9]~q\;
+\inst3|ALT_INV_regs[12][9]~q\ <= NOT \inst3|regs[12][9]~q\;
+\inst3|ALT_INV_Mux22~2_combout\ <= NOT \inst3|Mux22~2_combout\;
+\inst3|ALT_INV_regs[11][9]~q\ <= NOT \inst3|regs[11][9]~q\;
+\inst3|ALT_INV_regs[10][9]~q\ <= NOT \inst3|regs[10][9]~q\;
+\inst3|ALT_INV_regs[9][9]~q\ <= NOT \inst3|regs[9][9]~q\;
+\inst3|ALT_INV_regs[8][9]~q\ <= NOT \inst3|regs[8][9]~q\;
+\inst3|ALT_INV_Mux22~1_combout\ <= NOT \inst3|Mux22~1_combout\;
+\inst3|ALT_INV_regs[7][9]~q\ <= NOT \inst3|regs[7][9]~q\;
+\inst3|ALT_INV_regs[6][9]~q\ <= NOT \inst3|regs[6][9]~q\;
+\inst3|ALT_INV_regs[5][9]~q\ <= NOT \inst3|regs[5][9]~q\;
+\inst3|ALT_INV_regs[4][9]~q\ <= NOT \inst3|regs[4][9]~q\;
+\inst3|ALT_INV_Mux22~0_combout\ <= NOT \inst3|Mux22~0_combout\;
+\inst3|ALT_INV_regs[3][9]~q\ <= NOT \inst3|regs[3][9]~q\;
+\inst3|ALT_INV_regs[2][9]~q\ <= NOT \inst3|regs[2][9]~q\;
+\inst3|ALT_INV_regs[1][9]~q\ <= NOT \inst3|regs[1][9]~q\;
+\inst3|ALT_INV_regs[0][9]~q\ <= NOT \inst3|regs[0][9]~q\;
+\inst3|ALT_INV_Mux21~4_combout\ <= NOT \inst3|Mux21~4_combout\;
+\inst3|ALT_INV_Mux21~3_combout\ <= NOT \inst3|Mux21~3_combout\;
 \inst3|ALT_INV_Mux36~0_combout\ <= NOT \inst3|Mux36~0_combout\;
 \inst3|ALT_INV_Mux35~4_combout\ <= NOT \inst3|Mux35~4_combout\;
 \inst3|ALT_INV_Mux35~3_combout\ <= NOT \inst3|Mux35~3_combout\;
@@ -5639,6 +5625,27 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[4][2]~q\ <= NOT \inst3|regs[4][2]~q\;
 \inst3|ALT_INV_regs[0][2]~q\ <= NOT \inst3|regs[0][2]~q\;
 \inst3|ALT_INV_Mux28~4_combout\ <= NOT \inst3|Mux28~4_combout\;
+\inst3|ALT_INV_Mux28~3_combout\ <= NOT \inst3|Mux28~3_combout\;
+\inst3|ALT_INV_regs[15][3]~q\ <= NOT \inst3|regs[15][3]~q\;
+\inst3|ALT_INV_regs[14][3]~q\ <= NOT \inst3|regs[14][3]~q\;
+\inst3|ALT_INV_regs[13][3]~q\ <= NOT \inst3|regs[13][3]~q\;
+\inst3|ALT_INV_regs[12][3]~q\ <= NOT \inst3|regs[12][3]~q\;
+\inst3|ALT_INV_Mux28~2_combout\ <= NOT \inst3|Mux28~2_combout\;
+\inst3|ALT_INV_regs[11][3]~q\ <= NOT \inst3|regs[11][3]~q\;
+\inst3|ALT_INV_regs[10][3]~q\ <= NOT \inst3|regs[10][3]~q\;
+\inst3|ALT_INV_regs[9][3]~q\ <= NOT \inst3|regs[9][3]~q\;
+\inst3|ALT_INV_regs[8][3]~q\ <= NOT \inst3|regs[8][3]~q\;
+\inst3|ALT_INV_Mux28~1_combout\ <= NOT \inst3|Mux28~1_combout\;
+\inst3|ALT_INV_regs[7][3]~q\ <= NOT \inst3|regs[7][3]~q\;
+\inst3|ALT_INV_regs[6][3]~q\ <= NOT \inst3|regs[6][3]~q\;
+\inst3|ALT_INV_regs[5][3]~q\ <= NOT \inst3|regs[5][3]~q\;
+\inst3|ALT_INV_regs[4][3]~q\ <= NOT \inst3|regs[4][3]~q\;
+\inst3|ALT_INV_Mux28~0_combout\ <= NOT \inst3|Mux28~0_combout\;
+\inst3|ALT_INV_regs[3][3]~q\ <= NOT \inst3|regs[3][3]~q\;
+\inst3|ALT_INV_regs[2][3]~q\ <= NOT \inst3|regs[2][3]~q\;
+\inst3|ALT_INV_regs[1][3]~q\ <= NOT \inst3|regs[1][3]~q\;
+\inst3|ALT_INV_regs[0][3]~q\ <= NOT \inst3|regs[0][3]~q\;
+\inst3|ALT_INV_Mux27~4_combout\ <= NOT \inst3|Mux27~4_combout\;
 
 \rf_init~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -7328,7 +7335,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => \inst7|sop_wr~q\,
 	devoe => ww_devoe,
 	o => \sop_wr~output_o\);
 
@@ -14951,7 +14958,7 @@ PORT MAP (
 
 \inst7|nextState.delayStore~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.delayStore~1_combout\ = (\inst7|nextState.execution~0_combout\ & (((!\inst2|opcode\(5) & !\inst7|nextState.delayStore~0_combout\)) # (\inst7|nextState~17_combout\)))
+-- \inst7|nextState.delayStore~1_combout\ = (\inst7|nextState.getMemData~0_combout\ & (((!\inst2|opcode\(5) & !\inst7|nextState.delayStore~0_combout\)) # (\inst7|nextState~17_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -14961,7 +14968,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst7|ALT_INV_nextState.execution~0_combout\,
+	datab => \inst7|ALT_INV_nextState.getMemData~0_combout\,
 	datac => \inst7|ALT_INV_nextState~17_combout\,
 	datad => \inst7|ALT_INV_nextState.delayStore~0_combout\,
 	combout => \inst7|nextState.delayStore~1_combout\);
@@ -15076,9 +15083,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|ld_r~0_combout\);
 
-\inst7|nextState.execution~1\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~1_combout\ = ( \inst2|address_method\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (((!\inst2|opcode\(0))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( !\inst2|address_method\(1) 
+-- \inst7|nextState.getMemData~1_combout\ = ( \inst2|address_method\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (((!\inst2|opcode\(0))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( !\inst2|address_method\(1) 
 -- & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (!\inst2|opcode\(0) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( \inst2|address_method\(1) & ( 
 -- !\inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (!\inst2|opcode\(0) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( !\inst2|address_method\(1) & ( 
 -- !\inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (!\inst2|opcode\(0) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) )
@@ -15096,11 +15103,11 @@ PORT MAP (
 	datad => \inst2|ALT_INV_opcode\(0),
 	datae => \inst2|ALT_INV_address_method\(1),
 	dataf => \inst2|ALT_INV_address_method\(0),
-	combout => \inst7|nextState.execution~1_combout\);
+	combout => \inst7|nextState.getMemData~1_combout\);
 
-\inst7|nextState.execution~2\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~2_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((\inst2|opcode\(2))))) # (\inst2|opcode\(4) & (((!\inst2|opcode\(3) & \inst2|opcode\(2))) # (\inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) & ( (\inst2|opcode\(2) & 
+-- \inst7|nextState.getMemData~2_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((\inst2|opcode\(2))))) # (\inst2|opcode\(4) & (((!\inst2|opcode\(3) & \inst2|opcode\(2))) # (\inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) & ( (\inst2|opcode\(2) & 
 -- (\inst2|opcode\(1) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) ) )
 
 -- pragma translate_off
@@ -15115,11 +15122,11 @@ PORT MAP (
 	datac => \inst2|ALT_INV_opcode\(2),
 	datad => \inst2|ALT_INV_opcode\(1),
 	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState.execution~2_combout\);
+	combout => \inst7|nextState.getMemData~2_combout\);
 
-\inst7|nextState.execution~3\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~3_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(4) & (!\inst2|opcode\(3) & (\inst2|opcode\(2) & \inst2|opcode\(1)))) ) ) # ( 
+-- \inst7|nextState.getMemData~3_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(4) & (!\inst2|opcode\(3) & (\inst2|opcode\(2) & \inst2|opcode\(1)))) ) ) # ( 
 -- !\inst2|opcode\(0) & ( (!\inst2|opcode\(3) & (\inst2|opcode\(4) & (\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(3) & (!\inst2|opcode\(2) & ((!\inst2|opcode\(1)) # (\inst2|opcode\(4))))) ) )
 
 -- pragma translate_off
@@ -15134,12 +15141,12 @@ PORT MAP (
 	datac => \inst2|ALT_INV_opcode\(2),
 	datad => \inst2|ALT_INV_opcode\(1),
 	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState.execution~3_combout\);
+	combout => \inst7|nextState.getMemData~3_combout\);
 
-\inst7|nextState.execution~4\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~4_combout\ = ( \inst7|nextState.execution~3_combout\ & ( ((!\inst7|nextState.execution~2_combout\ & ((\inst7|nextState.execution~1_combout\) # (\inst2|opcode\(2))))) # (\inst2|opcode\(5)) ) ) # ( 
--- !\inst7|nextState.execution~3_combout\ & ( (!\inst2|opcode\(5) & (!\inst7|nextState.execution~2_combout\ & ((\inst7|nextState.execution~1_combout\) # (\inst2|opcode\(2))))) ) )
+-- \inst7|nextState.getMemData~4_combout\ = ( \inst7|nextState.getMemData~3_combout\ & ( ((!\inst7|nextState.getMemData~2_combout\ & ((\inst7|nextState.getMemData~1_combout\) # (\inst2|opcode\(2))))) # (\inst2|opcode\(5)) ) ) # ( 
+-- !\inst7|nextState.getMemData~3_combout\ & ( (!\inst2|opcode\(5) & (!\inst7|nextState.getMemData~2_combout\ & ((\inst7|nextState.getMemData~1_combout\) # (\inst2|opcode\(2))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -15150,17 +15157,17 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
 	datab => \inst2|ALT_INV_opcode\(2),
-	datac => \inst7|ALT_INV_nextState.execution~1_combout\,
-	datad => \inst7|ALT_INV_nextState.execution~2_combout\,
-	datae => \inst7|ALT_INV_nextState.execution~3_combout\,
-	combout => \inst7|nextState.execution~4_combout\);
+	datac => \inst7|ALT_INV_nextState.getMemData~1_combout\,
+	datad => \inst7|ALT_INV_nextState.getMemData~2_combout\,
+	datae => \inst7|ALT_INV_nextState.getMemData~3_combout\,
+	combout => \inst7|nextState.getMemData~4_combout\);
 
-\inst7|nextState.getMemData~0\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~7\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.getMemData~0_combout\ = ( \inst7|ld_r~0_combout\ & ( \inst7|nextState.execution~4_combout\ & ( (!\reset~input_o\ & (\inst2|address_method\(1) & ((\inst7|nextState.execution~0_combout\)))) # (\reset~input_o\ & 
--- (((\inst7|nextState.getMemData~q\)))) ) ) ) # ( !\inst7|ld_r~0_combout\ & ( \inst7|nextState.execution~4_combout\ & ( (\reset~input_o\ & \inst7|nextState.getMemData~q\) ) ) ) # ( \inst7|ld_r~0_combout\ & ( !\inst7|nextState.execution~4_combout\ & ( 
--- (\inst7|nextState.getMemData~q\ & ((\inst7|nextState.execution~0_combout\) # (\reset~input_o\))) ) ) ) # ( !\inst7|ld_r~0_combout\ & ( !\inst7|nextState.execution~4_combout\ & ( (\inst7|nextState.getMemData~q\ & ((\inst7|nextState.execution~0_combout\) # 
--- (\reset~input_o\))) ) ) )
+-- \inst7|nextState.getMemData~7_combout\ = ( \inst7|ld_r~0_combout\ & ( \inst7|nextState.getMemData~4_combout\ & ( (!\reset~input_o\ & (\inst2|address_method\(1) & ((\inst7|nextState.getMemData~0_combout\)))) # (\reset~input_o\ & 
+-- (((\inst7|nextState.getMemData~q\)))) ) ) ) # ( !\inst7|ld_r~0_combout\ & ( \inst7|nextState.getMemData~4_combout\ & ( (\reset~input_o\ & \inst7|nextState.getMemData~q\) ) ) ) # ( \inst7|ld_r~0_combout\ & ( !\inst7|nextState.getMemData~4_combout\ & ( 
+-- (\inst7|nextState.getMemData~q\ & ((\inst7|nextState.getMemData~0_combout\) # (\reset~input_o\))) ) ) ) # ( !\inst7|ld_r~0_combout\ & ( !\inst7|nextState.getMemData~4_combout\ & ( (\inst7|nextState.getMemData~q\ & ((\inst7|nextState.getMemData~0_combout\) 
+-- # (\reset~input_o\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -15172,10 +15179,10 @@ PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(1),
 	datab => \ALT_INV_reset~input_o\,
 	datac => \inst7|ALT_INV_nextState.getMemData~q\,
-	datad => \inst7|ALT_INV_nextState.execution~0_combout\,
+	datad => \inst7|ALT_INV_nextState.getMemData~0_combout\,
 	datae => \inst7|ALT_INV_ld_r~0_combout\,
-	dataf => \inst7|ALT_INV_nextState.execution~4_combout\,
-	combout => \inst7|nextState.getMemData~0_combout\);
+	dataf => \inst7|ALT_INV_nextState.getMemData~4_combout\,
+	combout => \inst7|nextState.getMemData~7_combout\);
 
 \inst7|nextState.getMemData\ : dffeas
 -- pragma translate_off
@@ -15185,7 +15192,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState.getMemData~0_combout\,
+	d => \inst7|nextState.getMemData~7_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|nextState.getMemData~q\);
@@ -18530,24 +18537,21 @@ PORT MAP (
 	datab => \inst7|ALT_INV_Selector9~1_combout\,
 	combout => \inst7|Selector9~3_combout\);
 
-\inst7|Mux61~0\ : cyclonev_lcell_comb
+\inst7|Selector22~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux61~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) )
+-- \inst7|Selector22~0_combout\ = (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(2)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000001000000000000000000000000000000000000000000000000000000000",
+	lut_mask => "0001000000010000000100000001000000010000000100000001000000010000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(2),
-	datae => \inst2|ALT_INV_opcode\(1),
-	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Mux61~0_combout\);
+	dataa => \inst2|ALT_INV_opcode\(4),
+	datab => \inst2|ALT_INV_opcode\(3),
+	datac => \inst2|ALT_INV_opcode\(2),
+	combout => \inst7|Selector22~0_combout\);
 
 \inst7|nextState.idle\ : dffeas
 -- pragma translate_off
@@ -18583,7 +18587,7 @@ PORT MAP (
 
 \inst7|increment[2]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|increment[2]~1_combout\ = ( !\inst7|WideOr1~1_combout\ & ( (!\inst7|Mux56~0_combout\) # ((!\inst7|Selector9~1_combout\) # ((\inst2|address_method\(0) & \inst7|Mux61~0_combout\))) ) )
+-- \inst7|increment[2]~1_combout\ = ( !\inst7|WideOr1~1_combout\ & ( (!\inst7|Mux56~0_combout\) # ((!\inst7|Selector9~1_combout\) # ((\inst2|address_method\(0) & \inst7|Selector22~0_combout\))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -18595,7 +18599,7 @@ PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(0),
 	datab => \inst7|ALT_INV_Mux56~0_combout\,
 	datac => \inst7|ALT_INV_Selector9~1_combout\,
-	datad => \inst7|ALT_INV_Mux61~0_combout\,
+	datad => \inst7|ALT_INV_Selector22~0_combout\,
 	datae => \inst7|ALT_INV_WideOr1~1_combout\,
 	combout => \inst7|increment[2]~1_combout\);
 
@@ -22076,6 +22080,25 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst6|present_sz_Jmp\(0));
 
+\inst7|Mux61~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Mux61~0_combout\ = ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000001000000000000000000000000000000000000000000000000000000000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Mux61~0_combout\);
+
 \inst7|increment[2]~3\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \inst7|increment[2]~3_combout\ = ( \inst7|Equal5~0_combout\ & ( \inst7|Mux61~0_combout\ & ( (\inst7|nextState.fetch~q\ & ((!\inst7|Equal3~0_combout\ & (\inst6|present_sz_Jmp\(1))) # (\inst7|Equal3~0_combout\ & ((\inst6|present_sz_Jmp\(0)))))) ) ) ) # ( 
@@ -22696,7 +22719,7 @@ PORT MAP (
 
 \inst7|Selector5~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector5~1_combout\ = ( \inst7|Selector5~0_combout\ & ( (((!\inst7|Equal5~0_combout\ & \inst7|nextState.execution~0_combout\)) # (\inst7|nextState.decode2~q\)) # (\inst7|nextState.execution~q\) ) ) # ( !\inst7|Selector5~0_combout\ )
+-- \inst7|Selector5~1_combout\ = ( \inst7|Selector5~0_combout\ & ( (((!\inst7|Equal5~0_combout\ & \inst7|nextState.getMemData~0_combout\)) # (\inst7|nextState.decode2~q\)) # (\inst7|nextState.execution~q\) ) ) # ( !\inst7|Selector5~0_combout\ )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -22708,7 +22731,7 @@ PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.execution~q\,
 	datab => \inst7|ALT_INV_nextState.decode2~q\,
 	datac => \inst7|ALT_INV_Equal5~0_combout\,
-	datad => \inst7|ALT_INV_nextState.execution~0_combout\,
+	datad => \inst7|ALT_INV_nextState.getMemData~0_combout\,
 	datae => \inst7|ALT_INV_Selector5~0_combout\,
 	combout => \inst7|Selector5~1_combout\);
 
@@ -23035,9 +23058,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Mux45~7_combout\);
 
-\inst7|Selector22~0\ : cyclonev_lcell_comb
+\inst7|Selector23~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector22~0_combout\ = (!\inst7|nextState.decode3~q\ & (\inst7|rf_sel\(3) & (!\inst7|nextState.storeAluResult~q\))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux45~7_combout\))))
+-- \inst7|Selector23~0_combout\ = (!\inst7|nextState.decode3~q\ & (\inst7|rf_sel\(3) & (!\inst7|nextState.storeAluResult~q\))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux45~7_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -23050,7 +23073,7 @@ PORT MAP (
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
 	datac => \inst7|ALT_INV_nextState.storeAluResult~q\,
 	datad => \inst7|ALT_INV_Mux45~7_combout\,
-	combout => \inst7|Selector22~0_combout\);
+	combout => \inst7|Selector23~0_combout\);
 
 \inst7|rf_sel[3]\ : dffeas
 -- pragma translate_off
@@ -23060,7 +23083,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector22~0_combout\,
+	d => \inst7|Selector23~0_combout\,
 	ena => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -23177,9 +23200,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Mux47~5_combout\);
 
-\inst7|Selector24~0\ : cyclonev_lcell_comb
+\inst7|Selector25~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector24~0_combout\ = (!\inst7|nextState.decode3~q\ & (((\inst7|nextState.storeAluResult~q\)) # (\inst7|rf_sel\(1)))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux47~5_combout\))))
+-- \inst7|Selector25~0_combout\ = (!\inst7|nextState.decode3~q\ & (((\inst7|nextState.storeAluResult~q\)) # (\inst7|rf_sel\(1)))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux47~5_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -23192,7 +23215,7 @@ PORT MAP (
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
 	datac => \inst7|ALT_INV_nextState.storeAluResult~q\,
 	datad => \inst7|ALT_INV_Mux47~5_combout\,
-	combout => \inst7|Selector24~0_combout\);
+	combout => \inst7|Selector25~0_combout\);
 
 \inst7|rf_sel[1]\ : dffeas
 -- pragma translate_off
@@ -23202,7 +23225,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector24~0_combout\,
+	d => \inst7|Selector25~0_combout\,
 	ena => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -23349,9 +23372,9 @@ PORT MAP (
 	datag => \inst7|ALT_INV_rf_sel\(2),
 	combout => \inst7|Mux46~4_combout\);
 
-\inst7|Selector23~0\ : cyclonev_lcell_comb
+\inst7|Selector24~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector23~0_combout\ = (!\inst7|nextState.decode3~q\ & (\inst7|rf_sel\(2) & (!\inst7|nextState.storeAluResult~q\))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux46~4_combout\))))
+-- \inst7|Selector24~0_combout\ = (!\inst7|nextState.decode3~q\ & (\inst7|rf_sel\(2) & (!\inst7|nextState.storeAluResult~q\))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux46~4_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -23364,7 +23387,7 @@ PORT MAP (
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
 	datac => \inst7|ALT_INV_nextState.storeAluResult~q\,
 	datad => \inst7|ALT_INV_Mux46~4_combout\,
-	combout => \inst7|Selector23~0_combout\);
+	combout => \inst7|Selector24~0_combout\);
 
 \inst7|rf_sel[2]\ : dffeas
 -- pragma translate_off
@@ -23374,7 +23397,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector23~0_combout\,
+	d => \inst7|Selector24~0_combout\,
 	ena => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -23490,9 +23513,9 @@ PORT MAP (
 	dataf => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Mux48~5_combout\);
 
-\inst7|Selector25~0\ : cyclonev_lcell_comb
+\inst7|Selector26~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector25~0_combout\ = (!\inst7|nextState.decode3~q\ & (((\inst7|nextState.storeAluResult~q\)) # (\inst7|rf_sel\(0)))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux48~5_combout\))))
+-- \inst7|Selector26~0_combout\ = (!\inst7|nextState.decode3~q\ & (((\inst7|nextState.storeAluResult~q\)) # (\inst7|rf_sel\(0)))) # (\inst7|nextState.decode3~q\ & (((\inst7|Mux48~5_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -23505,7 +23528,7 @@ PORT MAP (
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
 	datac => \inst7|ALT_INV_nextState.storeAluResult~q\,
 	datad => \inst7|ALT_INV_Mux48~5_combout\,
-	combout => \inst7|Selector25~0_combout\);
+	combout => \inst7|Selector26~0_combout\);
 
 \inst7|rf_sel[0]\ : dffeas
 -- pragma translate_off
@@ -23515,7 +23538,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|Selector25~0_combout\,
+	d => \inst7|Selector26~0_combout\,
 	ena => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -36234,8 +36257,8 @@ PORT MAP (
 
 \inst7|Selector14~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector14~0_combout\ = ( \inst7|nextState~18_combout\ & ( ((\inst7|nextState.execution~0_combout\ & \inst7|nextState~17_combout\)) # (\inst7|nextState.decode2~q\) ) ) # ( !\inst7|nextState~18_combout\ & ( ((\inst7|nextState.execution~0_combout\ & 
--- ((!\inst2|opcode\(5)) # (\inst7|nextState~17_combout\)))) # (\inst7|nextState.decode2~q\) ) )
+-- \inst7|Selector14~0_combout\ = ( \inst7|nextState~18_combout\ & ( ((\inst7|nextState.getMemData~0_combout\ & \inst7|nextState~17_combout\)) # (\inst7|nextState.decode2~q\) ) ) # ( !\inst7|nextState~18_combout\ & ( ((\inst7|nextState.getMemData~0_combout\ 
+-- & ((!\inst2|opcode\(5)) # (\inst7|nextState~17_combout\)))) # (\inst7|nextState.decode2~q\) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -36246,7 +36269,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
 	datab => \inst7|ALT_INV_nextState.decode2~q\,
-	datac => \inst7|ALT_INV_nextState.execution~0_combout\,
+	datac => \inst7|ALT_INV_nextState.getMemData~0_combout\,
 	datad => \inst7|ALT_INV_nextState~17_combout\,
 	datae => \inst7|ALT_INV_nextState~18_combout\,
 	combout => \inst7|Selector14~0_combout\);
@@ -36265,9 +36288,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|nextState.decode3~q\);
 
-\inst7|nextState.execution~0\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~0_combout\ = (\inst7|nextState.decode3~q\ & !\inst7|Mux61~0_combout\)
+-- \inst7|nextState.getMemData~0_combout\ = (\inst7|nextState.decode3~q\ & !\inst7|Mux61~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -36278,11 +36301,11 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.decode3~q\,
 	datab => \inst7|ALT_INV_Mux61~0_combout\,
-	combout => \inst7|nextState.execution~0_combout\);
+	combout => \inst7|nextState.getMemData~0_combout\);
 
-\inst7|nextState.execution~5\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~5\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~5_combout\ = (\inst7|nextState.execution~0_combout\ & ((!\inst7|nextState.execution~4_combout\) # (\inst7|ld_r~0_combout\)))
+-- \inst7|nextState.getMemData~5_combout\ = (\inst7|nextState.getMemData~0_combout\ & ((!\inst7|nextState.getMemData~4_combout\) # (\inst7|ld_r~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -36291,14 +36314,14 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.execution~0_combout\,
+	dataa => \inst7|ALT_INV_nextState.getMemData~0_combout\,
 	datab => \inst7|ALT_INV_ld_r~0_combout\,
-	datac => \inst7|ALT_INV_nextState.execution~4_combout\,
-	combout => \inst7|nextState.execution~5_combout\);
+	datac => \inst7|ALT_INV_nextState.getMemData~4_combout\,
+	combout => \inst7|nextState.getMemData~5_combout\);
 
-\inst7|nextState.execution~6\ : cyclonev_lcell_comb
+\inst7|nextState.getMemData~6\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~6_combout\ = (\inst7|nextState.execution~0_combout\ & !\inst7|nextState.execution~4_combout\)
+-- \inst7|nextState.getMemData~6_combout\ = (\inst7|nextState.getMemData~0_combout\ & !\inst7|nextState.getMemData~4_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -36307,13 +36330,13 @@ GENERIC MAP (
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_nextState.execution~0_combout\,
-	datab => \inst7|ALT_INV_nextState.execution~4_combout\,
-	combout => \inst7|nextState.execution~6_combout\);
+	dataa => \inst7|ALT_INV_nextState.getMemData~0_combout\,
+	datab => \inst7|ALT_INV_nextState.getMemData~4_combout\,
+	combout => \inst7|nextState.getMemData~6_combout\);
 
-\inst7|nextState.execution~7\ : cyclonev_lcell_comb
+\inst7|nextState.execution~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~7_combout\ = ( \inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & \inst2|opcode\(2)) ) ) ) # ( !\inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & ((\inst2|opcode\(2)))) # (\inst2|opcode\(5) & 
+-- \inst7|nextState.execution~0_combout\ = ( \inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & \inst2|opcode\(2)) ) ) ) # ( !\inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & ((\inst2|opcode\(2)))) # (\inst2|opcode\(5) & 
 -- (!\inst2|opcode\(3))) ) ) ) # ( \inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(3) & !\inst2|opcode\(2))) ) ) ) # ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(3) & 
 -- ((!\inst2|opcode\(2)))) # (\inst2|opcode\(3) & (\inst2|opcode\(4) & \inst2|opcode\(2))))) # (\inst2|opcode\(5) & (((!\inst2|opcode\(3))))) ) ) )
 
@@ -36330,11 +36353,11 @@ PORT MAP (
 	datad => \inst2|ALT_INV_opcode\(2),
 	datae => \inst2|ALT_INV_opcode\(1),
 	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState.execution~7_combout\);
+	combout => \inst7|nextState.execution~0_combout\);
 
-\inst7|nextState.execution~8\ : cyclonev_lcell_comb
+\inst7|nextState.execution~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~8_combout\ = (\inst7|nextState.decode3~q\ & (!\inst7|Mux61~0_combout\ & !\inst7|nextState.execution~7_combout\))
+-- \inst7|nextState.execution~1_combout\ = (\inst7|nextState.decode3~q\ & (!\inst7|Mux61~0_combout\ & !\inst7|nextState.execution~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -36345,15 +36368,15 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst7|ALT_INV_nextState.decode3~q\,
 	datab => \inst7|ALT_INV_Mux61~0_combout\,
-	datac => \inst7|ALT_INV_nextState.execution~7_combout\,
-	combout => \inst7|nextState.execution~8_combout\);
+	datac => \inst7|ALT_INV_nextState.execution~0_combout\,
+	combout => \inst7|nextState.execution~1_combout\);
 
-\inst7|nextState.execution~9\ : cyclonev_lcell_comb
+\inst7|nextState.execution~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState.execution~9_combout\ = ( \inst7|nextState.execution~6_combout\ & ( \inst7|nextState.execution~8_combout\ & ( ((!\reset~input_o\ & !\inst7|nextState.execution~5_combout\)) # (\inst7|nextState.execution~q\) ) ) ) # ( 
--- !\inst7|nextState.execution~6_combout\ & ( \inst7|nextState.execution~8_combout\ & ( (!\reset~input_o\ & ((!\inst2|address_method\(1)) # ((!\inst7|nextState.execution~5_combout\)))) # (\reset~input_o\ & (((\inst7|nextState.execution~q\)))) ) ) ) # ( 
--- \inst7|nextState.execution~6_combout\ & ( !\inst7|nextState.execution~8_combout\ & ( (\inst7|nextState.execution~q\ & ((\inst7|nextState.execution~5_combout\) # (\reset~input_o\))) ) ) ) # ( !\inst7|nextState.execution~6_combout\ & ( 
--- !\inst7|nextState.execution~8_combout\ & ( (!\reset~input_o\ & (!\inst2|address_method\(1) & ((\inst7|nextState.execution~5_combout\)))) # (\reset~input_o\ & (((\inst7|nextState.execution~q\)))) ) ) )
+-- \inst7|nextState.execution~2_combout\ = ( \inst7|nextState.getMemData~6_combout\ & ( \inst7|nextState.execution~1_combout\ & ( ((!\reset~input_o\ & !\inst7|nextState.getMemData~5_combout\)) # (\inst7|nextState.execution~q\) ) ) ) # ( 
+-- !\inst7|nextState.getMemData~6_combout\ & ( \inst7|nextState.execution~1_combout\ & ( (!\reset~input_o\ & ((!\inst2|address_method\(1)) # ((!\inst7|nextState.getMemData~5_combout\)))) # (\reset~input_o\ & (((\inst7|nextState.execution~q\)))) ) ) ) # ( 
+-- \inst7|nextState.getMemData~6_combout\ & ( !\inst7|nextState.execution~1_combout\ & ( (\inst7|nextState.execution~q\ & ((\inst7|nextState.getMemData~5_combout\) # (\reset~input_o\))) ) ) ) # ( !\inst7|nextState.getMemData~6_combout\ & ( 
+-- !\inst7|nextState.execution~1_combout\ & ( (!\reset~input_o\ & (!\inst2|address_method\(1) & ((\inst7|nextState.getMemData~5_combout\)))) # (\reset~input_o\ & (((\inst7|nextState.execution~q\)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -36365,10 +36388,10 @@ PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(1),
 	datab => \ALT_INV_reset~input_o\,
 	datac => \inst7|ALT_INV_nextState.execution~q\,
-	datad => \inst7|ALT_INV_nextState.execution~5_combout\,
-	datae => \inst7|ALT_INV_nextState.execution~6_combout\,
-	dataf => \inst7|ALT_INV_nextState.execution~8_combout\,
-	combout => \inst7|nextState.execution~9_combout\);
+	datad => \inst7|ALT_INV_nextState.getMemData~5_combout\,
+	datae => \inst7|ALT_INV_nextState.getMemData~6_combout\,
+	dataf => \inst7|ALT_INV_nextState.execution~1_combout\,
+	combout => \inst7|nextState.execution~2_combout\);
 
 \inst7|nextState.execution\ : dffeas
 -- pragma translate_off
@@ -36378,7 +36401,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState.execution~9_combout\,
+	d => \inst7|nextState.execution~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|nextState.execution~q\);
@@ -37293,6 +37316,41 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|dpcr_wr~q\);
 
+\inst7|Selector22~1\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Selector22~1_combout\ = ( !\inst7|nextState.execution~q\ & ( (((!\inst7|nextState.decode2~q\ & ((\inst7|sop_wr~q\))))) ) ) # ( \inst7|nextState.execution~q\ & ( ((!\inst2|opcode\(0) & (\inst2|opcode\(1) & (\inst7|Selector22~0_combout\ & 
+-- \inst2|opcode\(5))))) # (\inst7|sop_wr~q\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "on",
+	lut_mask => "0000000000000000000000000000001011110000111100001111111111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(0),
+	datab => \inst2|ALT_INV_opcode\(1),
+	datac => \inst7|ALT_INV_Selector22~0_combout\,
+	datad => \inst2|ALT_INV_opcode\(5),
+	datae => \inst7|ALT_INV_nextState.execution~q\,
+	dataf => \inst7|ALT_INV_sop_wr~q\,
+	datag => \inst7|ALT_INV_nextState.decode2~q\,
+	combout => \inst7|Selector22~1_combout\);
+
+\inst7|sop_wr\ : dffeas
+-- pragma translate_off
+GENERIC MAP (
+	is_wysiwyg => "true",
+	power_up => "low")
+-- pragma translate_on
+PORT MAP (
+	clk => \clkIn~input_o\,
+	d => \inst7|Selector22~1_combout\,
+	ena => \ALT_INV_reset~input_o\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	q => \inst7|sop_wr~q\);
+
 \inst8|dpcr[31]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -37845,6 +37903,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux16~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(15));
@@ -37859,6 +37918,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux17~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(14));
@@ -37873,6 +37933,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux18~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(13));
@@ -37887,6 +37948,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux19~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(12));
@@ -37901,6 +37963,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux20~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(11));
@@ -37915,6 +37978,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux21~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(10));
@@ -37929,6 +37993,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux22~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(9));
@@ -37943,6 +38008,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux23~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(8));
@@ -37957,6 +38023,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux24~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(7));
@@ -37971,6 +38038,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux25~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(6));
@@ -37985,6 +38053,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux26~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(5));
@@ -37999,6 +38068,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux27~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(4));
@@ -38013,6 +38083,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux28~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(3));
@@ -38027,6 +38098,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux29~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(2));
@@ -38041,6 +38113,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux30~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(1));
@@ -38055,6 +38128,7 @@ PORT MAP (
 	clk => \clkIn~input_o\,
 	d => \inst3|Mux31~4_combout\,
 	clrn => \ALT_INV_reset~input_o\,
+	ena => \inst7|sop_wr~q\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sop\(0));

@@ -41,6 +41,6 @@ Notes:
 - DPCR[19..0] will be indicated via display
 
 ## Inputs
-- KEY0 acts as a reset, will reset PC to 0 and DPCR
-- SIP[9..0] can be configured via SW[9..0]
+- KEY0 acts as a reset, will reset PC, DPCR and SOP to 0.
+- SIP[9..0] can be configured via SW[9..0].
 
