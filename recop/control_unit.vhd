@@ -202,7 +202,6 @@ architecture behavioral of control_unit is
 								when am_register =>
 									-- JMP Rxdata
 									increment <= "0100";
-									nextState <= execution; -- need to read Rx
 								when others =>
 							end case;
 							

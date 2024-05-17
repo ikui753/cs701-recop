@@ -32,7 +32,7 @@ architecture behaviour of dataAddrMux is
 begin
 	process (clk)
 	begin
-		if rising_edge(clk) then
+		--if rising_edge(clk) then
 			-- mux to select address to be entered into data memory for store operations
 			case addrSel is
 				when "00" =>
@@ -71,6 +71,6 @@ begin
 				present_sz_jmp <= "00";
 			end if;
 			
-		end if;
+		--end if;
 	end process;
 end architecture;

@@ -71,7 +71,7 @@ begin
 	-- perform ALU operation
 	alu: process (alu_operation, operand_1, operand_2, clk)
 	begin
-		if rising_edge(clk) then
+		--if rising_edge(clk) then
 			-- do PRESENT instruction here?
 			
 			
@@ -96,7 +96,7 @@ begin
 			end case;
 		
 			alu_result <= result;
-		end if;
+		--end if;
 		end process alu;
 
 	-- zero flag

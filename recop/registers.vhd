@@ -12,7 +12,7 @@ use work.opcodes.all;
 entity registers is
     port (
 		clk : in bit_1;
-		reset : in bit_1;
+--		reset : in bit_1;
 		dpcr: out bit_32;
 		r7 : in bit_16;
 		rx : in bit_16;
@@ -49,11 +49,11 @@ architecture beh of registers is
 
   begin
 	-- dpcr
-	process (clk, reset)
+	process (clk)
 	begin
-		if reset = '1' then
-			dpcr <= X"00000000";
-		elsif rising_edge(clk) then 
+--		if reset = '1' then
+--			dpcr <= X"00000000";
+		if rising_edge(clk) then 
 			if dpcr_wr = '1' then
 				-- write to dpcr. lower byte depends on select signal
 				case dpcr_lsb_sel is
@@ -67,97 +67,28 @@ architecture beh of registers is
 		end if;
 	end process;
 	
---	-- er
---	process (clk, reset)
---	begin
---		if reset = '1' then
---			er <= '0';
---		elsif rising_edge(clk) then 
---			-- set or clear er
---			if er_wr = '1' then
---				er <= '1';
---			elsif er_clr = '1' then
---				er <= '0';
---			end if;
---		end if;
---	end process;
---	
---	-- eot
---	process (clk, reset)
---	begin
---		if reset = '1' then
---			eot <= '0';
---		elsif rising_edge(clk) then 
---			-- set or clear eot
---			if eot_wr = '1' then
---				eot <= '1';
---			elsif eot_clr = '1' then
---				eot <= '0';
---			end if;
---		end if;
---	end process;
-	
---	-- svop
---	process (clk, reset)
---	begin
---		if reset = '1' then
---			svop <= X"0000";
---		elsif rising_edge(clk) then 
---			if svop_wr = '1' then
---				-- write Rx into SVOP upon write signal 
---				svop <= rx;
---			end if;
---		end if;
---	end process;
-	
 	-- sip
-	process (clk, reset)
+	process (clk)
 	begin
-		if reset = '1' then
-			sip_r <= X"0000";
-		elsif rising_edge(clk) then 
+--		if reset = '1' then
+--			sip_r <= X"0000";
+		if rising_edge(clk) then 
 		-- register the sip signal with the system's clock
 			sip_r <= sip;
 		end if;
 	end process;
 	
 	-- sop
-	process (clk, reset)
+	process (clk)
 	begin
-		if reset = '1' then
-			sop <= X"0000";
-		elsif rising_edge(clk) then 
+--		if reset = '1' then
+--			sop <= X"0000";
+		if rising_edge(clk) then 
 			if sop_wr = '1' then
 				-- write Rx into SOP upon write signal 
 				sop <= rx;
 			end if;
 		end if;
 	end process;
-	
---	-- dprr: result
---	process (clk, reset)
---	begin
---		if reset = '1' then
---			dprr(0) <= '0';
---		elsif rising_edge(clk) then 
---			if result_wen = '1' then
---				-- write result upon write signal 
---				dprr(0) <= result;
---			end if;
---		end if;
---	end process;
---	-- dprr: irq
---	process (clk, reset)
---	begin
---		if reset = '1' then
---			dprr(1) <= '1';
---		elsif rising_edge(clk) then 
---			-- set or clear irq according to control signal
---			if irq_wr = '1' then
---				dprr(1) <= '1';
---			elsif irq_clr ='1' then
---				dprr(1) <= '0';
---			end if;
---		end if;
---	end process;	
+		
 end beh;
