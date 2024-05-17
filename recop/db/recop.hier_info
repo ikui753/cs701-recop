@@ -143,6 +143,7 @@ sip_r[13] <= registers:inst8.sip_r[13]
 sip_r[14] <= registers:inst8.sip_r[14]
 sip_r[15] <= registers:inst8.sip_r[15]
 dpcr_wr <= control_unit:inst7.dpcr_wr
+sop_wr <= control_unit:inst7.sop_wr
 sip[0] => registers:inst8.sip[0]
 sip[1] => registers:inst8.sip[1]
 sip[2] => registers:inst8.sip[2]

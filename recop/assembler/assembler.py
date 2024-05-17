@@ -113,8 +113,8 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
 
 
 if __name__ == "__main__":
-    input_file = "./assembler/program.asm"
-    output_file = "./assembler/output.mif"
+    input_file = "program.asm"
+    output_file = "output.mif"
     
     instructions = read_file(input_file)
     hex_instructions = compile(instructions)
