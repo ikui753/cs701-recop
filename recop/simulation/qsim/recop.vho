@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/17/2024 18:23:59"
+-- DATE "05/17/2024 20:55:43"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -1226,7 +1226,7 @@ SIGNAL \inst7|alu_opsel[2]~8_combout\ : std_logic;
 SIGNAL \inst7|alu_opsel[2]~9_combout\ : std_logic;
 SIGNAL \inst9|Mux19~0_combout\ : std_logic;
 SIGNAL \inst7|Mux52~0_combout\ : std_logic;
-SIGNAL \inst7|Mux52~5_combout\ : std_logic;
+SIGNAL \inst7|Mux52~4_combout\ : std_logic;
 SIGNAL \inst7|Mux52~1_combout\ : std_logic;
 SIGNAL \inst7|Mux52~2_combout\ : std_logic;
 SIGNAL \inst7|Mux52~3_combout\ : std_logic;
@@ -1376,11 +1376,12 @@ SIGNAL \inst9|Add0~26\ : std_logic;
 SIGNAL \inst9|Add0~21_sumout\ : std_logic;
 SIGNAL \inst9|Mux32~0_combout\ : std_logic;
 SIGNAL \inst9|result[5]~0_combout\ : std_logic;
-SIGNAL \inst7|Selector11~2_combout\ : std_logic;
+SIGNAL \inst7|Mux56~0_combout\ : std_logic;
+SIGNAL \inst7|Mux31~0_combout\ : std_logic;
 SIGNAL \inst7|OUTPUTS~0_combout\ : std_logic;
 SIGNAL \inst7|Mux0~0_combout\ : std_logic;
-SIGNAL \inst7|nextState~25_combout\ : std_logic;
 SIGNAL \inst7|nextState~26_combout\ : std_logic;
+SIGNAL \inst7|nextState~27_combout\ : std_logic;
 SIGNAL \inst7|nextState.selStore~q\ : std_logic;
 SIGNAL \inst7|nextState.storeData~q\ : std_logic;
 SIGNAL \inst7|nextState.loadAluResult~q\ : std_logic;
@@ -1388,7 +1389,9 @@ SIGNAL \inst7|nextState.storeAluResult~q\ : std_logic;
 SIGNAL \inst7|ld_r~0_combout\ : std_logic;
 SIGNAL \inst7|nextState~20_combout\ : std_logic;
 SIGNAL \inst7|nextState~21_combout\ : std_logic;
-SIGNAL \inst7|nextState~27_combout\ : std_logic;
+SIGNAL \inst7|nextState~22_combout\ : std_logic;
+SIGNAL \inst7|nextState~23_combout\ : std_logic;
+SIGNAL \inst7|nextState~28_combout\ : std_logic;
 SIGNAL \inst7|nextState.getMemData~q\ : std_logic;
 SIGNAL \inst7|nextState.getMemData2~q\ : std_logic;
 SIGNAL \inst7|nextState.writeData~q\ : std_logic;
@@ -1397,12 +1400,11 @@ SIGNAL \inst7|Selector11~1_combout\ : std_logic;
 SIGNAL \inst7|nextState.fetch~q\ : std_logic;
 SIGNAL \inst7|Selector20~0_combout\ : std_logic;
 SIGNAL \inst7|wren~q\ : std_logic;
-SIGNAL \inst7|Mux52~4_combout\ : std_logic;
+SIGNAL \inst7|addrSel[1]~0_combout\ : std_logic;
 SIGNAL \inst7|Mux59~0_combout\ : std_logic;
 SIGNAL \inst7|dataSel[0]~0_combout\ : std_logic;
 SIGNAL \inst7|dataSel[0]~4_combout\ : std_logic;
 SIGNAL \inst6|Mux16~0_combout\ : std_logic;
-SIGNAL \inst7|Mux56~0_combout\ : std_logic;
 SIGNAL \inst7|increment[2]~0_combout\ : std_logic;
 SIGNAL \inst7|increment[2]~2_combout\ : std_logic;
 SIGNAL \inst7|nextState.idle~q\ : std_logic;
@@ -1539,15 +1541,14 @@ SIGNAL \inst7|dataSel[1]~1_combout\ : std_logic;
 SIGNAL \inst7|dataSel[1]~2_combout\ : std_logic;
 SIGNAL \inst7|dataSel[1]~3_combout\ : std_logic;
 SIGNAL \inst6|dataOut[5]~0_combout\ : std_logic;
-SIGNAL \inst7|addrSel[0]~3_combout\ : std_logic;
-SIGNAL \inst7|Mux57~0_combout\ : std_logic;
+SIGNAL \inst7|addrSel[0]~2_combout\ : std_logic;
+SIGNAL \inst7|Mux57~1_combout\ : std_logic;
 SIGNAL \inst7|Mux58~0_combout\ : std_logic;
 SIGNAL \inst7|Mux58~1_combout\ : std_logic;
-SIGNAL \inst7|addrSel[0]~4_combout\ : std_logic;
+SIGNAL \inst7|addrSel[0]~3_combout\ : std_logic;
 SIGNAL \inst6|Mux15~0_combout\ : std_logic;
-SIGNAL \inst7|addrSel[1]~0_combout\ : std_logic;
+SIGNAL \inst7|Mux57~0_combout\ : std_logic;
 SIGNAL \inst7|addrSel[1]~1_combout\ : std_logic;
-SIGNAL \inst7|addrSel[1]~2_combout\ : std_logic;
 SIGNAL \inst6|addrOut[3]~0_combout\ : std_logic;
 SIGNAL \inst6|Mux14~0_combout\ : std_logic;
 SIGNAL \inst6|Mux13~0_combout\ : std_logic;
@@ -2076,9 +2077,8 @@ SIGNAL \inst7|nextState~18_combout\ : std_logic;
 SIGNAL \inst7|Selector14~0_combout\ : std_logic;
 SIGNAL \inst7|nextState.decode3~q\ : std_logic;
 SIGNAL \inst7|nextState~19_combout\ : std_logic;
-SIGNAL \inst7|nextState~22_combout\ : std_logic;
-SIGNAL \inst7|nextState~23_combout\ : std_logic;
 SIGNAL \inst7|nextState~24_combout\ : std_logic;
+SIGNAL \inst7|nextState~25_combout\ : std_logic;
 SIGNAL \inst7|nextState.execution~q\ : std_logic;
 SIGNAL \inst7|Selector16~0_combout\ : std_logic;
 SIGNAL \inst7|Selector8~0_combout\ : std_logic;
@@ -2142,8 +2142,7 @@ SIGNAL \inst8|sop\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \ALT_INV_reset~input_o\ : std_logic;
 SIGNAL \ALT_INV_clkIn~input_o\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux52~5_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Selector11~2_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux52~4_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_dpcr_lsb_sel~0_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Mux45~0_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Mux44~0_combout\ : std_logic;
@@ -2212,12 +2211,13 @@ SIGNAL \inst9|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Mux16~0_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Mux2~0_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Mux18~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_nextState~25_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState~26_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_nextState~24_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~23_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~22_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~21_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~20_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_ld_r~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~19_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux15~0_combout\ : std_logic;
@@ -2239,6 +2239,7 @@ SIGNAL \inst3|ALT_INV_data_input_z[3]~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_data_input_z[3]~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Selector11~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux31~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~18_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_nextState~17_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_dpcr_lsb_sel~q\ : std_logic;
@@ -2284,14 +2285,13 @@ SIGNAL \inst7|ALT_INV_Mux45~2_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_dataSel[1]~2_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_dataSel[1]~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_dataSel[0]~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux52~4_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux59~0_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux58~1_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_Mux58~0_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_addrSel[0]~3_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_addrSel[1]~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_Mux57~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_addrSel[0]~2_combout\ : std_logic;
 SIGNAL \inst7|ALT_INV_addrSel[1]~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux57~1_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_Mux57~0_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~2_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~1_combout\ : std_logic;
 SIGNAL \inst9|ALT_INV_Equal0~0_combout\ : std_logic;
@@ -2481,8 +2481,8 @@ SIGNAL \inst3|ALT_INV_regs[10][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[6][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux29~1_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a215~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a183~portadataout\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[13][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][2]~q\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a151~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a56~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a24~portadataout\ : std_logic;
@@ -2548,8 +2548,6 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a255~portad
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a223~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a191~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a159~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a167~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a135~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a40~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a8~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a104~portadataout\ : std_logic;
@@ -2675,6 +2673,8 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a23~portada
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a119~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a87~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a247~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a215~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a183~portadataout\ : std_logic;
 SIGNAL \inst4|altsyncram_component|auto_generated|ALT_INV_q_a\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst7|ALT_INV_alu_opsel\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \inst|ALT_INV_out_count\ : std_logic_vector(15 DOWNTO 0);
@@ -2740,8 +2740,8 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a103~portad
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a71~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a231~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a199~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~1_combout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~0_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a167~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a135~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w30_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w30_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w31_n0_mux_dataout~1_combout\ : std_logic;
@@ -2781,8 +2781,6 @@ SIGNAL \inst|ALT_INV_Add0~13_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~9_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~5_sumout\ : std_logic;
 SIGNAL \inst|ALT_INV_Add0~1_sumout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[1][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux17~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[12][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[8][14]~q\ : std_logic;
@@ -2869,8 +2867,8 @@ SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_da
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w28_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w28_n0_mux_dataout~0_combout\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][8]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[5][8]~q\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~1_combout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][8]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux23~0_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[12][8]~q\ : std_logic;
@@ -2996,8 +2994,8 @@ SIGNAL \inst3|ALT_INV_regs[2][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux17~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[13][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[9][14]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[13][2]~q\ : std_logic;
-SIGNAL \inst3|ALT_INV_regs[9][2]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][14]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[1][14]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[5][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[1][2]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux29~0_combout\ : std_logic;
@@ -3123,6 +3121,8 @@ SIGNAL \inst3|ALT_INV_regs[6][8]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[2][8]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_Mux23~1_combout\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[13][8]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[9][8]~q\ : std_logic;
+SIGNAL \inst3|ALT_INV_regs[5][8]~q\ : std_logic;
 
 BEGIN
 
@@ -4552,8 +4552,7 @@ ww_devpor <= devpor;
 \inst4|altsyncram_component|auto_generated|q_a\(0) <= \inst4|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus\(0);
 \ALT_INV_reset~input_o\ <= NOT \reset~input_o\;
 \ALT_INV_clkIn~input_o\ <= NOT \clkIn~input_o\;
-\inst7|ALT_INV_Mux52~5_combout\ <= NOT \inst7|Mux52~5_combout\;
-\inst7|ALT_INV_Selector11~2_combout\ <= NOT \inst7|Selector11~2_combout\;
+\inst7|ALT_INV_Mux52~4_combout\ <= NOT \inst7|Mux52~4_combout\;
 \inst7|ALT_INV_dpcr_lsb_sel~0_combout\ <= NOT \inst7|dpcr_lsb_sel~0_combout\;
 \inst9|ALT_INV_Mux45~0_combout\ <= NOT \inst9|Mux45~0_combout\;
 \inst9|ALT_INV_Mux44~0_combout\ <= NOT \inst9|Mux44~0_combout\;
@@ -4622,12 +4621,13 @@ ww_devpor <= devpor;
 \inst9|ALT_INV_Mux16~0_combout\ <= NOT \inst9|Mux16~0_combout\;
 \inst9|ALT_INV_Mux2~0_combout\ <= NOT \inst9|Mux2~0_combout\;
 \inst9|ALT_INV_Mux18~0_combout\ <= NOT \inst9|Mux18~0_combout\;
-\inst7|ALT_INV_nextState~25_combout\ <= NOT \inst7|nextState~25_combout\;
+\inst7|ALT_INV_nextState~26_combout\ <= NOT \inst7|nextState~26_combout\;
+\inst7|ALT_INV_Mux0~0_combout\ <= NOT \inst7|Mux0~0_combout\;
+\inst7|ALT_INV_nextState~24_combout\ <= NOT \inst7|nextState~24_combout\;
 \inst7|ALT_INV_nextState~23_combout\ <= NOT \inst7|nextState~23_combout\;
 \inst7|ALT_INV_nextState~22_combout\ <= NOT \inst7|nextState~22_combout\;
 \inst7|ALT_INV_nextState~21_combout\ <= NOT \inst7|nextState~21_combout\;
 \inst7|ALT_INV_nextState~20_combout\ <= NOT \inst7|nextState~20_combout\;
-\inst7|ALT_INV_Mux0~0_combout\ <= NOT \inst7|Mux0~0_combout\;
 \inst7|ALT_INV_ld_r~0_combout\ <= NOT \inst7|ld_r~0_combout\;
 \inst7|ALT_INV_nextState~19_combout\ <= NOT \inst7|nextState~19_combout\;
 \inst3|ALT_INV_Mux15~0_combout\ <= NOT \inst3|Mux15~0_combout\;
@@ -4649,6 +4649,7 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_data_input_z[3]~0_combout\ <= NOT \inst3|data_input_z[3]~0_combout\;
 \inst3|ALT_INV_Mux0~0_combout\ <= NOT \inst3|Mux0~0_combout\;
 \inst7|ALT_INV_Selector11~0_combout\ <= NOT \inst7|Selector11~0_combout\;
+\inst7|ALT_INV_Mux31~0_combout\ <= NOT \inst7|Mux31~0_combout\;
 \inst7|ALT_INV_nextState~18_combout\ <= NOT \inst7|nextState~18_combout\;
 \inst7|ALT_INV_nextState~17_combout\ <= NOT \inst7|nextState~17_combout\;
 \inst7|ALT_INV_dpcr_lsb_sel~q\ <= NOT \inst7|dpcr_lsb_sel~q\;
@@ -4694,14 +4695,13 @@ ww_devpor <= devpor;
 \inst7|ALT_INV_dataSel[1]~2_combout\ <= NOT \inst7|dataSel[1]~2_combout\;
 \inst7|ALT_INV_dataSel[1]~1_combout\ <= NOT \inst7|dataSel[1]~1_combout\;
 \inst7|ALT_INV_dataSel[0]~0_combout\ <= NOT \inst7|dataSel[0]~0_combout\;
-\inst7|ALT_INV_Mux52~4_combout\ <= NOT \inst7|Mux52~4_combout\;
 \inst7|ALT_INV_Mux59~0_combout\ <= NOT \inst7|Mux59~0_combout\;
 \inst7|ALT_INV_Mux58~1_combout\ <= NOT \inst7|Mux58~1_combout\;
 \inst7|ALT_INV_Mux58~0_combout\ <= NOT \inst7|Mux58~0_combout\;
-\inst7|ALT_INV_addrSel[0]~3_combout\ <= NOT \inst7|addrSel[0]~3_combout\;
-\inst7|ALT_INV_addrSel[1]~1_combout\ <= NOT \inst7|addrSel[1]~1_combout\;
-\inst7|ALT_INV_Mux57~0_combout\ <= NOT \inst7|Mux57~0_combout\;
+\inst7|ALT_INV_addrSel[0]~2_combout\ <= NOT \inst7|addrSel[0]~2_combout\;
 \inst7|ALT_INV_addrSel[1]~0_combout\ <= NOT \inst7|addrSel[1]~0_combout\;
+\inst7|ALT_INV_Mux57~1_combout\ <= NOT \inst7|Mux57~1_combout\;
+\inst7|ALT_INV_Mux57~0_combout\ <= NOT \inst7|Mux57~0_combout\;
 \inst9|ALT_INV_Equal0~2_combout\ <= NOT \inst9|Equal0~2_combout\;
 \inst9|ALT_INV_Equal0~1_combout\ <= NOT \inst9|Equal0~1_combout\;
 \inst9|ALT_INV_Equal0~0_combout\ <= NOT \inst9|Equal0~0_combout\;
@@ -4956,8 +4956,8 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[6][2]~q\ <= NOT \inst3|regs[6][2]~q\;
 \inst3|ALT_INV_regs[2][2]~q\ <= NOT \inst3|regs[2][2]~q\;
 \inst3|ALT_INV_Mux29~1_combout\ <= NOT \inst3|Mux29~1_combout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a215~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a215~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a183~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a183~portadataout\;
+\inst3|ALT_INV_regs[13][2]~q\ <= NOT \inst3|regs[13][2]~q\;
+\inst3|ALT_INV_regs[9][2]~q\ <= NOT \inst3|regs[9][2]~q\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a151~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a151~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a56~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a56~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a24~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a24~portadataout\;
@@ -5023,8 +5023,6 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a223~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a223~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a191~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a191~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a159~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a159~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a167~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a167~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a135~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a135~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a40~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a40~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a8~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a8~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a104~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a104~portadataout\;
@@ -5150,6 +5148,8 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a119~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a119~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a87~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a87~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a247~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a247~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a215~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a215~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a183~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a183~portadataout\;
 \inst4|altsyncram_component|auto_generated|ALT_INV_q_a\(0) <= NOT \inst4|altsyncram_component|auto_generated|q_a\(0);
 \inst4|altsyncram_component|auto_generated|ALT_INV_q_a\(1) <= NOT \inst4|altsyncram_component|auto_generated|q_a\(1);
 \inst4|altsyncram_component|auto_generated|ALT_INV_q_a\(2) <= NOT \inst4|altsyncram_component|auto_generated|q_a\(2);
@@ -5245,8 +5245,8 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a71~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a71~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a231~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a231~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a199~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a199~portadataout\;
-\inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\;
-\inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a167~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a167~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a135~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a135~portadataout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w30_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w30_n0_mux_dataout~1_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w30_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w30_n0_mux_dataout~0_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w31_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w31_n0_mux_dataout~1_combout\;
@@ -5318,8 +5318,6 @@ ww_devpor <= devpor;
 \inst|ALT_INV_Add0~9_sumout\ <= NOT \inst|Add0~9_sumout\;
 \inst|ALT_INV_Add0~5_sumout\ <= NOT \inst|Add0~5_sumout\;
 \inst|ALT_INV_Add0~1_sumout\ <= NOT \inst|Add0~1_sumout\;
-\inst3|ALT_INV_regs[5][14]~q\ <= NOT \inst3|regs[5][14]~q\;
-\inst3|ALT_INV_regs[1][14]~q\ <= NOT \inst3|regs[1][14]~q\;
 \inst3|ALT_INV_Mux17~0_combout\ <= NOT \inst3|Mux17~0_combout\;
 \inst3|ALT_INV_regs[12][14]~q\ <= NOT \inst3|regs[12][14]~q\;
 \inst3|ALT_INV_regs[8][14]~q\ <= NOT \inst3|regs[8][14]~q\;
@@ -5414,8 +5412,8 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w27_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w27_n0_mux_dataout~0_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w28_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w28_n0_mux_dataout~1_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w28_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w28_n0_mux_dataout~0_combout\;
-\inst3|ALT_INV_regs[9][8]~q\ <= NOT \inst3|regs[9][8]~q\;
-\inst3|ALT_INV_regs[5][8]~q\ <= NOT \inst3|regs[5][8]~q\;
+\inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~1_combout\;
+\inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w29_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w29_n0_mux_dataout~0_combout\;
 \inst3|ALT_INV_regs[1][8]~q\ <= NOT \inst3|regs[1][8]~q\;
 \inst3|ALT_INV_Mux23~0_combout\ <= NOT \inst3|Mux23~0_combout\;
 \inst3|ALT_INV_regs[12][8]~q\ <= NOT \inst3|regs[12][8]~q\;
@@ -5541,8 +5539,8 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_Mux17~1_combout\ <= NOT \inst3|Mux17~1_combout\;
 \inst3|ALT_INV_regs[13][14]~q\ <= NOT \inst3|regs[13][14]~q\;
 \inst3|ALT_INV_regs[9][14]~q\ <= NOT \inst3|regs[9][14]~q\;
-\inst3|ALT_INV_regs[13][2]~q\ <= NOT \inst3|regs[13][2]~q\;
-\inst3|ALT_INV_regs[9][2]~q\ <= NOT \inst3|regs[9][2]~q\;
+\inst3|ALT_INV_regs[5][14]~q\ <= NOT \inst3|regs[5][14]~q\;
+\inst3|ALT_INV_regs[1][14]~q\ <= NOT \inst3|regs[1][14]~q\;
 \inst3|ALT_INV_regs[5][2]~q\ <= NOT \inst3|regs[5][2]~q\;
 \inst3|ALT_INV_regs[1][2]~q\ <= NOT \inst3|regs[1][2]~q\;
 \inst3|ALT_INV_Mux29~0_combout\ <= NOT \inst3|Mux29~0_combout\;
@@ -5668,6 +5666,8 @@ ww_devpor <= devpor;
 \inst3|ALT_INV_regs[2][8]~q\ <= NOT \inst3|regs[2][8]~q\;
 \inst3|ALT_INV_Mux23~1_combout\ <= NOT \inst3|Mux23~1_combout\;
 \inst3|ALT_INV_regs[13][8]~q\ <= NOT \inst3|regs[13][8]~q\;
+\inst3|ALT_INV_regs[9][8]~q\ <= NOT \inst3|regs[9][8]~q\;
+\inst3|ALT_INV_regs[5][8]~q\ <= NOT \inst3|regs[5][8]~q\;
 
 \rf_init~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -13158,7 +13158,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -13544,7 +13544,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -13930,7 +13930,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -14702,7 +14702,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007",
+	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000F",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -15123,9 +15123,9 @@ PORT MAP (
 	datae => \inst2|ALT_INV_opcode\(0),
 	combout => \inst7|Mux52~0_combout\);
 
-\inst7|Mux52~5\ : cyclonev_lcell_comb
+\inst7|Mux52~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux52~5_combout\ = ( \inst2|opcode\(5) & ( \inst7|alu_opsel\(3) & ( (!\inst2|opcode\(2) & ((!\inst2|opcode\(4)) # ((!\inst2|opcode\(0) & !\inst2|address_method\(0))))) ) ) ) # ( !\inst2|opcode\(5) & ( \inst7|alu_opsel\(3) & ( (!\inst2|opcode\(4) & 
+-- \inst7|Mux52~4_combout\ = ( \inst2|opcode\(5) & ( \inst7|alu_opsel\(3) & ( (!\inst2|opcode\(2) & ((!\inst2|opcode\(4)) # ((!\inst2|opcode\(0) & !\inst2|address_method\(0))))) ) ) ) # ( !\inst2|opcode\(5) & ( \inst7|alu_opsel\(3) & ( (!\inst2|opcode\(4) & 
 -- (!\inst2|opcode\(0) & (!\inst2|address_method\(0)))) # (\inst2|opcode\(4) & ((!\inst2|opcode\(0)) # ((\inst2|opcode\(2))))) ) ) ) # ( !\inst2|opcode\(5) & ( !\inst7|alu_opsel\(3) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(0) & (!\inst2|address_method\(0) 
 -- & !\inst2|opcode\(2)))) ) ) )
 
@@ -15142,7 +15142,7 @@ PORT MAP (
 	datad => \inst2|ALT_INV_opcode\(2),
 	datae => \inst2|ALT_INV_opcode\(5),
 	dataf => \inst7|ALT_INV_alu_opsel\(3),
-	combout => \inst7|Mux52~5_combout\);
+	combout => \inst7|Mux52~4_combout\);
 
 \inst7|Mux52~1\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -15183,7 +15183,7 @@ PORT MAP (
 
 \inst7|Mux52~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux52~3_combout\ = ( \inst2|opcode\(3) & ( \inst2|opcode\(1) & ( \inst7|Mux52~2_combout\ ) ) ) # ( !\inst2|opcode\(3) & ( \inst2|opcode\(1) & ( \inst7|Mux52~1_combout\ ) ) ) # ( \inst2|opcode\(3) & ( !\inst2|opcode\(1) & ( \inst7|Mux52~5_combout\ ) 
+-- \inst7|Mux52~3_combout\ = ( \inst2|opcode\(3) & ( \inst2|opcode\(1) & ( \inst7|Mux52~2_combout\ ) ) ) # ( !\inst2|opcode\(3) & ( \inst2|opcode\(1) & ( \inst7|Mux52~1_combout\ ) ) ) # ( \inst2|opcode\(3) & ( !\inst2|opcode\(1) & ( \inst7|Mux52~4_combout\ ) 
 -- ) ) # ( !\inst2|opcode\(3) & ( !\inst2|opcode\(1) & ( \inst7|Mux52~0_combout\ ) ) )
 
 -- pragma translate_off
@@ -15194,7 +15194,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_Mux52~0_combout\,
-	datab => \inst7|ALT_INV_Mux52~5_combout\,
+	datab => \inst7|ALT_INV_Mux52~4_combout\,
 	datac => \inst7|ALT_INV_Mux52~1_combout\,
 	datad => \inst7|ALT_INV_Mux52~2_combout\,
 	datae => \inst2|ALT_INV_opcode\(3),
@@ -17638,7 +17638,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -18448,7 +18448,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000D",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000019",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -19012,23 +19012,38 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst9|alu_result\(15));
 
-\inst7|Selector11~2\ : cyclonev_lcell_comb
+\inst7|Mux56~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector11~2_combout\ = ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1) & ((!\inst2|opcode\(5) & ((!\inst2|opcode\(2)))) # (\inst2|opcode\(5) & (!\inst2|opcode\(3) & \inst2|opcode\(2))))) ) )
+-- \inst7|Mux56~0_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(1) & !\inst2|opcode\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1100001000000000000000000000000011000010000000000000000000000000",
+	lut_mask => "1000000010000000100000001000000010000000100000001000000010000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(3),
-	datab => \inst2|ALT_INV_opcode\(5),
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(1),
+	datac => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|Mux56~0_combout\);
+
+\inst7|Mux31~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|Mux31~0_combout\ = (!\inst2|opcode\(0) & (!\inst2|opcode\(1) & (!\inst2|opcode\(2) $ (\inst2|opcode\(5)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "1000000000001000100000000000100010000000000010001000000000001000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(0),
+	datab => \inst2|ALT_INV_opcode\(1),
 	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Selector11~2_combout\);
+	datad => \inst2|ALT_INV_opcode\(5),
+	combout => \inst7|Mux31~0_combout\);
 
 \inst7|OUTPUTS~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -19066,9 +19081,9 @@ PORT MAP (
 	datab => \inst2|ALT_INV_address_method\(0),
 	combout => \inst7|Mux0~0_combout\);
 
-\inst7|nextState~25\ : cyclonev_lcell_comb
+\inst7|nextState~26\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~25_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(1))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & 
+-- \inst7|nextState~26_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (\inst2|opcode\(3) & !\inst2|opcode\(1))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & 
 -- \inst2|opcode\(1))) ) ) ) # ( \inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1)) # ((\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((!\inst2|opcode\(3)) # 
 -- (!\inst2|opcode\(1))))) # (\inst2|opcode\(4) & (!\inst2|opcode\(1) & ((!\inst2|opcode\(3)) # (\inst7|Mux0~0_combout\)))) ) ) )
 
@@ -19085,11 +19100,11 @@ PORT MAP (
 	datad => \inst2|ALT_INV_opcode\(1),
 	datae => \inst2|ALT_INV_opcode\(2),
 	dataf => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~25_combout\);
+	combout => \inst7|nextState~26_combout\);
 
-\inst7|nextState~26\ : cyclonev_lcell_comb
+\inst7|nextState~27\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~26_combout\ = ( \inst7|nextState.decode3~q\ & ( \inst7|nextState~25_combout\ & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(2) & (\inst2|opcode\(1) & !\inst2|opcode\(0))) # (\inst2|opcode\(2) & ((\inst2|opcode\(0)))))) ) ) )
+-- \inst7|nextState~27_combout\ = ( \inst7|nextState.decode3~q\ & ( \inst7|nextState~26_combout\ & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(2) & (\inst2|opcode\(1) & !\inst2|opcode\(0))) # (\inst2|opcode\(2) & ((\inst2|opcode\(0)))))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -19103,8 +19118,8 @@ PORT MAP (
 	datac => \inst2|ALT_INV_opcode\(1),
 	datad => \inst2|ALT_INV_opcode\(0),
 	datae => \inst7|ALT_INV_nextState.decode3~q\,
-	dataf => \inst7|ALT_INV_nextState~25_combout\,
-	combout => \inst7|nextState~26_combout\);
+	dataf => \inst7|ALT_INV_nextState~26_combout\,
+	combout => \inst7|nextState~27_combout\);
 
 \inst7|nextState.selStore\ : dffeas
 -- pragma translate_off
@@ -19114,7 +19129,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState~26_combout\,
+	d => \inst7|nextState~27_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|nextState.selStore~q\);
@@ -19179,28 +19194,48 @@ PORT MAP (
 
 \inst7|nextState~20\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~20_combout\ = ( \inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (\inst2|opcode\(4) & (!\inst2|opcode\(1) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(1) & 
--- !\inst2|opcode\(3))) ) ) ) # ( \inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(1)) # ((\inst2|opcode\(4) & \inst2|opcode\(3))) ) ) ) # ( !\inst2|opcode\(2) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((!\inst2|opcode\(1)) # 
--- (!\inst2|opcode\(3))))) # (\inst2|opcode\(4) & (!\inst2|opcode\(1) & ((!\inst2|opcode\(3)) # (\inst7|Mux0~0_combout\)))) ) ) )
+-- \inst7|nextState~20_combout\ = ( \inst2|address_method\(1) & ( \inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (((!\inst2|opcode\(0))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( !\inst2|address_method\(1) & ( 
+-- \inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (!\inst2|opcode\(0) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( \inst2|address_method\(1) & ( 
+-- !\inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (!\inst2|opcode\(0) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) ) # ( !\inst2|address_method\(1) & ( 
+-- !\inst2|address_method\(0) & ( (!\inst2|opcode\(1) & (!\inst2|opcode\(0) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) # (\inst2|opcode\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3)))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111110011010000111100001111001100001100000000000000000000110000",
+	lut_mask => "1110100000001000111010000000100011101000000010001111100000001000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst7|ALT_INV_Mux0~0_combout\,
-	datab => \inst2|ALT_INV_opcode\(4),
+	dataa => \inst2|ALT_INV_opcode\(4),
+	datab => \inst2|ALT_INV_opcode\(3),
 	datac => \inst2|ALT_INV_opcode\(1),
-	datad => \inst2|ALT_INV_opcode\(3),
-	datae => \inst2|ALT_INV_opcode\(2),
-	dataf => \inst2|ALT_INV_opcode\(0),
+	datad => \inst2|ALT_INV_opcode\(0),
+	datae => \inst2|ALT_INV_address_method\(1),
+	dataf => \inst2|ALT_INV_address_method\(0),
 	combout => \inst7|nextState~20_combout\);
 
 \inst7|nextState~21\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~21_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(4) & (!\inst2|opcode\(3) & (\inst2|opcode\(2) & \inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) 
+-- \inst7|nextState~21_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (((\inst2|opcode\(2))))) # (\inst2|opcode\(4) & (((!\inst2|opcode\(3) & \inst2|opcode\(2))) # (\inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) & ( (\inst2|opcode\(2) & 
+-- (\inst2|opcode\(1) & ((!\inst2|opcode\(4)) # (!\inst2|opcode\(3))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000001110000011100101111100000000000011100000111001011111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(4),
+	datab => \inst2|ALT_INV_opcode\(3),
+	datac => \inst2|ALT_INV_opcode\(2),
+	datad => \inst2|ALT_INV_opcode\(1),
+	datae => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|nextState~21_combout\);
+
+\inst7|nextState~22\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~22_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(4) & (\inst2|opcode\(3) & (!\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(4) & (!\inst2|opcode\(3) & (\inst2|opcode\(2) & \inst2|opcode\(1)))) ) ) # ( !\inst2|opcode\(0) 
 -- & ( (!\inst2|opcode\(3) & (\inst2|opcode\(4) & (\inst2|opcode\(2) & !\inst2|opcode\(1)))) # (\inst2|opcode\(3) & (!\inst2|opcode\(2) & ((!\inst2|opcode\(1)) # (\inst2|opcode\(4))))) ) )
 
 -- pragma translate_off
@@ -19215,28 +19250,43 @@ PORT MAP (
 	datac => \inst2|ALT_INV_opcode\(2),
 	datad => \inst2|ALT_INV_opcode\(1),
 	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~21_combout\);
+	combout => \inst7|nextState~22_combout\);
 
-\inst7|nextState~27\ : cyclonev_lcell_comb
+\inst7|nextState~23\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~27_combout\ = ( \inst7|nextState~20_combout\ & ( \inst7|nextState~21_combout\ & ( (\inst2|address_method\(1) & (\inst7|nextState~19_combout\ & \inst7|ld_r~0_combout\)) ) ) ) # ( !\inst7|nextState~20_combout\ & ( 
--- \inst7|nextState~21_combout\ & ( (\inst2|opcode\(5) & (\inst2|address_method\(1) & (\inst7|nextState~19_combout\ & \inst7|ld_r~0_combout\))) ) ) ) # ( \inst7|nextState~20_combout\ & ( !\inst7|nextState~21_combout\ & ( (!\inst2|opcode\(5) & 
--- (\inst2|address_method\(1) & (\inst7|nextState~19_combout\ & \inst7|ld_r~0_combout\))) ) ) )
+-- \inst7|nextState~23_combout\ = ( \inst7|nextState~22_combout\ & ( ((!\inst7|nextState~21_combout\ & ((\inst7|nextState~20_combout\) # (\inst2|opcode\(2))))) # (\inst2|opcode\(5)) ) ) # ( !\inst7|nextState~22_combout\ & ( (!\inst2|opcode\(5) & 
+-- (!\inst7|nextState~21_combout\ & ((\inst7|nextState~20_combout\) # (\inst2|opcode\(2))))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000000000000000000000000001000000000000000010000000000000011",
+	lut_mask => "0010101000000000011111110101010100101010000000000111111101010101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_address_method\(1),
-	datac => \inst7|ALT_INV_nextState~19_combout\,
-	datad => \inst7|ALT_INV_ld_r~0_combout\,
-	datae => \inst7|ALT_INV_nextState~20_combout\,
-	dataf => \inst7|ALT_INV_nextState~21_combout\,
-	combout => \inst7|nextState~27_combout\);
+	datab => \inst2|ALT_INV_opcode\(2),
+	datac => \inst7|ALT_INV_nextState~20_combout\,
+	datad => \inst7|ALT_INV_nextState~21_combout\,
+	datae => \inst7|ALT_INV_nextState~22_combout\,
+	combout => \inst7|nextState~23_combout\);
+
+\inst7|nextState~28\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~28_combout\ = (\inst2|address_method\(1) & (\inst7|nextState~19_combout\ & (\inst7|ld_r~0_combout\ & \inst7|nextState~23_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000000001000000000000000100000000000000010000000000000001",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_address_method\(1),
+	datab => \inst7|ALT_INV_nextState~19_combout\,
+	datac => \inst7|ALT_INV_ld_r~0_combout\,
+	datad => \inst7|ALT_INV_nextState~23_combout\,
+	combout => \inst7|nextState~28_combout\);
 
 \inst7|nextState.getMemData\ : dffeas
 -- pragma translate_off
@@ -19246,7 +19296,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState~27_combout\,
+	d => \inst7|nextState~28_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|nextState.getMemData~q\);
@@ -19297,19 +19347,23 @@ PORT MAP (
 
 \inst7|Selector11~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Selector11~1_combout\ = (!\inst7|Selector11~0_combout\) # ((\inst2|opcode\(4) & (\inst7|nextState.decode3~q\ & \inst7|Selector11~2_combout\)))
+-- \inst7|Selector11~1_combout\ = ( \inst7|Mux31~0_combout\ & ( \inst7|Selector11~0_combout\ & ( (\inst2|opcode\(4) & (\inst7|nextState.decode3~q\ & ((!\inst2|opcode\(3)) # (\inst7|Mux56~0_combout\)))) ) ) ) # ( !\inst7|Mux31~0_combout\ & ( 
+-- \inst7|Selector11~0_combout\ & ( (\inst2|opcode\(4) & (\inst2|opcode\(3) & (\inst7|nextState.decode3~q\ & \inst7|Mux56~0_combout\))) ) ) ) # ( \inst7|Mux31~0_combout\ & ( !\inst7|Selector11~0_combout\ ) ) # ( !\inst7|Mux31~0_combout\ & ( 
+-- !\inst7|Selector11~0_combout\ ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1111111100000001111111110000000111111111000000011111111100000001",
+	lut_mask => "1111111111111111111111111111111100000000000000010000010000000101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(4),
-	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_Selector11~2_combout\,
-	datad => \inst7|ALT_INV_Selector11~0_combout\,
+	datab => \inst2|ALT_INV_opcode\(3),
+	datac => \inst7|ALT_INV_nextState.decode3~q\,
+	datad => \inst7|ALT_INV_Mux56~0_combout\,
+	datae => \inst7|ALT_INV_Mux31~0_combout\,
+	dataf => \inst7|ALT_INV_Selector11~0_combout\,
 	combout => \inst7|Selector11~1_combout\);
 
 \inst7|nextState.fetch\ : dffeas
@@ -19354,22 +19408,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst7|wren~q\);
 
-\inst7|Mux52~4\ : cyclonev_lcell_comb
+\inst7|addrSel[1]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux52~4_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(2) & !\inst2|opcode\(0))))
+-- \inst7|addrSel[1]~0_combout\ = ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(2)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000000000000100000000000000010000000000000001000000000000000",
+	lut_mask => "1000000000000000000000000000000010000000000000000000000000000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
 	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Mux52~4_combout\);
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|addrSel[1]~0_combout\);
 
 \inst7|Mux59~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -19393,23 +19448,22 @@ PORT MAP (
 
 \inst7|dataSel[0]~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|dataSel[0]~0_combout\ = (!\inst2|opcode\(3) & (\inst2|opcode\(1) & !\inst2|address_method\(1)))
+-- \inst7|dataSel[0]~0_combout\ = (\inst2|opcode\(1) & !\inst2|address_method\(1))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010000000100000001000000010000000100000001000000010000000100000",
+	lut_mask => "0100010001000100010001000100010001000100010001000100010001000100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(3),
-	datab => \inst2|ALT_INV_opcode\(1),
-	datac => \inst2|ALT_INV_address_method\(1),
+	dataa => \inst2|ALT_INV_opcode\(1),
+	datab => \inst2|ALT_INV_address_method\(1),
 	combout => \inst7|dataSel[0]~0_combout\);
 
 \inst7|dataSel[0]~4\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|dataSel[0]~4_combout\ = ( \inst7|Mux59~0_combout\ & ( \inst7|dataSel[0]~0_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|dataSel\(0))) # (\inst7|nextState.decode3~q\ & (\inst7|Mux52~4_combout\ & ((\inst2|address_method\(0)) # 
+-- \inst7|dataSel[0]~4_combout\ = ( \inst7|Mux59~0_combout\ & ( \inst7|dataSel[0]~0_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|dataSel\(0))) # (\inst7|nextState.decode3~q\ & (\inst7|addrSel[1]~0_combout\ & ((\inst2|address_method\(0)) # 
 -- (\inst7|dataSel\(0))))) ) ) ) # ( !\inst7|Mux59~0_combout\ & ( \inst7|dataSel[0]~0_combout\ & ( \inst7|dataSel\(0) ) ) ) # ( \inst7|Mux59~0_combout\ & ( !\inst7|dataSel[0]~0_combout\ & ( (\inst7|dataSel\(0) & !\inst7|nextState.decode3~q\) ) ) ) # ( 
 -- !\inst7|Mux59~0_combout\ & ( !\inst7|dataSel[0]~0_combout\ & ( \inst7|dataSel\(0) ) ) )
 
@@ -19423,7 +19477,7 @@ PORT MAP (
 	dataa => \inst7|ALT_INV_dataSel\(0),
 	datab => \inst2|ALT_INV_address_method\(0),
 	datac => \inst7|ALT_INV_nextState.decode3~q\,
-	datad => \inst7|ALT_INV_Mux52~4_combout\,
+	datad => \inst7|ALT_INV_addrSel[1]~0_combout\,
 	datae => \inst7|ALT_INV_Mux59~0_combout\,
 	dataf => \inst7|ALT_INV_dataSel[0]~0_combout\,
 	combout => \inst7|dataSel[0]~4_combout\);
@@ -19456,22 +19510,6 @@ PORT MAP (
 	datab => \inst7|ALT_INV_dataSel\(0),
 	datac => \inst2|ALT_INV_operand\(15),
 	combout => \inst6|Mux16~0_combout\);
-
-\inst7|Mux56~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|Mux56~0_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(1) & !\inst2|opcode\(0)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1000000010000000100000001000000010000000100000001000000010000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(1),
-	datac => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|Mux56~0_combout\);
 
 \inst7|increment[2]~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -21966,7 +22004,7 @@ PORT MAP (
 
 \inst7|dataSel[1]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|dataSel[1]~1_combout\ = (!\inst2|address_method\(0) & (\inst7|Mux52~4_combout\ & \inst7|dataSel[0]~0_combout\))
+-- \inst7|dataSel[1]~1_combout\ = (!\inst2|address_method\(0) & (\inst7|addrSel[1]~0_combout\ & \inst7|dataSel[0]~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -21976,7 +22014,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(0),
-	datab => \inst7|ALT_INV_Mux52~4_combout\,
+	datab => \inst7|ALT_INV_addrSel[1]~0_combout\,
 	datac => \inst7|ALT_INV_dataSel[0]~0_combout\,
 	combout => \inst7|dataSel[1]~1_combout\);
 
@@ -22062,9 +22100,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst6|dataOut\(15));
 
-\inst7|addrSel[0]~3\ : cyclonev_lcell_comb
+\inst7|addrSel[0]~2\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|addrSel[0]~3_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(4) $ (\inst2|opcode\(3))))
+-- \inst7|addrSel[0]~2_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(4) $ (\inst2|opcode\(3))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -22076,11 +22114,11 @@ PORT MAP (
 	dataa => \inst2|ALT_INV_opcode\(5),
 	datab => \inst2|ALT_INV_opcode\(4),
 	datac => \inst2|ALT_INV_opcode\(3),
-	combout => \inst7|addrSel[0]~3_combout\);
+	combout => \inst7|addrSel[0]~2_combout\);
 
-\inst7|Mux57~0\ : cyclonev_lcell_comb
+\inst7|Mux57~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|Mux57~0_combout\ = ( \inst2|opcode\(4) & ( !\inst2|opcode\(5) & ( (\inst2|opcode\(0) & (!\inst2|opcode\(1) & (\inst2|opcode\(2) & \inst2|opcode\(3)))) ) ) ) # ( !\inst2|opcode\(4) & ( !\inst2|opcode\(5) & ( (!\inst2|opcode\(0) & (!\inst2|opcode\(2) 
+-- \inst7|Mux57~1_combout\ = ( \inst2|opcode\(4) & ( !\inst2|opcode\(5) & ( (\inst2|opcode\(0) & (!\inst2|opcode\(1) & (\inst2|opcode\(2) & \inst2|opcode\(3)))) ) ) ) # ( !\inst2|opcode\(4) & ( !\inst2|opcode\(5) & ( (!\inst2|opcode\(0) & (!\inst2|opcode\(2) 
 -- & !\inst2|opcode\(3))) ) ) )
 
 -- pragma translate_off
@@ -22096,7 +22134,7 @@ PORT MAP (
 	datad => \inst2|ALT_INV_opcode\(3),
 	datae => \inst2|ALT_INV_opcode\(4),
 	dataf => \inst2|ALT_INV_opcode\(5),
-	combout => \inst7|Mux57~0_combout\);
+	combout => \inst7|Mux57~1_combout\);
 
 \inst7|Mux58~0\ : cyclonev_lcell_comb
 -- Equation(s):
@@ -22134,10 +22172,10 @@ PORT MAP (
 	datae => \inst7|ALT_INV_Mux58~0_combout\,
 	combout => \inst7|Mux58~1_combout\);
 
-\inst7|addrSel[0]~4\ : cyclonev_lcell_comb
+\inst7|addrSel[0]~3\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|addrSel[0]~4_combout\ = ( \inst7|Mux58~1_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|addrSel\(0))) # (\inst7|nextState.decode3~q\ & ((!\inst7|Mux57~0_combout\ & (\inst7|addrSel\(0))) # (\inst7|Mux57~0_combout\ & 
--- ((\inst7|addrSel[0]~3_combout\))))) ) ) # ( !\inst7|Mux58~1_combout\ & ( (\inst7|addrSel\(0) & ((!\inst7|nextState.decode3~q\) # (!\inst7|Mux57~0_combout\))) ) )
+-- \inst7|addrSel[0]~3_combout\ = ( \inst7|Mux58~1_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|addrSel\(0))) # (\inst7|nextState.decode3~q\ & ((!\inst7|Mux57~1_combout\ & (\inst7|addrSel\(0))) # (\inst7|Mux57~1_combout\ & 
+-- ((\inst7|addrSel[0]~2_combout\))))) ) ) # ( !\inst7|Mux58~1_combout\ & ( (\inst7|addrSel\(0) & ((!\inst7|nextState.decode3~q\) # (!\inst7|Mux57~1_combout\))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -22148,10 +22186,10 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst7|ALT_INV_addrSel\(0),
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_addrSel[0]~3_combout\,
-	datad => \inst7|ALT_INV_Mux57~0_combout\,
+	datac => \inst7|ALT_INV_addrSel[0]~2_combout\,
+	datad => \inst7|ALT_INV_Mux57~1_combout\,
 	datae => \inst7|ALT_INV_Mux58~1_combout\,
-	combout => \inst7|addrSel[0]~4_combout\);
+	combout => \inst7|addrSel[0]~3_combout\);
 
 \inst7|addrSel[0]\ : dffeas
 -- pragma translate_off
@@ -22161,7 +22199,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|addrSel[0]~4_combout\,
+	d => \inst7|addrSel[0]~3_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|addrSel\(0));
@@ -22182,46 +22220,27 @@ PORT MAP (
 	datac => \inst3|ALT_INV_Mux47~4_combout\,
 	combout => \inst6|Mux15~0_combout\);
 
-\inst7|addrSel[1]~0\ : cyclonev_lcell_comb
+\inst7|Mux57~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|addrSel[1]~0_combout\ = (!\inst2|opcode\(5) & (!\inst2|opcode\(2) & !\inst2|opcode\(0)))
+-- \inst7|Mux57~0_combout\ = (!\inst2|address_method\(1) & (\inst7|addrSel\(1) & ((!\inst2|opcode\(1)) # (!\inst2|address_method\(0))))) # (\inst2|address_method\(1) & (((!\inst2|address_method\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "1000000010000000100000001000000010000000100000001000000010000000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(2),
-	datac => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|addrSel[1]~0_combout\);
-
-\inst7|addrSel[1]~1\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|addrSel[1]~1_combout\ = ( !\inst2|address_method\(1) & ( \inst2|address_method\(0) & ( (\inst7|addrSel\(1) & (!\inst2|opcode\(4) & (!\inst2|opcode\(3) & !\inst2|opcode\(1)))) ) ) ) # ( \inst2|address_method\(1) & ( !\inst2|address_method\(0) & ( 
--- (!\inst2|opcode\(4) & !\inst2|opcode\(3)) ) ) ) # ( !\inst2|address_method\(1) & ( !\inst2|address_method\(0) & ( (\inst7|addrSel\(1) & (!\inst2|opcode\(4) & !\inst2|opcode\(3))) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0100000001000000110000001100000001000000000000000000000000000000",
+	lut_mask => "0101111101000000010111110100000001011111010000000101111101000000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst7|ALT_INV_addrSel\(1),
-	datab => \inst2|ALT_INV_opcode\(4),
-	datac => \inst2|ALT_INV_opcode\(3),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_address_method\(1),
-	dataf => \inst2|ALT_INV_address_method\(0),
-	combout => \inst7|addrSel[1]~1_combout\);
+	datab => \inst2|ALT_INV_opcode\(1),
+	datac => \inst2|ALT_INV_address_method\(1),
+	datad => \inst2|ALT_INV_address_method\(0),
+	combout => \inst7|Mux57~0_combout\);
 
-\inst7|addrSel[1]~2\ : cyclonev_lcell_comb
+\inst7|addrSel[1]~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|addrSel[1]~2_combout\ = ( \inst7|addrSel[1]~1_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|addrSel\(1))) # (\inst7|nextState.decode3~q\ & ((!\inst7|Mux57~0_combout\ & (\inst7|addrSel\(1))) # (\inst7|Mux57~0_combout\ & 
--- ((\inst7|addrSel[1]~0_combout\))))) ) ) # ( !\inst7|addrSel[1]~1_combout\ & ( (\inst7|addrSel\(1) & ((!\inst7|nextState.decode3~q\) # (!\inst7|Mux57~0_combout\))) ) )
+-- \inst7|addrSel[1]~1_combout\ = ( \inst7|addrSel[1]~0_combout\ & ( (!\inst7|nextState.decode3~q\ & (\inst7|addrSel\(1))) # (\inst7|nextState.decode3~q\ & ((!\inst7|Mux57~1_combout\ & (\inst7|addrSel\(1))) # (\inst7|Mux57~1_combout\ & 
+-- ((\inst7|Mux57~0_combout\))))) ) ) # ( !\inst7|addrSel[1]~0_combout\ & ( (\inst7|addrSel\(1) & ((!\inst7|nextState.decode3~q\) # (!\inst7|Mux57~1_combout\))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -22232,10 +22251,10 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \inst7|ALT_INV_addrSel\(1),
 	datab => \inst7|ALT_INV_nextState.decode3~q\,
-	datac => \inst7|ALT_INV_addrSel[1]~0_combout\,
-	datad => \inst7|ALT_INV_Mux57~0_combout\,
-	datae => \inst7|ALT_INV_addrSel[1]~1_combout\,
-	combout => \inst7|addrSel[1]~2_combout\);
+	datac => \inst7|ALT_INV_Mux57~0_combout\,
+	datad => \inst7|ALT_INV_Mux57~1_combout\,
+	datae => \inst7|ALT_INV_addrSel[1]~0_combout\,
+	combout => \inst7|addrSel[1]~1_combout\);
 
 \inst7|addrSel[1]\ : dffeas
 -- pragma translate_off
@@ -22245,7 +22264,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|addrSel[1]~2_combout\,
+	d => \inst7|addrSel[1]~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|addrSel\(1));
@@ -23659,7 +23678,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000D",
+	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001D",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -24045,7 +24064,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000E",
+	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001E",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -31341,7 +31360,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -34085,7 +34104,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000C",
+	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -35118,7 +35137,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000F",
+	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001F",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -36167,7 +36186,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,
@@ -36407,59 +36426,45 @@ PORT MAP (
 	datac => \inst7|ALT_INV_Equal5~0_combout\,
 	combout => \inst7|nextState~19_combout\);
 
-\inst7|nextState~22\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~22_combout\ = (!\inst2|opcode\(5) & (!\inst7|nextState~20_combout\)) # (\inst2|opcode\(5) & ((!\inst7|nextState~21_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1101100011011000110110001101100011011000110110001101100011011000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst7|ALT_INV_nextState~20_combout\,
-	datac => \inst7|ALT_INV_nextState~21_combout\,
-	combout => \inst7|nextState~22_combout\);
-
-\inst7|nextState~23\ : cyclonev_lcell_comb
--- Equation(s):
--- \inst7|nextState~23_combout\ = ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (((\inst2|opcode\(2))))) # (\inst2|opcode\(5) & (!\inst2|opcode\(3) & ((!\inst2|opcode\(1))))) ) ) # ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(3) & ((!\inst2|opcode\(5) & 
--- (!\inst2|opcode\(2))) # (\inst2|opcode\(5) & ((!\inst2|opcode\(1)))))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "1100010010000000010011100000101011000100100000000100111000001010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \inst2|ALT_INV_opcode\(5),
-	datab => \inst2|ALT_INV_opcode\(3),
-	datac => \inst2|ALT_INV_opcode\(2),
-	datad => \inst2|ALT_INV_opcode\(1),
-	datae => \inst2|ALT_INV_opcode\(0),
-	combout => \inst7|nextState~23_combout\);
-
 \inst7|nextState~24\ : cyclonev_lcell_comb
 -- Equation(s):
--- \inst7|nextState~24_combout\ = ( \inst7|nextState~23_combout\ & ( (!\inst2|address_method\(1) & (\inst7|nextState~19_combout\ & (\inst7|ld_r~0_combout\ & !\inst7|nextState~22_combout\))) ) ) # ( !\inst7|nextState~23_combout\ & ( 
--- (\inst7|nextState~19_combout\ & (!\inst7|nextState~22_combout\ & ((!\inst2|address_method\(1)) # (!\inst7|ld_r~0_combout\)))) ) )
+-- \inst7|nextState~24_combout\ = ( \inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & \inst2|opcode\(2)) ) ) ) # ( !\inst2|opcode\(1) & ( \inst2|opcode\(0) & ( (!\inst2|opcode\(5) & ((\inst2|opcode\(2)))) # (\inst2|opcode\(5) & 
+-- (!\inst2|opcode\(3))) ) ) ) # ( \inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & (!\inst2|opcode\(3) & !\inst2|opcode\(2))) ) ) ) # ( !\inst2|opcode\(1) & ( !\inst2|opcode\(0) & ( (!\inst2|opcode\(5) & ((!\inst2|opcode\(3) & 
+-- ((!\inst2|opcode\(2)))) # (\inst2|opcode\(3) & (\inst2|opcode\(4) & \inst2|opcode\(2))))) # (\inst2|opcode\(5) & (((!\inst2|opcode\(3))))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0011001000000000000000100000000000110010000000000000001000000000",
+	lut_mask => "1111000001010010101000000000000001010000111110100000000010101010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \inst2|ALT_INV_opcode\(5),
+	datab => \inst2|ALT_INV_opcode\(4),
+	datac => \inst2|ALT_INV_opcode\(3),
+	datad => \inst2|ALT_INV_opcode\(2),
+	datae => \inst2|ALT_INV_opcode\(1),
+	dataf => \inst2|ALT_INV_opcode\(0),
+	combout => \inst7|nextState~24_combout\);
+
+\inst7|nextState~25\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \inst7|nextState~25_combout\ = ( \inst7|nextState~24_combout\ & ( (!\inst2|address_method\(1) & (\inst7|nextState~19_combout\ & (\inst7|ld_r~0_combout\ & \inst7|nextState~23_combout\))) ) ) # ( !\inst7|nextState~24_combout\ & ( 
+-- (\inst7|nextState~19_combout\ & (\inst7|nextState~23_combout\ & ((!\inst2|address_method\(1)) # (!\inst7|ld_r~0_combout\)))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000110010000000000000001000000000001100100000000000000010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \inst2|ALT_INV_address_method\(1),
 	datab => \inst7|ALT_INV_nextState~19_combout\,
 	datac => \inst7|ALT_INV_ld_r~0_combout\,
-	datad => \inst7|ALT_INV_nextState~22_combout\,
-	datae => \inst7|ALT_INV_nextState~23_combout\,
-	combout => \inst7|nextState~24_combout\);
+	datad => \inst7|ALT_INV_nextState~23_combout\,
+	datae => \inst7|ALT_INV_nextState~24_combout\,
+	combout => \inst7|nextState~25_combout\);
 
 \inst7|nextState.execution\ : dffeas
 -- pragma translate_off
@@ -36469,7 +36474,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clkIn~input_o\,
-	d => \inst7|nextState~24_combout\,
+	d => \inst7|nextState~25_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst7|nextState.execution~q\);
@@ -37167,7 +37172,7 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	mem_init1 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-	mem_init0 => "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A",
+	mem_init0 => "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012",
 	clk0_core_clock_enable => "ena0",
 	data_interleave_offset_in_bits => 1,
 	data_interleave_width_in_bits => 1,

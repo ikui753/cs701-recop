@@ -89,16 +89,7 @@ architecture behavioral of control_unit is
 					
 					nextState <= decode;
 					stateOut <= "0001";
---					
---				when fetch2 =>
---					ld_r <= '0'; -- disable
---					dpcr_wr <= '0';
---					sop_wr <= '0';
---					-- instruction passed through instruction register
---					increment <= "0000"; -- stop incrementing
---					stateOut <= "0010";
---					nextState <= decode;
-					
+
 				when decode => -- actual decode, am, operand, opcode now available 
 					-- increment <= "0000";
 					stateOut <= "0011"; 
@@ -208,7 +199,7 @@ architecture behavioral of control_unit is
 							
 						when present =>
 							-- only one case- PC <- Operand if RzData = 0
-							nextState <= execution; 
+							nextState <= fetch; 
 						
 						when sz =>
 							-- only one case- PC <- Operand if Z = 1, else next

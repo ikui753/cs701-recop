@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Fri May 17 18:23:38 2024
+Fri May 17 20:55:35 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 17 18:23:38 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 17 20:55:35 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -225,9 +225,9 @@ refer to the applicable agreement for further details.
 ; Combinational ALUT usage for logic          ; 624         ;
 ;     -- 7 input functions                    ; 0           ;
 ;     -- 6 input functions                    ; 316         ;
-;     -- 5 input functions                    ; 126         ;
-;     -- 4 input functions                    ; 39          ;
-;     -- <=3 input functions                  ; 143         ;
+;     -- 5 input functions                    ; 127         ;
+;     -- 4 input functions                    ; 40          ;
+;     -- <=3 input functions                  ; 141         ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 488         ;
 ;                                             ;             ;
@@ -239,7 +239,7 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clkIn~input ;
 ; Maximum fan-out                             ; 761         ;
-; Total fan-out                               ; 8925        ;
+; Total fan-out                               ; 8927        ;
 ; Average fan-out                             ; 4.66        ;
 +---------------------------------------------+-------------+
 
@@ -364,7 +364,7 @@ Encoding Type:  One-Hot
 ; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2|l3_w26_n0_mux_dataout ;
 ; 66:1               ; 9 bits    ; 396 LEs       ; 81 LEs               ; 315 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
 ; 67:1               ; 3 bits    ; 132 LEs       ; 30 LEs               ; 102 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -559,10 +559,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     normal            ; 593                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 113                         ;
-;         4 data inputs ; 39                          ;
-;         5 data inputs ; 110                         ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 110                         ;
+;         4 data inputs ; 40                          ;
+;         5 data inputs ; 111                         ;
 ;         6 data inputs ; 316                         ;
 ; boundary_port         ; 265                         ;
 ; stratixv_ram_block    ; 272                         ;
@@ -587,7 +587,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 17 18:23:24 2024
+    Info: Processing started: Fri May 17 20:55:21 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -646,11 +646,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file dataadd
     Info (12022): Found design unit 1: dataAddrMux-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 32
     Info (12023): Found entity 1: dataAddrMux File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 10
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
+Warning (275013): Port "clk" of type registers and instance "inst11" is missing source signal
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "rf_init" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 33
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(393): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 393
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(384): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 384
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "prog_mem" for hierarchy "prog_mem:inst10"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
@@ -675,6 +676,9 @@ Warning (287001): Assertion warning: Device family Cyclone V does not have M4K b
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dti1.tdf
     Info (12023): Found entity 1: altsyncram_dti1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_dti1" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (113028): 1019 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+    Warning (113027): Addresses ranging from 5 to 1023 are not initialized File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
     Info (12023): Found entity 1: decode_61a File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/decode_61a.tdf Line: 22
 Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 39
@@ -728,10 +732,10 @@ Info (21057): Implemented 1539 device resources after synthesis - the final reso
     Info (21059): Implemented 247 output pins
     Info (21061): Implemented 1002 logic cells
     Info (21064): Implemented 272 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4900 megabytes
-    Info: Processing ended: Fri May 17 18:23:38 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4927 megabytes
+    Info: Processing ended: Fri May 17 20:55:35 2024
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Total CPU time (on all processors): 00:00:12
 
 
