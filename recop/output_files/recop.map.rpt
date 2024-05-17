@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Fri May 17 18:21:15 2024
+Fri May 17 18:23:38 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,16 +16,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |progCounterTest|control_unit:inst7|nextState
  10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Source assignments for prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated
- 14. Source assignments for data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
- 15. Parameter Settings for User Entity Instance: prog_mem:inst10|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: data_mem:inst4|altsyncram:altsyncram_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated
+ 15. Source assignments for data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
+ 16. Parameter Settings for User Entity Instance: prog_mem:inst10|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: data_mem:inst4|altsyncram:altsyncram_component
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -51,16 +52,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 17 18:21:14 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 17 18:23:38 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
+; Total registers                 ; 488                                         ;
 ; Total pins                      ; 265                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 96                                          ;
+; Total block memory bits         ; 1,114,112                                   ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -167,10 +168,15 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -209,48 +215,57 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 1     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 1     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 1     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 265   ;
-; Total MLAB memory bits                      ; 0     ;
-; Total block memory bits                     ; 96    ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; ~GND  ;
-; Maximum fan-out                             ; 48    ;
-; Total fan-out                               ; 361   ;
-; Average fan-out                             ; 0.62  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 497         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 624         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 316         ;
+;     -- 5 input functions                    ; 126         ;
+;     -- 4 input functions                    ; 39          ;
+;     -- <=3 input functions                  ; 143         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 488         ;
+;                                             ;             ;
+; I/O pins                                    ; 265         ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 1114112     ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clkIn~input ;
+; Maximum fan-out                             ; 761         ;
+; Total fan-out                               ; 8925        ;
+; Average fan-out                             ; 4.66        ;
++---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |progCounterTest                          ; 1 (1)               ; 0 (0)                     ; 96                ; 0          ; 265  ; 0            ; |progCounterTest                                                                                ; progCounterTest ; work         ;
-;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4                                                                 ; data_mem        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component                                 ; altsyncram      ; work         ;
-;          |altsyncram_q6j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated  ; altsyncram_q6j1 ; work         ;
-;    |prog_mem:inst10|                      ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10                                                                ; prog_mem        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_dti1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 64                ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated ; altsyncram_dti1 ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                          ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |progCounterTest                          ; 624 (0)             ; 488 (0)                   ; 1114112           ; 0          ; 265  ; 0            ; |progCounterTest                                                                                                       ; progCounterTest ; work         ;
+;    |alu:inst9|                            ; 105 (105)           ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|alu:inst9                                                                                             ; alu             ; work         ;
+;    |control_unit:inst7|                   ; 117 (117)           ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|control_unit:inst7                                                                                    ; control_unit    ; work         ;
+;    |dataAddrMux:inst6|                    ; 35 (35)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|dataAddrMux:inst6                                                                                     ; dataAddrMux     ; work         ;
+;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4                                                                                        ; data_mem        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component                                                        ; altsyncram      ; work         ;
+;          |altsyncram_q6j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |progCounterTest|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated                         ; altsyncram_q6j1 ; work         ;
+;    |instruction_reg:inst2|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|instruction_reg:inst2                                                                                 ; instruction_reg ; work         ;
+;    |prog_mem:inst10|                      ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10                                                                                       ; prog_mem        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_dti1:auto_generated| ; 104 (0)             ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated                        ; altsyncram_dti1 ; work         ;
+;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
+;             |mux_ahb:mux2|                ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2           ; mux_ahb         ; work         ;
+;    |program_counter:inst|                 ; 35 (35)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|program_counter:inst                                                                                  ; program_counter ; work         ;
+;    |regfile:inst3|                        ; 228 (228)           ; 272 (272)                 ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|regfile:inst3                                                                                         ; regfile         ; work         ;
+;    |registers:inst8|                      ; 0 (0)               ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |progCounterTest|registers:inst8                                                                                       ; registers       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -288,485 +303,19 @@ Encoding Type:  One-Hot
 +--------------------------+---------------------+-----------------------+----------------------+--------------------------+-------------------------+---------------------+---------------------+----------------------+--------------------+-------------------+-------------------+------------------+------------------+-----------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                        ;
-+----------------------------------------------------------------------------------------------------+--------------------------------------+
-; Register name                                                                                      ; Reason for Removal                   ;
-+----------------------------------------------------------------------------------------------------+--------------------------------------+
-; registers:inst8|dpcr[0..31]                                                                        ; Stuck at GND due to stuck port clock ;
-; registers:inst8|sip_r[0..15]                                                                       ; Stuck at GND due to stuck port clock ;
-; registers:inst8|sop[0..15]                                                                         ; Stuck at GND due to stuck port clock ;
-; dataAddrMux:inst6|dataOut[0]                                                                       ; Stuck at GND due to stuck port clock ;
-; dataAddrMux:inst6|present_sz_Jmp[0,1]                                                              ; Stuck at GND due to stuck port clock ;
-; dataAddrMux:inst6|dataOut[1..15]                                                                   ; Stuck at GND due to stuck port clock ;
-; dataAddrMux:inst6|addrOut[0..11]                                                                   ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|data_input_z[0]                                                                      ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][15]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][14]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][13]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][12]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][11]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][10]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][9]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][8]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][7]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][6]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][5]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][4]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][3]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][2]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][1]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[15][0]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][15]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][14]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][13]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][12]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][11]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][10]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][9]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][8]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][7]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][6]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][5]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][4]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][3]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][2]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][1]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[14][0]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][15]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][14]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][13]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][12]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][11]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][10]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][9]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][8]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][7]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][6]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][5]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][4]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][3]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][2]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][1]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[13][0]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][15]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][14]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][13]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][12]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][11]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][10]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][9]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][8]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][7]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][6]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][5]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][4]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][3]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][2]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][1]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[12][0]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][15]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][14]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][13]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][12]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][11]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][10]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][9]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][8]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][7]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][6]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][5]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][4]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][3]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][2]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][1]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[11][0]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][15]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][14]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][13]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][12]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][11]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][10]                                                                         ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][9]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][8]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][7]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][6]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][5]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][4]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][3]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][2]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][1]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[10][0]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[9][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[8][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[7][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[6][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[5][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[4][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[3][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[2][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[1][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][15]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][14]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][13]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][12]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][11]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][10]                                                                          ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][9]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][8]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][7]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][6]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][5]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][4]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][3]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][2]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][1]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|regs[0][0]                                                                           ; Stuck at GND due to stuck port clock ;
-; regfile:inst3|data_input_z[1..15]                                                                  ; Stuck at GND due to stuck port clock ;
-; alu:inst9|alu_result[1..3]                                                                         ; Stuck at GND due to stuck port clock ;
-; alu:inst9|z_flag                                                                                   ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[1..3]                                                                             ; Lost fanout                          ;
-; alu:inst9|alu_result[0]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[0]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[4]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[4]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[5]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[5]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[6]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[6]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[7]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[7]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[8]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[8]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[9]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[9]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[10]                                                                           ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[10]                                                                               ; Lost fanout                          ;
-; alu:inst9|alu_result[11]                                                                           ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[11]                                                                               ; Lost fanout                          ;
-; alu:inst9|alu_result[12]                                                                           ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[12]                                                                               ; Lost fanout                          ;
-; alu:inst9|alu_result[13]                                                                           ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[13]                                                                               ; Lost fanout                          ;
-; alu:inst9|alu_result[14]                                                                           ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[14]                                                                               ; Lost fanout                          ;
-; alu:inst9|alu_result[15]                                                                           ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[15]                                                                               ; Lost fanout                          ;
-; program_counter:inst|out_count[0..15]                                                              ; Stuck at GND due to stuck port clock ;
-; prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|address_reg_a[0..2] ; Stuck at GND due to stuck port clock ;
-; instruction_reg:inst2|operand[0..15]                                                               ; Stuck at GND due to stuck port clock ;
-; instruction_reg:inst2|rx[0..3]                                                                     ; Stuck at GND due to stuck port clock ;
-; instruction_reg:inst2|rz[0..3]                                                                     ; Stuck at GND due to stuck port clock ;
-; instruction_reg:inst2|opcode[0..5]                                                                 ; Stuck at GND due to stuck port clock ;
-; instruction_reg:inst2|address_method[0,1]                                                          ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|dataSel[0,1]                                                                    ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|dpcr_lsb_sel                                                                    ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|dpcr_wr                                                                         ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|sop_wr                                                                          ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|addrSel[0,1]                                                                    ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|alu_opsel[0..6]                                                                 ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|rf_sel[0..3]                                                                    ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|wren                                                                            ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|clr_z_flag                                                                      ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|ld_r                                                                            ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|stateOut[0..3]                                                                  ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|increment[0..2]                                                                 ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|increment[3]                                                                    ; Stuck at VCC due to stuck port clock ;
-; control_unit:inst7|nextState.selStore                                                              ; Lost fanout                          ;
-; control_unit:inst7|nextState.loadAluResult                                                         ; Lost fanout                          ;
-; control_unit:inst7|nextState.getMemData                                                            ; Lost fanout                          ;
-; control_unit:inst7|nextState.getMemData2                                                           ; Lost fanout                          ;
-; control_unit:inst7|nextState.idle                                                                  ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|nextState.delayStore                                                            ; Lost fanout                          ;
-; control_unit:inst7|nextState.fetch2                                                                ; Lost fanout                          ;
-; control_unit:inst7|nextState.fetch                                                                 ; Stuck at GND due to stuck port clock ;
-; control_unit:inst7|nextState.writeData                                                             ; Lost fanout                          ;
-; control_unit:inst7|nextState.storeAluResult                                                        ; Lost fanout                          ;
-; control_unit:inst7|nextState.execution                                                             ; Lost fanout                          ;
-; control_unit:inst7|nextState.decode3                                                               ; Lost fanout                          ;
-; control_unit:inst7|nextState.decode2                                                               ; Lost fanout                          ;
-; control_unit:inst7|nextState.decode                                                                ; Lost fanout                          ;
-; control_unit:inst7|nextState.storeData                                                             ; Lost fanout                          ;
-; Total Number of Removed Registers = 494                                                            ;                                      ;
-+----------------------------------------------------------------------------------------------------+--------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                     ;
-+-------------------------------------+-------------------------+-------------------------------------------------------------------------------------------------+
-; Register name                       ; Reason for Removal      ; Registers Removed due to This Register                                                          ;
-+-------------------------------------+-------------------------+-------------------------------------------------------------------------------------------------+
-; registers:inst8|sip_r[0]            ; Stuck at GND            ; regfile:inst3|data_input_z[0], regfile:inst3|regs[15][0], regfile:inst3|regs[14][0],            ;
-;                                     ; due to stuck port clock ; regfile:inst3|regs[13][0], regfile:inst3|regs[12][0], regfile:inst3|regs[11][0],                ;
-;                                     ;                         ; regfile:inst3|regs[10][0], regfile:inst3|regs[9][0], regfile:inst3|regs[8][0],                  ;
-;                                     ;                         ; regfile:inst3|regs[7][0], regfile:inst3|regs[6][0], regfile:inst3|regs[5][0],                   ;
-;                                     ;                         ; regfile:inst3|regs[4][0], regfile:inst3|regs[3][0], regfile:inst3|regs[2][0],                   ;
-;                                     ;                         ; regfile:inst3|regs[1][0], regfile:inst3|regs[0][0],                                             ;
-;                                     ;                         ; program_counter:inst|out_count[0], instruction_reg:inst2|operand[4],                            ;
-;                                     ;                         ; instruction_reg:inst2|operand[3], instruction_reg:inst2|operand[2],                             ;
-;                                     ;                         ; instruction_reg:inst2|operand[1], instruction_reg:inst2|operand[0],                             ;
-;                                     ;                         ; instruction_reg:inst2|operand[5], instruction_reg:inst2|operand[6],                             ;
-;                                     ;                         ; instruction_reg:inst2|operand[7], instruction_reg:inst2|operand[8],                             ;
-;                                     ;                         ; instruction_reg:inst2|operand[9], instruction_reg:inst2|operand[10],                            ;
-;                                     ;                         ; instruction_reg:inst2|operand[11], instruction_reg:inst2|operand[12],                           ;
-;                                     ;                         ; instruction_reg:inst2|operand[13], instruction_reg:inst2|operand[14],                           ;
-;                                     ;                         ; instruction_reg:inst2|operand[15], instruction_reg:inst2|rx[0],                                 ;
-;                                     ;                         ; instruction_reg:inst2|rx[1], instruction_reg:inst2|rx[2],                                       ;
-;                                     ;                         ; instruction_reg:inst2|rx[3], instruction_reg:inst2|rz[0],                                       ;
-;                                     ;                         ; instruction_reg:inst2|rz[1], instruction_reg:inst2|rz[2],                                       ;
-;                                     ;                         ; instruction_reg:inst2|rz[3], instruction_reg:inst2|opcode[0],                                   ;
-;                                     ;                         ; instruction_reg:inst2|opcode[1], instruction_reg:inst2|opcode[2],                               ;
-;                                     ;                         ; instruction_reg:inst2|opcode[3], instruction_reg:inst2|opcode[4],                               ;
-;                                     ;                         ; instruction_reg:inst2|opcode[5], instruction_reg:inst2|address_method[0],                       ;
-;                                     ;                         ; instruction_reg:inst2|address_method[1], control_unit:inst7|dataSel[1],                         ;
-;                                     ;                         ; control_unit:inst7|dataSel[0], control_unit:inst7|dpcr_lsb_sel,                                 ;
-;                                     ;                         ; control_unit:inst7|dpcr_wr, control_unit:inst7|sop_wr, control_unit:inst7|addrSel[0],           ;
-;                                     ;                         ; control_unit:inst7|addrSel[1], control_unit:inst7|alu_opsel[0],                                 ;
-;                                     ;                         ; control_unit:inst7|alu_opsel[1], control_unit:inst7|alu_opsel[2],                               ;
-;                                     ;                         ; control_unit:inst7|alu_opsel[3], control_unit:inst7|alu_opsel[4],                               ;
-;                                     ;                         ; control_unit:inst7|alu_opsel[5], control_unit:inst7|alu_opsel[6],                               ;
-;                                     ;                         ; control_unit:inst7|rf_sel[0], control_unit:inst7|rf_sel[1],                                     ;
-;                                     ;                         ; control_unit:inst7|rf_sel[2], control_unit:inst7|rf_sel[3], control_unit:inst7|wren,            ;
-;                                     ;                         ; control_unit:inst7|clr_z_flag, control_unit:inst7|ld_r,                                         ;
-;                                     ;                         ; control_unit:inst7|stateOut[0], control_unit:inst7|stateOut[1],                                 ;
-;                                     ;                         ; control_unit:inst7|stateOut[2], control_unit:inst7|stateOut[3]                                  ;
-; control_unit:inst7|nextState.fetch  ; Stuck at GND            ; control_unit:inst7|nextState.writeData,                                                         ;
-;                                     ; due to stuck port clock ; control_unit:inst7|nextState.storeAluResult,                                                    ;
-;                                     ;                         ; control_unit:inst7|nextState.execution, control_unit:inst7|nextState.decode3,                   ;
-;                                     ;                         ; control_unit:inst7|nextState.decode2, control_unit:inst7|nextState.decode,                      ;
-;                                     ;                         ; control_unit:inst7|nextState.storeData                                                          ;
-; dataAddrMux:inst6|present_sz_Jmp[1] ; Stuck at GND            ; control_unit:inst7|increment[0], control_unit:inst7|increment[1],                               ;
-;                                     ; due to stuck port clock ; control_unit:inst7|increment[2], control_unit:inst7|increment[3]                                ;
-; regfile:inst3|regs[15][12]          ; Stuck at GND            ; program_counter:inst|out_count[12],                                                             ;
-;                                     ; due to stuck port clock ; prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|address_reg_a[0] ;
-; regfile:inst3|regs[15][14]          ; Stuck at GND            ; program_counter:inst|out_count[14],                                                             ;
-;                                     ; due to stuck port clock ; prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|address_reg_a[2] ;
-; regfile:inst3|regs[15][13]          ; Stuck at GND            ; program_counter:inst|out_count[13],                                                             ;
-;                                     ; due to stuck port clock ; prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|address_reg_a[1] ;
-; control_unit:inst7|nextState.idle   ; Stuck at GND            ; control_unit:inst7|nextState.delayStore, control_unit:inst7|nextState.fetch2                    ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[13]           ; Stuck at GND            ; regfile:inst3|data_input_z[13]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[12]           ; Stuck at GND            ; regfile:inst3|data_input_z[12]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[11]           ; Stuck at GND            ; regfile:inst3|data_input_z[11]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[10]           ; Stuck at GND            ; regfile:inst3|data_input_z[10]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[9]            ; Stuck at GND            ; regfile:inst3|data_input_z[9]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[8]            ; Stuck at GND            ; regfile:inst3|data_input_z[8]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[7]            ; Stuck at GND            ; regfile:inst3|data_input_z[7]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[6]            ; Stuck at GND            ; regfile:inst3|data_input_z[6]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[5]            ; Stuck at GND            ; regfile:inst3|data_input_z[5]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[4]            ; Stuck at GND            ; regfile:inst3|data_input_z[4]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[3]            ; Stuck at GND            ; regfile:inst3|data_input_z[3]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[2]            ; Stuck at GND            ; regfile:inst3|data_input_z[2]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[1]            ; Stuck at GND            ; regfile:inst3|data_input_z[1]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][15]          ; Stuck at GND            ; program_counter:inst|out_count[15]                                                              ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][11]          ; Stuck at GND            ; program_counter:inst|out_count[11]                                                              ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][10]          ; Stuck at GND            ; program_counter:inst|out_count[10]                                                              ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][9]           ; Stuck at GND            ; program_counter:inst|out_count[9]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][8]           ; Stuck at GND            ; program_counter:inst|out_count[8]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][7]           ; Stuck at GND            ; program_counter:inst|out_count[7]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][6]           ; Stuck at GND            ; program_counter:inst|out_count[6]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][5]           ; Stuck at GND            ; program_counter:inst|out_count[5]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][4]           ; Stuck at GND            ; program_counter:inst|out_count[4]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][3]           ; Stuck at GND            ; program_counter:inst|out_count[3]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][2]           ; Stuck at GND            ; program_counter:inst|out_count[2]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; regfile:inst3|regs[15][1]           ; Stuck at GND            ; program_counter:inst|out_count[1]                                                               ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[3]             ; Stuck at GND            ; alu:inst9|result[3]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[2]             ; Stuck at GND            ; alu:inst9|result[2]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[1]             ; Stuck at GND            ; alu:inst9|result[1]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[0]             ; Stuck at GND            ; alu:inst9|result[0]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[4]             ; Stuck at GND            ; alu:inst9|result[4]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[15]           ; Stuck at GND            ; regfile:inst3|data_input_z[15]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[6]             ; Stuck at GND            ; alu:inst9|result[6]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[7]             ; Stuck at GND            ; alu:inst9|result[7]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[8]             ; Stuck at GND            ; alu:inst9|result[8]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[9]             ; Stuck at GND            ; alu:inst9|result[9]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[10]            ; Stuck at GND            ; alu:inst9|result[10]                                                                            ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[5]             ; Stuck at GND            ; alu:inst9|result[5]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[12]            ; Stuck at GND            ; alu:inst9|result[12]                                                                            ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[13]            ; Stuck at GND            ; alu:inst9|result[13]                                                                            ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[14]            ; Stuck at GND            ; alu:inst9|result[14]                                                                            ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[15]            ; Stuck at GND            ; alu:inst9|result[15]                                                                            ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[14]           ; Stuck at GND            ; regfile:inst3|data_input_z[14]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[11]            ; Stuck at GND            ; alu:inst9|result[11]                                                                            ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-+-------------------------------------+-------------------------+-------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; control_unit:inst7|sop_wr               ; Stuck at VCC due to stuck port data_in ;
+; control_unit:inst7|increment[1]         ; Stuck at GND due to stuck port data_in ;
+; control_unit:inst7|alu_opsel[1]         ; Stuck at GND due to stuck port data_in ;
+; control_unit:inst7|dpcr_wr              ; Stuck at VCC due to stuck port data_in ;
+; control_unit:inst7|nextState.fetch2     ; Lost fanout                            ;
+; control_unit:inst7|nextState.delayStore ; Lost fanout                            ;
+; Total Number of Removed Registers = 6   ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -774,14 +323,49 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 488   ;
+; Number of registers using Synchronous Clear  ; 49    ;
+; Number of registers using Synchronous Load   ; 44    ;
+; Number of registers using Asynchronous Clear ; 64    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 321   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; control_unit:inst7|increment[3]        ; 4       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|dataAddrMux:inst6|addrOut[3]                                                                                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |progCounterTest|dataAddrMux:inst6|dataOut[5]                                                                                      ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; Yes        ; |progCounterTest|regfile:inst3|data_input_z[3]                                                                                     ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |progCounterTest|alu:inst9|result[5]                                                                                               ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 28 LEs               ; 56 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[1]                                                                                   ;
+; 19:1               ; 16 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |progCounterTest|program_counter:inst|out_count[2]                                                                                 ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 36 LEs               ; 52 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[2]                                                                                   ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 34 LEs               ; 54 LEs                 ; Yes        ; |progCounterTest|control_unit:inst7|alu_opsel[5]                                                                                   ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; Yes        ; |progCounterTest|control_unit:inst7|increment[2]                                                                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux0                                                                                                    ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |progCounterTest|alu:inst9|Mux28                                                                                                   ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux26                                                                                               ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|regfile:inst3|Mux39                                                                                               ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2|l3_w26_n0_mux_dataout ;
+; 66:1               ; 9 bits    ; 396 LEs       ; 81 LEs               ; 315 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 30 LEs               ; 102 LEs                ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; No         ; |progCounterTest|control_unit:inst7|nextState                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -960,14 +544,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 2                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 2                           ;
+; arriav_ff             ; 488                         ;
+;     CLR               ; 48                          ;
+;     CLR SLD           ; 16                          ;
+;     ENA               ; 260                         ;
+;     ENA SCLR          ; 33                          ;
+;     ENA SLD           ; 28                          ;
+;     SCLR              ; 16                          ;
+;     plain             ; 87                          ;
+; arriav_lcell_comb     ; 626                         ;
+;     arith             ; 33                          ;
+;         1 data inputs ; 17                          ;
+;         5 data inputs ; 16                          ;
+;     normal            ; 593                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 113                         ;
+;         4 data inputs ; 39                          ;
+;         5 data inputs ; 110                         ;
+;         6 data inputs ; 316                         ;
 ; boundary_port         ; 265                         ;
-; stratixv_ram_block    ; 48                          ;
+; stratixv_ram_block    ; 272                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 7.40                        ;
+; Average LUT depth     ; 3.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -976,7 +577,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -986,7 +587,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 17 18:21:02 2024
+    Info: Processing started: Fri May 17 18:23:24 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1045,9 +646,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file dataadd
     Info (12022): Found design unit 1: dataAddrMux-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 32
     Info (12023): Found entity 1: dataAddrMux File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 10
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
-Warning (275011): Block or symbol "control_unit" of instance "inst7" overlaps another block or symbol
-Warning (275013): Port "clk" of type control_unit and instance "inst7" is missing source signal
-Warning (275009): Pin "clkIn" not connected
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "rf_init" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 33
@@ -1117,513 +715,23 @@ Warning (12001): Port "address_a[12]" does not exist in entity definition of "al
 Warning (12001): Port "address_a[13]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[14]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a32" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 681
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a33" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 701
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a34" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 721
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a35" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 741
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a36" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 761
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a37" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 781
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a38" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 801
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a39" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 821
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a40" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 841
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a41" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 861
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a42" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 881
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a43" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 901
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a44" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 921
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a45" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 941
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a46" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 961
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a47" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 981
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a48" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1001
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a49" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1021
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a50" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1041
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a51" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1061
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a52" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1081
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a53" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1101
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a54" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1121
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a55" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1141
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a56" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1161
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a57" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1181
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a58" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1201
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a59" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1221
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a60" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1241
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a61" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1261
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a62" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1281
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a63" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1301
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a64" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1321
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a65" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1341
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a66" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1361
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a67" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1381
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a68" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1401
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a69" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1421
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a70" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1441
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a71" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1461
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a72" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1481
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a73" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1501
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a74" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1521
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a75" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1541
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a76" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1561
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a77" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1581
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a78" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1601
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a79" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1621
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a80" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1641
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a81" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1661
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a82" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1681
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a83" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1701
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a84" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1721
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a85" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1741
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a86" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1761
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a87" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1781
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a88" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1801
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a89" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1821
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a90" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1841
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a91" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1861
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a92" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1881
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a93" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1901
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a94" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1921
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a95" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1941
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a96" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1961
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a97" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 1981
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a98" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2001
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a99" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2021
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a100" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2041
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a101" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2061
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a102" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2081
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a103" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2101
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a104" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2121
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a105" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2141
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a106" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2161
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a107" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2181
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a108" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2201
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a109" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2221
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a110" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2241
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a111" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2261
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a112" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2281
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a113" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2301
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a114" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2321
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a115" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2341
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a116" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2361
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a117" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2381
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a118" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2401
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a119" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2421
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a120" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2441
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a121" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2461
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a122" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2481
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a123" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2501
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a124" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2521
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a125" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2541
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a126" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2561
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a127" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2581
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a128" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2601
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a129" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2621
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a130" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2641
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a131" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2661
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a132" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2681
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a133" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2701
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a134" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2721
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a135" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2741
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a136" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2761
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a137" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2781
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a138" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2801
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a139" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2821
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a140" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2841
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a141" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2861
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a142" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2881
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a143" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2901
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a144" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2921
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a145" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2941
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a146" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2961
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a147" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 2981
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a148" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3001
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a149" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3021
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a150" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3041
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a151" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3061
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a152" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3081
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a153" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3101
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a154" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3121
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a155" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3141
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a156" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3161
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a157" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3181
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a158" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3201
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a159" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3221
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a160" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3241
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a161" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3261
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a162" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3281
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a163" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3301
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a164" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3321
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a165" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3341
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a166" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3361
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a167" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3381
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a168" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3401
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a169" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3421
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a170" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3441
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a171" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3461
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a172" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3481
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a173" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3501
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a174" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3521
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a175" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3541
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a176" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3561
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a177" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3581
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a178" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3601
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a179" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3621
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a180" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3641
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a181" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3661
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a182" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3681
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a183" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3701
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a184" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3721
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a185" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3741
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a186" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3761
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a187" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3781
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a188" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3801
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a189" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3821
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a190" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3841
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a191" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3861
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a192" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3881
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a193" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3901
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a194" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3921
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a195" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3941
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a196" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3961
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a197" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 3981
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a198" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4001
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a199" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4021
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a200" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4041
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a201" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4061
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a202" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4081
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a203" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4101
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a204" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4121
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a205" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4141
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a206" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4161
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a207" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4181
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a208" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4201
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a209" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4221
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a210" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4241
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a211" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4261
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a212" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4281
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a213" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4301
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a214" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4321
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a215" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4341
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a216" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4361
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a217" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4381
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a218" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4401
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a219" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4421
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a220" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4441
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a221" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4461
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a222" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4481
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a223" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4501
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a224" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4521
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a225" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4541
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a226" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4561
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a227" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4581
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a228" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4601
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a229" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4621
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a230" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4641
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a231" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4661
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a232" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4681
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a233" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4701
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a234" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4721
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a235" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4741
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a236" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4761
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a237" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4781
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a238" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4801
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a239" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4821
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a240" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4841
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a241" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4861
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a242" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4881
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a243" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4901
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a244" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4921
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a245" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4941
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a246" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4961
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a247" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 4981
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a248" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5001
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a249" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5021
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a250" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5041
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a251" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5061
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a252" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5081
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a253" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5101
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a254" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5121
-        Warning (14320): Synthesized away node "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a255" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5141
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rf_init" is stuck at GND
-    Warning (13410): Pin "clk" is stuck at GND
-    Warning (13410): Pin "pc_count[15]" is stuck at GND
-    Warning (13410): Pin "pc_count[14]" is stuck at GND
-    Warning (13410): Pin "pc_count[13]" is stuck at GND
-    Warning (13410): Pin "pc_count[12]" is stuck at GND
-    Warning (13410): Pin "pc_count[11]" is stuck at GND
-    Warning (13410): Pin "pc_count[10]" is stuck at GND
-    Warning (13410): Pin "pc_count[9]" is stuck at GND
-    Warning (13410): Pin "pc_count[8]" is stuck at GND
-    Warning (13410): Pin "pc_count[7]" is stuck at GND
-    Warning (13410): Pin "pc_count[6]" is stuck at GND
-    Warning (13410): Pin "pc_count[5]" is stuck at GND
-    Warning (13410): Pin "pc_count[4]" is stuck at GND
-    Warning (13410): Pin "pc_count[3]" is stuck at GND
-    Warning (13410): Pin "pc_count[2]" is stuck at GND
-    Warning (13410): Pin "pc_count[1]" is stuck at GND
-    Warning (13410): Pin "pc_count[0]" is stuck at GND
-    Warning (13410): Pin "clr_z_flag" is stuck at GND
-    Warning (13410): Pin "alu_opsel[6]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[5]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[4]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[3]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[2]" is stuck at GND
     Warning (13410): Pin "alu_opsel[1]" is stuck at GND
-    Warning (13410): Pin "alu_opsel[0]" is stuck at GND
-    Warning (13410): Pin "rxData[15]" is stuck at GND
-    Warning (13410): Pin "rxData[14]" is stuck at GND
-    Warning (13410): Pin "rxData[13]" is stuck at GND
-    Warning (13410): Pin "rxData[12]" is stuck at GND
-    Warning (13410): Pin "rxData[11]" is stuck at GND
-    Warning (13410): Pin "rxData[10]" is stuck at GND
-    Warning (13410): Pin "rxData[9]" is stuck at GND
-    Warning (13410): Pin "rxData[8]" is stuck at GND
-    Warning (13410): Pin "rxData[7]" is stuck at GND
-    Warning (13410): Pin "rxData[6]" is stuck at GND
-    Warning (13410): Pin "rxData[5]" is stuck at GND
-    Warning (13410): Pin "rxData[4]" is stuck at GND
-    Warning (13410): Pin "rxData[3]" is stuck at GND
-    Warning (13410): Pin "rxData[2]" is stuck at GND
-    Warning (13410): Pin "rxData[1]" is stuck at GND
-    Warning (13410): Pin "rxData[0]" is stuck at GND
-    Warning (13410): Pin "ld_r" is stuck at GND
-    Warning (13410): Pin "wren" is stuck at GND
-    Warning (13410): Pin "alu_z" is stuck at GND
-    Warning (13410): Pin "addrSel[1]" is stuck at GND
-    Warning (13410): Pin "addrSel[0]" is stuck at GND
-    Warning (13410): Pin "dataSel[1]" is stuck at GND
-    Warning (13410): Pin "dataSel[0]" is stuck at GND
-    Warning (13410): Pin "opcode[5]" is stuck at GND
-    Warning (13410): Pin "opcode[4]" is stuck at GND
-    Warning (13410): Pin "opcode[3]" is stuck at GND
-    Warning (13410): Pin "opcode[2]" is stuck at GND
-    Warning (13410): Pin "opcode[1]" is stuck at GND
-    Warning (13410): Pin "opcode[0]" is stuck at GND
-    Warning (13410): Pin "rzData[15]" is stuck at GND
-    Warning (13410): Pin "rzData[14]" is stuck at GND
-    Warning (13410): Pin "rzData[13]" is stuck at GND
-    Warning (13410): Pin "rzData[12]" is stuck at GND
-    Warning (13410): Pin "rzData[11]" is stuck at GND
-    Warning (13410): Pin "rzData[10]" is stuck at GND
-    Warning (13410): Pin "rzData[9]" is stuck at GND
-    Warning (13410): Pin "rzData[8]" is stuck at GND
-    Warning (13410): Pin "rzData[7]" is stuck at GND
-    Warning (13410): Pin "rzData[6]" is stuck at GND
-    Warning (13410): Pin "rzData[5]" is stuck at GND
-    Warning (13410): Pin "rzData[4]" is stuck at GND
-    Warning (13410): Pin "rzData[3]" is stuck at GND
-    Warning (13410): Pin "rzData[2]" is stuck at GND
-    Warning (13410): Pin "rzData[1]" is stuck at GND
-    Warning (13410): Pin "rzData[0]" is stuck at GND
-    Warning (13410): Pin "rf_sel[3]" is stuck at GND
-    Warning (13410): Pin "rf_sel[2]" is stuck at GND
-    Warning (13410): Pin "rf_sel[1]" is stuck at GND
-    Warning (13410): Pin "rf_sel[0]" is stuck at GND
-    Warning (13410): Pin "sip_r[15]" is stuck at GND
-    Warning (13410): Pin "sip_r[14]" is stuck at GND
-    Warning (13410): Pin "sip_r[13]" is stuck at GND
-    Warning (13410): Pin "sip_r[12]" is stuck at GND
-    Warning (13410): Pin "sip_r[11]" is stuck at GND
-    Warning (13410): Pin "sip_r[10]" is stuck at GND
-    Warning (13410): Pin "sip_r[9]" is stuck at GND
-    Warning (13410): Pin "sip_r[8]" is stuck at GND
-    Warning (13410): Pin "sip_r[7]" is stuck at GND
-    Warning (13410): Pin "sip_r[6]" is stuck at GND
-    Warning (13410): Pin "sip_r[5]" is stuck at GND
-    Warning (13410): Pin "sip_r[4]" is stuck at GND
-    Warning (13410): Pin "sip_r[3]" is stuck at GND
-    Warning (13410): Pin "sip_r[2]" is stuck at GND
-    Warning (13410): Pin "sip_r[1]" is stuck at GND
-    Warning (13410): Pin "sip_r[0]" is stuck at GND
-    Warning (13410): Pin "increment[3]" is stuck at VCC
-    Warning (13410): Pin "increment[2]" is stuck at GND
     Warning (13410): Pin "increment[1]" is stuck at GND
-    Warning (13410): Pin "increment[0]" is stuck at GND
-    Warning (13410): Pin "state[3]" is stuck at GND
-    Warning (13410): Pin "state[2]" is stuck at GND
-    Warning (13410): Pin "state[1]" is stuck at GND
-    Warning (13410): Pin "state[0]" is stuck at GND
-    Warning (13410): Pin "present_sz_jmp[1]" is stuck at GND
-    Warning (13410): Pin "present_sz_jmp[0]" is stuck at GND
-    Warning (13410): Pin "alu_output[15]" is stuck at GND
-    Warning (13410): Pin "alu_output[14]" is stuck at GND
-    Warning (13410): Pin "alu_output[13]" is stuck at GND
-    Warning (13410): Pin "alu_output[12]" is stuck at GND
-    Warning (13410): Pin "alu_output[11]" is stuck at GND
-    Warning (13410): Pin "alu_output[10]" is stuck at GND
-    Warning (13410): Pin "alu_output[9]" is stuck at GND
-    Warning (13410): Pin "alu_output[8]" is stuck at GND
-    Warning (13410): Pin "alu_output[7]" is stuck at GND
-    Warning (13410): Pin "alu_output[6]" is stuck at GND
-    Warning (13410): Pin "alu_output[5]" is stuck at GND
-    Warning (13410): Pin "alu_output[4]" is stuck at GND
-    Warning (13410): Pin "alu_output[3]" is stuck at GND
-    Warning (13410): Pin "alu_output[2]" is stuck at GND
-    Warning (13410): Pin "alu_output[1]" is stuck at GND
-    Warning (13410): Pin "alu_output[0]" is stuck at GND
-    Warning (13410): Pin "am[1]" is stuck at GND
-    Warning (13410): Pin "am[0]" is stuck at GND
-    Warning (13410): Pin "dpcr[31]" is stuck at GND
-    Warning (13410): Pin "dpcr[30]" is stuck at GND
-    Warning (13410): Pin "dpcr[29]" is stuck at GND
-    Warning (13410): Pin "dpcr[28]" is stuck at GND
-    Warning (13410): Pin "dpcr[27]" is stuck at GND
-    Warning (13410): Pin "dpcr[26]" is stuck at GND
-    Warning (13410): Pin "dpcr[25]" is stuck at GND
-    Warning (13410): Pin "dpcr[24]" is stuck at GND
-    Warning (13410): Pin "dpcr[23]" is stuck at GND
-    Warning (13410): Pin "dpcr[22]" is stuck at GND
-    Warning (13410): Pin "dpcr[21]" is stuck at GND
-    Warning (13410): Pin "dpcr[20]" is stuck at GND
-    Warning (13410): Pin "dpcr[19]" is stuck at GND
-    Warning (13410): Pin "dpcr[18]" is stuck at GND
-    Warning (13410): Pin "dpcr[17]" is stuck at GND
-    Warning (13410): Pin "dpcr[16]" is stuck at GND
-    Warning (13410): Pin "dpcr[15]" is stuck at GND
-    Warning (13410): Pin "dpcr[14]" is stuck at GND
-    Warning (13410): Pin "dpcr[13]" is stuck at GND
-    Warning (13410): Pin "dpcr[12]" is stuck at GND
-    Warning (13410): Pin "dpcr[11]" is stuck at GND
-    Warning (13410): Pin "dpcr[10]" is stuck at GND
-    Warning (13410): Pin "dpcr[9]" is stuck at GND
-    Warning (13410): Pin "dpcr[8]" is stuck at GND
-    Warning (13410): Pin "dpcr[7]" is stuck at GND
-    Warning (13410): Pin "dpcr[6]" is stuck at GND
-    Warning (13410): Pin "dpcr[5]" is stuck at GND
-    Warning (13410): Pin "dpcr[4]" is stuck at GND
-    Warning (13410): Pin "dpcr[3]" is stuck at GND
-    Warning (13410): Pin "dpcr[2]" is stuck at GND
-    Warning (13410): Pin "dpcr[1]" is stuck at GND
-    Warning (13410): Pin "dpcr[0]" is stuck at GND
-    Warning (13410): Pin "operand_out[15]" is stuck at GND
-    Warning (13410): Pin "operand_out[14]" is stuck at GND
-    Warning (13410): Pin "operand_out[13]" is stuck at GND
-    Warning (13410): Pin "operand_out[12]" is stuck at GND
-    Warning (13410): Pin "operand_out[11]" is stuck at GND
-    Warning (13410): Pin "operand_out[10]" is stuck at GND
-    Warning (13410): Pin "operand_out[9]" is stuck at GND
-    Warning (13410): Pin "operand_out[8]" is stuck at GND
-    Warning (13410): Pin "operand_out[7]" is stuck at GND
-    Warning (13410): Pin "operand_out[6]" is stuck at GND
-    Warning (13410): Pin "operand_out[5]" is stuck at GND
-    Warning (13410): Pin "operand_out[4]" is stuck at GND
-    Warning (13410): Pin "operand_out[3]" is stuck at GND
-    Warning (13410): Pin "operand_out[2]" is stuck at GND
-    Warning (13410): Pin "operand_out[1]" is stuck at GND
-    Warning (13410): Pin "operand_out[0]" is stuck at GND
-    Warning (13410): Pin "sop[15]" is stuck at GND
-    Warning (13410): Pin "sop[14]" is stuck at GND
-    Warning (13410): Pin "sop[13]" is stuck at GND
-    Warning (13410): Pin "sop[12]" is stuck at GND
-    Warning (13410): Pin "sop[11]" is stuck at GND
-    Warning (13410): Pin "sop[10]" is stuck at GND
-    Warning (13410): Pin "sop[9]" is stuck at GND
-    Warning (13410): Pin "sop[8]" is stuck at GND
-    Warning (13410): Pin "sop[7]" is stuck at GND
-    Warning (13410): Pin "sop[6]" is stuck at GND
-    Warning (13410): Pin "sop[5]" is stuck at GND
-    Warning (13410): Pin "sop[4]" is stuck at GND
-    Warning (13410): Pin "sop[3]" is stuck at GND
-    Warning (13410): Pin "sop[2]" is stuck at GND
-    Warning (13410): Pin "sop[1]" is stuck at GND
-    Warning (13410): Pin "sop[0]" is stuck at GND
-    Warning (13410): Pin "storedData[15]" is stuck at GND
-    Warning (13410): Pin "storedData[14]" is stuck at GND
-    Warning (13410): Pin "storedData[13]" is stuck at GND
-    Warning (13410): Pin "storedData[12]" is stuck at GND
-    Warning (13410): Pin "storedData[11]" is stuck at GND
-    Warning (13410): Pin "storedData[10]" is stuck at GND
-    Warning (13410): Pin "storedData[9]" is stuck at GND
-    Warning (13410): Pin "storedData[8]" is stuck at GND
-    Warning (13410): Pin "storedData[7]" is stuck at GND
-    Warning (13410): Pin "storedData[6]" is stuck at GND
-    Warning (13410): Pin "storedData[5]" is stuck at GND
-    Warning (13410): Pin "storedData[4]" is stuck at GND
-    Warning (13410): Pin "storedData[3]" is stuck at GND
-    Warning (13410): Pin "storedData[2]" is stuck at GND
-    Warning (13410): Pin "storedData[1]" is stuck at GND
-    Warning (13410): Pin "storedData[0]" is stuck at GND
-Info (17049): 29 registers lost all their fanouts during netlist optimizations.
-Info (17036): Removed 11 MSB VCC or GND address nodes from RAM block "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ALTSYNCRAM" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 661
-Info (17036): Removed 11 MSB VCC or GND address nodes from RAM block "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ALTSYNCRAM" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a31" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 661
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a30" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 641
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a29" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 621
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a28" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 601
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a27" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 581
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a26" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 561
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a25" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 541
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a24" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 521
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a23" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 501
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a22" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 481
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a21" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 461
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a20" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 441
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a19" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 421
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a18" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 401
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a17" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 381
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a16" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 361
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a15" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 341
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a14" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 321
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a13" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 301
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a12" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 281
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a11" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 261
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a10" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 241
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a9" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 221
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a8" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 201
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a7" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 181
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a6" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 161
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a5" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 141
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a4" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 121
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a3" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 101
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a2" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 81
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a1" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 61
-Warning (15400): WYSIWYG primitive "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|ram_block1a0" has a port clk0 that is stuck at VCC File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 41
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a15" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a14" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a13" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a12" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a11" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a10" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a9" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a8" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a7" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a6" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a5" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a4" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
-Warning (21074): Design contains 18 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "sip[15]"
-    Warning (15610): No output dependent on input pin "sip[14]"
-    Warning (15610): No output dependent on input pin "sip[13]"
-    Warning (15610): No output dependent on input pin "sip[12]"
-    Warning (15610): No output dependent on input pin "sip[11]"
-    Warning (15610): No output dependent on input pin "sip[10]"
-    Warning (15610): No output dependent on input pin "sip[9]"
-    Warning (15610): No output dependent on input pin "sip[8]"
-    Warning (15610): No output dependent on input pin "sip[7]"
-    Warning (15610): No output dependent on input pin "sip[6]"
-    Warning (15610): No output dependent on input pin "sip[5]"
-    Warning (15610): No output dependent on input pin "sip[4]"
-    Warning (15610): No output dependent on input pin "sip[3]"
-    Warning (15610): No output dependent on input pin "sip[2]"
-    Warning (15610): No output dependent on input pin "sip[1]"
-    Warning (15610): No output dependent on input pin "sip[0]"
-    Warning (15610): No output dependent on input pin "clkIn"
-Info (21057): Implemented 314 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1539 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 247 output pins
-    Info (21061): Implemented 1 logic cells
-    Info (21064): Implemented 48 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 510 warnings
-    Info: Peak virtual memory: 4895 megabytes
-    Info: Processing ended: Fri May 17 18:21:15 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:09
+    Info (21061): Implemented 1002 logic cells
+    Info (21064): Implemented 272 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4900 megabytes
+    Info: Processing ended: Fri May 17 18:23:38 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:10
 
 

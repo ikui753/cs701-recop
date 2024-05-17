@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri May 17 18:21:14 2024
+Analysis & Synthesis Status : Successful - Fri May 17 18:23:38 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : recop
 Top-level Entity Name : progCounterTest
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
+Total registers : 488
 Total pins : 265
 Total virtual pins : 0
-Total block memory bits : 96
+Total block memory bits : 1,114,112
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

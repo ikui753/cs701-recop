@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 2080 -184 2256 -168)
+	(rect 2072 -184 2248 -168)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "clkIn" (rect 9 0 32 12)(font "Arial" ))
 	(pt 176 8)

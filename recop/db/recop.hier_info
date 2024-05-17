@@ -1,5 +1,6 @@
 |progCounterTest
 rf_init <= control_unit:inst7.rf_init
+clkIn => control_unit:inst7.clk
 reset => control_unit:inst7.reset
 reset => program_counter:inst.reset
 reset => registers:inst8.reset
@@ -265,7 +266,6 @@ storedData[12] <= dataAddrMux:inst6.dataOut[12]
 storedData[13] <= dataAddrMux:inst6.dataOut[13]
 storedData[14] <= dataAddrMux:inst6.dataOut[14]
 storedData[15] <= dataAddrMux:inst6.dataOut[15]
-clkIn => ~NO_FANOUT~
 
 
 |progCounterTest|control_unit:inst7
