@@ -56,8 +56,12 @@ architecture behavioral of control_unit is
 	 
 	 OUTPUTS : process(currentState, address_method, opcodeIn, clk) is
 	 begin
-
-		if rising_edge(clk) then
+		if rising_edge(clk) and reset = '1' then
+			currentState <= idle;
+			increment <= "1000"; -- set PC to 0
+			stateOut <= "0001";
+			
+		elsif rising_edge(clk) and reset = '0' then
 			case currentState is
 				when idle =>
 					increment <= "1000"; -- set PC to 0

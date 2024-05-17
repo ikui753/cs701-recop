@@ -68,7 +68,6 @@ set_global_assignment -name VHDL_FILE ALU.vhd
 set_global_assignment -name VHDL_FILE program_counter.vhd
 set_global_assignment -name VHDL_FILE instruction_reg.vhd
 set_global_assignment -name BDF_FILE datapath.bdf
-set_global_assignment -name BDF_FILE topLevel.bdf
 set_global_assignment -name BDF_FILE progCounterTest.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE PCwaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE controlUnitWaveform.vwf
