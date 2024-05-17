@@ -182,6 +182,7 @@ instance = comp, \sip_r[2]~output\, sip_r[2]~output, progCounterTest, 1
 instance = comp, \sip_r[1]~output\, sip_r[1]~output, progCounterTest, 1
 instance = comp, \sip_r[0]~output\, sip_r[0]~output, progCounterTest, 1
 instance = comp, \dpcr_wr~output\, dpcr_wr~output, progCounterTest, 1
+instance = comp, \sop_wr~output\, sop_wr~output, progCounterTest, 1
 instance = comp, \increment[3]~output\, increment[3]~output, progCounterTest, 1
 instance = comp, \increment[2]~output\, increment[2]~output, progCounterTest, 1
 instance = comp, \increment[1]~output\, increment[1]~output, progCounterTest, 1

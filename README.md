@@ -33,8 +33,11 @@ Instructions are to be entered in the .asm file found in recop/assembler. Run as
 # Demoing FPGA Implementation
 ## Outputs
 - SOP will be indicated by LEDs. 
+- SOP_WR will be indicated by an LED.
+- DPCR_WR will be indicated by an LED.
+- DPCR[19..0] will be indicated via display
 
 ## Inputs
-- KEY0 acts as a reset
-- SIP can be configured via SW[9..0]
+- KEY0 acts as a reset, will reset PC to 0 and DPCR
+- SIP[9..0] can be configured via SW[9..0]
 

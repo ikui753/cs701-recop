@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/17/2024 22:32:54"
+-- Generated on "05/17/2024 22:35:48"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -60,6 +60,7 @@ SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sop_wr : STD_LOGIC;
 SIGNAL state : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL storedData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL wren : STD_LOGIC;
@@ -92,6 +93,7 @@ COMPONENT progCounterTest
 	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sop_wr : OUT STD_LOGIC;
 	state : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	storedData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	wren : OUT STD_LOGIC
@@ -128,6 +130,7 @@ BEGIN
 	sip => sip,
 	sip_r => sip_r,
 	sop => sop,
+	sop_wr => sop_wr,
 	state => state,
 	storedData => storedData,
 	wren => wren
