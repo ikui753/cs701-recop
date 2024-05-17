@@ -26,8 +26,7 @@ entity alu is
 		rz				: in bit_16;
 		ir_operand		: in bit_16;
 		-- flag control signal
-		clr_z_flag		: in bit_1;
-		reset : in bit_1
+		clr_z_flag		: in bit_1
 	);
 end alu;
 
@@ -102,9 +101,9 @@ begin
 	-- zero flag
 	z1gen: process (clk)
 	begin
-		if reset = '1' then
-			z_flag <= '0';
-		elsif rising_edge(clk) then
+		--if reset = '1' then
+			--z_flag <= '0';
+		if rising_edge(clk) then
 			if clr_z_flag = '1' then
 				z_flag <= '0';
 			-- if alu is working (operation is valid)

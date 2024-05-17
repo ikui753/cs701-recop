@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
 Eprogcountertest
-Z1 w1715925997
+Z1 w1715926218
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -26,9 +26,9 @@ V1ozaceghIZ^F4FVU;_X2h2
 !s100 R2F5f]D4jH]_g1lToBd=[2
 Z11 OV;C;10.5b;63
 32
-Z12 !s110 1715925998
+Z12 !s110 1715926219
 !i10b 1
-Z13 !s108 1715925998.000000
+Z13 !s108 1715926219.000000
 Z14 !s90 -work|work|recop.vho|
 Z15 !s107 recop.vho|
 !i113 1
@@ -58,12 +58,12 @@ R15
 R16
 R17
 Eprogcountertest_vhd_vec_tst
-Z18 w1715925995
+Z18 w1715926216
 R6
 R7
 R0
-Z19 8controlUnitWaveform.vwf.vht
-Z20 FcontrolUnitWaveform.vwf.vht
+Z19 8recopw.vwf.vht
+Z20 Frecopw.vwf.vht
 l0
 L31
 VgbLb09nmT9K_PlI:87AE82
@@ -73,8 +73,8 @@ R11
 R12
 !i10b 1
 R13
-Z21 !s90 -work|work|controlUnitWaveform.vwf.vht|
-Z22 !s107 controlUnitWaveform.vwf.vht|
+Z21 !s90 -work|work|recopw.vwf.vht|
+Z22 !s107 recopw.vwf.vht|
 !i113 1
 R16
 R17
@@ -84,8 +84,8 @@ R7
 Z23 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
 l98
 L33
-Z24 VF<j?]SG>J`zCmGE@7LW7c3
-Z25 !s100 XP]Q1UF2CYA^OVkXodB<M2
+Z24 VGcQnfYk63nbLETLYfkM<E0
+Z25 !s100 >oCTb;j^IeUERZHO94?Xn0
 R11
 32
 R12

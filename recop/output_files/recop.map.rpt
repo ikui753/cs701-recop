@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Fri May 17 18:06:20 2024
+Fri May 17 18:21:15 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,7 +51,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 17 18:06:20 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 17 18:21:14 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; progCounterTest                             ;
@@ -293,16 +293,13 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------+--------------------------------------+
 ; Register name                                                                                      ; Reason for Removal                   ;
 +----------------------------------------------------------------------------------------------------+--------------------------------------+
+; registers:inst8|dpcr[0..31]                                                                        ; Stuck at GND due to stuck port clock ;
+; registers:inst8|sip_r[0..15]                                                                       ; Stuck at GND due to stuck port clock ;
+; registers:inst8|sop[0..15]                                                                         ; Stuck at GND due to stuck port clock ;
 ; dataAddrMux:inst6|dataOut[0]                                                                       ; Stuck at GND due to stuck port clock ;
 ; dataAddrMux:inst6|present_sz_Jmp[0,1]                                                              ; Stuck at GND due to stuck port clock ;
 ; dataAddrMux:inst6|dataOut[1..15]                                                                   ; Stuck at GND due to stuck port clock ;
 ; dataAddrMux:inst6|addrOut[0..11]                                                                   ; Stuck at GND due to stuck port clock ;
-; registers:inst8|sop[0]                                                                             ; Stuck at GND due to stuck port clock ;
-; registers:inst8|dpcr[0]                                                                            ; Stuck at GND due to stuck port clock ;
-; registers:inst8|sip_r[0]                                                                           ; Stuck at GND due to stuck port clock ;
-; registers:inst8|sop[1..15]                                                                         ; Stuck at GND due to stuck port clock ;
-; registers:inst8|sip_r[1..15]                                                                       ; Stuck at GND due to stuck port clock ;
-; registers:inst8|dpcr[1..31]                                                                        ; Stuck at GND due to stuck port clock ;
 ; regfile:inst3|data_input_z[0]                                                                      ; Stuck at GND due to stuck port clock ;
 ; regfile:inst3|regs[15][15]                                                                         ; Stuck at GND due to stuck port clock ;
 ; regfile:inst3|regs[15][14]                                                                         ; Stuck at GND due to stuck port clock ;
@@ -561,13 +558,11 @@ Encoding Type:  One-Hot
 ; regfile:inst3|regs[0][1]                                                                           ; Stuck at GND due to stuck port clock ;
 ; regfile:inst3|regs[0][0]                                                                           ; Stuck at GND due to stuck port clock ;
 ; regfile:inst3|data_input_z[1..15]                                                                  ; Stuck at GND due to stuck port clock ;
-; alu:inst9|alu_result[2,3]                                                                          ; Stuck at GND due to stuck port clock ;
+; alu:inst9|alu_result[1..3]                                                                         ; Stuck at GND due to stuck port clock ;
 ; alu:inst9|z_flag                                                                                   ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[2,3]                                                                              ; Lost fanout                          ;
+; alu:inst9|result[1..3]                                                                             ; Lost fanout                          ;
 ; alu:inst9|alu_result[0]                                                                            ; Stuck at GND due to stuck port clock ;
 ; alu:inst9|result[0]                                                                                ; Lost fanout                          ;
-; alu:inst9|alu_result[1]                                                                            ; Stuck at GND due to stuck port clock ;
-; alu:inst9|result[1]                                                                                ; Lost fanout                          ;
 ; alu:inst9|alu_result[4]                                                                            ; Stuck at GND due to stuck port clock ;
 ; alu:inst9|result[4]                                                                                ; Lost fanout                          ;
 ; alu:inst9|alu_result[5]                                                                            ; Stuck at GND due to stuck port clock ;
@@ -685,31 +680,31 @@ Encoding Type:  One-Hot
 ;                                     ; due to stuck port clock ; prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|address_reg_a[1] ;
 ; control_unit:inst7|nextState.idle   ; Stuck at GND            ; control_unit:inst7|nextState.delayStore, control_unit:inst7|nextState.fetch2                    ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[3]            ; Stuck at GND            ; regfile:inst3|data_input_z[3]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[4]            ; Stuck at GND            ; regfile:inst3|data_input_z[4]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[5]            ; Stuck at GND            ; regfile:inst3|data_input_z[5]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[6]            ; Stuck at GND            ; regfile:inst3|data_input_z[6]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[7]            ; Stuck at GND            ; regfile:inst3|data_input_z[7]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[8]            ; Stuck at GND            ; regfile:inst3|data_input_z[8]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[9]            ; Stuck at GND            ; regfile:inst3|data_input_z[9]                                                                   ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[10]           ; Stuck at GND            ; regfile:inst3|data_input_z[10]                                                                  ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[11]           ; Stuck at GND            ; regfile:inst3|data_input_z[11]                                                                  ;
+; registers:inst8|sip_r[13]           ; Stuck at GND            ; regfile:inst3|data_input_z[13]                                                                  ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; registers:inst8|sip_r[12]           ; Stuck at GND            ; regfile:inst3|data_input_z[12]                                                                  ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[13]           ; Stuck at GND            ; regfile:inst3|data_input_z[13]                                                                  ;
+; registers:inst8|sip_r[11]           ; Stuck at GND            ; regfile:inst3|data_input_z[11]                                                                  ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[14]           ; Stuck at GND            ; regfile:inst3|data_input_z[14]                                                                  ;
+; registers:inst8|sip_r[10]           ; Stuck at GND            ; regfile:inst3|data_input_z[10]                                                                  ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[15]           ; Stuck at GND            ; regfile:inst3|data_input_z[15]                                                                  ;
+; registers:inst8|sip_r[9]            ; Stuck at GND            ; regfile:inst3|data_input_z[9]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[8]            ; Stuck at GND            ; regfile:inst3|data_input_z[8]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[7]            ; Stuck at GND            ; regfile:inst3|data_input_z[7]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[6]            ; Stuck at GND            ; regfile:inst3|data_input_z[6]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[5]            ; Stuck at GND            ; regfile:inst3|data_input_z[5]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[4]            ; Stuck at GND            ; regfile:inst3|data_input_z[4]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[3]            ; Stuck at GND            ; regfile:inst3|data_input_z[3]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[2]            ; Stuck at GND            ; regfile:inst3|data_input_z[2]                                                                   ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; registers:inst8|sip_r[1]            ; Stuck at GND            ; regfile:inst3|data_input_z[1]                                                                   ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; regfile:inst3|regs[15][15]          ; Stuck at GND            ; program_counter:inst|out_count[15]                                                              ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
@@ -739,13 +734,13 @@ Encoding Type:  One-Hot
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; alu:inst9|alu_result[2]             ; Stuck at GND            ; alu:inst9|result[2]                                                                             ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; alu:inst9|alu_result[0]             ; Stuck at GND            ; alu:inst9|result[0]                                                                             ;
-;                                     ; due to stuck port clock ;                                                                                                 ;
 ; alu:inst9|alu_result[1]             ; Stuck at GND            ; alu:inst9|result[1]                                                                             ;
+;                                     ; due to stuck port clock ;                                                                                                 ;
+; alu:inst9|alu_result[0]             ; Stuck at GND            ; alu:inst9|result[0]                                                                             ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; alu:inst9|alu_result[4]             ; Stuck at GND            ; alu:inst9|result[4]                                                                             ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[1]            ; Stuck at GND            ; regfile:inst3|data_input_z[1]                                                                   ;
+; registers:inst8|sip_r[15]           ; Stuck at GND            ; regfile:inst3|data_input_z[15]                                                                  ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; alu:inst9|alu_result[6]             ; Stuck at GND            ; alu:inst9|result[6]                                                                             ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
@@ -767,7 +762,7 @@ Encoding Type:  One-Hot
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; alu:inst9|alu_result[15]            ; Stuck at GND            ; alu:inst9|result[15]                                                                            ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
-; registers:inst8|sip_r[2]            ; Stuck at GND            ; regfile:inst3|data_input_z[2]                                                                   ;
+; registers:inst8|sip_r[14]           ; Stuck at GND            ; regfile:inst3|data_input_z[14]                                                                  ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
 ; alu:inst9|alu_result[11]            ; Stuck at GND            ; alu:inst9|result[11]                                                                            ;
 ;                                     ; due to stuck port clock ;                                                                                                 ;
@@ -991,7 +986,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 17 18:06:08 2024
+    Info: Processing started: Fri May 17 18:21:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1032,7 +1027,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file data_me
     Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 19
     Info (12023): Found entity 1: data_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 34
+    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 33
     Info (12023): Found entity 1: alu File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
     Info (12022): Found design unit 1: program_counter-pc File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 27
@@ -1050,11 +1045,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file dataadd
     Info (12022): Found design unit 1: dataAddrMux-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 32
     Info (12023): Found entity 1: dataAddrMux File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 10
 Info (12127): Elaborating entity "progCounterTest" for the top level hierarchy
-Warning (275011): Block or symbol "registers" of instance "inst8" overlaps another block or symbol
 Warning (275011): Block or symbol "control_unit" of instance "inst7" overlaps another block or symbol
 Warning (275013): Port "clk" of type control_unit and instance "inst7" is missing source signal
 Warning (275009): Pin "clkIn" not connected
-Warning (275009): Pin "sip" not connected
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(33): used implicit default value for signal "rf_init" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 33
@@ -1092,13 +1085,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
 Info (12128): Elaborating entity "mux_ahb" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 40
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
-Warning (10492): VHDL Process Statement warning at ALU.vhd(50): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 50
-Warning (10492): VHDL Process Statement warning at ALU.vhd(65): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at ALU.vhd(105): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at ALU.vhd(49): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 49
+Warning (10492): VHDL Process Statement warning at ALU.vhd(64): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 64
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
-Info (12128): Elaborating entity "registers" for hierarchy "registers:inst8"
-Info (12128): Elaborating entity "dataAddrMux" for hierarchy "dataAddrMux:inst6"
-Warning (10541): VHDL Signal Declaration warning at dataAddrMux.vhd(27): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 27
 Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:inst4"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "data_mem:inst4|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Info (12130): Elaborated megafunction instantiation "data_mem:inst4|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
@@ -1121,6 +1110,9 @@ Warning (287001): Assertion warning: Device family Cyclone V does not have M4K b
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q6j1.tdf
     Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_q6j1" for hierarchy "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "dataAddrMux" for hierarchy "dataAddrMux:inst6"
+Warning (10541): VHDL Signal Declaration warning at dataAddrMux.vhd(27): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 27
+Info (12128): Elaborating entity "registers" for hierarchy "registers:inst8"
 Warning (12001): Port "address_a[12]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[13]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[14]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
@@ -1395,6 +1387,34 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rxData[1]" is stuck at GND
     Warning (13410): Pin "rxData[0]" is stuck at GND
     Warning (13410): Pin "ld_r" is stuck at GND
+    Warning (13410): Pin "wren" is stuck at GND
+    Warning (13410): Pin "alu_z" is stuck at GND
+    Warning (13410): Pin "addrSel[1]" is stuck at GND
+    Warning (13410): Pin "addrSel[0]" is stuck at GND
+    Warning (13410): Pin "dataSel[1]" is stuck at GND
+    Warning (13410): Pin "dataSel[0]" is stuck at GND
+    Warning (13410): Pin "opcode[5]" is stuck at GND
+    Warning (13410): Pin "opcode[4]" is stuck at GND
+    Warning (13410): Pin "opcode[3]" is stuck at GND
+    Warning (13410): Pin "opcode[2]" is stuck at GND
+    Warning (13410): Pin "opcode[1]" is stuck at GND
+    Warning (13410): Pin "opcode[0]" is stuck at GND
+    Warning (13410): Pin "rzData[15]" is stuck at GND
+    Warning (13410): Pin "rzData[14]" is stuck at GND
+    Warning (13410): Pin "rzData[13]" is stuck at GND
+    Warning (13410): Pin "rzData[12]" is stuck at GND
+    Warning (13410): Pin "rzData[11]" is stuck at GND
+    Warning (13410): Pin "rzData[10]" is stuck at GND
+    Warning (13410): Pin "rzData[9]" is stuck at GND
+    Warning (13410): Pin "rzData[8]" is stuck at GND
+    Warning (13410): Pin "rzData[7]" is stuck at GND
+    Warning (13410): Pin "rzData[6]" is stuck at GND
+    Warning (13410): Pin "rzData[5]" is stuck at GND
+    Warning (13410): Pin "rzData[4]" is stuck at GND
+    Warning (13410): Pin "rzData[3]" is stuck at GND
+    Warning (13410): Pin "rzData[2]" is stuck at GND
+    Warning (13410): Pin "rzData[1]" is stuck at GND
+    Warning (13410): Pin "rzData[0]" is stuck at GND
     Warning (13410): Pin "rf_sel[3]" is stuck at GND
     Warning (13410): Pin "rf_sel[2]" is stuck at GND
     Warning (13410): Pin "rf_sel[1]" is stuck at GND
@@ -1419,40 +1439,12 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "increment[2]" is stuck at GND
     Warning (13410): Pin "increment[1]" is stuck at GND
     Warning (13410): Pin "increment[0]" is stuck at GND
-    Warning (13410): Pin "rzData[15]" is stuck at GND
-    Warning (13410): Pin "rzData[14]" is stuck at GND
-    Warning (13410): Pin "rzData[13]" is stuck at GND
-    Warning (13410): Pin "rzData[12]" is stuck at GND
-    Warning (13410): Pin "rzData[11]" is stuck at GND
-    Warning (13410): Pin "rzData[10]" is stuck at GND
-    Warning (13410): Pin "rzData[9]" is stuck at GND
-    Warning (13410): Pin "rzData[8]" is stuck at GND
-    Warning (13410): Pin "rzData[7]" is stuck at GND
-    Warning (13410): Pin "rzData[6]" is stuck at GND
-    Warning (13410): Pin "rzData[5]" is stuck at GND
-    Warning (13410): Pin "rzData[4]" is stuck at GND
-    Warning (13410): Pin "rzData[3]" is stuck at GND
-    Warning (13410): Pin "rzData[2]" is stuck at GND
-    Warning (13410): Pin "rzData[1]" is stuck at GND
-    Warning (13410): Pin "rzData[0]" is stuck at GND
     Warning (13410): Pin "state[3]" is stuck at GND
     Warning (13410): Pin "state[2]" is stuck at GND
     Warning (13410): Pin "state[1]" is stuck at GND
     Warning (13410): Pin "state[0]" is stuck at GND
-    Warning (13410): Pin "opcode[5]" is stuck at GND
-    Warning (13410): Pin "opcode[4]" is stuck at GND
-    Warning (13410): Pin "opcode[3]" is stuck at GND
-    Warning (13410): Pin "opcode[2]" is stuck at GND
-    Warning (13410): Pin "opcode[1]" is stuck at GND
-    Warning (13410): Pin "opcode[0]" is stuck at GND
     Warning (13410): Pin "present_sz_jmp[1]" is stuck at GND
     Warning (13410): Pin "present_sz_jmp[0]" is stuck at GND
-    Warning (13410): Pin "alu_z" is stuck at GND
-    Warning (13410): Pin "addrSel[1]" is stuck at GND
-    Warning (13410): Pin "addrSel[0]" is stuck at GND
-    Warning (13410): Pin "dataSel[1]" is stuck at GND
-    Warning (13410): Pin "dataSel[0]" is stuck at GND
-    Warning (13410): Pin "wren" is stuck at GND
     Warning (13410): Pin "alu_output[15]" is stuck at GND
     Warning (13410): Pin "alu_output[14]" is stuck at GND
     Warning (13410): Pin "alu_output[13]" is stuck at GND
@@ -1606,7 +1598,6 @@ Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_compone
 Warning (15400): WYSIWYG primitive "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 32
 Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "clkIn"
     Warning (15610): No output dependent on input pin "sip[15]"
     Warning (15610): No output dependent on input pin "sip[14]"
     Warning (15610): No output dependent on input pin "sip[13]"
@@ -1623,15 +1614,16 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sip[2]"
     Warning (15610): No output dependent on input pin "sip[1]"
     Warning (15610): No output dependent on input pin "sip[0]"
+    Warning (15610): No output dependent on input pin "clkIn"
 Info (21057): Implemented 314 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 247 output pins
     Info (21061): Implemented 1 logic cells
     Info (21064): Implemented 48 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 513 warnings
-    Info: Peak virtual memory: 4896 megabytes
-    Info: Processing ended: Fri May 17 18:06:20 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:10
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 510 warnings
+    Info: Peak virtual memory: 4895 megabytes
+    Info: Processing ended: Fri May 17 18:21:15 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:09
 
 
