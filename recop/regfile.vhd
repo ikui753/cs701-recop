@@ -24,15 +24,15 @@ entity regfile is
 		rf_input_sel: in bit_4;
 		-- input data
 		ir_operand: in bit_16;
-		dm_out: in bit_16;
+--		dm_out: in bit_16;
 		aluout: in bit_16;
 		rz_max: in bit_16;
 		sip_hold: in bit_16;
-		er_temp: in bit_1;
+--		er_temp: in bit_1;
 		-- R7 for writing to lower byte of dpcr
 		r7 : out bit_16;
-		dprr_res : in bit_1;
-		dprr_res_reg : in bit_1;
+--		dprr_res : in bit_1;
+--		dprr_res_reg : in bit_1;
 		dprr_wren : in bit_1;
 		
 		mem_data : in bit_16
@@ -49,14 +49,14 @@ begin
 	r7 <=regs(7);
 
 	-- mux selecting input data to be written to Rz
-	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z, clk)
+	input_select: process (rf_input_sel, ir_operand, aluout, rz_max, sip_hold, sel_x, sel_z, clk)
     begin
 		if rising_edge(clk) then
 			  case rf_input_sel is
 					when "0000" =>
 						 data_input_z <= ir_operand; -- operand
 					when "0001" =>
-						 data_input_z <= X"000"&"000"&dprr_res_reg;
+						 -- data_input_z <= X"000"&"000"&dprr_res_reg;
 					when "0011" =>
 						 data_input_z <= aluout; -- alu result
 					when "0100" =>
@@ -64,9 +64,9 @@ begin
 					when "0101" =>
 						 data_input_z <= sip_hold;
 					when "0110" =>
-						 data_input_z <= X"000"&"000"&er_temp;
+						 -- data_input_z <= X"000"&"000"&er_temp;
 					when "0111" =>
-						 data_input_z <= dm_out; 
+						 -- data_input_z <= dm_out; 
 					when "1000" =>
 						 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
 					when "1001" =>
@@ -90,7 +90,7 @@ begin
 				if ld_r = '1' then
 					regs(sel_z) <= data_input_z; -- load r enabled
 				elsif dprr_wren = '1' then
-					regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
+					-- regs(0) <= X"000"&"000"&dprr_res; -- fill with 0 & dprr_res
 				else
 					regs(sel_z) <= regs(sel_z);
 				end if;

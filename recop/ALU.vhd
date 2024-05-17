@@ -19,7 +19,7 @@ entity alu is
 		-- operand selection
 		alu_op1_sel		: in bit_2;
 		alu_op2_sel		: in bit_2;
-		alu_carry		: in bit_1;  --WARNING: carry in currently is not used
+		--alu_carry		: in bit_1;  --WARNING: carry in currently is not used
 		alu_result		: out bit_16 := X"0000";
 		-- operands
 		rx				: in bit_16;

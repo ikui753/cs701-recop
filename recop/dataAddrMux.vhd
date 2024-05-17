@@ -23,7 +23,8 @@ entity dataAddrMux is
 		
 		addrOut : out bit_16;
 		dataOut : out bit_16;
-		present_sz_Jmp : out bit_2
+		present_sz_Jmp : out bit_2;
+		test : out bit_1
 	);
 	
 end entity dataAddrMux;
