@@ -28,8 +28,8 @@ architecture pc of program_counter is
 begin
     process(clock, increment, state)
 begin
-    if rising_edge(clock) then 
-		if state = "0001" then
+    --if rising_edge(clock) then 
+		--if state = "0001" then
 			 if reset = '1' then
 				out_count <= x"0000";
 			 else
@@ -66,8 +66,8 @@ begin
 			  end if;
 		else
 			out_count <= in_count;
-		end if;
-    end if;
+		--end if;
+    --end if;
 end process;
 
 end architecture;

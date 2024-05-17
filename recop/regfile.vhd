@@ -18,8 +18,8 @@ entity regfile is
 		sel_z: in integer range 0 to 15;
 		sel_x: in integer range 0 to 15;
 		-- register data outputs
-		rx : out bit_16;
-		rz: out bit_16;
+		rx : out bit_16 := x"0000";
+		rz: out bit_16 := x"0000";
 		-- select signal for input data to be written into Rz
 		rf_input_sel: in bit_4;
 		-- input data

@@ -102,14 +102,14 @@ architecture behavioral of control_unit is
 				when decode => -- actual decode, am, operand, opcode now available 
 					-- increment <= "0000";
 					stateOut <= "0011"; 
-					nextState <= decode2;
-					
-				when decode2 => -- note names tbd
-					-- allow one cycle for control unit to receive inputs
-					ld_r <= '0';
-					-- increment <= "0000";
-					stateOut <= "0100";
 					nextState <= decode3;
+					
+--				when decode2 => -- note names tbd
+--					-- allow one cycle for control unit to receive inputs
+--					ld_r <= '0';
+--					-- increment <= "0000";
+--					stateOut <= "0100";
+--					nextState <= decode3;
 				
 				when decode3 =>
 					-- read opcode here

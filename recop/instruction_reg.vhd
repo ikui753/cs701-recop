@@ -12,9 +12,9 @@ entity instruction_reg is
 				state : in bit_4;
             address_method : out bit_2; -- am
             opcode : out bit_6; -- opcode
-            rz : out bit_4; -- rz
-            rx : out bit_4; -- rx
-            operand : out bit_16
+            rz : out bit_4 := "0000"; -- rz
+            rx : out bit_4 := "0000"; -- rx
+            operand : out bit_16 := x"0000"
     );
 end instruction_reg;
 
@@ -23,7 +23,7 @@ architecture behaviour of instruction_reg is
 begin
     process(clock)
     begin
-        if rising_edge(clock) then
+        --if rising_edge(clock) then
 				--if state = "0001" then 
 				  address_method <= instruction(31 downto 30);
 				  opcode <= instruction(29 downto 24);
@@ -31,6 +31,6 @@ begin
 				  rx <= instruction(19 downto 16);
 				  operand <= instruction(15 downto 0); -- need to do a check to see if instruction has an operand
 				--end if;
-		  end if;
+		  --end if;
     end process;
 end architecture;
