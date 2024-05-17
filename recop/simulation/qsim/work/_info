@@ -9,33 +9,31 @@ z2
 cModel Technology
 Z0 dC:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim
 Eprogcountertest
-Z1 w1715899640
-Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
-Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
-Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
-Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z6 DPx6 altera 11 dffeas_pack 0 22 :S1C`o89Vbe5bV6`:6CaB3
-Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z10 DPx6 altera 28 altera_primitives_components 0 22 z?[99Tn<@QGNik3V1c6ah1
+Z1 w1715925997
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
 R0
-Z11 8recop.vho
-Z12 Frecop.vho
+Z9 8recop.vho
+Z10 Frecop.vho
 l0
-L38
-VT^FXEOOl0U>iVd9:c6nDi0
-!s100 g;<@zPPnQaWli?ZC_6f]72
-Z13 OV;C;10.5b;63
+L36
+V1ozaceghIZ^F4FVU;_X2h2
+!s100 R2F5f]D4jH]_g1lToBd=[2
+Z11 OV;C;10.5b;63
 32
-!s110 1715899640
+Z12 !s110 1715925998
 !i10b 1
-Z14 !s108 1715899640.000000
-Z15 !s90 -work|work|recop.vho|
-Z16 !s107 recop.vho|
+Z13 !s108 1715925998.000000
+Z14 !s90 -work|work|recop.vho|
+Z15 !s107 recop.vho|
 !i113 1
-Z17 o-work work
-Z18 tExplicit 1 CvgOpt 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
 Astructure
 R2
 R3
@@ -44,59 +42,57 @@ R5
 R6
 R7
 R8
-R9
-R10
-DEx4 work 15 progcountertest 0 22 T^FXEOOl0U>iVd9:c6nDi0
-l3126
-L72
-VVGcE1_nomVOFR4AafScT82
-!s100 WV<N7KdM?6<o=mCeHZm_o1
-R13
+DEx4 work 15 progcountertest 0 22 1ozaceghIZ^F4FVU;_X2h2
+l274
+L70
+VP7EVlYKOe?G1ahJaM@m>;3
+!s100 8mGi=i5X^Icm`kWj8STC<3
+R11
 32
-Z19 !s110 1715899641
+R12
 !i10b 1
+R13
 R14
 R15
-R16
 !i113 1
+R16
 R17
-R18
 Eprogcountertest_vhd_vec_tst
-Z20 w1715899637
-R8
-R9
+Z18 w1715925995
+R6
+R7
 R0
-Z21 8controlUnitWaveform.vwf.vht
-Z22 FcontrolUnitWaveform.vwf.vht
+Z19 8controlUnitWaveform.vwf.vht
+Z20 FcontrolUnitWaveform.vwf.vht
 l0
 L31
 VgbLb09nmT9K_PlI:87AE82
 !s100 YLPEX9<Mkib2d0Nj>G@7d3
-R13
+R11
 32
-R19
+R12
 !i10b 1
-Z23 !s108 1715899641.000000
-Z24 !s90 -work|work|controlUnitWaveform.vwf.vht|
-Z25 !s107 controlUnitWaveform.vwf.vht|
+R13
+Z21 !s90 -work|work|controlUnitWaveform.vwf.vht|
+Z22 !s107 controlUnitWaveform.vwf.vht|
 !i113 1
+R16
 R17
-R18
 Aprogcountertest_arch
-R8
-R9
-Z26 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
+R6
+R7
+Z23 DEx4 work 27 progcountertest_vhd_vec_tst 0 22 gbLb09nmT9K_PlI:87AE82
 l98
 L33
-Z27 VF<j?]SG>J`zCmGE@7LW7c3
-Z28 !s100 XP]Q1UF2CYA^OVkXodB<M2
-R13
+Z24 VF<j?]SG>J`zCmGE@7LW7c3
+Z25 !s100 XP]Q1UF2CYA^OVkXodB<M2
+R11
 32
-R19
+R12
 !i10b 1
-R23
-R24
-R25
+R13
+R21
+R22
 !i113 1
+R16
 R17
-R18
