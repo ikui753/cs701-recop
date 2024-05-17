@@ -552,6 +552,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "dpcr_wr",
+					"strict" : false
+				},
+				{
 					"name" : "increment[3]",
 					"strict" : false
 				},

@@ -87,6 +87,8 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
                 case "R":
                     am = AddressingMode.REGISTER
                     rx = get_register(parts[parts_len - 1]) # register operations only input Rz and Rx
+                case _:
+                    am = AddressingMode.INHERENT
         except ValueError:
             raise ValueError(f"Error: Invalid operand '{parts[parts_len - 1]}' on line {line}")
 

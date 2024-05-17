@@ -68,7 +68,7 @@ begin
 					when "0111" =>
 						 -- data_input_z <= dm_out; 
 					when "1000" =>
-						 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
+--						 data_input_z <= regs(sel_x); -- RZ <- m[Rx]
 					when "1001" =>
 						 data_input_z <= mem_data; -- load from memory
 					when "1010" =>

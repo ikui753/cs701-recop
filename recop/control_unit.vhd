@@ -98,6 +98,7 @@ architecture behavioral of control_unit is
 				when decode2 => -- note names tbd
 					-- allow one cycle for control unit to receive inputs
 					ld_r <= '0';
+					dpcr_wr <= '0';
 					-- increment <= "0000";
 					stateOut <= "0100";
 					nextState <= decode3;

@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/
@@ -2885,6 +2887,16 @@ SIGNAL("instruction[0]")
 	PARENT = "instruction";
 }
 
+SIGNAL("dpcr_wr")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clkIn")
 {
 	NODE
@@ -5222,6 +5234,15 @@ TRANSITION_LIST("instruction[1]")
 }
 
 TRANSITION_LIST("instruction[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("dpcr_wr")
 {
 	NODE
 	{
@@ -8031,6 +8052,15 @@ DISPLAY_LINE
 	TREE_INDEX = 280;
 	TREE_LEVEL = 1;
 	PARENT = 264;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "dpcr_wr";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 281;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

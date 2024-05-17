@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/17/2024 20:55:41"
+-- Generated on "05/17/2024 21:47:58"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
 -- 
@@ -43,6 +43,7 @@ SIGNAL clkIn : STD_LOGIC;
 SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
@@ -74,6 +75,7 @@ COMPONENT progCounterTest
 	clr_z_flag : OUT STD_LOGIC;
 	dataSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	dpcr_wr : OUT STD_LOGIC;
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
@@ -109,6 +111,7 @@ BEGIN
 	clr_z_flag => clr_z_flag,
 	dataSel => dataSel,
 	dpcr => dpcr,
+	dpcr_wr => dpcr_wr,
 	increment => increment,
 	instruction => instruction,
 	ld_r => ld_r,
