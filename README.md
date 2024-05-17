@@ -1,4 +1,4 @@
-# CS701 Reactive CoProcessor RECOP
+# CS701 Reactive CoProcessor Re-COP
 # How to start
 Instructions are to be entered in the .asm file found in recop/assembler. Run assembler.py to generate .mif file.
 
@@ -26,9 +26,12 @@ Instructions are to be entered in the .asm file found in recop/assembler. Run as
 
 # Running Testbench
 1. Open recop/recop.qpf and run analysis and synthesis. 
-2. Processing, update memory initialization file. This can be used to update instructions whenever necessary.
-3. Open controlUnitWaveform.vwf and press simulation, run functional simulation to see testbench. 
+2. Go to _Processing -> update memory initialization file._ Whenever instructions are updated this is a necessary step to ensure the correct file version has been uploaded.
+3. Open _controlUnitWaveform.vwf_ and press simulation, run functional simulation to see testbench. 
 4. Simulation can be run for longer to see more instructions, clock is at 10ns.
+Notes:
+* In case there is an error or you are unable to run the simulation, ensure you create a testbench first and copy the files over to the qsim.
+* Additionally, ensure that going to _simulation -> simulation settings_ and restoring defualt settings has occurred to reset any versions of file path.
 
 # Demoing FPGA Implementation
 ## Outputs
