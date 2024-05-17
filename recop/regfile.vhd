@@ -51,7 +51,7 @@ begin
 	-- mux selecting input data to be written to Rz
 	input_select: process (rf_input_sel, ir_operand, dm_out, aluout, rz_max, sip_hold, er_temp, dprr_res_reg, sel_x, sel_z, clk)
     begin
-		--if rising_edge(clk) then
+		if rising_edge(clk) then
 			  case rf_input_sel is
 					when "0000" =>
 						 data_input_z <= ir_operand; -- operand
@@ -77,7 +77,7 @@ begin
 						 data_input_z <= X"0000";
 			  end case;
 			  
-		--end if;
+		end if;
     end process input_select;
 	
 	process (clk, init)
@@ -85,7 +85,7 @@ begin
 		if init = '1' then
 			-- reset regs
 			regs<=((others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'),(others => '0'));
-		elsif init = '0' then -- rising_edge(clk) then
+		elsif rising_edge(clk) then -- rising_edge(clk) then
 				-- write data into Rz if ld signal is asserted
 				if ld_r = '1' then
 					regs(sel_z) <= data_input_z; -- load r enabled

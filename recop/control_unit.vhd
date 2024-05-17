@@ -294,9 +294,9 @@ architecture behavioral of control_unit is
 					if opcodeIn = addr or opcodeIn = subvr or opcodeIn = orr or opcodeIn = andr or opcodeIn = max then
 						nextState <= loadAluResult;
 					
-					elsif opcodeIn = subr then
-						ld_r <= '0';
-						nextState <= fetch;
+--					elsif opcodeIn = subr then
+--						ld_r <= '0';
+--						nextState <= fetch;
 					
 					-- jmp 
 					elsif opcodeIn = jmp then
@@ -347,6 +347,12 @@ architecture behavioral of control_unit is
 				when loadAluResult =>
 					-- loads alu result
 					stateOut <= "0111";
+--					if opcodeIn = subr then
+--						-- don't store
+--						ld_r <= '0';
+--					else
+--						ld_r <= '1';
+--					end if;
 					nextState <= storeAluResult;
 					
 				when storeAluResult =>
