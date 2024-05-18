@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY top_level_block
+set_global_assignment -name TOP_LEVEL_ENTITY recop
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:28:48  MAY 02, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -324,9 +324,7 @@ set_global_assignment -name BDF_FILE datapath.bdf
 set_global_assignment -name VHDL_FILE dataAddrMux.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE recopWaveform.vwf
 set_global_assignment -name VHDL_FILE decoder.vhd
-set_global_assignment -name BDF_FILE top_level_block.bdf
 set_global_assignment -name SOURCE_FILE db/recop.cmp.rdb
-set_global_assignment -name VECTOR_WAVEFORM_FILE topLevelwaveform.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

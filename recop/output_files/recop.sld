@@ -1,6 +1,6 @@
 <sld_project_info>
   <sld_infos>
-    <sld_info hpath="NOC:inst" name="inst">
+    <sld_info hpath="NOC:inst1" name="inst1">
       <assignment_values>
         <assignment_value text="QSYS_NAME NOC HAS_SOPCINFO 1 GENERATION_ID 1716007386"/>
       </assignment_values>

@@ -1,17 +1,17 @@
-Fitter Status : Successful - Sat May 18 21:54:48 2024
+Fitter Status : Successful - Sat May 18 22:05:11 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : recop
-Top-level Entity Name : top_level_block
+Top-level Entity Name : recop
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1,286 / 32,070 ( 4 % )
-Total registers : 1916
-Total pins : 81 / 457 ( 18 % )
+Logic utilization (in ALMs) : 645 / 32,070 ( 2 % )
+Total registers : 714
+Total pins : 285 / 457 ( 62 % )
 Total virtual pins : 0
-Total block memory bits : 226,240 / 4,065,280 ( 6 % )
-Total RAM Blocks : 46 / 397 ( 12 % )
-Total DSP Blocks : 3 / 87 ( 3 % )
+Total block memory bits : 1,114,112 / 4,065,280 ( 27 % )
+Total RAM Blocks : 136 / 397 ( 34 % )
+Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
