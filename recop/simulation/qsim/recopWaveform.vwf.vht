@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/19/2024 10:32:20"
+-- Generated on "05/19/2024 11:14:14"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          recop
 -- 
@@ -39,7 +39,7 @@ SIGNAL alu_output : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL alu_z : STD_LOGIC;
 SIGNAL am : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
-SIGNAL clk50 : STD_LOGIC;
+SIGNAL CLK50 : STD_LOGIC;
 SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -75,7 +75,7 @@ COMPONENT recop
 	alu_z : OUT STD_LOGIC;
 	am : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	clk : OUT STD_LOGIC;
-	clk50 : IN STD_LOGIC;
+	CLK50 : IN STD_LOGIC;
 	clr_z_flag : OUT STD_LOGIC;
 	dataSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -115,7 +115,7 @@ BEGIN
 	alu_z => alu_z,
 	am => am,
 	clk => clk,
-	clk50 => clk50,
+	CLK50 => CLK50,
 	clr_z_flag => clr_z_flag,
 	dataSel => dataSel,
 	dpcr => dpcr,
@@ -145,15 +145,75 @@ BEGIN
 	wren => wren
 	);
 
--- clk50
-t_prcs_clk50: PROCESS
+-- CLK50
+t_prcs_CLK50: PROCESS
 BEGIN
 LOOP
-	clk50 <= '0';
+	CLK50 <= '0';
 	WAIT FOR 10000 ps;
-	clk50 <= '1';
+	CLK50 <= '1';
 	WAIT FOR 10000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
-END PROCESS t_prcs_clk50;
+END PROCESS t_prcs_CLK50;
+-- SW[9]
+t_prcs_SW_9: PROCESS
+BEGIN
+	SW(9) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_9;
+-- SW[8]
+t_prcs_SW_8: PROCESS
+BEGIN
+	SW(8) <= '1';
+WAIT;
+END PROCESS t_prcs_SW_8;
+-- SW[7]
+t_prcs_SW_7: PROCESS
+BEGIN
+	SW(7) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_7;
+-- SW[6]
+t_prcs_SW_6: PROCESS
+BEGIN
+	SW(6) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_6;
+-- SW[5]
+t_prcs_SW_5: PROCESS
+BEGIN
+	SW(5) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_5;
+-- SW[4]
+t_prcs_SW_4: PROCESS
+BEGIN
+	SW(4) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_4;
+-- SW[3]
+t_prcs_SW_3: PROCESS
+BEGIN
+	SW(3) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_3;
+-- SW[2]
+t_prcs_SW_2: PROCESS
+BEGIN
+	SW(2) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_2;
+-- SW[1]
+t_prcs_SW_1: PROCESS
+BEGIN
+	SW(1) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_1;
+-- SW[0]
+t_prcs_SW_0: PROCESS
+BEGIN
+	SW(0) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_0;
 END recop_arch;
