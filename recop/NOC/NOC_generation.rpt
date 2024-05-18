@@ -2,20 +2,16 @@ Info: Starting: Create block symbol file (.bsf)
 Info: qsys-generate C:\Users\ianku\OneDrive\Documents\Github\cs701-recop\recop\NOC.qsys --block-symbol-file --output-directory=C:\Users\ianku\OneDrive\Documents\Github\cs701-recop\recop\NOC --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading recop/NOC.qsys
 Progress: Reading input file
-Progress: Adding addr_in_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module addr_in_pio
-Progress: Adding addr_out_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module addr_out_pio
+Progress: Adding DPCR_IO [altera_avalon_pio 18.1]
+Progress: Parameterizing module DPCR_IO
+Progress: Adding SignalIO [altera_avalon_pio 18.1]
+Progress: Parameterizing module SignalIO
 Progress: Adding buttons_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module buttons_pio
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
 Progress: Adding cpu [altera_nios2_gen2 18.1]
 Progress: Parameterizing module cpu
-Progress: Adding data_in_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module data_in_pio
-Progress: Adding data_out_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module data_out_pio
 Progress: Adding display0_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module display0_pio
 Progress: Adding display1_pio [altera_avalon_pio 18.1]
@@ -28,8 +24,6 @@ Progress: Adding display4_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module display4_pio
 Progress: Adding display5_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module display5_pio
-Progress: Adding led_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module led_pio
 Progress: Adding onchip_memory [altera_avalon_onchip_memory2 18.1]
 Progress: Parameterizing module onchip_memory
 Progress: Adding switches_pio [altera_avalon_pio 18.1]
@@ -38,9 +32,15 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
-Info: NOC.addr_in_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.DPCR_IO: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.SignalIO: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: NOC.buttons_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: NOC.data_in_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display0_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display1_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display2_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display3_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display4_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display5_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: NOC.switches_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
@@ -49,20 +49,16 @@ Info: Starting: Create HDL design files for synthesis
 Info: qsys-generate C:\Users\ianku\OneDrive\Documents\Github\cs701-recop\recop\NOC.qsys --synthesis=VHDL --output-directory=C:\Users\ianku\OneDrive\Documents\Github\cs701-recop\recop\NOC\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading recop/NOC.qsys
 Progress: Reading input file
-Progress: Adding addr_in_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module addr_in_pio
-Progress: Adding addr_out_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module addr_out_pio
+Progress: Adding DPCR_IO [altera_avalon_pio 18.1]
+Progress: Parameterizing module DPCR_IO
+Progress: Adding SignalIO [altera_avalon_pio 18.1]
+Progress: Parameterizing module SignalIO
 Progress: Adding buttons_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module buttons_pio
 Progress: Adding clk [clock_source 18.1]
 Progress: Parameterizing module clk
 Progress: Adding cpu [altera_nios2_gen2 18.1]
 Progress: Parameterizing module cpu
-Progress: Adding data_in_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module data_in_pio
-Progress: Adding data_out_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module data_out_pio
 Progress: Adding display0_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module display0_pio
 Progress: Adding display1_pio [altera_avalon_pio 18.1]
@@ -75,8 +71,6 @@ Progress: Adding display4_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module display4_pio
 Progress: Adding display5_pio [altera_avalon_pio 18.1]
 Progress: Parameterizing module display5_pio
-Progress: Adding led_pio [altera_avalon_pio 18.1]
-Progress: Parameterizing module led_pio
 Progress: Adding onchip_memory [altera_avalon_onchip_memory2 18.1]
 Progress: Parameterizing module onchip_memory
 Progress: Adding switches_pio [altera_avalon_pio 18.1]
@@ -85,48 +79,38 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
-Info: NOC.addr_in_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.DPCR_IO: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.SignalIO: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: NOC.buttons_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: NOC.data_in_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display0_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display1_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display2_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display3_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display4_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: NOC.display5_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: NOC.switches_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: NOC: Generating NOC "NOC" for QUARTUS_SYNTH
-Info: addr_in_pio: Starting RTL generation for module 'NOC_addr_in_pio'
-Info: addr_in_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_addr_in_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0002_addr_in_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0002_addr_in_pio_gen//NOC_addr_in_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: addr_in_pio: Done RTL generation for module 'NOC_addr_in_pio'
-Info: addr_in_pio: "NOC" instantiated altera_avalon_pio "addr_in_pio"
-Info: addr_out_pio: Starting RTL generation for module 'NOC_addr_out_pio'
-Info: addr_out_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_addr_out_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0003_addr_out_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0003_addr_out_pio_gen//NOC_addr_out_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: addr_out_pio: Done RTL generation for module 'NOC_addr_out_pio'
-Info: addr_out_pio: "NOC" instantiated altera_avalon_pio "addr_out_pio"
+Info: DPCR_IO: Starting RTL generation for module 'NOC_DPCR_IO'
+Info: DPCR_IO:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_DPCR_IO --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0002_DPCR_IO_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0002_DPCR_IO_gen//NOC_DPCR_IO_component_configuration.pl  --do_build_sim=0  ]
+Info: DPCR_IO: Done RTL generation for module 'NOC_DPCR_IO'
+Info: DPCR_IO: "NOC" instantiated altera_avalon_pio "DPCR_IO"
+Info: SignalIO: Starting RTL generation for module 'NOC_SignalIO'
+Info: SignalIO:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_SignalIO --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0003_SignalIO_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0003_SignalIO_gen//NOC_SignalIO_component_configuration.pl  --do_build_sim=0  ]
+Info: SignalIO: Done RTL generation for module 'NOC_SignalIO'
+Info: SignalIO: "NOC" instantiated altera_avalon_pio "SignalIO"
 Info: buttons_pio: Starting RTL generation for module 'NOC_buttons_pio'
-Info: buttons_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_buttons_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0004_buttons_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0004_buttons_pio_gen//NOC_buttons_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: buttons_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_buttons_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0004_buttons_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0004_buttons_pio_gen//NOC_buttons_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: buttons_pio: Done RTL generation for module 'NOC_buttons_pio'
 Info: buttons_pio: "NOC" instantiated altera_avalon_pio "buttons_pio"
 Info: cpu: "NOC" instantiated altera_nios2_gen2 "cpu"
-Info: data_in_pio: Starting RTL generation for module 'NOC_data_in_pio'
-Info: data_in_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_data_in_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0005_data_in_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0005_data_in_pio_gen//NOC_data_in_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: data_in_pio: Done RTL generation for module 'NOC_data_in_pio'
-Info: data_in_pio: "NOC" instantiated altera_avalon_pio "data_in_pio"
-Info: data_out_pio: Starting RTL generation for module 'NOC_data_out_pio'
-Info: data_out_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_data_out_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0006_data_out_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0006_data_out_pio_gen//NOC_data_out_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: data_out_pio: Done RTL generation for module 'NOC_data_out_pio'
-Info: data_out_pio: "NOC" instantiated altera_avalon_pio "data_out_pio"
 Info: display0_pio: Starting RTL generation for module 'NOC_display0_pio'
-Info: display0_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_display0_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0007_display0_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0007_display0_pio_gen//NOC_display0_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: display0_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_display0_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0005_display0_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0005_display0_pio_gen//NOC_display0_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: display0_pio: Done RTL generation for module 'NOC_display0_pio'
 Info: display0_pio: "NOC" instantiated altera_avalon_pio "display0_pio"
-Info: led_pio: Starting RTL generation for module 'NOC_led_pio'
-Info: led_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_led_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0008_led_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0008_led_pio_gen//NOC_led_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: led_pio: Done RTL generation for module 'NOC_led_pio'
-Info: led_pio: "NOC" instantiated altera_avalon_pio "led_pio"
 Info: onchip_memory: Starting RTL generation for module 'NOC_onchip_memory'
-Info: onchip_memory:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=NOC_onchip_memory --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0009_onchip_memory_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0009_onchip_memory_gen//NOC_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=NOC_onchip_memory --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0006_onchip_memory_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0006_onchip_memory_gen//NOC_onchip_memory_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory: Done RTL generation for module 'NOC_onchip_memory'
 Info: onchip_memory: "NOC" instantiated altera_avalon_onchip_memory2 "onchip_memory"
-Info: switches_pio: Starting RTL generation for module 'NOC_switches_pio'
-Info: switches_pio:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=NOC_switches_pio --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0010_switches_pio_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0010_switches_pio_gen//NOC_switches_pio_component_configuration.pl  --do_build_sim=0  ]
-Info: switches_pio: Done RTL generation for module 'NOC_switches_pio'
-Info: switches_pio: "NOC" instantiated altera_avalon_pio "switches_pio"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
@@ -139,36 +123,33 @@ Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_013: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_014: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "NOC" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "NOC" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "NOC" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'NOC_cpu_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=NOC_cpu_cpu --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0013_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_5117215311412795161.dir/0013_cpu_gen//NOC_cpu_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2024.05.18 12:57:25 (*) Starting Nios II generation
-Info: cpu: # 2024.05.18 12:57:25 (*)   Checking for plaintext license.
-Info: cpu: # 2024.05.18 12:57:26 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2024.05.18 12:57:26 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2024.05.18 12:57:26 (*)   Plaintext license not found.
-Info: cpu: # 2024.05.18 12:57:26 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2024.05.18 12:57:27 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2024.05.18 12:57:27 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2024.05.18 12:57:27 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: cpu: # 2024.05.18 12:57:27 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2024.05.18 12:57:27 (*)   Creating all objects for CPU
-Info: cpu: # 2024.05.18 12:57:27 (*)     Testbench
-Info: cpu: # 2024.05.18 12:57:28 (*)     Instruction decoding
-Info: cpu: # 2024.05.18 12:57:28 (*)       Instruction fields
-Info: cpu: # 2024.05.18 12:57:28 (*)       Instruction decodes
-Info: cpu: # 2024.05.18 12:57:28 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2024.05.18 12:57:28 (*)       Instruction controls
-Info: cpu: # 2024.05.18 12:57:28 (*)     Pipeline frontend
-Info: cpu: # 2024.05.18 12:57:28 (*)     Pipeline backend
-Info: cpu: # 2024.05.18 12:57:30 (*)   Generating RTL from CPU objects
-Info: cpu: # 2024.05.18 12:57:32 (*)   Creating encrypted RTL
-Info: cpu: # 2024.05.18 12:57:32 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=NOC_cpu_cpu --dir=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0009_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/ianku/AppData/Local/Temp/alt9861_377428684214953070.dir/0009_cpu_gen//NOC_cpu_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2024.05.18 16:43:35 (*) Starting Nios II generation
+Info: cpu: # 2024.05.18 16:43:35 (*)   Checking for plaintext license.
+Info: cpu: # 2024.05.18 16:43:35 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2024.05.18 16:43:35 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2024.05.18 16:43:36 (*)   Plaintext license not found.
+Info: cpu: # 2024.05.18 16:43:36 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2024.05.18 16:43:37 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2024.05.18 16:43:37 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2024.05.18 16:43:37 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: cpu: # 2024.05.18 16:43:37 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2024.05.18 16:43:37 (*)   Creating all objects for CPU
+Info: cpu: # 2024.05.18 16:43:37 (*)     Testbench
+Info: cpu: # 2024.05.18 16:43:37 (*)     Instruction decoding
+Info: cpu: # 2024.05.18 16:43:37 (*)       Instruction fields
+Info: cpu: # 2024.05.18 16:43:37 (*)       Instruction decodes
+Info: cpu: # 2024.05.18 16:43:38 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2024.05.18 16:43:38 (*)       Instruction controls
+Info: cpu: # 2024.05.18 16:43:38 (*)     Pipeline frontend
+Info: cpu: # 2024.05.18 16:43:38 (*)     Pipeline backend
+Info: cpu: # 2024.05.18 16:43:40 (*)   Generating RTL from CPU objects
+Info: cpu: # 2024.05.18 16:43:41 (*)   Creating encrypted RTL
+Info: cpu: # 2024.05.18 16:43:42 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'NOC_cpu_cpu'
 Info: cpu: "cpu" instantiated altera_nios2_gen2_unit "cpu"
 Info: cpu_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_data_master_translator"
@@ -195,6 +176,6 @@ Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "r
 Info: Reusing file C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/NOC/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: NOC: Done "NOC" with 35 modules, 55 files
+Info: NOC: Done "NOC" with 31 modules, 51 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

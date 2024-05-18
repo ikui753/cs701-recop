@@ -25,12 +25,44 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sat May 18 12:51:26 2024
+    Info: Processing started: Sat May 18 17:26:17 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recopWaveform.vwf.vht
+Warning (20013): Ignored 19 assignments for entity "NOC" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_DPCR_IO" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_SignalIO" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_buttons_pio" -- entity does not exist in design
+Warning (20013): Ignored 172 assignments for entity "NOC_cpu" -- entity does not exist in design
+Warning (20013): Ignored 179 assignments for entity "NOC_cpu_cpu" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_display0_pio" -- entity does not exist in design
+Warning (20013): Ignored 13 assignments for entity "NOC_irq_mapper" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "NOC_mm_interconnect_0" -- entity does not exist in design
+Warning (20013): Ignored 32 assignments for entity "NOC_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_cmd_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_002" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_003" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_rsp_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_rsp_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_rsp_mux_001" -- ent
+ity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_onchip_memory" -- entity does not exist in design
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+Warning (20013): Ignored 64 assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+Warning (20013): Ignored 53 assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "altera_merlin_traffic_limiter" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-tput pin "sip_r[15]" in vector source file when writing test bench files
+ile when writing test bench files
 
 Completed successfully. 
 
@@ -54,15 +86,47 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sat May 18 12:51:28 2024
+    Info: Processing started: Sat May 18 17:26:20 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
+Warning (20013): Ignored 19 assignments for entity "NOC" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_DPCR_IO" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_SignalIO" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_buttons_pio" -- entity does not exist in design
+Warning (20013): Ignored 172 assignments for entity "NOC_cpu" -- entity does not exist in design
+Warning (20013): Ignored 179 assignments for entity "NOC_cpu_cpu" -- entity does not exist in design
+Warning (20013): Ignored 25 assignments for entity "NOC_display0_pio" -- entity does not exist in design
+Warning (20013): Ignored 13 assignments for entity "NOC_irq_mapper" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "NOC_mm_interconnect_0" -- entity does not exist in design
+Warning (20013): Ignored 32 assignments for entity "NOC_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_cmd_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_002" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_003" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_rsp_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_rsp_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for ent
+ity "NOC_onchip_memory" -- entity does not exist in design
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+Warning (20013): Ignored 64 assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+Warning (20013): Ignored 53 assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "altera_merlin_traffic_limiter" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file recop.vho in folder "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4735 megabytes
-    Info: Processing ended: Sat May 18 12:51:31 2024
-    Info: Elapsed time: 00:00:03
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4738 megabytes
+    Info: Processing ended: Sat May 18 17:26:22 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 Completed successfully. 
@@ -79,15 +143,14 @@ c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do recop.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
 
 # do recop.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:51:31 on May 18,2024
-# vcom -work work recop.vho 
 
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:26:23 on May 18,2024
+# vcom -work work recop.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -101,11 +164,10 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling entity recop
 # -- Compiling architecture structure of recop
 
-# End time: 12:51:32 on May 18,2024, Elapsed time: 0:00:01
+# End time: 17:26:24 on May 18,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:51:32 on May 18,2024
+# Start time: 17:26:24 on May 18,2024
 # vcom -work work recopWaveform.vwf.vht 
 # -- Loading package STANDARD
 
@@ -113,11 +175,11 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package std_logic_1164
 # -- Compiling entity recop_vhd_vec_tst
 # -- Compiling architecture recop_arch of recop_vhd_vec_tst
-# End time: 12:51:32 on May 18,2024, Elapsed time: 0:00:00
+# End time: 17:26:24 on May 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.recop_vhd_vec_tst 
-# Start time: 12:51:32 on May 18,2024
+# Start time: 17:26:24 on May 18,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -142,7 +204,7 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 305234 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 305226 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
@@ -152,9 +214,8 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # Simulation time: 0 ps
 
-# End time: 12:51:44 on May 18,2024, Elapsed time: 0:00:12
+# End time: 17:26:35 on May 18,2024, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 1
-# Simulation time: 1000000 ps
 
 Completed successfully. 
 
@@ -166,7 +227,7 @@ Reading C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qs
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop_20240518125144.sim.vwf
+Writing the resulting VWF to C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop_20240518172635.sim.vwf
 
 Finished VCD to VWF conversion.
 

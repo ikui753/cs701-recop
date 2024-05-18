@@ -1,7 +1,7 @@
 # do recop.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:51:31 on May 18,2024
+# Start time: 17:26:23 on May 18,2024
 # vcom -work work recop.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -15,20 +15,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity recop
 # -- Compiling architecture structure of recop
-# End time: 12:51:32 on May 18,2024, Elapsed time: 0:00:01
+# End time: 17:26:24 on May 18,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 12:51:32 on May 18,2024
+# Start time: 17:26:24 on May 18,2024
 # vcom -work work recopWaveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity recop_vhd_vec_tst
 # -- Compiling architecture recop_arch of recop_vhd_vec_tst
-# End time: 12:51:32 on May 18,2024, Elapsed time: 0:00:00
+# End time: 17:26:24 on May 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.recop_vhd_vec_tst 
-# Start time: 12:51:32 on May 18,2024
+# Start time: 17:26:24 on May 18,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -53,12 +53,11 @@
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 305234 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 305226 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 # Simulation time: 0 ps
 # Simulation time: 0 ps
 # Simulation time: 0 ps
-# End time: 12:51:44 on May 18,2024, Elapsed time: 0:00:12
+# End time: 17:26:35 on May 18,2024, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 1
-# Simulation time: 1000000 ps

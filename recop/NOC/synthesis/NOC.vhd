@@ -8,36 +8,33 @@ use IEEE.numeric_std.all;
 
 entity NOC is
 	port (
-		addr_in_pio_external_connection_export  : in  std_logic_vector(7 downto 0)  := (others => '0'); --  addr_in_pio_external_connection.export
-		addr_out_pio_external_connection_export : out std_logic_vector(7 downto 0);                     -- addr_out_pio_external_connection.export
-		buttons_pio_external_connection_export  : in  std_logic_vector(3 downto 0)  := (others => '0'); --  buttons_pio_external_connection.export
-		clk_clk                                 : in  std_logic                     := '0';             --                              clk.clk
-		data_in_pio_external_connection_export  : in  std_logic_vector(31 downto 0) := (others => '0'); --  data_in_pio_external_connection.export
-		data_out_pio_external_connection_export : out std_logic_vector(31 downto 0);                    -- data_out_pio_external_connection.export
-		display0_pio_external_connection_export : out std_logic_vector(6 downto 0);                     -- display0_pio_external_connection.export
-		display1_pio_external_connection_export : out std_logic_vector(6 downto 0);                     -- display1_pio_external_connection.export
-		display2_pio_external_connection_export : out std_logic_vector(6 downto 0);                     -- display2_pio_external_connection.export
-		display3_pio_external_connection_export : out std_logic_vector(6 downto 0);                     -- display3_pio_external_connection.export
-		display4_pio_external_connection_export : out std_logic_vector(6 downto 0);                     -- display4_pio_external_connection.export
-		display5_pio_external_connection_export : out std_logic_vector(6 downto 0);                     -- display5_pio_external_connection.export
-		led_pio_external_connection_export      : out std_logic_vector(9 downto 0);                     --      led_pio_external_connection.export
-		reset_reset_n                           : in  std_logic                     := '0';             --                            reset.reset_n
-		switches_pio_external_connection_export : in  std_logic_vector(9 downto 0)  := (others => '0')  -- switches_pio_external_connection.export
+		buttons_pio_external_connection_in_port   : in  std_logic_vector(3 downto 0)  := (others => '0'); --  buttons_pio_external_connection.in_port
+		buttons_pio_external_connection_out_port  : out std_logic_vector(3 downto 0);                     --                                 .out_port
+		clk_clk                                   : in  std_logic                     := '0';             --                              clk.clk
+		display0_pio_external_connection_in_port  : in  std_logic_vector(6 downto 0)  := (others => '0'); -- display0_pio_external_connection.in_port
+		display0_pio_external_connection_out_port : out std_logic_vector(6 downto 0);                     --                                 .out_port
+		display1_pio_external_connection_in_port  : in  std_logic_vector(6 downto 0)  := (others => '0'); -- display1_pio_external_connection.in_port
+		display1_pio_external_connection_out_port : out std_logic_vector(6 downto 0);                     --                                 .out_port
+		display2_pio_external_connection_in_port  : in  std_logic_vector(6 downto 0)  := (others => '0'); -- display2_pio_external_connection.in_port
+		display2_pio_external_connection_out_port : out std_logic_vector(6 downto 0);                     --                                 .out_port
+		display3_pio_external_connection_in_port  : in  std_logic_vector(6 downto 0)  := (others => '0'); -- display3_pio_external_connection.in_port
+		display3_pio_external_connection_out_port : out std_logic_vector(6 downto 0);                     --                                 .out_port
+		display4_pio_external_connection_in_port  : in  std_logic_vector(6 downto 0)  := (others => '0'); -- display4_pio_external_connection.in_port
+		display4_pio_external_connection_out_port : out std_logic_vector(6 downto 0);                     --                                 .out_port
+		display5_pio_external_connection_in_port  : in  std_logic_vector(6 downto 0)  := (others => '0'); -- display5_pio_external_connection.in_port
+		display5_pio_external_connection_out_port : out std_logic_vector(6 downto 0);                     --                                 .out_port
+		dpcr_io_external_connection_in_port       : in  std_logic_vector(31 downto 0) := (others => '0'); --      dpcr_io_external_connection.in_port
+		dpcr_io_external_connection_out_port      : out std_logic_vector(31 downto 0);                    --                                 .out_port
+		reset_reset_n                             : in  std_logic                     := '0';             --                            reset.reset_n
+		signalio_external_connection_in_port      : in  std_logic_vector(9 downto 0)  := (others => '0'); --     signalio_external_connection.in_port
+		signalio_external_connection_out_port     : out std_logic_vector(9 downto 0);                     --                                 .out_port
+		switches_pio_external_connection_in_port  : in  std_logic_vector(9 downto 0)  := (others => '0'); -- switches_pio_external_connection.in_port
+		switches_pio_external_connection_out_port : out std_logic_vector(9 downto 0)                      --                                 .out_port
 	);
 end entity NOC;
 
 architecture rtl of NOC is
-	component NOC_addr_in_pio is
-		port (
-			clk      : in  std_logic                     := 'X';             -- clk
-			reset_n  : in  std_logic                     := 'X';             -- reset_n
-			address  : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			readdata : out std_logic_vector(31 downto 0);                    -- readdata
-			in_port  : in  std_logic_vector(7 downto 0)  := (others => 'X')  -- export
-		);
-	end component NOC_addr_in_pio;
-
-	component NOC_addr_out_pio is
+	component NOC_DPCR_IO is
 		port (
 			clk        : in  std_logic                     := 'X';             -- clk
 			reset_n    : in  std_logic                     := 'X';             -- reset_n
@@ -46,17 +43,36 @@ architecture rtl of NOC is
 			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			chipselect : in  std_logic                     := 'X';             -- chipselect
 			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
-			out_port   : out std_logic_vector(7 downto 0)                      -- export
+			in_port    : in  std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			out_port   : out std_logic_vector(31 downto 0)                     -- export
 		);
-	end component NOC_addr_out_pio;
+	end component NOC_DPCR_IO;
+
+	component NOC_SignalIO is
+		port (
+			clk        : in  std_logic                     := 'X';             -- clk
+			reset_n    : in  std_logic                     := 'X';             -- reset_n
+			address    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
+			write_n    : in  std_logic                     := 'X';             -- write_n
+			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			chipselect : in  std_logic                     := 'X';             -- chipselect
+			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
+			in_port    : in  std_logic_vector(9 downto 0)  := (others => 'X'); -- export
+			out_port   : out std_logic_vector(9 downto 0)                      -- export
+		);
+	end component NOC_SignalIO;
 
 	component NOC_buttons_pio is
 		port (
-			clk      : in  std_logic                     := 'X';             -- clk
-			reset_n  : in  std_logic                     := 'X';             -- reset_n
-			address  : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			readdata : out std_logic_vector(31 downto 0);                    -- readdata
-			in_port  : in  std_logic_vector(3 downto 0)  := (others => 'X')  -- export
+			clk        : in  std_logic                     := 'X';             -- clk
+			reset_n    : in  std_logic                     := 'X';             -- reset_n
+			address    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
+			write_n    : in  std_logic                     := 'X';             -- write_n
+			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			chipselect : in  std_logic                     := 'X';             -- chipselect
+			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
+			in_port    : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+			out_port   : out std_logic_vector(3 downto 0)                      -- export
 		);
 	end component NOC_buttons_pio;
 
@@ -93,29 +109,6 @@ architecture rtl of NOC is
 		);
 	end component NOC_cpu;
 
-	component NOC_data_in_pio is
-		port (
-			clk      : in  std_logic                     := 'X';             -- clk
-			reset_n  : in  std_logic                     := 'X';             -- reset_n
-			address  : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			readdata : out std_logic_vector(31 downto 0);                    -- readdata
-			in_port  : in  std_logic_vector(31 downto 0) := (others => 'X')  -- export
-		);
-	end component NOC_data_in_pio;
-
-	component NOC_data_out_pio is
-		port (
-			clk        : in  std_logic                     := 'X';             -- clk
-			reset_n    : in  std_logic                     := 'X';             -- reset_n
-			address    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			write_n    : in  std_logic                     := 'X';             -- write_n
-			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
-			chipselect : in  std_logic                     := 'X';             -- chipselect
-			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
-			out_port   : out std_logic_vector(31 downto 0)                     -- export
-		);
-	end component NOC_data_out_pio;
-
 	component NOC_display0_pio is
 		port (
 			clk        : in  std_logic                     := 'X';             -- clk
@@ -125,22 +118,10 @@ architecture rtl of NOC is
 			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			chipselect : in  std_logic                     := 'X';             -- chipselect
 			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
+			in_port    : in  std_logic_vector(6 downto 0)  := (others => 'X'); -- export
 			out_port   : out std_logic_vector(6 downto 0)                      -- export
 		);
 	end component NOC_display0_pio;
-
-	component NOC_led_pio is
-		port (
-			clk        : in  std_logic                     := 'X';             -- clk
-			reset_n    : in  std_logic                     := 'X';             -- reset_n
-			address    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			write_n    : in  std_logic                     := 'X';             -- write_n
-			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
-			chipselect : in  std_logic                     := 'X';             -- chipselect
-			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
-			out_port   : out std_logic_vector(9 downto 0)                      -- export
-		);
-	end component NOC_led_pio;
 
 	component NOC_onchip_memory is
 		port (
@@ -157,16 +138,6 @@ architecture rtl of NOC is
 			freeze     : in  std_logic                     := 'X'              -- freeze
 		);
 	end component NOC_onchip_memory;
-
-	component NOC_switches_pio is
-		port (
-			clk      : in  std_logic                     := 'X';             -- clk
-			reset_n  : in  std_logic                     := 'X';             -- reset_n
-			address  : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
-			readdata : out std_logic_vector(31 downto 0);                    -- readdata
-			in_port  : in  std_logic_vector(9 downto 0)  := (others => 'X')  -- export
-		);
-	end component NOC_switches_pio;
 
 	component NOC_mm_interconnect_0 is
 		port (
@@ -186,15 +157,11 @@ architecture rtl of NOC is
 			cpu_instruction_master_read           : in  std_logic                     := 'X';             -- read
 			cpu_instruction_master_readdata       : out std_logic_vector(31 downto 0);                    -- readdata
 			cpu_instruction_master_readdatavalid  : out std_logic;                                        -- readdatavalid
-			addr_in_pio_s1_address                : out std_logic_vector(1 downto 0);                     -- address
-			addr_in_pio_s1_readdata               : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
-			addr_out_pio_s1_address               : out std_logic_vector(1 downto 0);                     -- address
-			addr_out_pio_s1_write                 : out std_logic;                                        -- write
-			addr_out_pio_s1_readdata              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
-			addr_out_pio_s1_writedata             : out std_logic_vector(31 downto 0);                    -- writedata
-			addr_out_pio_s1_chipselect            : out std_logic;                                        -- chipselect
 			buttons_pio_s1_address                : out std_logic_vector(1 downto 0);                     -- address
+			buttons_pio_s1_write                  : out std_logic;                                        -- write
 			buttons_pio_s1_readdata               : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			buttons_pio_s1_writedata              : out std_logic_vector(31 downto 0);                    -- writedata
+			buttons_pio_s1_chipselect             : out std_logic;                                        -- chipselect
 			cpu_debug_mem_slave_address           : out std_logic_vector(8 downto 0);                     -- address
 			cpu_debug_mem_slave_write             : out std_logic;                                        -- write
 			cpu_debug_mem_slave_read              : out std_logic;                                        -- read
@@ -203,13 +170,6 @@ architecture rtl of NOC is
 			cpu_debug_mem_slave_byteenable        : out std_logic_vector(3 downto 0);                     -- byteenable
 			cpu_debug_mem_slave_waitrequest       : in  std_logic                     := 'X';             -- waitrequest
 			cpu_debug_mem_slave_debugaccess       : out std_logic;                                        -- debugaccess
-			data_in_pio_s1_address                : out std_logic_vector(1 downto 0);                     -- address
-			data_in_pio_s1_readdata               : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
-			data_out_pio_s1_address               : out std_logic_vector(1 downto 0);                     -- address
-			data_out_pio_s1_write                 : out std_logic;                                        -- write
-			data_out_pio_s1_readdata              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
-			data_out_pio_s1_writedata             : out std_logic_vector(31 downto 0);                    -- writedata
-			data_out_pio_s1_chipselect            : out std_logic;                                        -- chipselect
 			display0_pio_s1_address               : out std_logic_vector(1 downto 0);                     -- address
 			display0_pio_s1_write                 : out std_logic;                                        -- write
 			display0_pio_s1_readdata              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
@@ -240,11 +200,11 @@ architecture rtl of NOC is
 			display5_pio_s1_readdata              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			display5_pio_s1_writedata             : out std_logic_vector(31 downto 0);                    -- writedata
 			display5_pio_s1_chipselect            : out std_logic;                                        -- chipselect
-			led_pio_s1_address                    : out std_logic_vector(1 downto 0);                     -- address
-			led_pio_s1_write                      : out std_logic;                                        -- write
-			led_pio_s1_readdata                   : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
-			led_pio_s1_writedata                  : out std_logic_vector(31 downto 0);                    -- writedata
-			led_pio_s1_chipselect                 : out std_logic;                                        -- chipselect
+			DPCR_IO_s1_address                    : out std_logic_vector(1 downto 0);                     -- address
+			DPCR_IO_s1_write                      : out std_logic;                                        -- write
+			DPCR_IO_s1_readdata                   : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			DPCR_IO_s1_writedata                  : out std_logic_vector(31 downto 0);                    -- writedata
+			DPCR_IO_s1_chipselect                 : out std_logic;                                        -- chipselect
 			onchip_memory_s1_address              : out std_logic_vector(12 downto 0);                    -- address
 			onchip_memory_s1_write                : out std_logic;                                        -- write
 			onchip_memory_s1_readdata             : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
@@ -252,8 +212,16 @@ architecture rtl of NOC is
 			onchip_memory_s1_byteenable           : out std_logic_vector(3 downto 0);                     -- byteenable
 			onchip_memory_s1_chipselect           : out std_logic;                                        -- chipselect
 			onchip_memory_s1_clken                : out std_logic;                                        -- clken
+			SignalIO_s1_address                   : out std_logic_vector(1 downto 0);                     -- address
+			SignalIO_s1_write                     : out std_logic;                                        -- write
+			SignalIO_s1_readdata                  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			SignalIO_s1_writedata                 : out std_logic_vector(31 downto 0);                    -- writedata
+			SignalIO_s1_chipselect                : out std_logic;                                        -- chipselect
 			switches_pio_s1_address               : out std_logic_vector(1 downto 0);                     -- address
-			switches_pio_s1_readdata              : in  std_logic_vector(31 downto 0) := (others => 'X')  -- readdata
+			switches_pio_s1_write                 : out std_logic;                                        -- write
+			switches_pio_s1_readdata              : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			switches_pio_s1_writedata             : out std_logic_vector(31 downto 0);                    -- writedata
+			switches_pio_s1_chipselect            : out std_logic                                         -- chipselect
 		);
 	end component NOC_mm_interconnect_0;
 
@@ -353,15 +321,16 @@ architecture rtl of NOC is
 	signal mm_interconnect_0_cpu_debug_mem_slave_byteenable  : std_logic_vector(3 downto 0);  -- mm_interconnect_0:cpu_debug_mem_slave_byteenable -> cpu:debug_mem_slave_byteenable
 	signal mm_interconnect_0_cpu_debug_mem_slave_write       : std_logic;                     -- mm_interconnect_0:cpu_debug_mem_slave_write -> cpu:debug_mem_slave_write
 	signal mm_interconnect_0_cpu_debug_mem_slave_writedata   : std_logic_vector(31 downto 0); -- mm_interconnect_0:cpu_debug_mem_slave_writedata -> cpu:debug_mem_slave_writedata
+	signal mm_interconnect_0_buttons_pio_s1_chipselect       : std_logic;                     -- mm_interconnect_0:buttons_pio_s1_chipselect -> buttons_pio:chipselect
 	signal mm_interconnect_0_buttons_pio_s1_readdata         : std_logic_vector(31 downto 0); -- buttons_pio:readdata -> mm_interconnect_0:buttons_pio_s1_readdata
 	signal mm_interconnect_0_buttons_pio_s1_address          : std_logic_vector(1 downto 0);  -- mm_interconnect_0:buttons_pio_s1_address -> buttons_pio:address
+	signal mm_interconnect_0_buttons_pio_s1_write            : std_logic;                     -- mm_interconnect_0:buttons_pio_s1_write -> mm_interconnect_0_buttons_pio_s1_write:in
+	signal mm_interconnect_0_buttons_pio_s1_writedata        : std_logic_vector(31 downto 0); -- mm_interconnect_0:buttons_pio_s1_writedata -> buttons_pio:writedata
+	signal mm_interconnect_0_switches_pio_s1_chipselect      : std_logic;                     -- mm_interconnect_0:switches_pio_s1_chipselect -> switches_pio:chipselect
 	signal mm_interconnect_0_switches_pio_s1_readdata        : std_logic_vector(31 downto 0); -- switches_pio:readdata -> mm_interconnect_0:switches_pio_s1_readdata
 	signal mm_interconnect_0_switches_pio_s1_address         : std_logic_vector(1 downto 0);  -- mm_interconnect_0:switches_pio_s1_address -> switches_pio:address
-	signal mm_interconnect_0_led_pio_s1_chipselect           : std_logic;                     -- mm_interconnect_0:led_pio_s1_chipselect -> led_pio:chipselect
-	signal mm_interconnect_0_led_pio_s1_readdata             : std_logic_vector(31 downto 0); -- led_pio:readdata -> mm_interconnect_0:led_pio_s1_readdata
-	signal mm_interconnect_0_led_pio_s1_address              : std_logic_vector(1 downto 0);  -- mm_interconnect_0:led_pio_s1_address -> led_pio:address
-	signal mm_interconnect_0_led_pio_s1_write                : std_logic;                     -- mm_interconnect_0:led_pio_s1_write -> mm_interconnect_0_led_pio_s1_write:in
-	signal mm_interconnect_0_led_pio_s1_writedata            : std_logic_vector(31 downto 0); -- mm_interconnect_0:led_pio_s1_writedata -> led_pio:writedata
+	signal mm_interconnect_0_switches_pio_s1_write           : std_logic;                     -- mm_interconnect_0:switches_pio_s1_write -> mm_interconnect_0_switches_pio_s1_write:in
+	signal mm_interconnect_0_switches_pio_s1_writedata       : std_logic_vector(31 downto 0); -- mm_interconnect_0:switches_pio_s1_writedata -> switches_pio:writedata
 	signal mm_interconnect_0_display0_pio_s1_chipselect      : std_logic;                     -- mm_interconnect_0:display0_pio_s1_chipselect -> display0_pio:chipselect
 	signal mm_interconnect_0_display0_pio_s1_readdata        : std_logic_vector(31 downto 0); -- display0_pio:readdata -> mm_interconnect_0:display0_pio_s1_readdata
 	signal mm_interconnect_0_display0_pio_s1_address         : std_logic_vector(1 downto 0);  -- mm_interconnect_0:display0_pio_s1_address -> display0_pio:address
@@ -399,65 +368,71 @@ architecture rtl of NOC is
 	signal mm_interconnect_0_onchip_memory_s1_write          : std_logic;                     -- mm_interconnect_0:onchip_memory_s1_write -> onchip_memory:write
 	signal mm_interconnect_0_onchip_memory_s1_writedata      : std_logic_vector(31 downto 0); -- mm_interconnect_0:onchip_memory_s1_writedata -> onchip_memory:writedata
 	signal mm_interconnect_0_onchip_memory_s1_clken          : std_logic;                     -- mm_interconnect_0:onchip_memory_s1_clken -> onchip_memory:clken
-	signal mm_interconnect_0_addr_in_pio_s1_readdata         : std_logic_vector(31 downto 0); -- addr_in_pio:readdata -> mm_interconnect_0:addr_in_pio_s1_readdata
-	signal mm_interconnect_0_addr_in_pio_s1_address          : std_logic_vector(1 downto 0);  -- mm_interconnect_0:addr_in_pio_s1_address -> addr_in_pio:address
-	signal mm_interconnect_0_data_out_pio_s1_chipselect      : std_logic;                     -- mm_interconnect_0:data_out_pio_s1_chipselect -> data_out_pio:chipselect
-	signal mm_interconnect_0_data_out_pio_s1_readdata        : std_logic_vector(31 downto 0); -- data_out_pio:readdata -> mm_interconnect_0:data_out_pio_s1_readdata
-	signal mm_interconnect_0_data_out_pio_s1_address         : std_logic_vector(1 downto 0);  -- mm_interconnect_0:data_out_pio_s1_address -> data_out_pio:address
-	signal mm_interconnect_0_data_out_pio_s1_write           : std_logic;                     -- mm_interconnect_0:data_out_pio_s1_write -> mm_interconnect_0_data_out_pio_s1_write:in
-	signal mm_interconnect_0_data_out_pio_s1_writedata       : std_logic_vector(31 downto 0); -- mm_interconnect_0:data_out_pio_s1_writedata -> data_out_pio:writedata
-	signal mm_interconnect_0_data_in_pio_s1_readdata         : std_logic_vector(31 downto 0); -- data_in_pio:readdata -> mm_interconnect_0:data_in_pio_s1_readdata
-	signal mm_interconnect_0_data_in_pio_s1_address          : std_logic_vector(1 downto 0);  -- mm_interconnect_0:data_in_pio_s1_address -> data_in_pio:address
-	signal mm_interconnect_0_addr_out_pio_s1_chipselect      : std_logic;                     -- mm_interconnect_0:addr_out_pio_s1_chipselect -> addr_out_pio:chipselect
-	signal mm_interconnect_0_addr_out_pio_s1_readdata        : std_logic_vector(31 downto 0); -- addr_out_pio:readdata -> mm_interconnect_0:addr_out_pio_s1_readdata
-	signal mm_interconnect_0_addr_out_pio_s1_address         : std_logic_vector(1 downto 0);  -- mm_interconnect_0:addr_out_pio_s1_address -> addr_out_pio:address
-	signal mm_interconnect_0_addr_out_pio_s1_write           : std_logic;                     -- mm_interconnect_0:addr_out_pio_s1_write -> mm_interconnect_0_addr_out_pio_s1_write:in
-	signal mm_interconnect_0_addr_out_pio_s1_writedata       : std_logic_vector(31 downto 0); -- mm_interconnect_0:addr_out_pio_s1_writedata -> addr_out_pio:writedata
+	signal mm_interconnect_0_dpcr_io_s1_chipselect           : std_logic;                     -- mm_interconnect_0:DPCR_IO_s1_chipselect -> DPCR_IO:chipselect
+	signal mm_interconnect_0_dpcr_io_s1_readdata             : std_logic_vector(31 downto 0); -- DPCR_IO:readdata -> mm_interconnect_0:DPCR_IO_s1_readdata
+	signal mm_interconnect_0_dpcr_io_s1_address              : std_logic_vector(1 downto 0);  -- mm_interconnect_0:DPCR_IO_s1_address -> DPCR_IO:address
+	signal mm_interconnect_0_dpcr_io_s1_write                : std_logic;                     -- mm_interconnect_0:DPCR_IO_s1_write -> mm_interconnect_0_dpcr_io_s1_write:in
+	signal mm_interconnect_0_dpcr_io_s1_writedata            : std_logic_vector(31 downto 0); -- mm_interconnect_0:DPCR_IO_s1_writedata -> DPCR_IO:writedata
+	signal mm_interconnect_0_signalio_s1_chipselect          : std_logic;                     -- mm_interconnect_0:SignalIO_s1_chipselect -> SignalIO:chipselect
+	signal mm_interconnect_0_signalio_s1_readdata            : std_logic_vector(31 downto 0); -- SignalIO:readdata -> mm_interconnect_0:SignalIO_s1_readdata
+	signal mm_interconnect_0_signalio_s1_address             : std_logic_vector(1 downto 0);  -- mm_interconnect_0:SignalIO_s1_address -> SignalIO:address
+	signal mm_interconnect_0_signalio_s1_write               : std_logic;                     -- mm_interconnect_0:SignalIO_s1_write -> mm_interconnect_0_signalio_s1_write:in
+	signal mm_interconnect_0_signalio_s1_writedata           : std_logic_vector(31 downto 0); -- mm_interconnect_0:SignalIO_s1_writedata -> SignalIO:writedata
 	signal cpu_irq_irq                                       : std_logic_vector(31 downto 0); -- irq_mapper:sender_irq -> cpu:irq
 	signal rst_controller_reset_out_reset                    : std_logic;                     -- rst_controller:reset_out -> [irq_mapper:reset, mm_interconnect_0:cpu_reset_reset_bridge_in_reset_reset, onchip_memory:reset, rst_controller_reset_out_reset:in, rst_translator:in_reset]
 	signal rst_controller_reset_out_reset_req                : std_logic;                     -- rst_controller:reset_req -> [cpu:reset_req, onchip_memory:reset_req, rst_translator:reset_req_in]
 	signal reset_reset_n_ports_inv                           : std_logic;                     -- reset_reset_n:inv -> rst_controller:reset_in0
-	signal mm_interconnect_0_led_pio_s1_write_ports_inv      : std_logic;                     -- mm_interconnect_0_led_pio_s1_write:inv -> led_pio:write_n
+	signal mm_interconnect_0_buttons_pio_s1_write_ports_inv  : std_logic;                     -- mm_interconnect_0_buttons_pio_s1_write:inv -> buttons_pio:write_n
+	signal mm_interconnect_0_switches_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_switches_pio_s1_write:inv -> switches_pio:write_n
 	signal mm_interconnect_0_display0_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_display0_pio_s1_write:inv -> display0_pio:write_n
 	signal mm_interconnect_0_display1_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_display1_pio_s1_write:inv -> display1_pio:write_n
 	signal mm_interconnect_0_display2_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_display2_pio_s1_write:inv -> display2_pio:write_n
 	signal mm_interconnect_0_display3_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_display3_pio_s1_write:inv -> display3_pio:write_n
 	signal mm_interconnect_0_display4_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_display4_pio_s1_write:inv -> display4_pio:write_n
 	signal mm_interconnect_0_display5_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_display5_pio_s1_write:inv -> display5_pio:write_n
-	signal mm_interconnect_0_data_out_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_data_out_pio_s1_write:inv -> data_out_pio:write_n
-	signal mm_interconnect_0_addr_out_pio_s1_write_ports_inv : std_logic;                     -- mm_interconnect_0_addr_out_pio_s1_write:inv -> addr_out_pio:write_n
-	signal rst_controller_reset_out_reset_ports_inv          : std_logic;                     -- rst_controller_reset_out_reset:inv -> [addr_in_pio:reset_n, addr_out_pio:reset_n, buttons_pio:reset_n, cpu:reset_n, data_in_pio:reset_n, data_out_pio:reset_n, display0_pio:reset_n, display1_pio:reset_n, display2_pio:reset_n, display3_pio:reset_n, display4_pio:reset_n, display5_pio:reset_n, led_pio:reset_n, switches_pio:reset_n]
+	signal mm_interconnect_0_dpcr_io_s1_write_ports_inv      : std_logic;                     -- mm_interconnect_0_dpcr_io_s1_write:inv -> DPCR_IO:write_n
+	signal mm_interconnect_0_signalio_s1_write_ports_inv     : std_logic;                     -- mm_interconnect_0_signalio_s1_write:inv -> SignalIO:write_n
+	signal rst_controller_reset_out_reset_ports_inv          : std_logic;                     -- rst_controller_reset_out_reset:inv -> [DPCR_IO:reset_n, SignalIO:reset_n, buttons_pio:reset_n, cpu:reset_n, display0_pio:reset_n, display1_pio:reset_n, display2_pio:reset_n, display3_pio:reset_n, display4_pio:reset_n, display5_pio:reset_n, switches_pio:reset_n]
 
 begin
 
-	addr_in_pio : component NOC_addr_in_pio
+	dpcr_io : component NOC_DPCR_IO
 		port map (
-			clk      => clk_clk,                                   --                 clk.clk
-			reset_n  => rst_controller_reset_out_reset_ports_inv,  --               reset.reset_n
-			address  => mm_interconnect_0_addr_in_pio_s1_address,  --                  s1.address
-			readdata => mm_interconnect_0_addr_in_pio_s1_readdata, --                    .readdata
-			in_port  => addr_in_pio_external_connection_export     -- external_connection.export
+			clk        => clk_clk,                                      --                 clk.clk
+			reset_n    => rst_controller_reset_out_reset_ports_inv,     --               reset.reset_n
+			address    => mm_interconnect_0_dpcr_io_s1_address,         --                  s1.address
+			write_n    => mm_interconnect_0_dpcr_io_s1_write_ports_inv, --                    .write_n
+			writedata  => mm_interconnect_0_dpcr_io_s1_writedata,       --                    .writedata
+			chipselect => mm_interconnect_0_dpcr_io_s1_chipselect,      --                    .chipselect
+			readdata   => mm_interconnect_0_dpcr_io_s1_readdata,        --                    .readdata
+			in_port    => dpcr_io_external_connection_in_port,          -- external_connection.export
+			out_port   => dpcr_io_external_connection_out_port          --                    .export
 		);
 
-	addr_out_pio : component NOC_addr_out_pio
+	signalio : component NOC_SignalIO
 		port map (
-			clk        => clk_clk,                                           --                 clk.clk
-			reset_n    => rst_controller_reset_out_reset_ports_inv,          --               reset.reset_n
-			address    => mm_interconnect_0_addr_out_pio_s1_address,         --                  s1.address
-			write_n    => mm_interconnect_0_addr_out_pio_s1_write_ports_inv, --                    .write_n
-			writedata  => mm_interconnect_0_addr_out_pio_s1_writedata,       --                    .writedata
-			chipselect => mm_interconnect_0_addr_out_pio_s1_chipselect,      --                    .chipselect
-			readdata   => mm_interconnect_0_addr_out_pio_s1_readdata,        --                    .readdata
-			out_port   => addr_out_pio_external_connection_export            -- external_connection.export
+			clk        => clk_clk,                                       --                 clk.clk
+			reset_n    => rst_controller_reset_out_reset_ports_inv,      --               reset.reset_n
+			address    => mm_interconnect_0_signalio_s1_address,         --                  s1.address
+			write_n    => mm_interconnect_0_signalio_s1_write_ports_inv, --                    .write_n
+			writedata  => mm_interconnect_0_signalio_s1_writedata,       --                    .writedata
+			chipselect => mm_interconnect_0_signalio_s1_chipselect,      --                    .chipselect
+			readdata   => mm_interconnect_0_signalio_s1_readdata,        --                    .readdata
+			in_port    => signalio_external_connection_in_port,          -- external_connection.export
+			out_port   => signalio_external_connection_out_port          --                    .export
 		);
 
 	buttons_pio : component NOC_buttons_pio
 		port map (
-			clk      => clk_clk,                                   --                 clk.clk
-			reset_n  => rst_controller_reset_out_reset_ports_inv,  --               reset.reset_n
-			address  => mm_interconnect_0_buttons_pio_s1_address,  --                  s1.address
-			readdata => mm_interconnect_0_buttons_pio_s1_readdata, --                    .readdata
-			in_port  => buttons_pio_external_connection_export     -- external_connection.export
+			clk        => clk_clk,                                          --                 clk.clk
+			reset_n    => rst_controller_reset_out_reset_ports_inv,         --               reset.reset_n
+			address    => mm_interconnect_0_buttons_pio_s1_address,         --                  s1.address
+			write_n    => mm_interconnect_0_buttons_pio_s1_write_ports_inv, --                    .write_n
+			writedata  => mm_interconnect_0_buttons_pio_s1_writedata,       --                    .writedata
+			chipselect => mm_interconnect_0_buttons_pio_s1_chipselect,      --                    .chipselect
+			readdata   => mm_interconnect_0_buttons_pio_s1_readdata,        --                    .readdata
+			in_port    => buttons_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => buttons_pio_external_connection_out_port          --                    .export
 		);
 
 	cpu : component NOC_cpu
@@ -492,27 +467,6 @@ begin
 			dummy_ci_port                       => open                                               -- custom_instruction_master.readra
 		);
 
-	data_in_pio : component NOC_data_in_pio
-		port map (
-			clk      => clk_clk,                                   --                 clk.clk
-			reset_n  => rst_controller_reset_out_reset_ports_inv,  --               reset.reset_n
-			address  => mm_interconnect_0_data_in_pio_s1_address,  --                  s1.address
-			readdata => mm_interconnect_0_data_in_pio_s1_readdata, --                    .readdata
-			in_port  => data_in_pio_external_connection_export     -- external_connection.export
-		);
-
-	data_out_pio : component NOC_data_out_pio
-		port map (
-			clk        => clk_clk,                                           --                 clk.clk
-			reset_n    => rst_controller_reset_out_reset_ports_inv,          --               reset.reset_n
-			address    => mm_interconnect_0_data_out_pio_s1_address,         --                  s1.address
-			write_n    => mm_interconnect_0_data_out_pio_s1_write_ports_inv, --                    .write_n
-			writedata  => mm_interconnect_0_data_out_pio_s1_writedata,       --                    .writedata
-			chipselect => mm_interconnect_0_data_out_pio_s1_chipselect,      --                    .chipselect
-			readdata   => mm_interconnect_0_data_out_pio_s1_readdata,        --                    .readdata
-			out_port   => data_out_pio_external_connection_export            -- external_connection.export
-		);
-
 	display0_pio : component NOC_display0_pio
 		port map (
 			clk        => clk_clk,                                           --                 clk.clk
@@ -522,7 +476,8 @@ begin
 			writedata  => mm_interconnect_0_display0_pio_s1_writedata,       --                    .writedata
 			chipselect => mm_interconnect_0_display0_pio_s1_chipselect,      --                    .chipselect
 			readdata   => mm_interconnect_0_display0_pio_s1_readdata,        --                    .readdata
-			out_port   => display0_pio_external_connection_export            -- external_connection.export
+			in_port    => display0_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => display0_pio_external_connection_out_port          --                    .export
 		);
 
 	display1_pio : component NOC_display0_pio
@@ -534,7 +489,8 @@ begin
 			writedata  => mm_interconnect_0_display1_pio_s1_writedata,       --                    .writedata
 			chipselect => mm_interconnect_0_display1_pio_s1_chipselect,      --                    .chipselect
 			readdata   => mm_interconnect_0_display1_pio_s1_readdata,        --                    .readdata
-			out_port   => display1_pio_external_connection_export            -- external_connection.export
+			in_port    => display1_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => display1_pio_external_connection_out_port          --                    .export
 		);
 
 	display2_pio : component NOC_display0_pio
@@ -546,7 +502,8 @@ begin
 			writedata  => mm_interconnect_0_display2_pio_s1_writedata,       --                    .writedata
 			chipselect => mm_interconnect_0_display2_pio_s1_chipselect,      --                    .chipselect
 			readdata   => mm_interconnect_0_display2_pio_s1_readdata,        --                    .readdata
-			out_port   => display2_pio_external_connection_export            -- external_connection.export
+			in_port    => display2_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => display2_pio_external_connection_out_port          --                    .export
 		);
 
 	display3_pio : component NOC_display0_pio
@@ -558,7 +515,8 @@ begin
 			writedata  => mm_interconnect_0_display3_pio_s1_writedata,       --                    .writedata
 			chipselect => mm_interconnect_0_display3_pio_s1_chipselect,      --                    .chipselect
 			readdata   => mm_interconnect_0_display3_pio_s1_readdata,        --                    .readdata
-			out_port   => display3_pio_external_connection_export            -- external_connection.export
+			in_port    => display3_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => display3_pio_external_connection_out_port          --                    .export
 		);
 
 	display4_pio : component NOC_display0_pio
@@ -570,7 +528,8 @@ begin
 			writedata  => mm_interconnect_0_display4_pio_s1_writedata,       --                    .writedata
 			chipselect => mm_interconnect_0_display4_pio_s1_chipselect,      --                    .chipselect
 			readdata   => mm_interconnect_0_display4_pio_s1_readdata,        --                    .readdata
-			out_port   => display4_pio_external_connection_export            -- external_connection.export
+			in_port    => display4_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => display4_pio_external_connection_out_port          --                    .export
 		);
 
 	display5_pio : component NOC_display0_pio
@@ -582,19 +541,8 @@ begin
 			writedata  => mm_interconnect_0_display5_pio_s1_writedata,       --                    .writedata
 			chipselect => mm_interconnect_0_display5_pio_s1_chipselect,      --                    .chipselect
 			readdata   => mm_interconnect_0_display5_pio_s1_readdata,        --                    .readdata
-			out_port   => display5_pio_external_connection_export            -- external_connection.export
-		);
-
-	led_pio : component NOC_led_pio
-		port map (
-			clk        => clk_clk,                                      --                 clk.clk
-			reset_n    => rst_controller_reset_out_reset_ports_inv,     --               reset.reset_n
-			address    => mm_interconnect_0_led_pio_s1_address,         --                  s1.address
-			write_n    => mm_interconnect_0_led_pio_s1_write_ports_inv, --                    .write_n
-			writedata  => mm_interconnect_0_led_pio_s1_writedata,       --                    .writedata
-			chipselect => mm_interconnect_0_led_pio_s1_chipselect,      --                    .chipselect
-			readdata   => mm_interconnect_0_led_pio_s1_readdata,        --                    .readdata
-			out_port   => led_pio_external_connection_export            -- external_connection.export
+			in_port    => display5_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => display5_pio_external_connection_out_port          --                    .export
 		);
 
 	onchip_memory : component NOC_onchip_memory
@@ -612,13 +560,17 @@ begin
 			freeze     => '0'                                            -- (terminated)
 		);
 
-	switches_pio : component NOC_switches_pio
+	switches_pio : component NOC_SignalIO
 		port map (
-			clk      => clk_clk,                                    --                 clk.clk
-			reset_n  => rst_controller_reset_out_reset_ports_inv,   --               reset.reset_n
-			address  => mm_interconnect_0_switches_pio_s1_address,  --                  s1.address
-			readdata => mm_interconnect_0_switches_pio_s1_readdata, --                    .readdata
-			in_port  => switches_pio_external_connection_export     -- external_connection.export
+			clk        => clk_clk,                                           --                 clk.clk
+			reset_n    => rst_controller_reset_out_reset_ports_inv,          --               reset.reset_n
+			address    => mm_interconnect_0_switches_pio_s1_address,         --                  s1.address
+			write_n    => mm_interconnect_0_switches_pio_s1_write_ports_inv, --                    .write_n
+			writedata  => mm_interconnect_0_switches_pio_s1_writedata,       --                    .writedata
+			chipselect => mm_interconnect_0_switches_pio_s1_chipselect,      --                    .chipselect
+			readdata   => mm_interconnect_0_switches_pio_s1_readdata,        --                    .readdata
+			in_port    => switches_pio_external_connection_in_port,          -- external_connection.export
+			out_port   => switches_pio_external_connection_out_port          --                    .export
 		);
 
 	mm_interconnect_0 : component NOC_mm_interconnect_0
@@ -639,15 +591,11 @@ begin
 			cpu_instruction_master_read           => cpu_instruction_master_read,                       --                                .read
 			cpu_instruction_master_readdata       => cpu_instruction_master_readdata,                   --                                .readdata
 			cpu_instruction_master_readdatavalid  => cpu_instruction_master_readdatavalid,              --                                .readdatavalid
-			addr_in_pio_s1_address                => mm_interconnect_0_addr_in_pio_s1_address,          --                  addr_in_pio_s1.address
-			addr_in_pio_s1_readdata               => mm_interconnect_0_addr_in_pio_s1_readdata,         --                                .readdata
-			addr_out_pio_s1_address               => mm_interconnect_0_addr_out_pio_s1_address,         --                 addr_out_pio_s1.address
-			addr_out_pio_s1_write                 => mm_interconnect_0_addr_out_pio_s1_write,           --                                .write
-			addr_out_pio_s1_readdata              => mm_interconnect_0_addr_out_pio_s1_readdata,        --                                .readdata
-			addr_out_pio_s1_writedata             => mm_interconnect_0_addr_out_pio_s1_writedata,       --                                .writedata
-			addr_out_pio_s1_chipselect            => mm_interconnect_0_addr_out_pio_s1_chipselect,      --                                .chipselect
 			buttons_pio_s1_address                => mm_interconnect_0_buttons_pio_s1_address,          --                  buttons_pio_s1.address
+			buttons_pio_s1_write                  => mm_interconnect_0_buttons_pio_s1_write,            --                                .write
 			buttons_pio_s1_readdata               => mm_interconnect_0_buttons_pio_s1_readdata,         --                                .readdata
+			buttons_pio_s1_writedata              => mm_interconnect_0_buttons_pio_s1_writedata,        --                                .writedata
+			buttons_pio_s1_chipselect             => mm_interconnect_0_buttons_pio_s1_chipselect,       --                                .chipselect
 			cpu_debug_mem_slave_address           => mm_interconnect_0_cpu_debug_mem_slave_address,     --             cpu_debug_mem_slave.address
 			cpu_debug_mem_slave_write             => mm_interconnect_0_cpu_debug_mem_slave_write,       --                                .write
 			cpu_debug_mem_slave_read              => mm_interconnect_0_cpu_debug_mem_slave_read,        --                                .read
@@ -656,13 +604,6 @@ begin
 			cpu_debug_mem_slave_byteenable        => mm_interconnect_0_cpu_debug_mem_slave_byteenable,  --                                .byteenable
 			cpu_debug_mem_slave_waitrequest       => mm_interconnect_0_cpu_debug_mem_slave_waitrequest, --                                .waitrequest
 			cpu_debug_mem_slave_debugaccess       => mm_interconnect_0_cpu_debug_mem_slave_debugaccess, --                                .debugaccess
-			data_in_pio_s1_address                => mm_interconnect_0_data_in_pio_s1_address,          --                  data_in_pio_s1.address
-			data_in_pio_s1_readdata               => mm_interconnect_0_data_in_pio_s1_readdata,         --                                .readdata
-			data_out_pio_s1_address               => mm_interconnect_0_data_out_pio_s1_address,         --                 data_out_pio_s1.address
-			data_out_pio_s1_write                 => mm_interconnect_0_data_out_pio_s1_write,           --                                .write
-			data_out_pio_s1_readdata              => mm_interconnect_0_data_out_pio_s1_readdata,        --                                .readdata
-			data_out_pio_s1_writedata             => mm_interconnect_0_data_out_pio_s1_writedata,       --                                .writedata
-			data_out_pio_s1_chipselect            => mm_interconnect_0_data_out_pio_s1_chipselect,      --                                .chipselect
 			display0_pio_s1_address               => mm_interconnect_0_display0_pio_s1_address,         --                 display0_pio_s1.address
 			display0_pio_s1_write                 => mm_interconnect_0_display0_pio_s1_write,           --                                .write
 			display0_pio_s1_readdata              => mm_interconnect_0_display0_pio_s1_readdata,        --                                .readdata
@@ -693,11 +634,11 @@ begin
 			display5_pio_s1_readdata              => mm_interconnect_0_display5_pio_s1_readdata,        --                                .readdata
 			display5_pio_s1_writedata             => mm_interconnect_0_display5_pio_s1_writedata,       --                                .writedata
 			display5_pio_s1_chipselect            => mm_interconnect_0_display5_pio_s1_chipselect,      --                                .chipselect
-			led_pio_s1_address                    => mm_interconnect_0_led_pio_s1_address,              --                      led_pio_s1.address
-			led_pio_s1_write                      => mm_interconnect_0_led_pio_s1_write,                --                                .write
-			led_pio_s1_readdata                   => mm_interconnect_0_led_pio_s1_readdata,             --                                .readdata
-			led_pio_s1_writedata                  => mm_interconnect_0_led_pio_s1_writedata,            --                                .writedata
-			led_pio_s1_chipselect                 => mm_interconnect_0_led_pio_s1_chipselect,           --                                .chipselect
+			DPCR_IO_s1_address                    => mm_interconnect_0_dpcr_io_s1_address,              --                      DPCR_IO_s1.address
+			DPCR_IO_s1_write                      => mm_interconnect_0_dpcr_io_s1_write,                --                                .write
+			DPCR_IO_s1_readdata                   => mm_interconnect_0_dpcr_io_s1_readdata,             --                                .readdata
+			DPCR_IO_s1_writedata                  => mm_interconnect_0_dpcr_io_s1_writedata,            --                                .writedata
+			DPCR_IO_s1_chipselect                 => mm_interconnect_0_dpcr_io_s1_chipselect,           --                                .chipselect
 			onchip_memory_s1_address              => mm_interconnect_0_onchip_memory_s1_address,        --                onchip_memory_s1.address
 			onchip_memory_s1_write                => mm_interconnect_0_onchip_memory_s1_write,          --                                .write
 			onchip_memory_s1_readdata             => mm_interconnect_0_onchip_memory_s1_readdata,       --                                .readdata
@@ -705,8 +646,16 @@ begin
 			onchip_memory_s1_byteenable           => mm_interconnect_0_onchip_memory_s1_byteenable,     --                                .byteenable
 			onchip_memory_s1_chipselect           => mm_interconnect_0_onchip_memory_s1_chipselect,     --                                .chipselect
 			onchip_memory_s1_clken                => mm_interconnect_0_onchip_memory_s1_clken,          --                                .clken
+			SignalIO_s1_address                   => mm_interconnect_0_signalio_s1_address,             --                     SignalIO_s1.address
+			SignalIO_s1_write                     => mm_interconnect_0_signalio_s1_write,               --                                .write
+			SignalIO_s1_readdata                  => mm_interconnect_0_signalio_s1_readdata,            --                                .readdata
+			SignalIO_s1_writedata                 => mm_interconnect_0_signalio_s1_writedata,           --                                .writedata
+			SignalIO_s1_chipselect                => mm_interconnect_0_signalio_s1_chipselect,          --                                .chipselect
 			switches_pio_s1_address               => mm_interconnect_0_switches_pio_s1_address,         --                 switches_pio_s1.address
-			switches_pio_s1_readdata              => mm_interconnect_0_switches_pio_s1_readdata         --                                .readdata
+			switches_pio_s1_write                 => mm_interconnect_0_switches_pio_s1_write,           --                                .write
+			switches_pio_s1_readdata              => mm_interconnect_0_switches_pio_s1_readdata,        --                                .readdata
+			switches_pio_s1_writedata             => mm_interconnect_0_switches_pio_s1_writedata,       --                                .writedata
+			switches_pio_s1_chipselect            => mm_interconnect_0_switches_pio_s1_chipselect       --                                .chipselect
 		);
 
 	irq_mapper : component NOC_irq_mapper
@@ -783,7 +732,9 @@ begin
 
 	reset_reset_n_ports_inv <= not reset_reset_n;
 
-	mm_interconnect_0_led_pio_s1_write_ports_inv <= not mm_interconnect_0_led_pio_s1_write;
+	mm_interconnect_0_buttons_pio_s1_write_ports_inv <= not mm_interconnect_0_buttons_pio_s1_write;
+
+	mm_interconnect_0_switches_pio_s1_write_ports_inv <= not mm_interconnect_0_switches_pio_s1_write;
 
 	mm_interconnect_0_display0_pio_s1_write_ports_inv <= not mm_interconnect_0_display0_pio_s1_write;
 
@@ -797,9 +748,9 @@ begin
 
 	mm_interconnect_0_display5_pio_s1_write_ports_inv <= not mm_interconnect_0_display5_pio_s1_write;
 
-	mm_interconnect_0_data_out_pio_s1_write_ports_inv <= not mm_interconnect_0_data_out_pio_s1_write;
+	mm_interconnect_0_dpcr_io_s1_write_ports_inv <= not mm_interconnect_0_dpcr_io_s1_write;
 
-	mm_interconnect_0_addr_out_pio_s1_write_ports_inv <= not mm_interconnect_0_addr_out_pio_s1_write;
+	mm_interconnect_0_signalio_s1_write_ports_inv <= not mm_interconnect_0_signalio_s1_write;
 
 	rst_controller_reset_out_reset_ports_inv <= not rst_controller_reset_out_reset;
 

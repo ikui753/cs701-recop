@@ -27,9 +27,12 @@ Instructions are to be entered in the .asm file found in recop/assembler. Run as
 # Running Testbench
 1. Open recop/recop.qpf and run analysis and synthesis. 
 2. Go to _Processing -> update memory initialization file._ Whenever instructions are updated this is a necessary step to ensure the correct file version has been uploaded.
-3. Open _controlUnitWaveform.vwf_ and press simulation, run functional simulation to see testbench. 
-4. Simulation can be run for longer to see more instructions, clock is at 10ns.
-Notes:
+3. Set Recop.bdf as the top level entity and perform analysis and synthesis. 
+4. Open _recopWaveform.vwf_ and press simulation, run functional simulation to see testbench. 
+5. Simulation can be run for longer to see more instructions, clock is at 10ns.
+
+
+### Note
 * In case there is an error or you are unable to run the simulation, ensure you create a testbench first and copy the files over to the qsim.
 * Additionally, ensure that going to _simulation -> simulation settings_ and restoring defualt settings has occurred to reset any versions of file path.
 

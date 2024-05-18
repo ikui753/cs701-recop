@@ -1,42 +1,36 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
 preplace inst NOC.cpu.clock_bridge -pg 1
-preplace inst NOC.buttons_pio -pg 1 -lvl 3 -y 230
-preplace inst NOC.cpu -pg 1 -lvl 2 -y 1080
-preplace inst NOC.addr_out_pio -pg 1 -lvl 3 -y 130
-preplace inst NOC.display5_pio -pg 1 -lvl 3 -y 1110
-preplace inst NOC.display4_pio -pg 1 -lvl 3 -y 1010
-preplace inst NOC.display3_pio -pg 1 -lvl 3 -y 910
-preplace inst NOC.display0_pio -pg 1 -lvl 3 -y 610
-preplace inst NOC.switches_pio -pg 1 -lvl 3 -y 1310
-preplace inst NOC.display1_pio -pg 1 -lvl 3 -y 710
-preplace inst NOC.onchip_memory -pg 1 -lvl 3 -y 430
+preplace inst NOC.buttons_pio -pg 1 -lvl 3 -y 330
+preplace inst NOC.DPCR_IO -pg 1 -lvl 3 -y 30
+preplace inst NOC.cpu -pg 1 -lvl 2 -y 1220
+preplace inst NOC.display5_pio -pg 1 -lvl 3 -y 1210
+preplace inst NOC.display4_pio -pg 1 -lvl 3 -y 1070
+preplace inst NOC.display3_pio -pg 1 -lvl 3 -y 970
+preplace inst NOC.display0_pio -pg 1 -lvl 3 -y 670
+preplace inst NOC.switches_pio -pg 1 -lvl 3 -y 1410
+preplace inst NOC.display1_pio -pg 1 -lvl 3 -y 770
+preplace inst NOC.onchip_memory -pg 1 -lvl 3 -y 530
 preplace inst NOC -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst NOC.data_in_pio -pg 1 -lvl 3 -y 330
-preplace inst NOC.addr_in_pio -pg 1 -lvl 3 -y 30
-preplace inst NOC.led_pio -pg 1 -lvl 3 -y 1210
-preplace inst NOC.display2_pio -pg 1 -lvl 3 -y 810
-preplace inst NOC.data_out_pio -pg 1 -lvl 3 -y 510
+preplace inst NOC.SignalIO -pg 1 -lvl 3 -y 130
+preplace inst NOC.display2_pio -pg 1 -lvl 3 -y 870
 preplace inst NOC.cpu.reset_bridge -pg 1
 preplace inst NOC.cpu.cpu -pg 1
-preplace inst NOC.clk -pg 1 -lvl 1 -y 1150
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.switches_pio_external_connection,(SLAVE)switches_pio.external_connection) 1 0 3 NJ 1340 NJ 1340 NJ
-preplace netloc FAN_OUT<net_container>NOC</net_container>(SLAVE)display5_pio.reset,(SLAVE)buttons_pio.reset,(SLAVE)data_out_pio.reset,(SLAVE)display2_pio.reset,(SLAVE)display0_pio.reset,(SLAVE)display4_pio.reset,(SLAVE)cpu.reset,(SLAVE)switches_pio.reset,(MASTER)clk.clk_reset,(SLAVE)addr_in_pio.reset,(SLAVE)onchip_memory.reset1,(SLAVE)addr_out_pio.reset,(SLAVE)led_pio.reset,(SLAVE)display3_pio.reset,(SLAVE)display1_pio.reset,(SLAVE)data_in_pio.reset) 1 1 2 430 1360 870
+preplace inst NOC.clk -pg 1 -lvl 1 -y 1250
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.switches_pio_external_connection,(SLAVE)switches_pio.external_connection) 1 0 3 NJ 1440 NJ 1440 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)DPCR_IO.external_connection,(SLAVE)NOC.dpcr_io_external_connection) 1 0 3 NJ 60 NJ 60 NJ
 preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)clk.clk_in_reset,(SLAVE)NOC.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display2_pio_external_connection,(SLAVE)display2_pio.external_connection) 1 0 3 NJ 840 NJ 840 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)display0_pio.external_connection,(SLAVE)NOC.display0_pio_external_connection) 1 0 3 NJ 640 NJ 640 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.data_in_pio_external_connection,(SLAVE)data_in_pio.external_connection) 1 0 3 NJ 360 NJ 360 NJ
-preplace netloc FAN_OUT<net_container>NOC</net_container>(SLAVE)display0_pio.clk,(SLAVE)onchip_memory.clk1,(SLAVE)display2_pio.clk,(SLAVE)data_in_pio.clk,(SLAVE)display3_pio.clk,(SLAVE)display1_pio.clk,(SLAVE)display4_pio.clk,(MASTER)clk.clk,(SLAVE)addr_in_pio.clk,(SLAVE)cpu.clk,(SLAVE)data_out_pio.clk,(SLAVE)addr_out_pio.clk,(SLAVE)display5_pio.clk,(SLAVE)buttons_pio.clk,(SLAVE)switches_pio.clk,(SLAVE)led_pio.clk) 1 1 2 410 1260 850
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display5_pio_external_connection,(SLAVE)display5_pio.external_connection) 1 0 3 NJ 1220 NJ 1220 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)display3_pio.external_connection,(SLAVE)NOC.display3_pio_external_connection) 1 0 3 NJ 940 NJ 940 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.buttons_pio_external_connection,(SLAVE)buttons_pio.external_connection) 1 0 3 NJ 260 NJ 260 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.addr_in_pio_external_connection,(SLAVE)addr_in_pio.external_connection) 1 0 3 NJ 60 NJ 60 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display4_pio_external_connection,(SLAVE)display4_pio.external_connection) 1 0 3 NJ 1040 NJ 1040 NJ
-preplace netloc INTERCONNECT<net_container>NOC</net_container>(SLAVE)display5_pio.s1,(SLAVE)data_in_pio.s1,(SLAVE)switches_pio.s1,(SLAVE)buttons_pio.s1,(SLAVE)data_out_pio.s1,(MASTER)cpu.instruction_master,(MASTER)cpu.data_master,(SLAVE)addr_in_pio.s1,(SLAVE)addr_out_pio.s1,(SLAVE)cpu.debug_mem_slave,(SLAVE)display1_pio.s1,(SLAVE)led_pio.s1,(SLAVE)display2_pio.s1,(SLAVE)display4_pio.s1,(SLAVE)display3_pio.s1,(SLAVE)onchip_memory.s1,(SLAVE)display0_pio.s1) 1 1 2 450 1380 810
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display1_pio_external_connection,(SLAVE)display1_pio.external_connection) 1 0 3 NJ 740 NJ 740 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.data_out_pio_external_connection,(SLAVE)data_out_pio.external_connection) 1 0 3 NJ 540 NJ 540 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)led_pio.external_connection,(SLAVE)NOC.led_pio_external_connection) 1 0 3 NJ 1240 NJ 1240 NJ
+preplace netloc FAN_OUT<net_container>NOC</net_container>(SLAVE)cpu.reset,(SLAVE)display4_pio.reset,(SLAVE)onchip_memory.reset1,(SLAVE)display2_pio.reset,(SLAVE)SignalIO.reset,(MASTER)clk.clk_reset,(SLAVE)display1_pio.reset,(SLAVE)switches_pio.reset,(SLAVE)display5_pio.reset,(SLAVE)display3_pio.reset,(SLAVE)DPCR_IO.reset,(SLAVE)display0_pio.reset,(SLAVE)buttons_pio.reset) 1 1 2 410 1460 830
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.signalio_external_connection,(SLAVE)SignalIO.external_connection) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display3_pio_external_connection,(SLAVE)display3_pio.external_connection) 1 0 3 NJ 1000 NJ 1000 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)display2_pio.external_connection,(SLAVE)NOC.display2_pio_external_connection) 1 0 3 NJ 900 NJ 900 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)display0_pio.external_connection,(SLAVE)NOC.display0_pio_external_connection) 1 0 3 NJ 700 NJ 700 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display5_pio_external_connection,(SLAVE)display5_pio.external_connection) 1 0 3 NJ 1180 NJ 1180 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.buttons_pio_external_connection,(SLAVE)buttons_pio.external_connection) 1 0 3 NJ 360 NJ 360 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display4_pio_external_connection,(SLAVE)display4_pio.external_connection) 1 0 3 NJ 1100 NJ 1100 NJ
+preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.display1_pio_external_connection,(SLAVE)display1_pio.external_connection) 1 0 3 NJ 800 NJ 800 NJ
 preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.clk,(SLAVE)clk.clk_in) 1 0 1 NJ
-preplace netloc EXPORT<net_container>NOC</net_container>(SLAVE)NOC.addr_out_pio_external_connection,(SLAVE)addr_out_pio.external_connection) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc FAN_OUT<net_container>NOC</net_container>(SLAVE)display3_pio.clk,(MASTER)clk.clk,(SLAVE)cpu.clk,(SLAVE)display2_pio.clk,(SLAVE)onchip_memory.clk1,(SLAVE)display0_pio.clk,(SLAVE)display5_pio.clk,(SLAVE)DPCR_IO.clk,(SLAVE)buttons_pio.clk,(SLAVE)switches_pio.clk,(SLAVE)SignalIO.clk,(SLAVE)display1_pio.clk,(SLAVE)display4_pio.clk) 1 1 2 430 1360 870
+preplace netloc INTERCONNECT<net_container>NOC</net_container>(SLAVE)display1_pio.s1,(SLAVE)display3_pio.s1,(SLAVE)onchip_memory.s1,(SLAVE)display5_pio.s1,(SLAVE)display4_pio.s1,(SLAVE)SignalIO.s1,(SLAVE)switches_pio.s1,(SLAVE)display0_pio.s1,(SLAVE)display2_pio.s1,(SLAVE)DPCR_IO.s1,(MASTER)cpu.data_master,(SLAVE)buttons_pio.s1,(SLAVE)cpu.debug_mem_slave,(MASTER)cpu.instruction_master) 1 1 2 450 1480 810
 levelinfo -pg 1 0 200 1070
 levelinfo -hier NOC 210 240 570 910 1060

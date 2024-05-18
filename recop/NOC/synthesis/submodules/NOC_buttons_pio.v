@@ -21,24 +21,34 @@
 module NOC_buttons_pio (
                          // inputs:
                           address,
+                          chipselect,
                           clk,
                           in_port,
                           reset_n,
+                          write_n,
+                          writedata,
 
                          // outputs:
+                          out_port,
                           readdata
                        )
 ;
 
+  output  [  3: 0] out_port;
   output  [ 31: 0] readdata;
   input   [  1: 0] address;
+  input            chipselect;
   input            clk;
   input   [  3: 0] in_port;
   input            reset_n;
+  input            write_n;
+  input   [ 31: 0] writedata;
 
 
 wire             clk_en;
 wire    [  3: 0] data_in;
+reg     [  3: 0] data_out;
+wire    [  3: 0] out_port;
 wire    [  3: 0] read_mux_out;
 reg     [ 31: 0] readdata;
   assign clk_en = 1;
@@ -53,6 +63,16 @@ reg     [ 31: 0] readdata;
     end
 
 
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          data_out <= 0;
+      else if (chipselect && ~write_n && (address == 0))
+          data_out <= writedata[3 : 0];
+    end
+
+
+  assign out_port = data_out;
   assign data_in = in_port;
 
 endmodule

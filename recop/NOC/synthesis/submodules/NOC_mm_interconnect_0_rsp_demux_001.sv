@@ -29,7 +29,7 @@
 // Generation parameters:
 //   output_name:         NOC_mm_interconnect_0_rsp_demux_001
 //   ST_DATA_W:           95
-//   ST_CHANNEL_W:        15
+//   ST_CHANNEL_W:        12
 //   NUM_OUTPUTS:         1
 //   VALID_WIDTH:         1
 // ------------------------------------------
@@ -47,7 +47,7 @@ module NOC_mm_interconnect_0_rsp_demux_001
     // -------------------
     input  [1-1      : 0]   sink_valid,
     input  [95-1    : 0]   sink_data, // ST_DATA_W=95
-    input  [15-1 : 0]   sink_channel, // ST_CHANNEL_W=15
+    input  [12-1 : 0]   sink_channel, // ST_CHANNEL_W=12
     input                         sink_startofpacket,
     input                         sink_endofpacket,
     output                        sink_ready,
@@ -57,7 +57,7 @@ module NOC_mm_interconnect_0_rsp_demux_001
     // -------------------
     output reg                      src0_valid,
     output reg [95-1    : 0] src0_data, // ST_DATA_W=95
-    output reg [15-1 : 0] src0_channel, // ST_CHANNEL_W=15
+    output reg [12-1 : 0] src0_channel, // ST_CHANNEL_W=12
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
@@ -94,7 +94,7 @@ module NOC_mm_interconnect_0_rsp_demux_001
     // -------------------
     assign ready_vector[0] = src0_ready;
 
-    assign sink_ready = |(sink_channel & {{14{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
+    assign sink_ready = |(sink_channel & {{11{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
 
 endmodule
 
