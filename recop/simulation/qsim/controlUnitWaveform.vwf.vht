@@ -18,9 +18,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/18/2024 11:43:25"
+-- Generated on "05/18/2024 11:48:38"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
+-- Vhdl Test Bench(with test vectors) for design  :          recop
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -28,9 +28,9 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY progCounterTest_vhd_vec_tst IS
-END progCounterTest_vhd_vec_tst;
-ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
+ENTITY recop_vhd_vec_tst IS
+END recop_vhd_vec_tst;
+ARCHITECTURE recop_arch OF recop_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL addrSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -64,7 +64,7 @@ SIGNAL sop_wr : STD_LOGIC;
 SIGNAL state : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL storedData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL wren : STD_LOGIC;
-COMPONENT progCounterTest
+COMPONENT recop
 	PORT (
 	addrSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	alu_opsel : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -100,7 +100,7 @@ COMPONENT progCounterTest
 	);
 END COMPONENT;
 BEGIN
-	i1 : progCounterTest
+	i1 : recop
 	PORT MAP (
 -- list connections between master ports and signals
 	addrSel => addrSel,
@@ -250,4 +250,4 @@ BEGIN
 	reset <= '0';
 WAIT;
 END PROCESS t_prcs_reset;
-END progCounterTest_arch;
+END recop_arch;

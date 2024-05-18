@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "rf_init",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -485,6 +489,38 @@
 				},
 				{
 					"name" : "rf_sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_sel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_sel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rz_sel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rz_sel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rz_sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rz_sel[0]",
 					"strict" : false
 				},
 				{

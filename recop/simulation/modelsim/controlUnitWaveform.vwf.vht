@@ -18,9 +18,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/17/2024 17:58:39"
+-- Generated on "05/18/2024 11:48:28"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          progCounterTest
+-- Vhdl Test Bench(with test vectors) for design  :          recop
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -28,9 +28,9 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY progCounterTest_vhd_vec_tst IS
-END progCounterTest_vhd_vec_tst;
-ARCHITECTURE progCounterTest_arch OF progCounterTest_vhd_vec_tst IS
+ENTITY recop_vhd_vec_tst IS
+END recop_vhd_vec_tst;
+ARCHITECTURE recop_arch OF recop_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL addrSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
@@ -43,6 +43,7 @@ SIGNAL clkIn : STD_LOGIC;
 SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
@@ -59,10 +60,11 @@ SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sop_wr : STD_LOGIC;
 SIGNAL state : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL storedData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL wren : STD_LOGIC;
-COMPONENT progCounterTest
+COMPONENT recop
 	PORT (
 	addrSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	alu_opsel : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -74,6 +76,7 @@ COMPONENT progCounterTest
 	clr_z_flag : OUT STD_LOGIC;
 	dataSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	dpcr_wr : OUT STD_LOGIC;
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
@@ -90,13 +93,14 @@ COMPONENT progCounterTest
 	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sop_wr : OUT STD_LOGIC;
 	state : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	storedData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	wren : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : progCounterTest
+	i1 : recop
 	PORT MAP (
 -- list connections between master ports and signals
 	addrSel => addrSel,
@@ -109,6 +113,7 @@ BEGIN
 	clr_z_flag => clr_z_flag,
 	dataSel => dataSel,
 	dpcr => dpcr,
+	dpcr_wr => dpcr_wr,
 	increment => increment,
 	instruction => instruction,
 	ld_r => ld_r,
@@ -125,6 +130,7 @@ BEGIN
 	sip => sip,
 	sip_r => sip_r,
 	sop => sop,
+	sop_wr => sop_wr,
 	state => state,
 	storedData => storedData,
 	wren => wren
@@ -237,4 +243,11 @@ BEGIN
 	sip(0) <= '0';
 WAIT;
 END PROCESS t_prcs_sip_0;
-END progCounterTest_arch;
+
+-- reset
+t_prcs_reset: PROCESS
+BEGIN
+	reset <= '0';
+WAIT;
+END PROCESS t_prcs_reset;
+END recop_arch;

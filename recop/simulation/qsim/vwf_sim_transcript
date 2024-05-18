@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/controlUnitWaveform.vwf" --testbench_file="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/controlUnitWaveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopWaveform.vwf" --testbench_file="C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recopWaveform.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -25,12 +25,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sat May 18 11:43:23 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/controlUnitWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/controlUnitWaveform.vwf.vht
+    Info: Processing started: Sat May 18 12:48:15 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recopWaveform.vwf.vht
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
-ch files
+tput pin "sip_r[15]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -54,15 +54,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sat May 18 11:43:25 2024
+    Info: Processing started: Sat May 18 12:48:18 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file recop.vho in folder "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4735 megabytes
-    Info: Processing ended: Sat May 18 11:43:28 2024
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Sat May 18 12:48:20 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -79,48 +79,49 @@ c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do recop.do
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
+
 
 # do recop.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:43:28 on May 18,2024
+# Start time: 12:48:21 on May 18,2024
 # vcom -work work recop.vho 
-
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
+
 # -- Loading package VITAL_Primitives
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
 # -- Loading package altera_lnsim_components
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
-# -- Compiling entity progCounterTest
-# -- Compiling architecture structure of progCounterTest
+# -- Compiling entity recop
+# -- Compiling architecture structure of recop
 
-# End time: 11:43:29 on May 18,2024, Elapsed time: 0:00:01
+# End time: 12:48:21 on May 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 11:43:29 on May 18,2024
-# vcom -work work controlUnitWaveform.vwf.vht 
+# Start time: 12:48:21 on May 18,2024
+# vcom -work work recopWaveform.vwf.vht 
 # -- Loading package STANDARD
+
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity progCounterTest_vhd_vec_tst
-# -- Compiling architecture progCounterTest_arch of progCounterTest_vhd_vec_tst
-# End time: 11:43:29 on May 18,2024, Elapsed time: 0:00:00
+# -- Compiling entity recop_vhd_vec_tst
+# -- Compiling architecture recop_arch of recop_vhd_vec_tst
+# End time: 12:48:21 on May 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.progCounterTest_vhd_vec_tst 
-# Start time: 11:43:29 on May 18,2024
+# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.recop_vhd_vec_tst 
+# Start time: 12:48:22 on May 18,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.progcountertest_vhd_vec_tst(progcountertest_arch)
+# Loading work.recop_vhd_vec_tst(recop_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
@@ -128,7 +129,7 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.altera_lnsim_components
 # Loading cyclonev.cyclonev_atom_pack(body)
 # Loading cyclonev.cyclonev_components
-# Loading work.progcountertest(structure)
+# Loading work.recop(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cyclonev.cyclonev_io_obuf(arch)
 # Loading cyclonev.cyclonev_io_ibuf(arch)
@@ -141,7 +142,7 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading altera_lnsim.common_28nm_ram_block
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
-# ** Warning: Design size of 303860 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 305230 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
@@ -151,26 +152,20 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
 # Simulation time: 0 ps
 
-# Simulation time: 0 ps
-
-# End time: 11:43:42 on May 18,2024, Elapsed time: 0:00:13
+# End time: 12:48:33 on May 18,2024, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/controlUnitWaveform.vwf...
+Reading C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopWaveform.vwf...
 
 Reading C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop.msim.vcd...
 
 Processing channel transitions... 
 
-Warning: dprr[1] - signal not found in VCD.
-
-Warning: dprr[0] - signal not found in VCD.
-
-Writing the resulting VWF to C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop_20240518114342.sim.vwf
+Writing the resulting VWF to C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recop_20240518124833.sim.vwf
 
 Finished VCD to VWF conversion.
 

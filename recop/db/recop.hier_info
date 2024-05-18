@@ -1,4 +1,4 @@
-|progCounterTest
+|recop
 rf_init <= control_unit:inst7.rf_init
 clkIn => control_unit:inst7.clk
 reset => control_unit:inst7.reset
@@ -126,6 +126,14 @@ rf_sel[0] <= control_unit:inst7.rf_sel[0]
 rf_sel[1] <= control_unit:inst7.rf_sel[1]
 rf_sel[2] <= control_unit:inst7.rf_sel[2]
 rf_sel[3] <= control_unit:inst7.rf_sel[3]
+rx_sel[0] <= instruction_reg:inst2.rx[0]
+rx_sel[1] <= instruction_reg:inst2.rx[1]
+rx_sel[2] <= instruction_reg:inst2.rx[2]
+rx_sel[3] <= instruction_reg:inst2.rx[3]
+rz_sel[0] <= instruction_reg:inst2.rz[0]
+rz_sel[1] <= instruction_reg:inst2.rz[1]
+rz_sel[2] <= instruction_reg:inst2.rz[2]
+rz_sel[3] <= instruction_reg:inst2.rz[3]
 sip_r[0] <= registers:inst8.sip_r[0]
 sip_r[1] <= registers:inst8.sip_r[1]
 sip_r[2] <= registers:inst8.sip_r[2]
@@ -270,7 +278,7 @@ storedData[14] <= dataAddrMux:inst6.dataOut[14]
 storedData[15] <= dataAddrMux:inst6.dataOut[15]
 
 
-|progCounterTest|control_unit:inst7
+|recop|control_unit:inst7
 clk => dpcr_lsb_sel~reg0.CLK
 clk => dataSel[0]~reg0.CLK
 clk => dataSel[1]~reg0.CLK
@@ -296,47 +304,65 @@ clk => stateOut[0]~reg0.CLK
 clk => stateOut[1]~reg0.CLK
 clk => stateOut[2]~reg0.CLK
 clk => stateOut[3]~reg0.CLK
+clk => rf_init~reg0.CLK
 clk => increment[0]~reg0.CLK
 clk => increment[1]~reg0.CLK
 clk => increment[2]~reg0.CLK
 clk => increment[3]~reg0.CLK
 clk => clkOut.DATAIN
 clk => nextState~1.DATAIN
-reset => stateOut[0].OUTPUTSELECT
-reset => stateOut[1].OUTPUTSELECT
-reset => stateOut[2].OUTPUTSELECT
-reset => stateOut[3].OUTPUTSELECT
-reset => increment[0].OUTPUTSELECT
-reset => increment[1].OUTPUTSELECT
-reset => increment[2].OUTPUTSELECT
-reset => increment[3].OUTPUTSELECT
-reset => nextState.writeData.OUTPUTSELECT
-reset => nextState.getMemData2.OUTPUTSELECT
-reset => nextState.getMemData.OUTPUTSELECT
-reset => nextState.storeAluResult.OUTPUTSELECT
-reset => nextState.loadAluResult.OUTPUTSELECT
-reset => nextState.execution.OUTPUTSELECT
-reset => nextState.storeData.OUTPUTSELECT
-reset => nextState.delayStore.OUTPUTSELECT
-reset => nextState.selStore.OUTPUTSELECT
-reset => nextState.decode3.OUTPUTSELECT
-reset => nextState.decode2.OUTPUTSELECT
-reset => nextState.decode.OUTPUTSELECT
-reset => nextState.fetch2.OUTPUTSELECT
-reset => nextState.fetch.OUTPUTSELECT
-reset => nextState.idle.OUTPUTSELECT
-reset => stateOut[0].OUTPUTSELECT
-reset => stateOut[1].OUTPUTSELECT
-reset => stateOut[2].OUTPUTSELECT
-reset => stateOut[3].OUTPUTSELECT
-reset => increment[0].OUTPUTSELECT
-reset => increment[1].OUTPUTSELECT
-reset => increment[2].OUTPUTSELECT
-reset => increment[3].OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => rf_sel.OUTPUTSELECT
+reset => rf_sel.OUTPUTSELECT
+reset => rf_sel.OUTPUTSELECT
+reset => rf_sel.OUTPUTSELECT
+reset => ld_r.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => clr_z_flag.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => increment.OUTPUTSELECT
+reset => rf_init.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => stateOut.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
+reset => nextState.OUTPUTSELECT
 reset => alu_opsel[1]~reg0.ENA
 reset => alu_opsel[0]~reg0.ENA
-reset => addrSel[1]~reg0.ENA
 reset => addrSel[0]~reg0.ENA
+reset => addrSel[1]~reg0.ENA
 reset => dataSel[1]~reg0.ENA
 reset => dataSel[0]~reg0.ENA
 reset => dpcr_lsb_sel~reg0.ENA
@@ -762,7 +788,7 @@ rf_sel[0] <= rf_sel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rf_sel[1] <= rf_sel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rf_sel[2] <= rf_sel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rf_sel[3] <= rf_sel[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rf_init <= rf_init.DB_MAX_OUTPUT_PORT_TYPE
+rf_init <= rf_init~reg0.DB_MAX_OUTPUT_PORT_TYPE
 z <= comb.DB_MAX_OUTPUT_PORT_TYPE
 dpcr_lsb_sel <= dpcr_lsb_sel~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dpcr_wr <= dpcr_wr~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -774,7 +800,7 @@ wren <= wren~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sop_wr <= sop_wr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|progCounterTest|instruction_reg:inst2
+|recop|instruction_reg:inst2
 clock => operand[0]~reg0.CLK
 clock => operand[1]~reg0.CLK
 clock => operand[2]~reg0.CLK
@@ -877,7 +903,7 @@ operand[14] <= operand[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 operand[15] <= operand[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|progCounterTest|prog_mem:inst10
+|recop|prog_mem:inst10
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -928,7 +954,7 @@ q[30] <= altsyncram:altsyncram_component.q_a[30]
 q[31] <= altsyncram:altsyncram_component.q_a[31]
 
 
-|progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component
+|recop|prog_mem:inst10|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -1032,7 +1058,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated
+|recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -4404,7 +4430,7 @@ q_a[30] <= mux_ahb:mux2.result[30]
 q_a[31] <= mux_ahb:mux2.result[31]
 
 
-|progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode
+|recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode
 data[0] => w_anode1046w[1].IN0
 data[0] => w_anode1064w[1].IN1
 data[0] => w_anode1075w[1].IN0
@@ -4439,7 +4465,7 @@ eq[6] <= w_anode1119w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode1130w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|progCounterTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2
+|recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -5178,7 +5204,7 @@ sel[2] => l3_w9_n0_mux_dataout.IN0
 sel[2] => _.IN0
 
 
-|progCounterTest|program_counter:inst
+|recop|program_counter:inst
 increment[0] => Mux0.IN15
 increment[0] => Mux1.IN15
 increment[0] => Mux2.IN15
@@ -5457,7 +5483,7 @@ out_count[14] <= out_count[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_count[15] <= out_count[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|progCounterTest|alu:inst9
+|recop|alu:inst9
 clk => z_flag~reg0.CLK
 clk => alu_result[0]~reg0.CLK
 clk => alu_result[1]~reg0.CLK
@@ -5719,7 +5745,7 @@ ir_operand[15] => Mux16.IN5
 clr_z_flag => ~NO_FANOUT~
 
 
-|progCounterTest|regfile:inst3
+|recop|regfile:inst3
 clk => regs[0][0].CLK
 clk => regs[0][1].CLK
 clk => regs[0][2].CLK
@@ -6814,7 +6840,7 @@ mem_data[14] => Mux1.IN14
 mem_data[15] => Mux0.IN14
 
 
-|progCounterTest|data_mem:inst4
+|recop|data_mem:inst4
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -6867,7 +6893,7 @@ q[14] <= altsyncram:altsyncram_component.q_a[14]
 q[15] <= altsyncram:altsyncram_component.q_a[15]
 
 
-|progCounterTest|data_mem:inst4|altsyncram:altsyncram_component
+|recop|data_mem:inst4|altsyncram:altsyncram_component
 wren_a => altsyncram_q6j1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -6936,7 +6962,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|progCounterTest|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
+|recop|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -7195,7 +7221,7 @@ wren_a => ram_block1a14.PORTAWE
 wren_a => ram_block1a15.PORTAWE
 
 
-|progCounterTest|dataAddrMux:inst6
+|recop|dataAddrMux:inst6
 clk => present_sz_Jmp[0]~reg0.CLK
 clk => present_sz_Jmp[1]~reg0.CLK
 clk => dataOut[0]~reg0.CLK
@@ -7472,7 +7498,7 @@ present_sz_Jmp[1] <= present_sz_Jmp[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 test <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|progCounterTest|registers:inst8
+|recop|registers:inst8
 clk => sop[0]~reg0.CLK
 clk => sop[1]~reg0.CLK
 clk => sop[2]~reg0.CLK
