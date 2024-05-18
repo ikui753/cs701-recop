@@ -1,5 +1,5 @@
 EDA Netlist Writer report for recop
-Sat May 18 20:42:40 2024
+Sat May 18 21:36:58 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -8,9 +8,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. Simulation Settings
-  4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  3. EDA Netlist Writer Messages
 
 
 
@@ -33,45 +31,14 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------+
-; EDA Netlist Writer Summary                                        ;
-+---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat May 18 20:42:40 2024 ;
-; Revision Name             ; recop                                 ;
-; Top-level Entity Name     ; recop                                 ;
-; Family                    ; Cyclone V                             ;
-; Simulation Files Creation ; Successful                            ;
-+---------------------------+---------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate functional simulation netlist                                                            ; On                     ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-
-
-+---------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                            ;
-+---------------------------------------------------------------------------------------+
-; Generated Files                                                                       ;
-+---------------------------------------------------------------------------------------+
-; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim//recop.vho ;
-+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; EDA Netlist Writer Summary                                    ;
++---------------------------+-----------------------------------+
+; EDA Netlist Writer Status ; Failed - Sat May 18 21:36:58 2024 ;
+; Revision Name             ; recop                             ;
+; Top-level Entity Name     ; top_level_block                   ;
+; Family                    ; Cyclone V                         ;
++---------------------------+-----------------------------------+
 
 
 +-----------------------------+
@@ -93,46 +60,16 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sat May 18 20:42:38 2024
+    Info: Processing started: Sat May 18 21:36:55 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-Warning (20013): Ignored 19 assignments for entity "NOC" -- entity does not exist in design
-Warning (20013): Ignored 25 assignments for entity "NOC_DPCR_IO" -- entity does not exist in design
-Warning (20013): Ignored 25 assignments for entity "NOC_SignalIO" -- entity does not exist in design
-Warning (20013): Ignored 25 assignments for entity "NOC_buttons_pio" -- entity does not exist in design
-Warning (20013): Ignored 172 assignments for entity "NOC_cpu" -- entity does not exist in design
-Warning (20013): Ignored 179 assignments for entity "NOC_cpu_cpu" -- entity does not exist in design
-Warning (20013): Ignored 25 assignments for entity "NOC_display0_pio" -- entity does not exist in design
-Warning (20013): Ignored 13 assignments for entity "NOC_irq_mapper" -- entity does not exist in design
-Warning (20013): Ignored 12 assignments for entity "NOC_mm_interconnect_0" -- entity does not exist in design
-Warning (20013): Ignored 32 assignments for entity "NOC_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
-Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
-Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_cmd_demux" -- entity does not exist in design
-Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
-Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_cmd_mux" -- entity does not exist in design
-Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_cmd_mux_001" -- entity does not exist in design
-Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router" -- entity does not exist in design
-Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_001" -- entity does not exist in design
-Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_002" -- entity does not exist in design
-Warning (20013): Ignored 36 assignments for entity "NOC_mm_interconnect_0_router_003" -- entity does not exist in design
-Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_rsp_demux" -- entity does not exist in design
-Warning (20013): Ignored 17 assignments for entity "NOC_mm_interconnect_0_rsp_demux_001" -- entity does not exist in design
-Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_rsp_mux" -- entity does not exist in design
-Warning (20013): Ignored 19 assignments for entity "NOC_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
-Warning (20013): Ignored 36 assignments for entity "NOC_onchip_memory" -- entity does not exist in design
-Warning (20013): Ignored 23 assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
-Warning (20013): Ignored 64 assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
-Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
-Warning (20013): Ignored 53 assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
-Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
-Warning (20013): Ignored 34 assignments for entity "altera_merlin_traffic_limiter" -- entity does not exist in design
-Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "recop"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file recop.vho in folder "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 4739 megabytes
-    Info: Processing ended: Sat May 18 20:42:40 2024
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Error (204012): Can't generate netlist output files because the file "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/NOC/synthesis/submodules/NOC_cpu_cpu.v" is an OpenCore Plus time-limited file. Remove the unlicensed cores or obtain a license for those OpenCore Plus time-limited IP cores used in the design. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number.
+Error (204009): Can't generate netlist output files because the license for encrypted file "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/NOC/synthesis/submodules/NOC_cpu_cpu.v" is not available
+Error: Quartus Prime EDA Netlist Writer was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 4748 megabytes
+    Error: Processing ended: Sat May 18 21:36:58 2024
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:02
 
 

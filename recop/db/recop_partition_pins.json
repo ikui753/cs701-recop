@@ -4,6 +4,174 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "instructionOut[31]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[30]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[29]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[28]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[27]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[26]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[25]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[24]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[23]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[22]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[21]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[20]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[19]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[18]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[17]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[16]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[15]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[14]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[13]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[12]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[11]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[10]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[9]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[8]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[7]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[6]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[5]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[4]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "instructionOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
 					"name" : "CLK50",
 					"strict" : false
 				},

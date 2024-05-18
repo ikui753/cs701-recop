@@ -633,35 +633,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1464 152 1648 232)
-	(text "prog_mem" (rect 5 0 56 12)(font "Arial" ))
-	(text "inst10" (rect 8 64 37 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "address[14..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "address[14..0]" (rect 21 27 91 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "clock" (rect 0 0 25 12)(font "Arial" ))
-		(text "clock" (rect 21 43 46 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 184 32)
-		(output)
-		(text "q[31..0]" (rect 0 0 37 12)(font "Arial" ))
-		(text "q[31..0]" (rect 132 27 169 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 168 64))
-	)
-)
-(symbol
 	(rect 1832 136 2080 280)
 	(text "instruction_reg" (rect 5 0 76 12)(font "Arial" ))
 	(text "inst2" (rect 8 128 31 140)(font "Arial" ))
@@ -1289,6 +1260,35 @@ refer to the applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 192 192))
+	)
+)
+(symbol
+	(rect 1464 152 1648 232)
+	(text "prog_mem" (rect 5 0 56 12)(font "Arial" ))
+	(text "inst10" (rect 8 64 37 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "address[14..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "address[14..0]" (rect 21 27 91 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clock" (rect 0 0 25 12)(font "Arial" ))
+		(text "clock" (rect 21 43 46 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "q[31..0]" (rect 0 0 37 12)(font "Arial" ))
+		(text "q[31..0]" (rect 132 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 64))
 	)
 )
 (connector
