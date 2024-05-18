@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/19/2024 09:32:52"
+-- Generated on "05/19/2024 09:36:42"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          recop
 -- 
@@ -47,6 +47,7 @@ SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
+SIGNAL LEDR : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL memData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL operand_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -82,6 +83,7 @@ COMPONENT recop
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
+	LEDR : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	memData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	operand_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -121,6 +123,7 @@ BEGIN
 	increment => increment,
 	instruction => instruction,
 	ld_r => ld_r,
+	LEDR => LEDR,
 	memData => memData,
 	opcode => opcode,
 	operand_out => operand_out,

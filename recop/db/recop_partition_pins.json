@@ -832,6 +832,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
 					"name" : "operand_out[15]",
 					"strict" : false
 				},
@@ -1024,7 +1040,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clkIn",
+					"name" : "clk50",
 					"strict" : false
 				},
 				{

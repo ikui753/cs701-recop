@@ -1,6 +1,6 @@
 |recop
 rf_init <= control_unit:inst7.rf_init
-clkIn => control_unit:inst7.clk
+clk50 => control_unit:inst7.clk
 reset => control_unit:inst7.reset
 reset => program_counter:inst.reset
 reset => registers:inst8.reset
@@ -228,6 +228,10 @@ dpcr[28] <= registers:inst8.dpcr[28]
 dpcr[29] <= registers:inst8.dpcr[29]
 dpcr[30] <= registers:inst8.dpcr[30]
 dpcr[31] <= registers:inst8.dpcr[31]
+LEDR[0] <= control_unit:inst7.stateOut[0]
+LEDR[1] <= control_unit:inst7.stateOut[1]
+LEDR[2] <= control_unit:inst7.stateOut[2]
+LEDR[3] <= control_unit:inst7.stateOut[3]
 operand_out[0] <= operand[0].DB_MAX_OUTPUT_PORT_TYPE
 operand_out[1] <= operand[1].DB_MAX_OUTPUT_PORT_TYPE
 operand_out[2] <= operand[2].DB_MAX_OUTPUT_PORT_TYPE
