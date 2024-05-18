@@ -21,7 +21,7 @@ USE ieee.std_logic_1164.all;
 
 LIBRARY work;
 
-ENTITY recopDesign IS 
+ENTITY recop IS 
 	PORT
 	(
 		reset :  IN  STD_LOGIC;
@@ -58,9 +58,9 @@ ENTITY recopDesign IS
 		state :  OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
 		storedData :  OUT  STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
-END recopDesign;
+END recop;
 
-ARCHITECTURE bdf_type OF recopDesign IS 
+ARCHITECTURE bdf_type OF recop IS 
 
 COMPONENT program_counter
 	PORT(clock : IN STD_LOGIC;
