@@ -27,7 +27,7 @@ entity regfile is
 --		dm_out: in bit_16;
 		aluout: in bit_16;
 --		rz_max: in bit_16;
-		sip_hold: in bit_16;
+		sip_hold: in bit_10;
 --		er_temp: in bit_1;
 		-- R7 for writing to lower byte of dpcr
 		r7 : out bit_16;
@@ -62,7 +62,7 @@ begin
 					when "0100" =>
 						 --data_input_z <= rz_max; -- rz max
 					when "0101" =>
-						 data_input_z <= sip_hold;
+						 data_input_z <= "000000"&sip_hold;
 					when "0110" =>
 						 -- data_input_z <= X"000"&"000"&er_temp;
 					when "0111" =>

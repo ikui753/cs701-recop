@@ -524,30 +524,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sip_r[15]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[14]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[13]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[12]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[11]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[10]",
-					"strict" : false
-				},
-				{
 					"name" : "sip_r[9]",
 					"strict" : false
 				},
@@ -832,6 +808,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[3]",
 					"strict" : false
 				},
@@ -1044,71 +1028,47 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[15]",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[14]",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[13]",
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[12]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[11]",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[10]",
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[9]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[8]",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[7]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[0]",
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]

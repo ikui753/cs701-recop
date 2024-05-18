@@ -31,8 +31,8 @@ entity registers is
 --		svop : out bit_16;
 --		svop_wr : in bit_1;
 		-- sip souce and registered outputs
-		sip_r : out bit_16;
-		sip : in bit_16;
+		sip_r : out bit_10;
+		sip : in bit_10;
 		-- sop and write enable signal
 		sop : out bit_16;
 		sop_wr : in bit_1
@@ -114,7 +114,7 @@ architecture beh of registers is
 	process (clk, reset)
 	begin
 		if reset = '1' then
-			sip_r <= X"0000";
+			sip_r <= "0000000000";
 		elsif rising_edge(clk) then 
 		-- register the sip signal with the system's clock
 			sip_r <= sip;

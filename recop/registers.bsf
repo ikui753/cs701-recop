@@ -75,8 +75,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "sip[15..0]" (rect 0 0 34 12)(font "Arial" ))
-		(text "sip[15..0]" (rect 21 139 55 151)(font "Arial" ))
+		(text "sip[9..0]" (rect 0 0 30 12)(font "Arial" ))
+		(text "sip[9..0]" (rect 21 139 51 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
@@ -96,8 +96,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 208 48)
 		(output)
-		(text "sip_r[15..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "sip_r[15..0]" (rect 144 43 187 55)(font "Arial" ))
+		(text "sip_r[9..0]" (rect 0 0 40 12)(font "Arial" ))
+		(text "sip_r[9..0]" (rect 147 43 187 55)(font "Arial" ))
 		(line (pt 208 48)(pt 192 48)(line_width 3))
 	)
 	(port
