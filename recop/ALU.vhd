@@ -26,7 +26,8 @@ entity alu is
 		rz				: in bit_16;
 		ir_operand		: in bit_16;
 		-- flag control signal
-		clr_z_flag		: in bit_1
+		clr_z_flag		: in bit_1;
+		test : in bit_1
 	);
 end alu;
 

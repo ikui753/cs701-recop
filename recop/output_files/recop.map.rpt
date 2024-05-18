@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sat May 18 12:47:31 2024
+Sun May 19 09:32:36 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 18 12:47:31 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 19 09:32:36 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; recop                                       ;
@@ -590,7 +590,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat May 18 12:47:17 2024
+    Info: Processing started: Sun May 19 09:32:23 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -633,7 +633,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file data_me
     Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 19
     Info (12023): Found entity 1: data_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 33
+    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 34
     Info (12023): Found entity 1: alu File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
     Info (12022): Found design unit 1: program_counter-pc File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 27
@@ -675,6 +675,9 @@ Warning (287001): Assertion warning: Device family Cyclone V does not have M4K b
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dti1.tdf
     Info (12023): Found entity 1: altsyncram_dti1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_dti1" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (113028): 1017 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+    Warning (113027): Addresses ranging from 7 to 1023 are not initialized File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif Line: 1
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
     Info (12023): Found entity 1: decode_61a File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/decode_61a.tdf Line: 22
 Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 39
@@ -683,8 +686,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
 Info (12128): Elaborating entity "mux_ahb" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 40
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
-Warning (10492): VHDL Process Statement warning at ALU.vhd(49): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 49
-Warning (10492): VHDL Process Statement warning at ALU.vhd(64): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at ALU.vhd(50): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 50
+Warning (10492): VHDL Process Statement warning at ALU.vhd(65): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 65
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:inst4"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "data_mem:inst4|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
@@ -727,10 +730,10 @@ Info (21057): Implemented 1544 device resources after synthesis - the final reso
     Info (21059): Implemented 257 output pins
     Info (21061): Implemented 997 logic cells
     Info (21064): Implemented 272 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4904 megabytes
-    Info: Processing ended: Sat May 18 12:47:31 2024
-    Info: Elapsed time: 00:00:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4895 megabytes
+    Info: Processing ended: Sun May 19 09:32:36 2024
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:11
 
 

@@ -5743,6 +5743,7 @@ ir_operand[14] => Mux17.IN5
 ir_operand[15] => Mux0.IN5
 ir_operand[15] => Mux16.IN5
 clr_z_flag => ~NO_FANOUT~
+test => ~NO_FANOUT~
 
 
 |recop|regfile:inst3
