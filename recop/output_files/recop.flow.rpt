@@ -1,5 +1,5 @@
 Flow report for recop
-Sat May 18 19:56:55 2024
+Sat May 18 20:47:24 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat May 18 19:56:43 2024       ;
+; Flow Status                     ; Successful - Sat May 18 20:47:24 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; top_level_block                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,780 / 32,070 ( 6 % )                      ;
-; Total registers                 ; 2384                                        ;
-; Total pins                      ; 32 / 457 ( 7 % )                            ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1907                                        ;
+; Total pins                      ; 32                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 1,340,288 / 4,065,280 ( 33 % )              ;
-; Total DSP Blocks                ; 3 / 87 ( 3 % )                              ;
+; Total block memory bits         ; 226,176                                     ;
+; Total DSP Blocks                ; 3                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/18/2024 19:54:09 ;
+; Start date & time ; 05/18/2024 20:46:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; recop               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------+---------------+-----------------+------------+
 ; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name     ; Section Id ;
 +-------------------------------------+-------------------------------------------------------+---------------+-----------------+------------+
-; COMPILER_SIGNATURE_ID               ; 237901791186551.171601884826580                       ; --            ; --              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 237901791186551.171602199633736                       ; --            ; --              ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --            ; --              ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                     ; --            ; --              ; --         ;
 ; MISC_FILE                           ; NOC/synthesis/../NOC.cmp                              ; --            ; --              ; --         ;
@@ -103,11 +103,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:48     ; 1.0                     ; 5083 MB             ; 00:00:36                           ;
-; Fitter               ; 00:01:31     ; 1.2                     ; 6880 MB             ; 00:01:30                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 4907 MB             ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:11     ; 2.5                     ; 5274 MB             ; 00:00:14                           ;
-; Total                ; 00:02:40     ; --                      ; --                  ; 00:02:29                           ;
+; Analysis & Synthesis ; 00:00:46     ; 1.0                     ; 5080 MB             ; 00:00:35                           ;
+; Total                ; 00:00:46     ; --                      ; --                  ; 00:00:35                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,9 +114,6 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -127,9 +121,6 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
-quartus_fit --read_settings_files=off --write_settings_files=off recop -c recop
-quartus_asm --read_settings_files=off --write_settings_files=off recop -c recop
-quartus_sta recop -c recop
 
 
 

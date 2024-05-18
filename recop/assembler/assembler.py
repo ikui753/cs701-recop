@@ -93,7 +93,7 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
             raise ValueError(f"Error: Invalid operand '{parts[parts_len - 1]}' on line {line}")
 
         # Determine rz when more than two inputs, or is LSIP operation
-        if (parts_len > 2 or parts[1] == 0b110111):
+        if (parts_len > 2 or parts[0] == 0b110111):
             rz = get_register(parts[1])
 
         # Determine opcode
