@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 792 -152 960 -136)
+	(rect 792 -104 960 -88)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "SW[9..0]" (rect 5 0 48 12)(font "Arial" ))
 	(pt 168 8)
@@ -34,11 +34,11 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 720 -136 792 80))
+	(annotation_block (location)(rect 720 -88 792 128))
 )
 (pin
 	(input)
-	(rect 792 -176 960 -160)
+	(rect 792 -200 960 -184)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "KEY[3..0]" (rect 5 0 48 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -51,13 +51,13 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 720 -160 784 -64))
+	(annotation_block (location)(rect 720 -184 784 -88))
 )
 (pin
 	(input)
-	(rect 792 -200 960 -184)
+	(rect 792 -232 960 -216)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK50" (rect 5 0 39 12)(font "Arial" ))
+	(text "CLOCK_50" (rect 5 0 61 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -68,6 +68,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 728 -216 792 -192))
 )
 (pin
 	(output)
@@ -2037,6 +2038,7 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "sop_wr" (rect 2504 48 2538 65)(font "Intel Clear" ))
 	(pt 2496 64)
 	(pt 2568 64)
 )
@@ -2297,18 +2299,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "KEY[3..0]" (rect 968 -184 1011 -167)(font "Intel Clear" ))
-	(pt 960 -168)
-	(pt 1048 -168)
-	(bus)
-)
-(connector
-	(text "SW[9..0]" (rect 1008 -160 1048 -143)(font "Intel Clear" ))
-	(pt 960 -144)
-	(pt 1080 -144)
-	(bus)
-)
-(connector
 	(text "state[3..0]" (rect 1328 -216 1375 -199)(font "Intel Clear" ))
 	(pt 1384 -200)
 	(pt 1320 -200)
@@ -2361,11 +2351,6 @@ refer to the applicable agreement for further details.
 	(pt 2152 -176)
 )
 (connector
-	(text "clk50" (rect 968 -208 993 -191)(font "Intel Clear" ))
-	(pt 960 -192)
-	(pt 1056 -192)
-)
-(connector
 	(text "clk50" (rect 682 200 707 217)(font "Intel Clear" ))
 	(pt 672 216)
 	(pt 784 216)
@@ -2409,6 +2394,23 @@ refer to the applicable agreement for further details.
 	(text "wren" (rect 2504 32 2527 49)(font "Intel Clear" ))
 	(pt 2496 48)
 	(pt 2568 48)
+)
+(connector
+	(text "clk50" (rect 968 -240 993 -223)(font "Intel Clear" ))
+	(pt 960 -224)
+	(pt 1056 -224)
+)
+(connector
+	(text "KEY[3..0]" (rect 968 -208 1011 -191)(font "Intel Clear" ))
+	(pt 960 -192)
+	(pt 1048 -192)
+	(bus)
+)
+(connector
+	(text "SW[9..0]" (rect 1008 -112 1048 -95)(font "Intel Clear" ))
+	(pt 960 -96)
+	(pt 1080 -96)
+	(bus)
 )
 (junction (pt 1064 200))
 (junction (pt 2120 184))

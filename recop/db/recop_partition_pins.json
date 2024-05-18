@@ -560,6 +560,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "sop_wr",
+					"strict" : false
+				},
+				{
 					"name" : "increment[3]",
 					"strict" : false
 				},
@@ -800,6 +804,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[4]",
 					"strict" : false
 				},
@@ -884,6 +892,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "sop[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[0]",
+					"strict" : false
+				},
+				{
 					"name" : "storedData[15]",
 					"strict" : false
 				},
@@ -948,7 +1020,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK50",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
