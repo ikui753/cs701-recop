@@ -1,5 +1,5 @@
 Flow report for recop
-Sun May 19 11:39:04 2024
+Sun May 19 11:47:20 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun May 19 11:39:04 2024       ;
+; Flow Status                     ; Successful - Sun May 19 11:47:10 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; recop                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 482 / 32,070 ( 2 % )                        ;
-; Total registers                 ; 506                                         ;
-; Total pins                      ; 272 / 457 ( 60 % )                          ;
+; Logic utilization (in ALMs)     ; 468 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 450                                         ;
+; Total pins                      ; 82 / 457 ( 18 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,114,112 / 4,065,280 ( 27 % )              ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/19/2024 11:35:41 ;
+; Start date & time ; 05/19/2024 11:45:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; recop               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 237901791186551.171607534133404        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 237901791186551.171607594632944        ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -91,15 +91,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4905 MB             ; 00:00:12                           ;
-; Fitter               ; 00:01:19     ; 1.1                     ; 6809 MB             ; 00:01:05                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4879 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:11     ; 1.6                     ; 5225 MB             ; 00:00:11                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4734 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4747 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4734 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4747 MB             ; 00:00:02                           ;
-; Total                ; 00:02:01     ; --                      ; --                  ; 00:01:41                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4907 MB             ; 00:00:11                           ;
+; Fitter               ; 00:01:02     ; 1.1                     ; 6892 MB             ; 00:00:58                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4878 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:09     ; 1.8                     ; 5217 MB             ; 00:00:07                           ;
+; Total                ; 00:01:32     ; --                      ; --                  ; 00:01:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,10 +108,6 @@ refer to the applicable agreement for further details.
 ; Fitter               ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -126,10 +118,6 @@ quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 quartus_fit --read_settings_files=off --write_settings_files=off recop -c recop
 quartus_asm --read_settings_files=off --write_settings_files=off recop -c recop
 quartus_sta recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recopWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/recopWaveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
 
 
 
