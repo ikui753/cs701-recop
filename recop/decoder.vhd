@@ -8,7 +8,7 @@ entity decoder is
 		sopFromRecop : in bit_16; -- from RECOP 
 		sipFromNios : in bit_10; -- from FPGA SW
 		
-		sopToNios : out bit_10; -- to NIOS LED
+		SignalToNios : out bit_10; -- to NIOS LED
 		sipToRecop : out bit_16 -- to RECOP
 		
 	);
@@ -19,6 +19,6 @@ architecture beh of decoder is
 begin
 
 	sipToRecop <= "000000"&sipFromNios;
-	sopToNios <= sopFromRecop(9 downto 0);
+	SignalToNios <= "0000011111";
 	
 end architecture;

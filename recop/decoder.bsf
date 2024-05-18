@@ -40,8 +40,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 264 32)
 		(output)
-		(text "sopToNios[9..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "sopToNios[9..0]" (rect 181 27 243 39)(font "Arial" ))
+		(text "SignalToNios[9..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "SignalToNios[9..0]" (rect 173 27 243 39)(font "Arial" ))
 		(line (pt 264 32)(pt 248 32)(line_width 3))
 	)
 	(port

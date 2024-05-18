@@ -37,6 +37,8 @@ Instructions are to be entered in the .asm file found in recop/assembler. Run as
 * Additionally, ensure that going to _simulation -> simulation settings_ and restoring defualt settings has occurred to reset any versions of file path.
 
 # Demoing FPGA Implementation
+To demo, set top level entity to _top_level_block_, update Memory Initialisation File if necessary and compile and program. Inputs and outputs are shown below; 
+
 ## Outputs
 - SOP will be indicated by LEDs. 
 - SOP_WR will be indicated by an LED.

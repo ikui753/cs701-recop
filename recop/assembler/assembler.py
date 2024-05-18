@@ -79,7 +79,7 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
                 case "#":
                     am = AddressingMode.IMMEDIATE
                     operand = int(parts[parts_len - 1][1:], 0)
-                    rx = get_register(parts[parts_len - 2]) # Immediates always have 3 inputs, or just Rz and operand, sometimes Rx is unused
+                    
                 case "$":
                     am = AddressingMode.DIRECT
                     operand = int(parts[parts_len - 1][1:], 0)
@@ -92,8 +92,8 @@ def compile(instructions: List[ASMInstruction]) -> List[tuple[int, str]]:
         except ValueError:
             raise ValueError(f"Error: Invalid operand '{parts[parts_len - 1]}' on line {line}")
 
-        # Determine rz
-        if (parts_len > 2):
+        # Determine rz when more than two inputs, or is LSIP operation
+        if (parts_len > 2 or parts[1] == 0b110111):
             rz = get_register(parts[1])
 
         # Determine opcode
