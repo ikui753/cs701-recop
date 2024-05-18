@@ -1,5 +1,5 @@
 Flow report for recop
-Sat May 18 22:05:36 2024
+Sun May 19 09:17:31 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat May 18 22:05:22 2024       ;
+; Flow Status                     ; Successful - Sun May 19 09:17:31 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; recop                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 645 / 32,070 ( 2 % )                        ;
-; Total registers                 ; 714                                         ;
-; Total pins                      ; 285 / 457 ( 62 % )                          ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 485                                         ;
+; Total pins                      ; 268                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 1,114,112 / 4,065,280 ( 27 % )              ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total block memory bits         ; 1,114,112                                   ;
+; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,30 +67,23 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/18/2024 22:03:08 ;
+; Start date & time ; 05/19/2024 09:14:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; recop               ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                       ;
-+-------------------------------------+-------------------------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                                 ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+-------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 237901791186551.171602658804840                       ; --            ; --          ; --         ;
-; MISC_FILE                           ; NOC/synthesis/../NOC.cmp                              ; --            ; --          ; --         ;
-; MISC_FILE                           ; NOC/synthesis/../../NOC.qsys                          ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --            ; --          ; --         ;
-; SLD_FILE                            ; NOC/synthesis/NOC.regmap                              ; --            ; --          ; --         ;
-; SLD_FILE                            ; NOC/synthesis/NOC.debuginfo                           ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME NOC HAS_SOPCINFO 1 GENERATION_ID 1716007386 ; --            ; NOC         ; --         ;
-; SOPCINFO_FILE                       ; NOC/synthesis/../../NOC.sopcinfo                      ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --            ; --          ; --         ;
-+-------------------------------------+-------------------------------------------------------+---------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 237901791186551.171606684305952        ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -98,11 +91,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:44     ; 1.0                     ; 5073 MB             ; 00:00:32                           ;
-; Fitter               ; 00:01:16     ; 1.1                     ; 6910 MB             ; 00:01:06                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4892 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:13     ; 1.7                     ; 5238 MB             ; 00:00:12                           ;
-; Total                ; 00:02:22     ; --                      ; --                  ; 00:01:57                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4911 MB             ; 00:00:11                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4738 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4731 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4738 MB             ; 00:00:02                           ;
+; Total                ; 00:00:22     ; --                      ; --                  ; 00:00:16                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,9 +106,10 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IK4              ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -122,9 +117,10 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
-quartus_fit --read_settings_files=off --write_settings_files=off recop -c recop
-quartus_asm --read_settings_files=off --write_settings_files=off recop -c recop
-quartus_sta recop -c recop
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/topLevelWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/topLevelWaveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off recop -c recop --vector_source=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/topLevelWaveform.vwf --testbench_file=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/topLevelWaveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/simulation/qsim/ recop -c recop
 
 
 

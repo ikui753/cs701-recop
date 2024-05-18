@@ -302,7 +302,6 @@ set_location_assignment PIN_AG7 -to USB_RESET_N
 set_location_assignment PIN_AG8 -to USB_SCL
 set_location_assignment PIN_AF8 -to USB_SDA
 set_location_assignment PIN_AH5 -to USB_WR_N
-set_global_assignment -name QIP_FILE NOC/synthesis/NOC.qip
 set_global_assignment -name BDF_FILE recop.bdf
 set_global_assignment -name VHDL_FILE control_unit.vhd
 set_global_assignment -name VHDL_FILE various_constants.vhd
@@ -324,8 +323,8 @@ set_global_assignment -name BDF_FILE datapath.bdf
 set_global_assignment -name VHDL_FILE dataAddrMux.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE recopWaveform.vwf
 set_global_assignment -name VHDL_FILE decoder.vhd
-set_global_assignment -name SOURCE_FILE db/recop.cmp.rdb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE topLevelWaveform.vwf

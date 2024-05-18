@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/18/2024 20:42:37"
+-- Generated on "05/19/2024 09:02:30"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          recop
 -- 
@@ -39,7 +39,7 @@ SIGNAL alu_output : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL alu_z : STD_LOGIC;
 SIGNAL am : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
-SIGNAL clkIn : STD_LOGIC;
+SIGNAL clk50 : STD_LOGIC;
 SIGNAL clr_z_flag : STD_LOGIC;
 SIGNAL dataSel : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL dpcr : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -47,6 +47,11 @@ SIGNAL dpcr_wr : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ld_r : STD_LOGIC;
+SIGNAL LEDR0 : STD_LOGIC;
+SIGNAL LEDR1 : STD_LOGIC;
+SIGNAL LEDR2 : STD_LOGIC;
+SIGNAL LEDR3 : STD_LOGIC;
+SIGNAL LEDR9 : STD_LOGIC;
 SIGNAL memData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 SIGNAL operand_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -59,12 +64,12 @@ SIGNAL rx_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rz_sel : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL sip : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL sip_r : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sip_r : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL sop_wr : STD_LOGIC;
 SIGNAL state : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL storedData : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL wren : STD_LOGIC;
 COMPONENT recop
 	PORT (
@@ -74,7 +79,7 @@ COMPONENT recop
 	alu_z : OUT STD_LOGIC;
 	am : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	clk : OUT STD_LOGIC;
-	clkIn : IN STD_LOGIC;
+	clk50 : IN STD_LOGIC;
 	clr_z_flag : OUT STD_LOGIC;
 	dataSel : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	dpcr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -82,6 +87,11 @@ COMPONENT recop
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ld_r : OUT STD_LOGIC;
+	LEDR0 : OUT STD_LOGIC;
+	LEDR1 : OUT STD_LOGIC;
+	LEDR2 : OUT STD_LOGIC;
+	LEDR3 : OUT STD_LOGIC;
+	LEDR9 : OUT STD_LOGIC;
 	memData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	opcode : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
 	operand_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -94,12 +104,12 @@ COMPONENT recop
 	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rz_sel : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-	sip : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-	sip_r : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sip_r : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	sop_wr : OUT STD_LOGIC;
 	state : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	storedData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 	wren : OUT STD_LOGIC
 	);
 END COMPONENT;
@@ -113,7 +123,7 @@ BEGIN
 	alu_z => alu_z,
 	am => am,
 	clk => clk,
-	clkIn => clkIn,
+	clk50 => clk50,
 	clr_z_flag => clr_z_flag,
 	dataSel => dataSel,
 	dpcr => dpcr,
@@ -121,6 +131,11 @@ BEGIN
 	increment => increment,
 	instruction => instruction,
 	ld_r => ld_r,
+	LEDR0 => LEDR0,
+	LEDR1 => LEDR1,
+	LEDR2 => LEDR2,
+	LEDR3 => LEDR3,
+	LEDR9 => LEDR9,
 	memData => memData,
 	opcode => opcode,
 	operand_out => operand_out,
@@ -133,26 +148,14 @@ BEGIN
 	rxData => rxData,
 	rz_sel => rz_sel,
 	rzData => rzData,
-	sip => sip,
 	sip_r => sip_r,
 	sop => sop,
 	sop_wr => sop_wr,
 	state => state,
 	storedData => storedData,
+	SW => SW,
 	wren => wren
 	);
-
--- clkIn
-t_prcs_clkIn: PROCESS
-BEGIN
-LOOP
-	clkIn <= '0';
-	WAIT FOR 10000 ps;
-	clkIn <= '1';
-	WAIT FOR 10000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_clkIn;
 
 -- reset
 t_prcs_reset: PROCESS
@@ -160,100 +163,4 @@ BEGIN
 	reset <= '0';
 WAIT;
 END PROCESS t_prcs_reset;
--- sip[15]
-t_prcs_sip_15: PROCESS
-BEGIN
-	sip(15) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_15;
--- sip[14]
-t_prcs_sip_14: PROCESS
-BEGIN
-	sip(14) <= '1';
-WAIT;
-END PROCESS t_prcs_sip_14;
--- sip[13]
-t_prcs_sip_13: PROCESS
-BEGIN
-	sip(13) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_13;
--- sip[12]
-t_prcs_sip_12: PROCESS
-BEGIN
-	sip(12) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_12;
--- sip[11]
-t_prcs_sip_11: PROCESS
-BEGIN
-	sip(11) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_11;
--- sip[10]
-t_prcs_sip_10: PROCESS
-BEGIN
-	sip(10) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_10;
--- sip[9]
-t_prcs_sip_9: PROCESS
-BEGIN
-	sip(9) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_9;
--- sip[8]
-t_prcs_sip_8: PROCESS
-BEGIN
-	sip(8) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_8;
--- sip[7]
-t_prcs_sip_7: PROCESS
-BEGIN
-	sip(7) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_7;
--- sip[6]
-t_prcs_sip_6: PROCESS
-BEGIN
-	sip(6) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_6;
--- sip[5]
-t_prcs_sip_5: PROCESS
-BEGIN
-	sip(5) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_5;
--- sip[4]
-t_prcs_sip_4: PROCESS
-BEGIN
-	sip(4) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_4;
--- sip[3]
-t_prcs_sip_3: PROCESS
-BEGIN
-	sip(3) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_3;
--- sip[2]
-t_prcs_sip_2: PROCESS
-BEGIN
-	sip(2) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_2;
--- sip[1]
-t_prcs_sip_1: PROCESS
-BEGIN
-	sip(1) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_1;
--- sip[0]
-t_prcs_sip_0: PROCESS
-BEGIN
-	sip(0) <= '0';
-WAIT;
-END PROCESS t_prcs_sip_0;
 END recop_arch;

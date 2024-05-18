@@ -524,78 +524,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sip_r[15]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[14]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[13]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[12]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[11]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[10]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[9]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[8]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[7]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dpcr_wr",
-					"strict" : false
-				},
-				{
-					"name" : "sop_wr",
-					"strict" : false
-				},
-				{
 					"name" : "increment[3]",
 					"strict" : false
 				},
@@ -629,6 +557,14 @@
 				},
 				{
 					"name" : "present_sz_jmp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dpcr_wr",
+					"strict" : false
+				},
+				{
+					"name" : "sop_wr",
 					"strict" : false
 				},
 				{
@@ -832,107 +768,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[9]",
+					"name" : "LEDR9",
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[8]",
+					"name" : "LEDR3",
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[7]",
+					"name" : "LEDR2",
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[6]",
+					"name" : "LEDR1",
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[15]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[14]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[13]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[12]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[11]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[10]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[9]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[8]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[7]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sop[0]",
+					"name" : "LEDR0",
 					"strict" : false
 				},
 				{
@@ -997,6 +849,110 @@
 				},
 				{
 					"name" : "operand_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sip_r[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sop[0]",
 					"strict" : false
 				},
 				{
@@ -1072,67 +1028,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "sip[15]",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[14]",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[13]",
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[12]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[11]",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[10]",
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[9]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[8]",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[7]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "sip[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[0]",
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]

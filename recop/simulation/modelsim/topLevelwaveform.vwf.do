@@ -1,4 +1,4 @@
-vcom -work work topLevelwaveform.vwf.vht
-vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.top_level_block_vhd_vec_tst -voptargs="+acc"
+vcom -work work topLevelWaveform.vwf.vht
+vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.recop_vhd_vec_tst -voptargs="+acc"
 add wave /*
 run -all
