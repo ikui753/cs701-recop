@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sat May 18 21:40:15 2024
+Sat May 18 21:53:23 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -221,14 +221,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 18 21:40:15 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 18 21:53:23 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; top_level_block                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 1907                                        ;
-; Total pins                      ; 80                                          ;
+; Total pins                      ; 81                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 226,240                                     ;
 ; Total DSP Blocks                ; 3                                           ;
@@ -468,7 +468,7 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 1907        ;
 ;                                             ;             ;
-; I/O pins                                    ; 80          ;
+; I/O pins                                    ; 81          ;
 ; Total MLAB memory bits                      ; 0           ;
 ; Total block memory bits                     ; 226240      ;
 ;                                             ;             ;
@@ -476,8 +476,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; CLK50~input ;
 ; Maximum fan-out                             ; 1981        ;
-; Total fan-out                               ; 19839       ;
-; Average fan-out                             ; 4.60        ;
+; Total fan-out                               ; 19841       ;
+; Average fan-out                             ; 4.59        ;
 +---------------------------------------------+-------------+
 
 
@@ -486,7 +486,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                         ; Entity Name                         ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------+--------------+
-; |top_level_block                                                                                                                        ; 1959 (1)            ; 1907 (0)                  ; 226240            ; 3          ; 80   ; 0            ; |top_level_block                                                                                                                                                                                                                                                                                                                                            ; top_level_block                     ; work         ;
+; |top_level_block                                                                                                                        ; 1959 (1)            ; 1907 (0)                  ; 226240            ; 3          ; 81   ; 0            ; |top_level_block                                                                                                                                                                                                                                                                                                                                            ; top_level_block                     ; work         ;
 ;    |NOC:inst|                                                                                                                           ; 1749 (0)            ; 1748 (0)                  ; 226176            ; 3          ; 0    ; 0            ; |top_level_block|NOC:inst                                                                                                                                                                                                                                                                                                                                   ; NOC                                 ; noc          ;
 ;       |NOC_SignalIO:signalio|                                                                                                           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_block|NOC:inst|NOC_SignalIO:signalio                                                                                                                                                                                                                                                                                                             ; NOC_SignalIO                        ; NOC          ;
 ;       |NOC_SignalIO:switches_pio|                                                                                                       ; 10 (10)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |top_level_block|NOC:inst|NOC_SignalIO:switches_pio                                                                                                                                                                                                                                                                                                         ; NOC_SignalIO                        ; NOC          ;
@@ -6495,7 +6495,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 381                         ;
 ;         6 data inputs ; 428                         ;
 ; arriav_mac            ; 3                           ;
-; boundary_port         ; 108                         ;
+; boundary_port         ; 109                         ;
 ; stratixv_ram_block    ; 279                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
@@ -6547,7 +6547,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat May 18 21:39:25 2024
+    Info: Processing started: Sat May 18 21:52:33 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -6955,7 +6955,7 @@ Warning (12001): Port "address_a[13]" does not exist in entity definition of "al
 Warning (12001): Port "address_a[14]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "recop:inst1|data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "recop:inst1|data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.05.18.21:39:53 Progress: Loading sld80a31ca0/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.05.18.21:53:01 Progress: Loading sld80a31ca0/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -7260,17 +7260,17 @@ Info (286031): Timing-Driven Synthesis is running on partition "pzdyqx:nabboc"
 Info (144001): Generated suppressed messages file C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/output_files/recop.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3383 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3384 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 66 output pins
+    Info (21059): Implemented 67 output pins
     Info (21061): Implemented 3016 logic cells
     Info (21064): Implemented 279 RAM segments
     Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 291 warnings
-    Info: Peak virtual memory: 5080 megabytes
-    Info: Processing ended: Sat May 18 21:40:15 2024
+    Info: Peak virtual memory: 5078 megabytes
+    Info: Processing ended: Sat May 18 21:53:23 2024
     Info: Elapsed time: 00:00:50
-    Info: Total CPU time (on all processors): 00:00:47
+    Info: Total CPU time (on all processors): 00:00:39
 
 
 +------------------------------------------+

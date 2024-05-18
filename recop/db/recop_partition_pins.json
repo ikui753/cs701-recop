@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "HEX5[0]",
+					"strict" : false
+				},
+				{
 					"name" : "instructionOut[31]",
 					"strict" : false
 				},
