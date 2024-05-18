@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun May 19 09:14:14 2024
+Sun May 19 09:26:54 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,14 +52,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 19 09:14:14 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 19 09:26:54 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; recop                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 485                                         ;
-; Total pins                      ; 268                                         ;
+; Total pins                      ; 263                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,114,112                                   ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -231,16 +231,16 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 485         ;
 ;                                             ;             ;
-; I/O pins                                    ; 268         ;
+; I/O pins                                    ; 263         ;
 ; Total MLAB memory bits                      ; 0           ;
 ; Total block memory bits                     ; 1114112     ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clk50~input ;
-; Maximum fan-out                             ; 759         ;
-; Total fan-out                               ; 9248        ;
-; Average fan-out                             ; 4.82        ;
+; Maximum fan-out                             ; 758         ;
+; Total fan-out                               ; 9238        ;
+; Average fan-out                             ; 4.84        ;
 +---------------------------------------------+-------------+
 
 
@@ -249,7 +249,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |recop                                    ; 626 (0)             ; 485 (0)                   ; 1114112           ; 0          ; 268  ; 0            ; |recop                                                                                                       ; recop           ; work         ;
+; |recop                                    ; 626 (0)             ; 485 (0)                   ; 1114112           ; 0          ; 263  ; 0            ; |recop                                                                                                       ; recop           ; work         ;
 ;    |alu:inst9|                            ; 105 (105)           ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|alu:inst9                                                                                             ; alu             ; work         ;
 ;    |control_unit:inst7|                   ; 137 (137)           ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|control_unit:inst7                                                                                    ; control_unit    ; work         ;
 ;    |dataAddrMux:inst6|                    ; 35 (35)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|dataAddrMux:inst6                                                                                     ; dataAddrMux     ; work         ;
@@ -567,7 +567,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 45                          ;
 ;         5 data inputs ; 96                          ;
 ;         6 data inputs ; 319                         ;
-; boundary_port         ; 268                         ;
+; boundary_port         ; 263                         ;
 ; stratixv_ram_block    ; 272                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.40                        ;
@@ -590,7 +590,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 19 09:14:01 2024
+    Info: Processing started: Sun May 19 09:26:42 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -650,10 +650,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file decoder
     Info (12022): Found design unit 1: decoder-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/decoder.vhd Line: 18
     Info (12023): Found entity 1: decoder File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/decoder.vhd Line: 5
 Info (12127): Elaborating entity "recop" for the top level hierarchy
-Warning (275089): Not all bits in bus "LEDR[9..0]" are used
-Warning (275080): Converted elements in bus name "LEDR" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "LEDR[9]" to "LEDR9"
-    Warning (275081): Converted element name(s) from "LEDR[3..0]" to "LEDR3..0"
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
@@ -729,15 +725,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1531 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1526 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 256 output pins
+    Info (21059): Implemented 251 output pins
     Info (21061): Implemented 991 logic cells
     Info (21064): Implemented 272 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 4911 megabytes
-    Info: Processing ended: Sun May 19 09:14:14 2024
-    Info: Elapsed time: 00:00:13
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4914 megabytes
+    Info: Processing ended: Sun May 19 09:26:54 2024
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:11
 
 

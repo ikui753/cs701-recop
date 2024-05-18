@@ -2825,7 +2825,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
 	CHILDREN = 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18;
@@ -2835,7 +2835,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[15]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2845,7 +2845,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[14]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2855,7 +2855,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[13]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2865,7 +2865,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[12]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2875,7 +2875,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[11]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2885,7 +2885,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[10]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2895,7 +2895,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[9]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2905,7 +2905,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[8]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2915,7 +2915,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 11;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2925,7 +2925,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2935,7 +2935,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2945,7 +2945,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2955,7 +2955,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2965,7 +2965,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2975,7 +2975,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -2985,7 +2985,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "pc_count[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 18;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -3645,7 +3645,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rz_sel";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 84;
 	TREE_LEVEL = 0;
 	CHILDREN = 85, 86, 87, 88;
@@ -3655,7 +3655,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rz_sel[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 85;
 	TREE_LEVEL = 1;
 	PARENT = 84;
@@ -3665,7 +3665,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rz_sel[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 86;
 	TREE_LEVEL = 1;
 	PARENT = 84;
@@ -3675,7 +3675,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rz_sel[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 87;
 	TREE_LEVEL = 1;
 	PARENT = 84;
@@ -3685,7 +3685,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rz_sel[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 88;
 	TREE_LEVEL = 1;
 	PARENT = 84;
@@ -3695,7 +3695,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rx_sel";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 89;
 	TREE_LEVEL = 0;
 	CHILDREN = 90, 91, 92, 93;
@@ -3705,7 +3705,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rx_sel[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 90;
 	TREE_LEVEL = 1;
 	PARENT = 89;
@@ -3715,7 +3715,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rx_sel[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 91;
 	TREE_LEVEL = 1;
 	PARENT = 89;
@@ -3725,7 +3725,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rx_sel[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 92;
 	TREE_LEVEL = 1;
 	PARENT = 89;
@@ -3735,7 +3735,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "rx_sel[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Unsigned;
 	TREE_INDEX = 93;
 	TREE_LEVEL = 1;
 	PARENT = 89;

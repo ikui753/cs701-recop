@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "05/19/2024 09:17:31"
+-- DATE "05/19/2024 09:27:02"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -65,12 +65,7 @@ ENTITY 	recop IS
 	alu_output : OUT std_logic_vector(15 DOWNTO 0);
 	am : OUT std_logic_vector(1 DOWNTO 0);
 	dpcr : OUT std_logic_vector(31 DOWNTO 0);
-	SW : IN std_logic_vector(9 DOWNTO 0);
-	LEDR9 : OUT std_logic;
-	LEDR3 : OUT std_logic;
-	LEDR2 : OUT std_logic;
-	LEDR1 : OUT std_logic;
-	LEDR0 : OUT std_logic;
+	sipIn : IN std_logic_vector(9 DOWNTO 0);
 	operand_out : OUT std_logic_vector(15 DOWNTO 0);
 	sip_r : OUT std_logic_vector(9 DOWNTO 0);
 	sop : OUT std_logic_vector(15 DOWNTO 0);
@@ -116,12 +111,7 @@ SIGNAL ww_sop_wr : std_logic;
 SIGNAL ww_alu_output : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_am : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_dpcr : std_logic_vector(31 DOWNTO 0);
-SIGNAL ww_SW : std_logic_vector(9 DOWNTO 0);
-SIGNAL ww_LEDR9 : std_logic;
-SIGNAL ww_LEDR3 : std_logic;
-SIGNAL ww_LEDR2 : std_logic;
-SIGNAL ww_LEDR1 : std_logic;
-SIGNAL ww_LEDR0 : std_logic;
+SIGNAL ww_sipIn : std_logic_vector(9 DOWNTO 0);
 SIGNAL ww_operand_out : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_sip_r : std_logic_vector(9 DOWNTO 0);
 SIGNAL ww_sop : std_logic_vector(15 DOWNTO 0);
@@ -879,11 +869,6 @@ SIGNAL \dpcr[3]~output_o\ : std_logic;
 SIGNAL \dpcr[2]~output_o\ : std_logic;
 SIGNAL \dpcr[1]~output_o\ : std_logic;
 SIGNAL \dpcr[0]~output_o\ : std_logic;
-SIGNAL \LEDR9~output_o\ : std_logic;
-SIGNAL \LEDR3~output_o\ : std_logic;
-SIGNAL \LEDR2~output_o\ : std_logic;
-SIGNAL \LEDR1~output_o\ : std_logic;
-SIGNAL \LEDR0~output_o\ : std_logic;
 SIGNAL \operand_out[15]~output_o\ : std_logic;
 SIGNAL \operand_out[14]~output_o\ : std_logic;
 SIGNAL \operand_out[13]~output_o\ : std_logic;
@@ -2132,16 +2117,16 @@ SIGNAL \inst7|Selector22~2_combout\ : std_logic;
 SIGNAL \inst7|sop_wr~q\ : std_logic;
 SIGNAL \inst7|dpcr_lsb_sel~0_combout\ : std_logic;
 SIGNAL \inst7|dpcr_lsb_sel~q\ : std_logic;
-SIGNAL \SW[9]~input_o\ : std_logic;
-SIGNAL \SW[8]~input_o\ : std_logic;
-SIGNAL \SW[7]~input_o\ : std_logic;
-SIGNAL \SW[6]~input_o\ : std_logic;
-SIGNAL \SW[5]~input_o\ : std_logic;
-SIGNAL \SW[4]~input_o\ : std_logic;
-SIGNAL \SW[3]~input_o\ : std_logic;
-SIGNAL \SW[2]~input_o\ : std_logic;
-SIGNAL \SW[1]~input_o\ : std_logic;
-SIGNAL \SW[0]~input_o\ : std_logic;
+SIGNAL \sipIn[9]~input_o\ : std_logic;
+SIGNAL \sipIn[8]~input_o\ : std_logic;
+SIGNAL \sipIn[7]~input_o\ : std_logic;
+SIGNAL \sipIn[6]~input_o\ : std_logic;
+SIGNAL \sipIn[5]~input_o\ : std_logic;
+SIGNAL \sipIn[4]~input_o\ : std_logic;
+SIGNAL \sipIn[3]~input_o\ : std_logic;
+SIGNAL \sipIn[2]~input_o\ : std_logic;
+SIGNAL \sipIn[1]~input_o\ : std_logic;
+SIGNAL \sipIn[0]~input_o\ : std_logic;
 SIGNAL \inst6|dataOut\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst|out_count\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst4|altsyncram_component|auto_generated|q_a\ : std_logic_vector(15 DOWNTO 0);
@@ -2166,100 +2151,6 @@ SIGNAL \inst2|operand\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst8|sip_r\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \inst8|sop\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \inst10|altsyncram_component|auto_generated|rden_decode|w_anode1046w\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a11~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a107~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a75~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a235~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a203~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a171~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a139~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a44~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a12~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a108~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a76~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a236~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a204~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a172~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a140~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a45~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a13~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a109~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a77~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a237~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a205~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a173~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a141~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a46~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a14~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a110~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a78~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a238~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a206~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a174~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a142~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a47~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a15~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a111~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a79~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a239~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a207~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a175~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a143~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a48~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a16~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a112~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a80~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a240~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a208~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a176~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a144~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a49~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a17~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a113~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a81~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a241~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a209~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a177~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a145~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a50~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a18~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a114~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a82~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a242~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a210~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a178~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a146~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a51~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a19~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a115~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a83~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a243~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a211~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a179~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a147~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a52~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a20~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a116~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a84~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a244~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a212~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a180~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a148~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a53~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a21~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a117~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a85~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a245~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a213~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a181~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a149~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a54~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a22~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a118~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a86~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a246~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a214~portadataout\ : std_logic;
-SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a182~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a150~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a55~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a23~portadataout\ : std_logic;
@@ -2947,7 +2838,6 @@ SIGNAL \inst3|ALT_INV_regs[1][15]~q\ : std_logic;
 SIGNAL \inst3|ALT_INV_regs[0][15]~q\ : std_logic;
 SIGNAL \inst7|ALT_INV_alu_opsel\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w0_n0_mux_dataout~1_combout\ : std_logic;
-SIGNAL \inst7|ALT_INV_clr_z_flag~q\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w0_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w1_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w1_n0_mux_dataout~0_combout\ : std_logic;
@@ -2967,6 +2857,7 @@ SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w8_n0_mux_dat
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w8_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w9_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w9_n0_mux_dataout~0_combout\ : std_logic;
+SIGNAL \inst7|ALT_INV_clr_z_flag~q\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w10_n0_mux_dataout~1_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w10_n0_mux_dataout~0_combout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w11_n0_mux_dataout~1_combout\ : std_logic;
@@ -3143,6 +3034,100 @@ SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a202~portad
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a170~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a138~portadataout\ : std_logic;
 SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a43~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a11~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a107~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a75~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a235~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a203~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a171~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a139~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a44~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a12~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a108~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a76~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a236~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a204~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a172~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a140~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a45~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a13~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a109~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a77~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a237~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a205~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a173~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a141~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a46~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a14~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a110~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a78~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a238~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a206~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a174~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a142~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a47~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a15~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a111~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a79~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a239~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a207~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a175~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a143~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a48~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a16~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a112~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a80~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a240~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a208~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a176~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a144~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a49~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a17~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a113~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a81~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a241~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a209~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a177~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a145~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a50~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a18~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a114~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a82~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a242~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a210~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a178~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a146~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a51~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a19~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a115~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a83~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a243~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a211~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a179~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a147~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a52~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a20~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a116~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a84~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a244~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a212~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a180~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a148~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a53~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a21~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a117~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a85~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a245~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a213~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a181~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a149~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a54~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a22~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a118~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a86~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a246~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a214~portadataout\ : std_logic;
+SIGNAL \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a182~portadataout\ : std_logic;
 
 BEGIN
 
@@ -3174,12 +3159,7 @@ sop_wr <= ww_sop_wr;
 alu_output <= ww_alu_output;
 am <= ww_am;
 dpcr <= ww_dpcr;
-ww_SW <= SW;
-LEDR9 <= ww_LEDR9;
-LEDR3 <= ww_LEDR3;
-LEDR2 <= ww_LEDR2;
-LEDR1 <= ww_LEDR1;
-LEDR0 <= ww_LEDR0;
+ww_sipIn <= sipIn;
 operand_out <= ww_operand_out;
 sip_r <= ww_sip_r;
 sop <= ww_sop;
@@ -4579,100 +4559,6 @@ ww_devpor <= devpor;
 \inst6|addrOut\(4) & \inst6|addrOut\(3) & \inst6|addrOut\(2) & \inst6|addrOut\(1) & \inst6|addrOut\(0));
 
 \inst4|altsyncram_component|auto_generated|q_a\(0) <= \inst4|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus\(0);
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a11~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a11~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a107~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a107~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a75~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a75~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a235~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a235~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a203~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a203~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a171~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a171~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a139~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a139~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a44~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a44~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a12~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a12~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a108~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a108~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a76~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a76~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a236~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a236~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a204~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a204~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a172~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a172~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a140~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a140~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a45~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a45~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a13~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a13~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a109~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a109~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a77~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a77~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a237~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a237~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a205~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a205~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a173~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a173~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a141~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a141~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a46~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a46~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a14~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a14~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a110~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a110~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a78~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a78~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a238~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a238~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a206~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a206~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a174~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a174~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a142~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a142~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a47~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a47~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a15~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a15~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a111~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a111~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a79~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a79~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a239~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a239~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a207~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a207~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a175~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a175~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a143~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a143~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a48~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a48~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a16~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a16~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a112~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a112~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a80~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a80~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a240~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a240~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a208~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a208~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a176~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a176~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a144~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a144~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a49~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a49~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a17~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a17~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a113~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a113~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a81~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a81~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a241~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a241~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a209~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a209~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a177~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a177~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a145~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a145~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a50~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a50~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a18~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a18~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a114~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a114~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a82~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a82~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a242~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a242~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a210~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a210~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a178~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a178~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a146~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a146~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a51~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a51~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a19~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a19~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a115~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a115~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a83~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a83~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a243~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a243~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a211~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a211~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a179~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a179~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a147~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a147~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a52~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a52~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a20~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a20~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a116~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a116~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a84~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a84~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a244~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a244~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a212~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a212~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a180~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a180~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a148~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a148~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a53~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a53~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a21~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a21~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a117~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a117~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a85~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a85~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a245~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a245~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a213~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a213~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a181~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a181~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a149~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a149~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a54~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a54~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a22~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a22~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a118~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a118~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a86~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a86~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a246~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a246~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a214~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a214~portadataout\;
-\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a182~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a182~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a150~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a150~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a55~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a55~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a23~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a23~portadataout\;
@@ -5412,7 +5298,6 @@ ww_devpor <= devpor;
 \inst7|ALT_INV_alu_opsel\(5) <= NOT \inst7|alu_opsel\(5);
 \inst7|ALT_INV_alu_opsel\(6) <= NOT \inst7|alu_opsel\(6);
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w0_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w0_n0_mux_dataout~1_combout\;
-\inst7|ALT_INV_clr_z_flag~q\ <= NOT \inst7|clr_z_flag~q\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w0_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w0_n0_mux_dataout~0_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w1_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w1_n0_mux_dataout~1_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w1_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w1_n0_mux_dataout~0_combout\;
@@ -5432,6 +5317,7 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w8_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w8_n0_mux_dataout~0_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w9_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w9_n0_mux_dataout~1_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w9_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w9_n0_mux_dataout~0_combout\;
+\inst7|ALT_INV_clr_z_flag~q\ <= NOT \inst7|clr_z_flag~q\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w10_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w10_n0_mux_dataout~1_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w10_n0_mux_dataout~0_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w10_n0_mux_dataout~0_combout\;
 \inst10|altsyncram_component|auto_generated|mux2|ALT_INV_l3_w11_n0_mux_dataout~1_combout\ <= NOT \inst10|altsyncram_component|auto_generated|mux2|l3_w11_n0_mux_dataout~1_combout\;
@@ -5676,6 +5562,100 @@ ww_devpor <= devpor;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a170~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a170~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a138~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a138~portadataout\;
 \inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a43~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a43~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a11~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a11~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a107~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a107~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a75~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a75~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a235~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a235~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a203~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a203~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a171~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a171~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a139~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a139~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a44~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a44~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a12~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a12~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a108~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a108~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a76~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a76~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a236~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a236~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a204~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a204~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a172~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a172~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a140~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a140~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a45~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a45~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a13~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a13~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a109~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a109~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a77~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a77~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a237~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a237~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a205~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a205~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a173~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a173~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a141~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a141~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a46~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a46~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a14~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a14~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a110~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a110~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a78~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a78~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a238~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a238~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a206~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a206~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a174~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a174~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a142~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a142~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a47~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a47~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a15~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a15~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a111~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a111~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a79~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a79~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a239~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a239~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a207~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a207~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a175~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a175~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a143~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a143~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a48~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a48~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a16~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a16~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a112~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a112~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a80~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a80~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a240~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a240~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a208~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a208~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a176~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a176~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a144~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a144~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a49~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a49~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a17~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a17~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a113~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a113~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a81~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a81~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a241~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a241~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a209~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a209~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a177~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a177~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a145~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a145~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a50~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a50~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a18~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a18~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a114~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a114~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a82~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a82~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a242~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a242~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a210~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a210~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a178~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a178~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a146~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a146~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a51~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a51~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a19~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a19~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a115~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a115~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a83~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a83~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a243~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a243~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a211~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a211~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a179~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a179~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a147~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a147~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a52~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a52~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a20~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a20~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a116~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a116~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a84~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a84~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a244~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a244~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a212~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a212~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a180~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a180~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a148~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a148~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a53~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a53~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a21~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a21~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a117~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a117~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a85~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a85~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a245~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a245~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a213~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a213~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a181~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a181~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a149~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a149~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a54~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a54~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a22~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a22~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a118~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a118~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a86~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a86~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a246~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a246~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a214~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a214~portadataout\;
+\inst10|altsyncram_component|auto_generated|ALT_INV_ram_block1a182~portadataout\ <= NOT \inst10|altsyncram_component|auto_generated|ram_block1a182~portadataout\;
 
 \rf_init~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -7992,66 +7972,6 @@ PORT MAP (
 	i => \inst8|dpcr\(0),
 	devoe => ww_devoe,
 	o => \dpcr[0]~output_o\);
-
-\LEDR9~output\ : cyclonev_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false",
-	shift_series_termination_control => "false")
--- pragma translate_on
-PORT MAP (
-	i => \clk50~input_o\,
-	devoe => ww_devoe,
-	o => \LEDR9~output_o\);
-
-\LEDR3~output\ : cyclonev_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false",
-	shift_series_termination_control => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst7|stateOut\(3),
-	devoe => ww_devoe,
-	o => \LEDR3~output_o\);
-
-\LEDR2~output\ : cyclonev_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false",
-	shift_series_termination_control => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst7|stateOut\(2),
-	devoe => ww_devoe,
-	o => \LEDR2~output_o\);
-
-\LEDR1~output\ : cyclonev_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false",
-	shift_series_termination_control => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst7|stateOut\(1),
-	devoe => ww_devoe,
-	o => \LEDR1~output_o\);
-
-\LEDR0~output\ : cyclonev_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false",
-	shift_series_termination_control => "false")
--- pragma translate_on
-PORT MAP (
-	i => \inst7|stateOut\(0),
-	devoe => ww_devoe,
-	o => \LEDR0~output_o\);
 
 \operand_out[15]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -37957,15 +37877,15 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst8|dpcr\(0));
 
-\SW[9]~input\ : cyclonev_io_ibuf
+\sipIn[9]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(9),
-	o => \SW[9]~input_o\);
+	i => ww_sipIn(9),
+	o => \sipIn[9]~input_o\);
 
 \inst8|sip_r[9]\ : dffeas
 -- pragma translate_off
@@ -37975,21 +37895,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[9]~input_o\,
+	d => \sipIn[9]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(9));
 
-\SW[8]~input\ : cyclonev_io_ibuf
+\sipIn[8]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(8),
-	o => \SW[8]~input_o\);
+	i => ww_sipIn(8),
+	o => \sipIn[8]~input_o\);
 
 \inst8|sip_r[8]\ : dffeas
 -- pragma translate_off
@@ -37999,21 +37919,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[8]~input_o\,
+	d => \sipIn[8]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(8));
 
-\SW[7]~input\ : cyclonev_io_ibuf
+\sipIn[7]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(7),
-	o => \SW[7]~input_o\);
+	i => ww_sipIn(7),
+	o => \sipIn[7]~input_o\);
 
 \inst8|sip_r[7]\ : dffeas
 -- pragma translate_off
@@ -38023,21 +37943,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[7]~input_o\,
+	d => \sipIn[7]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(7));
 
-\SW[6]~input\ : cyclonev_io_ibuf
+\sipIn[6]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(6),
-	o => \SW[6]~input_o\);
+	i => ww_sipIn(6),
+	o => \sipIn[6]~input_o\);
 
 \inst8|sip_r[6]\ : dffeas
 -- pragma translate_off
@@ -38047,21 +37967,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[6]~input_o\,
+	d => \sipIn[6]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(6));
 
-\SW[5]~input\ : cyclonev_io_ibuf
+\sipIn[5]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(5),
-	o => \SW[5]~input_o\);
+	i => ww_sipIn(5),
+	o => \sipIn[5]~input_o\);
 
 \inst8|sip_r[5]\ : dffeas
 -- pragma translate_off
@@ -38071,21 +37991,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[5]~input_o\,
+	d => \sipIn[5]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(5));
 
-\SW[4]~input\ : cyclonev_io_ibuf
+\sipIn[4]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(4),
-	o => \SW[4]~input_o\);
+	i => ww_sipIn(4),
+	o => \sipIn[4]~input_o\);
 
 \inst8|sip_r[4]\ : dffeas
 -- pragma translate_off
@@ -38095,21 +38015,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[4]~input_o\,
+	d => \sipIn[4]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(4));
 
-\SW[3]~input\ : cyclonev_io_ibuf
+\sipIn[3]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(3),
-	o => \SW[3]~input_o\);
+	i => ww_sipIn(3),
+	o => \sipIn[3]~input_o\);
 
 \inst8|sip_r[3]\ : dffeas
 -- pragma translate_off
@@ -38119,21 +38039,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[3]~input_o\,
+	d => \sipIn[3]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(3));
 
-\SW[2]~input\ : cyclonev_io_ibuf
+\sipIn[2]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(2),
-	o => \SW[2]~input_o\);
+	i => ww_sipIn(2),
+	o => \sipIn[2]~input_o\);
 
 \inst8|sip_r[2]\ : dffeas
 -- pragma translate_off
@@ -38143,21 +38063,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[2]~input_o\,
+	d => \sipIn[2]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(2));
 
-\SW[1]~input\ : cyclonev_io_ibuf
+\sipIn[1]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(1),
-	o => \SW[1]~input_o\);
+	i => ww_sipIn(1),
+	o => \sipIn[1]~input_o\);
 
 \inst8|sip_r[1]\ : dffeas
 -- pragma translate_off
@@ -38167,21 +38087,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[1]~input_o\,
+	d => \sipIn[1]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst8|sip_r\(1));
 
-\SW[0]~input\ : cyclonev_io_ibuf
+\sipIn[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_SW(0),
-	o => \SW[0]~input_o\);
+	i => ww_sipIn(0),
+	o => \sipIn[0]~input_o\);
 
 \inst8|sip_r[0]\ : dffeas
 -- pragma translate_off
@@ -38191,7 +38111,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk50~input_o\,
-	d => \SW[0]~input_o\,
+	d => \sipIn[0]~input_o\,
 	clrn => \ALT_INV_reset~input_o\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -38822,16 +38742,6 @@ ww_dpcr(2) <= \dpcr[2]~output_o\;
 ww_dpcr(1) <= \dpcr[1]~output_o\;
 
 ww_dpcr(0) <= \dpcr[0]~output_o\;
-
-ww_LEDR9 <= \LEDR9~output_o\;
-
-ww_LEDR3 <= \LEDR3~output_o\;
-
-ww_LEDR2 <= \LEDR2~output_o\;
-
-ww_LEDR1 <= \LEDR1~output_o\;
-
-ww_LEDR0 <= \LEDR0~output_o\;
 
 ww_operand_out(15) <= \operand_out[15]~output_o\;
 

@@ -768,26 +768,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDR9",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR3",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR2",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR1",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR0",
-					"strict" : false
-				},
-				{
 					"name" : "operand_out[15]",
 					"strict" : false
 				},
@@ -1028,43 +1008,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
+					"name" : "sipIn[9]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[8]",
+					"name" : "sipIn[8]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[7]",
+					"name" : "sipIn[7]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[6]",
+					"name" : "sipIn[6]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[5]",
+					"name" : "sipIn[5]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[4]",
+					"name" : "sipIn[4]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[3]",
+					"name" : "sipIn[3]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
+					"name" : "sipIn[2]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
+					"name" : "sipIn[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "sipIn[0]",
 					"strict" : false
 				}
 			]

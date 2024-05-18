@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 520 568 688 584)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[9..0]" (rect 5 0 48 12)(font "Arial" ))
+	(text "sipIn[9..0]" (rect 5 0 55 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -66,7 +66,6 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 448 584 520 800))
 )
 (pin
 	(output)
@@ -534,23 +533,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 3128 -208 3304 -192)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "LEDR[9]" (rect 90 0 132 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 3304 -232 3368 -192))
-)
-(pin
-	(output)
 	(rect 1056 472 1232 488)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "sip_r[9..0]" (rect 90 0 139 12)(font "Arial" ))
@@ -564,23 +546,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-)
-(pin
-	(output)
-	(rect 3128 -144 3304 -128)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "LEDR[3..0]" (rect 90 0 145 12)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-	(annotation_block (location)(rect 3304 -128 3368 -32))
 )
 (symbol
 	(rect 784 168 1032 376)
@@ -2324,11 +2289,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "clk" (rect 3088 -216 3102 -199)(font "Intel Clear" ))
-	(pt 3128 -200)
-	(pt 3080 -200)
-)
-(connector
 	(pt 1032 496)
 	(pt 1032 520)
 	(bus)
@@ -2353,12 +2313,6 @@ refer to the applicable agreement for further details.
 	(text "sip_r[9..0]" (rect 1068 480 1114 497)(font "Intel Clear" ))
 	(pt 1048 496)
 	(pt 1072 496)
-	(bus)
-)
-(connector
-	(text "state[3..0]" (rect 3072 -152 3119 -135)(font "Intel Clear" ))
-	(pt 3128 -136)
-	(pt 3064 -136)
 	(bus)
 )
 (connector
