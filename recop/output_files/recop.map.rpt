@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sat May 18 18:57:44 2024
+Sat May 18 19:22:37 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -221,7 +221,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 18 18:57:44 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 18 19:22:37 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; top_level_block                             ;
@@ -5985,7 +5985,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat May 18 18:56:51 2024
+    Info: Processing started: Sat May 18 19:21:44 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -6393,7 +6393,7 @@ Warning (12001): Port "address_a[14]" does not exist in entity definition of "al
 Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "recop:inst1|data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12020): Port "jdo" on the entity instantiation of "the_NOC_cpu_cpu_nios2_oci_itrace" is connected to a signal of width 38. The formal width of the signal in the module is 16.  The extra bits will be ignored. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/NOC/synthesis/submodules/NOC_cpu_cpu.v Line: 3216
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.05.18.18:57:20 Progress: Loading sld80a31ca0/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.05.18.19:22:13 Progress: Loading sld80a31ca0/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -6436,10 +6436,10 @@ Info (21057): Implemented 4558 device resources after synthesis - the final reso
     Info (21064): Implemented 519 RAM segments
     Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 5073 megabytes
-    Info: Processing ended: Sat May 18 18:57:44 2024
+    Info: Peak virtual memory: 5084 megabytes
+    Info: Processing ended: Sat May 18 19:22:37 2024
     Info: Elapsed time: 00:00:53
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +------------------------------------------+
