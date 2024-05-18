@@ -524,70 +524,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sip_r[15]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[14]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[13]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[12]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[11]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[10]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[9]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[8]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[7]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[0]",
-					"strict" : false
-				},
-				{
 					"name" : "dpcr_wr",
 					"strict" : false
 				},
@@ -1029,30 +965,6 @@
 				},
 				{
 					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "sip[15]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[14]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[13]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[12]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[11]",
-					"strict" : false
-				},
-				{
-					"name" : "sip[10]",
 					"strict" : false
 				},
 				{
