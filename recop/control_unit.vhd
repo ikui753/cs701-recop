@@ -60,7 +60,7 @@ architecture behavioral of control_unit is
 			
 		if rising_edge(clk) then
 			if reset = '1' then
-				nextState <= idle;
+				nextState <= decode;
 				increment <= "1000"; -- set PC to 0
 				rf_init <= '1'; -- clear all registers
 				stateOut <= "0001";

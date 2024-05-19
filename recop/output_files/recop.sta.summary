@@ -3,32 +3,32 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -7.551
-TNS   : -6346.933
+Slack : -8.248
+TNS   : -6191.826
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.359
+Slack : 0.332
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -6914.797
+TNS   : -6910.270
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -7.476
-TNS   : -6138.976
+Slack : -8.054
+TNS   : -5987.786
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.330
+Slack : 0.310
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -6923.674
+TNS   : -6917.633
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -4.279
-TNS   : -3056.897
+Slack : -4.770
+TNS   : -2967.958
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
 Slack : 0.182
@@ -36,18 +36,18 @@ TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -6695.681
+TNS   : -6694.475
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -3.793
-TNS   : -2532.411
+Slack : -4.190
+TNS   : -2461.758
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.176
+Slack : 0.172
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.174
-TNS   : -6699.521
+TNS   : -6698.424
 
 ------------------------------------------------------------
