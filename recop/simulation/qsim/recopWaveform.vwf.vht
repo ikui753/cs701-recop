@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/19/2024 13:29:47"
+-- Generated on "05/19/2024 13:42:33"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          recop
 -- 
@@ -37,10 +37,11 @@ SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL increment : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL instruction : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL LEDR : STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL pc_count : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rxData : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL rzData : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL sip_r : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL sop : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT recop
@@ -49,10 +50,11 @@ COMPONENT recop
 	increment : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 	pc_count : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rxData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	rzData : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	sip_r : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 	sop : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
@@ -69,6 +71,7 @@ BEGIN
 	pc_count => pc_count,
 	rxData => rxData,
 	rzData => rzData,
+	sip_r => sip_r,
 	sop => sop,
 	SW => SW
 	);

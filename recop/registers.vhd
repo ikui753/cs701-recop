@@ -113,9 +113,9 @@ architecture beh of registers is
 	-- sip
 	process (clk, reset)
 	begin
-		if reset = '1' then
-			sip_r <= "0000000000";
-		elsif rising_edge(clk) then 
+--		if reset = '1' then
+--			sip_r <= "0000000000";
+		if rising_edge(clk) then 
 		-- register the sip signal with the system's clock
 			sip_r <= sip;
 		end if;
