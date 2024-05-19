@@ -4,7 +4,207 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "clk",
+					"name" : "increment[3]",
+					"strict" : false
+				},
+				{
+					"name" : "increment[2]",
+					"strict" : false
+				},
+				{
+					"name" : "increment[0]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[31]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[30]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[29]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[28]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[27]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[26]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[25]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[24]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[23]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[22]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[21]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[20]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[19]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[18]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[17]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[16]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[15]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[14]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[13]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[12]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[11]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[10]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[9]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[8]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[7]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[6]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[5]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[4]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[3]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[2]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[1]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[14]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_count[0]",
 					"strict" : false
 				},
 				{
@@ -72,30 +272,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "opcode[5]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[4]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[3]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[2]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[1]",
-					"strict" : false
-				},
-				{
-					"name" : "opcode[0]",
-					"strict" : false
-				},
-				{
 					"name" : "rzData[15]",
 					"strict" : false
 				},
@@ -160,34 +336,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "state[3]",
-					"strict" : false
-				},
-				{
-					"name" : "state[2]",
-					"strict" : false
-				},
-				{
-					"name" : "state[1]",
-					"strict" : false
-				},
-				{
-					"name" : "state[0]",
-					"strict" : false
-				},
-				{
-					"name" : "am[1]",
-					"strict" : false
-				},
-				{
-					"name" : "am[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[9]",
-					"strict" : false
-				},
-				{
 					"name" : "LEDR[8]",
 					"strict" : false
 				},
@@ -224,71 +372,75 @@
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[15]",
+					"name" : "sop[15]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[14]",
+					"name" : "sop[14]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[13]",
+					"name" : "sop[13]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[12]",
+					"name" : "sop[12]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[11]",
+					"name" : "sop[11]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[10]",
+					"name" : "sop[10]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[9]",
+					"name" : "sop[9]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[8]",
+					"name" : "sop[8]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[7]",
+					"name" : "sop[7]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[6]",
+					"name" : "sop[6]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[5]",
+					"name" : "sop[5]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[4]",
+					"name" : "sop[4]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[3]",
+					"name" : "sop[3]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[2]",
+					"name" : "sop[2]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[1]",
+					"name" : "sop[1]",
 					"strict" : false
 				},
 				{
-					"name" : "operand_out[0]",
+					"name" : "sop[0]",
 					"strict" : false
 				},
 				{
 					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
@@ -329,10 +481,6 @@
 				},
 				{
 					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[0]",
 					"strict" : false
 				}
 			]
