@@ -336,46 +336,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sip_r[9]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[8]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[7]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sip_r[0]",
-					"strict" : false
-				},
-				{
 					"name" : "LEDR[9]",
 					"strict" : false
 				},

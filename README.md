@@ -14,8 +14,7 @@ Notes:
 # Demoing FPGA Implementation
 ## Outputs
 - SOP will be indicated by LEDs. 
-- SOP_WR will be indicated by an LED.
-- DPCR_WR will be indicated by an LED.
+
 - DPCR[19..0] will be indicated via display
 
 ## Inputs
