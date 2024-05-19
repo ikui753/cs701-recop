@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun May 19 14:39:40 2024
+Sun May 19 15:58:46 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,7 +14,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |recop|control_unit:inst7|nextState
+  9. State Machine - |recopTest|control_unit:inst7|nextState
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Inverted Register Statistics
@@ -52,14 +52,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 19 14:39:40 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 19 15:58:46 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
-; Top-level Entity Name           ; recop                                       ;
+; Top-level Entity Name           ; recopTest                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 448                                         ;
-; Total pins                      ; 125                                         ;
+; Total registers                 ; 484                                         ;
+; Total pins                      ; 259                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,114,112                                   ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; recop              ; recop              ;
+; Top-level entity name                                                           ; recopTest          ; recop              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -185,7 +185,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                      ; Library ;
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
-; recop.bdf                        ; yes             ; User Block Diagram/Schematic File      ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop.bdf              ;         ;
+; recopTest.bdf                    ; yes             ; User Block Diagram/Schematic File      ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recopTest.bdf          ;         ;
 ; control_unit.vhd                 ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd       ;         ;
 ; various_constants.vhd            ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/various_constants.vhd  ;         ;
 ; registers.vhd                    ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd          ;         ;
@@ -215,57 +215,57 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 476            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 608            ;
-;     -- 7 input functions                    ; 2              ;
-;     -- 6 input functions                    ; 309            ;
-;     -- 5 input functions                    ; 119            ;
-;     -- 4 input functions                    ; 39             ;
-;     -- <=3 input functions                  ; 139            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 448            ;
-;                                             ;                ;
-; I/O pins                                    ; 125            ;
-; Total MLAB memory bits                      ; 0              ;
-; Total block memory bits                     ; 1114112        ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 720            ;
-; Total fan-out                               ; 8430           ;
-; Average fan-out                             ; 5.34           ;
-+---------------------------------------------+----------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 499         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 631         ;
+;     -- 7 input functions                    ; 3           ;
+;     -- 6 input functions                    ; 315         ;
+;     -- 5 input functions                    ; 122         ;
+;     -- 4 input functions                    ; 48          ;
+;     -- <=3 input functions                  ; 143         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 484         ;
+;                                             ;             ;
+; I/O pins                                    ; 259         ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 1114112     ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk50~input ;
+; Maximum fan-out                             ; 757         ;
+; Total fan-out                               ; 9265        ;
+; Average fan-out                             ; 4.86        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |recop                                    ; 608 (0)             ; 448 (0)                   ; 1114112           ; 0          ; 125  ; 0            ; |recop                                                                                                       ; recop           ; work         ;
-;    |alu:inst9|                            ; 105 (105)           ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|alu:inst9                                                                                             ; alu             ; work         ;
-;    |control_unit:inst7|                   ; 112 (112)           ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|control_unit:inst7                                                                                    ; control_unit    ; work         ;
-;    |dataAddrMux:inst6|                    ; 35 (35)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|dataAddrMux:inst6                                                                                     ; dataAddrMux     ; work         ;
-;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recop|data_mem:inst4                                                                                        ; data_mem        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recop|data_mem:inst4|altsyncram:altsyncram_component                                                        ; altsyncram      ; work         ;
-;          |altsyncram_q6j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recop|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated                         ; altsyncram_q6j1 ; work         ;
-;    |instruction_reg:inst2|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|instruction_reg:inst2                                                                                 ; instruction_reg ; work         ;
-;    |prog_mem:inst10|                      ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |recop|prog_mem:inst10                                                                                       ; prog_mem        ; work         ;
-;       |altsyncram:altsyncram_component|   ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |recop|prog_mem:inst10|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
-;          |altsyncram_dti1:auto_generated| ; 104 (0)             ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated                        ; altsyncram_dti1 ; work         ;
-;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
-;             |mux_ahb:mux2|                ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2           ; mux_ahb         ; work         ;
-;    |program_counter:inst|                 ; 34 (34)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|program_counter:inst                                                                                  ; program_counter ; work         ;
-;    |regfile:inst3|                        ; 218 (218)           ; 272 (272)                 ; 0                 ; 0          ; 0    ; 0            ; |recop|regfile:inst3                                                                                         ; regfile         ; work         ;
-;    |registers:inst8|                      ; 0 (0)               ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |recop|registers:inst8                                                                                       ; registers       ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                    ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |recopTest                                ; 631 (0)             ; 484 (0)                   ; 1114112           ; 0          ; 259  ; 0            ; |recopTest                                                                                                       ; recopTest       ; work         ;
+;    |alu:inst9|                            ; 105 (105)           ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |recopTest|alu:inst9                                                                                             ; alu             ; work         ;
+;    |control_unit:inst7|                   ; 134 (134)           ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |recopTest|control_unit:inst7                                                                                    ; control_unit    ; work         ;
+;    |dataAddrMux:inst6|                    ; 35 (35)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |recopTest|dataAddrMux:inst6                                                                                     ; dataAddrMux     ; work         ;
+;    |data_mem:inst4|                       ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recopTest|data_mem:inst4                                                                                        ; data_mem        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recopTest|data_mem:inst4|altsyncram:altsyncram_component                                                        ; altsyncram      ; work         ;
+;          |altsyncram_q6j1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536             ; 0          ; 0    ; 0            ; |recopTest|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated                         ; altsyncram_q6j1 ; work         ;
+;    |instruction_reg:inst2|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |recopTest|instruction_reg:inst2                                                                                 ; instruction_reg ; work         ;
+;    |prog_mem:inst10|                      ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |recopTest|prog_mem:inst10                                                                                       ; prog_mem        ; work         ;
+;       |altsyncram:altsyncram_component|   ; 104 (0)             ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |recopTest|prog_mem:inst10|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_dti1:auto_generated| ; 104 (0)             ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated                        ; altsyncram_dti1 ; work         ;
+;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode ; decode_61a      ; work         ;
+;             |mux_ahb:mux2|                ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2           ; mux_ahb         ; work         ;
+;    |program_counter:inst|                 ; 35 (35)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |recopTest|program_counter:inst                                                                                  ; program_counter ; work         ;
+;    |regfile:inst3|                        ; 218 (218)           ; 272 (272)                 ; 0                 ; 0          ; 0    ; 0            ; |recopTest|regfile:inst3                                                                                         ; regfile         ; work         ;
+;    |registers:inst8|                      ; 0 (0)               ; 58 (58)                   ; 0                 ; 0          ; 0    ; 0            ; |recopTest|registers:inst8                                                                                       ; registers       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -281,7 +281,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |recop|control_unit:inst7|nextState                                                                                                                                                                                                                                                                                                         ;
+; State Machine - |recopTest|control_unit:inst7|nextState                                                                                                                                                                                                                                                                                                     ;
 +--------------------------+---------------------+-----------------------+----------------------+--------------------------+-------------------------+---------------------+---------------------+----------------------+--------------------+-------------------+-------------------+----------------+------------------+-----------------+------------------+
 ; Name                     ; nextState.writeData ; nextState.getMemData2 ; nextState.getMemData ; nextState.storeAluResult ; nextState.loadAluResult ; nextState.execution ; nextState.storeData ; nextState.delayStore ; nextState.selStore ; nextState.decode3 ; nextState.decode2 ; nextState.idle ; nextState.fetch2 ; nextState.fetch ; nextState.decode ;
 +--------------------------+---------------------+-----------------------+----------------------+--------------------------+-------------------------+---------------------+---------------------+----------------------+--------------------+-------------------+-------------------+----------------+------------------+-----------------+------------------+
@@ -308,13 +308,12 @@ Encoding Type:  One-Hot
 +-----------------------------------------+----------------------------------------+
 ; Register name                           ; Reason for Removal                     ;
 +-----------------------------------------+----------------------------------------+
-; control_unit:inst7|rf_init              ; Stuck at GND due to stuck port data_in ;
-; control_unit:inst7|increment[1]         ; Stuck at GND due to stuck port data_in ;
 ; control_unit:inst7|alu_opsel[1]         ; Stuck at GND due to stuck port data_in ;
+; control_unit:inst7|increment[1]         ; Stuck at GND due to stuck port data_in ;
 ; control_unit:inst7|nextState.fetch2     ; Lost fanout                            ;
+; control_unit:inst7|nextState.idle       ; Lost fanout                            ;
 ; control_unit:inst7|nextState.delayStore ; Lost fanout                            ;
-; control_unit:inst7|nextState.idle       ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 6   ;                                        ;
+; Total Number of Removed Registers = 5   ;                                        ;
 +-----------------------------------------+----------------------------------------+
 
 
@@ -323,12 +322,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 448   ;
-; Number of registers using Synchronous Clear  ; 43    ;
-; Number of registers using Synchronous Load   ; 39    ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 484   ;
+; Number of registers using Synchronous Clear  ; 50    ;
+; Number of registers using Synchronous Load   ; 57    ;
+; Number of registers using Asynchronous Clear ; 314   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 338   ;
+; Number of registers using Clock Enable       ; 378   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -338,35 +337,35 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; control_unit:inst7|increment[3]        ; 19      ;
+; control_unit:inst7|increment[3]        ; 4       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |recop|dataAddrMux:inst6|dataOut[11]                                                                                     ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |recop|dataAddrMux:inst6|addrOut[10]                                                                                     ;
-; 16:1               ; 6 bits    ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |recop|regfile:inst3|data_input_z[12]                                                                                    ;
-; 16:1               ; 10 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |recop|regfile:inst3|data_input_z[0]                                                                                     ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |recop|alu:inst9|result[4]                                                                                               ;
-; 18:1               ; 16 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |recop|program_counter:inst|out_count[4]                                                                                 ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 28 LEs               ; 56 LEs                 ; Yes        ; |recop|control_unit:inst7|alu_opsel[6]                                                                                   ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 34 LEs               ; 54 LEs                 ; Yes        ; |recop|control_unit:inst7|alu_opsel[5]                                                                                   ;
-; 66:1               ; 2 bits    ; 88 LEs        ; 36 LEs               ; 52 LEs                 ; Yes        ; |recop|control_unit:inst7|alu_opsel[2]                                                                                   ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |recop|control_unit:inst7|increment[2]                                                                                   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recop|alu:inst9|Mux9                                                                                                    ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recop|alu:inst9|Mux31                                                                                                   ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recop|regfile:inst3|Mux25                                                                                               ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recop|regfile:inst3|Mux32                                                                                               ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2|l3_w15_n0_mux_dataout ;
-; 66:1               ; 9 bits    ; 396 LEs       ; 81 LEs               ; 315 LEs                ; No         ; |recop|control_unit:inst7|nextState                                                                                      ;
-; 67:1               ; 3 bits    ; 132 LEs       ; 30 LEs               ; 102 LEs                ; No         ; |recop|control_unit:inst7|nextState                                                                                      ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 24 LEs               ; 64 LEs                 ; No         ; |recop|control_unit:inst7|nextState                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |recopTest|dataAddrMux:inst6|addrOut[5]                                                                                     ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |recopTest|dataAddrMux:inst6|dataOut[15]                                                                                    ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |recopTest|regfile:inst3|data_input_z[14]                                                                                   ;
+; 16:1               ; 10 bits   ; 100 LEs       ; 20 LEs               ; 80 LEs                 ; Yes        ; |recopTest|regfile:inst3|data_input_z[4]                                                                                    ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |recopTest|alu:inst9|result[14]                                                                                             ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 28 LEs               ; 56 LEs                 ; Yes        ; |recopTest|control_unit:inst7|alu_opsel[6]                                                                                  ;
+; 19:1               ; 16 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |recopTest|program_counter:inst|out_count[13]                                                                               ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 36 LEs               ; 52 LEs                 ; Yes        ; |recopTest|control_unit:inst7|alu_opsel[2]                                                                                  ;
+; 66:1               ; 2 bits    ; 88 LEs        ; 34 LEs               ; 54 LEs                 ; Yes        ; |recopTest|control_unit:inst7|alu_opsel[5]                                                                                  ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 10 LEs               ; 6 LEs                  ; Yes        ; |recopTest|control_unit:inst7|increment[2]                                                                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recopTest|alu:inst9|Mux2                                                                                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |recopTest|alu:inst9|Mux31                                                                                                  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recopTest|regfile:inst3|Mux24                                                                                              ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recopTest|regfile:inst3|Mux35                                                                                              ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2|l3_w3_n0_mux_dataout ;
+; 67:1               ; 9 bits    ; 396 LEs       ; 90 LEs               ; 306 LEs                ; No         ; |recopTest|control_unit:inst7|nextState                                                                                     ;
+; 68:1               ; 3 bits    ; 135 LEs       ; 33 LEs               ; 102 LEs                ; No         ; |recopTest|control_unit:inst7|nextState                                                                                     ;
+; 68:1               ; 2 bits    ; 90 LEs        ; 24 LEs               ; 66 LEs                 ; No         ; |recopTest|control_unit:inst7|nextState                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -545,32 +544,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 448                         ;
-;     ENA               ; 282                         ;
+; arriav_ff             ; 484                         ;
+;     CLR               ; 10                          ;
+;     ENA               ; 18                          ;
+;     ENA CLR           ; 288                         ;
+;     ENA CLR SLD       ; 16                          ;
 ;     ENA SCLR          ; 17                          ;
-;     ENA SCLR SLD      ; 10                          ;
-;     ENA SLD           ; 29                          ;
-;     SCLR              ; 16                          ;
-;     plain             ; 94                          ;
-; arriav_lcell_comb     ; 610                         ;
+;     ENA SCLR SLD      ; 11                          ;
+;     ENA SLD           ; 28                          ;
+;     SCLR              ; 22                          ;
+;     SLD               ; 2                           ;
+;     plain             ; 72                          ;
+; arriav_lcell_comb     ; 633                         ;
 ;     arith             ; 33                          ;
 ;         1 data inputs ; 17                          ;
 ;         5 data inputs ; 16                          ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 575                         ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 597                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 109                         ;
-;         4 data inputs ; 39                          ;
-;         5 data inputs ; 103                         ;
-;         6 data inputs ; 309                         ;
-; boundary_port         ; 125                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 110                         ;
+;         4 data inputs ; 48                          ;
+;         5 data inputs ; 106                         ;
+;         6 data inputs ; 315                         ;
+; boundary_port         ; 259                         ;
 ; stratixv_ram_block    ; 272                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.40                        ;
-; Average LUT depth     ; 3.98                        ;
+; Average LUT depth     ; 3.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -589,10 +592,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 19 14:39:26 2024
+    Info: Processing started: Sun May 19 15:58:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file recoptest.bdf
+    Info (12023): Found entity 1: recopTest
 Info (12021): Found 1 design units, including 1 entities, in source file recop.bdf
     Info (12023): Found entity 1: recop
 Info (12021): Found 2 design units, including 1 entities, in source file control_unit.vhd
@@ -645,8 +650,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file datapat
 Info (12021): Found 2 design units, including 1 entities, in source file dataaddrmux.vhd
     Info (12022): Found design unit 1: dataAddrMux-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 32
     Info (12023): Found entity 1: dataAddrMux File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 10
-Info (12127): Elaborating entity "recop" for the top level hierarchy
-Warning (275009): Pin "KEY" not connected
+Info (12127): Elaborating entity "recopTest" for the top level hierarchy
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
 Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
@@ -711,29 +715,50 @@ Info (12128): Elaborating entity "altsyncram_q6j1" for hierarchy "data_mem:inst4
 Info (12128): Elaborating entity "dataAddrMux" for hierarchy "dataAddrMux:inst6"
 Warning (10541): VHDL Signal Declaration warning at dataAddrMux.vhd(27): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 27
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst8"
+Warning (12001): Port "sip[10]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip[11]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip[12]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip[13]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip[14]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip[15]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip_r[10]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip_r[11]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip_r[12]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip_r[13]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip_r[14]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
+Warning (12001): Port "sip_r[15]" does not exist in entity definition of "registers".  The port's range differs between the entity definition and its actual instantiation, "registers:inst8".
 Warning (12001): Port "address_a[12]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[13]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[14]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
+Warning (12001): Port "sip_hold[10]" does not exist in entity definition of "regfile".  The port's range differs between the entity definition and its actual instantiation, "regfile:inst3".
+Warning (12001): Port "sip_hold[11]" does not exist in entity definition of "regfile".  The port's range differs between the entity definition and its actual instantiation, "regfile:inst3".
+Warning (12001): Port "sip_hold[12]" does not exist in entity definition of "regfile".  The port's range differs between the entity definition and its actual instantiation, "regfile:inst3".
+Warning (12001): Port "sip_hold[13]" does not exist in entity definition of "regfile".  The port's range differs between the entity definition and its actual instantiation, "regfile:inst3".
+Warning (12001): Port "sip_hold[14]" does not exist in entity definition of "regfile".  The port's range differs between the entity definition and its actual instantiation, "regfile:inst3".
+Warning (12001): Port "sip_hold[15]" does not exist in entity definition of "regfile".  The port's range differs between the entity definition and its actual instantiation, "regfile:inst3".
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "alu_opsel[1]" is stuck at GND
     Warning (13410): Pin "increment[1]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-    Warning (15610): No output dependent on input pin "KEY[0]"
-Info (21057): Implemented 1343 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 110 output pins
-    Info (21061): Implemented 946 logic cells
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sip[15]"
+    Warning (15610): No output dependent on input pin "sip[14]"
+    Warning (15610): No output dependent on input pin "sip[13]"
+    Warning (15610): No output dependent on input pin "sip[12]"
+    Warning (15610): No output dependent on input pin "sip[11]"
+    Warning (15610): No output dependent on input pin "sip[10]"
+Info (21057): Implemented 1527 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 241 output pins
+    Info (21061): Implemented 996 logic cells
     Info (21064): Implemented 272 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Sun May 19 14:39:40 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 4904 megabytes
+    Info: Processing ended: Sun May 19 15:58:46 2024
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:11
 

@@ -38,37 +38,12 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY recop
+set_global_assignment -name TOP_LEVEL_ENTITY recopTest
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:28:48  MAY 02, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name BOARD "DE1-SoC Board"
-set_global_assignment -name BDF_FILE recop.bdf
-set_global_assignment -name VHDL_FILE control_unit.vhd
-set_global_assignment -name VHDL_FILE various_constants.vhd
-set_global_assignment -name VHDL_FILE registers.vhd
-set_global_assignment -name VHDL_FILE registerfile.vhd
-set_global_assignment -name VHDL_FILE regfile.vhd
-set_global_assignment -name VHDL_FILE recop_types.vhd
-set_global_assignment -name VHDL_FILE recop_pll.vhd
-set_global_assignment -name VHDL_FILE prog_mem.vhd
-set_global_assignment -name VHDL_FILE pll.vhd
-set_global_assignment -name VHDL_FILE opcodes.vhd
-set_global_assignment -name VHDL_FILE memory_model.vhd
-set_global_assignment -name VHDL_FILE memory_arbiter.vhd
-set_global_assignment -name VHDL_FILE data_mem.vhd
-set_global_assignment -name VHDL_FILE ALU.vhd
-set_global_assignment -name VHDL_FILE program_counter.vhd
-set_global_assignment -name VHDL_FILE instruction_reg.vhd
-set_global_assignment -name BDF_FILE datapath.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE PCwaveform.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE controlUnitWaveform.vwf
-set_global_assignment -name VHDL_FILE dataAddrMux.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE recopWaveform.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AJ4 -to ADC_CS_N
 set_location_assignment PIN_AK4 -to ADC_DIN
 set_location_assignment PIN_AK3 -to ADC_DOUT
@@ -327,4 +302,35 @@ set_location_assignment PIN_E12 -to VGA_R[6]
 set_location_assignment PIN_F13 -to VGA_R[7]
 set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_location_assignment PIN_D11 -to VGA_VS
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE recopTestWaveform.vwf
+set_global_assignment -name BDF_FILE recopTest.bdf
+set_global_assignment -name BDF_FILE recop.bdf
+set_global_assignment -name VHDL_FILE control_unit.vhd
+set_global_assignment -name VHDL_FILE various_constants.vhd
+set_global_assignment -name VHDL_FILE registers.vhd
+set_global_assignment -name VHDL_FILE registerfile.vhd
+set_global_assignment -name VHDL_FILE regfile.vhd
+set_global_assignment -name VHDL_FILE recop_types.vhd
+set_global_assignment -name VHDL_FILE recop_pll.vhd
+set_global_assignment -name VHDL_FILE prog_mem.vhd
+set_global_assignment -name VHDL_FILE pll.vhd
+set_global_assignment -name VHDL_FILE opcodes.vhd
+set_global_assignment -name VHDL_FILE memory_model.vhd
+set_global_assignment -name VHDL_FILE memory_arbiter.vhd
+set_global_assignment -name VHDL_FILE data_mem.vhd
+set_global_assignment -name VHDL_FILE ALU.vhd
+set_global_assignment -name VHDL_FILE program_counter.vhd
+set_global_assignment -name VHDL_FILE instruction_reg.vhd
+set_global_assignment -name BDF_FILE datapath.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE PCwaveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE controlUnitWaveform.vwf
+set_global_assignment -name VHDL_FILE dataAddrMux.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE recopWaveform.vwf

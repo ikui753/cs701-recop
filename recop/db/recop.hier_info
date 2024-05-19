@@ -1,17 +1,10 @@
-|recop
-increment[0] <= control_unit:inst7.increment[0]
-increment[1] <= control_unit:inst7.increment[1]
-increment[2] <= control_unit:inst7.increment[2]
-increment[3] <= control_unit:inst7.increment[3]
-CLOCK_50 => control_unit:inst7.clk
-CLOCK_50 => instruction_reg:inst2.clock
-CLOCK_50 => prog_mem:inst10.clock
-CLOCK_50 => program_counter:inst.clock
-CLOCK_50 => alu:inst9.clk
-CLOCK_50 => regfile:inst3.clk
-CLOCK_50 => data_mem:inst4.clock
-CLOCK_50 => dataAddrMux:inst6.clk
-CLOCK_50 => registers:inst8.clk
+|recopTest
+rf_init <= control_unit:inst7.rf_init
+clk50 => control_unit:inst7.clk
+reset => control_unit:inst7.reset
+reset => program_counter:inst.reset
+reset => registers:inst8.reset
+clk <= control_unit:inst7.clkOut
 instruction[0] <= prog_mem:inst10.q[0]
 instruction[1] <= prog_mem:inst10.q[1]
 instruction[2] <= prog_mem:inst10.q[2]
@@ -60,6 +53,14 @@ pc_count[12] <= program_counter:inst.out_count[12]
 pc_count[13] <= program_counter:inst.out_count[13]
 pc_count[14] <= program_counter:inst.out_count[14]
 pc_count[15] <= program_counter:inst.out_count[15]
+clr_z_flag <= control_unit:inst7.clr_z_flag
+alu_opsel[0] <= control_unit:inst7.alu_opsel[0]
+alu_opsel[1] <= control_unit:inst7.alu_opsel[1]
+alu_opsel[2] <= control_unit:inst7.alu_opsel[2]
+alu_opsel[3] <= control_unit:inst7.alu_opsel[3]
+alu_opsel[4] <= control_unit:inst7.alu_opsel[4]
+alu_opsel[5] <= control_unit:inst7.alu_opsel[5]
+alu_opsel[6] <= control_unit:inst7.alu_opsel[6]
 rxData[0] <= regfile:inst3.rx[0]
 rxData[1] <= regfile:inst3.rx[1]
 rxData[2] <= regfile:inst3.rx[2]
@@ -76,6 +77,35 @@ rxData[12] <= regfile:inst3.rx[12]
 rxData[13] <= regfile:inst3.rx[13]
 rxData[14] <= regfile:inst3.rx[14]
 rxData[15] <= regfile:inst3.rx[15]
+ld_r <= control_unit:inst7.ld_r
+memData[0] <= data_mem:inst4.q[0]
+memData[1] <= data_mem:inst4.q[1]
+memData[2] <= data_mem:inst4.q[2]
+memData[3] <= data_mem:inst4.q[3]
+memData[4] <= data_mem:inst4.q[4]
+memData[5] <= data_mem:inst4.q[5]
+memData[6] <= data_mem:inst4.q[6]
+memData[7] <= data_mem:inst4.q[7]
+memData[8] <= data_mem:inst4.q[8]
+memData[9] <= data_mem:inst4.q[9]
+memData[10] <= data_mem:inst4.q[10]
+memData[11] <= data_mem:inst4.q[11]
+memData[12] <= data_mem:inst4.q[12]
+memData[13] <= data_mem:inst4.q[13]
+memData[14] <= data_mem:inst4.q[14]
+memData[15] <= data_mem:inst4.q[15]
+wren <= control_unit:inst7.wren
+alu_z <= alu:inst9.z_flag
+addrSel[0] <= control_unit:inst7.addrSel[0]
+addrSel[1] <= control_unit:inst7.addrSel[1]
+dataSel[0] <= control_unit:inst7.dataSel[0]
+dataSel[1] <= control_unit:inst7.dataSel[1]
+opcode[0] <= instruction_reg:inst2.opcode[0]
+opcode[1] <= instruction_reg:inst2.opcode[1]
+opcode[2] <= instruction_reg:inst2.opcode[2]
+opcode[3] <= instruction_reg:inst2.opcode[3]
+opcode[4] <= instruction_reg:inst2.opcode[4]
+opcode[5] <= instruction_reg:inst2.opcode[5]
 rzData[0] <= regfile:inst3.rz[0]
 rzData[1] <= regfile:inst3.rz[1]
 rzData[2] <= regfile:inst3.rz[2]
@@ -92,26 +122,112 @@ rzData[12] <= regfile:inst3.rz[12]
 rzData[13] <= regfile:inst3.rz[13]
 rzData[14] <= regfile:inst3.rz[14]
 rzData[15] <= regfile:inst3.rz[15]
-SW[0] => registers:inst8.sip[0]
-SW[1] => registers:inst8.sip[1]
-SW[2] => registers:inst8.sip[2]
-SW[3] => registers:inst8.sip[3]
-SW[4] => registers:inst8.sip[4]
-SW[5] => registers:inst8.sip[5]
-SW[6] => registers:inst8.sip[6]
-SW[7] => registers:inst8.sip[7]
-SW[8] => registers:inst8.sip[8]
-SW[9] => registers:inst8.sip[9]
-LEDR[0] <= registers:inst8.sop[0]
-LEDR[1] <= registers:inst8.sop[1]
-LEDR[2] <= registers:inst8.sop[2]
-LEDR[3] <= registers:inst8.sop[3]
-LEDR[4] <= registers:inst8.sop[4]
-LEDR[5] <= registers:inst8.sop[5]
-LEDR[6] <= registers:inst8.sop[6]
-LEDR[7] <= registers:inst8.sop[7]
-LEDR[8] <= registers:inst8.sop[8]
-LEDR[9] <= registers:inst8.sop[9]
+rf_sel[0] <= control_unit:inst7.rf_sel[0]
+rf_sel[1] <= control_unit:inst7.rf_sel[1]
+rf_sel[2] <= control_unit:inst7.rf_sel[2]
+rf_sel[3] <= control_unit:inst7.rf_sel[3]
+rx_sel[0] <= instruction_reg:inst2.rx[0]
+rx_sel[1] <= instruction_reg:inst2.rx[1]
+rx_sel[2] <= instruction_reg:inst2.rx[2]
+rx_sel[3] <= instruction_reg:inst2.rx[3]
+rz_sel[0] <= instruction_reg:inst2.rz[0]
+rz_sel[1] <= instruction_reg:inst2.rz[1]
+rz_sel[2] <= instruction_reg:inst2.rz[2]
+rz_sel[3] <= instruction_reg:inst2.rz[3]
+dpcr_wr <= control_unit:inst7.dpcr_wr
+sop_wr <= control_unit:inst7.sop_wr
+sip[0] => registers:inst8.sip[0]
+sip[1] => registers:inst8.sip[1]
+sip[2] => registers:inst8.sip[2]
+sip[3] => registers:inst8.sip[3]
+sip[4] => registers:inst8.sip[4]
+sip[5] => registers:inst8.sip[5]
+sip[6] => registers:inst8.sip[6]
+sip[7] => registers:inst8.sip[7]
+sip[8] => registers:inst8.sip[8]
+sip[9] => registers:inst8.sip[9]
+sip[10] => registers:inst8.sip[10]
+sip[11] => registers:inst8.sip[11]
+sip[12] => registers:inst8.sip[12]
+sip[13] => registers:inst8.sip[13]
+sip[14] => registers:inst8.sip[14]
+sip[15] => registers:inst8.sip[15]
+increment[0] <= control_unit:inst7.increment[0]
+increment[1] <= control_unit:inst7.increment[1]
+increment[2] <= control_unit:inst7.increment[2]
+increment[3] <= control_unit:inst7.increment[3]
+state[0] <= control_unit:inst7.stateOut[0]
+state[1] <= control_unit:inst7.stateOut[1]
+state[2] <= control_unit:inst7.stateOut[2]
+state[3] <= control_unit:inst7.stateOut[3]
+present_sz_jmp[0] <= dataAddrMux:inst6.present_sz_Jmp[0]
+present_sz_jmp[1] <= dataAddrMux:inst6.present_sz_Jmp[1]
+alu_output[0] <= alu_result[0].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[1] <= alu_result[1].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[2] <= alu_result[2].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[3] <= alu_result[3].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[4] <= alu_result[4].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[5] <= alu_result[5].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[6] <= alu_result[6].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[7] <= alu_result[7].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[8] <= alu_result[8].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[9] <= alu_result[9].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[10] <= alu_result[10].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[11] <= alu_result[11].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[12] <= alu_result[12].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[13] <= alu_result[13].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[14] <= alu_result[14].DB_MAX_OUTPUT_PORT_TYPE
+alu_output[15] <= alu_result[15].DB_MAX_OUTPUT_PORT_TYPE
+am[0] <= instruction_reg:inst2.address_method[0]
+am[1] <= instruction_reg:inst2.address_method[1]
+dpcr[0] <= registers:inst8.dpcr[0]
+dpcr[1] <= registers:inst8.dpcr[1]
+dpcr[2] <= registers:inst8.dpcr[2]
+dpcr[3] <= registers:inst8.dpcr[3]
+dpcr[4] <= registers:inst8.dpcr[4]
+dpcr[5] <= registers:inst8.dpcr[5]
+dpcr[6] <= registers:inst8.dpcr[6]
+dpcr[7] <= registers:inst8.dpcr[7]
+dpcr[8] <= registers:inst8.dpcr[8]
+dpcr[9] <= registers:inst8.dpcr[9]
+dpcr[10] <= registers:inst8.dpcr[10]
+dpcr[11] <= registers:inst8.dpcr[11]
+dpcr[12] <= registers:inst8.dpcr[12]
+dpcr[13] <= registers:inst8.dpcr[13]
+dpcr[14] <= registers:inst8.dpcr[14]
+dpcr[15] <= registers:inst8.dpcr[15]
+dpcr[16] <= registers:inst8.dpcr[16]
+dpcr[17] <= registers:inst8.dpcr[17]
+dpcr[18] <= registers:inst8.dpcr[18]
+dpcr[19] <= registers:inst8.dpcr[19]
+dpcr[20] <= registers:inst8.dpcr[20]
+dpcr[21] <= registers:inst8.dpcr[21]
+dpcr[22] <= registers:inst8.dpcr[22]
+dpcr[23] <= registers:inst8.dpcr[23]
+dpcr[24] <= registers:inst8.dpcr[24]
+dpcr[25] <= registers:inst8.dpcr[25]
+dpcr[26] <= registers:inst8.dpcr[26]
+dpcr[27] <= registers:inst8.dpcr[27]
+dpcr[28] <= registers:inst8.dpcr[28]
+dpcr[29] <= registers:inst8.dpcr[29]
+dpcr[30] <= registers:inst8.dpcr[30]
+dpcr[31] <= registers:inst8.dpcr[31]
+operand_out[0] <= operand[0].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[1] <= operand[1].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[2] <= operand[2].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[3] <= operand[3].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[4] <= operand[4].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[5] <= operand[5].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[6] <= operand[6].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[7] <= operand[7].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[8] <= operand[8].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[9] <= operand[9].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[10] <= operand[10].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[11] <= operand[11].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[12] <= operand[12].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[13] <= operand[13].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[14] <= operand[14].DB_MAX_OUTPUT_PORT_TYPE
+operand_out[15] <= operand[15].DB_MAX_OUTPUT_PORT_TYPE
 sop[0] <= registers:inst8.sop[0]
 sop[1] <= registers:inst8.sop[1]
 sop[2] <= registers:inst8.sop[2]
@@ -128,13 +244,25 @@ sop[12] <= registers:inst8.sop[12]
 sop[13] <= registers:inst8.sop[13]
 sop[14] <= registers:inst8.sop[14]
 sop[15] <= registers:inst8.sop[15]
-KEY[0] => ~NO_FANOUT~
-KEY[1] => ~NO_FANOUT~
-KEY[2] => ~NO_FANOUT~
-KEY[3] => ~NO_FANOUT~
+storedData[0] <= dataAddrMux:inst6.dataOut[0]
+storedData[1] <= dataAddrMux:inst6.dataOut[1]
+storedData[2] <= dataAddrMux:inst6.dataOut[2]
+storedData[3] <= dataAddrMux:inst6.dataOut[3]
+storedData[4] <= dataAddrMux:inst6.dataOut[4]
+storedData[5] <= dataAddrMux:inst6.dataOut[5]
+storedData[6] <= dataAddrMux:inst6.dataOut[6]
+storedData[7] <= dataAddrMux:inst6.dataOut[7]
+storedData[8] <= dataAddrMux:inst6.dataOut[8]
+storedData[9] <= dataAddrMux:inst6.dataOut[9]
+storedData[10] <= dataAddrMux:inst6.dataOut[10]
+storedData[11] <= dataAddrMux:inst6.dataOut[11]
+storedData[12] <= dataAddrMux:inst6.dataOut[12]
+storedData[13] <= dataAddrMux:inst6.dataOut[13]
+storedData[14] <= dataAddrMux:inst6.dataOut[14]
+storedData[15] <= dataAddrMux:inst6.dataOut[15]
 
 
-|recop|control_unit:inst7
+|recopTest|control_unit:inst7
 clk => dpcr_lsb_sel~reg0.CLK
 clk => dataSel[0]~reg0.CLK
 clk => dataSel[1]~reg0.CLK
@@ -656,7 +784,7 @@ wren <= wren~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sop_wr <= sop_wr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|recop|instruction_reg:inst2
+|recopTest|instruction_reg:inst2
 clock => operand[0]~reg0.CLK
 clock => operand[1]~reg0.CLK
 clock => operand[2]~reg0.CLK
@@ -759,7 +887,7 @@ operand[14] <= operand[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 operand[15] <= operand[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|recop|prog_mem:inst10
+|recopTest|prog_mem:inst10
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -810,7 +938,7 @@ q[30] <= altsyncram:altsyncram_component.q_a[30]
 q[31] <= altsyncram:altsyncram_component.q_a[31]
 
 
-|recop|prog_mem:inst10|altsyncram:altsyncram_component
+|recopTest|prog_mem:inst10|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -914,7 +1042,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated
+|recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -4286,7 +4414,7 @@ q_a[30] <= mux_ahb:mux2.result[30]
 q_a[31] <= mux_ahb:mux2.result[31]
 
 
-|recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode
+|recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode
 data[0] => w_anode1046w[1].IN0
 data[0] => w_anode1064w[1].IN1
 data[0] => w_anode1075w[1].IN0
@@ -4321,7 +4449,7 @@ eq[6] <= w_anode1119w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[7] <= w_anode1130w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|recop|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2
+|recopTest|prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -5060,7 +5188,7 @@ sel[2] => l3_w9_n0_mux_dataout.IN0
 sel[2] => _.IN0
 
 
-|recop|program_counter:inst
+|recopTest|program_counter:inst
 increment[0] => Mux0.IN15
 increment[0] => Mux1.IN15
 increment[0] => Mux2.IN15
@@ -5339,7 +5467,7 @@ out_count[14] <= out_count[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_count[15] <= out_count[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|recop|alu:inst9
+|recopTest|alu:inst9
 clk => z_flag~reg0.CLK
 clk => alu_result[0]~reg0.CLK
 clk => alu_result[1]~reg0.CLK
@@ -5602,7 +5730,7 @@ clr_z_flag => ~NO_FANOUT~
 test => ~NO_FANOUT~
 
 
-|recop|regfile:inst3
+|recopTest|regfile:inst3
 clk => regs[0][0].CLK
 clk => regs[0][1].CLK
 clk => regs[0][2].CLK
@@ -6691,7 +6819,7 @@ mem_data[14] => Mux1.IN14
 mem_data[15] => Mux0.IN14
 
 
-|recop|data_mem:inst4
+|recopTest|data_mem:inst4
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -6744,7 +6872,7 @@ q[14] <= altsyncram:altsyncram_component.q_a[14]
 q[15] <= altsyncram:altsyncram_component.q_a[15]
 
 
-|recop|data_mem:inst4|altsyncram:altsyncram_component
+|recopTest|data_mem:inst4|altsyncram:altsyncram_component
 wren_a => altsyncram_q6j1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -6813,7 +6941,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|recop|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
+|recopTest|data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -7072,7 +7200,7 @@ wren_a => ram_block1a14.PORTAWE
 wren_a => ram_block1a15.PORTAWE
 
 
-|recop|dataAddrMux:inst6
+|recopTest|dataAddrMux:inst6
 clk => present_sz_Jmp[0]~reg0.CLK
 clk => present_sz_Jmp[1]~reg0.CLK
 clk => dataOut[0]~reg0.CLK
@@ -7349,7 +7477,7 @@ present_sz_Jmp[1] <= present_sz_Jmp[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 test <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|recop|registers:inst8
+|recopTest|registers:inst8
 clk => sop[0]~reg0.CLK
 clk => sop[1]~reg0.CLK
 clk => sop[2]~reg0.CLK
