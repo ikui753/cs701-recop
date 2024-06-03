@@ -1,5 +1,5 @@
 Analysis & Synthesis report for recop
-Sun May 19 17:33:21 2024
+Fri May 31 14:12:48 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 19 17:33:21 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 31 14:12:48 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; recop                                       ;
 ; Top-level Entity Name           ; recop                                       ;
@@ -164,55 +164,53 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
-; recop.bdf                        ; yes             ; User Block Diagram/Schematic File      ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop.bdf              ;         ;
-; control_unit.vhd                 ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd       ;         ;
-; various_constants.vhd            ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/various_constants.vhd  ;         ;
-; registers.vhd                    ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd          ;         ;
-; regfile.vhd                      ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd            ;         ;
-; recop_types.vhd                  ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_types.vhd        ;         ;
-; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd           ;         ;
-; opcodes.vhd                      ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/opcodes.vhd            ;         ;
-; data_mem.vhd                     ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd           ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd                ;         ;
-; program_counter.vhd              ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd    ;         ;
-; instruction_reg.vhd              ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd    ;         ;
-; dataAddrMux.vhd                  ; yes             ; User VHDL File                         ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd        ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf             ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc      ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc             ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc             ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc              ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                 ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                 ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc               ;         ;
-; db/altsyncram_dti1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf ;         ;
-; assembler/output.mif             ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/assembler/output.mif   ;         ;
-; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/decode_61a.tdf      ;         ;
-; db/mux_ahb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/mux_ahb.tdf         ;         ;
-; db/altsyncram_q6j1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf ;         ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; recop.bdf                        ; yes             ; User Block Diagram/Schematic File      ; Z:/projects/cs701-recop/recop/recop.bdf                                      ;         ;
+; control_unit.vhd                 ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/control_unit.vhd                               ;         ;
+; various_constants.vhd            ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/various_constants.vhd                          ;         ;
+; registers.vhd                    ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/registers.vhd                                  ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/regfile.vhd                                    ;         ;
+; recop_types.vhd                  ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/recop_types.vhd                                ;         ;
+; prog_mem.vhd                     ; yes             ; User Wizard-Generated File             ; Z:/projects/cs701-recop/recop/prog_mem.vhd                                   ;         ;
+; opcodes.vhd                      ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/opcodes.vhd                                    ;         ;
+; data_mem.vhd                     ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/data_mem.vhd                                   ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/ALU.vhd                                        ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/program_counter.vhd                            ;         ;
+; instruction_reg.vhd              ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/instruction_reg.vhd                            ;         ;
+; dataAddrMux.vhd                  ; yes             ; User VHDL File                         ; Z:/projects/cs701-recop/recop/dataAddrMux.vhd                                ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_dti1.tdf           ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/altsyncram_dti1.tdf                         ;         ;
+; assembler/output.mif             ; yes             ; Auto-Found Memory Initialization File  ; Z:/projects/cs701-recop/recop/assembler/output.mif                           ;         ;
+; db/decode_61a.tdf                ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/decode_61a.tdf                              ;         ;
+; db/mux_ahb.tdf                   ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/mux_ahb.tdf                                 ;         ;
+; db/altsyncram_q6j1.tdf           ; yes             ; Auto-Generated Megafunction            ; Z:/projects/cs701-recop/recop/db/altsyncram_q6j1.tdf                         ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -579,7 +577,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -589,75 +587,75 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 19 17:33:08 2024
+    Info: Processing started: Fri May 31 14:12:11 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off recop -c recop
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file recoptest.bdf
     Info (12023): Found entity 1: recopTest
 Info (12021): Found 1 design units, including 1 entities, in source file recop.bdf
     Info (12023): Found entity 1: recop
 Info (12021): Found 2 design units, including 1 entities, in source file control_unit.vhd
-    Info (12022): Found design unit 1: control_unit-behavioral File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 49
-    Info (12023): Found entity 1: control_unit File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 7
+    Info (12022): Found design unit 1: control_unit-behavioral File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 49
+    Info (12023): Found entity 1: control_unit File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 7
 Info (12021): Found 1 design units, including 0 entities, in source file various_constants.vhd
-    Info (12022): Found design unit 1: various_constants File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/various_constants.vhd Line: 7
+    Info (12022): Found design unit 1: various_constants File: Z:/projects/cs701-recop/recop/various_constants.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
-    Info (12022): Found design unit 1: registers-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd Line: 34
-    Info (12023): Found entity 1: registers File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registers.vhd Line: 12
+    Info (12022): Found design unit 1: registers-beh File: Z:/projects/cs701-recop/recop/registers.vhd Line: 34
+    Info (12023): Found entity 1: registers File: Z:/projects/cs701-recop/recop/registers.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file registerfile.vhd
-    Info (12022): Found design unit 1: registerfile-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registerfile.vhd Line: 60
-    Info (12023): Found entity 1: registerfile File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/registerfile.vhd Line: 44
+    Info (12022): Found design unit 1: registerfile-SYN File: Z:/projects/cs701-recop/recop/registerfile.vhd Line: 60
+    Info (12023): Found entity 1: registerfile File: Z:/projects/cs701-recop/recop/registerfile.vhd Line: 44
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
-    Info (12022): Found design unit 1: regfile-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 43
-    Info (12023): Found entity 1: regfile File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/regfile.vhd Line: 11
+    Info (12022): Found design unit 1: regfile-beh File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 43
+    Info (12023): Found entity 1: regfile File: Z:/projects/cs701-recop/recop/regfile.vhd Line: 11
 Info (12021): Found 1 design units, including 0 entities, in source file recop_types.vhd
-    Info (12022): Found design unit 1: recop_types File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_types.vhd Line: 5
+    Info (12022): Found design unit 1: recop_types File: Z:/projects/cs701-recop/recop/recop_types.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file recop_pll.vhd
-    Info (12022): Found design unit 1: recop_pll-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_pll.vhd Line: 52
-    Info (12023): Found entity 1: recop_pll File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/recop_pll.vhd Line: 43
+    Info (12022): Found design unit 1: recop_pll-SYN File: Z:/projects/cs701-recop/recop/recop_pll.vhd Line: 52
+    Info (12023): Found entity 1: recop_pll File: Z:/projects/cs701-recop/recop/recop_pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file prog_mem.vhd
-    Info (12022): Found design unit 1: prog_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 53
-    Info (12023): Found entity 1: prog_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 43
+    Info (12022): Found design unit 1: prog_mem-SYN File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 53
+    Info (12023): Found entity 1: prog_mem File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
-    Info (12022): Found design unit 1: pll-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/pll.vhd Line: 52
-    Info (12023): Found entity 1: pll File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/pll.vhd Line: 42
+    Info (12022): Found design unit 1: pll-SYN File: Z:/projects/cs701-recop/recop/pll.vhd Line: 52
+    Info (12023): Found entity 1: pll File: Z:/projects/cs701-recop/recop/pll.vhd Line: 42
 Info (12021): Found 1 design units, including 0 entities, in source file opcodes.vhd
-    Info (12022): Found design unit 1: opcodes File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/opcodes.vhd Line: 7
+    Info (12022): Found design unit 1: opcodes File: Z:/projects/cs701-recop/recop/opcodes.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file memory_model.vhd
-    Info (12022): Found design unit 1: memory-beh File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 28
-    Info (12023): Found entity 1: memory File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_model.vhd Line: 10
+    Info (12022): Found design unit 1: memory-beh File: Z:/projects/cs701-recop/recop/memory_model.vhd Line: 28
+    Info (12023): Found entity 1: memory File: Z:/projects/cs701-recop/recop/memory_model.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file memory_arbiter.vhd
-    Info (12022): Found design unit 1: memory_arbiter-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_arbiter.vhd Line: 35
-    Info (12023): Found entity 1: memory_arbiter File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/memory_arbiter.vhd Line: 11
+    Info (12022): Found design unit 1: memory_arbiter-behaviour File: Z:/projects/cs701-recop/recop/memory_arbiter.vhd Line: 35
+    Info (12023): Found entity 1: memory_arbiter File: Z:/projects/cs701-recop/recop/memory_arbiter.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file data_mem.vhd
-    Info (12022): Found design unit 1: data_mem-SYN File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 19
-    Info (12023): Found entity 1: data_mem File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 7
+    Info (12022): Found design unit 1: data_mem-SYN File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 19
+    Info (12023): Found entity 1: data_mem File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-combined File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 34
-    Info (12023): Found entity 1: alu File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: alu-combined File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 34
+    Info (12023): Found entity 1: alu File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
-    Info (12022): Found design unit 1: program_counter-pc File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 27
-    Info (12023): Found entity 1: program_counter File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/program_counter.vhd Line: 10
+    Info (12022): Found design unit 1: program_counter-pc File: Z:/projects/cs701-recop/recop/program_counter.vhd Line: 27
+    Info (12023): Found entity 1: program_counter File: Z:/projects/cs701-recop/recop/program_counter.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_reg.vhd
-    Info (12022): Found design unit 1: instruction_reg-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd Line: 21
-    Info (12023): Found entity 1: instruction_reg File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/instruction_reg.vhd Line: 8
+    Info (12022): Found design unit 1: instruction_reg-behaviour File: Z:/projects/cs701-recop/recop/instruction_reg.vhd Line: 21
+    Info (12023): Found entity 1: instruction_reg File: Z:/projects/cs701-recop/recop/instruction_reg.vhd Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
     Info (12023): Found entity 1: datapath
 Info (12021): Found 2 design units, including 1 entities, in source file dataaddrmux.vhd
-    Info (12022): Found design unit 1: dataAddrMux-behaviour File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 32
-    Info (12023): Found entity 1: dataAddrMux File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 10
+    Info (12022): Found design unit 1: dataAddrMux-behaviour File: Z:/projects/cs701-recop/recop/dataAddrMux.vhd Line: 32
+    Info (12023): Found entity 1: dataAddrMux File: Z:/projects/cs701-recop/recop/dataAddrMux.vhd Line: 10
 Info (12127): Elaborating entity "recop" for the top level hierarchy
 Warning (275009): Pin "KEY" not connected
 Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:inst7"
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 30
-Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 34
-Warning (10492): VHDL Process Statement warning at control_unit.vhd(401): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/control_unit.vhd Line: 401
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(30): used implicit default value for signal "dm_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 30
+Warning (10541): VHDL Signal Declaration warning at control_unit.vhd(34): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(401): signal "nextState" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/control_unit.vhd Line: 401
 Info (12128): Elaborating entity "instruction_reg" for hierarchy "instruction_reg:inst2"
 Info (12128): Elaborating entity "prog_mem" for hierarchy "prog_mem:inst10"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
-Info (12130): Elaborated megafunction instantiation "prog_mem:inst10|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
-Info (12133): Instantiated megafunction "prog_mem:inst10|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12130): Elaborated megafunction instantiation "prog_mem:inst10|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
+Info (12133): Instantiated megafunction "prog_mem:inst10|altsyncram:altsyncram_component" with the following parameter: File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "assembler/output.mif"
@@ -673,25 +671,28 @@ Info (12133): Instantiated megafunction "prog_mem:inst10|altsyncram:altsyncram_c
     Info (12134): Parameter "widthad_a" = "15"
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5179
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: Z:/projects/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 5181
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dti1.tdf
-    Info (12023): Found entity 1: altsyncram_dti1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 31
+    Info (12023): Found entity 1: altsyncram_dti1 File: Z:/projects/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 31
 Info (12128): Elaborating entity "altsyncram_dti1" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Warning (113028): 1021 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: Z:/projects/cs701-recop/recop/assembler/output.mif Line: 1
+    Warning (113027): Addresses ranging from 3 to 1023 are not initialized File: Z:/projects/cs701-recop/recop/assembler/output.mif Line: 1
+Critical Warning (127005): Memory depth (32768) in the design file differs from memory depth (1024) in the Memory Initialization File "Z:/projects/cs701-recop/recop/assembler/output.mif" -- setting initial value for remaining addresses to 0 File: Z:/projects/cs701-recop/recop/prog_mem.vhd Line: 87
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
-    Info (12023): Found entity 1: decode_61a File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/decode_61a.tdf Line: 22
-Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 39
+    Info (12023): Found entity 1: decode_61a File: Z:/projects/cs701-recop/recop/db/decode_61a.tdf Line: 22
+Info (12128): Elaborating entity "decode_61a" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|decode_61a:rden_decode" File: Z:/projects/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
-    Info (12023): Found entity 1: mux_ahb File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/mux_ahb.tdf Line: 22
-Info (12128): Elaborating entity "mux_ahb" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 40
+    Info (12023): Found entity 1: mux_ahb File: Z:/projects/cs701-recop/recop/db/mux_ahb.tdf Line: 22
+Info (12128): Elaborating entity "mux_ahb" for hierarchy "prog_mem:inst10|altsyncram:altsyncram_component|altsyncram_dti1:auto_generated|mux_ahb:mux2" File: Z:/projects/cs701-recop/recop/db/altsyncram_dti1.tdf Line: 40
 Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:inst"
 Info (12128): Elaborating entity "alu" for hierarchy "alu:inst9"
-Warning (10492): VHDL Process Statement warning at ALU.vhd(50): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 50
-Warning (10492): VHDL Process Statement warning at ALU.vhd(65): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/ALU.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at ALU.vhd(50): signal "rz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 50
+Warning (10492): VHDL Process Statement warning at ALU.vhd(65): signal "ir_operand" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: Z:/projects/cs701-recop/recop/ALU.vhd Line: 65
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst3"
 Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:inst4"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "data_mem:inst4|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
-Info (12130): Elaborated megafunction instantiation "data_mem:inst4|altsyncram:altsyncram_component" File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
-Info (12133): Instantiated megafunction "data_mem:inst4|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
+Info (12128): Elaborating entity "altsyncram" for hierarchy "data_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
+Info (12130): Elaborated megafunction instantiation "data_mem:inst4|altsyncram:altsyncram_component" File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
+Info (12133): Instantiated megafunction "data_mem:inst4|altsyncram:altsyncram_component" with the following parameter: File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
@@ -706,17 +707,17 @@ Info (12133): Instantiated megafunction "data_mem:inst4|altsyncram:altsyncram_co
     Info (12134): Parameter "widthad_a" = "12"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 413
+Warning (287001): Assertion warning: Device family Cyclone V does not have M4K blocks -- using available memory blocks File: Z:/projects/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 413
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q6j1.tdf
-    Info (12023): Found entity 1: altsyncram_q6j1 File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_q6j1 File: Z:/projects/cs701-recop/recop/db/altsyncram_q6j1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_q6j1" for hierarchy "data_mem:inst4|altsyncram:altsyncram_component|altsyncram_q6j1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12128): Elaborating entity "dataAddrMux" for hierarchy "dataAddrMux:inst6"
-Warning (10541): VHDL Signal Declaration warning at dataAddrMux.vhd(27): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/dataAddrMux.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at dataAddrMux.vhd(27): used implicit default value for signal "test" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: Z:/projects/cs701-recop/recop/dataAddrMux.vhd Line: 27
 Info (12128): Elaborating entity "registers" for hierarchy "registers:inst8"
-Warning (12001): Port "address_a[12]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
-Warning (12001): Port "address_a[13]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
-Warning (12001): Port "address_a[14]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
-Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: C:/Users/ianku/OneDrive/Documents/Github/cs701-recop/recop/data_mem.vhd Line: 54
+Warning (12001): Port "address_a[12]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
+Warning (12001): Port "address_a[13]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
+Warning (12001): Port "address_a[14]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
+Warning (12001): Port "address_a[15]" does not exist in entity definition of "altsyncram".  The port's range differs between the entity definition and its actual instantiation, "data_mem:inst4|altsyncram:altsyncram_component". File: Z:/projects/cs701-recop/recop/data_mem.vhd Line: 54
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "increment[1]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
@@ -733,10 +734,10 @@ Info (21057): Implemented 1343 device resources after synthesis - the final reso
     Info (21059): Implemented 110 output pins
     Info (21061): Implemented 946 logic cells
     Info (21064): Implemented 272 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4903 megabytes
-    Info: Processing ended: Sun May 19 17:33:21 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:11
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4897 megabytes
+    Info: Processing ended: Fri May 31 14:12:48 2024
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:31
 
 
